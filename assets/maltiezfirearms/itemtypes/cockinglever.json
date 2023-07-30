@@ -1,0 +1,120 @@
+﻿{
+  "code": "cockinglever",
+  "class": "Item",
+  "shape": { "base": "maltiezfirearms:pistol/pistol-cocking-handle" },
+
+  "attributes": {
+    "groundStorageTransform": {
+      "translation": {
+        "x": 0.6,
+        "y": 0,
+        "z": 0.5
+      },
+      "rotation": {
+        "x": 1,
+        "y": -64,
+        "z": 90
+      },
+      "origin": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "scale": 1.22
+    }
+  },
+  "behaviors": [
+    {
+      "name": "GroundStorable",
+      "properties": {
+        "layout": "Quadrants",
+        "placeRemoveSound": "sounds/player/build",
+        "collisionBox": {
+          "x1": 0,
+          "y1": 0,
+          "z1": 0,
+          "x2": 1,
+          "y2": 0.1,
+          "z2": 1
+        }
+      }
+    }
+  ],
+
+  "creativeinventory": {
+    "maltiezfirearms": [ "*" ]
+  },
+
+  "guiTransform": {
+    "translation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "rotation": {
+      "x": -41,
+      "y": 128,
+      "z": 88
+    },
+    "origin": {
+      "x": 0,
+      "y": -0.04,
+      "z": 0.1
+    },
+    "scale": 6
+  },
+  "fpHandTransform": {
+    "translation": {
+      "x": 0,
+      "y": 0.7,
+      "z": 1.1
+    },
+    "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "origin": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "scale": 2
+  },
+  "tpHandTransform": {
+    "translation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "rotation": {
+      "x": 0,
+      "y": 90,
+      "z": 0
+    },
+    "origin": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "scale": 1
+  },
+  "groundTransform": {
+    "translation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 91
+    },
+    "origin": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "scale": 4
+  }
+}

@@ -1,0 +1,15 @@
+[
+	{
+		ingredientPattern: "SSS,WNP,WF_",
+		ingredients: {
+			"S": { type: "item", code: "game:metalplate-steel", quantity: 2 },
+			"P": { type: "item", code: "game:metalplate-brass", quantity: 2 },
+			"N": { type: "item", code: "game:metalnailsandstrips-steel", quantity: 2 },
+			"F": { type: "item", code: "game:flint", quantity: 1 },
+			"W": { type: "item", code: "game:plank-*", quantity: 2 }
+		},
+		width: 3,
+		height: 3,
+		output: { type: "item", code: "maltiezfirearms:musket-none" }
+	}
+]

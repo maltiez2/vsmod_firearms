@@ -1,0 +1,95 @@
+{
+	"editor": {
+		"allAngles": false,
+		"entityTextureMode": false
+	},
+	"textureWidth": 16,
+	"textureHeight": 16,
+	"textureSizes": {
+	},
+	"textures": {
+		"ropedcloth": "game:block/cloth/ropedcloth",
+		"charcoal": "game:block/coal/charcoal"
+	},
+	"elements": [
+		{
+			"name": "Match",
+			"from": [ 0.0, 0.0, 0.0 ],
+			"to": [ 0.3, 0.3, 1.5 ],
+			"rotationOrigin": [ 0.0, 0.0, 0.0014 ],
+			"rotationX": 35.0,
+			"faces": {
+				"north": { "texture": "#ropedcloth", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+				"east": { "texture": "#ropedcloth", "uv": [ 0.0, 0.0, 1.5, 0.5 ] },
+				"south": { "texture": "#ropedcloth", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+				"west": { "texture": "#ropedcloth", "uv": [ 0.0, 0.0, 1.5, 0.5 ] },
+				"up": { "texture": "#ropedcloth", "uv": [ 0.0, 0.0, 0.5, 1.5 ] },
+				"down": { "texture": "#ropedcloth", "uv": [ 0.0, 0.0, 0.5, 1.5 ] }
+			},
+			"children": [
+				{
+					"name": "Match_ember",
+					"from": [ 0.0, 0.0, 1.5 ],
+					"to": [ 0.3, 0.3, 1.7 ],
+					"rotationOrigin": [ 0.0, 0.0, 1.5 ],
+					"faces": {
+						"north": { "texture": "#charcoal", "uv": [ 0.0, 0.0, 1.0, 1.0 ], "autoUv": false },
+						"east": { "texture": "#charcoal", "uv": [ 0.0, 0.0, 1.0, 1.0 ], "autoUv": false },
+						"south": { "texture": "#charcoal", "uv": [ 9.0, 8.5, 10.0, 9.5 ], "autoUv": false },
+						"west": { "texture": "#charcoal", "uv": [ 0.0, 0.0, 1.0, 1.0 ], "autoUv": false },
+						"up": { "texture": "#charcoal", "uv": [ 0.0, 0.0, 1.0, 1.0 ], "autoUv": false },
+						"down": { "texture": "#charcoal", "uv": [ 0.0, 0.0, 1.0, 1.0 ], "autoUv": false }
+					}
+				},
+				{
+					"name": "Match_1",
+					"from": [ 0.0, 0.3, 0.0 ],
+					"to": [ 0.3, 0.6, 3.2 ],
+					"rotationOrigin": [ 0.0, 0.3, 0.0 ],
+					"rotationX": 112.5,
+					"faces": {
+						"north": { "texture": "#ropedcloth", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+						"east": { "texture": "#ropedcloth", "uv": [ 0.0, 0.0, 3.0, 0.5 ] },
+						"south": { "texture": "#ropedcloth", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+						"west": { "texture": "#ropedcloth", "uv": [ 0.0, 0.0, 3.0, 0.5 ] },
+						"up": { "texture": "#ropedcloth", "uv": [ 0.0, 0.0, 0.5, 3.0 ] },
+						"down": { "texture": "#ropedcloth", "uv": [ 0.0, 0.0, 0.5, 3.0 ] }
+					},
+					"children": [
+						{
+							"name": "Match_2",
+							"from": [ 0.0, 0.0, 3.2 ],
+							"to": [ 0.3, 0.3, 6.4 ],
+							"rotationOrigin": [ 0.0, 0.0, 3.2 ],
+							"rotationX": -22.5,
+							"faces": {
+								"north": { "texture": "#ropedcloth", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+								"east": { "texture": "#ropedcloth", "uv": [ 0.0, 0.0, 3.0, 0.5 ] },
+								"south": { "texture": "#ropedcloth", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+								"west": { "texture": "#ropedcloth", "uv": [ 0.0, 0.0, 3.0, 0.5 ] },
+								"up": { "texture": "#ropedcloth", "uv": [ 0.0, 0.0, 0.5, 3.0 ] },
+								"down": { "texture": "#ropedcloth", "uv": [ 0.0, 0.0, 0.5, 3.0 ] }
+							},
+							"children": [
+								{
+									"name": "Match_3",
+									"from": [ 0.0, 0.0, 3.2 ],
+									"to": [ 0.3, 0.3, 6.4 ],
+									"rotationOrigin": [ 0.0, 0.0, 3.2 ],
+									"rotationX": -22.5,
+									"faces": {
+										"north": { "texture": "#ropedcloth", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+										"east": { "texture": "#ropedcloth", "uv": [ 0.0, 0.0, 3.0, 0.5 ] },
+										"south": { "texture": "#ropedcloth", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+										"west": { "texture": "#ropedcloth", "uv": [ 0.0, 0.0, 3.0, 0.5 ] },
+										"up": { "texture": "#ropedcloth", "uv": [ 0.0, 0.0, 0.5, 3.0 ] },
+										"down": { "texture": "#ropedcloth", "uv": [ 0.0, 0.0, 0.5, 3.0 ] }
+									}
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	]}

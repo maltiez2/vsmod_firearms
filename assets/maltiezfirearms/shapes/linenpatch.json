@@ -1,0 +1,27 @@
+{
+	"editor": {
+		"allAngles": false,
+		"entityTextureMode": false
+	},
+	"textureWidth": 16,
+	"textureHeight": 16,
+	"textureSizes": {
+	},
+	"textures": {
+		"linen": "block/linen"
+	},
+	"elements": [
+		{
+			"name": "Linen patch",
+			"from": [ -0.5, 0.0, -0.5 ],
+			"to": [ 0.5, 0.2, 0.5 ],
+			"faces": {
+				"north": { "texture": "#linen", "uv": [ 0.0, 0.0, 2.5, 0.5 ], "autoUv": false },
+				"east": { "texture": "#linen", "uv": [ 0.0, 0.0, 2.5, 0.5 ], "autoUv": false },
+				"south": { "texture": "#linen", "uv": [ 0.0, 0.0, 2.5, 0.5 ], "autoUv": false },
+				"west": { "texture": "#linen", "uv": [ 0.0, 0.0, 2.5, 0.5 ], "autoUv": false },
+				"up": { "texture": "#linen", "uv": [ 0.0, 0.0, 2.5, 2.5 ], "autoUv": false },
+				"down": { "texture": "#linen", "uv": [ 0.0, 0.0, 2.5, 2.5 ], "autoUv": false }
+			}
+		}
+	]}

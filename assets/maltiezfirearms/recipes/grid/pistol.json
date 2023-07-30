@@ -1,0 +1,16 @@
+[
+	{
+		ingredientPattern: "WTT,WGP,FN_",
+		ingredients: {
+			"T": { type: "item", code: "game:metalplate-tinbronze", quantity: 1 },
+			"P": { type: "item", code: "game:metalplate-brass", quantity: 1 },
+			"N": { type: "item", code: "game:metalnailsandstrips-tinbronze", quantity: 2 },
+			"G": { type: "item", code: "game:gear-rusty", quantity: 1 },
+			"F": { type: "item", code: "game:flint", quantity: 1 },
+			"W": { type: "item", code: "game:plank-*", quantity: 1 },
+		},
+		width: 3,
+		height: 3,
+		output: { type: "item", code: "maltiezfirearms:pistol" }
+	}
+]

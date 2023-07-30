@@ -1,0 +1,20 @@
+[
+  {
+		ingredientPattern: "CA",
+		ingredients: {
+			"A": {
+				"type": "block",
+				"code": "game:linen-*",
+				"quantity": 1
+			},
+			"C": {
+				"type": "item",
+				"code": "game:shears-*",
+				"isTool": true
+			}
+		},
+		width: 2,
+		height: 1,
+		output: { type: "item", code: "maltiezfirearms:linenpatch", quantity: 16 }
+	}
+]

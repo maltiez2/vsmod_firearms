@@ -1,0 +1,25 @@
+[
+  {
+		ingredientPattern: "H,C,A",
+		ingredients: {
+			"A": {
+				"type": "item",
+				"code": "game:ingot-lead",
+				"quantity": 1
+			},
+			"H": {
+				"type": "item",
+				"code": "game:hammer-*",
+				"isTool": true
+			},
+			"C": {
+				"type": "item",
+				"code": "game:chisel-*",
+				"isTool": true
+			}
+		},
+		width: 1,
+		height: 3,
+		output: { type: "item", code: "maltiezfirearms:slug", quantity: 6 }
+	}
+]

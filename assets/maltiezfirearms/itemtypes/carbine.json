@@ -1,0 +1,636 @@
+{
+  "code": "carbine",
+  "class": "MaltiezFirearm",
+  "creativeinventory": {
+    "maltiezfirearms": [ "*" ]
+  },
+
+  "maxstacksize": 1,
+  "durability": 700,
+  "tool": "bow",
+
+  "rackable": true,
+
+  "behaviors": [
+    {
+      "name": "GroundStorable",
+      "properties": {
+        "layout": "WallHalves",
+        "wallOffY": 2,
+        "sprintKey": true,
+        "selectionBox": {
+          "x1": 0,
+          "y1": 0,
+          "z1": 0,
+          "x2": 1,
+          "y2": 0.1,
+          "z2": 1
+        },
+        "collisionBox": {
+          "x1": 0,
+          "y1": 0,
+          "z1": 0,
+          "x2": 0,
+          "y2": 0,
+          "z2": 0
+        }
+      }
+    }
+  ],
+  "attributes": {
+    "accuracyBonus": 0.6,
+    "projectile": "slug",
+    "damage": 39,
+    "velocityMultiplier": 1.3,
+    "dispersionMOA": 90,
+    "loadedStage": 2,
+    "firingStage": 3,
+    "firedVariant": 2,
+    "readyVariant": 3,
+    "muzzlePosition": {
+      "x": 0.0,
+      "y": 0.0,
+      "z": 0.0
+    },
+    "aimingPosition": {
+      "x": -0.5,
+      "y": 0.35,
+      "z": 0
+    },
+    "aimingDuration": 0.5,
+    "aimingTransform": {
+      "fpTransform": {
+        "translation": {
+          "x": -0.5,
+          "y": 0.35,
+          "z": 0
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "origin": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "scale": 1
+      },
+      "tpTransform": {
+        "translation": {
+          "x": -0.1,
+          "y": 0.5,
+          "z": 0.2
+        },
+        "rotation": {
+          "x": 105.0,
+          "y": 90.0,
+          "z": -90.0
+        },
+        "origin": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "scale": 1
+      }
+    },
+    "aimingWalkspeed": -0.2,
+    "particleEffects": [
+      {
+        "type": "fireSmoke",
+        "intensity": 2,
+        "position": {
+          "x": 0.1,
+          "y": -0.1,
+          "z": 3.0
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        }
+      },
+      {
+        "type": "fireSmoke",
+        "intensity": 1.5,
+        "position": {
+          "x": 0.1,
+          "y": -0.1,
+          "z": 2.5
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 2
+        }
+      },
+      {
+        "type": "fireSmoke",
+        "intensity": 1,
+        "position": {
+          "x": 0.1,
+          "y": -0.1,
+          "z": 1.7
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 3
+        }
+      },
+      {
+        "type": "fireBlast",
+        "intensity": 1,
+        "position": {
+          "x": 0.1,
+          "y": -0.1,
+          "z": 1.7
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 16
+        }
+      },
+      {
+        "type": "fireSmoke",
+        "intensity": 0.5,
+        "position": {
+          "x": 0.1,
+          "y": -0.6,
+          "z": 0.5
+        },
+        "velocity": {
+          "x": 0.1,
+          "y": 0.3,
+          "z": 0
+        }
+      }
+    ],
+    "operationStages": [
+      {
+        "name": "reload",
+        "lengthInSeconds": 9.0,
+        "firstVariant": 4,
+        "lastVariant": 59,
+        "walkspeed": -0.7,
+        "interruptInteraction": false,
+        "advanceReloadState": true,
+        "requirements": [
+          {
+            "code": "powderflask",
+            "amount": 1,
+            "durability": 11
+          },
+          {
+            "code": "slug",
+            "amount": 1
+          },
+          {
+            "code": "linenpatch",
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "name": "priming",
+        "lengthInSeconds": 3.0,
+        "firstVariant": 60,
+        "lastVariant": 75,
+        "walkspeed": -0.5,
+        "interruptInteraction": false,
+        "advanceReloadState": true,
+        "requirements": [
+          {
+            "code": "powderflask",
+            "amount": 1,
+            "durability": 1
+          }
+        ]
+      },
+      {
+        "name": "firing",
+        "lengthInSeconds": 0.1,
+        "firstVariant": 76,
+        "lastVariant": 81,
+        "interruptInteraction": false,
+        "advanceReloadState": false,
+        "requirements": []
+      }
+    ],
+    "operationSounds": {
+      "11": "powder-pour-long",
+      "27": "ramrod-take",
+      "35": "ramrod-pull",
+      "36": "ramrod-hit",
+      "37": "ramrod-pull",
+      "38": "ramrod-hit",
+      "39": "ramrod-pull",
+      "40": "ramrod-hit",
+      "41": "ramrod-pull",
+      "42": "ramrod-hit",
+      "43": "ramrod-pull",
+      "44": "ramrod-hit",
+      "53": "ramrod-putback",
+      "66": "powder-prime",
+      "71": "click",
+      "73": "cock",
+      "80": "strike",
+      "81": "firing"
+    },
+    "operationModelTransformations": [
+      {
+        "start-animation": 4,
+        "start-hold": 7,
+        "stop-hold": 55,
+        "stop-animation": 59,
+        "fpTransform": {
+          "translation": {
+            "x": -2.0,
+            "y": -3.8,
+            "z": 0.0
+          },
+          "rotation": {
+            "x": 80.0,
+            "y": 0.0,
+            "z": 10.0
+          },
+          "origin": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "scale": 1
+        },
+        "tpTransform": {
+          "translation": {
+            "x": -0.5,
+            "y": -0.3,
+            "z": 0.6
+          },
+          "rotation": {
+            "x": 90.0,
+            "y": -90.0,
+            "z": -90.0
+          },
+          "origin": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "scale": 1
+        }
+      },
+      {
+        "start-animation": 60,
+        "start-hold": 61,
+        "stop-hold": 74,
+        "stop-animation": 75,
+        "fpTransform": {
+          "translation": {
+            "x": -0.3,
+            "y": 0.2,
+            "z": 0.0
+          },
+          "rotation": {
+            "x": 5.0,
+            "y": 0.0,
+            "z": 20.0
+          },
+          "origin": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "scale": 1
+        },
+        "tpTransform": {
+          "translation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "rotation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "origin": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "scale": 1
+        }
+      }
+    ],
+    "sounds": {
+      "firing": {
+        "volume": 0.8,
+        "range": 8,
+        "location": [
+          "maltiezfirearms:sounds/musket/musket-fire-1",
+          "maltiezfirearms:sounds/musket/musket-fire-2",
+          "maltiezfirearms:sounds/musket/musket-fire-3",
+          "maltiezfirearms:sounds/musket/musket-fire-4"
+        ]
+      },
+      "strike": {
+        "volume": 1,
+        "range": 8,
+        "location": [
+          "maltiezfirearms:sounds/musket/flintlock-strike"
+        ]
+      },
+      "cock": {
+        "volume": 1,
+        "range": 8,
+        "location": [
+          "maltiezfirearms:sounds/musket/musket-cock"
+        ]
+      },
+      "click": {
+        "volume": 1,
+        "range": 8,
+        "location": [
+          "maltiezfirearms:sounds/musket/musket-short-click"
+        ]
+      },
+      "ramrod-pull": {
+        "volume": 1,
+        "range": 8,
+        "location": [
+          "maltiezfirearms:sounds/ramrod/ramrod-pull-1",
+          "maltiezfirearms:sounds/ramrod/ramrod-pull-2",
+          "maltiezfirearms:sounds/ramrod/ramrod-pull-3",
+          "maltiezfirearms:sounds/ramrod/ramrod-pull-4",
+          "maltiezfirearms:sounds/ramrod/ramrod-pull-5",
+          "maltiezfirearms:sounds/ramrod/ramrod-pull-6",
+          "maltiezfirearms:sounds/ramrod/ramrod-pull-7",
+          "maltiezfirearms:sounds/ramrod/ramrod-pull-8",
+          "maltiezfirearms:sounds/ramrod/ramrod-pull-9",
+          "maltiezfirearms:sounds/ramrod/ramrod-pull-10"
+        ]
+      },
+      "ramrod-hit": {
+        "volume": 1,
+        "range": 8,
+        "location": [
+          "maltiezfirearms:sounds/ramrod/ramrod-hit-1",
+          "maltiezfirearms:sounds/ramrod/ramrod-hit-2",
+          "maltiezfirearms:sounds/ramrod/ramrod-hit-3",
+          "maltiezfirearms:sounds/ramrod/ramrod-hit-4",
+          "maltiezfirearms:sounds/ramrod/ramrod-hit-5",
+          "maltiezfirearms:sounds/ramrod/ramrod-hit-6",
+          "maltiezfirearms:sounds/ramrod/ramrod-hit-7",
+          "maltiezfirearms:sounds/ramrod/ramrod-hit-8",
+          "maltiezfirearms:sounds/ramrod/ramrod-hit-9",
+          "maltiezfirearms:sounds/ramrod/ramrod-hit-10"
+        ]
+      },
+      "ramrod-putback": {
+        "volume": 1,
+        "range": 8,
+        "location": [
+          "maltiezfirearms:sounds/ramrod/ramrod-putback"
+        ]
+      },
+      "ramrod-take": {
+        "volume": 1,
+        "range": 8,
+        "location": [
+          "maltiezfirearms:sounds/ramrod/ramrod-take"
+        ]
+      },
+      "powder-pour-long": {
+        "volume": 1,
+        "range": 8,
+        "location": [
+          "maltiezfirearms:sounds/powder/powder-pour-long"
+        ]
+      },
+      "powder-prime": {
+        "volume": 0.2,
+        "range": 8,
+        "location": [
+          "maltiezfirearms:sounds/powder/powder-prime"
+        ]
+      }
+    },
+
+    "toolrackTransform": {
+      "translation": {
+        "x": 1.4,
+        "y": 0.5,
+        "z": 0.5
+      },
+      "rotation": {
+        "x": 1,
+        "y": 95,
+        "z": -90
+      },
+      "origin": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "scale": 1.34
+    },
+    "groundStorageTransform": {
+      "translation": {
+        "x": 0.55,
+        "y": 0.44,
+        "z": 0.75
+      },
+      "rotation": {
+        "x": 100,
+        "y": 4,
+        "z": -101
+      },
+      "origin": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "scale": 0.81
+    }
+  },
+
+  "textures": {
+    "charcoal": { "base": "game:block/coal/charcoal" },
+    "linen": { "base": "game:block/linen" },
+    "brass": { "base": "game:block/metal/plate/brass" },
+    "iron": { "base": "game:block/metal/plate/iron" },
+    "steel": { "base": "game:block/metal/plate/steel" },
+    "lead": { "base": "game:block/metal/plate/lead" },
+    "flint": { "base": "game:block/stone/flint" },
+    "kapok": { "base": "game:block/wood/debarked/oak" },
+    "oak": { "base": "game:block/wood/debarked/oak" }
+  },
+  "shape": {
+    "base": "maltiezfirearms:carbine/carbine",
+    "alternates": [
+      { "base": "maltiezfirearms:carbine/carbine-02-fired" }, // 2
+      { "base": "maltiezfirearms:carbine/carbine-03-ready" }, // 3
+
+      { "base": "maltiezfirearms:carbine/carbine-04-load" }, // 4
+      { "base": "maltiezfirearms:carbine/carbine-04-load" }, // 5
+      { "base": "maltiezfirearms:carbine/carbine-04-load" },
+      { "base": "maltiezfirearms:carbine/carbine-04-load" },
+      { "base": "maltiezfirearms:carbine/carbine-04-load" },
+      { "base": "maltiezfirearms:carbine/carbine-A01-flask" },
+      { "base": "maltiezfirearms:carbine/carbine-A02-flask-tilt" }, // 10
+      { "base": "maltiezfirearms:carbine/carbine-A03-flask-pour" },
+      { "base": "maltiezfirearms:carbine/carbine-A03-flask-pour" },
+      { "base": "maltiezfirearms:carbine/carbine-A02-flask-tilt" },
+      { "base": "maltiezfirearms:carbine/carbine-A03-flask-pour" }, // 10
+      { "base": "maltiezfirearms:carbine/carbine-A03-flask-pour" }, // 15
+      { "base": "maltiezfirearms:carbine/carbine-A02-flask-tilt" },
+      { "base": "maltiezfirearms:carbine/carbine-A01-flask" },
+      { "base": "maltiezfirearms:carbine/carbine-04-load" },
+      { "base": "maltiezfirearms:carbine/carbine-04-load" },
+      { "base": "maltiezfirearms:carbine/carbine-A04-linen-take" }, // 20
+      { "base": "maltiezfirearms:carbine/carbine-A05-linen-put" },
+      { "base": "maltiezfirearms:carbine/carbine-A05-linen-put" },
+      { "base": "maltiezfirearms:carbine/carbine-A06-bullet-take" },
+      { "base": "maltiezfirearms:carbine/carbine-A07-bullet-put" },
+      { "base": "maltiezfirearms:carbine/carbine-A08-bullet-push" }, // 25
+      { "base": "maltiezfirearms:carbine/carbine-A08-bullet-push" },
+      { "base": "maltiezfirearms:carbine/carbine-A09-ramrod-take-1" },
+      { "base": "maltiezfirearms:carbine/carbine-A10-ramrod-take-2" },
+      { "base": "maltiezfirearms:carbine/carbine-A11-ramrod-take-3" },
+      { "base": "maltiezfirearms:carbine/carbine-A12-ramrod-take-4" }, // 30
+      { "base": "maltiezfirearms:carbine/carbine-A13-ramrod-turn-1" },
+      { "base": "maltiezfirearms:carbine/carbine-A14-ramrod-turn-2" },
+      { "base": "maltiezfirearms:carbine/carbine-A15-ramrod-turn-3" },
+      { "base": "maltiezfirearms:carbine/carbine-A16-ramrod-align" },
+      { "base": "maltiezfirearms:carbine/carbine-A17-ramrod-push-0" }, // 35
+      { "base": "maltiezfirearms:carbine/carbine-A18-ramrod-push-1" },
+      { "base": "maltiezfirearms:carbine/carbine-A19-ramrod-push-2" }, // hit
+      { "base": "maltiezfirearms:carbine/carbine-A18-ramrod-push-1" },
+      { "base": "maltiezfirearms:carbine/carbine-A20-ramrod-push-3" }, // hit
+      { "base": "maltiezfirearms:carbine/carbine-A19-ramrod-push-2" }, // 40
+      { "base": "maltiezfirearms:carbine/carbine-A21-ramrod-push-4" }, // hit
+      { "base": "maltiezfirearms:carbine/carbine-A19-ramrod-push-2" },
+      { "base": "maltiezfirearms:carbine/carbine-A21-ramrod-push-4" }, // hit
+      { "base": "maltiezfirearms:carbine/carbine-A20-ramrod-push-3" },
+      { "base": "maltiezfirearms:carbine/carbine-A21-ramrod-push-4" }, // 45 hit
+      { "base": "maltiezfirearms:carbine/carbine-A19-ramrod-push-2" },
+      { "base": "maltiezfirearms:carbine/carbine-A18-ramrod-push-1" },
+      { "base": "maltiezfirearms:carbine/carbine-A22-ramrod-pull" },
+      { "base": "maltiezfirearms:carbine/carbine-A23-ramrod-turn-1" },
+      { "base": "maltiezfirearms:carbine/carbine-A24-ramrod-turn-2" }, // 50
+      { "base": "maltiezfirearms:carbine/carbine-A25-ramrod-turn-3" },
+      { "base": "maltiezfirearms:carbine/carbine-A26-ramrod-putback-1" },
+      { "base": "maltiezfirearms:carbine/carbine-A27-ramrod-putback-2" },
+      { "base": "maltiezfirearms:carbine/carbine-A28-ramrod-putback-3" },
+      { "base": "maltiezfirearms:carbine/carbine-04-load" }, // 55
+      { "base": "maltiezfirearms:carbine/carbine-04-load" },
+      { "base": "maltiezfirearms:carbine/carbine-04-load" },
+      { "base": "maltiezfirearms:carbine/carbine-04-load" },
+      { "base": "maltiezfirearms:carbine/carbine-04-load" }, // 59
+
+      { "base": "maltiezfirearms:carbine/carbine-04-load" }, // 60
+      { "base": "maltiezfirearms:carbine/carbine-04-load" },
+      { "base": "maltiezfirearms:carbine/carbine-B01-halfcock" },
+      { "base": "maltiezfirearms:carbine/carbine-B01-halfcock" },
+      { "base": "maltiezfirearms:carbine/carbine-B02-flask" },
+      { "base": "maltiezfirearms:carbine/carbine-B03-flask-tilt" }, // 65
+      { "base": "maltiezfirearms:carbine/carbine-B04-flask-pour" },
+      { "base": "maltiezfirearms:carbine/carbine-B03-flask-tilt" },
+      { "base": "maltiezfirearms:carbine/carbine-B02-flask" },
+      { "base": "maltiezfirearms:carbine/carbine-B01-halfcock" },
+      { "base": "maltiezfirearms:carbine/carbine-B05-frizzen-close-1" }, // 70
+      { "base": "maltiezfirearms:carbine/carbine-B06-frizzen-close-2" },
+      { "base": "maltiezfirearms:carbine/carbine-B06-frizzen-close-2" },
+      { "base": "maltiezfirearms:carbine/carbine-B07-cock" },
+      { "base": "maltiezfirearms:carbine/carbine-B07-cock" },
+      { "base": "maltiezfirearms:carbine/carbine-B07-cock" }, // 75
+
+      { "base": "maltiezfirearms:carbine/carbine-C01-trigger-pull" }, // 76
+      { "base": "maltiezfirearms:carbine/carbine-C02-strike-1" },
+      { "base": "maltiezfirearms:carbine/carbine-C03-strike-2" },
+      { "base": "maltiezfirearms:carbine/carbine-C04-strike-3" },
+      { "base": "maltiezfirearms:carbine/carbine-C05-strike-4" }, // 80
+      { "base": "maltiezfirearms:carbine/carbine-C06-strike-5" } // 81
+    ]
+  },
+  "guiTransform": {
+    "translation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "rotation": {
+      "x": -14,
+      "y": 20,
+      "z": -180
+    },
+    "origin": {
+      "x": -0.93,
+      "y": -0.7,
+      "z": -3
+    },
+    "scaleXyz": {
+      "x": -1.89,
+      "y": 1.89,
+      "z": 1.89
+    }
+  },
+  "fpHandTransform": {
+    "translation": {
+      "x": 0.2,
+      "y": 0.6,
+      "z": 1
+    },
+    "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "origin": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "scale": 4
+  },
+  "tpHandTransform": {
+    "translation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "rotation": {
+      "x": 0,
+      "y": -90,
+      "z": 0
+    },
+    "origin": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "scale": 0.8
+  },
+  "groundTransform": {
+    "translation": {
+      "x": 0,
+      "y": 0.05,
+      "z": 0
+    },
+    "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 90
+    },
+    "origin": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "scale": 4.8
+  }
+}

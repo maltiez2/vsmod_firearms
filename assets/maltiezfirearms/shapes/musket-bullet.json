@@ -1,0 +1,28 @@
+{
+	"editor": {
+		"collapsedPaths": "Root/Musket/Flintlock,Root/Band_second,Root/Musket/Band_first,Root/Band_first,Root/Musket/Bayonet/Band,Root/Musket/Stock,Root/Stock,Root/Flintlock,Root/Barrel,Root/Musket/Ramrod,Root/Band_third,Root/Musket/Flintlock/Frizzen,Root/Musket/Band_third,Root/Musket/Band_second,Root/Musket/Trigger_assembly,Root/Trigger_assembly,Root/Bayonet,Root/Ramrod,Root/Musket/Barrel",
+		"allAngles": false,
+		"entityTextureMode": false
+	},
+	"textureWidth": 16,
+	"textureHeight": 16,
+	"textureSizes": {
+	},
+	"textures": {
+	},
+	"elements": [
+		{
+			"name": "Bullet",
+			"from": [ -0.25, 0.55, -39.0 ],
+			"to": [ 0.25, 1.05, -38.5 ],
+			"rotationOrigin": [ -0.25, 0.55, -39.0 ],
+			"faces": {
+				"north": { "texture": "#lead", "uv": [ 9.5, 11.5, 8.5, 10.5 ], "autoUv": false },
+				"east": { "texture": "#lead", "uv": [ 10.0, 13.0, 11.0, 14.0 ], "autoUv": false },
+				"south": { "texture": "#lead", "uv": [ 6.5, 6.0, 7.5, 7.1 ], "autoUv": false },
+				"west": { "texture": "#lead", "uv": [ 4.0, 8.0, 5.0, 9.0 ], "autoUv": false },
+				"up": { "texture": "#lead", "uv": [ 7.0, 6.5, 8.0, 7.5 ], "autoUv": false },
+				"down": { "texture": "#lead", "uv": [ 9.0, 4.5, 9.9, 5.5 ], "autoUv": false }
+			}
+		}
+	]}
