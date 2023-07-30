@@ -6,6 +6,8 @@
 # Custom
 app.config
 packages.config
+*.csproj
+*.csproj.user
 
 # User-specific files
 *.rsuser
