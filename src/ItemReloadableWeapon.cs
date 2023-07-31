@@ -8,6 +8,7 @@ namespace MaltiezFirearms
         public const string temporaryStateKey = "weaponTemporaryState";
         public const string permanentStateKey = "weaponPermanentState";
         public const bool debugLogging = false;
+        public const bool markSlotsDirty = true;
 
         // Interaction
         public virtual void InitInteraction(int currentState, ItemSlot slot, EntityAgent byEntity, BlockSelection blockSel, EntitySelection entitySel, bool firstEvent)
@@ -57,9 +58,11 @@ namespace MaltiezFirearms
 
             if (debugLogging) api.Logger.Debug("OnHeldInteractStart - state: " + GetCurrentState(slot));
 
-            InitInteraction(GetCurrentState(slot), slot, byEntity, blockSel, entitySel, firstEvent);
+            int currentState = GetCurrentState(slot);
+            
+            InitInteraction(currentState, slot, byEntity, blockSel, entitySel, firstEvent);
 
-            if (DoStartInterraction(slot, byEntity, blockSel, entitySel, firstEvent, GetCurrentState(slot)))
+            if (DoStartInterraction(slot, byEntity, blockSel, entitySel, firstEvent, currentState))
             {
                 handling = EnumHandHandling.PreventDefault;
             }
@@ -68,17 +71,21 @@ namespace MaltiezFirearms
         {
             if (slot == null || slot.Itemstack == null) return false;
 
-            int stepBy = StepInteraction(GetCurrentState(slot), secondsUsed, slot, byEntity, blockSel, entitySel);
+            int currentState = GetCurrentState(slot);
+
+            int stepBy = StepInteraction(currentState, secondsUsed, slot, byEntity, blockSel, entitySel);
 
             if (stepBy <= 0) return true;
-
-            bool interrupt = DoInterruptInteraction(stepBy, slot, byEntity, blockSel, entitySel, GetCurrentState(slot));
+            
+            bool interrupt = DoInterruptInteraction(stepBy, slot, byEntity, blockSel, entitySel, currentState);
 
             AdvanceTemporaryState(slot, stepBy);
-                
-            if (DoAdvancePermanentState(secondsUsed, slot, byEntity, blockSel, entitySel, GetCurrentState(slot) - 1))
+
+            int previousTemporaryState = currentState + stepBy - 1;
+
+            if (DoAdvancePermanentState(secondsUsed, slot, byEntity, blockSel, entitySel, previousTemporaryState))
             {
-                if (debugLogging) api.Logger.Debug("OnHeldInteractStep - AdvancePermanentState to: " + GetCurrentState(slot));
+                if (debugLogging) api.Logger.Debug("OnHeldInteractStep - AdvancePermanentState from: " + currentState);
 
                 AdvancePermanentState(slot);
             }
@@ -105,18 +112,20 @@ namespace MaltiezFirearms
                 return;
             }
 
-            if (debugLogging) api.Logger.Debug("OnHeldInteractStop - state: " + GetCurrentState(slot));
+            int currentState = GetCurrentState(slot);
 
-            FinishInteraction(GetCurrentState(slot), secondsUsed, slot, byEntity, blockSel, entitySel);
+            if (debugLogging) api.Logger.Debug("OnHeldInteractStop - state: " + currentState);
 
-            if (DoResetState(secondsUsed, slot, byEntity, blockSel, entitySel, GetCurrentState(slot)))
+            FinishInteraction(currentState, secondsUsed, slot, byEntity, blockSel, entitySel);
+
+            if (DoResetState(secondsUsed, slot, byEntity, blockSel, entitySel, currentState))
             {
                 ResetPermanentState(slot);
             }
 
-            ResetTemporaryState(slot);
+            int resetedState = ResetTemporaryState(slot);
 
-            ResetInteraction(GetCurrentState(slot), secondsUsed, slot, byEntity, blockSel, entitySel);
+            ResetInteraction(resetedState, secondsUsed, slot, byEntity, blockSel, entitySel);
         }
         
         // Other
@@ -130,44 +139,45 @@ namespace MaltiezFirearms
         }
 
         // Supplementary
-        protected void SetPermanentState(ItemSlot slot, int state)
+        private void SetPermanentState(ItemSlot slot, int state) // Not supported due to code rewrite
         {
             slot.Itemstack.Attributes.SetInt(permanentStateKey, state);
             slot.MarkDirty();
         }
-        protected void SetTemporaryState(ItemSlot slot, int state)
+        private void SetTemporaryState(ItemSlot slot, int state) // Not supported due to code rewrite
         {
             slot.Itemstack.Attributes.SetInt(temporaryStateKey, state);
             slot.MarkDirty();
         }
-        protected void AdvancePermanentState(ItemSlot slot)
+        private void AdvancePermanentState(ItemSlot slot)
         {
             int state = slot.Itemstack.Attributes.GetAsInt(temporaryStateKey, 0); // TODO Possible race condition
             slot.Itemstack.Attributes.SetInt(permanentStateKey, state);
-            slot.MarkDirty();
+            if (markSlotsDirty) slot.MarkDirty();
         }
-        protected void AdvanceTemporaryState(ItemSlot slot, int delta = 1)
+        private void AdvanceTemporaryState(ItemSlot slot, int delta = 1)
         {
             int state = slot.Itemstack.Attributes.GetAsInt(temporaryStateKey, 0) + delta; // TODO Possible race condition
             slot.Itemstack.Attributes.SetInt(temporaryStateKey, state);
-            slot.MarkDirty();
+            if (markSlotsDirty) slot.MarkDirty();
         }
-        protected void ResetTemporaryState(ItemSlot slot)
+        private int ResetTemporaryState(ItemSlot slot)
         {
             int state = slot.Itemstack.Attributes.GetAsInt(permanentStateKey, 0); // TODO Possible race condition
             slot.Itemstack.Attributes.SetInt(temporaryStateKey, state);
-            slot.MarkDirty();
+            if (markSlotsDirty) slot.MarkDirty();
+            return state;
         }
-        protected void ResetPermanentState(ItemSlot slot)
+        private void ResetPermanentState(ItemSlot slot)
         {
             slot.Itemstack.Attributes.SetInt(permanentStateKey, 0);
-            slot.MarkDirty();
+            if (markSlotsDirty) slot.MarkDirty();
         }
-        protected int GetCurrentState(ItemSlot slot)
+        private int GetCurrentState(ItemSlot slot)
         {
             return slot.Itemstack.Attributes.GetAsInt(temporaryStateKey, 0);
         }
-        protected int GetCurrentPermanentState(ItemSlot slot)
+        private int GetCurrentPermanentState(ItemSlot slot)
         {
             return slot.Itemstack.Attributes.GetAsInt(permanentStateKey, 0);
         }

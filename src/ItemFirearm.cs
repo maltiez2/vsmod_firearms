@@ -86,6 +86,12 @@ namespace MaltiezFirearms
         // Interaction
         public override void InitInteraction(int currentState, ItemSlot slot, EntityAgent byEntity, BlockSelection blockSel, EntitySelection entitySel, bool firstEvent)
         {
+            if (slot == null || slot.Itemstack == null || byEntity == null)
+            {
+                api.Logger.Error("[Firearms] [InitInteraction] 'slot' or 'byEntity' is null");
+                return;
+            }
+            
             byEntity.Attributes.SetBool("stopAction", false);
             byEntity.Attributes.SetBool("weaponEmpty", false);
             byEntity.Attributes.SetBool("weaponFiring", false);
@@ -95,6 +101,12 @@ namespace MaltiezFirearms
         }
         public override int StepInteraction(int currentState, float secondsUsed, ItemSlot slot, EntityAgent byEntity, BlockSelection blockSel, EntitySelection entitySel)
         {
+            if (slot == null || slot.Itemstack == null || byEntity == null)
+            {
+                api.Logger.Error("[Firearms] [InitInteraction] 'slot' or 'byEntity' is null");
+                return 0;
+            }
+
             if (byEntity.Attributes.GetBool("stopAction")) return 0;
 
             float previousSecondsUsed = byEntity.Attributes.GetFloat("previousSecondsUsed");
@@ -120,10 +132,22 @@ namespace MaltiezFirearms
         }
         public override bool CancelInteraction(int currentState, float secondsUsed, ItemSlot slot, EntityAgent byEntity, BlockSelection blockSel, EntitySelection entitySel, EnumItemUseCancelReason cancelReason)
         {
+            if (slot == null || slot.Itemstack == null || byEntity == null)
+            {
+                api.Logger.Error("[Firearms] [InitInteraction] 'slot' or 'byEntity' is null");
+                return true;
+            }
+
             return !byEntity.Attributes.GetBool("weaponFiring");
         }
         public override void ResetInteraction(int currentState, float secondsUsed, ItemSlot slot, EntityAgent byEntity, BlockSelection blockSel, EntitySelection entitySel)
         {
+            if (slot == null || slot.Itemstack == null || byEntity == null)
+            {
+                api.Logger.Error("[Firearms] [InitInteraction] 'slot' or 'byEntity' is null");
+                return;
+            }
+
             (byEntity as EntityPlayer).Stats.Set("walkspeed", "maltiezfirearms", 0f, true);
             byEntity.AnimManager.StopAnimation("bowaim");
             SetReadyVariant(slot, byEntity, currentState);
@@ -134,6 +158,12 @@ namespace MaltiezFirearms
         // Conditions
         protected override bool DoAdvancePermanentState(float secondsUsed, ItemSlot slot, EntityAgent byEntity, BlockSelection blockSel, EntitySelection entitySel, int currentState)
         {
+            if (slot == null || slot.Itemstack == null || byEntity == null)
+            {
+                api.Logger.Error("[Firearms] [InitInteraction] 'slot' or 'byEntity' is null");
+                return true;
+            }
+
             int loadedStage = slot.Itemstack.Collectible.Attributes["loadedStage"].AsInt();
             JsonObject[] loadingStages = slot.Itemstack.Collectible.Attributes["operationStages"].AsArray();
 
@@ -143,6 +173,12 @@ namespace MaltiezFirearms
         }
         protected override bool DoResetState(float secondsUsed, ItemSlot slot, EntityAgent byEntity, BlockSelection blockSel, EntitySelection entitySel, int currentState)
         {
+            if (slot == null || slot.Itemstack == null || byEntity == null)
+            {
+                api.Logger.Error("[Firearms] [InitInteraction] 'slot' or 'byEntity' is null");
+                return true;
+            }
+
             return byEntity.Attributes.GetBool("weaponEmpty", false);
         }
 
@@ -454,7 +490,9 @@ namespace MaltiezFirearms
 
             if (currentState >= loadingStages.Length)
             {
-                api.Logger.Error(" [GetOperationParameters] Weapon current state is higher then amount of operation stages it has. Weapon: " + weaponSlot.GetStackName() + ", state: " + currentState.ToString());
+                string weaponName = "null";
+                if (weaponSlot != null) weaponName = weaponSlot.GetStackName();
+                api.Logger.Error("[Firearms] [GetOperationParameters] Weapon current state is higher then amount of operation stages it has. Weapon: " + weaponName + ", state: " + currentState.ToString());
                 return null;
             }
 
@@ -467,6 +505,15 @@ namespace MaltiezFirearms
         protected void SetOperationWalkSpeed(ItemSlot weaponSlot, EntityAgent byEntity, int currentState)
         {
             JsonObject[] loadingStages = weaponSlot.Itemstack.Collectible.Attributes["operationStages"].AsArray();
+
+            if (currentState >= loadingStages.Length)
+            {
+                string weaponName = "null";
+                if (weaponSlot != null) weaponName = weaponSlot.GetStackName();
+                api.Logger.Error("[Firearms] [SetOperationWalkSpeed] Weapon current state is higher then amount of operation stages it has. Weapon: " + weaponName + ", state: " + currentState.ToString());
+                return;
+            }
+
             float walkSpeed = loadingStages[currentState]["walkspeed"].AsFloat();
             (byEntity as EntityPlayer).Stats.Set("walkspeed", "maltiezfirearms", walkSpeed, true);
         }
@@ -527,6 +574,15 @@ namespace MaltiezFirearms
             
             if (currentState == 0)
             {
+                SetRenderVariant(0, weaponSlot, byEntity);
+                return;
+            }
+
+            if (currentState >= loadingStages.Length)
+            {
+                string weaponName = "null";
+                if (weaponSlot != null) weaponName = weaponSlot.GetStackName();
+                api.Logger.Error("[Firearms] [SetReadyVariant] Weapon current state is higher then amount of operation stages it has. Weapon: " + weaponName + ", state: " + currentState.ToString());
                 SetRenderVariant(0, weaponSlot, byEntity);
                 return;
             }

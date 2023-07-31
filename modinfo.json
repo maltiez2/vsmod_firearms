@@ -4,7 +4,7 @@
   "name": "Firearms (Alpha)",
   "authors": ["Maltiez"],
   "description": "Black powder firearms. Alpha version.",
-  "version": "0.1.4",
+  "version": "0.1.6",
   "dependencies": {
     "game": "1.18.0",
     "survival": "1.18.0"
