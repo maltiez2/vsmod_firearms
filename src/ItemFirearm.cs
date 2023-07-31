@@ -259,14 +259,8 @@ namespace MaltiezFirearms
 
             weaponSlot.Itemstack.Collectible.DamageItem(byEntity.World, byEntity, weaponSlot);
 
-            float accuracyBonus = 0f;
-            if (weaponSlot.Itemstack.Collectible.Attributes != null)
-            {
-                accuracyBonus = 1 - weaponSlot.Itemstack.Collectible.Attributes["accuracyBonus"].AsFloat(0);
-            }
-
             Vec3d projectilePosition = ProjectilePosition(weaponSlot, byEntity);
-            Vec3d projectileVelocity = ProjectileVelocity(weaponSlot, byEntity, accuracyBonus);
+            Vec3d projectileVelocity = ProjectileVelocity(weaponSlot, byEntity);
             float projectileDamage = ProjectileDamage(weaponSlot);
 
             SpawnProjectile(byEntity, projectilePosition, projectileVelocity, projectileDamage, projectileStack);
@@ -282,12 +276,14 @@ namespace MaltiezFirearms
         }
         protected void SpawnProjectile(EntityAgent byEntity, Vec3d position, Vec3d velocity, float damage, ItemStack projectileStack)
         {
+            
+            
             EntityProperties type = byEntity.World.GetEntityType(projectileStack.Item.Code);
             var projectile = byEntity.World.ClassRegistry.CreateEntity(type) as EntityProjectile;
             projectile.FiredBy = byEntity;
             projectile.Damage = damage;
             projectile.ProjectileStack = projectileStack;
-            projectile.DropOnImpactChance = 0;
+            projectile.DropOnImpactChance = projectileStack.Collectible.Attributes["breakChanceOnImpact"].AsFloat(0);
             projectile.ServerPos.SetPos(position);
             projectile.ServerPos.Motion.Set(velocity);
             projectile.Pos.SetFrom(projectile.ServerPos);
@@ -303,7 +299,7 @@ namespace MaltiezFirearms
             Vec3f worldPosition = FromCameraReferenceFrame(byEntity, position);
             return byEntity.SidedPos.AheadCopy(0).XYZ.Add(worldPosition.X, byEntity.LocalEyePos.Y + worldPosition.Y, worldPosition.Z);
         }
-        protected Vec3d ProjectileVelocity(ItemSlot weaponSlot, EntityAgent byEntity, float accuracyBonus)
+        protected Vec3d ProjectileVelocity(ItemSlot weaponSlot, EntityAgent byEntity)
         {
             float muzzleVelocity = 2;
 
@@ -335,9 +331,10 @@ namespace MaltiezFirearms
                 damage += weaponSlot.Itemstack.Collectible.Attributes["damage"].AsFloat(0);
             }
 
-            if (GetProjectileFromWeapon(weaponSlot) != null)
+            ItemStack ammunition = GetProjectileFromWeapon(weaponSlot);
+            if (ammunition != null)
             {
-                damage += GetProjectileFromWeapon(weaponSlot).Collectible.Attributes["damage"].AsFloat(0);
+                damage += ammunition.Collectible.Attributes["damage"].AsFloat(0);
             }
 
             return damage;
@@ -597,7 +594,7 @@ namespace MaltiezFirearms
         // Animations - Transformations
         protected Vec3f WeaponAimPositionDelta(ItemSlot weaponSlot)
         {
-            JsonObject positionData = weaponSlot.Itemstack.Collectible.Attributes["aimingPosition"];
+            JsonObject positionData = weaponSlot.Itemstack.Collectible.Attributes["aimingTransform"]["fpTransform"][""];
             return new Vec3f(positionData["x"].AsFloat(), positionData["y"].AsFloat(), positionData["z"].AsFloat());
         }
         protected void PlayFpTransformation(EntityAgent byEntity, Vec3f position, Vec3f rotation)
@@ -626,29 +623,38 @@ namespace MaltiezFirearms
         {
             JsonObject aimTransform = weaponSlot.Itemstack.Collectible.Attributes["aimingTransform"]["tpTransform"];
 
-            JsonObject translation = aimTransform["translation"];
-            JsonObject rotation = aimTransform["rotation"];
-            JsonObject origin = aimTransform["origin"];
+            TpOperationTransform = GetTransform(animationProgress, aimTransform);
+        }
+        protected void SetAimFpTransformation(float animationProgress, ItemSlot weaponSlot, EntityAgent byEntity)
+        {
+            JsonObject aimTransform = weaponSlot.Itemstack.Collectible.Attributes["aimingTransform"]["fpTransform"];
+
+            byEntity.Controls.UsingHeldItemTransformAfter = GetTransform(animationProgress, aimTransform);
+        }
+        protected ModelTransform GetTransform(float animationProgress, JsonObject transform)
+        {
+            JsonObject translation = transform["translation"];
+            JsonObject rotation = transform["rotation"];
+            JsonObject origin = transform["origin"];
 
             ModelTransform modelTransform = new ModelTransform();
             modelTransform.EnsureDefaultValues();
             modelTransform.Translation.Set(animationProgress * translation["x"].AsFloat(), animationProgress * translation["y"].AsFloat(), animationProgress * translation["z"].AsFloat());
             modelTransform.Rotation.Set(animationProgress * rotation["x"].AsFloat(), animationProgress * rotation["y"].AsFloat(), animationProgress * rotation["z"].AsFloat());
             modelTransform.Origin.Set(animationProgress * origin["x"].AsFloat(), animationProgress * origin["y"].AsFloat(), animationProgress * origin["z"].AsFloat());
-            modelTransform.Scale = aimTransform["scale"].AsFloat(1);
-            TpOperationTransform = modelTransform;
+            modelTransform.Scale = transform["scale"].AsFloat(1);
+            return modelTransform;
         }
         protected void PlayAimAnimation(float secondsUsed, EntityAgent byEntity, ItemSlot weaponSlot)
         {
             float aimProgress = GameMath.Clamp(secondsUsed / weaponSlot.Itemstack.Collectible.Attributes["aimingDuration"].AsFloat(0), 0, 1);
-            Vec3f aimPosition = WeaponAimPositionDelta(weaponSlot) * aimProgress;
 
             byEntity.AnimManager.StartAnimation("bowaim");
             SetAimTpTransformation(aimProgress, weaponSlot);
 
             if (byEntity.World.Side == EnumAppSide.Client)
             {
-                PlayFpTransformation(byEntity, aimPosition, new Vec3f(0, 0, 0));
+                SetAimFpTransformation(aimProgress, weaponSlot, byEntity);
             }
         }
         protected void PlayOperationAnimation(float secondsUsed, int renderVariant, ItemSlot weaponSlot, EntityAgent byEntity, int currentState)
@@ -768,7 +774,7 @@ namespace MaltiezFirearms
             int locationIndex = (int)Math.Floor((decimal)(Rand.NextDouble() * (locations.Length - 1)));
 
             IPlayer byPlayer = null;
-            if (byEntity is EntityPlayer) byPlayer = byEntity.World.PlayerByUid(((EntityPlayer)byEntity).PlayerUID);
+            if (byEntity is EntityPlayer) byPlayer = byEntity.World.PlayerByUid((byEntity as EntityPlayer).PlayerUID);
             byEntity.World.PlaySoundAt(new AssetLocation(locations[locationIndex].AsString()), byEntity, byPlayer, false, sound["range"].AsFloat(32), sound["volume"].AsFloat(1));
         }
         protected void PlayOperationSound(int renderVariant, ItemSlot weaponSlot, EntityAgent byEntity)

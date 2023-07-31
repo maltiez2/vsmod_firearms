@@ -3,8 +3,8 @@
   "modid": "maltiezfirearms",
   "name": "Firearms (Alpha)",
   "authors": ["Maltiez"],
-  "description": "Early black powder firearms. Alpha-test version.",
-  "version": "0.1.3",
+  "description": "Black powder firearms. Alpha version.",
+  "version": "0.1.4",
   "dependencies": {
     "game": "1.18.0",
     "survival": "1.18.0"
