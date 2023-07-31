@@ -60,14 +60,14 @@
     "aimingTransform": {
       "fpTransform": {
         "translation": {
-          "x": -2.7,
-          "y": 0.7,
-          "z": 0.8
+          "x": -0.5,
+          "y": 0.3,
+          "z": 0.2
         },
         "rotation": {
-          "x": 80.0,
-          "y": 0.0,
-          "z": 10.0
+          "x": 0,
+          "y": 0,
+          "z": 0
         },
         "origin": {
           "x": 0,

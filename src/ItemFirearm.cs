@@ -152,6 +152,9 @@ namespace MaltiezFirearms
             byEntity.Attributes.SetBool("weaponFiring", true);
 
             Tuple<int, int, float> operationParameters = GetOperationParameters(weaponSlot, currentState);
+
+            if (operationParameters == null) return 0;
+
             int firingStage = weaponSlot.Itemstack.Collectible.Attributes["firingStage"].AsInt();
             int renderVariant = SetOperationVariant(secondsUsed, weaponSlot, byEntity, firingStage - 1);
             PlayOperationSound(renderVariant, weaponSlot, byEntity);
@@ -449,6 +452,12 @@ namespace MaltiezFirearms
         {
             JsonObject[] loadingStages = weaponSlot.Itemstack.Collectible.Attributes["operationStages"].AsArray();
 
+            if (currentState >= loadingStages.Length)
+            {
+                api.Logger.Error(" [GetOperationParameters] Weapon current state is higher then amount of operation stages it has. Weapon: " + weaponSlot.GetStackName() + ", state: " + currentState.ToString());
+                return null;
+            }
+
             int lastVariant = loadingStages[currentState]["lastVariant"].AsInt();
             int firstVariant = loadingStages[currentState]["firstVariant"].AsInt();
             float reloadTime = loadingStages[currentState]["lengthInSeconds"].AsFloat();
@@ -477,6 +486,8 @@ namespace MaltiezFirearms
         protected int SetOperationVariant(float secondsUsed, ItemSlot weaponSlot, EntityAgent byEntity, int currentState)
         {
             Tuple<int, int, float> operationParameters = GetOperationParameters(weaponSlot, currentState);
+
+            if (operationParameters == null) return 0;
 
             int firstVariant = operationParameters.Item1;
             int lastVariant = operationParameters.Item2;
@@ -682,6 +693,9 @@ namespace MaltiezFirearms
             int stopAnimation = loadingModelPosition["stop-animation"].AsInt();
             float currentDuration = GetAnimationTimeInSeconds(secondsUsed, renderVariant, startAnimation, stopAnimation, byEntity);
             float animationSpeed = GetAnimationSpeedInSecondsPerVariant(weaponSlot, currentState);
+
+            if (animationSpeed <= 0) return 1;
+            
             float totalDuration = (stopAnimation - startAnimation) * animationSpeed;
 
             if (startHold <= renderVariant && renderVariant < stopHold)
@@ -740,6 +754,8 @@ namespace MaltiezFirearms
         protected float GetAnimationSpeedInSecondsPerVariant(ItemSlot weaponSlot, int currentState)
         {
             Tuple<int, int, float> reloadParameters = GetOperationParameters(weaponSlot, currentState);
+
+            if (reloadParameters == null) return 0;
 
             int firstVariant = reloadParameters.Item1;
             int lastVariant = reloadParameters.Item2;

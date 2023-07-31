@@ -60,9 +60,9 @@
     "aimingTransform": {
       "fpTransform": {
         "translation": {
-          "x": -0.3,
-          "y": -0.3,
-          "z": 0.1
+          "x": -0.5,
+          "y": 0.5,
+          "z": 0
         },
         "rotation": {
           "x": 0.0,
