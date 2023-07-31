@@ -326,7 +326,7 @@
     "sounds": {
       "firing": {
         "volume": 1,
-        "range": 8,
+        "range": 64,
         "location": [
           "maltiezfirearms:sounds/pistol/pistol-fire-1",
           "maltiezfirearms:sounds/pistol/pistol-fire-2",

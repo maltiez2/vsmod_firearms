@@ -329,7 +329,7 @@
     "sounds": {
       "firing": {
         "volume": 0.8,
-        "range": 8,
+        "range": 128,
         "location": [
           "maltiezfirearms:sounds/musket/musket-fire-1",
           "maltiezfirearms:sounds/musket/musket-fire-2",

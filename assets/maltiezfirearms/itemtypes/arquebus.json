@@ -337,7 +337,7 @@
     "sounds": {
       "firing": {
         "volume": 4,
-        "range": 8,
+        "range": 64,
         "location": [
           "maltiezfirearms:sounds/arquebus/arquebus-fire-1",
           "maltiezfirearms:sounds/arquebus/arquebus-fire-2",

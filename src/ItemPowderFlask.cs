@@ -76,12 +76,7 @@ namespace MaltiezFirearms
             {
                 ItemStack content = Empty(slot);
 
-                if (content == null)
-                {
-
-                }
-
-                if (!byEntity.TryGiveItemStack(content))
+                if (content != null && !byEntity.TryGiveItemStack(content))
                 {
                     ChangeDurability(slot, powderToDurabilityRatio * content.StackSize);
                     slot.Itemstack.Attributes.SetItemstack(powderStackKey, content);
