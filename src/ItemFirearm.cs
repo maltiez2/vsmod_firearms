@@ -40,6 +40,8 @@ namespace MaltiezFirearms
 
         private ModelTransform TpOperationTransform = null;
 
+        private const bool debugLogging = false;
+
         static ItemFirearm()
         {
             SimpleParticleProperties fireSmoke = new SimpleParticleProperties(
@@ -88,7 +90,7 @@ namespace MaltiezFirearms
         {
             if (slot == null || slot.Itemstack == null || byEntity == null)
             {
-                api.Logger.Error("[Firearms] [InitInteraction] 'slot' or 'byEntity' is null");
+                if (debugLogging) api.Logger.Error("[Firearms] [InitInteraction] 'slot' or 'byEntity' is null");
                 return;
             }
             
@@ -103,7 +105,7 @@ namespace MaltiezFirearms
         {
             if (slot == null || slot.Itemstack == null || byEntity == null)
             {
-                api.Logger.Error("[Firearms] [InitInteraction] 'slot' or 'byEntity' is null");
+                if (debugLogging) api.Logger.Error("[Firearms] [InitInteraction] 'slot' or 'byEntity' is null");
                 return 0;
             }
 
@@ -134,7 +136,7 @@ namespace MaltiezFirearms
         {
             if (slot == null || slot.Itemstack == null || byEntity == null)
             {
-                api.Logger.Error("[Firearms] [InitInteraction] 'slot' or 'byEntity' is null");
+                if (debugLogging) api.Logger.Error("[Firearms] [InitInteraction] 'slot' or 'byEntity' is null");
                 return true;
             }
 
@@ -144,7 +146,7 @@ namespace MaltiezFirearms
         {
             if (slot == null || slot.Itemstack == null || byEntity == null)
             {
-                api.Logger.Error("[Firearms] [InitInteraction] 'slot' or 'byEntity' is null");
+                if (debugLogging) api.Logger.Error("[Firearms] [InitInteraction] 'slot' or 'byEntity' is null");
                 return;
             }
 
@@ -160,7 +162,7 @@ namespace MaltiezFirearms
         {
             if (slot == null || slot.Itemstack == null || byEntity == null)
             {
-                api.Logger.Error("[Firearms] [InitInteraction] 'slot' or 'byEntity' is null");
+                if (debugLogging) api.Logger.Error("[Firearms] [InitInteraction] 'slot' or 'byEntity' is null");
                 return true;
             }
 
@@ -175,7 +177,7 @@ namespace MaltiezFirearms
         {
             if (slot == null || slot.Itemstack == null || byEntity == null)
             {
-                api.Logger.Error("[Firearms] [InitInteraction] 'slot' or 'byEntity' is null");
+                if (debugLogging) api.Logger.Error("[Firearms] [InitInteraction] 'slot' or 'byEntity' is null");
                 return true;
             }
 
@@ -191,7 +193,7 @@ namespace MaltiezFirearms
             {
                 string weaponName = "null";
                 if (weaponSlot != null) weaponName = weaponSlot.GetStackName();
-                api.Logger.Warning("[Firearms] [" + method + "] Weapon current state is higher then amount of operation stages it has. Weapon: " + weaponName + ", state: " + currentState.ToString());
+                if (debugLogging) api.Logger.Warning("[Firearms] [" + method + "] Weapon current state is higher then amount of operation stages it has. Weapon: " + weaponName + ", state: " + currentState.ToString());
                 UnstuckState(weaponSlot);
                 return true;
             }

@@ -13,6 +13,8 @@ namespace MaltiezFirearms
 
         private int statesNumber = 0;
 
+        private const bool debugLogging = false;
+
 
         // Interaction
         public virtual void InitInteraction(int currentState, ItemSlot slot, EntityAgent byEntity, BlockSelection blockSel, EntitySelection entitySel, bool firstEvent)
@@ -219,7 +221,7 @@ namespace MaltiezFirearms
                 if (serverState != clientState)
                 {
                     slot.Itemstack.TempAttributes.SetInt(clientTemporaryState, serverState);
-                    api.Logger.Debug("ResyncStates to " + serverState);
+                    if (debugLogging) api.Logger.Debug("ResyncStates to " + serverState);
                 }
             }
         }
