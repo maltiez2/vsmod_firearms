@@ -181,10 +181,29 @@ namespace MaltiezFirearms
 
             return byEntity.Attributes.GetBool("weaponEmpty", false);
         }
+        
+        // Sync
+        protected bool CheckForDesyncProblem(ItemSlot weaponSlot, int currentState, string method)
+        {
+            JsonObject[] loadingStages = weaponSlot.Itemstack.Collectible.Attributes["operationStages"].AsArray();
+
+            if (currentState >= loadingStages.Length)
+            {
+                string weaponName = "null";
+                if (weaponSlot != null) weaponName = weaponSlot.GetStackName();
+                api.Logger.Warning("[Firearms] [" + method + "] Weapon current state is higher then amount of operation stages it has. Weapon: " + weaponName + ", state: " + currentState.ToString());
+                UnstuckState(weaponSlot);
+                return true;
+            }
+
+            return false;
+        }
 
         // Actions
         public int Attack(float secondsUsed, ItemSlot weaponSlot, EntityAgent byEntity, int currentState)
         {
+            if (CheckForDesyncProblem(weaponSlot, currentState, "Attack")) return 0;
+
             byEntity.Attributes.SetBool("weaponFiring", true);
 
             Tuple<int, int, float> operationParameters = GetOperationParameters(weaponSlot, currentState);
@@ -208,11 +227,15 @@ namespace MaltiezFirearms
         }
         public void Aim(float secondsUsed, ItemSlot weaponSlot, EntityAgent byEntity, int currentState)
         {
+            if (CheckForDesyncProblem(weaponSlot, currentState, "Aim")) return;
+
             (byEntity as EntityPlayer).Stats.Set("walkspeed", "maltiezfirearms", weaponSlot.Itemstack.Collectible.Attributes["aimingWalkspeed"].AsFloat(1), true);
             PlayAimAnimation(secondsUsed, byEntity, weaponSlot);
         }
         public int Reload(float secondsUsed, ItemSlot weaponSlot, EntityAgent byEntity, int currentState)
         {
+            if (CheckForDesyncProblem(weaponSlot, currentState, "Reload")) return 0;
+
             OperationRequirement unfulfilledRequirement = new OperationRequirement();
 
             if (!CanReload(weaponSlot, byEntity, currentState, ref unfulfilledRequirement))
@@ -245,6 +268,8 @@ namespace MaltiezFirearms
         // Firearm specific
         protected bool CanReload(ItemSlot weaponSlot, EntityAgent byEntity, int currentState, ref OperationRequirement unfulfilledRequirement)
         {
+            if (CheckForDesyncProblem(weaponSlot, currentState, "CanReload")) return false;
+
             List<OperationRequirement> requirements = GetRequiredAmmo(weaponSlot, currentState);
 
             foreach (OperationRequirement requirement in requirements)
@@ -315,8 +340,6 @@ namespace MaltiezFirearms
         }
         protected void SpawnProjectile(EntityAgent byEntity, Vec3d position, Vec3d velocity, float damage, ItemStack projectileStack)
         {
-            
-            
             EntityProperties type = byEntity.World.GetEntityType(projectileStack.Item.Code);
             var projectile = byEntity.World.ClassRegistry.CreateEntity(type) as EntityProjectile;
             projectile.FiredBy = byEntity;
@@ -488,14 +511,6 @@ namespace MaltiezFirearms
         {
             JsonObject[] loadingStages = weaponSlot.Itemstack.Collectible.Attributes["operationStages"].AsArray();
 
-            if (currentState >= loadingStages.Length)
-            {
-                string weaponName = "null";
-                if (weaponSlot != null) weaponName = weaponSlot.GetStackName();
-                api.Logger.Error("[Firearms] [GetOperationParameters] Weapon current state is higher then amount of operation stages it has. Weapon: " + weaponName + ", state: " + currentState.ToString());
-                return null;
-            }
-
             int lastVariant = loadingStages[currentState]["lastVariant"].AsInt();
             int firstVariant = loadingStages[currentState]["firstVariant"].AsInt();
             float reloadTime = loadingStages[currentState]["lengthInSeconds"].AsFloat();
@@ -505,14 +520,6 @@ namespace MaltiezFirearms
         protected void SetOperationWalkSpeed(ItemSlot weaponSlot, EntityAgent byEntity, int currentState)
         {
             JsonObject[] loadingStages = weaponSlot.Itemstack.Collectible.Attributes["operationStages"].AsArray();
-
-            if (currentState >= loadingStages.Length)
-            {
-                string weaponName = "null";
-                if (weaponSlot != null) weaponName = weaponSlot.GetStackName();
-                api.Logger.Error("[Firearms] [SetOperationWalkSpeed] Weapon current state is higher then amount of operation stages it has. Weapon: " + weaponName + ", state: " + currentState.ToString());
-                return;
-            }
 
             float walkSpeed = loadingStages[currentState]["walkspeed"].AsFloat();
             (byEntity as EntityPlayer).Stats.Set("walkspeed", "maltiezfirearms", walkSpeed, true);
@@ -563,6 +570,8 @@ namespace MaltiezFirearms
         }
         protected void SetReadyVariant(ItemSlot weaponSlot, EntityAgent byEntity, int currentState)
         {
+            if (CheckForDesyncProblem(weaponSlot, currentState, "SetReadyVariant")) return;
+
             if (IsLoaded(weaponSlot, currentState))
             {
                 int renderVariant = weaponSlot.Itemstack.Collectible.Attributes["readyVariant"].AsInt();
@@ -574,15 +583,6 @@ namespace MaltiezFirearms
             
             if (currentState == 0)
             {
-                SetRenderVariant(0, weaponSlot, byEntity);
-                return;
-            }
-
-            if (currentState >= loadingStages.Length)
-            {
-                string weaponName = "null";
-                if (weaponSlot != null) weaponName = weaponSlot.GetStackName();
-                api.Logger.Error("[Firearms] [SetReadyVariant] Weapon current state is higher then amount of operation stages it has. Weapon: " + weaponName + ", state: " + currentState.ToString());
                 SetRenderVariant(0, weaponSlot, byEntity);
                 return;
             }

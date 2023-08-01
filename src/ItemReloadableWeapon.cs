@@ -1,14 +1,18 @@
 ﻿using Vintagestory.API.Common;
+using Vintagestory.API.MathTools;
 using Vintagestory.API.Common.Entities;
 
 namespace MaltiezFirearms
 {
     public class ItemMultistateWeapon : Item
     {
-        public const string temporaryStateKey = "weaponTemporaryState";
+        public const string serverTemporaryStateKey = "weaponServerTemporaryState";
+        public const string clientTemporaryState = "weaponClientTemporaryState";
         public const string permanentStateKey = "weaponPermanentState";
-        public const bool debugLogging = false;
         public const bool markSlotsDirty = true;
+
+        private int statesNumber = 0;
+
 
         // Interaction
         public virtual void InitInteraction(int currentState, ItemSlot slot, EntityAgent byEntity, BlockSelection blockSel, EntitySelection entitySel, bool firstEvent)
@@ -55,11 +59,10 @@ namespace MaltiezFirearms
         {
             base.OnHeldInteractStart(slot, byEntity, blockSel, entitySel, firstEvent, ref handling);
             if (handling == EnumHandHandling.PreventDefault) return;
+            if (!SetStatesNumber(slot)) return;
 
-            if (debugLogging) api.Logger.Debug("OnHeldInteractStart - state: " + GetCurrentState(slot));
-
+            ResyncStates(slot);
             int currentState = GetCurrentState(slot);
-            
             InitInteraction(currentState, slot, byEntity, blockSel, entitySel, firstEvent);
 
             if (DoStartInterraction(slot, byEntity, blockSel, entitySel, firstEvent, currentState))
@@ -85,8 +88,6 @@ namespace MaltiezFirearms
 
             if (DoAdvancePermanentState(secondsUsed, slot, byEntity, blockSel, entitySel, previousTemporaryState))
             {
-                if (debugLogging) api.Logger.Debug("OnHeldInteractStep - AdvancePermanentState from: " + currentState);
-
                 AdvancePermanentState(slot);
             }
 
@@ -94,38 +95,30 @@ namespace MaltiezFirearms
         }
         public override bool OnHeldInteractCancel(float secondsUsed, ItemSlot slot, EntityAgent byEntity, BlockSelection blockSel, EntitySelection entitySel, EnumItemUseCancelReason cancelReason)
         {
-            if (debugLogging) api.Logger.Debug("OnHeldInteractCancel - state: " + GetCurrentState(slot));
-
             return CancelInteraction(GetCurrentState(slot), secondsUsed, slot, byEntity, blockSel, entitySel, cancelReason);
         }
         public override void OnHeldInteractStop(float secondsUsed, ItemSlot slot, EntityAgent byEntity, BlockSelection blockSel, EntitySelection entitySel)
         {
-            if (slot == null)
-            {
-                api.Logger.Debug("OnHeldInteractStop - slot is null");
-                return;
-            }
-
-            if (slot.Itemstack == null)
-            {
-                api.Logger.Debug("OnHeldInteractStop - slot is Itemstack");
-                return;
-            }
+            if (slot == null || slot.Itemstack == null) return;
 
             int currentState = GetCurrentState(slot);
 
-            if (debugLogging) api.Logger.Debug("OnHeldInteractStop - state: " + currentState);
-
             FinishInteraction(currentState, secondsUsed, slot, byEntity, blockSel, entitySel);
 
+
+            int resetedState = 0;
             if (DoResetState(secondsUsed, slot, byEntity, blockSel, entitySel, currentState))
             {
-                ResetPermanentState(slot);
+                ResetState(slot);
+            }
+            else
+            {
+                resetedState = ResetTemporaryState(slot);
             }
 
-            int resetedState = ResetTemporaryState(slot);
-
             ResetInteraction(resetedState, secondsUsed, slot, byEntity, blockSel, entitySel);
+
+            ResyncStates(slot);
         }
         
         // Other
@@ -139,47 +132,96 @@ namespace MaltiezFirearms
         }
 
         // Supplementary
-        private void SetPermanentState(ItemSlot slot, int state) // Not supported due to code rewrite
+        protected bool SetStatesNumber(ItemSlot slot)
         {
-            slot.Itemstack.Attributes.SetInt(permanentStateKey, state);
-            slot.MarkDirty();
+            if (slot == null || slot.Itemstack == null || slot.Itemstack.Collectible == null || slot.Itemstack.Collectible.Attributes == null) return false;
+            if (!slot.Itemstack.Collectible.Attributes.KeyExists("operationStages")) return false;
+            
+            statesNumber = slot.Itemstack.Collectible.Attributes["operationStages"].AsArray().Length;
+            return true;
         }
-        private void SetTemporaryState(ItemSlot slot, int state) // Not supported due to code rewrite
+
+        // State setters & getters
+        protected void UnstuckState(ItemSlot slot)
         {
-            slot.Itemstack.Attributes.SetInt(temporaryStateKey, state);
-            slot.MarkDirty();
+            int serverState = slot.Itemstack.Attributes.GetInt(serverTemporaryStateKey, 0);
+            slot.Itemstack.TempAttributes.SetInt(clientTemporaryState, serverState);
         }
+        
         private void AdvancePermanentState(ItemSlot slot)
         {
-            int state = slot.Itemstack.Attributes.GetAsInt(temporaryStateKey, 0); // TODO Possible race condition
+            int state = slot.Itemstack.Attributes.GetAsInt(GetTemporaryStateKey(), 0); // TODO Possible race condition
             slot.Itemstack.Attributes.SetInt(permanentStateKey, state);
             if (markSlotsDirty) slot.MarkDirty();
         }
         private void AdvanceTemporaryState(ItemSlot slot, int delta = 1)
         {
-            int state = slot.Itemstack.Attributes.GetAsInt(temporaryStateKey, 0) + delta; // TODO Possible race condition
-            slot.Itemstack.Attributes.SetInt(temporaryStateKey, state);
+            int state = GameMath.Min(GetTemporaryStateImpl(slot) + delta, statesNumber - 1); // TODO Possible race condition
+            SetTemporaryStateImpl(slot, state);
             if (markSlotsDirty) slot.MarkDirty();
         }
         private int ResetTemporaryState(ItemSlot slot)
         {
             int state = slot.Itemstack.Attributes.GetAsInt(permanentStateKey, 0); // TODO Possible race condition
-            slot.Itemstack.Attributes.SetInt(temporaryStateKey, state);
+            SetTemporaryStateImpl(slot, state);
             if (markSlotsDirty) slot.MarkDirty();
             return state;
         }
-        private void ResetPermanentState(ItemSlot slot)
+        private void ResetState(ItemSlot slot)
         {
             slot.Itemstack.Attributes.SetInt(permanentStateKey, 0);
+            SetTemporaryStateImpl(slot, 0);
             if (markSlotsDirty) slot.MarkDirty();
         }
         private int GetCurrentState(ItemSlot slot)
         {
-            return slot.Itemstack.Attributes.GetAsInt(temporaryStateKey, 0);
+            return GetTemporaryStateImpl(slot);
         }
-        private int GetCurrentPermanentState(ItemSlot slot)
+        private string GetTemporaryStateKey()
         {
-            return slot.Itemstack.Attributes.GetAsInt(permanentStateKey, 0);
+            if (api.Side == EnumAppSide.Server)
+            {
+                return serverTemporaryStateKey;
+            }
+            else
+            {
+                return clientTemporaryState;
+            }
+        }
+        private int GetTemporaryStateImpl(ItemSlot slot)
+        {
+            if (api.Side == EnumAppSide.Server)
+            {
+                return slot.Itemstack.Attributes.GetInt(serverTemporaryStateKey, 0);
+            }
+            else
+            {
+                return slot.Itemstack.TempAttributes.GetInt(clientTemporaryState, 0);
+            }
+        }
+        private void SetTemporaryStateImpl(ItemSlot slot, int state)
+        {
+            if (api.Side == EnumAppSide.Server)
+            {
+                slot.Itemstack.Attributes.SetInt(serverTemporaryStateKey, state);
+            }
+            else
+            {
+                slot.Itemstack.TempAttributes.SetInt(clientTemporaryState, state);
+            }
+        }
+        private void ResyncStates(ItemSlot slot)
+        {
+            if (api.Side == EnumAppSide.Client)
+            {
+                int serverState = slot.Itemstack.Attributes.GetInt(serverTemporaryStateKey, 0);
+                int clientState = slot.Itemstack.TempAttributes.GetInt(clientTemporaryState, 0);
+                if (serverState != clientState)
+                {
+                    slot.Itemstack.TempAttributes.SetInt(clientTemporaryState, serverState);
+                    api.Logger.Debug("ResyncStates to " + serverState);
+                }
+            }
         }
     }
 }
