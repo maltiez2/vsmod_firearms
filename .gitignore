@@ -4,10 +4,6 @@
 ## Get latest from https://github.com/github/gitignore/blob/main/VisualStudio.gitignore
 
 # Custom
-app.config
-packages.config
-*.csproj
-*.csproj.user
 *.ogg
 
 # User-specific files
