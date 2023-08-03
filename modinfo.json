@@ -1,0 +1,12 @@
+{
+  "type": "code",
+  "modid": "maltiezfirearms",
+  "name": "Firearms (Alpha)",
+  "authors": ["Maltiez"],
+  "description": "Black powder firearms. Alpha version.",
+  "version": "0.1.8",
+  "dependencies": {
+    "game": "1.18.0",
+    "survival": "1.18.0"
+  }
+}
