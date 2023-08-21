@@ -7,10 +7,7 @@
 	"textureHeight": 16,
 	"textureSizes": {
 	},
-	"textures": {
-		"ropedcloth": "game:block/cloth/ropedcloth",
-		"ember": "game:block/coal/ember"
-	},
+	"textures": {},
 	"elements": [
 		{
 			"name": "Match",

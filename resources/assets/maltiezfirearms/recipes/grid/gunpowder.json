@@ -1,15 +1,12 @@
 [
   {
-		ingredientPattern: "XSC",
+		ingredientPattern: "P",
 		ingredients: {
-			"S": { type: "item", code: "game:saltpeter", quantity: 6 },
-			"X": { type: "item", code: "game:powderedsulfur", quantity: 2 },
-			"C": { type: "item", code: "game:*coal", quantity: 2}
+			"P": { type: "item", code: "game:blastingpowder", quantity: 3 },
 		},
-		name: "blastingpowder",
-		width: 3,
+		width: 1,
 		height: 1,
 		shapeless: true,
-		output: { type: "item", code: "maltiezfirearms:gunpowder", quantity: 8  }
+		output: { type: "item", code: "maltiezfirearms:gunpowder", quantity: 1  }
 	}
 ]

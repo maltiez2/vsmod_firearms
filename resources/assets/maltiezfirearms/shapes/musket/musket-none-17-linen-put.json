@@ -8,15 +8,7 @@
 	"textureHeight": 16,
 	"textureSizes": {
 	},
-	"textures": {
-		"charcoal": "game:block/coal/charcoal",
-		"linen": "game:block/linen",
-		"brass": "game:block/metal/plate/brass",
-		"iron": "game:block/metal/plate/iron",
-		"steel": "game:block/metal/plate/steel",
-		"flint": "game:block/stone/flint",
-		"kapok": "game:block/wood/debarked/oak"
-	},
+	"textures": {},
 	"elements": [
 		{
 			"name": "Musket",

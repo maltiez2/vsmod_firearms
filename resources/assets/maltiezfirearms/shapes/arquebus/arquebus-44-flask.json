@@ -7,13 +7,7 @@
 	"textureHeight": 16,
 	"textureSizes": {
 	},
-	"textures": {
-		"brass": "game:block/metal/plate/brass",
-		"iron": "game:block/metal/plate/iron",
-		"lead": "game:block/metal/plate/lead",
-		"kapok": "game:block/wood/debarked/oak",
-		"oak": "game:block/wood/debarked/oak"
-	},
+	"textures": {},
 	"elements": [
 		{
 			"name": "Arquebus_origin",

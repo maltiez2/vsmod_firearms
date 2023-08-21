@@ -574,9 +574,9 @@
   },
   "fpHandTransform": {
     "translation": {
-      "x": 0.5,
-      "y": 0.4,
-      "z": 0.6
+      "x": 0.3,
+      "y": 0.5,
+      "z": 0.5
     },
     "rotation": {
       "x": 0,

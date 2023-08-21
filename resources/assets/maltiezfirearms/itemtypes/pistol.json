@@ -60,7 +60,7 @@
     "aimingTransform": {
       "fpTransform": {
         "translation": {
-          "x": -0.5,
+          "x": -0.2,
           "y": 0.3,
           "z": 0.2
         },
@@ -78,9 +78,9 @@
       },
       "tpTransform": {
         "translation": {
-          "x": 1.1,
-          "y": -1.1,
-          "z": -0.25
+          "x": 0.0,
+          "y": -0.0,
+          "z": -0.0
         },
         "rotation": {
           "x": 105.0,
@@ -172,9 +172,9 @@
     "operationStages": [
       {
         "name": "reload",
-        "lengthInSeconds": 4,
+        "lengthInSeconds": 4.0,
         "firstVariant": 4,
-        "lastVariant": 24,
+        "lastVariant": 25,
         "walkspeed": -0.2,
         "interruptInteraction": false,
         "advanceReloadState": true,
@@ -196,9 +196,9 @@
       },
       {
         "name": "priming",
-        "lengthInSeconds": 2,
-        "firstVariant": 25,
-        "lastVariant": 35,
+        "lengthInSeconds": 2.0,
+        "firstVariant": 26,
+        "lastVariant": 41,
         "walkspeed": -0.2,
         "interruptInteraction": false,
         "advanceReloadState": true,
@@ -218,36 +218,35 @@
       {
         "name": "firing",
         "lengthInSeconds": 0.1,
-        "firstVariant": 36,
-        "lastVariant": 37,
+        "firstVariant": 42,
+        "lastVariant": 43,
         "interruptInteraction": false,
         "advanceReloadState": false,
         "requirements": []
       }
     ],
     "operationSounds": {
-      "8": "powder-pour",
-      "11": "ramrod-get",
-      "13": "ramrod-push-once",
+      "7": "powder-pour",
+      "14": "ramrod-get",
       "17": "ramrod-push-multiple",
-      "21": "ramrod-putback",
-      "26": "flint-raise",
-      "27": "powder-prime",
-      "33": "cocked",
-      "35": "flint-set",
-      "36": "firing"
+      "22": "ramrod-putback",
+      "27": "flint-raise",
+      "30": "powder-prime",
+      "37": "cocked",
+      "40": "flint-set",
+      "43": "firing"
     },
     "operationModelTransformations": [
       {
         "start-animation": 4,
-        "start-hold": 6,
-        "stop-hold": 22,
-        "stop-animation": 24,
+        "start-hold": 5,
+        "stop-hold": 24,
+        "stop-animation": 25,
         "fpTransform": {
           "translation": {
             "x": -2.3,
-            "y": 0.7,
-            "z": 0.8
+            "y": -1.7,
+            "z": -0.8
           },
           "rotation": {
             "x": 80.0,
@@ -263,8 +262,8 @@
         },
         "tpTransform": {
           "translation": {
-            "x": 0.5,
-            "y": 1.5,
+            "x": -0.5,
+            "y": 0.5,
             "z": 0.5
           },
           "rotation": {
@@ -281,18 +280,18 @@
         }
       },
       {
-        "start-animation": 25,
-        "start-hold": 26,
-        "stop-hold": 31,
-        "stop-animation": 32,
+        "start-animation": 26,
+        "start-hold": 27,
+        "stop-hold": 40,
+        "stop-animation": 41,
         "fpTransform": {
           "translation": {
-            "x": -0.3,
-            "y": 0.2,
+            "x": 0.0,
+            "y": 0.0,
             "z": 0.0
           },
           "rotation": {
-            "x": 30.0,
+            "x": 15.0,
             "y": 0.0,
             "z": 20.0
           },
@@ -401,9 +400,9 @@
 
     "toolrackTransform": {
       "translation": {
-        "x": -0.35,
-        "y": 1.2,
-        "z": 0.7
+        "x": 1.05,
+        "y": 0.55,
+        "z": 0.5
       },
       "rotation": {
         "x": -1,
@@ -419,12 +418,12 @@
     },
     "groundStorageTransform": {
       "translation": {
-        "x": 0.05,
-        "y": -0.4,
-        "z": 0.05
+        "x": 0.65,
+        "y": 0.04,
+        "z": 0.65
       },
       "rotation": {
-        "x": -4,
+        "x": 0,
         "y": 50,
         "z": 90
       },
@@ -434,69 +433,66 @@
         "z": 0
       },
       "scale": 0.81
-    },
-    "thirdPersonHandTransform": {
-      "translation": {
-        "x": -1.1,
-        "y": 0,
-        "z": 0.5
-      },
-      "rotation": {
-        "x": 0,
-        "y": -90,
-        "z": 0
-      },
-      "origin": {
-        "x": 0,
-        "y": 0,
-        "z": 0
-      },
-      "scale": 0.8
     }
   },
 
   "textures": {
-    "linen": { "base": "game:block/linen" }
+    "linen": { "base": "game:block/linen" },
+    "brass": { "base": "game:block/metal/plate/brass" },
+    "tinbronze": { "base": "game:block/metal/plate/tinbronze" },
+    "lead1": { "base": "game:block/metal/sheet-plain/lead1" },
+    "rusty-iron2": { "base": "game:block/metal/tarnished/rusty-iron2" },
+    "flint": { "base": "game:block/stone/flint" },
+    "oak": { "base": "game:block/wood/debarked/oak" }
   },
   "shape": {
     "base": "maltiezfirearms:pistol/pistol",
     "alternates": [
-      { "base": "maltiezfirearms:pistol/pistol-02-fired" },
-      { "base": "maltiezfirearms:pistol/pistol-03-ready" },
-      { "base": "maltiezfirearms:pistol/pistol-04-0-0" },
-      { "base": "maltiezfirearms:pistol/pistol-05-0-1" },
-      { "base": "maltiezfirearms:pistol/pistol-06-0-2" },
-      { "base": "maltiezfirearms:pistol/pistol-07-0-3" },
-      { "base": "maltiezfirearms:pistol/pistol-08-0-4" },
-      { "base": "maltiezfirearms:pistol/pistol-09-0-5" },
-      { "base": "maltiezfirearms:pistol/pistol-10-0-6" },
-      { "base": "maltiezfirearms:pistol/pistol-11-0-7" },
-      { "base": "maltiezfirearms:pistol/pistol-12-0-8" },
-      { "base": "maltiezfirearms:pistol/pistol-13-0-9" },
-      { "base": "maltiezfirearms:pistol/pistol-14-0-10" },
-      { "base": "maltiezfirearms:pistol/pistol-15-0-11" },
-      { "base": "maltiezfirearms:pistol/pistol-16-0-12" },
-      { "base": "maltiezfirearms:pistol/pistol-17-0-13" },
-      { "base": "maltiezfirearms:pistol/pistol-18-0-14" },
-      { "base": "maltiezfirearms:pistol/pistol-19-0-15" },
-      { "base": "maltiezfirearms:pistol/pistol-20-0-16" },
-      { "base": "maltiezfirearms:pistol/pistol-21-0-17" },
-      { "base": "maltiezfirearms:pistol/pistol-22-0-18" },
-      { "base": "maltiezfirearms:pistol/pistol-23-0-19" },
-      { "base": "maltiezfirearms:pistol/pistol-24-0-20" },
-      { "base": "maltiezfirearms:pistol/pistol-25-1-0" },
-      { "base": "maltiezfirearms:pistol/pistol-26-1-1" },
-      { "base": "maltiezfirearms:pistol/pistol-27-1-2" },
-      { "base": "maltiezfirearms:pistol/pistol-28-1-3" },
-      { "base": "maltiezfirearms:pistol/pistol-29-1-4" },
-      { "base": "maltiezfirearms:pistol/pistol-30-1-5" },
-      { "base": "maltiezfirearms:pistol/pistol-31-1-6" },
-      { "base": "maltiezfirearms:pistol/pistol-32-2-0" },
-      { "base": "maltiezfirearms:pistol/pistol-33-2-1" },
-      { "base": "maltiezfirearms:pistol/pistol-34-2-2" },
-      { "base": "maltiezfirearms:pistol/pistol-35-2-3" },
-      { "base": "maltiezfirearms:pistol/pistol-35-2-3" },
-      { "base": "maltiezfirearms:pistol/pistol-02-fired" }
+      { "base": "maltiezfirearms:pistol/pistol-02-fired" }, // 2
+      { "base": "maltiezfirearms:pistol/pistol-03-ready" }, // 3
+
+      { "base": "maltiezfirearms:pistol/pistol-04-load" }, // 4
+      { "base": "maltiezfirearms:pistol/pistol-a01-flask" }, // 5
+      { "base": "maltiezfirearms:pistol/pistol-a02-flask-tilt" },
+      { "base": "maltiezfirearms:pistol/pistol-a03-flask-pour" },
+      { "base": "maltiezfirearms:pistol/pistol-a02-flask-tilt" },
+      { "base": "maltiezfirearms:pistol/pistol-a01-flask" },
+      { "base": "maltiezfirearms:pistol/pistol-a04-linen-take" }, // 10
+      { "base": "maltiezfirearms:pistol/pistol-a05-linen-put" },
+      { "base": "maltiezfirearms:pistol/pistol-a06-bullet-take" },
+      { "base": "maltiezfirearms:pistol/pistol-a07-bullet-put" },
+      { "base": "maltiezfirearms:pistol/pistol-a08-bullet-push" },
+      { "base": "maltiezfirearms:pistol/pistol-a09-ramrod-take" }, // 15
+      { "base": "maltiezfirearms:pistol/pistol-a10-ramrod-turn" },
+      { "base": "maltiezfirearms:pistol/pistol-a11-ramrod-align" },
+      { "base": "maltiezfirearms:pistol/pistol-a13-ramrod-push-2" },
+      { "base": "maltiezfirearms:pistol/pistol-a12-ramrod-push" },
+      { "base": "maltiezfirearms:pistol/pistol-a13-ramrod-push-2" }, // 20
+      { "base": "maltiezfirearms:pistol/pistol-a14-ramrod-pull" },
+      { "base": "maltiezfirearms:pistol/pistol-a15-ramrod-turn" },
+      { "base": "maltiezfirearms:pistol/pistol-a16-ramrod-putback" },
+      { "base": "maltiezfirearms:pistol/pistol-04-load" },
+      { "base": "maltiezfirearms:pistol/pistol-04-load" }, // 25
+
+      { "base": "maltiezfirearms:pistol/pistol-04-load" }, // 26
+      { "base": "maltiezfirearms:pistol/pistol-b01-liftflint" },
+      { "base": "maltiezfirearms:pistol/pistol-b02-flask-take" },
+      { "base": "maltiezfirearms:pistol/pistol-b03-flask-tilt" },
+      { "base": "maltiezfirearms:pistol/pistol-b04-flask-pour" },
+      { "base": "maltiezfirearms:pistol/pistol-b03-flask-tilt" }, // 31
+      { "base": "maltiezfirearms:pistol/pistol-b02-flask-take" },
+      { "base": "maltiezfirearms:pistol/pistol-b05-pan-close" },
+      { "base": "maltiezfirearms:pistol/pistol-b06-lever-take" },
+      { "base": "maltiezfirearms:pistol/pistol-b07-lever-attach" },
+      { "base": "maltiezfirearms:pistol/pistol-b08-lever-turn-1" }, // 36
+      { "base": "maltiezfirearms:pistol/pistol-b09-lever-turn-2" },
+      { "base": "maltiezfirearms:pistol/pistol-b10-lever-turn-3" },
+      { "base": "maltiezfirearms:pistol/pistol-b11-lever-detach" },
+      { "base": "maltiezfirearms:pistol/pistol-b12-lowerflint" },
+      { "base": "maltiezfirearms:pistol/pistol-03-ready" }, // 41
+
+      { "base": "maltiezfirearms:pistol/pistol-03-ready" }, // 42
+      { "base": "maltiezfirearms:pistol/pistol-02-fired" } // 43
     ]
   },
   "guiTransform": {
@@ -506,14 +502,14 @@
       "z": 0
     },
     "rotation": {
-      "x": -37,
-      "y": 34,
+      "x": -27,
+      "y": 30,
       "z": -180
     },
     "origin": {
-      "x": -0.1,
-      "y": -0.7,
-      "z": 0
+      "x": -0.4,
+      "y": -0.4,
+      "z": -0.9
     },
     "scaleXyz": {
       "x": -2.38,
@@ -523,9 +519,9 @@
   },
   "fpHandTransform": {
     "translation": {
-      "x": -0.5,
-      "y": 0.4,
-      "z": -1.2
+      "x": 0.2,
+      "y": 0.6,
+      "z": 0.9
     },
     "rotation": {
       "x": 0,
@@ -541,9 +537,9 @@
   },
   "tpHandTransform": {
     "translation": {
-      "x": -1.1,
+      "x": -0.1,
       "y": 0,
-      "z": 0.5
+      "z": -0
     },
     "rotation": {
       "x": 0,
@@ -560,7 +556,7 @@
   "groundTransform": {
     "translation": {
       "x": 0,
-      "y": -0.45,
+      "y": 0.05,
       "z": 0
     },
     "rotation": {
