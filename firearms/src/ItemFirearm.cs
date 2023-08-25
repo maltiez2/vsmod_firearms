@@ -105,7 +105,7 @@ namespace MaltiezFirearms
         {
             if (slot == null || slot.Itemstack == null || byEntity == null)
             {
-                if (debugLogging) api.Logger.Error("[Firearms] [InitInteraction] 'slot' or 'byEntity' is null");
+                if (debugLogging) api.Logger.Error("[Firearms] [StepInteraction] 'slot' or 'byEntity' is null");
                 return 0;
             }
 
@@ -136,7 +136,7 @@ namespace MaltiezFirearms
         {
             if (slot == null || slot.Itemstack == null || byEntity == null)
             {
-                if (debugLogging) api.Logger.Error("[Firearms] [InitInteraction] 'slot' or 'byEntity' is null");
+                if (debugLogging) api.Logger.Error("[Firearms] [CancelInteraction] 'slot' or 'byEntity' is null");
                 return true;
             }
 
@@ -146,7 +146,7 @@ namespace MaltiezFirearms
         {
             if (slot == null || slot.Itemstack == null || byEntity == null)
             {
-                if (debugLogging) api.Logger.Error("[Firearms] [InitInteraction] 'slot' or 'byEntity' is null");
+                if (debugLogging) api.Logger.Error("[Firearms] [ResetInteraction] 'slot' or 'byEntity' is null");
                 return;
             }
 
@@ -417,22 +417,14 @@ namespace MaltiezFirearms
 
             JsonObject[] requirements = loadingStages[currentState]["requirements"].AsArray();
 
-            List<OperationRequirement> output = new List<OperationRequirement>(requirements.Length);
+            List<OperationRequirement> output = new List<OperationRequirement>();
 
             for (int index = 0; index < requirements.Length; index++)
             {
                 string code = requirements[index]["code"].AsString();
-                int amount = requirements[index]["amount"].AsInt();
-                int durability = -1;
-                if (requirements[index].KeyExists("durability"))
-                {
-                    durability = requirements[index]["durability"].AsInt(-1);
-                }
-                int offHand = -1;
-                if (requirements[index].KeyExists("offhand"))
-                {
-                    offHand = requirements[index]["offhand"].AsInt(-1);
-                }
+                int amount = requirements[index]["amount"].AsInt(1);
+                int durability = requirements[index]["durability"].AsInt(-1);
+                int offHand = requirements[index]["offhand"].AsInt(-1);
 
                 output.Add(new OperationRequirement(code, amount, durability, offHand));
             }

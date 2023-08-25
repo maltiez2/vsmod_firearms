@@ -1,6 +1,8 @@
 ﻿using Vintagestory.API.Common;
 using Vintagestory.API.MathTools;
 using Vintagestory.API.Common.Entities;
+using Vintagestory.Server;
+using Vintagestory.API.Server;
 
 namespace MaltiezFirearms
 {
@@ -71,6 +73,8 @@ namespace MaltiezFirearms
             {
                 handling = EnumHandHandling.PreventDefault;
             }
+
+            api.Logger.Warning("[Firearms] [OnHeldInteractStart] set slot");
         }
         public override bool OnHeldInteractStep(float secondsUsed, ItemSlot slot, EntityAgent byEntity, BlockSelection blockSel, EntitySelection entitySel)
         {
@@ -97,7 +101,12 @@ namespace MaltiezFirearms
         }
         public override bool OnHeldInteractCancel(float secondsUsed, ItemSlot slot, EntityAgent byEntity, BlockSelection blockSel, EntitySelection entitySel, EnumItemUseCancelReason cancelReason)
         {
-            return CancelInteraction(GetCurrentState(slot), secondsUsed, slot, byEntity, blockSel, entitySel, cancelReason);
+            bool specialCase = api.Side == EnumAppSide.Server && cancelReason == EnumItemUseCancelReason.ChangeSlot;
+            bool cancelReturn = CancelInteraction(GetCurrentState(slot), secondsUsed, slot, byEntity, blockSel, entitySel, cancelReason);
+
+            if (specialCase) OnHeldInteractStop(secondsUsed, slot, byEntity, blockSel, entitySel);
+
+            return cancelReturn;
         }
         public override void OnHeldInteractStop(float secondsUsed, ItemSlot slot, EntityAgent byEntity, BlockSelection blockSel, EntitySelection entitySel)
         {
@@ -106,7 +115,6 @@ namespace MaltiezFirearms
             int currentState = GetCurrentState(slot);
 
             FinishInteraction(currentState, secondsUsed, slot, byEntity, blockSel, entitySel);
-
 
             int resetedState = 0;
             if (DoResetState(secondsUsed, slot, byEntity, blockSel, entitySel, currentState))
