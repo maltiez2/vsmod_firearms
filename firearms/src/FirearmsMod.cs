@@ -1,5 +1,4 @@
-﻿using firearms.src;
-using HarmonyLib;
+﻿using HarmonyLib;
 using ProtoBuf;
 using System.Collections.Generic;
 using Vintagestory.API.Client;

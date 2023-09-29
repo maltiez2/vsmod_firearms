@@ -1,0 +1,71 @@
+{
+	"code": "standNetwork",
+	"class": "NetworkStand",
+	"maxstacksize": 64,
+	"storageFlags": 513,
+	"shape": { "base": "maltiezfirearms:bullet" },
+	"attributes": {
+		
+	},
+
+	"creativeinventory": {
+		"maltiezfirearms": [ "*" ]
+	},
+	"guiTransform": {
+		"rotation": {
+			"x": 66,
+			"y": 0,
+			"z": 44
+		},
+		"origin": {
+			"x": 0.6,
+			"y": 0.6,
+			"z": 0.6
+		},
+		"scale": 4
+	},
+	"fpHandTransform": {
+		"translation": {
+			"x": 0.35,
+			"y": 0,
+			"z": 0
+		},
+		"rotation": {
+			"x": 87,
+			"y": 90,
+			"z": -30
+		},
+		"scale": 1.14
+	},
+	"fpHandTransform": {
+		"translation": {
+			"x": 0.15,
+			"y": 0,
+			"z": 0
+		},
+		"rotation": {
+			"x": 119,
+			"y": 90,
+			"z": -30
+		},
+		"scale": 1.14
+	},
+	"groundTransform": {
+		"translation": {
+			"x": 0,
+			"y": 0,
+			"z": 0
+		},
+		"rotation": {
+			"x": 0,
+			"y": 0,
+			"z": 0
+		},
+		"origin": {
+			"x": 0.5,
+			"y": 0.47,
+			"z": 0.5
+		},
+		"scale": 1.44
+	}
+}

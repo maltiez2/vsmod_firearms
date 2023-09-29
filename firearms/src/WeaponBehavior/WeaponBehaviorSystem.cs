@@ -1,5 +1,4 @@
-﻿using firearms.src;
-using ProtoBuf;
+﻿using ProtoBuf;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,7 +13,6 @@ namespace MaltiezFirearms.WeaponBehavior
 {
     public class WeaponBehaviorSystem : ModSystem, IFactoryProvider
     {
-        private ICoreAPI mApi;
         private IFactory<IOperation> mOperationFactory;
         private IFactory<IWeaponSystem> mSystemFactory;
         private IFactory<IInput> mInputFactory;
@@ -24,7 +22,6 @@ namespace MaltiezFirearms.WeaponBehavior
         public override void Start(ICoreAPI api)
         {
             base.Start(api);
-            mApi = api;
 
             api.RegisterCollectibleBehaviorClass("maltiezfirearms.weapon", typeof(WeaponBehaviorPrototype));
 
@@ -36,7 +33,7 @@ namespace MaltiezFirearms.WeaponBehavior
             mSystemFactory.RegisterType<WeaponSystemPrototype>("TestSystem");
             mInputFactory.RegisterType<InputPrototype>("TestInput");
 
-            mInputIterceptor = new InputIntercepterPrototype(mApi);
+            mInputIterceptor = new InputIntercepterPrototype(api);
         }
 
         public IFactory<IOperation> GetOperationFactory()

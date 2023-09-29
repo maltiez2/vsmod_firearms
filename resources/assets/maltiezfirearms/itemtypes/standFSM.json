@@ -1,0 +1,124 @@
+{
+	"code": "standFSM",
+	"class": "Item",
+
+	"behaviors": [
+		{
+			"name": "maltiezfirearms.weapon",
+			"properties": {
+				"initialState": "A",
+				"systems": [
+					{
+						"code": "testSystem",
+						"class": "TestSystem",
+						"atributes": []
+					}
+				],
+				"operations": [
+					{
+						"code": "testOperation",
+						"class": "TestOperation",
+						"atributes": []
+					}
+				],
+				"inputs": [
+					{
+						"code": "testInput",
+						"class": "TestInput",
+						"atributes": []
+					}
+				]
+			}
+		}
+	],
+
+	"attributes": {
+		"inputTypes": {
+			"reloadHotkey": {
+				"class": "Hotkey",
+				"attributes": {
+					"key": "R",
+					"type": "hold"
+				}
+			}
+		},
+		"systems": {
+			"magazine": {
+				"class": "SystemMagazine",
+				"attributes": {
+					"capcity": 10,
+					"ammoTypes": [
+						"bullet"
+					]
+				}
+			},
+			"sounds": {
+				"class": "SystemSound",
+				"attributes": {
+					"sounds": {
+						"reload": "path/to/sound"
+					}
+				}
+			}
+		},
+		"operations": {
+			"reload": {
+				"class": "OperationReload",
+				"input": "reloadHotkey",
+				"transitions": {
+					"unloaded": {
+						"successState": "loaded",
+						"failState": "unloaded", // no bullets in inventory
+						"cancelState": "unloaded",
+						"systems": [
+							{
+								"type": "magazine",
+								"action": "load",
+								"attributes": {
+									"amount": 10,
+									"ammoTypes": [
+										"bullet"
+									]
+								}
+							},
+							{
+								"type": "sounds",
+								"action": "play",
+								"attributes": {
+									"sound": "reload",
+									"delay_ms": 10
+								}
+							}
+						]
+					},
+					"jammed": {
+						"successState": "loaded",
+						"failState": "unloaded", // magazine is empty
+						"cancelState": "jammed",
+						"systems": [
+							{
+								"type": "magazine",
+								"action": "unload",
+								"attributes": {
+									"amount": 1
+								}
+							}
+						]
+					}
+				}
+			}
+		},
+		"FiniteStateMachine": {
+			"states": [
+				"loaded",
+				"unloaded",
+				"jammed"
+			],
+			"initialState": "unloaded"
+		}
+	},
+
+	"creativeinventory": {
+		"maltiezfirearms": [ "*" ]
+	}
+}

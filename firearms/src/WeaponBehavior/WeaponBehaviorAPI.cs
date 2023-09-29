@@ -54,7 +54,7 @@ namespace MaltiezFirearms.WeaponBehavior
         string GetKey();
     }
     
-    public interface IFactory<ProducedClass>
+    public interface IFactory<ProducedClass> where ProducedClass : IFactoryObject
     {
         Type GetType(string name);
         void RegisterType<ObjectClass>(string name) where ObjectClass : ProducedClass, new();

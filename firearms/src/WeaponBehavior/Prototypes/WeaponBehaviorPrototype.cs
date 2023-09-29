@@ -23,6 +23,7 @@ namespace MaltiezFirearms.WeaponBehavior.Prototypes
         private IFactoryProvider mFactories;
         private IFiniteStateMachine mFsm;
         private IInputInterceptor mInputIterceptor;
+        private JsonObject mProperties;
 
         public override void OnLoaded(ICoreAPI api)
         {
@@ -31,22 +32,24 @@ namespace MaltiezFirearms.WeaponBehavior.Prototypes
             mApi = api;
             mFactories = mApi.ModLoader.GetModSystem<WeaponBehaviorSystem>();
             mInputIterceptor = mApi.ModLoader.GetModSystem<WeaponBehaviorSystem>().GetInputInterceptor();
+
+            IBehaviourFormat mParser = new BehaviourFormatPrototype();
+            mParser.ParseDefinition(mFactories.GetOperationFactory(), mFactories.GetSystemFactory(), mFactories.GetInputFactory(), mProperties, collObj);
+
+            mFsm = new FsmPrototype();
+            mFsm.Init(mApi, mParser.GetOperations(), mParser.GetSystems(), mParser.GetInputs(), mProperties, collObj);
+
+            foreach (var inputEntry in mParser.GetInputs())
+            {
+                mInputIterceptor.RegisterInput(inputEntry.Value, mFsm.Process, collObj);
+            }
         }
 
         public override void Initialize(JsonObject properties)
         {
             base.Initialize(properties);
 
-            IBehaviourFormat mParser = new BehaviourFormatPrototype();
-            mParser.ParseDefinition(mFactories.GetOperationFactory(), mFactories.GetSystemFactory(), mFactories.GetInputFactory(), properties, collObj);
-
-            mFsm = new FsmPrototype();
-            mFsm.Init(mApi, mParser.GetOperations(), mParser.GetSystems(), mParser.GetInputs(), properties, collObj);
-
-            foreach (var inputEntry in mParser.GetInputs())
-            {
-                mInputIterceptor.RegisterInput(inputEntry.Value, mFsm.Process, collObj);
-            }
+            mProperties = properties;
         }
     }
 }

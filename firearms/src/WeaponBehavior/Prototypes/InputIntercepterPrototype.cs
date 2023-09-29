@@ -47,7 +47,7 @@ namespace MaltiezFirearms.WeaponBehavior.Prototypes
 
         public bool ClientHotKeyProxyHandler(int inputIndex)
         {
-            EntityAgent player = cApi.World.Player as EntityAgent;
+            EntityAgent player = cApi.World.Player.Entity;
 
             mPacketSender.SendPacket(inputIndex);
 
@@ -56,7 +56,7 @@ namespace MaltiezFirearms.WeaponBehavior.Prototypes
 
         public void ServerHotKeyProxyHandler(int inputIndex, IServerPlayer serverPlayer)
         {
-            EntityAgent player = serverPlayer as EntityAgent;
+            EntityAgent player = serverPlayer.Entity;
 
             HandlerCaller(inputIndex, player);
         }
