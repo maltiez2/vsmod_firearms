@@ -55,4 +55,8 @@
     </Content>
 </ItemGroup>
 
+<ItemGroup>
+  <Folder Include="src\legacy\" />
+</ItemGroup>
+
 </Project>
