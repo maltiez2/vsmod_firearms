@@ -1,32 +1,35 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using Vintagestory.API.Common;
 using Vintagestory.API.Datastructures;
 using static MaltiezFirearms.WeaponBehavior.IInput;
+using static MaltiezFirearms.WeaponBehavior.IKeyInput;
 
 namespace MaltiezFirearms.WeaponBehavior.Prototypes
 {
-    public class InputPrototype : IInput
+    public class InputPrototype : UniqueIdFactoryObject, IKeyInput
     {
-        public void Init(TreeAttribute definition, CollectibleObject colelctible)
+        public override void Init(JsonObject definition, CollectibleObject colelctible)
         {
 
+        }
+
+        public KeyEventType GetEventType()
+        {
+            return KeyEventType.KeyDown;
         }
 
         public string GetName()
         {
             return "testInput";
         }
-        public InputType GetInputType()
+        public KeyPressModifiers GetIfAltCtrlShiftPressed()
         {
-            return InputType.CLICK;
-        }
-        public Tuple<bool, bool, bool> GetIfAltCtrlShiftPressed()
-        {
-            return Tuple.Create(false, false, false);
+            return new (false, false, false);
         }
         public string GetKey()
         {

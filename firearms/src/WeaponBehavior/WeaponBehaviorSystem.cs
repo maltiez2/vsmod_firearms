@@ -1,13 +1,4 @@
-﻿using ProtoBuf;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Vintagestory.API.Client;
-using Vintagestory.API.Common;
-using Vintagestory.API.Server;
-using MaltiezFirearms.WeaponBehavior.Prototypes;
+﻿using Vintagestory.API.Common;
 
 namespace MaltiezFirearms.WeaponBehavior
 {
@@ -16,24 +7,42 @@ namespace MaltiezFirearms.WeaponBehavior
         private IFactory<IOperation> mOperationFactory;
         private IFactory<IWeaponSystem> mSystemFactory;
         private IFactory<IInput> mInputFactory;
-        IInputInterceptor mInputIterceptor;
+        private IInputInterceptor mInputIterceptor;
 
 
         public override void Start(ICoreAPI api)
         {
             base.Start(api);
 
-            api.RegisterCollectibleBehaviorClass("maltiezfirearms.weapon", typeof(WeaponBehaviorPrototype));
+            api.RegisterCollectibleBehaviorClass("maltiezfirearms.weapon", typeof(Prototypes.WeaponBehaviorPrototype));
 
-            mOperationFactory = new FactoryPrototype<IOperation>();
-            mSystemFactory = new FactoryPrototype<IWeaponSystem>();
-            mInputFactory = new FactoryPrototype<IInput>();
+            mOperationFactory = new Prototypes.FactoryPrototype<IOperation, UniqueIdGeneratorForFactory>();
+            mSystemFactory = new Prototypes.FactoryPrototype<IWeaponSystem, UniqueIdGeneratorForFactory>();
+            mInputFactory = new Prototypes.FactoryPrototype<IInput, UniqueIdGeneratorForFactory>();
 
-            mOperationFactory.RegisterType<OperationPrototype>("TestOperation");
-            mSystemFactory.RegisterType<WeaponSystemPrototype>("TestSystem");
-            mInputFactory.RegisterType<InputPrototype>("TestInput");
+            mOperationFactory.RegisterType<Prototypes.OperationPrototype>("TestOperation");
+            mSystemFactory.RegisterType<Prototypes.WeaponSystemPrototype>("TestSystem");
+            mInputFactory.RegisterType<Prototypes.InputPrototype>("TestInput");
 
-            mInputIterceptor = new InputIntercepterPrototype(api);
+            RegisterSystems();
+            RegisterOperations();
+            RegisterInputs();
+
+            mInputIterceptor = new Prototypes.InputIntercepterPrototype(api);
+        }
+
+        public void RegisterSystems()
+        {  
+            mSystemFactory.RegisterType<Systems.BaseSoundSystem>("Sound");
+        }
+        public void RegisterOperations()
+        {
+
+        }
+
+        public void RegisterInputs()
+        {
+
         }
 
         public IFactory<IOperation> GetOperationFactory()

@@ -10,7 +10,7 @@ using Vintagestory.API.Datastructures;
 using static MaltiezFirearms.WeaponBehavior.Prototypes.FsmPrototype;
 
 namespace MaltiezFirearms.WeaponBehavior.Prototypes
-{
+{    
     public class FsmPrototype : IFiniteStateMachine
     {    
         public struct State : IState // @TODO @optimisation Change base type to int
@@ -117,6 +117,7 @@ namespace MaltiezFirearms.WeaponBehavior.Prototypes
             State newState = (State)operation.Perform(weaponSlot, player, state, input);
             if (state.ToString() != newState.ToString())
             {
+                mApi.Logger.Warning("[Firearms] [FsmPrototype] State moved from '" + state.ToString() + "' to '" + newState.ToString() + "'.");
                 WriteStateTo(weaponSlot, newState);
             }
 

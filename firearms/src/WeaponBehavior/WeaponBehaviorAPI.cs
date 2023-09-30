@@ -1,17 +1,25 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Vintagestory.API.Client;
 using Vintagestory.API.Common;
 using Vintagestory.API.Datastructures;
 using Vintagestory.API.MathTools;
-using static MaltiezFirearms.WeaponBehavior.Prototypes.FsmPrototype;
 
 namespace MaltiezFirearms.WeaponBehavior
 {
+    public struct KeyPressModifiers
+    {
+        public bool Alt;
+        public bool Ctrl;
+        public bool Shift;
+
+        public KeyPressModifiers(bool alt, bool ctrl, bool shift)
+        {
+            Alt = alt;
+            Ctrl = ctrl;
+            Shift = shift;
+        }
+    }
+    
     public interface IAimingBehavior
     {
         Tuple<Vec3f, Vec3f> GetShootingDirectionAndPosition();
@@ -23,7 +31,9 @@ namespace MaltiezFirearms.WeaponBehavior
 
     public interface IFactoryObject
     {
-        void Init(TreeAttribute definition, CollectibleObject colelctible);
+        void Init(JsonObject definition, CollectibleObject colelctible);
+        void SetId(int id);
+        int GetId();
     }
     public interface IOperation : IFactoryObject
     {
@@ -38,27 +48,62 @@ namespace MaltiezFirearms.WeaponBehavior
     }
     public interface IWeaponSystem : IFactoryObject
     {
-        bool Verify(ItemSlot weaponSlot, EntityAgent player, TreeAttribute parameters);
-        bool Process(ItemSlot weaponSlot, EntityAgent player, TreeAttribute parameters);
+        bool Verify(ItemSlot weaponSlot, EntityAgent player, JsonObject parameters);
+        bool Process(ItemSlot weaponSlot, EntityAgent player, JsonObject parameters);
+    }
+    public interface IKeyRelatedInput
+    {
+        KeyPressModifiers GetIfAltCtrlShiftPressed();
+        string GetKey();
     }
     public interface IInput : IFactoryObject
     {
-        enum InputType
-        {
-            CLICK,
-            HOLD
-        }
         string GetName();
-        InputType GetInputType();
-        Tuple<bool, bool, bool> GetIfAltCtrlShiftPressed();
-        string GetKey();
+
     }
-    
-    public interface IFactory<ProducedClass> where ProducedClass : IFactoryObject
+    public interface IHotkeyInput : IInput, IKeyRelatedInput
+    {
+        
+    }
+    public interface IEventInput : IInput
+    {
+
+    }
+    public interface IKeyInput : IEventInput, IKeyRelatedInput
+    {
+        enum KeyEventType
+        {
+            KeyDown,
+            KeyUp
+        }
+        KeyEventType GetEventType();
+    }
+    public interface IMouseInput : IEventInput, IKeyRelatedInput
+    {
+        enum MouseEventType
+        {
+            MouseMove,
+            MouseDown,
+            MouseUp
+        }
+        MouseEventType GetEventType();
+    }
+    public interface ISlotChanged : IEventInput
+    {
+        enum SlotEventType
+        {
+            ToWeapon,
+            FromWeapon
+        }
+        SlotEventType GetEventType();
+    }
+
+
+    public interface IFactory<ProducedClass>
     {
         Type GetType(string name);
         void RegisterType<ObjectClass>(string name) where ObjectClass : ProducedClass, new();
-        ProducedClass Instantiate(string name, TreeAttribute definition, CollectibleObject colelctible);
+        ProducedClass Instantiate(string name, JsonObject definition, CollectibleObject colelctible);
     }
     public interface IBehaviourFormat
     {
@@ -84,5 +129,9 @@ namespace MaltiezFirearms.WeaponBehavior
         IFactory<IWeaponSystem> GetSystemFactory();
         IFactory<IInput> GetInputFactory();
     }
-
+    public interface IUniqueIdGeneratorForFactory
+    {
+        int GenerateInstanceId();
+        int GetFacrotyid();
+    }
 }

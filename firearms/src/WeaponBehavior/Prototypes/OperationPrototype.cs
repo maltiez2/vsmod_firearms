@@ -4,11 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Vintagestory.API.Common;
+using Vintagestory.API.Common.Entities;
 using Vintagestory.API.Datastructures;
 
 namespace MaltiezFirearms.WeaponBehavior.Prototypes
 {
-    public class OperationPrototype : IOperation
+    public class OperationPrototype : UniqueIdFactoryObject, IOperation
     {
         private Dictionary<string, IWeaponSystem> mSytems;
         private Dictionary<string, IState> mStates;
@@ -21,7 +22,7 @@ namespace MaltiezFirearms.WeaponBehavior.Prototypes
             {"B", "A"}
         };
 
-        public void Init(TreeAttribute definition, CollectibleObject colelctible)
+        public override void Init(JsonObject definition, CollectibleObject colelctible)
         {
 
         }
@@ -30,7 +31,7 @@ namespace MaltiezFirearms.WeaponBehavior.Prototypes
         {
             foreach (var entry in mStateToState)
             {
-                if (state.Equals(mStates[entry.Key]) && mSytems.First().Value.Process(weaponSlot, player, new TreeAttribute()))
+                if (state.Equals(mStates[entry.Key]) && mSytems.First().Value.Process(weaponSlot, player, null))
                 {
                     return mStates[entry.Value];
                 }
@@ -40,6 +41,11 @@ namespace MaltiezFirearms.WeaponBehavior.Prototypes
         }
         public int? Timer(ItemSlot weaponSlot, EntityAgent player, IState state, IInput input)
         {
+            if ((state.Equals(mStates["A"])))
+            {
+                return 5000;
+            }
+            
             return null;
         }
 

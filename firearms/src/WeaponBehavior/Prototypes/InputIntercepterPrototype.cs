@@ -1,11 +1,13 @@
 ﻿using ProtoBuf;
 using System;
 using System.Collections.Generic;
-using System.Reflection.Metadata;
 using Vintagestory.API.Client;
 using Vintagestory.API.Common;
 using Vintagestory.API.Server;
 using static MaltiezFirearms.WeaponBehavior.IInputInterceptor;
+using static MaltiezFirearms.WeaponBehavior.IKeyInput;
+using static MaltiezFirearms.WeaponBehavior.IMouseInput;
+using static MaltiezFirearms.WeaponBehavior.ISlotChanged;
 
 namespace MaltiezFirearms.WeaponBehavior.Prototypes
 {
@@ -21,7 +23,7 @@ namespace MaltiezFirearms.WeaponBehavior.Prototypes
 
         public InputIntercepterPrototype(ICoreAPI api)
         {
-            mPacketSender = new InputPacketSender(api, ServerHotKeyProxyHandler, mNetworkChannelName);
+            mPacketSender = new InputPacketSender(api, ServerInputProxyHandler, mNetworkChannelName);
 
             if (api.Side == EnumAppSide.Client)
             {
@@ -38,33 +40,151 @@ namespace MaltiezFirearms.WeaponBehavior.Prototypes
             mCallbacks.Add(callback);
             mCollectibles.Add(collectible);
 
-            Tuple<bool, bool, bool> AltCtrlShift = input.GetIfAltCtrlShiftPressed();
+            if (input is IHotkeyInput && cApi != null)
+            {
+                ClientRegisterHotkey(input as IHotkeyInput, inputCode, inputIndex);
+            }
+
+            if (input is IEventInput && cApi != null)
+            {
+                ClientRegisterEventHandler(input as IEventInput, inputIndex);
+            }
+        }
+        private void ClientRegisterHotkey(IHotkeyInput input, string inputCode, int inputIndex)
+        {
+            KeyPressModifiers AltCtrlShift = input.GetIfAltCtrlShiftPressed();
             GlKeys key = (GlKeys)Enum.Parse(typeof(GlKeys), input.GetKey());
 
-            cApi?.Input.RegisterHotKey(inputCode, inputCode, key, HotkeyType.CharacterControls, AltCtrlShift.Item1, AltCtrlShift.Item2, AltCtrlShift.Item3);
-            cApi?.Input.SetHotKeyHandler(inputCode, _ => ClientHotKeyProxyHandler(inputIndex));
+            cApi.Input.RegisterHotKey(inputCode, inputCode, key, HotkeyType.CharacterControls, AltCtrlShift.Alt, AltCtrlShift.Ctrl, AltCtrlShift.Shift);
+            cApi.Input.SetHotKeyHandler(inputCode, _ => ClientInputProxyHandler(inputIndex, null));
+        }
+        private void ClientRegisterEventHandler(IEventInput input, int inputIndex)
+        {
+            switch ((input as IKeyInput)?.GetEventType())
+            {
+                case KeyEventType.KeyDown:
+                    cApi.Event.KeyDown += (KeyEvent ev) => ClientKeyInputProxyHandler(ev, inputIndex, KeyEventType.KeyDown);
+                    break;
+                case KeyEventType.KeyUp:
+                    cApi.Event.KeyUp += (KeyEvent ev) => ClientKeyInputProxyHandler(ev, inputIndex, KeyEventType.KeyUp);
+                    break;
+                case null:
+                    break;
+            }
+
+            switch ((input as IMouseInput)?.GetEventType())
+            {
+                case MouseEventType.MouseDown:
+                    cApi.Event.MouseDown += (MouseEvent ev) => ClientMouseInputProxyHandler(ev, inputIndex, MouseEventType.MouseDown);
+                    break;
+                case MouseEventType.MouseUp:
+                    cApi.Event.MouseUp += (MouseEvent ev) => ClientMouseInputProxyHandler(ev, inputIndex, MouseEventType.MouseUp);
+                    break;
+                case MouseEventType.MouseMove:
+                    cApi.Event.MouseMove += (MouseEvent ev) => ClientMouseInputProxyHandler(ev, inputIndex, MouseEventType.MouseMove);
+                    break;
+                case null:
+                    break;
+            }
+
+            if (input is ISlotChanged)
+            {
+                 cApi.Event.AfterActiveSlotChanged += (ActiveSlotChangeEventArgs ev) => ClientSlotInputProxyHandler(inputIndex, ev.FromSlot, ev.ToSlot);
+            }
         }
 
-        public bool ClientHotKeyProxyHandler(int inputIndex)
+        private bool ClientCheckModifiers(KeyPressModifiers modifiers)
         {
-            EntityAgent player = cApi.World.Player.Entity;
+            bool altPressed = cApi.Input.KeyboardKeyState[(int)GlKeys.AltLeft] || cApi.Input.KeyboardKeyState[(int)GlKeys.AltRight];
+            bool ctrlPressed = cApi.Input.KeyboardKeyState[(int)GlKeys.ControlLeft] || cApi.Input.KeyboardKeyState[(int)GlKeys.ControlRight];
+            bool shiftPressed = cApi.Input.KeyboardKeyState[(int)GlKeys.ShiftLeft] || cApi.Input.KeyboardKeyState[(int)GlKeys.ShiftRight];
 
-            mPacketSender.SendPacket(inputIndex);
-
-            return HandlerCaller(inputIndex, player);
+            return modifiers.Alt == altPressed && modifiers.Ctrl == ctrlPressed && modifiers.Shift == shiftPressed;
+        }
+        private ItemSlot GetSlotById(int? slotId, IServerPlayer serverPlayer)
+        {
+            IPlayer player;
+            
+            if (serverPlayer != null)
+            {
+                player = serverPlayer;
+            }
+            else
+            {
+                player = cApi?.World?.Player;
+            }
+            
+            if (slotId != null)
+            {
+                return player?.InventoryManager.GetHotbarInventory()[(int)slotId];
+            }
+            else
+            {
+                return player?.Entity.ActiveHandItemSlot;
+            }
         }
 
-        public void ServerHotKeyProxyHandler(int inputIndex, IServerPlayer serverPlayer)
+        public bool ClientKeyInputProxyHandler(KeyEvent ev, int inputIndex, KeyEventType keyEventType)
         {
-            EntityAgent player = serverPlayer.Entity;
+            IKeyInput input = mInputs[inputIndex] as IKeyInput;
+            GlKeys key = (GlKeys)Enum.Parse(typeof(GlKeys), input.GetKey());
+            KeyPressModifiers modifiers = input.GetIfAltCtrlShiftPressed();
 
-            HandlerCaller(inputIndex, player);
+            if (input.GetEventType() != keyEventType) return false;
+            if (ev.KeyCode != (int)key) return false;
+            if (modifiers.Alt != ev.AltPressed || modifiers.Ctrl != ev.CtrlPressed || modifiers.Shift != ev.ShiftPressed) return false;
+
+            return ClientInputProxyHandler(inputIndex, null);
+        }
+        public bool ClientMouseInputProxyHandler(MouseEvent ev, int inputIndex, MouseEventType keyEventType)
+        {
+            IMouseInput input = mInputs[inputIndex] as IMouseInput;
+            EnumMouseButton key = (EnumMouseButton)Enum.Parse(typeof(EnumMouseButton), input.GetKey());
+            KeyPressModifiers modifiers = input.GetIfAltCtrlShiftPressed();
+
+            if (input.GetEventType() != keyEventType) return false;
+            if (ev.Button != key) return false;
+            if (!ClientCheckModifiers(modifiers)) return false;
+
+            return ClientInputProxyHandler(inputIndex, null);
+        }
+        public bool ClientSlotInputProxyHandler(int inputIndex, int fromSlotId, int toSlotId)
+        {
+            ISlotChanged input = mInputs[inputIndex] as ISlotChanged;
+
+            int slotId;
+            if (input.GetEventType() == SlotEventType.FromWeapon)
+            {
+                slotId = fromSlotId;
+            }
+            else if (input.GetEventType() == SlotEventType.ToWeapon)
+            {
+                slotId = toSlotId;
+            }
+            else
+            {
+                throw new NotImplementedException();
+            }
+
+            return ClientInputProxyHandler(inputIndex, slotId);
+        }
+        public bool ClientInputProxyHandler(int inputIndex, int? slotId)
+        {
+            EntityAgent playerEntity = cApi.World.Player.Entity;
+
+            mPacketSender.SendPacket(inputIndex, slotId);
+
+            return InputHandler(inputIndex, playerEntity, GetSlotById(slotId, null));
+        }
+        public void ServerInputProxyHandler(int inputIndex, int? slotId, IServerPlayer serverPlayer)
+        {
+            EntityAgent playerEntity = serverPlayer.Entity;
+
+            InputHandler(inputIndex, playerEntity, GetSlotById(slotId, serverPlayer));
         }
 
-        private bool HandlerCaller(int inputIndex, EntityAgent player)
+        private bool InputHandler(int inputIndex, EntityAgent player, ItemSlot slot)
         {
-            ItemSlot slot = player.ActiveHandItemSlot;
-
             if (slot.Itemstack.Collectible != mCollectibles[inputIndex])
             {
                 return false;
@@ -83,9 +203,10 @@ namespace MaltiezFirearms.WeaponBehavior.Prototypes
         public class InputPacket
         {
             public int inputIndex;
+            public int? slotId;
         }
 
-        public delegate void InputHandler(int inputIndex, IServerPlayer player);
+        public delegate void InputHandler(int inputIndex, int? slotId, IServerPlayer player);
         private InputHandler mHandler;
 
         public InputPacketSender(ICoreAPI api, InputHandler handler, string channelName)
@@ -112,7 +233,7 @@ namespace MaltiezFirearms.WeaponBehavior.Prototypes
 
         private void OnServerPacket(IServerPlayer fromPlayer, InputPacket packet)
         {
-            mHandler(packet.inputIndex, fromPlayer);
+            mHandler(packet.inputIndex, packet.slotId, fromPlayer);
         }
 
         // CLIENT SIDE
@@ -125,11 +246,12 @@ namespace MaltiezFirearms.WeaponBehavior.Prototypes
             .RegisterMessageType<InputPacket>();
         }
 
-        public void SendPacket(int index)
+        public void SendPacket(int index, int? slot)
         {
             clientNetworkChannel.SendPacket(new InputPacket()
             {
-                inputIndex = index
+                inputIndex = index,
+                slotId = slot
             });
         }
     }

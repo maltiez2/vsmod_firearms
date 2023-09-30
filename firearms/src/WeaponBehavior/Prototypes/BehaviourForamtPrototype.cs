@@ -50,7 +50,7 @@ namespace MaltiezFirearms.WeaponBehavior
         {
             string objectCode = definition["code"].AsString();
             string objectClass = definition["class"].AsString();
-            TreeAttribute atributes = definition["atributes"].ToAttribute() as TreeAttribute;
+            JsonObject atributes = definition["atributes"];
             ObjectInterface objectInstance = factory.Instantiate(objectClass, atributes, collectible);
             container.Add(objectCode, objectInstance);
         }
