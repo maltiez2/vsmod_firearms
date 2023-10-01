@@ -209,7 +209,6 @@ namespace MaltiezFirearms.FiniteStateMachine.Framework
 
         public delegate void InputHandler(int inputIndex, int? slotId, IServerPlayer player);
         private InputHandler mHandler;
-
         public InputPacketSender(ICoreAPI api, InputHandler handler, string channelName)
         {
             if (api.Side == EnumAppSide.Server)
@@ -231,7 +230,6 @@ namespace MaltiezFirearms.FiniteStateMachine.Framework
             .RegisterMessageType<InputPacket>()
             .SetMessageHandler<InputPacket>(OnServerPacket);
         }
-
         private void OnServerPacket(IServerPlayer fromPlayer, InputPacket packet)
         {
             mHandler(packet.inputIndex, packet.slotId, fromPlayer);
@@ -246,7 +244,6 @@ namespace MaltiezFirearms.FiniteStateMachine.Framework
             clientNetworkChannel = api.Network.RegisterChannel(channelName)
             .RegisterMessageType<InputPacket>();
         }
-
         public void SendPacket(int index, int? slot)
         {
             clientNetworkChannel.SendPacket(new InputPacket()
