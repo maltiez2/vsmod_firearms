@@ -59,9 +59,4 @@
   <Content Remove="..\resources\assets\maltiezfirearms\itemtypes\standNetwork.json" />
 </ItemGroup>
 
-<ItemGroup>
-  <Folder Include="src\legacy\" />
-  <Folder Include="src\WeaponBehavior\Inputs\" />
-</ItemGroup>
-
 </Project>

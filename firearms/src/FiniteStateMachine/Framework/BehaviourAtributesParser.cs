@@ -5,16 +5,17 @@ using System.Text;
 using System.Threading.Tasks;
 using Vintagestory.API.Common;
 using Vintagestory.API.Datastructures;
+using MaltiezFirearms.FiniteStateMachine.API;
 
-namespace MaltiezFirearms.WeaponBehavior
+namespace MaltiezFirearms.FiniteStateMachine.Framework
 {
-    public class BehaviourFormatPrototype : IBehaviourFormat
+    public class BehaviourAtributesParser : IBehaviourAtributesParser
     {
         private Dictionary<string, IOperation> mOperations = new();
-        private Dictionary<string, IWeaponSystem> mSystems = new();
+        private Dictionary<string, ISystem> mSystems = new();
         private Dictionary<string, IInput> mInputs = new();
 
-        public bool ParseDefinition(IFactory<IOperation> operationTypes, IFactory<IWeaponSystem> systemTypes, IFactory<IInput> inputTypes, JsonObject behaviourAttributes, CollectibleObject collectible)
+        public bool ParseDefinition(IFactory<IOperation> operationTypes, IFactory<ISystem> systemTypes, IFactory<IInput> inputTypes, JsonObject behaviourAttributes, CollectibleObject collectible)
         {
             foreach (JsonObject systemDefinition in behaviourAttributes["systems"].AsArray())
             {
@@ -37,7 +38,7 @@ namespace MaltiezFirearms.WeaponBehavior
         {
             return mOperations;
         }
-        public Dictionary<string, IWeaponSystem> GetSystems()
+        public Dictionary<string, ISystem> GetSystems()
         {
             return mSystems;
         }

@@ -1,17 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml.Linq;
 using Vintagestory.API.Common;
 using Vintagestory.API.Datastructures;
-using Vintagestory.ServerMods;
+using MaltiezFirearms.FiniteStateMachine.API;
 
-namespace MaltiezFirearms.WeaponBehavior.Prototypes
+namespace MaltiezFirearms.FiniteStateMachine.Framework
 {
-    internal class FactoryPrototype<ProductClass, IdGeneratorClass> : IFactory<ProductClass>
+    internal class Factory<ProductClass, IdGeneratorClass> : IFactory<ProductClass>
         where ProductClass : IFactoryObject
         where IdGeneratorClass : IUniqueIdGeneratorForFactory, new()  
     {

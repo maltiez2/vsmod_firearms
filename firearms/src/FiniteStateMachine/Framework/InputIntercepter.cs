@@ -4,14 +4,15 @@ using System.Collections.Generic;
 using Vintagestory.API.Client;
 using Vintagestory.API.Common;
 using Vintagestory.API.Server;
-using static MaltiezFirearms.WeaponBehavior.IInputInterceptor;
-using static MaltiezFirearms.WeaponBehavior.IKeyInput;
-using static MaltiezFirearms.WeaponBehavior.IMouseInput;
-using static MaltiezFirearms.WeaponBehavior.ISlotChanged;
+using static MaltiezFirearms.FiniteStateMachine.API.IInputInterceptor;
+using static MaltiezFirearms.FiniteStateMachine.API.IKeyInput;
+using static MaltiezFirearms.FiniteStateMachine.API.IMouseInput;
+using static MaltiezFirearms.FiniteStateMachine.API.ISlotChanged;
+using MaltiezFirearms.FiniteStateMachine.API;
 
-namespace MaltiezFirearms.WeaponBehavior.Prototypes
+namespace MaltiezFirearms.FiniteStateMachine.Framework
 {
-    public class InputIntercepterPrototype : IInputInterceptor
+    public class InputIntercepter : IInputInterceptor
     {
         private readonly ICoreClientAPI cApi;
         private readonly List<IInput> mInputs = new List<IInput>();
@@ -21,7 +22,7 @@ namespace MaltiezFirearms.WeaponBehavior.Prototypes
 
         private const string mNetworkChannelName = "maltiezfierarms_inputIntercepter";
 
-        public InputIntercepterPrototype(ICoreAPI api)
+        public InputIntercepter(ICoreAPI api)
         {
             mPacketSender = new InputPacketSender(api, ServerInputProxyHandler, mNetworkChannelName);
 

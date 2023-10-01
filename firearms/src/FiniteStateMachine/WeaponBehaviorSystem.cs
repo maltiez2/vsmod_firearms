@@ -1,32 +1,30 @@
-﻿using MaltiezFirearms.WeaponBehavior.Inputs;
-using MaltiezFirearms.WeaponBehavior.Operations;
-using Vintagestory.API.Common;
+﻿using Vintagestory.API.Common;
+using MaltiezFirearms.FiniteStateMachine.API;
 
-namespace MaltiezFirearms.WeaponBehavior
+namespace MaltiezFirearms.FiniteStateMachine
 {
-    public class WeaponBehaviorSystem : ModSystem, IFactoryProvider
+    public class FiniteStateMachineSystem : ModSystem, IFactoryProvider
     {
         private IFactory<IOperation> mOperationFactory;
-        private IFactory<IWeaponSystem> mSystemFactory;
+        private IFactory<ISystem> mSystemFactory;
         private IFactory<IInput> mInputFactory;
         private IInputInterceptor mInputIterceptor;
-
 
         public override void Start(ICoreAPI api)
         {
             base.Start(api);
 
-            api.RegisterCollectibleBehaviorClass("maltiezfirearms.weapon", typeof(Prototypes.WeaponBehaviorPrototype));
+            api.RegisterCollectibleBehaviorClass("maltiezfirearms.weapon", typeof(Framework.FiniteStateMachineBehaviour));
 
-            mOperationFactory = new Prototypes.FactoryPrototype<IOperation, UniqueIdGeneratorForFactory>();
-            mSystemFactory = new Prototypes.FactoryPrototype<IWeaponSystem, UniqueIdGeneratorForFactory>();
-            mInputFactory = new Prototypes.FactoryPrototype<IInput, UniqueIdGeneratorForFactory>();
+            mOperationFactory = new Framework.Factory<IOperation, Framework.UniqueIdGeneratorForFactory>();
+            mSystemFactory = new Framework.Factory<ISystem, Framework.UniqueIdGeneratorForFactory>();
+            mInputFactory = new Framework.Factory<IInput, Framework.UniqueIdGeneratorForFactory>();
 
             RegisterSystems();
             RegisterOperations();
             RegisterInputs();
 
-            mInputIterceptor = new Prototypes.InputIntercepterPrototype(api);
+            mInputIterceptor = new Framework.InputIntercepter(api);
         }
 
         public void RegisterSystems()
@@ -35,19 +33,19 @@ namespace MaltiezFirearms.WeaponBehavior
         }
         public void RegisterOperations()
         {
-            mOperationFactory.RegisterType<SimpleOperation>("Simple");
+            mOperationFactory.RegisterType<Operations.SimpleOperation>("Simple");
         }
 
         public void RegisterInputs()
         {
-            mInputFactory.RegisterType<SimpleKeyPress>("SimpleKeyPress");
+            mInputFactory.RegisterType<Inputs.SimpleKeyPress>("SimpleKeyPress");
         }
 
         public IFactory<IOperation> GetOperationFactory()
         {
             return mOperationFactory;
         }
-        public IFactory<IWeaponSystem> GetSystemFactory()
+        public IFactory<ISystem> GetSystemFactory()
         {
             return mSystemFactory;
         }

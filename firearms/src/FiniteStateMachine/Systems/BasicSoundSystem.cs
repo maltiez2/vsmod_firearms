@@ -1,12 +1,10 @@
 ﻿using System;
 using Vintagestory.API.Common;
 using Vintagestory.API.Datastructures;
-using Vintagestory.API.MathTools;
-using Vintagestory.API.Common.Entities;
 using System.Collections.Generic;
-using Vintagestory.GameContent;
+using MaltiezFirearms.FiniteStateMachine.API;
 
-namespace MaltiezFirearms.WeaponBehavior.Systems
+namespace MaltiezFirearms.FiniteStateMachine.Systems
 {
     internal interface ISound
     {
@@ -14,7 +12,7 @@ namespace MaltiezFirearms.WeaponBehavior.Systems
         void Play(EntityAgent byEntity);
     }
 
-    internal class BaseSound : ISound
+    internal class BasicSound : ISound
     {
         public const string LocationAttrName = "location";
         public const string RangeAttrName = "range";
@@ -53,7 +51,7 @@ namespace MaltiezFirearms.WeaponBehavior.Systems
         }
     }
 
-    internal class RandomizedSound : BaseSound
+    internal class RandomizedSound : BasicSound
     {
         private static Random Rand = new Random();
         private List<AssetLocation> mLocations = new();
@@ -76,7 +74,7 @@ namespace MaltiezFirearms.WeaponBehavior.Systems
         }
     }
     
-    public class BasicSoundSystem : UniqueIdFactoryObject, IWeaponSystem
+    public class BasicSoundSystem : UniqueIdFactoryObject, ISystem
     {
         private readonly Dictionary<string, ISound> rSounds = new();
 
@@ -90,13 +88,13 @@ namespace MaltiezFirearms.WeaponBehavior.Systems
             foreach (JsonObject sound in sounds)
             {
                 string soundCode = sound["code"].AsString();
-                if (sound[BaseSound.LocationAttrName].IsArray())
+                if (sound[BasicSound.LocationAttrName].IsArray())
                 {
                     rSounds.Add(soundCode, new RandomizedSound());
                 }
                 else
                 {
-                    rSounds.Add(soundCode, new BaseSound());
+                    rSounds.Add(soundCode, new BasicSound());
                 }
 
                 rSounds[soundCode].Init(sound);

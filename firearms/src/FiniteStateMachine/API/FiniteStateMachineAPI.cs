@@ -4,7 +4,7 @@ using Vintagestory.API.Common;
 using Vintagestory.API.Datastructures;
 using Vintagestory.API.MathTools;
 
-namespace MaltiezFirearms.WeaponBehavior
+namespace MaltiezFirearms.FiniteStateMachine.API
 {
     public struct KeyPressModifiers
     {
@@ -40,12 +40,12 @@ namespace MaltiezFirearms.WeaponBehavior
         IState Perform(ItemSlot weaponSlot, EntityAgent player, IState state, IInput input);
         int? Timer(ItemSlot weaponSlot, EntityAgent player, IState state, IInput input);
 
-        void SetInputsStatesSystems(Dictionary<string, IInput> inputs, Dictionary<string, IState> states, Dictionary<string, IWeaponSystem> systems);
+        void SetInputsStatesSystems(Dictionary<string, IInput> inputs, Dictionary<string, IState> states, Dictionary<string, ISystem> systems);
         List<string> GetInitialStates();
         List<string> GetFinalStates();
         List<string> GetInputs();
     }
-    public interface IWeaponSystem : IFactoryObject
+    public interface ISystem : IFactoryObject
     {
         bool Verify(ItemSlot weaponSlot, EntityAgent player, JsonObject parameters);
         bool Process(ItemSlot weaponSlot, EntityAgent player, JsonObject parameters);
@@ -104,16 +104,16 @@ namespace MaltiezFirearms.WeaponBehavior
         void RegisterType<ObjectClass>(string name) where ObjectClass : ProducedClass, new();
         ProducedClass Instantiate(string name, JsonObject definition, CollectibleObject collectible);
     }
-    public interface IBehaviourFormat
+    public interface IBehaviourAtributesParser
     {
-        bool ParseDefinition(IFactory<IOperation> operationTypes, IFactory<IWeaponSystem> systemTypes, IFactory<IInput> inputTypes, JsonObject behaviourAttributes, CollectibleObject collectible);
+        bool ParseDefinition(IFactory<IOperation> operationTypes, IFactory<ISystem> systemTypes, IFactory<IInput> inputTypes, JsonObject behaviourAttributes, CollectibleObject collectible);
         Dictionary<string, IOperation> GetOperations();
-        Dictionary<string, IWeaponSystem> GetSystems();
+        Dictionary<string, ISystem> GetSystems();
         Dictionary<string, IInput> GetInputs();
     }
     public interface IFiniteStateMachine
     {
-        void Init(ICoreAPI api, Dictionary<string, IOperation> operations, Dictionary<string, IWeaponSystem> systems, Dictionary<string, IInput> inputs, JsonObject behaviourAttributes, CollectibleObject collectible);
+        void Init(ICoreAPI api, Dictionary<string, IOperation> operations, Dictionary<string, ISystem> systems, Dictionary<string, IInput> inputs, JsonObject behaviourAttributes, CollectibleObject collectible);
         bool Process(ItemSlot weaponSlot, EntityAgent player, IInput input);
     }
 
@@ -125,7 +125,7 @@ namespace MaltiezFirearms.WeaponBehavior
     public interface IFactoryProvider
     {
         IFactory<IOperation> GetOperationFactory();
-        IFactory<IWeaponSystem> GetSystemFactory();
+        IFactory<ISystem> GetSystemFactory();
         IFactory<IInput> GetInputFactory();
     }
     public interface IUniqueIdGeneratorForFactory

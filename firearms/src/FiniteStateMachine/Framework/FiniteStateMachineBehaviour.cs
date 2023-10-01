@@ -1,20 +1,12 @@
-﻿using Microsoft.VisualBasic;
-using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Vintagestory.API.Client;
-using Vintagestory.API.Common;
+﻿using Vintagestory.API.Common;
 using Vintagestory.API.Datastructures;
-using static MaltiezFirearms.WeaponBehavior.IInputInterceptor;
+using MaltiezFirearms.FiniteStateMachine.API;
 
-namespace MaltiezFirearms.WeaponBehavior.Prototypes
+namespace MaltiezFirearms.FiniteStateMachine.Framework
 {
-    public class WeaponBehaviorPrototype : CollectibleBehavior
+    public class FiniteStateMachineBehaviour : CollectibleBehavior
     {
-        public WeaponBehaviorPrototype(CollectibleObject collObj) : base(collObj)
+        public FiniteStateMachineBehaviour(CollectibleObject collObj) : base(collObj)
         {
 
         }
@@ -30,13 +22,13 @@ namespace MaltiezFirearms.WeaponBehavior.Prototypes
             base.OnLoaded(api);
 
             mApi = api;
-            mFactories = mApi.ModLoader.GetModSystem<WeaponBehaviorSystem>();
-            mInputIterceptor = mApi.ModLoader.GetModSystem<WeaponBehaviorSystem>().GetInputInterceptor();
+            mFactories = mApi.ModLoader.GetModSystem<FiniteStateMachineSystem>();
+            mInputIterceptor = mApi.ModLoader.GetModSystem<FiniteStateMachineSystem>().GetInputInterceptor();
 
-            IBehaviourFormat mParser = new BehaviourFormatPrototype();
+            IBehaviourAtributesParser mParser = new Framework.BehaviourAtributesParser();
             mParser.ParseDefinition(mFactories.GetOperationFactory(), mFactories.GetSystemFactory(), mFactories.GetInputFactory(), mProperties, collObj);
 
-            mFsm = new FsmPrototype();
+            mFsm = new Framework.FiniteStateMachine();
             mFsm.Init(mApi, mParser.GetOperations(), mParser.GetSystems(), mParser.GetInputs(), mProperties, collObj);
 
             foreach (var inputEntry in mParser.GetInputs())

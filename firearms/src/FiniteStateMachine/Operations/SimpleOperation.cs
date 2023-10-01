@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using Vintagestory.API.Common;
 using Vintagestory.API.Datastructures;
+using MaltiezFirearms.FiniteStateMachine.API;
 
-namespace MaltiezFirearms.WeaponBehavior.Operations
+namespace MaltiezFirearms.FiniteStateMachine.Operations
 {
     public class SimpleOperation : UniqueIdFactoryObject, IOperation
     {
@@ -23,7 +19,7 @@ namespace MaltiezFirearms.WeaponBehavior.Operations
         private string mInputInitialData;
 
         private readonly Dictionary<IState, IState> mStates = new();
-        private readonly Dictionary<IWeaponSystem, JsonObject> mSystems = new();
+        private readonly Dictionary<ISystem, JsonObject> mSystems = new();
         
         public override void Init(JsonObject definition, CollectibleObject collectible)
         {
@@ -70,7 +66,7 @@ namespace MaltiezFirearms.WeaponBehavior.Operations
             return output;
         }
 
-        public void SetInputsStatesSystems(Dictionary<string, IInput> inputs, Dictionary<string, IState> states, Dictionary<string, IWeaponSystem> systems)
+        public void SetInputsStatesSystems(Dictionary<string, IInput> inputs, Dictionary<string, IState> states, Dictionary<string, ISystem> systems)
         {
             foreach (var entry in mStatesInitialData)
             {

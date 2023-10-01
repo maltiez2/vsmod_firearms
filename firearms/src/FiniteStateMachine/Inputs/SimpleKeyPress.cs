@@ -1,15 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Cryptography;
-using System.Text;
-using System.Threading.Tasks;
-using Vintagestory.API.Common;
+﻿using Vintagestory.API.Common;
 using Vintagestory.API.Datastructures;
-using static MaltiezFirearms.WeaponBehavior.IInput;
-using static MaltiezFirearms.WeaponBehavior.IKeyInput;
+using static MaltiezFirearms.FiniteStateMachine.API.IKeyInput;
+using MaltiezFirearms.FiniteStateMachine.API;
 
-namespace MaltiezFirearms.WeaponBehavior.Inputs
+namespace MaltiezFirearms.FiniteStateMachine.Inputs
 {
     public class SimpleKeyPress : UniqueIdFactoryObject, IKeyInput
     {

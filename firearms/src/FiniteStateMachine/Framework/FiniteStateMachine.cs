@@ -1,17 +1,12 @@
-﻿using Cairo;
-using System;
-using System.Collections;
+﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Vintagestory.API.Common;
 using Vintagestory.API.Datastructures;
-using static MaltiezFirearms.WeaponBehavior.Prototypes.FsmPrototype;
+using MaltiezFirearms.FiniteStateMachine.API;
 
-namespace MaltiezFirearms.WeaponBehavior.Prototypes
+namespace MaltiezFirearms.FiniteStateMachine.Framework
 {    
-    public class FsmPrototype : IFiniteStateMachine
+    public class FiniteStateMachine : IFiniteStateMachine
     {    
         public struct State : IState // @TODO @optimisation Change base type to int
         {
@@ -64,7 +59,7 @@ namespace MaltiezFirearms.WeaponBehavior.Prototypes
 
         private ICoreAPI mApi;
 
-        public void Init(ICoreAPI api, Dictionary<string, IOperation> operations, Dictionary<string, IWeaponSystem> systems, Dictionary<string, IInput> inputs, JsonObject behaviourAttributes, CollectibleObject collectible)
+        public void Init(ICoreAPI api, Dictionary<string, IOperation> operations, Dictionary<string, ISystem> systems, Dictionary<string, IInput> inputs, JsonObject behaviourAttributes, CollectibleObject collectible)
         {
             mInitialState = behaviourAttributes[cInitialStateAtribute].AsString();
             mApi = api;

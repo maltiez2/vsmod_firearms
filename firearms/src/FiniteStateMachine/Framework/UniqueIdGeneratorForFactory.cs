@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using MaltiezFirearms.FiniteStateMachine.API;
 
-namespace MaltiezFirearms.WeaponBehavior
+namespace MaltiezFirearms.FiniteStateMachine.Framework
 {
     internal class UniqueIdGeneratorForFactory : IUniqueIdGeneratorForFactory
     {
