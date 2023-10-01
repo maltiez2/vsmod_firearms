@@ -1,4 +1,6 @@
-﻿using Vintagestory.API.Common;
+﻿using MaltiezFirearms.WeaponBehavior.Inputs;
+using MaltiezFirearms.WeaponBehavior.Operations;
+using Vintagestory.API.Common;
 
 namespace MaltiezFirearms.WeaponBehavior
 {
@@ -20,10 +22,6 @@ namespace MaltiezFirearms.WeaponBehavior
             mSystemFactory = new Prototypes.FactoryPrototype<IWeaponSystem, UniqueIdGeneratorForFactory>();
             mInputFactory = new Prototypes.FactoryPrototype<IInput, UniqueIdGeneratorForFactory>();
 
-            mOperationFactory.RegisterType<Prototypes.OperationPrototype>("TestOperation");
-            mSystemFactory.RegisterType<Prototypes.WeaponSystemPrototype>("TestSystem");
-            mInputFactory.RegisterType<Prototypes.InputPrototype>("TestInput");
-
             RegisterSystems();
             RegisterOperations();
             RegisterInputs();
@@ -33,16 +31,16 @@ namespace MaltiezFirearms.WeaponBehavior
 
         public void RegisterSystems()
         {  
-            mSystemFactory.RegisterType<Systems.BaseSoundSystem>("Sound");
+            mSystemFactory.RegisterType<Systems.BasicSoundSystem>("Sound");
         }
         public void RegisterOperations()
         {
-
+            mOperationFactory.RegisterType<SimpleOperation>("Simple");
         }
 
         public void RegisterInputs()
         {
-
+            mInputFactory.RegisterType<SimpleKeyPress>("SimpleKeyPress");
         }
 
         public IFactory<IOperation> GetOperationFactory()

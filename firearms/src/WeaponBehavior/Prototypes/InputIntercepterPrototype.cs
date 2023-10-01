@@ -34,7 +34,6 @@ namespace MaltiezFirearms.WeaponBehavior.Prototypes
         public void RegisterInput(IInput input, InputCallback callback, CollectibleObject collectible)
         {
             int inputIndex = mInputs.Count;
-            string inputCode = inputIndex.ToString() + "_" + input.GetName(); // @TODO remove duplicates from different weapons
 
             mInputs.Add(input);
             mCallbacks.Add(callback);
@@ -42,6 +41,7 @@ namespace MaltiezFirearms.WeaponBehavior.Prototypes
 
             if (input is IHotkeyInput && cApi != null)
             {
+                string inputCode = inputIndex.ToString() + "_" + input.GetName(); // @TODO remove duplicates from different weapons
                 ClientRegisterHotkey(input as IHotkeyInput, inputCode, inputIndex);
             }
 
@@ -191,9 +191,9 @@ namespace MaltiezFirearms.WeaponBehavior.Prototypes
             }
 
             IInput input = mInputs[inputIndex];
-            InputCallback handler = mCallbacks[inputIndex];
+            InputCallback callback = mCallbacks[inputIndex];
 
-            return handler(slot, player, input);
+            return callback(slot, player, input);
         }
     }
 

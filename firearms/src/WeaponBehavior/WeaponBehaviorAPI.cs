@@ -31,7 +31,7 @@ namespace MaltiezFirearms.WeaponBehavior
 
     public interface IFactoryObject
     {
-        void Init(JsonObject definition, CollectibleObject colelctible);
+        void Init(JsonObject definition, CollectibleObject collectible);
         void SetId(int id);
         int GetId();
     }
@@ -39,12 +39,11 @@ namespace MaltiezFirearms.WeaponBehavior
     {
         IState Perform(ItemSlot weaponSlot, EntityAgent player, IState state, IInput input);
         int? Timer(ItemSlot weaponSlot, EntityAgent player, IState state, IInput input);
-        
-        List<string> GetStates();
+
+        void SetInputsStatesSystems(Dictionary<string, IInput> inputs, Dictionary<string, IState> states, Dictionary<string, IWeaponSystem> systems);
+        List<string> GetInitialStates();
+        List<string> GetFinalStates();
         List<string> GetInputs();
-        void SetSystems(Dictionary<string, IWeaponSystem> systems);
-        void SetStates(Dictionary<string, IState> states);
-        void SetInputs(Dictionary<string, IInput> inputs);
     }
     public interface IWeaponSystem : IFactoryObject
     {
@@ -103,7 +102,7 @@ namespace MaltiezFirearms.WeaponBehavior
     {
         Type GetType(string name);
         void RegisterType<ObjectClass>(string name) where ObjectClass : ProducedClass, new();
-        ProducedClass Instantiate(string name, JsonObject definition, CollectibleObject colelctible);
+        ProducedClass Instantiate(string name, JsonObject definition, CollectibleObject collectible);
     }
     public interface IBehaviourFormat
     {
@@ -114,7 +113,7 @@ namespace MaltiezFirearms.WeaponBehavior
     }
     public interface IFiniteStateMachine
     {
-        void Init(ICoreAPI api, Dictionary<string, IOperation> operations, Dictionary<string, IWeaponSystem> systems, Dictionary<string, IInput> inputs, JsonObject behaviourAttributes, CollectibleObject colelctible);
+        void Init(ICoreAPI api, Dictionary<string, IOperation> operations, Dictionary<string, IWeaponSystem> systems, Dictionary<string, IInput> inputs, JsonObject behaviourAttributes, CollectibleObject collectible);
         bool Process(ItemSlot weaponSlot, EntityAgent player, IInput input);
     }
 

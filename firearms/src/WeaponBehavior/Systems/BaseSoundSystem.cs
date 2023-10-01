@@ -56,7 +56,7 @@ namespace MaltiezFirearms.WeaponBehavior.Systems
     internal class RandomizedSound : BaseSound
     {
         private static Random Rand = new Random();
-        private List<AssetLocation> mLocations = new ();
+        private List<AssetLocation> mLocations = new();
 
         public override void Init(JsonObject definition)
         {
@@ -76,14 +76,14 @@ namespace MaltiezFirearms.WeaponBehavior.Systems
         }
     }
     
-    public class BaseSoundSystem : UniqueIdFactoryObject, IWeaponSystem
+    public class BasicSoundSystem : UniqueIdFactoryObject, IWeaponSystem
     {
-        private readonly Dictionary<string, ISound> rSounds = new ();
+        private readonly Dictionary<string, ISound> rSounds = new();
 
         public const string SoundsAttrName = "sounds";
-        public const string SoundCodeAttrName = "soundCode";
+        public const string SoundCodeAttrName = "code";
 
-        public override void Init(JsonObject definition, CollectibleObject colelctible)
+        public override void Init(JsonObject definition, CollectibleObject collectible)
         {
             JsonObject[] sounds = definition[SoundsAttrName].AsArray();
 

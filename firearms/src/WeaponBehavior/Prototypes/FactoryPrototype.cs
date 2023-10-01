@@ -13,7 +13,7 @@ namespace MaltiezFirearms.WeaponBehavior.Prototypes
 {
     internal class FactoryPrototype<ProductClass, IdGeneratorClass> : IFactory<ProductClass>
         where ProductClass : IFactoryObject
-        where IdGeneratorClass : IUniqueIdGeneratorForFactory, new()
+        where IdGeneratorClass : IUniqueIdGeneratorForFactory, new()  
     {
         private readonly Dictionary<string, Type> mSystems = new();
         private readonly IUniqueIdGeneratorForFactory mIdGenerator = new IdGeneratorClass();
@@ -26,10 +26,10 @@ namespace MaltiezFirearms.WeaponBehavior.Prototypes
         {
             mSystems.Add(name, typeof(ObjectClass));
         }
-        public ProductClass Instantiate(string name, JsonObject definition, CollectibleObject colelctible)
+        public ProductClass Instantiate(string name, JsonObject definition, CollectibleObject collectible)
         {
             ProductClass producedInstance = (ProductClass)Activator.CreateInstance(mSystems[name]);
-            producedInstance.Init(definition, colelctible);
+            producedInstance.Init(definition, collectible);
             producedInstance.SetId(mIdGenerator.GenerateInstanceId());
             return producedInstance;
         }

@@ -9,7 +9,7 @@ namespace MaltiezFirearms.WeaponBehavior
     internal class UniqueIdGeneratorForFactory : IUniqueIdGeneratorForFactory
     {
         private const int cFacrotyIdSize = 8;
-        private const int cFactoryIdShift = 32 - cFacrotyIdSize;
+        private const int cFactoryIdShift = 32 - cFacrotyIdSize - 1;
         public const int MaxFactoriesNumber = 1 << cFacrotyIdSize;
         public const int MaxProductsNumber = 1 << cFactoryIdShift;
 

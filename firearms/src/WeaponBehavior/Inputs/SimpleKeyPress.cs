@@ -9,13 +9,18 @@ using Vintagestory.API.Datastructures;
 using static MaltiezFirearms.WeaponBehavior.IInput;
 using static MaltiezFirearms.WeaponBehavior.IKeyInput;
 
-namespace MaltiezFirearms.WeaponBehavior.Prototypes
+namespace MaltiezFirearms.WeaponBehavior.Inputs
 {
-    public class InputPrototype : UniqueIdFactoryObject, IKeyInput
+    public class SimpleKeyPress : UniqueIdFactoryObject, IKeyInput
     {
-        public override void Init(JsonObject definition, CollectibleObject colelctible)
+        public const string KeyAttrName = "key";
+        
+        private string mCode;
+        private string mKey;
+        public override void Init(JsonObject definition, CollectibleObject collectible)
         {
-
+            mCode = definition["code"].AsString();
+            mKey = definition[KeyAttrName].AsString();
         }
 
         public KeyEventType GetEventType()
@@ -25,7 +30,7 @@ namespace MaltiezFirearms.WeaponBehavior.Prototypes
 
         public string GetName()
         {
-            return "testInput";
+            return mCode;
         }
         public KeyPressModifiers GetIfAltCtrlShiftPressed()
         {
@@ -33,7 +38,7 @@ namespace MaltiezFirearms.WeaponBehavior.Prototypes
         }
         public string GetKey()
         {
-            return "R";
+            return mKey;
         }
     }
 }

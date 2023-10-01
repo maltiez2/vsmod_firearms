@@ -13,7 +13,7 @@ namespace MaltiezFirearms.WeaponBehavior
     {
         private int mId;
 
-        public abstract void Init(JsonObject definition, CollectibleObject colelctible);
+        public abstract void Init(JsonObject definition, CollectibleObject collectible);
         
         public void SetId(int id) => mId = id;
         public int GetId() => mId;

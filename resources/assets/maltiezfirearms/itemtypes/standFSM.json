@@ -6,26 +6,55 @@
 		{
 			"name": "maltiezfirearms.weapon",
 			"properties": {
-				"initialState": "A",
+				"initialState": "test_state_0",
 				"systems": [
 					{
-						"code": "testSystem",
-						"class": "TestSystem",
-						"atributes": []
+						"code": "test_system_0",
+						"class": "Sound",
+						"attributes": {
+							"sounds": [
+								{
+									"code": "test_sound_0",
+									"location": "maltiezfirearms:sounds/musket/musket-short-click"
+								}
+							]
+						}
 					}
 				],
 				"operations": [
 					{
-						"code": "testOperation",
-						"class": "TestOperation",
-						"atributes": []
+						"code": "test_operation_0",
+						"class": "Simple",
+						"attributes": {
+							"input": "test_input_0",
+							"states": [
+								{
+									"initial": "test_state_0",
+									"final": "test_state_1"
+								},
+								{
+									"initial": "test_state_1",
+									"final": "test_state_0"
+								}
+							],
+							"systems": [
+								{
+									"code": "test_system_0",
+									"attributes": {
+										"code": "test_sound_0"
+									}
+								}
+							]
+						}
 					}
 				],
 				"inputs": [
 					{
-						"code": "testInput",
-						"class": "TestInput",
-						"atributes": []
+						"code": "test_input_0",
+						"class": "SimpleKeyPress",
+						"attributes": {
+							"key": "R"
+						}
 					}
 				]
 			}
@@ -33,89 +62,6 @@
 	],
 
 	"attributes": {
-		"inputTypes": {
-			"reloadHotkey": {
-				"class": "Hotkey",
-				"attributes": {
-					"key": "R",
-					"type": "hold"
-				}
-			}
-		},
-		"systems": {
-			"magazine": {
-				"class": "SystemMagazine",
-				"attributes": {
-					"capcity": 10,
-					"ammoTypes": [
-						"bullet"
-					]
-				}
-			},
-			"sounds": {
-				"class": "SystemSound",
-				"attributes": {
-					"sounds": {
-						"reload": "path/to/sound"
-					}
-				}
-			}
-		},
-		"operations": {
-			"reload": {
-				"class": "OperationReload",
-				"input": "reloadHotkey",
-				"transitions": {
-					"unloaded": {
-						"successState": "loaded",
-						"failState": "unloaded", // no bullets in inventory
-						"cancelState": "unloaded",
-						"systems": [
-							{
-								"type": "magazine",
-								"action": "load",
-								"attributes": {
-									"amount": 10,
-									"ammoTypes": [
-										"bullet"
-									]
-								}
-							},
-							{
-								"type": "sounds",
-								"action": "play",
-								"attributes": {
-									"sound": "reload",
-									"delay_ms": 10
-								}
-							}
-						]
-					},
-					"jammed": {
-						"successState": "loaded",
-						"failState": "unloaded", // magazine is empty
-						"cancelState": "jammed",
-						"systems": [
-							{
-								"type": "magazine",
-								"action": "unload",
-								"attributes": {
-									"amount": 1
-								}
-							}
-						]
-					}
-				}
-			}
-		},
-		"FiniteStateMachine": {
-			"states": [
-				"loaded",
-				"unloaded",
-				"jammed"
-			],
-			"initialState": "unloaded"
-		}
 	},
 
 	"creativeinventory": {

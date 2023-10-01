@@ -64,7 +64,7 @@ namespace MaltiezFirearms.WeaponBehavior.Prototypes
 
         private ICoreAPI mApi;
 
-        public void Init(ICoreAPI api, Dictionary<string, IOperation> operations, Dictionary<string, IWeaponSystem> systems, Dictionary<string, IInput> inputs, JsonObject behaviourAttributes, CollectibleObject colelctible)
+        public void Init(ICoreAPI api, Dictionary<string, IOperation> operations, Dictionary<string, IWeaponSystem> systems, Dictionary<string, IInput> inputs, JsonObject behaviourAttributes, CollectibleObject collectible)
         {
             mInitialState = behaviourAttributes[cInitialStateAtribute].AsString();
             mApi = api;
@@ -73,20 +73,25 @@ namespace MaltiezFirearms.WeaponBehavior.Prototypes
             {
                 IOperation operation = operationEntry.Value;
 
-                List<string> operationStates = operation.GetStates();
+                List<string> operationInitialStates = operation.GetInitialStates();
+                List<string> operationFinalStates = operation.GetFinalStates();
                 List<string> operationInputs = operation.GetInputs();
-
-                operation.SetSystems(systems);
-                operation.SetInputs(inputs);
-
                 Dictionary<string, IState> operationStateMapping = new Dictionary<string, IState>();
-                foreach (string state in operationStates)
+                foreach (string state in operationInitialStates)
                 {
                     operationStateMapping.Add(state, new State(state));
                 }
-                operation.SetStates(operationStateMapping);
+                foreach (string state in operationFinalStates)
+                {
+                    if (!operationStateMapping.ContainsKey(state))
+                    {
+                        operationStateMapping.Add(state, new State(state));
+                    }
+                }
 
-                foreach (string state in operationStates)
+                operation.SetInputsStatesSystems(inputs, operationStateMapping, systems);
+
+                foreach (string state in operationInitialStates)
                 {
                     State stateObj = new State(state);
                     
@@ -100,13 +105,28 @@ namespace MaltiezFirearms.WeaponBehavior.Prototypes
                         mOperationsByInputAndState[stateObj].Add(inputs[input], operation);
                     }
                 }
+
+                foreach (string state in operationFinalStates)
+                {
+                    State stateObj = new State(state);
+
+                    if (!mOperationsByInputAndState.ContainsKey(stateObj))
+                    {
+                        mOperationsByInputAndState.Add(stateObj, new());
+                    }
+                }
             }
         }
 
         public bool Process(ItemSlot weaponSlot, EntityAgent player, IInput input)
         {
             State state = ReadStateFrom(weaponSlot);
-            if (!mOperationsByInputAndState.ContainsKey(state) && !mOperationsByInputAndState[state].ContainsKey(input))
+            if (!mOperationsByInputAndState.ContainsKey(state))
+            {
+                WriteStateTo(weaponSlot, new State(mInitialState));
+                return false;
+            }
+            if (!mOperationsByInputAndState[state].ContainsKey(input))
             {
                 return false;
             }
@@ -117,7 +137,7 @@ namespace MaltiezFirearms.WeaponBehavior.Prototypes
             State newState = (State)operation.Perform(weaponSlot, player, state, input);
             if (state.ToString() != newState.ToString())
             {
-                mApi.Logger.Warning("[Firearms] [FsmPrototype] State moved from '" + state.ToString() + "' to '" + newState.ToString() + "'.");
+                mApi.Logger.Warning("[Firearms] [FsmPrototype] State moved from '" + state.ToString() + "' to '" + newState.ToString() + "'."); // @DEBUG
                 WriteStateTo(weaponSlot, newState);
             }
 
@@ -133,10 +153,13 @@ namespace MaltiezFirearms.WeaponBehavior.Prototypes
 
         private State ReadStateFrom(ItemSlot weaponSlot)
         {
-            return new State(weaponSlot.Itemstack.Attributes.GetAsString(cStateAtributeName, mInitialState));
+            State state = new State(weaponSlot.Itemstack.Attributes.GetAsString(cStateAtributeName, mInitialState));
+            mApi.Logger.Warning("[Firearms] [FsmPrototype] Read state: " + state.ToString()); // @DEBUG
+            return state;
         }
         private void WriteStateTo(ItemSlot weaponSlot, State state)
         {
+            mApi.Logger.Warning("[Firearms] [FsmPrototype] Write state: " + state.ToString()); // @DEBUG
             weaponSlot.Itemstack.Attributes.SetString(cStateAtributeName, state.ToString());
             weaponSlot.MarkDirty();
         }
