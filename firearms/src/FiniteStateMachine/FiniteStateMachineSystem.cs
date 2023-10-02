@@ -9,7 +9,7 @@ namespace MaltiezFirearms.FiniteStateMachine
         private IFactory<IOperation> mOperationFactory;
         private IFactory<ISystem> mSystemFactory;
         private IFactory<IInput> mInputFactory;
-        private IInputInterceptor mInputIterceptor;
+        private IInputManager mInputIterceptor;
 
         public override void Start(ICoreAPI api)
         {
@@ -25,16 +25,18 @@ namespace MaltiezFirearms.FiniteStateMachine
             RegisterOperations();
             RegisterInputs();
 
-            mInputIterceptor = new Framework.InputIntercepter(api);
+            mInputIterceptor = new Framework.InputManager(api);
         }
 
         public void RegisterSystems()
         {  
             mSystemFactory.RegisterType<Systems.BasicSoundSystem>("Sound");
+            mSystemFactory.RegisterType<Systems.BasicReloadSystem>("Reload");
+            mSystemFactory.RegisterType<Systems.BasicShootingSystem>("Shooting");
         }
         public void RegisterOperations()
         {
-            mOperationFactory.RegisterType<Operations.SimpleOperation>("Simple");
+            mOperationFactory.RegisterType<Operations.SimpleOperation>("SimpleOperation");
         }
 
         public void RegisterInputs()
@@ -54,7 +56,7 @@ namespace MaltiezFirearms.FiniteStateMachine
         {
             return mInputFactory;
         }
-        public IInputInterceptor GetInputInterceptor()
+        public IInputManager GetInputInterceptor()
         {
             return mInputIterceptor;
         }

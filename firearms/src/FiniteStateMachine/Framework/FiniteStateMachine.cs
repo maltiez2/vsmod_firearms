@@ -10,10 +10,10 @@ namespace MaltiezFirearms.FiniteStateMachine.Framework
     {    
         public struct State : IState // @TODO @optimisation Change base type to int
         {
-            private readonly string state;
+            private readonly string mState;
 
-            public State(string inputState) { state = inputState; }
-            public override string ToString() { return state; }
+            public State(string inputState) { mState = inputState; }
+            public override string ToString() { return mState; }
         }
 
         public class DelayedCallback
@@ -22,12 +22,12 @@ namespace MaltiezFirearms.FiniteStateMachine.Framework
             private readonly ICoreAPI mApi;
             private long? mCallbackId;
 
-            public DelayedCallback(ICoreAPI api, int delay_ms, Action callback)
+            public DelayedCallback(ICoreAPI api, int delayMs, Action callback)
             {
                 mCallback = callback;
                 mApi = api;
 
-                mCallbackId = mApi.World.RegisterCallback(Handler, delay_ms);
+                mCallbackId = mApi.World.RegisterCallback(Handler, delayMs);
             }
 
             ~DelayedCallback()
@@ -141,11 +141,11 @@ namespace MaltiezFirearms.FiniteStateMachine.Framework
                 WriteStateTo(weaponSlot, newState);
             }
 
-            int? timerDelay_ms = operation.Timer(weaponSlot, player, state, input);
+            int? timerDelayMs = operation.Timer(weaponSlot, player, state, input);
 
-            if (timerDelay_ms != null)
+            if (timerDelayMs != null)
             {
-                mTimer = new DelayedCallback(mApi, (int)timerDelay_ms, () => Process(weaponSlot, player, input));
+                mTimer = new DelayedCallback(mApi, (int)timerDelayMs, () => Process(weaponSlot, player, input));
             }
 
             return true;

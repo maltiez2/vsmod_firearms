@@ -4,17 +4,17 @@ namespace MaltiezFirearms.FiniteStateMachine.Framework
 {
     internal class UniqueIdGeneratorForFactory : IUniqueIdGeneratorForFactory
     {
-        private const int cFacrotyIdSize = 8;
-        private const int cFactoryIdShift = 32 - cFacrotyIdSize - 1;
-        public const int MaxFactoriesNumber = 1 << cFacrotyIdSize;
-        public const int MaxProductsNumber = 1 << cFactoryIdShift;
+        private const int cFactoryIdSize = 8;
+        private const int cFactoryIdShift = 32 - cFactoryIdSize - 1;
+        public const int maxFactoriesNumber = 1 << cFactoryIdSize;
+        public const int maxProductsNumber = 1 << cFactoryIdShift;
 
         private static int sFactoryNextId = 0;
         private int mNextProductId = 0;
-        private readonly int rFactoryId;
+        private readonly int mFactoryId;
 
-        public UniqueIdGeneratorForFactory() => rFactoryId = sFactoryNextId++;
-        public int GenerateInstanceId() => rFactoryId << cFactoryIdShift + mNextProductId++;
-        public int GetFacrotyid() => rFactoryId;
+        public UniqueIdGeneratorForFactory() => mFactoryId = sFactoryNextId++;
+        public int GenerateInstanceId() => mFactoryId << cFactoryIdShift + mNextProductId++;
+        public int GetFactoryid() => mFactoryId;
     }
 }

@@ -130,8 +130,8 @@ namespace MaltiezFirearms.FiniteStateMachine.API
     {
         enum KeyEventType
         {
-            KeyDown,
-            KeyUp
+            KEY_DOWN,
+            KEY_UP
         }
         KeyEventType GetEventType();
     }
@@ -139,9 +139,9 @@ namespace MaltiezFirearms.FiniteStateMachine.API
     {
         enum MouseEventType
         {
-            MouseMove,
-            MouseDown,
-            MouseUp
+            MOUSE_MOVE,
+            MOUSE_DOWN,
+            MOUSE_UP
         }
         MouseEventType GetEventType();
     }
@@ -149,18 +149,18 @@ namespace MaltiezFirearms.FiniteStateMachine.API
     {
         enum SlotEventType
         {
-            ToWeapon,
-            FromWeapon
+            TO_WEAPON,
+            FROM_WEAPON
         }
         SlotEventType GetEventType();
     }
 
 
-    public interface IFactory<ProductClass>
+    public interface IFactory<TProductClass>
     {
         Type GetType(string name);
-        void RegisterType<ObjectClass>(string name) where ObjectClass : ProductClass, new();
-        ProductClass Instantiate(string name, JsonObject definition, CollectibleObject collectible);
+        void RegisterType<TObjectClass>(string name) where TObjectClass : TProductClass, new();
+        TProductClass Instantiate(string name, JsonObject definition, CollectibleObject collectible);
     }
     public interface IBehaviourAttributesParser
     {
@@ -175,7 +175,7 @@ namespace MaltiezFirearms.FiniteStateMachine.API
         bool Process(ItemSlot slot, EntityAgent player, IInput input);
     }
 
-    public interface IInputInterceptor
+    public interface IInputManager
     {
         public delegate bool InputCallback(ItemSlot slot, EntityAgent player, IInput input);
         void RegisterInput(IInput input, InputCallback callback, CollectibleObject collectible);
@@ -189,6 +189,6 @@ namespace MaltiezFirearms.FiniteStateMachine.API
     public interface IUniqueIdGeneratorForFactory
     {
         int GenerateInstanceId();
-        int GetFacrotyid();
+        int GetFactoryid();
     }
 }

@@ -7,9 +7,9 @@ namespace MaltiezFirearms.FiniteStateMachine.Framework
 {
     public class BehaviourAttributesParser : IBehaviourAttributesParser
     {
-        public const string CodeAttrName = "code";
-        public const string ClassAttrName = "class";
-        public const string AttributesAttrName = "attributes";
+        public const string codeAttrName = "code";
+        public const string classAttrName = "class";
+        public const string attributesAttrName = "attributes";
         
         private readonly Dictionary<string, IOperation> mOperations = new();
         private readonly Dictionary<string, ISystem> mSystems = new();
@@ -47,12 +47,12 @@ namespace MaltiezFirearms.FiniteStateMachine.Framework
             return mInputs;
         }
 
-        static private void AddObject<ObjectInterface>(JsonObject definition, CollectibleObject collectible, IFactory<ObjectInterface> factory, Dictionary<string, ObjectInterface> container)
+        static private void AddObject<TObjectInterface>(JsonObject definition, CollectibleObject collectible, IFactory<TObjectInterface> factory, Dictionary<string, TObjectInterface> container)
         {
-            string objectCode = definition[CodeAttrName].AsString();
-            string objectClass = definition[ClassAttrName].AsString();
-            JsonObject attributes = definition[AttributesAttrName];
-            ObjectInterface objectInstance = factory.Instantiate(objectClass, attributes, collectible);
+            string objectCode = definition[codeAttrName].AsString();
+            string objectClass = definition[classAttrName].AsString();
+            JsonObject attributes = definition[attributesAttrName];
+            TObjectInterface objectInstance = factory.Instantiate(objectClass, attributes, collectible);
             container.Add(objectCode, objectInstance);
         }
     }

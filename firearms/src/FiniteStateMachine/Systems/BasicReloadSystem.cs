@@ -8,12 +8,12 @@ namespace MaltiezFirearms.FiniteStateMachine.Systems
 {  
     internal class BasicReloadSystem : UniqueIdFactoryObject, ISystem, IAmmoSelector
     {
-        public const string AmmoCodeAttrName = "ammoCode";
-        public const string ActionAttrName = "action";
-        public const string TakeAction = "take";
-        public const string PutAction = "put";
+        public const string ammoCodeAttrName = "ammoCode";
+        public const string actionAttrName = "action";
+        public const string takeAction = "take";
+        public const string putAction = "put";
 
-        private ItemStack ammo;
+        private ItemStack mAmmo;
         
         public override void Init(JsonObject definition, CollectibleObject collectible)
         {
@@ -25,31 +25,31 @@ namespace MaltiezFirearms.FiniteStateMachine.Systems
         }
         public virtual bool Verify(ItemSlot slot, EntityAgent player, JsonObject parameters)
         {
-            string action = parameters[ActionAttrName].AsString();
-            if (action == PutAction) return true;
+            string action = parameters[actionAttrName].AsString();
+            if (action == putAction) return true;
   
-            string ammoCode = parameters[AmmoCodeAttrName].AsString();
-            return GetAmmoSlot(player, ammoCode) == null;
+            string ammoCode = parameters[ammoCodeAttrName].AsString();
+            return GetAmmoSlot(player, ammoCode) != null;
         }
         public virtual bool Process(ItemSlot slot, EntityAgent player, JsonObject parameters)
         {
-            string action = parameters[ActionAttrName].AsString();
-            if (action == PutAction)
+            string action = parameters[actionAttrName].AsString();
+            if (action == putAction)
             {
                 PutAmmoBack(player);
                 return true;
             }
 
-            string ammoCode = parameters[AmmoCodeAttrName].AsString();
+            string ammoCode = parameters[ammoCodeAttrName].AsString();
             ItemSlot ammoSlot = GetAmmoSlot(player, ammoCode);
             if (ammoSlot == null) return false;
             
-            ammo = ammoSlot.TakeOut(1);
+            mAmmo = ammoSlot.TakeOut(1);
             return true;
         }
         public virtual ItemStack GetSelectedAmmo()
         {
-            return ammo;
+            return mAmmo;
         }
 
         protected ItemSlot GetAmmoSlot(EntityAgent player, string ammoCode)
@@ -60,7 +60,7 @@ namespace MaltiezFirearms.FiniteStateMachine.Systems
             {
                 if (inventorySlot is ItemSlotCreative) return true;
 
-                if (inventorySlot.Itemstack != null && inventorySlot.Itemstack.Collectible.Code.Path.StartsWith(ammoCode))
+                if (inventorySlot.Itemstack != null && inventorySlot.Itemstack.Collectible.Code.Path.Contains(ammoCode))
                 {
                     slot = inventorySlot;
                     return false;
@@ -73,8 +73,8 @@ namespace MaltiezFirearms.FiniteStateMachine.Systems
         }
         protected void PutAmmoBack(EntityAgent player)
         {
-            if (ammo != null) player.TryGiveItemStack(ammo);
-            ammo = null;
+            if (mAmmo != null) player.TryGiveItemStack(mAmmo);
+            mAmmo = null;
         }
     }
 }

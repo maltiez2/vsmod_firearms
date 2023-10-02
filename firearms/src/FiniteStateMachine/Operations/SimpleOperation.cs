@@ -7,12 +7,12 @@ namespace MaltiezFirearms.FiniteStateMachine.Operations
 {
     public class SimpleOperation : UniqueIdFactoryObject, IOperation
     {
-        public const string MainTransitionsAttrName = "states";
-        public const string SystemsAttrName = "systems";
-        public const string InitialStateAttrName = "initial";
-        public const string FinalStateAttrName = "final";
-        public const string InputAttrName = "input";
-        public const string AttributesAttrName = "attributes";
+        public const string mainTransitionsAttrName = "states";
+        public const string systemsAttrName = "systems";
+        public const string initialStateAttrName = "initial";
+        public const string finalStateAttrName = "final";
+        public const string inputAttrName = "input";
+        public const string attributesAttrName = "attributes";
 
         private readonly Dictionary<string, string> mStatesInitialData = new();
         private readonly Dictionary<string, JsonObject> mSystemsInitialData = new();
@@ -23,19 +23,19 @@ namespace MaltiezFirearms.FiniteStateMachine.Operations
         
         public override void Init(JsonObject definition, CollectibleObject collectible)
         {
-            JsonObject[] mainTransitions = definition[MainTransitionsAttrName].AsArray();
+            JsonObject[] mainTransitions = definition[mainTransitionsAttrName].AsArray();
             foreach (JsonObject transition in mainTransitions)
             {
-                mStatesInitialData.Add(transition[InitialStateAttrName].AsString(), transition[FinalStateAttrName].AsString());
+                mStatesInitialData.Add(transition[initialStateAttrName].AsString(), transition[finalStateAttrName].AsString());
             }
 
-            JsonObject[] systems = definition[SystemsAttrName].AsArray();
+            JsonObject[] systems = definition[systemsAttrName].AsArray();
             foreach (JsonObject system in systems)
             {
                 mSystemsInitialData.Add(system["code"].AsString(), system);
             }
 
-            mInputInitialData = definition[InputAttrName].AsString();
+            mInputInitialData = definition[inputAttrName].AsString();
         }
 
         public List<string> GetInputs()
@@ -85,7 +85,7 @@ namespace MaltiezFirearms.FiniteStateMachine.Operations
         {
             foreach (var entry in mSystems)
             {
-                if (!entry.Key.Verify(weaponSlot, player, entry.Value[AttributesAttrName]))
+                if (!entry.Key.Verify(weaponSlot, player, entry.Value[attributesAttrName]))
                 {
                     return state;
                 }
@@ -93,7 +93,7 @@ namespace MaltiezFirearms.FiniteStateMachine.Operations
 
             foreach (var entry in mSystems)
             {
-                entry.Key.Process(weaponSlot, player, entry.Value[AttributesAttrName]);
+                entry.Key.Process(weaponSlot, player, entry.Value[attributesAttrName]);
             }
 
             return mStates[state];

@@ -14,7 +14,7 @@ namespace MaltiezFirearms.FiniteStateMachine.Framework
         private ICoreAPI mApi;
         private IFactoryProvider mFactories;
         private IFiniteStateMachine mFsm;
-        private IInputInterceptor mInputIterceptor;
+        private IInputManager mInputIterceptor;
         private JsonObject mProperties;
 
         public override void OnLoaded(ICoreAPI api)
@@ -25,13 +25,13 @@ namespace MaltiezFirearms.FiniteStateMachine.Framework
             mFactories = mApi.ModLoader.GetModSystem<FiniteStateMachineSystem>();
             mInputIterceptor = mApi.ModLoader.GetModSystem<FiniteStateMachineSystem>().GetInputInterceptor();
 
-            IBehaviourAttributesParser mParser = new Framework.BehaviourAttributesParser();
-            mParser.ParseDefinition(mFactories.GetOperationFactory(), mFactories.GetSystemFactory(), mFactories.GetInputFactory(), mProperties, collObj);
+            IBehaviourAttributesParser parser = new Framework.BehaviourAttributesParser();
+            parser.ParseDefinition(mFactories.GetOperationFactory(), mFactories.GetSystemFactory(), mFactories.GetInputFactory(), mProperties, collObj);
 
             mFsm = new Framework.FiniteStateMachine();
-            mFsm.Init(mApi, mParser.GetOperations(), mParser.GetSystems(), mParser.GetInputs(), mProperties, collObj);
+            mFsm.Init(mApi, parser.GetOperations(), parser.GetSystems(), parser.GetInputs(), mProperties, collObj);
 
-            foreach (var inputEntry in mParser.GetInputs())
+            foreach (var inputEntry in parser.GetInputs())
             {
                 mInputIterceptor.RegisterInput(inputEntry.Value, mFsm.Process, collObj);
             }

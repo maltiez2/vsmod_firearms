@@ -9,7 +9,7 @@
 				"initialState": "test_state_0",
 				"systems": [
 					{
-						"code": "test_system_0",
+						"code": "sound_system",
 						"class": "Sound",
 						"attributes": {
 							"sounds": [
@@ -19,12 +19,24 @@
 								}
 							]
 						}
+					},
+					{
+						"code": "reload_system",
+						"class": "Reload",
+						"attributes": {}
+					},
+					{
+						"code": "shooting_system",
+						"class": "Shooting",
+						"attributes": {
+							"ammoSource": "reload_system"
+						}
 					}
 				],
 				"operations": [
 					{
 						"code": "test_operation_0",
-						"class": "Simple",
+						"class": "SimpleOperation",
 						"attributes": {
 							"input": "test_input_0",
 							"states": [
@@ -39,10 +51,21 @@
 							],
 							"systems": [
 								{
-									"code": "test_system_0",
+									"code": "sound_system",
 									"attributes": {
 										"code": "test_sound_0"
 									}
+								},
+								{
+									"code": "reload_system",
+									"attributes": {
+										"ammoCode": "arrow",
+										"action": "take"
+									}
+								},
+								{
+									"code": "shooting_system",
+									"attributes": {}
 								}
 							]
 						}

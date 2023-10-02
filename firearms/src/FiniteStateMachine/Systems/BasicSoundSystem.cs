@@ -14,10 +14,10 @@ namespace MaltiezFirearms.FiniteStateMachine.Systems
 
     internal class BasicSound : ISound
     {
-        public const string LocationAttrName = "location";
-        public const string RangeAttrName = "range";
-        public const string VolumeAttrName = "volume";
-        public const string RandomizePitchAttrName = "randomizePitch";
+        public const string locationAttrName = "location";
+        public const string rangeAttrName = "range";
+        public const string volumeAttrName = "volume";
+        public const string randomizePitchAttrName = "randomizePitch";
 
         private AssetLocation mLocation;
         private float mRange = 32;
@@ -26,7 +26,7 @@ namespace MaltiezFirearms.FiniteStateMachine.Systems
         
         public virtual void Init(JsonObject definition)
         {
-            mLocation = new AssetLocation(definition[LocationAttrName].AsString());
+            mLocation = new AssetLocation(definition[locationAttrName].AsString());
 
             InitSoundParams(definition);
         }
@@ -37,9 +37,9 @@ namespace MaltiezFirearms.FiniteStateMachine.Systems
 
         protected void InitSoundParams(JsonObject definition)
         {
-            if (definition.KeyExists(RangeAttrName)) mRange = definition[RangeAttrName].AsFloat();
-            if (definition.KeyExists(VolumeAttrName)) mVolume = definition[VolumeAttrName].AsFloat();
-            if (definition.KeyExists(RandomizePitchAttrName)) mRandomizePitch = definition[RandomizePitchAttrName].AsBool();
+            if (definition.KeyExists(rangeAttrName)) mRange = definition[rangeAttrName].AsFloat();
+            if (definition.KeyExists(volumeAttrName)) mVolume = definition[volumeAttrName].AsFloat();
+            if (definition.KeyExists(randomizePitchAttrName)) mRandomizePitch = definition[randomizePitchAttrName].AsBool();
         }
 
         protected void PlaySound(EntityAgent byEntity, AssetLocation location)
@@ -53,12 +53,12 @@ namespace MaltiezFirearms.FiniteStateMachine.Systems
 
     internal class RandomizedSound : BasicSound
     {
-        private static Random Rand = new Random();
+        private static Random sRand = new Random();
         private List<AssetLocation> mLocations = new();
 
         public override void Init(JsonObject definition)
         {
-            foreach (string path in definition[LocationAttrName].AsArray<string>())
+            foreach (string path in definition[locationAttrName].AsArray<string>())
             {
                 mLocations.Add(new AssetLocation(path));
             }
@@ -68,7 +68,7 @@ namespace MaltiezFirearms.FiniteStateMachine.Systems
 
         public override void Play(EntityAgent byEntity)
         {
-            int locationIndex = (int)Math.Floor((decimal)(Rand.NextDouble() * (mLocations.Count - 1)));
+            int locationIndex = (int)Math.Floor((decimal)(sRand.NextDouble() * (mLocations.Count - 1)));
 
             PlaySound(byEntity, mLocations[locationIndex]);
         }
@@ -76,28 +76,28 @@ namespace MaltiezFirearms.FiniteStateMachine.Systems
     
     public class BasicSoundSystem : UniqueIdFactoryObject, ISystem
     {
-        private readonly Dictionary<string, ISound> rSounds = new();
+        private readonly Dictionary<string, ISound> mSounds = new();
 
-        public const string SoundsAttrName = "sounds";
-        public const string SoundCodeAttrName = "code";
+        public const string soundsAttrName = "sounds";
+        public const string soundCodeAttrName = "code";
 
         public override void Init(JsonObject definition, CollectibleObject collectible)
         {
-            JsonObject[] sounds = definition[SoundsAttrName].AsArray();
+            JsonObject[] sounds = definition[soundsAttrName].AsArray();
 
             foreach (JsonObject sound in sounds)
             {
                 string soundCode = sound["code"].AsString();
-                if (sound[BasicSound.LocationAttrName].IsArray())
+                if (sound[BasicSound.locationAttrName].IsArray())
                 {
-                    rSounds.Add(soundCode, new RandomizedSound());
+                    mSounds.Add(soundCode, new RandomizedSound());
                 }
                 else
                 {
-                    rSounds.Add(soundCode, new BasicSound());
+                    mSounds.Add(soundCode, new BasicSound());
                 }
 
-                rSounds[soundCode].Init(sound);
+                mSounds[soundCode].Init(sound);
             }
         }
         public void SetSystems(Dictionary<string, ISystem> systems)
@@ -106,7 +106,7 @@ namespace MaltiezFirearms.FiniteStateMachine.Systems
         }
         public virtual bool Verify(ItemSlot weaponSlot, EntityAgent player, JsonObject parameters)
         {
-            if (parameters.KeyExists(SoundCodeAttrName) && rSounds.ContainsKey(parameters[SoundCodeAttrName].AsString()))
+            if (parameters.KeyExists(soundCodeAttrName) && mSounds.ContainsKey(parameters[soundCodeAttrName].AsString()))
             {
                 return true;
             }
@@ -115,8 +115,8 @@ namespace MaltiezFirearms.FiniteStateMachine.Systems
         }
         public virtual bool Process(ItemSlot weaponSlot, EntityAgent player, JsonObject parameters)
         {
-            string soundCode = parameters[SoundCodeAttrName].AsString();
-            rSounds[soundCode].Play(player);
+            string soundCode = parameters[soundCodeAttrName].AsString();
+            mSounds[soundCode].Play(player);
 
             return true;
         }

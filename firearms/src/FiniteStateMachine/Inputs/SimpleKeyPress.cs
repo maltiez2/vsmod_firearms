@@ -7,19 +7,19 @@ namespace MaltiezFirearms.FiniteStateMachine.Inputs
 {
     public class SimpleKeyPress : UniqueIdFactoryObject, IKeyInput
     {
-        public const string KeyAttrName = "key";
+        public const string keyAttrName = "key";
         
         private string mCode;
         private string mKey;
         public override void Init(JsonObject definition, CollectibleObject collectible)
         {
             mCode = definition["code"].AsString();
-            mKey = definition[KeyAttrName].AsString();
+            mKey = definition[keyAttrName].AsString();
         }
 
         public KeyEventType GetEventType()
         {
-            return KeyEventType.KeyDown;
+            return KeyEventType.KEY_UP;
         }
 
         public string GetName()

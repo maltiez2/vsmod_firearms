@@ -4,31 +4,37 @@ using System.Collections.Generic;
 using Vintagestory.API.Client;
 using Vintagestory.API.Common;
 using Vintagestory.API.Server;
-using static MaltiezFirearms.FiniteStateMachine.API.IInputInterceptor;
+using static MaltiezFirearms.FiniteStateMachine.API.IInputManager;
 using static MaltiezFirearms.FiniteStateMachine.API.IKeyInput;
 using static MaltiezFirearms.FiniteStateMachine.API.IMouseInput;
 using static MaltiezFirearms.FiniteStateMachine.API.ISlotChanged;
 using MaltiezFirearms.FiniteStateMachine.API;
+using System.Linq;
 
 namespace MaltiezFirearms.FiniteStateMachine.Framework
 {
-    public class InputIntercepter : IInputInterceptor
+    public class InputManager : IInputManager
     {
-        private readonly ICoreClientAPI cApi;
-        private readonly List<IInput> mInputs = new List<IInput>();
-        private readonly List<InputCallback> mCallbacks = new List<InputCallback>();
-        private readonly List<CollectibleObject> mCollectibles = new List<CollectibleObject>();
+        private readonly ICoreClientAPI mApi;
+        private readonly List<IInput> mInputs = new();
+        private readonly List<InputCallback> mCallbacks = new();
+        private readonly List<CollectibleObject> mCollectibles = new();
         private readonly InputPacketSender mPacketSender;
 
-        private const string mNetworkChannelName = "maltiezfierarms_inputIntercepter";
+        private const string cNetworkChannelName = "maltiezfierarms_inputIntercepter";
 
-        public InputIntercepter(ICoreAPI api)
+        private static readonly HashSet<Type> rGuiDialogWhiteList = new HashSet<Type>
         {
-            mPacketSender = new InputPacketSender(api, ServerInputProxyHandler, mNetworkChannelName);
+            typeof(HudElement)
+        };
+
+        public InputManager(ICoreAPI api)
+        {
+            mPacketSender = new InputPacketSender(api, ServerInputProxyHandler, cNetworkChannelName);
 
             if (api.Side == EnumAppSide.Client)
             {
-                cApi = api as ICoreClientAPI;
+                mApi = api as ICoreClientAPI;
             }
         }
 
@@ -40,34 +46,34 @@ namespace MaltiezFirearms.FiniteStateMachine.Framework
             mCallbacks.Add(callback);
             mCollectibles.Add(collectible);
 
-            if (input is IHotkeyInput && cApi != null)
+            if (input is IHotkeyInput && mApi != null)
             {
                 string inputCode = inputIndex.ToString() + "_" + input.GetName(); // @TODO remove duplicates from different weapons
                 ClientRegisterHotkey(input as IHotkeyInput, inputCode, inputIndex);
             }
 
-            if (input is IEventInput && cApi != null)
+            if (input is IEventInput && mApi != null)
             {
                 ClientRegisterEventHandler(input as IEventInput, inputIndex);
             }
         }
         private void ClientRegisterHotkey(IHotkeyInput input, string inputCode, int inputIndex)
         {
-            KeyPressModifiers AltCtrlShift = input.GetIfAltCtrlShiftPressed();
+            KeyPressModifiers altCtrlShift = input.GetIfAltCtrlShiftPressed();
             GlKeys key = (GlKeys)Enum.Parse(typeof(GlKeys), input.GetKey());
 
-            cApi.Input.RegisterHotKey(inputCode, inputCode, key, HotkeyType.CharacterControls, AltCtrlShift.Alt, AltCtrlShift.Ctrl, AltCtrlShift.Shift);
-            cApi.Input.SetHotKeyHandler(inputCode, _ => ClientInputProxyHandler(inputIndex, null));
+            mApi.Input.RegisterHotKey(inputCode, inputCode, key, HotkeyType.CharacterControls, altCtrlShift.Alt, altCtrlShift.Ctrl, altCtrlShift.Shift);
+            mApi.Input.SetHotKeyHandler(inputCode, _ => ClientInputProxyHandler(inputIndex, null));
         }
         private void ClientRegisterEventHandler(IEventInput input, int inputIndex)
         {
             switch ((input as IKeyInput)?.GetEventType())
             {
-                case KeyEventType.KeyDown:
-                    cApi.Event.KeyDown += (KeyEvent ev) => ClientKeyInputProxyHandler(ev, inputIndex, KeyEventType.KeyDown);
+                case KeyEventType.KEY_DOWN:
+                    mApi.Event.KeyDown += (KeyEvent ev) => ClientKeyInputProxyHandler(ev, inputIndex, KeyEventType.KEY_DOWN);
                     break;
-                case KeyEventType.KeyUp:
-                    cApi.Event.KeyUp += (KeyEvent ev) => ClientKeyInputProxyHandler(ev, inputIndex, KeyEventType.KeyUp);
+                case KeyEventType.KEY_UP:
+                    mApi.Event.KeyUp += (KeyEvent ev) => ClientKeyInputProxyHandler(ev, inputIndex, KeyEventType.KEY_UP);
                     break;
                 case null:
                     break;
@@ -75,14 +81,14 @@ namespace MaltiezFirearms.FiniteStateMachine.Framework
 
             switch ((input as IMouseInput)?.GetEventType())
             {
-                case MouseEventType.MouseDown:
-                    cApi.Event.MouseDown += (MouseEvent ev) => ClientMouseInputProxyHandler(ev, inputIndex, MouseEventType.MouseDown);
+                case MouseEventType.MOUSE_DOWN:
+                    mApi.Event.MouseDown += (MouseEvent ev) => ClientMouseInputProxyHandler(ev, inputIndex, MouseEventType.MOUSE_DOWN);
                     break;
-                case MouseEventType.MouseUp:
-                    cApi.Event.MouseUp += (MouseEvent ev) => ClientMouseInputProxyHandler(ev, inputIndex, MouseEventType.MouseUp);
+                case MouseEventType.MOUSE_UP:
+                    mApi.Event.MouseUp += (MouseEvent ev) => ClientMouseInputProxyHandler(ev, inputIndex, MouseEventType.MOUSE_UP);
                     break;
-                case MouseEventType.MouseMove:
-                    cApi.Event.MouseMove += (MouseEvent ev) => ClientMouseInputProxyHandler(ev, inputIndex, MouseEventType.MouseMove);
+                case MouseEventType.MOUSE_MOVE:
+                    mApi.Event.MouseMove += (MouseEvent ev) => ClientMouseInputProxyHandler(ev, inputIndex, MouseEventType.MOUSE_MOVE);
                     break;
                 case null:
                     break;
@@ -90,15 +96,16 @@ namespace MaltiezFirearms.FiniteStateMachine.Framework
 
             if (input is ISlotChanged)
             {
-                 cApi.Event.AfterActiveSlotChanged += (ActiveSlotChangeEventArgs ev) => ClientSlotInputProxyHandler(inputIndex, ev.FromSlot, ev.ToSlot);
+                 mApi.Event.AfterActiveSlotChanged += (ActiveSlotChangeEventArgs ev) => ClientSlotInputProxyHandler(inputIndex, ev.FromSlot, ev.ToSlot);
             }
         }
+        
 
         private bool ClientCheckModifiers(KeyPressModifiers modifiers)
         {
-            bool altPressed = cApi.Input.KeyboardKeyState[(int)GlKeys.AltLeft] || cApi.Input.KeyboardKeyState[(int)GlKeys.AltRight];
-            bool ctrlPressed = cApi.Input.KeyboardKeyState[(int)GlKeys.ControlLeft] || cApi.Input.KeyboardKeyState[(int)GlKeys.ControlRight];
-            bool shiftPressed = cApi.Input.KeyboardKeyState[(int)GlKeys.ShiftLeft] || cApi.Input.KeyboardKeyState[(int)GlKeys.ShiftRight];
+            bool altPressed = mApi.Input.KeyboardKeyState[(int)GlKeys.AltLeft] || mApi.Input.KeyboardKeyState[(int)GlKeys.AltRight];
+            bool ctrlPressed = mApi.Input.KeyboardKeyState[(int)GlKeys.ControlLeft] || mApi.Input.KeyboardKeyState[(int)GlKeys.ControlRight];
+            bool shiftPressed = mApi.Input.KeyboardKeyState[(int)GlKeys.ShiftLeft] || mApi.Input.KeyboardKeyState[(int)GlKeys.ShiftRight];
 
             return modifiers.Alt == altPressed && modifiers.Ctrl == ctrlPressed && modifiers.Shift == shiftPressed;
         }
@@ -112,7 +119,7 @@ namespace MaltiezFirearms.FiniteStateMachine.Framework
             }
             else
             {
-                player = cApi?.World?.Player;
+                player = mApi?.World?.Player;
             }
             
             if (slotId != null)
@@ -128,24 +135,26 @@ namespace MaltiezFirearms.FiniteStateMachine.Framework
         public bool ClientKeyInputProxyHandler(KeyEvent ev, int inputIndex, KeyEventType keyEventType)
         {
             IKeyInput input = mInputs[inputIndex] as IKeyInput;
-            GlKeys key = (GlKeys)Enum.Parse(typeof(GlKeys), input.GetKey());
+            GlKeys key = (GlKeys)Enum.Parse(typeof(GlKeys), input.GetKey()); // @TODO Make this string parsing to be once per InputManager init
             KeyPressModifiers modifiers = input.GetIfAltCtrlShiftPressed();
 
-            if (input.GetEventType() != keyEventType) return false;
             if (ev.KeyCode != (int)key) return false;
+            if (input.GetEventType() != keyEventType) return false;
             if (modifiers.Alt != ev.AltPressed || modifiers.Ctrl != ev.CtrlPressed || modifiers.Shift != ev.ShiftPressed) return false;
+            if (!ClientIfEventShouldBeHandled()) return false;
 
             return ClientInputProxyHandler(inputIndex, null);
         }
         public bool ClientMouseInputProxyHandler(MouseEvent ev, int inputIndex, MouseEventType keyEventType)
         {
             IMouseInput input = mInputs[inputIndex] as IMouseInput;
-            EnumMouseButton key = (EnumMouseButton)Enum.Parse(typeof(EnumMouseButton), input.GetKey());
+            EnumMouseButton key = (EnumMouseButton)Enum.Parse(typeof(EnumMouseButton), input.GetKey()); // @TODO Make this string parsing to be once per InputManager init
             KeyPressModifiers modifiers = input.GetIfAltCtrlShiftPressed();
 
-            if (input.GetEventType() != keyEventType) return false;
             if (ev.Button != key) return false;
+            if (input.GetEventType() != keyEventType) return false;
             if (!ClientCheckModifiers(modifiers)) return false;
+            if (!ClientIfEventShouldBeHandled()) return false;
 
             return ClientInputProxyHandler(inputIndex, null);
         }
@@ -154,11 +163,11 @@ namespace MaltiezFirearms.FiniteStateMachine.Framework
             ISlotChanged input = mInputs[inputIndex] as ISlotChanged;
 
             int slotId;
-            if (input.GetEventType() == SlotEventType.FromWeapon)
+            if (input.GetEventType() == SlotEventType.FROM_WEAPON)
             {
                 slotId = fromSlotId;
             }
-            else if (input.GetEventType() == SlotEventType.ToWeapon)
+            else if (input.GetEventType() == SlotEventType.TO_WEAPON)
             {
                 slotId = toSlotId;
             }
@@ -171,7 +180,7 @@ namespace MaltiezFirearms.FiniteStateMachine.Framework
         }
         public bool ClientInputProxyHandler(int inputIndex, int? slotId)
         {
-            EntityAgent playerEntity = cApi.World.Player.Entity;
+            EntityAgent playerEntity = mApi.World.Player.Entity;
 
             mPacketSender.SendPacket(inputIndex, slotId);
 
@@ -186,7 +195,7 @@ namespace MaltiezFirearms.FiniteStateMachine.Framework
 
         private bool InputHandler(int inputIndex, EntityAgent player, ItemSlot slot)
         {
-            if (slot.Itemstack.Collectible != mCollectibles[inputIndex])
+            if (slot?.Itemstack?.Collectible == null || slot.Itemstack.Collectible != mCollectibles[inputIndex])
             {
                 return false;
             }
@@ -196,6 +205,26 @@ namespace MaltiezFirearms.FiniteStateMachine.Framework
 
             return callback(slot, player, input);
         }
+
+        private bool ClientIfEventShouldBeHandled()
+        {
+            foreach (GuiDialog item in mApi.Gui.OpenedGuis)
+            {
+                if (item is HudElement) continue; // @TODO This is also not good
+                if (item.ToString().EndsWith("HudMouseTools")) continue; // @TODO @REFACTOR This is just bad...
+                mApi.Logger.Warning("[Firearms] Failed check: " + item.ToString()); // @DEBUG @LOG
+
+                return false;
+            }
+
+            if (mApi.IsGamePaused)
+            {
+                mApi.Logger.Error("[Firearms] IsGamePaused: " + mApi.IsGamePaused.ToString()); // @DEBUG @LOG
+                return false;
+            }
+
+            return true;
+        }
     }
 
     public class InputPacketSender
@@ -203,8 +232,8 @@ namespace MaltiezFirearms.FiniteStateMachine.Framework
         [ProtoContract(ImplicitFields = ImplicitFields.AllPublic)]
         public class InputPacket
         {
-            public int inputIndex;
-            public int? slotId;
+            public int InputIndex;
+            public int? SlotId;
         }
 
         public delegate void InputHandler(int inputIndex, int? slotId, IServerPlayer player);
@@ -232,24 +261,24 @@ namespace MaltiezFirearms.FiniteStateMachine.Framework
         }
         private void OnServerPacket(IServerPlayer fromPlayer, InputPacket packet)
         {
-            mHandler(packet.inputIndex, packet.slotId, fromPlayer);
+            mHandler(packet.InputIndex, packet.SlotId, fromPlayer);
         }
 
         // CLIENT SIDE
 
-        IClientNetworkChannel clientNetworkChannel;
+        IClientNetworkChannel mClientNetworkChannel;
 
         private void StartClientSide(ICoreClientAPI api, string channelName)
         {
-            clientNetworkChannel = api.Network.RegisterChannel(channelName)
+            mClientNetworkChannel = api.Network.RegisterChannel(channelName)
             .RegisterMessageType<InputPacket>();
         }
         public void SendPacket(int index, int? slot)
         {
-            clientNetworkChannel.SendPacket(new InputPacket()
+            mClientNetworkChannel.SendPacket(new InputPacket()
             {
-                inputIndex = index,
-                slotId = slot
+                InputIndex = index,
+                SlotId = slot
             });
         }
     }
