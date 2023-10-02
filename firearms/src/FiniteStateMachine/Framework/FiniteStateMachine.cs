@@ -154,12 +154,10 @@ namespace MaltiezFirearms.FiniteStateMachine.Framework
         private State ReadStateFrom(ItemSlot weaponSlot)
         {
             State state = new State(weaponSlot.Itemstack.Attributes.GetAsString(cStateAtributeName, mInitialState));
-            mApi.Logger.Warning("[Firearms] [FsmPrototype] Read state: " + state.ToString()); // @DEBUG
             return state;
         }
         private void WriteStateTo(ItemSlot weaponSlot, State state)
         {
-            mApi.Logger.Warning("[Firearms] [FsmPrototype] Write state: " + state.ToString()); // @DEBUG
             weaponSlot.Itemstack.Attributes.SetString(cStateAtributeName, state.ToString());
             weaponSlot.MarkDirty();
         }

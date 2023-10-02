@@ -8,9 +8,9 @@ namespace MaltiezFirearms.FiniteStateMachine.API
 {
     public struct KeyPressModifiers
     {
-        public bool Alt;
-        public bool Ctrl;
-        public bool Shift;
+        public bool Alt { get; set; }
+        public bool Ctrl { get; set; }
+        public bool Shift { get; set; }
 
         public KeyPressModifiers(bool alt, bool ctrl, bool shift)
         {

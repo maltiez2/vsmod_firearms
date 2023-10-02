@@ -1,6 +1,7 @@
 ﻿using Vintagestory.API.Common;
 using MaltiezFirearms.FiniteStateMachine.API;
 using MaltiezFirearms.FiniteStateMachine.Systems;
+using MaltiezFirearms.FiniteStateMachine.Inputs;
 
 namespace MaltiezFirearms.FiniteStateMachine
 {
@@ -42,6 +43,9 @@ namespace MaltiezFirearms.FiniteStateMachine
         public void RegisterInputs()
         {
             mInputFactory.RegisterType<Inputs.SimpleKeyPress>("SimpleKeyPress");
+            mInputFactory.RegisterType<Inputs.BasicKey>("Key");
+            mInputFactory.RegisterType<Inputs.BasicMouse>("MouseKey");
+            mInputFactory.RegisterType<Inputs.BasicHotkey>("Hotkey");
         }
 
         public IFactory<IOperation> GetOperationFactory()

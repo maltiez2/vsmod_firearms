@@ -21,12 +21,7 @@ namespace MaltiezFirearms.FiniteStateMachine.Framework
         private readonly List<CollectibleObject> mCollectibles = new();
         private readonly InputPacketSender mPacketSender;
 
-        private const string cNetworkChannelName = "maltiezfierarms_inputIntercepter";
-
-        private static readonly HashSet<Type> rGuiDialogWhiteList = new HashSet<Type>
-        {
-            typeof(HudElement)
-        };
+        private const string cNetworkChannelName = "maltiezfierarms.inputManager";
 
         public InputManager(ICoreAPI api)
         {
@@ -135,28 +130,34 @@ namespace MaltiezFirearms.FiniteStateMachine.Framework
         public bool ClientKeyInputProxyHandler(KeyEvent ev, int inputIndex, KeyEventType keyEventType)
         {
             IKeyInput input = mInputs[inputIndex] as IKeyInput;
+            if (input.GetEventType() != keyEventType) return false;
+
             GlKeys key = (GlKeys)Enum.Parse(typeof(GlKeys), input.GetKey()); // @TODO Make this string parsing to be once per InputManager init
             KeyPressModifiers modifiers = input.GetIfAltCtrlShiftPressed();
 
             if (ev.KeyCode != (int)key) return false;
-            if (input.GetEventType() != keyEventType) return false;
             if (modifiers.Alt != ev.AltPressed || modifiers.Ctrl != ev.CtrlPressed || modifiers.Shift != ev.ShiftPressed) return false;
             if (!ClientIfEventShouldBeHandled()) return false;
 
-            return ClientInputProxyHandler(inputIndex, null);
+            bool handled = ClientInputProxyHandler(inputIndex, null);
+            if (handled) ev.Handled = true;
+            return handled;
         }
         public bool ClientMouseInputProxyHandler(MouseEvent ev, int inputIndex, MouseEventType keyEventType)
         {
             IMouseInput input = mInputs[inputIndex] as IMouseInput;
+            if (input.GetEventType() != keyEventType) return false;
+
             EnumMouseButton key = (EnumMouseButton)Enum.Parse(typeof(EnumMouseButton), input.GetKey()); // @TODO Make this string parsing to be once per InputManager init
             KeyPressModifiers modifiers = input.GetIfAltCtrlShiftPressed();
 
             if (ev.Button != key) return false;
-            if (input.GetEventType() != keyEventType) return false;
             if (!ClientCheckModifiers(modifiers)) return false;
             if (!ClientIfEventShouldBeHandled()) return false;
 
-            return ClientInputProxyHandler(inputIndex, null);
+            bool handled = ClientInputProxyHandler(inputIndex, null);
+            if (handled) ev.Handled = true;
+            return handled;
         }
         public bool ClientSlotInputProxyHandler(int inputIndex, int fromSlotId, int toSlotId)
         {
@@ -203,7 +204,9 @@ namespace MaltiezFirearms.FiniteStateMachine.Framework
             IInput input = mInputs[inputIndex];
             InputCallback callback = mCallbacks[inputIndex];
 
-            return callback(slot, player, input);
+            bool handled = callback(slot, player, input);
+            mApi?.Logger.Error("[Firearms] handled: " + handled.ToString());
+            return handled;
         }
 
         private bool ClientIfEventShouldBeHandled()
