@@ -100,6 +100,10 @@ namespace MaltiezFirearms.FiniteStateMachine.Systems
                 rSounds[soundCode].Init(sound);
             }
         }
+        public void SetSystems(Dictionary<string, ISystem> systems)
+        {
+            // Does not require access to other systems
+        }
         public virtual bool Verify(ItemSlot weaponSlot, EntityAgent player, JsonObject parameters)
         {
             if (parameters.KeyExists(SoundCodeAttrName) && rSounds.ContainsKey(parameters[SoundCodeAttrName].AsString()))

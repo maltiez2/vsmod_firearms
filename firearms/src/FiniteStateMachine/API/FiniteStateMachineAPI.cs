@@ -91,7 +91,7 @@ namespace MaltiezFirearms.FiniteStateMachine.API
         /// <summary>
         /// Called by FSM after receiving object instance form factory
         /// </summary>
-        /// <returns>List of code of all inputs that this operation should be performed on</returns>
+        /// <returns>List of codes of all inputs that this operation should be performed on</returns>
         List<string> GetInputs();
         
         /// <summary>
@@ -104,6 +104,7 @@ namespace MaltiezFirearms.FiniteStateMachine.API
     }
     public interface ISystem : IFactoryObject
     {
+        void SetSystems(Dictionary<string, ISystem> systems);
         bool Verify(ItemSlot slot, EntityAgent player, JsonObject parameters);
         bool Process(ItemSlot slot, EntityAgent player, JsonObject parameters);
     }
@@ -161,7 +162,7 @@ namespace MaltiezFirearms.FiniteStateMachine.API
         void RegisterType<ObjectClass>(string name) where ObjectClass : ProductClass, new();
         ProductClass Instantiate(string name, JsonObject definition, CollectibleObject collectible);
     }
-    public interface IBehaviourAtributesParser
+    public interface IBehaviourAttributesParser
     {
         bool ParseDefinition(IFactory<IOperation> operationTypes, IFactory<ISystem> systemTypes, IFactory<IInput> inputTypes, JsonObject behaviourAttributes, CollectibleObject collectible);
         Dictionary<string, IOperation> GetOperations();

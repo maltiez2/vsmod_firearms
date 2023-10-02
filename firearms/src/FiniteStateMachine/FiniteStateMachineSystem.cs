@@ -1,5 +1,6 @@
 ﻿using Vintagestory.API.Common;
 using MaltiezFirearms.FiniteStateMachine.API;
+using MaltiezFirearms.FiniteStateMachine.Systems;
 
 namespace MaltiezFirearms.FiniteStateMachine
 {

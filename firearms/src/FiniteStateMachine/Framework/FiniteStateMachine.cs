@@ -64,6 +64,11 @@ namespace MaltiezFirearms.FiniteStateMachine.Framework
             mInitialState = behaviourAttributes[cInitialStateAtribute].AsString();
             mApi = api;
 
+            foreach (var entry in systems)
+            {
+                entry.Value.SetSystems(systems);
+            }
+
             foreach (var operationEntry in operations)
             {
                 IOperation operation = operationEntry.Value;

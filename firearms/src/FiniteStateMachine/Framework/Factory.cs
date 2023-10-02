@@ -10,20 +10,20 @@ namespace MaltiezFirearms.FiniteStateMachine.Framework
         where ProductClass : IFactoryObject
         where IdGeneratorClass : IUniqueIdGeneratorForFactory, new()  
     {
-        private readonly Dictionary<string, Type> mSystems = new();
+        private readonly Dictionary<string, Type> mProducts = new();
         private readonly IUniqueIdGeneratorForFactory mIdGenerator = new IdGeneratorClass();
 
         public Type GetType(string name)
         {
-            return mSystems[name];
+            return mProducts[name];
         }
         public void RegisterType<ObjectClass>(string name) where ObjectClass : ProductClass, new()
         {
-            mSystems.Add(name, typeof(ObjectClass));
+            mProducts.Add(name, typeof(ObjectClass));
         }
         public ProductClass Instantiate(string name, JsonObject definition, CollectibleObject collectible)
         {
-            ProductClass producedInstance = (ProductClass)Activator.CreateInstance(mSystems[name]);
+            ProductClass producedInstance = (ProductClass)Activator.CreateInstance(mProducts[name]);
             producedInstance.Init(definition, collectible);
             producedInstance.SetId(mIdGenerator.GenerateInstanceId());
             return producedInstance;

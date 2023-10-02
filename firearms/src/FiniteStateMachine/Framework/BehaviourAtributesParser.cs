@@ -1,19 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using Vintagestory.API.Common;
 using Vintagestory.API.Datastructures;
 using MaltiezFirearms.FiniteStateMachine.API;
 
 namespace MaltiezFirearms.FiniteStateMachine.Framework
 {
-    public class BehaviourAtributesParser : IBehaviourAtributesParser
+    public class BehaviourAttributesParser : IBehaviourAttributesParser
     {
-        private Dictionary<string, IOperation> mOperations = new();
-        private Dictionary<string, ISystem> mSystems = new();
-        private Dictionary<string, IInput> mInputs = new();
+        public const string CodeAttrName = "code";
+        public const string ClassAttrName = "class";
+        public const string AttributesAttrName = "attributes";
+        
+        private readonly Dictionary<string, IOperation> mOperations = new();
+        private readonly Dictionary<string, ISystem> mSystems = new();
+        private readonly Dictionary<string, IInput> mInputs = new();
 
         public bool ParseDefinition(IFactory<IOperation> operationTypes, IFactory<ISystem> systemTypes, IFactory<IInput> inputTypes, JsonObject behaviourAttributes, CollectibleObject collectible)
         {
@@ -49,9 +49,9 @@ namespace MaltiezFirearms.FiniteStateMachine.Framework
 
         static private void AddObject<ObjectInterface>(JsonObject definition, CollectibleObject collectible, IFactory<ObjectInterface> factory, Dictionary<string, ObjectInterface> container)
         {
-            string objectCode = definition["code"].AsString();
-            string objectClass = definition["class"].AsString();
-            JsonObject attributes = definition["attributes"];
+            string objectCode = definition[CodeAttrName].AsString();
+            string objectClass = definition[ClassAttrName].AsString();
+            JsonObject attributes = definition[AttributesAttrName];
             ObjectInterface objectInstance = factory.Instantiate(objectClass, attributes, collectible);
             container.Add(objectCode, objectInstance);
         }

@@ -25,7 +25,7 @@ namespace MaltiezFirearms.FiniteStateMachine.Framework
             mFactories = mApi.ModLoader.GetModSystem<FiniteStateMachineSystem>();
             mInputIterceptor = mApi.ModLoader.GetModSystem<FiniteStateMachineSystem>().GetInputInterceptor();
 
-            IBehaviourAtributesParser mParser = new Framework.BehaviourAtributesParser();
+            IBehaviourAttributesParser mParser = new Framework.BehaviourAttributesParser();
             mParser.ParseDefinition(mFactories.GetOperationFactory(), mFactories.GetSystemFactory(), mFactories.GetInputFactory(), mProperties, collObj);
 
             mFsm = new Framework.FiniteStateMachine();
