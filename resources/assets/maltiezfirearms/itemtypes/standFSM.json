@@ -4,7 +4,7 @@
 
 	"behaviors": [
 		{
-			"name": "maltiezfirearms.weapon",
+			"name": "firearms.finitestatemachine",
 			"properties": {
 				"initialState": "unloaded",
 				"systems": [
@@ -47,13 +47,6 @@
 							],
 							"systems": [
 								{
-									"code": "reload_system",
-									"attributes": {
-										"ammoCode": "arrow",
-										"action": "take"
-									}
-								},
-								{
 									"code": "shooting_system",
 									"attributes": {}
 								}
@@ -62,23 +55,47 @@
 					},
 					{
 						"code": "reload",
-						"class": "SimpleOperation",
+						"class": "BasicDelayed",
 						"attributes": {
-							"input": "key_r",
+							"inputs": {
+								"start": "key_r_down",
+								"cancel": "key_r_up"
+							},
 							"states": [
 								{
 									"initial": "unloaded",
+									"cancel": "unloaded",
 									"final": "loaded"
 								}
 							],
-							"systems": [
-								{
-									"code": "sound_system",
-									"attributes": {
-										"code": "test_sound_0"
+							"systems": {
+								"initial": [
+									{
+										"code": "reload_system",
+										"attributes": {
+											"ammoCode": "arrow",
+											"action": "take"
+										}
 									}
-								}
-							]
+								],
+								"cancel": [
+									{
+										"code": "reload_system",
+										"attributes": {
+											"ammoCode": "arrow",
+											"action": "put"
+										}
+									}
+								],
+								"final": [
+									{
+										"code": "sound_system",
+										"attributes": {
+											"code": "test_sound_0"
+										}
+									}
+								]
+							}
 						}
 					}
 				],
@@ -91,10 +108,19 @@
 						}
 					},
 					{
-						"code": "key_r",
+						"code": "key_r_down",
 						"class": "Key",
 						"attributes": {
-							"key": "R"
+							"key": "R",
+							"type": "pressed"
+						}
+					},
+					{
+						"code": "key_r_up",
+						"class": "Key",
+						"attributes": {
+							"key": "R",
+							"type": "released"
 						}
 					}
 				]
