@@ -10,23 +10,23 @@ namespace MaltiezFirearms.FiniteStateMachine
         private IFactory<IOperation> mOperationFactory;
         private IFactory<ISystem> mSystemFactory;
         private IFactory<IInput> mInputFactory;
-        private IInputManager mInputIterceptor;
+        private IInputManager mInputManager;
 
         public override void Start(ICoreAPI api)
         {
             base.Start(api);
 
-            api.RegisterCollectibleBehaviorClass("maltiezfirearms.weapon", typeof(Framework.FiniteStateMachineBehaviour));
+            api.RegisterCollectibleBehaviorClass("firearms.finitestatemachine", typeof(Framework.FiniteStateMachineBehaviour));
 
-            mOperationFactory = new Framework.Factory<IOperation, Framework.UniqueIdGeneratorForFactory>();
-            mSystemFactory = new Framework.Factory<ISystem, Framework.UniqueIdGeneratorForFactory>();
-            mInputFactory = new Framework.Factory<IInput, Framework.UniqueIdGeneratorForFactory>();
+            mOperationFactory = new Framework.Factory<IOperation, Framework.UniqueIdGeneratorForFactory>(api);
+            mSystemFactory = new Framework.Factory<ISystem, Framework.UniqueIdGeneratorForFactory>(api);
+            mInputFactory = new Framework.Factory<IInput, Framework.UniqueIdGeneratorForFactory>(api);
 
             RegisterSystems();
             RegisterOperations();
             RegisterInputs();
 
-            mInputIterceptor = new Framework.InputManager(api);
+            mInputManager = new Framework.InputManager(api);
         }
 
         public void RegisterSystems()
@@ -37,12 +37,12 @@ namespace MaltiezFirearms.FiniteStateMachine
         }
         public void RegisterOperations()
         {
-            mOperationFactory.RegisterType<Operations.SimpleOperation>("SimpleOperation");
+            mOperationFactory.RegisterType<Operations.BasicInstant>("Instant");
+            mOperationFactory.RegisterType<Operations.BasicDelayed>("Delayed");
         }
 
         public void RegisterInputs()
         {
-            mInputFactory.RegisterType<Inputs.SimpleKeyPress>("SimpleKeyPress");
             mInputFactory.RegisterType<Inputs.BasicKey>("Key");
             mInputFactory.RegisterType<Inputs.BasicMouse>("MouseKey");
             mInputFactory.RegisterType<Inputs.BasicHotkey>("Hotkey");
@@ -62,7 +62,7 @@ namespace MaltiezFirearms.FiniteStateMachine
         }
         public IInputManager GetInputInterceptor()
         {
-            return mInputIterceptor;
+            return mInputManager;
         }
     }
 }

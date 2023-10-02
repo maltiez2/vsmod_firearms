@@ -36,7 +36,7 @@
 				"operations": [
 					{
 						"code": "shoot",
-						"class": "SimpleOperation",
+						"class": "Instant",
 						"attributes": {
 							"input": "mouse_left",
 							"states": [
@@ -55,10 +55,11 @@
 					},
 					{
 						"code": "reload",
-						"class": "BasicDelayed",
+						"class": "Delayed",
 						"attributes": {
+							"delay_ms": 1000,
 							"inputs": {
-								"start": "key_r_down",
+								"initial": "key_r_down",
 								"cancel": "key_r_up"
 							},
 							"states": [
@@ -104,6 +105,7 @@
 						"code": "mouse_left",
 						"class": "MouseKey",
 						"attributes": {
+							"code": "mouse_left",
 							"key": "Left"
 						}
 					},
@@ -111,6 +113,7 @@
 						"code": "key_r_down",
 						"class": "Key",
 						"attributes": {
+							"code": "key_r_down",
 							"key": "R",
 							"type": "pressed"
 						}
@@ -119,6 +122,7 @@
 						"code": "key_r_up",
 						"class": "Key",
 						"attributes": {
+							"code": "key_r_up",
 							"key": "R",
 							"type": "released"
 						}

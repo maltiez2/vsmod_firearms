@@ -1,9 +1,6 @@
 ﻿using MaltiezFirearms.FiniteStateMachine.API;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Vintagestory.API.Common;
 using Vintagestory.API.Common.Entities;
 using Vintagestory.API.Datastructures;
@@ -26,7 +23,7 @@ namespace MaltiezFirearms.FiniteStateMachine.Systems
         private string mReloadSystemName;
         private IAmmoSelector mReloadSystem;
 
-        public override void Init(JsonObject definition, CollectibleObject collectible)
+        public override void Init(string name, JsonObject definition, CollectibleObject collectible, ICoreAPI api)
         {
             mProjectileSpawner = new BasicProjectileSpawner();
             mReloadSystemName = definition[ammoSelectorSystemAttrName].AsString();
@@ -38,7 +35,7 @@ namespace MaltiezFirearms.FiniteStateMachine.Systems
 
         public virtual bool Process(ItemSlot slot, EntityAgent player, JsonObject parameters)
         {
-            ItemStack ammoStack = mReloadSystem.GetSelectedAmmo();
+            ItemStack ammoStack = mReloadSystem.TakeSelectedAmmo(slot);
             return mProjectileSpawner.SpawnProjectile(ammoStack, player, parameters);
         }
         public virtual bool Verify(ItemSlot slot, EntityAgent player, JsonObject parameters)

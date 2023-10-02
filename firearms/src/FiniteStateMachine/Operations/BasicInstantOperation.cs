@@ -2,10 +2,11 @@
 using Vintagestory.API.Common;
 using Vintagestory.API.Datastructures;
 using MaltiezFirearms.FiniteStateMachine.API;
+using System;
 
 namespace MaltiezFirearms.FiniteStateMachine.Operations
 {
-    public class SimpleOperation : UniqueIdFactoryObject, IOperation
+    public class BasicInstant : UniqueIdFactoryObject, IOperation
     {
         public const string mainTransitionsAttrName = "states";
         public const string systemsAttrName = "systems";
@@ -16,17 +17,20 @@ namespace MaltiezFirearms.FiniteStateMachine.Operations
 
         private readonly Dictionary<string, string> mStatesInitialData = new();
         private readonly Dictionary<string, JsonObject> mSystemsInitialData = new();
-        private string mInputInitialData;
+        private readonly List<Tuple<string, string, string>> mTransitions = new();
 
         private readonly Dictionary<IState, IState> mStates = new();
         private readonly Dictionary<ISystem, JsonObject> mSystems = new();
         
-        public override void Init(JsonObject definition, CollectibleObject collectible)
+        public override void Init(string name, JsonObject definition, CollectibleObject collectible, ICoreAPI api)
         {
+            string inputInitialData = definition[inputAttrName].AsString();
+
             JsonObject[] mainTransitions = definition[mainTransitionsAttrName].AsArray();
             foreach (JsonObject transition in mainTransitions)
             {
                 mStatesInitialData.Add(transition[initialStateAttrName].AsString(), transition[finalStateAttrName].AsString());
+                mTransitions.Add(new(inputInitialData, transition[initialStateAttrName].AsString(), transition[finalStateAttrName].AsString()));
             }
 
             JsonObject[] systems = definition[systemsAttrName].AsArray();
@@ -34,36 +38,11 @@ namespace MaltiezFirearms.FiniteStateMachine.Operations
             {
                 mSystemsInitialData.Add(system["code"].AsString(), system);
             }
-
-            mInputInitialData = definition[inputAttrName].AsString();
         }
 
-        public List<string> GetInputs()
+        public List<Tuple<string, string, string>> GetTransitions()
         {
-            return new List<string>() { mInputInitialData };
-        }
-
-        public List<string> GetInitialStates()
-        {
-            List<string> output = new();
-
-            foreach (var entry in mStatesInitialData)
-            {
-                output.Add(entry.Key);
-            }
-
-            return output;
-        }
-        public List<string> GetFinalStates()
-        {
-            List<string> output = new();
-
-            foreach (var entry in mStatesInitialData)
-            {
-                output.Add(entry.Value);
-            }
-
-            return output;
+            return mTransitions;
         }
 
         public void SetInputsStatesSystems(Dictionary<string, IInput> inputs, Dictionary<string, IState> states, Dictionary<string, ISystem> systems)

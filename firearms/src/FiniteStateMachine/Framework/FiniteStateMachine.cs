@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using Vintagestory.API.Common;
 using Vintagestory.API.Datastructures;
 using MaltiezFirearms.FiniteStateMachine.API;
+using static MaltiezFirearms.FiniteStateMachine.Framework.FiniteStateMachine;
 
 namespace MaltiezFirearms.FiniteStateMachine.Framework
 {    
     public class FiniteStateMachine : IFiniteStateMachine
     {    
-        public struct State : IState // @TODO @optimisation Change base type to int
+        public readonly struct State : IState // @OPT Change base type to int
         {
             private readonly string mState;
 
@@ -37,6 +38,7 @@ namespace MaltiezFirearms.FiniteStateMachine.Framework
 
             public void Handler(float time)
             {
+                mApi.Logger.Error("[Firearms] [DelayedCallback] Handler called with time: " + time.ToString());
                 mCallback();
             }
 
@@ -50,11 +52,12 @@ namespace MaltiezFirearms.FiniteStateMachine.Framework
             }
         }
         
-        private const string cStateAtributeName = "maltiezfirearms_state";
+        private const string cStateAtributeName = "firearms.state";
         private const string cInitialStateAtribute = "initialState";
 
         private string mInitialState;
         private readonly Dictionary<State, Dictionary<IInput, IOperation>> mOperationsByInputAndState = new();
+        private readonly Dictionary<IOperation, State> mStatesByOperationForTimer = new();
         private DelayedCallback mTimer;
 
         private ICoreAPI mApi;
@@ -73,57 +76,42 @@ namespace MaltiezFirearms.FiniteStateMachine.Framework
             {
                 IOperation operation = operationEntry.Value;
 
-                List<string> operationInitialStates = operation.GetInitialStates();
-                List<string> operationFinalStates = operation.GetFinalStates();
-                List<string> operationInputs = operation.GetInputs();
+                List<Tuple<string, string, string>> transitions = operation.GetTransitions();
+
                 Dictionary<string, IState> operationStateMapping = new Dictionary<string, IState>();
-                foreach (string state in operationInitialStates)
+                
+                foreach (var transition in transitions)
                 {
-                    operationStateMapping.Add(state, new State(state));
-                }
-                foreach (string state in operationFinalStates)
-                {
-                    if (!operationStateMapping.ContainsKey(state))
+                    string input = transition.Item1;
+                    State initialState = new State(transition.Item2);
+                    State finalState = new State(transition.Item3);
+
+                    operationStateMapping.TryAdd(transition.Item2, initialState);
+                    operationStateMapping.TryAdd(transition.Item3, finalState);
+
+                    mOperationsByInputAndState.TryAdd(initialState, new());
+                    mOperationsByInputAndState.TryAdd(finalState, new());
+
+
+                    if (input == "")
                     {
-                        operationStateMapping.Add(state, new State(state));
+                        mStatesByOperationForTimer.Add(operation, initialState);
+                        continue;
                     }
+
+                    mOperationsByInputAndState[initialState].TryAdd(inputs[input], operation);
                 }
 
                 operation.SetInputsStatesSystems(inputs, operationStateMapping, systems);
-
-                foreach (string state in operationInitialStates)
-                {
-                    State stateObj = new State(state);
-                    
-                    if (!mOperationsByInputAndState.ContainsKey(stateObj))
-                    {
-                        mOperationsByInputAndState.Add(stateObj, new());
-                    }
-
-                    foreach (string input in operationInputs)
-                    {
-                        mOperationsByInputAndState[stateObj].Add(inputs[input], operation);
-                    }
-                }
-
-                foreach (string state in operationFinalStates)
-                {
-                    State stateObj = new State(state);
-
-                    if (!mOperationsByInputAndState.ContainsKey(stateObj))
-                    {
-                        mOperationsByInputAndState.Add(stateObj, new());
-                    }
-                }
             }
         }
 
-        public bool Process(ItemSlot weaponSlot, EntityAgent player, IInput input)
+        public bool Process(ItemSlot slot, EntityAgent player, IInput input)
         {
-            State state = ReadStateFrom(weaponSlot);
+            State state = ReadStateFrom(slot);
             if (!mOperationsByInputAndState.ContainsKey(state))
             {
-                WriteStateTo(weaponSlot, new State(mInitialState));
+                WriteStateTo(slot, new State(mInitialState));
                 return false;
             }
             if (!mOperationsByInputAndState[state].ContainsKey(input))
@@ -134,32 +122,45 @@ namespace MaltiezFirearms.FiniteStateMachine.Framework
             mTimer?.Cancel();
 
             IOperation operation = mOperationsByInputAndState[state][input];
-            State newState = (State)operation.Perform(weaponSlot, player, state, input);
+
+            return RunOperation(slot, player, operation, input, state);
+        }
+        public bool OnTimer(ItemSlot slot, EntityAgent player, IInput input, IOperation operation)
+        {
+            State state = ReadStateFrom(slot);
+            if (!mStatesByOperationForTimer.ContainsKey(operation) || mStatesByOperationForTimer[operation].ToString() != state.ToString()) return false;
+
+            return RunOperation(slot, player, operation, input, state);
+        }
+
+        private bool RunOperation(ItemSlot slot, EntityAgent player, IOperation operation, IInput input, State state)
+        {
+            State newState = (State)operation.Perform(slot, player, state, input);
             if (state.ToString() != newState.ToString())
             {
-                mApi.Logger.Warning("[Firearms] [FsmPrototype] State moved from '" + state.ToString() + "' to '" + newState.ToString() + "'."); // @DEBUG
-                WriteStateTo(weaponSlot, newState);
+                if (mApi.Side == EnumAppSide.Server) mApi.Logger.Warning("[Firearms] [FsmPrototype] [SERVER] State moved from '" + state.ToString() + "' to '" + newState.ToString() + "'."); // @DEBUG
+                if (mApi.Side == EnumAppSide.Client) mApi.Logger.Warning("[Firearms] [FsmPrototype] [CLIENT] State moved from '" + state.ToString() + "' to '" + newState.ToString() + "'."); // @DEBUG
+                WriteStateTo(slot, newState);
             }
 
-            int? timerDelayMs = operation.Timer(weaponSlot, player, state, input);
+            int? timerDelayMs = operation.Timer(slot, player, state, input);
 
             if (timerDelayMs != null)
             {
-                mTimer = new DelayedCallback(mApi, (int)timerDelayMs, () => Process(weaponSlot, player, input));
+                mTimer = new DelayedCallback(mApi, (int)timerDelayMs, () => OnTimer(slot, player, input, operation));
             }
 
             return true;
         }
-
-        private State ReadStateFrom(ItemSlot weaponSlot)
+        private State ReadStateFrom(ItemSlot slot)
         {
-            State state = new State(weaponSlot.Itemstack.Attributes.GetAsString(cStateAtributeName, mInitialState));
+            State state = new State(slot.Itemstack.Attributes.GetAsString(cStateAtributeName, mInitialState));
             return state;
         }
-        private void WriteStateTo(ItemSlot weaponSlot, State state)
+        private void WriteStateTo(ItemSlot slot, State state)
         {
-            weaponSlot.Itemstack.Attributes.SetString(cStateAtributeName, state.ToString());
-            weaponSlot.MarkDirty();
+            slot.Itemstack.Attributes.SetString(cStateAtributeName, state.ToString());
+            slot.MarkDirty();
         }
     }
 }

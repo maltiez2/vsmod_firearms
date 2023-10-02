@@ -1,6 +1,5 @@
 ﻿using Vintagestory.API.Common;
 using Vintagestory.API.Datastructures;
-using static MaltiezFirearms.FiniteStateMachine.API.IKeyInput;
 using MaltiezFirearms.FiniteStateMachine.API;
 
 namespace MaltiezFirearms.FiniteStateMachine.Inputs
@@ -17,7 +16,7 @@ namespace MaltiezFirearms.FiniteStateMachine.Inputs
         private string mKey;
         private KeyPressModifiers mModifiers;
 
-        public override void Init(JsonObject definition, CollectibleObject collectible)
+        public override void Init(string name, JsonObject definition, CollectibleObject collectible, ICoreAPI api)
         {
             mCode = definition["code"].AsString();
             mKey = definition[keyAttrName].AsString(); // @TODO @LOCAL Add localization

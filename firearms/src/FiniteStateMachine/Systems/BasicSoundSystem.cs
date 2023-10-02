@@ -81,7 +81,7 @@ namespace MaltiezFirearms.FiniteStateMachine.Systems
         public const string soundsAttrName = "sounds";
         public const string soundCodeAttrName = "code";
 
-        public override void Init(JsonObject definition, CollectibleObject collectible)
+        public override void Init(string name, JsonObject definition, CollectibleObject collectible, ICoreAPI api)
         {
             JsonObject[] sounds = definition[soundsAttrName].AsArray();
 

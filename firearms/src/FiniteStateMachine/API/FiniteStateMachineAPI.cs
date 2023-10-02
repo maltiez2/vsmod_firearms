@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Vintagestory.API.Client;
 using Vintagestory.API.Common;
 using Vintagestory.API.Datastructures;
 using Vintagestory.API.MathTools;
@@ -37,14 +38,15 @@ namespace MaltiezFirearms.FiniteStateMachine.API
         /// <summary>
         /// Called immediately after instantiating the object
         /// </summary>
+        /// <param name="code">Given to the factory by factory user, usually unique per collectible</param>
         /// <param name="definition">Given to the factory by factory user, usually consists from attributes defined in <c>itemtype</c></param>
         /// <param name="collectible">This factory object will be used only by given collectible</param>
-        void Init(JsonObject definition, CollectibleObject collectible);
+        void Init(string code, JsonObject definition, CollectibleObject collectible, ICoreAPI api);
         
         /// <summary>
         /// Called immediately after <see cref="Init"/>>
         /// </summary>
-        /// <param name="id">Given by <see cref="IFactory{ProductClass}"/> and is meant to be unique among all instances produced by all factories </param>
+        /// <param name="id">Given by <see cref="IFactory{TProductClass}"/> and is meant to be unique among all instances produced by all factories </param>
         void SetId(int id);
         
         /// <returns>Unique id given to the object by calling <see cref="SetId"/></returns>
@@ -75,25 +77,8 @@ namespace MaltiezFirearms.FiniteStateMachine.API
         /// <returns>Time in <b>milliseconds</b>, timer will not be created if value is equal to <c>null</c></returns>
         int? Timer(ItemSlot slot, EntityAgent player, IState state, IInput input);
         
-        
-        /// <summary>
-        /// Called by FSM after receiving object instance form factory
-        /// </summary>
-        /// <returns>List of codes of all possible initial states that this operation should be performed on</returns>
-        List<string> GetInitialStates();
-        
-        /// <summary>
-        /// Called by FSM after receiving object instance form factory
-        /// </summary>
-        /// <returns>List of codes of all possible final states that this operation can switch FSM to</returns>
-        List<string> GetFinalStates();
-        
-        /// <summary>
-        /// Called by FSM after receiving object instance form factory
-        /// </summary>
-        /// <returns>List of codes of all inputs that this operation should be performed on</returns>
-        List<string> GetInputs();
-        
+        List<Tuple<string, string, string>> GetTransitions();
+
         /// <summary>
         /// Called by FSM after calling <see cref="GetInitialStates"/> and <see cref="GetFinalStates"/> and <see cref="GetInputs"/>
         /// </summary>
@@ -134,6 +119,7 @@ namespace MaltiezFirearms.FiniteStateMachine.API
             KEY_UP
         }
         KeyEventType GetEventType();
+        bool CheckIfShouldBeHandled(KeyEvent keyEvent, KeyEventType eventType);
     }
     public interface IMouseInput : IEventInput, IKeyRelatedInput
     {
@@ -144,6 +130,7 @@ namespace MaltiezFirearms.FiniteStateMachine.API
             MOUSE_UP
         }
         MouseEventType GetEventType();
+        bool CheckIfShouldBeHandled(MouseEvent mouseEvent, MouseEventType eventType);
     }
     public interface ISlotChanged : IEventInput
     {
@@ -160,7 +147,7 @@ namespace MaltiezFirearms.FiniteStateMachine.API
     {
         Type GetType(string name);
         void RegisterType<TObjectClass>(string name) where TObjectClass : TProductClass, new();
-        TProductClass Instantiate(string name, JsonObject definition, CollectibleObject collectible);
+        TProductClass Instantiate(string code, string name, JsonObject definition, CollectibleObject collectible);
     }
     public interface IBehaviourAttributesParser
     {
@@ -173,6 +160,7 @@ namespace MaltiezFirearms.FiniteStateMachine.API
     {
         void Init(ICoreAPI api, Dictionary<string, IOperation> operations, Dictionary<string, ISystem> systems, Dictionary<string, IInput> inputs, JsonObject behaviourAttributes, CollectibleObject collectible);
         bool Process(ItemSlot slot, EntityAgent player, IInput input);
+        bool OnTimer(ItemSlot slot, EntityAgent player, IInput input, IOperation operation);
     }
 
     public interface IInputManager

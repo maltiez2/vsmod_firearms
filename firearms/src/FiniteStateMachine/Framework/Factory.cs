@@ -12,7 +12,12 @@ namespace MaltiezFirearms.FiniteStateMachine.Framework
     {
         private readonly Dictionary<string, Type> mProducts = new();
         private readonly IUniqueIdGeneratorForFactory mIdGenerator = new TIdGeneratorClass();
+        private readonly ICoreAPI mApi;
 
+        public Factory(ICoreAPI api)
+        {
+            mApi = api;
+        }
         public Type GetType(string name)
         {
             return mProducts[name];
@@ -21,10 +26,10 @@ namespace MaltiezFirearms.FiniteStateMachine.Framework
         {
             mProducts.Add(name, typeof(TObjectClass));
         }
-        public TProductClass Instantiate(string name, JsonObject definition, CollectibleObject collectible)
+        public TProductClass Instantiate(string code, string name, JsonObject definition, CollectibleObject collectible)
         {
             TProductClass producedInstance = (TProductClass)Activator.CreateInstance(mProducts[name]);
-            producedInstance.Init(definition, collectible);
+            producedInstance.Init(code, definition, collectible, mApi);
             producedInstance.SetId(mIdGenerator.GenerateInstanceId());
             return producedInstance;
         }

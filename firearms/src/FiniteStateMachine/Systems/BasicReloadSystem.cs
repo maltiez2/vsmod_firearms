@@ -13,14 +13,15 @@ namespace MaltiezFirearms.FiniteStateMachine.Systems
         public const string takeAction = "take";
         public const string putAction = "put";
 
-        private ItemStack mAmmo;
+        public string AmmoStackAttrName = "firearms.ammo.id";
         
-        public override void Init(JsonObject definition, CollectibleObject collectible)
+        public override void Init(string name, JsonObject definition, CollectibleObject collectible, ICoreAPI api)
         {
             // Nothing to init
         }
         public void SetSystems(Dictionary<string, ISystem> systems)
         {
+            AmmoStackAttrName += GetId().ToString();
             // Does not require access to other systems
         }
         public virtual bool Verify(ItemSlot slot, EntityAgent player, JsonObject parameters)
@@ -36,20 +37,25 @@ namespace MaltiezFirearms.FiniteStateMachine.Systems
             string action = parameters[actionAttrName].AsString();
             if (action == putAction)
             {
-                PutAmmoBack(player);
+                PutAmmoBack(slot, player);
                 return true;
             }
 
             string ammoCode = parameters[ammoCodeAttrName].AsString();
             ItemSlot ammoSlot = GetAmmoSlot(player, ammoCode);
             if (ammoSlot == null) return false;
-            
-            mAmmo = ammoSlot.TakeOut(1);
+
+            WriteAmmoStackTo(slot, ammoSlot.TakeOut(1));
+
             return true;
         }
-        public virtual ItemStack GetSelectedAmmo()
+        public virtual ItemStack GetSelectedAmmo(ItemSlot slot)
         {
-            return mAmmo;
+            return ReadAmmoStackFrom(slot);
+        }
+        public virtual ItemStack TakeSelectedAmmo(ItemSlot slot)
+        {
+            return TakeAmmoStackFrom(slot);
         }
 
         protected ItemSlot GetAmmoSlot(EntityAgent player, string ammoCode)
@@ -71,10 +77,25 @@ namespace MaltiezFirearms.FiniteStateMachine.Systems
 
             return slot;
         }
-        protected void PutAmmoBack(EntityAgent player)
+        protected void PutAmmoBack(ItemSlot slot, EntityAgent player)
         {
-            if (mAmmo != null) player.TryGiveItemStack(mAmmo);
-            mAmmo = null;
+            ItemStack ammoStack = TakeAmmoStackFrom(slot);
+            if (ammoStack != null) player.TryGiveItemStack(ammoStack);
+        }
+
+        protected void WriteAmmoStackTo(ItemSlot slot, ItemStack ammoStack)
+        {
+            slot.Itemstack.Attributes.SetItemstack(AmmoStackAttrName, ammoStack);
+        }
+        protected ItemStack ReadAmmoStackFrom(ItemSlot slot)
+        {
+            return slot.Itemstack.Attributes.GetItemstack(AmmoStackAttrName, null);
+        }
+        protected ItemStack TakeAmmoStackFrom(ItemSlot slot)
+        {
+            ItemStack ammoStack = ReadAmmoStackFrom(slot);
+            slot.Itemstack.Attributes.RemoveAttribute(AmmoStackAttrName);
+            return ammoStack;
         }
     }
 }

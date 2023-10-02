@@ -3,6 +3,8 @@ using Vintagestory.API.Datastructures;
 using static MaltiezFirearms.FiniteStateMachine.API.IKeyInput;
 using MaltiezFirearms.FiniteStateMachine.API;
 using static MaltiezFirearms.FiniteStateMachine.API.IMouseInput;
+using Vintagestory.API.Client;
+using System;
 
 namespace MaltiezFirearms.FiniteStateMachine.Inputs
 {
@@ -16,13 +18,16 @@ namespace MaltiezFirearms.FiniteStateMachine.Inputs
 
         private string mCode;
         private string mKey;
+        private EnumMouseButton mKeyEnum;
         private MouseEventType mType;
         private KeyPressModifiers mModifiers;
+        private ICoreClientAPI mClientApi;
 
-        public override void Init(JsonObject definition, CollectibleObject collectible)
+        public override void Init(string name, JsonObject definition, CollectibleObject collectible, ICoreAPI api)
         {
             mCode = definition["code"].AsString();
             mKey = definition[keyAttrName].AsString();
+            mKeyEnum = (EnumMouseButton)Enum.Parse(typeof(EnumMouseButton), mKey);
             switch (definition[keyPressTypeAttrName].AsString())
             {
                 case ("released"):
@@ -42,11 +47,23 @@ namespace MaltiezFirearms.FiniteStateMachine.Inputs
                 definition[ctrlAttrName].AsBool(false),
                 definition[shiftAttrName].AsBool(false)
             );
+
+            mClientApi = api as ICoreClientAPI;
         }
 
         public MouseEventType GetEventType()
         {
             return mType;
+        }
+        public bool CheckIfShouldBeHandled(MouseEvent mouseEvent, MouseEventType eventType)
+        {
+            if (mClientApi == null) throw new InvalidOperationException("BasicMouse.CheckIfShouldBeHandled() called on server side");
+
+            if (mType != eventType) return false;
+            if (mouseEvent.Button != mKeyEnum) return false;
+            if (!ClientCheckModifiers()) return false;
+
+            return true;
         }
 
         public string GetName()
@@ -60,6 +77,15 @@ namespace MaltiezFirearms.FiniteStateMachine.Inputs
         public string GetKey()
         {
             return mKey;
+        }
+
+        protected bool ClientCheckModifiers()
+        {        
+            bool altPressed = mClientApi.Input.KeyboardKeyState[(int)GlKeys.AltLeft] || mClientApi.Input.KeyboardKeyState[(int)GlKeys.AltRight];
+            bool ctrlPressed = mClientApi.Input.KeyboardKeyState[(int)GlKeys.ControlLeft] || mClientApi.Input.KeyboardKeyState[(int)GlKeys.ControlRight];
+            bool shiftPressed = mClientApi.Input.KeyboardKeyState[(int)GlKeys.ShiftLeft] || mClientApi.Input.KeyboardKeyState[(int)GlKeys.ShiftRight];
+
+            return mModifiers.Alt == altPressed && mModifiers.Ctrl == ctrlPressed && mModifiers.Shift == shiftPressed;
         }
     }
 }

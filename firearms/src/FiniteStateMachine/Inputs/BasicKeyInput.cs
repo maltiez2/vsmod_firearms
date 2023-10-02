@@ -2,6 +2,8 @@
 using Vintagestory.API.Datastructures;
 using static MaltiezFirearms.FiniteStateMachine.API.IKeyInput;
 using MaltiezFirearms.FiniteStateMachine.API;
+using Vintagestory.API.Client;
+using System;
 
 namespace MaltiezFirearms.FiniteStateMachine.Inputs
 {
@@ -16,12 +18,15 @@ namespace MaltiezFirearms.FiniteStateMachine.Inputs
         private string mCode;
         private string mKey;
         private KeyEventType mType;
+        private int mKeyEnum;
         private KeyPressModifiers mModifiers;
+        private ICoreClientAPI mClientApi;
 
-        public override void Init(JsonObject definition, CollectibleObject collectible)
+        public override void Init(string name, JsonObject definition, CollectibleObject collectible, ICoreAPI api)
         {
             mCode = definition["code"].AsString();
             mKey = definition[keyAttrName].AsString();
+            mKeyEnum = (int)Enum.Parse(typeof(GlKeys), mKey);
             switch (definition[keyPressTypeAttrName].AsString())
             {
                 case ("released"):
@@ -41,11 +46,23 @@ namespace MaltiezFirearms.FiniteStateMachine.Inputs
                 definition[ctrlAttrName].AsBool(false),
                 definition[shiftAttrName].AsBool(false)
             );
+
+            mClientApi = api as ICoreClientAPI;
         }
 
         public KeyEventType GetEventType()
         {
             return mType;
+        }
+        public bool CheckIfShouldBeHandled(KeyEvent keyEvent, KeyEventType eventType)
+        {
+            if (mClientApi == null) throw new InvalidOperationException("BasicKey.CheckIfShouldBeHandled() called on server side");
+
+            if (mType != eventType) return false;
+            if (keyEvent.KeyCode != mKeyEnum) return false;
+            if (keyEvent.AltPressed != mModifiers.Alt || keyEvent.CtrlPressed != mModifiers.Ctrl || keyEvent.ShiftPressed != mModifiers.Shift) return false;
+
+            return true;
         }
 
         public string GetName()

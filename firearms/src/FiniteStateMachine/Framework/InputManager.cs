@@ -23,6 +23,9 @@ namespace MaltiezFirearms.FiniteStateMachine.Framework
 
         private const string cNetworkChannelName = "maltiezfierarms.inputManager";
 
+        // Whitelisted GuiDialogs
+        private readonly static Type rHudMouseToolsType = typeof(Vintagestory.Client.NoObf.ClientMain).Assembly.GetType("Vintagestory.Client.NoObf.HudMouseTools");
+
         public InputManager(ICoreAPI api)
         {
             mPacketSender = new InputPacketSender(api, ServerInputProxyHandler, cNetworkChannelName);
@@ -94,16 +97,7 @@ namespace MaltiezFirearms.FiniteStateMachine.Framework
                  mApi.Event.AfterActiveSlotChanged += (ActiveSlotChangeEventArgs ev) => ClientSlotInputProxyHandler(inputIndex, ev.FromSlot, ev.ToSlot);
             }
         }
-        
 
-        private bool ClientCheckModifiers(KeyPressModifiers modifiers)
-        {
-            bool altPressed = mApi.Input.KeyboardKeyState[(int)GlKeys.AltLeft] || mApi.Input.KeyboardKeyState[(int)GlKeys.AltRight];
-            bool ctrlPressed = mApi.Input.KeyboardKeyState[(int)GlKeys.ControlLeft] || mApi.Input.KeyboardKeyState[(int)GlKeys.ControlRight];
-            bool shiftPressed = mApi.Input.KeyboardKeyState[(int)GlKeys.ShiftLeft] || mApi.Input.KeyboardKeyState[(int)GlKeys.ShiftRight];
-
-            return modifiers.Alt == altPressed && modifiers.Ctrl == ctrlPressed && modifiers.Shift == shiftPressed;
-        }
         private ItemSlot GetSlotById(int? slotId, IServerPlayer serverPlayer)
         {
             IPlayer player;
@@ -129,55 +123,37 @@ namespace MaltiezFirearms.FiniteStateMachine.Framework
 
         public bool ClientKeyInputProxyHandler(KeyEvent ev, int inputIndex, KeyEventType keyEventType)
         {
-            IKeyInput input = mInputs[inputIndex] as IKeyInput;
-            if (input.GetEventType() != keyEventType) return false;
+            if (!(mInputs[inputIndex] as IKeyInput).CheckIfShouldBeHandled(ev, keyEventType)) return false;
 
-            GlKeys key = (GlKeys)Enum.Parse(typeof(GlKeys), input.GetKey()); // @TODO Make this string parsing to be once per InputManager init
-            KeyPressModifiers modifiers = input.GetIfAltCtrlShiftPressed();
-
-            if (ev.KeyCode != (int)key) return false;
-            if (modifiers.Alt != ev.AltPressed || modifiers.Ctrl != ev.CtrlPressed || modifiers.Shift != ev.ShiftPressed) return false;
             if (!ClientIfEventShouldBeHandled()) return false;
 
             bool handled = ClientInputProxyHandler(inputIndex, null);
             if (handled) ev.Handled = true;
+            
             return handled;
         }
         public bool ClientMouseInputProxyHandler(MouseEvent ev, int inputIndex, MouseEventType keyEventType)
         {
-            IMouseInput input = mInputs[inputIndex] as IMouseInput;
-            if (input.GetEventType() != keyEventType) return false;
+            if (!(mInputs[inputIndex] as IMouseInput).CheckIfShouldBeHandled(ev, keyEventType)) return false;
 
-            EnumMouseButton key = (EnumMouseButton)Enum.Parse(typeof(EnumMouseButton), input.GetKey()); // @TODO Make this string parsing to be once per InputManager init
-            KeyPressModifiers modifiers = input.GetIfAltCtrlShiftPressed();
-
-            if (ev.Button != key) return false;
-            if (!ClientCheckModifiers(modifiers)) return false;
             if (!ClientIfEventShouldBeHandled()) return false;
 
             bool handled = ClientInputProxyHandler(inputIndex, null);
             if (handled) ev.Handled = true;
+            
             return handled;
         }
         public bool ClientSlotInputProxyHandler(int inputIndex, int fromSlotId, int toSlotId)
         {
-            ISlotChanged input = mInputs[inputIndex] as ISlotChanged;
-
-            int slotId;
-            if (input.GetEventType() == SlotEventType.FROM_WEAPON)
+            switch ((mInputs[inputIndex] as ISlotChanged).GetEventType())
             {
-                slotId = fromSlotId;
+                case SlotEventType.FROM_WEAPON:
+                    return ClientInputProxyHandler(inputIndex, fromSlotId);
+                case SlotEventType.TO_WEAPON:
+                    return ClientInputProxyHandler(inputIndex, toSlotId);
+                default:
+                    throw new NotImplementedException();
             }
-            else if (input.GetEventType() == SlotEventType.TO_WEAPON)
-            {
-                slotId = toSlotId;
-            }
-            else
-            {
-                throw new NotImplementedException();
-            }
-
-            return ClientInputProxyHandler(inputIndex, slotId);
         }
         public bool ClientInputProxyHandler(int inputIndex, int? slotId)
         {
@@ -205,7 +181,9 @@ namespace MaltiezFirearms.FiniteStateMachine.Framework
             InputCallback callback = mCallbacks[inputIndex];
 
             bool handled = callback(slot, player, input);
-            mApi?.Logger.Error("[Firearms] handled: " + handled.ToString());
+
+            if (handled) mApi?.Logger.Error("[Firearms] [InputManager] Handling: " + input.GetName());
+
             return handled;
         }
 
@@ -214,7 +192,7 @@ namespace MaltiezFirearms.FiniteStateMachine.Framework
             foreach (GuiDialog item in mApi.Gui.OpenedGuis)
             {
                 if (item is HudElement) continue; // @TODO This is also not good
-                if (item.ToString().EndsWith("HudMouseTools")) continue; // @TODO @REFACTOR This is just bad...
+                if (item.GetType().IsAssignableFrom(rHudMouseToolsType)) continue;
                 mApi.Logger.Warning("[Firearms] Failed check: " + item.ToString()); // @DEBUG @LOG
 
                 return false;
@@ -222,7 +200,7 @@ namespace MaltiezFirearms.FiniteStateMachine.Framework
 
             if (mApi.IsGamePaused)
             {
-                mApi.Logger.Error("[Firearms] IsGamePaused: " + mApi.IsGamePaused.ToString()); // @DEBUG @LOG
+                mApi.Logger.Warning("[Firearms] IsGamePaused: " + mApi.IsGamePaused.ToString()); // @DEBUG @LOG
                 return false;
             }
 
