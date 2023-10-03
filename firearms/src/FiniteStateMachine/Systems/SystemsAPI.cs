@@ -3,6 +3,11 @@ using Vintagestory.API.MathTools;
 
 namespace MaltiezFirearms.FiniteStateMachine.Systems
 {
+    public interface IVariantsAnimation
+    {
+
+    }
+    
     public interface IAmmoSelector
     {
         ItemStack GetSelectedAmmo(ItemSlot slot);

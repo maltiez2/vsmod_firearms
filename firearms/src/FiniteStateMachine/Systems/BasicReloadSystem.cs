@@ -2,11 +2,10 @@
 using Vintagestory.API.Common;
 using MaltiezFirearms.FiniteStateMachine.API;
 using System.Collections.Generic;
-using Vintagestory.API.Common.Entities;
 
 namespace MaltiezFirearms.FiniteStateMachine.Systems
 {  
-    internal class BasicReloadSystem : UniqueIdFactoryObject, ISystem, IAmmoSelector
+    internal class BasicReload : UniqueIdFactoryObject, ISystem, IAmmoSelector
     {
         public const string ammoCodeAttrName = "ammoCode";
         public const string actionAttrName = "action";

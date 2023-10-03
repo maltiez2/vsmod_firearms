@@ -32,8 +32,8 @@ namespace MaltiezFirearms.FiniteStateMachine
         public void RegisterSystems()
         {  
             mSystemFactory.RegisterType<Systems.BasicSoundSystem>("Sound");
-            mSystemFactory.RegisterType<Systems.BasicReloadSystem>("Reload");
-            mSystemFactory.RegisterType<Systems.BasicShootingSystem>("Shooting");
+            mSystemFactory.RegisterType<Systems.BasicReload>("Reload");
+            mSystemFactory.RegisterType<Systems.BasicShooting>("Shooting");
         }
         public void RegisterOperations()
         {

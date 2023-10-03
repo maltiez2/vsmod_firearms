@@ -1,7 +1,6 @@
 ﻿using MaltiezFirearms.FiniteStateMachine.API;
 using System;
 using System.Collections.Generic;
-using System.Threading.Channels;
 using Vintagestory.API.Common;
 using Vintagestory.API.Datastructures;
 
@@ -23,6 +22,8 @@ namespace MaltiezFirearms.FiniteStateMachine.Operations
         public const string cancelAttrName = "cancel";
         public const string finalAttrName = "final";
         public const string delayAttrName = "delay_ms";
+
+        private const string cTimerInput = "";
 
         // Initial data for operation's logic
         private readonly List<Tuple<string, string>> mStatesInitialData = new();
@@ -83,7 +84,7 @@ namespace MaltiezFirearms.FiniteStateMachine.Operations
 
                 mTriggerConditions.Add(new(inputInitial, initial, intermediate));
                 mTriggerConditions.Add(new(inputCancel, intermediate, cancel));
-                mTriggerConditions.Add(new("", intermediate, final));
+                mTriggerConditions.Add(new(cTimerInput, intermediate, final));
             }
 
         }

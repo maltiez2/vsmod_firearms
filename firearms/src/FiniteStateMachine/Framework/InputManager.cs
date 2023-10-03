@@ -1,6 +1,7 @@
 ﻿using ProtoBuf;
 using System;
 using System.Collections.Generic;
+using System.Collections;
 using Vintagestory.API.Client;
 using Vintagestory.API.Common;
 using Vintagestory.API.Server;
@@ -9,7 +10,6 @@ using static MaltiezFirearms.FiniteStateMachine.API.IKeyInput;
 using static MaltiezFirearms.FiniteStateMachine.API.IMouseInput;
 using static MaltiezFirearms.FiniteStateMachine.API.ISlotChanged;
 using MaltiezFirearms.FiniteStateMachine.API;
-using System.Linq;
 
 namespace MaltiezFirearms.FiniteStateMachine.Framework
 {

@@ -15,7 +15,7 @@ namespace MaltiezFirearms.FiniteStateMachine.Systems
         bool CanSpawnProjectile(ItemStack projectileStack, EntityAgent byEntity, JsonObject parameters);
     }
     
-    public class BasicShootingSystem : UniqueIdFactoryObject, ISystem
+    public class BasicShooting : UniqueIdFactoryObject, ISystem
     {
         public const string ammoSelectorSystemAttrName = "ammoSource";
         
