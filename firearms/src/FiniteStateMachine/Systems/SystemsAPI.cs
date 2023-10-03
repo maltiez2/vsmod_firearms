@@ -5,7 +5,9 @@ namespace MaltiezFirearms.FiniteStateMachine.Systems
 {
     public interface IVariantsAnimation
     {
-
+        int StartAnimation(int firstVariant, int lastVariant, ItemSlot slot, EntityAgent player);
+        void CancelAnimation(int animationId);
+        void SetVariant(int variant, ItemSlot slot, EntityAgent player);
     }
     
     public interface IAmmoSelector

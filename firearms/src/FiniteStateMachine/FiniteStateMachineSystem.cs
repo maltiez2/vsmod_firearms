@@ -1,7 +1,5 @@
 ﻿using Vintagestory.API.Common;
 using MaltiezFirearms.FiniteStateMachine.API;
-using MaltiezFirearms.FiniteStateMachine.Systems;
-using MaltiezFirearms.FiniteStateMachine.Inputs;
 
 namespace MaltiezFirearms.FiniteStateMachine
 {
@@ -34,6 +32,7 @@ namespace MaltiezFirearms.FiniteStateMachine
             mSystemFactory.RegisterType<Systems.BasicSoundSystem>("Sound");
             mSystemFactory.RegisterType<Systems.BasicReload>("Reload");
             mSystemFactory.RegisterType<Systems.BasicShooting>("Shooting");
+            mSystemFactory.RegisterType<Systems.BasicVariantsAnimation<Systems.TickBasedAnimation>>("VariantsAnimation"); 
         }
         public void RegisterOperations()
         {

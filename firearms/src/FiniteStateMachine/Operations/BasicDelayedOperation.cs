@@ -24,6 +24,8 @@ namespace MaltiezFirearms.FiniteStateMachine.Operations
         public const string delayAttrName = "delay_ms";
 
         private const string cTimerInput = "";
+        
+        private ICoreAPI mApi;
 
         // Initial data for operation's logic
         private readonly List<Tuple<string, string>> mStatesInitialData = new();
@@ -38,6 +40,8 @@ namespace MaltiezFirearms.FiniteStateMachine.Operations
 
         public override void Init(string name, JsonObject definition, CollectibleObject collectible, ICoreAPI api)
         {
+            mApi = api;
+
             Dictionary<string, JsonObject> systemsInitial = new();
             Dictionary<string, JsonObject> systemsCancel = new();
             Dictionary<string, JsonObject> systemsFinal = new();
@@ -104,7 +108,7 @@ namespace MaltiezFirearms.FiniteStateMachine.Operations
                     transitionSystems.Add(systems[systemEntry.Key], systemEntry.Value);
                 }
 
-                Tuple <IState, IInput> transitionFrom = new(states[entry.Key.Item1], inputs[entry.Key.Item2]);
+                Tuple<IState, IInput> transitionFrom = new(states[entry.Key.Item1], inputs[entry.Key.Item2]);
                 Tuple<IState, Dictionary<ISystem, JsonObject>> transitionTo = new(states[entry.Value.Item1], transitionSystems);
 
                 mTransitions.Add(transitionFrom, transitionTo);

@@ -25,16 +25,26 @@ namespace MaltiezFirearms.FiniteStateMachine.Framework
             mFactories = mApi.ModLoader.GetModSystem<FiniteStateMachineSystem>();
             mInputIterceptor = mApi.ModLoader.GetModSystem<FiniteStateMachineSystem>().GetInputInterceptor();
 
-            IBehaviourAttributesParser parser = new Framework.BehaviourAttributesParser();
+            IBehaviourAttributesParser parser = new BehaviourAttributesParser();
             parser.ParseDefinition(mFactories.GetOperationFactory(), mFactories.GetSystemFactory(), mFactories.GetInputFactory(), mProperties, collObj);
 
-            mFsm = new Framework.FiniteStateMachine();
+            mFsm = new FiniteStateMachine();
             mFsm.Init(mApi, parser.GetOperations(), parser.GetSystems(), parser.GetInputs(), mProperties, collObj);
 
             foreach (var inputEntry in parser.GetInputs())
             {
                 mInputIterceptor.RegisterInput(inputEntry.Value, mFsm.Process, collObj);
             }
+        }
+
+        public override void OnUnloaded(ICoreAPI api)
+        {
+            base.OnUnloaded(api);
+
+            mFactories = null;
+            mFsm = null;
+            mInputIterceptor = null;
+            mProperties = null;
         }
 
         public override void Initialize(JsonObject properties)

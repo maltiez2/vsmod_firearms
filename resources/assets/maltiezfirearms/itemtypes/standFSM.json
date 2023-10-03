@@ -1,6 +1,5 @@
 {
 	"code": "standFSM",
-	"class": "Item",
 
 	"behaviors": [
 		{
@@ -31,6 +30,26 @@
 						"attributes": {
 							"ammoSource": "reload_system"
 						}
+					},
+					{
+						"code": "animation_system",
+						"class": "VariantsAnimation",
+						"attributes": {
+							"animations": [
+								{
+									"code": "draw",
+									"firstVariant": 2,
+									"lastVariant": 4,
+									"duration": 1500
+								},
+								{
+									"code": "ease",
+									"firstVariant": 1,
+									"lastVariant": 1,
+									"duration": 0
+								}
+							]
+						}
 					}
 				],
 				"operations": [
@@ -49,6 +68,12 @@
 								{
 									"code": "shooting_system",
 									"attributes": {}
+								},
+								{
+									"code": "animation_system",
+									"attributes": {
+										"code": "ease"
+									}
 								}
 							]
 						}
@@ -57,7 +82,7 @@
 						"code": "reload",
 						"class": "Delayed",
 						"attributes": {
-							"delay_ms": 1000,
+							"delay_ms": 1500,
 							"inputs": {
 								"initial": "key_r_down",
 								"cancel": "key_r_up"
@@ -77,6 +102,12 @@
 											"ammoCode": "arrow",
 											"action": "take"
 										}
+									},
+									{
+										"code": "animation_system",
+										"attributes": {
+											"code": "draw"
+										}
 									}
 								],
 								"cancel": [
@@ -85,6 +116,12 @@
 										"attributes": {
 											"ammoCode": "arrow",
 											"action": "put"
+										}
+									},
+									{
+										"code": "animation_system",
+										"attributes": {
+											"code": "ease"
 										}
 									}
 								],
@@ -132,10 +169,343 @@
 		}
 	],
 
-	"attributes": {
-	},
-
 	"creativeinventory": {
 		"maltiezfirearms": [ "*" ]
+	},
+
+	"variantgroups": [
+		{
+			"code": "type",
+			"states": [ "simple", "crude", "long", "recurve" ]
+		}
+	],
+	"class": "Item",
+	"maxstacksize": 1,
+	"durabilityByType": {
+		"*-crude": 180,
+		"*-simple": 240,
+		"*-long": 750,
+		"*-recurve": 600
+	},
+	"shape": {
+		"base": "game:item/tool/bow/{type}",
+		"alternates": [
+			{ "base": "game:item/tool/bow/{type}-charge1" },
+			{ "base": "game:item/tool/bow/{type}-charge2" },
+			{ "base": "game:item/tool/bow/{type}-charge3" }
+		]
+	},
+	"tool": "bow",
+	"attributes": {
+		"damageByType": {
+			"*-crude": 3,
+			"*-simple": 3.25,
+			"*-long": 3.75,
+			"*-recurve": 4
+		},
+		"accuracyBonusByType": {
+			"*-crude": -0.05,
+			"*-simple": 0,
+			"*-long": 0.2,
+			"*-recurve": 0.3
+		},
+		"toolrackTransformByType": {
+			"*-long": {
+				"rotation": {
+					"x": 2,
+					"y": 5,
+					"z": 0
+				},
+				"translation": {
+					"x": 0.2,
+					"y": 0.95
+				},
+				"scale": 1.76
+			},
+			"*": {
+				"rotation": {
+					"x": 2,
+					"y": 5,
+					"z": 0
+				},
+				"translation": { "y": 0.63 },
+				"scale": 1.25
+			}
+		},
+		"groundStorageTransformByType": {
+			"bow-simple": {
+				"translation": {
+					"x": -0.4,
+					"y": -0.03,
+					"z": 0.315
+				},
+				"rotation": {
+					"x": 26,
+					"y": -180,
+					"z": -90
+				},
+				"scale": 0.88
+			},
+			"bow-crude": {
+				"translation": {
+					"x": -0.4,
+					"y": -0.11,
+					"z": 0.345
+				},
+				"rotation": {
+					"x": 26,
+					"y": -180,
+					"z": -90
+				}
+			},
+			"bow-long": {
+				"translation": {
+					"x": -0.45,
+					"y": 0.1,
+					"z": 0.29
+				},
+				"rotation": {
+					"x": 26,
+					"y": -180,
+					"z": -90
+				},
+				"scale": 0.88
+			},
+			"*": {
+				"translation": {
+					"x": -0.4,
+					"y": 0.1,
+					"z": 0.28
+				},
+				"rotation": {
+					"x": 20,
+					"y": -180,
+					"z": -90
+				},
+				"scale": 0.83
+			}
+		}
+	},
+	"fpHandTransformByType": {
+		"*-recurve": {
+			"translation": {
+				"x": 0,
+				"y": 0.5,
+				"z": 0
+			},
+			"rotation": {
+				"x": 4,
+				"y": 1,
+				"z": 84
+			},
+			"origin": {
+				"x": 0.5,
+				"y": 0,
+				"z": 0.5
+			},
+			"scale": 2.42
+		},
+		"*-long": {
+			"translation": {
+				"x": 0,
+				"y": 0.5,
+				"z": 0
+			},
+			"rotation": {
+				"x": 4,
+				"y": 1,
+				"z": 84
+			},
+			"origin": {
+				"x": 0.5,
+				"y": 0,
+				"z": 0.5
+			},
+			"scale": 3.41
+		},
+		"*": {
+			"translation": {
+				"x": 0,
+				"y": 0.5,
+				"z": 0
+			},
+			"rotation": {
+				"x": 4,
+				"y": 1,
+				"z": 84
+			},
+			"origin": {
+				"x": 0.5,
+				"y": 0,
+				"z": 0.5
+			},
+			"scale": 2.91
+		}
+	},
+	"guiTransformByType": {
+		"*-crude": {
+			"translation": {
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"rotation": {
+				"x": -95,
+				"y": 45,
+				"z": 37
+			},
+			"origin": {
+				"x": 0.47,
+				"y": 0,
+				"z": 0.55
+			},
+			"scale": 2.35
+		},
+		"*-long": {
+			"translation": {
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"rotation": {
+				"x": -135,
+				"y": 25,
+				"z": 41
+			},
+			"origin": {
+				"x": 0.47,
+				"y": 0,
+				"z": 0.59
+			},
+			"scale": 1.35
+		},
+		"*-recurve": {
+			"translation": {
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"rotation": {
+				"x": -129,
+				"y": 25,
+				"z": 41
+			},
+			"origin": {
+				"x": 0.47,
+				"y": 0,
+				"z": 0.55
+			},
+			"scale": 1.36
+		},
+		"*": {
+			"translation": {
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"rotation": {
+				"x": -129,
+				"y": 25,
+				"z": 41
+			},
+			"origin": {
+				"x": 0.47,
+				"y": 0,
+				"z": 0.55
+			},
+			"scale": 1.64
+		}
+	},
+	"groundTransform": {
+		"translation": {
+			"x": 0,
+			"y": 0,
+			"z": 0
+		},
+		"rotation": {
+			"x": 0,
+			"y": 0,
+			"z": 0
+		},
+		"origin": {
+			"x": 0.5,
+			"y": 0,
+			"z": 0.5
+		},
+		"scale": 4.8
+	},
+	"tpHandTransformByType": {
+		"*-recurve": {
+			"translation": {
+				"x": -0.52,
+				"y": 0.01,
+				"z": -0.54
+			},
+			"rotation": {
+				"x": 107,
+				"y": 11,
+				"z": 10
+			},
+			"origin": {
+				"x": 0.5,
+				"y": 0,
+				"z": 0.5
+			},
+			"scale": 0.93
+		},
+		"*-long": {
+			"translation": {
+				"x": -0.39,
+				"y": -0.02,
+				"z": -0.4
+			},
+			"rotation": {
+				"x": 107,
+				"y": 11,
+				"z": 10
+			},
+			"origin": {
+				"x": 0.5,
+				"y": 0,
+				"z": 0.5
+			},
+			"scale": 1.29
+		},
+		"*-simple": {
+			"translation": {
+				"x": -0.48,
+				"y": 0.03,
+				"z": -0.44
+			},
+			"rotation": {
+				"x": 105,
+				"y": 9,
+				"z": 4
+			},
+			"origin": {
+				"x": 0.5,
+				"y": 0,
+				"z": 0.5
+			},
+			"scale": 1.15
+		},
+		"*": {
+			"translation": {
+				"x": -0.48,
+				"y": -0.02,
+				"z": -0.44
+			},
+			"rotation": {
+				"x": 107,
+				"y": 11,
+				"z": 10
+			},
+			"origin": {
+				"x": 0.5,
+				"y": 0,
+				"z": 0.5
+			},
+			"scale": 1.15
+		}
 	}
 }

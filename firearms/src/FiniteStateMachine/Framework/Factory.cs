@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Vintagestory.API.Common;
 using Vintagestory.API.Datastructures;
 using MaltiezFirearms.FiniteStateMachine.API;
+using Vintagestory.API.Common.Entities;
 
 namespace MaltiezFirearms.FiniteStateMachine.Framework
 {
