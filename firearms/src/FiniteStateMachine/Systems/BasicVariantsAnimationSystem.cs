@@ -14,31 +14,54 @@ namespace MaltiezFirearms.FiniteStateMachine.Systems
         public const string lastVariantAttrName = "lastVariant";
         public const string durationAttrName = "duration";
         public const string codeAttrName = "code";
+        public const string soundSystemAttrName = "soundSystem";
+        public const string soundsAttrName = "sounds";
+        public const string variantAttrName = "variant";
 
         private ICoreAPI mApi;
         private readonly Dictionary<string, IAnimationPlayer.AnimationParameters> mAnimations = new();
+        private readonly Dictionary<string, Dictionary<int, string>> mAnimationsSounds = new();
         private TAnimationPlayer mTimer;
+        private ISoundSystem mSoundSystem;
+        private string mSoundSystemId = "";
 
-        public override void Init(string name, JsonObject definition, CollectibleObject collectible, ICoreAPI api)
-        {
+        public override void Init(string code, JsonObject definition, CollectibleObject collectible, ICoreAPI api)
+        {     
             mApi = api;
 
             JsonObject[] animations = definition[animationsAttrName].AsArray();
             foreach (JsonObject animation in animations)
             {
+                string animationCode = animation[codeAttrName].AsString();
+
                 mAnimations.Add(
-                    animation[codeAttrName].AsString(),
+                    animationCode,
                     (
                         animation[firstVariantAttrName].AsInt(),
                         animation[lastVariantAttrName].AsInt(),
                         animation[durationAttrName].AsInt()
                     )
                 );
+
+                mAnimationsSounds.Add(animationCode, new());
+
+                if (animation.KeyExists(soundsAttrName))
+                {
+                    foreach (JsonObject soundDefinition in animation[soundsAttrName].AsArray())
+                    {
+                        mAnimationsSounds[animationCode].Add(soundDefinition[variantAttrName].AsInt(), soundDefinition[codeAttrName].AsString());
+                    }
+                }
+            }
+
+            if (definition.KeyExists(soundSystemAttrName))
+            {
+                mSoundSystemId = definition[soundSystemAttrName].AsString();
             }
         }
         void ISystem.SetSystems(Dictionary<string, ISystem> systems)
         {
-            // No other systems needed
+            if (systems.ContainsKey(mSoundSystemId)) mSoundSystem = systems[mSoundSystemId] as ISoundSystem;
         }
         bool ISystem.Verify(ItemSlot slot, EntityAgent player, JsonObject parameters)
         {
@@ -54,16 +77,18 @@ namespace MaltiezFirearms.FiniteStateMachine.Systems
 
             mTimer?.Stop();
             mTimer = new TAnimationPlayer();
-            mTimer.Init(mApi, mAnimations[code], (int variant) => SetRenderVariant(variant, slot, player));
+            mTimer.Init(mApi, mAnimations[code], (int variant) => SetRenderVariant(variant, slot, player, mAnimationsSounds[code]));
             mTimer.Play();
 
             return true;
         }
 
-        private void SetRenderVariant(int renderVariant, ItemSlot weaponSlot, EntityAgent byEntity)
+        private void SetRenderVariant(int renderVariant, ItemSlot weaponSlot, EntityAgent byEntity, Dictionary<int, string> sounds)
         {
             if (weaponSlot?.Itemstack == null) return;
-            
+
+            if (sounds.ContainsKey(renderVariant)) mSoundSystem?.PlaySound(sounds[renderVariant], weaponSlot, byEntity);
+
             int prevRenderVariant = weaponSlot.Itemstack.Attributes.GetInt("renderVariant", 0);
 
             weaponSlot.Itemstack.TempAttributes.SetInt("renderVariant", renderVariant);
@@ -73,8 +98,6 @@ namespace MaltiezFirearms.FiniteStateMachine.Systems
 
             (byEntity as EntityPlayer)?.Player.InventoryManager.BroadcastHotbarSlot();
         }
-
-        
     }
 
     public interface IAnimationPlayer

@@ -29,7 +29,8 @@ namespace MaltiezFirearms.FiniteStateMachine.Systems
             if (action == putAction) return true;
   
             string ammoCode = parameters[ammoCodeAttrName].AsString();
-            return GetAmmoSlot(player, ammoCode) != null;
+            ItemSlot ammoSlot = GetAmmoSlot(player, ammoCode);
+            return ammoSlot != null && ammoSlot != slot;
         }
         public virtual bool Process(ItemSlot slot, EntityAgent player, JsonObject parameters)
         {
@@ -42,7 +43,7 @@ namespace MaltiezFirearms.FiniteStateMachine.Systems
 
             string ammoCode = parameters[ammoCodeAttrName].AsString();
             ItemSlot ammoSlot = GetAmmoSlot(player, ammoCode);
-            if (ammoSlot == null) return false;
+            if (ammoSlot == null || ammoSlot == slot) return false;
 
             WriteAmmoStackTo(slot, ammoSlot.TakeOut(1));
 
@@ -61,11 +62,11 @@ namespace MaltiezFirearms.FiniteStateMachine.Systems
         {
             ItemSlot slot = null;
 
-            player.WalkInventory((inventorySlot) =>
+            player?.WalkInventory((inventorySlot) =>
             {
                 if (inventorySlot is ItemSlotCreative) return true;
 
-                if (inventorySlot.Itemstack != null && inventorySlot.Itemstack.Collectible.Code.Path.Contains(ammoCode))
+                if (inventorySlot?.Itemstack?.Collectible?.Code.Path.StartsWith(ammoCode) == true)
                 {
                     slot = inventorySlot;
                     return false;

@@ -35,18 +35,55 @@
 						"code": "animation_system",
 						"class": "VariantsAnimation",
 						"attributes": {
+							"soundSystem": "sound_system",
 							"animations": [
 								{
 									"code": "draw",
 									"firstVariant": 2,
 									"lastVariant": 4,
-									"duration": 1500
+									"duration": 1500,
+									"sounds": [
+										{
+											"variant": 3,
+											"code": "test_sound_0"
+										},
+										{
+											"variant": 4,
+											"code": "test_sound_0"
+										}
+									]
 								},
 								{
 									"code": "ease",
 									"firstVariant": 1,
 									"lastVariant": 1,
 									"duration": 0
+								}
+							]
+						}
+					},
+					{
+						"code": "requirement_system",
+						"class": "Requirements",
+						"attributes": {
+							"requirementSets": [
+								{
+									"code": "test",
+									"requirements": [
+										{
+											"code": "powderflask",
+											"amount": 1,
+											"durability": 11
+										},
+										{
+											"code": "slug",
+											"amount": 1
+										},
+										{
+											"code": "linenpatch",
+											"amount": 1
+										}
+									]
 								}
 							]
 						}
@@ -139,6 +176,13 @@
 										"attributes": {
 											"code": "draw"
 										}
+									},
+									{
+										"code": "requirement_system",
+										"attributes": {
+											"code": "test",
+											"type": "check"
+										}
 									}
 								],
 								"cancel": [
@@ -158,9 +202,10 @@
 								],
 								"final": [
 									{
-										"code": "sound_system",
+										"code": "requirement_system",
 										"attributes": {
-											"code": "test_sound_0"
+											"code": "test",
+											"type": "take"
 										}
 									}
 								]

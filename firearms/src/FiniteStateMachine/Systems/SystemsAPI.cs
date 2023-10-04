@@ -9,6 +9,11 @@ namespace MaltiezFirearms.FiniteStateMachine.Systems
         void CancelAnimation(int animationId);
         void SetVariant(int variant, ItemSlot slot, EntityAgent player);
     }
+
+    public interface ISoundSystem
+    {
+        void PlaySound(string soundCode, ItemSlot slot, EntityAgent player);
+    }
     
     public interface IAmmoSelector
     {

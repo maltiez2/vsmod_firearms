@@ -190,8 +190,6 @@ namespace MaltiezFirearms.FiniteStateMachine.Framework
 
         private bool InputHandler(int inputIndex, EntityAgent player, ItemSlot slot)
         {
-
-
             if (slot?.Itemstack?.Collectible == null || slot.Itemstack.Collectible != mCollectibles[inputIndex])
             {
                 return false;

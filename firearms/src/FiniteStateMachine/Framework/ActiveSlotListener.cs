@@ -131,13 +131,6 @@ namespace MaltiezFirearms.FiniteStateMachine.Framework
 
         private void KeyPressListener(KeyEvent ev)
         {
-            KeyCombination eventKeyCombination = new KeyCombination();
-            eventKeyCombination.KeyCode = ev.KeyCode;
-            eventKeyCombination.Shift = ev.ShiftPressed;
-            eventKeyCombination.Ctrl = ev.CtrlPressed;
-            eventKeyCombination.Alt = ev.AltPressed;
-            eventKeyCombination.SecondKeyCode = ev.KeyCode2;
-
             foreach (string hotkeyId in mHotkeys)
             {
                 if (!mClientApi.Input.HotKeys.ContainsKey(hotkeyId))
@@ -145,7 +138,7 @@ namespace MaltiezFirearms.FiniteStateMachine.Framework
                     mClientApi.Logger.Error("[Firearms] [ActiveSlotActiveListener] [KeyPressListener()] Hotkey '" + hotkeyId + "' not found");
                 }
 
-                if (mClientApi.Input.HotKeys.ContainsKey(hotkeyId) && CompareCombinations(mClientApi.Input.HotKeys[hotkeyId].CurrentMapping, eventKeyCombination))
+                if (mClientApi.Input.HotKeys.ContainsKey(hotkeyId) && CompareCombinations(ev, mClientApi.Input.HotKeys[hotkeyId].CurrentMapping))
                 {
                     HotkeyPressHandler(hotkeyId, ev);
                     break;
@@ -153,13 +146,12 @@ namespace MaltiezFirearms.FiniteStateMachine.Framework
             }
         }
 
-        private bool CompareCombinations(KeyCombination A, KeyCombination B)
+        private bool CompareCombinations(KeyEvent A, KeyCombination B)
         {
             if (A.KeyCode != B.KeyCode) return false;
-            //if (A.SecondKeyCode != B.SecondKeyCode) return false;
-            if (A.Shift != B.Shift) return false;
-            if (A.Shift != B.Ctrl) return false;
-            if (A.Alt != B.Alt) return false;
+            if (A.ShiftPressed != B.Shift) return false;
+            if (A.CtrlPressed != B.Ctrl) return false;
+            if (A.AltPressed != B.Alt) return false;
 
             return true;
         }

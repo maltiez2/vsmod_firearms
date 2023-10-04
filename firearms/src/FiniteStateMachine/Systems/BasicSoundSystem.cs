@@ -74,7 +74,7 @@ namespace MaltiezFirearms.FiniteStateMachine.Systems
         }
     }
     
-    public class BasicSoundSystem : UniqueIdFactoryObject, ISystem
+    public class BasicSoundSystem : UniqueIdFactoryObject, ISystem, ISoundSystem
     {
         private readonly Dictionary<string, ISound> mSounds = new();
 
@@ -119,6 +119,11 @@ namespace MaltiezFirearms.FiniteStateMachine.Systems
             mSounds[soundCode].Play(player);
 
             return true;
+        }
+
+        void ISoundSystem.PlaySound(string soundCode, ItemSlot slot, EntityAgent player)
+        {
+            if (mSounds.ContainsKey(soundCode)) mSounds[soundCode].Play(player);
         }
     }
 }
