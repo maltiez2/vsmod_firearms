@@ -60,10 +60,12 @@ namespace MaltiezFirearms.FiniteStateMachine.Framework
         private readonly Dictionary<IOperation, State> mStatesByOperationForTimer = new();
         private DelayedCallback mTimer;
 
+        private CollectibleObject mCollectible;
         private ICoreAPI mApi;
 
         public void Init(ICoreAPI api, Dictionary<string, IOperation> operations, Dictionary<string, ISystem> systems, Dictionary<string, IInput> inputs, JsonObject behaviourAttributes, CollectibleObject collectible)
         {
+            mCollectible = collectible;
             mInitialState = behaviourAttributes[cInitialStateAtribute].AsString();
             mApi = api;
 
@@ -108,6 +110,8 @@ namespace MaltiezFirearms.FiniteStateMachine.Framework
 
         public bool Process(ItemSlot slot, EntityAgent player, IInput input)
         {
+            if (slot?.Itemstack?.Collectible != mCollectible || player == null) return false;
+            
             State state = ReadStateFrom(slot);
             if (!mOperationsByInputAndState.ContainsKey(state))
             {
@@ -119,14 +123,14 @@ namespace MaltiezFirearms.FiniteStateMachine.Framework
                 return false;
             }
 
-            mTimer?.Cancel();
-
             IOperation operation = mOperationsByInputAndState[state][input];
 
             return RunOperation(slot, player, operation, input, state);
         }
         public bool OnTimer(ItemSlot slot, EntityAgent player, IInput input, IOperation operation)
         {
+            if (slot?.Itemstack?.Collectible != mCollectible || player == null) return false;
+
             State state = ReadStateFrom(slot);
             if (!mStatesByOperationForTimer.ContainsKey(operation) || mStatesByOperationForTimer[operation].ToString() != state.ToString()) return false;
 
@@ -135,6 +139,8 @@ namespace MaltiezFirearms.FiniteStateMachine.Framework
 
         private bool RunOperation(ItemSlot slot, EntityAgent player, IOperation operation, IInput input, State state)
         {
+            if (operation.StopTimer(slot, player, state, input)) mTimer?.Cancel();
+
             State newState = (State)operation.Perform(slot, player, state, input);
             if (state.ToString() != newState.ToString())
             {
@@ -150,7 +156,7 @@ namespace MaltiezFirearms.FiniteStateMachine.Framework
                 mTimer = new DelayedCallback(mApi, (int)timerDelayMs, () => OnTimer(slot, player, input, operation));
             }
 
-            return true;
+            return input.Handled();
         }
         private State ReadStateFrom(ItemSlot slot)
         {

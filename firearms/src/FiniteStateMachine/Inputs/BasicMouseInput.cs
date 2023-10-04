@@ -8,7 +8,7 @@ using System;
 
 namespace MaltiezFirearms.FiniteStateMachine.Inputs
 {
-    public class BasicMouse : UniqueIdFactoryObject, IMouseInput
+    public class BasicMouse : BaseInput, IMouseInput
     {
         public const string keyAttrName = "key";
         public const string keyPressTypeAttrName = "type";
@@ -16,7 +16,6 @@ namespace MaltiezFirearms.FiniteStateMachine.Inputs
         public const string ctrlAttrName = "ctrl";
         public const string shiftAttrName = "shift";
 
-        private string mCode;
         private string mKey;
         private EnumMouseButton mKeyEnum;
         private MouseEventType mType;
@@ -25,7 +24,8 @@ namespace MaltiezFirearms.FiniteStateMachine.Inputs
 
         public override void Init(string name, JsonObject definition, CollectibleObject collectible, ICoreAPI api)
         {
-            mCode = definition["code"].AsString();
+            base.Init(name, definition, collectible, api);
+
             mKey = definition[keyAttrName].AsString();
             mKeyEnum = (EnumMouseButton)Enum.Parse(typeof(EnumMouseButton), mKey);
             switch (definition[keyPressTypeAttrName].AsString())
@@ -64,11 +64,6 @@ namespace MaltiezFirearms.FiniteStateMachine.Inputs
             if (!ClientCheckModifiers()) return false;
 
             return true;
-        }
-
-        public string GetName()
-        {
-            return mCode;
         }
         public KeyPressModifiers GetIfAltCtrlShiftPressed()
         {

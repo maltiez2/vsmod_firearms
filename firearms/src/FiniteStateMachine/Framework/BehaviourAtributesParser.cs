@@ -51,7 +51,8 @@ namespace MaltiezFirearms.FiniteStateMachine.Framework
         {
             string objectCode = definition[codeAttrName].AsString();
             string objectClass = definition[classAttrName].AsString();
-            JsonObject attributes = definition[attributesAttrName];
+            JsonObject attributes = null;
+            if (definition.KeyExists(attributesAttrName)) attributes = definition[attributesAttrName];
             TObjectInterface objectInstance = factory.Instantiate(objectCode, objectClass, attributes, collectible);
             container.Add(objectCode, objectInstance);
         }

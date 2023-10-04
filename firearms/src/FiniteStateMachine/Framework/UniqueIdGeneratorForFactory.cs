@@ -12,6 +12,6 @@ namespace MaltiezFirearms.FiniteStateMachine.Framework
 
         public UniqueIdGeneratorForFactory() => mFactoryId = sFactoryNextId++;
         public int GenerateInstanceId() => mFactoryId * factoryIdFactor + mNextProductId++;
-        public int GetFactoryid() => mFactoryId;
+        public int GetFactoryId() => mFactoryId;
     }
 }

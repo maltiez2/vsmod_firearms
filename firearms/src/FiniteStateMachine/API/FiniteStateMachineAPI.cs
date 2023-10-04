@@ -66,6 +66,8 @@ namespace MaltiezFirearms.FiniteStateMachine.API
         /// <param name="input">Input that triggered this operation</param>
         /// <returns>State that FSM will switch to</returns>
         IState Perform(ItemSlot slot, EntityAgent player, IState state, IInput input);
+
+        bool StopTimer(ItemSlot slot, EntityAgent player, IState state, IInput input);
         
         /// <summary>
         /// Called by FSM after successful <see cref="Perform"/> call. Used to set up timer that will call the same operation with the same parameters except for state, that will be equal to new FSM state
@@ -101,7 +103,7 @@ namespace MaltiezFirearms.FiniteStateMachine.API
     public interface IInput : IFactoryObject
     {
         string GetName();
-
+        bool Handled();
     }
     public interface IHotkeyInput : IInput, IKeyRelatedInput
     {
@@ -132,7 +134,11 @@ namespace MaltiezFirearms.FiniteStateMachine.API
         MouseEventType GetEventType();
         bool CheckIfShouldBeHandled(MouseEvent mouseEvent, MouseEventType eventType);
     }
-    public interface ISlotChanged : IEventInput
+    public interface ISlotInput : IEventInput
+    {
+
+    }
+    public interface ISlotChangedAfter : ISlotInput
     {
         enum SlotEventType
         {
@@ -140,6 +146,14 @@ namespace MaltiezFirearms.FiniteStateMachine.API
             FROM_WEAPON
         }
         SlotEventType GetEventType();
+    }
+    public interface ISlotChangedBefore : ISlotInput
+    {
+        EnumHandling GetHandlingType();
+    }
+    public interface ISlotEvent : ISlotInput
+    {
+        IActiveSlotListener.SlotEventType GetEventType();
     }
 
 
@@ -177,6 +191,16 @@ namespace MaltiezFirearms.FiniteStateMachine.API
     public interface IUniqueIdGeneratorForFactory
     {
         int GenerateInstanceId();
-        int GetFactoryid();
+        int GetFactoryId();
+    }
+    public interface IActiveSlotListener
+    {
+        enum SlotEventType
+        {
+            ItemDropped
+        }
+
+        int RegisterListener(SlotEventType eventType, System.Func<int, bool> callback); // handled callback(item slot id)
+        void UnregisterListener(int id);
     }
 }

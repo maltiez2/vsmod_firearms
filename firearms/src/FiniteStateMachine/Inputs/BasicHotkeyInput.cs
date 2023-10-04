@@ -4,7 +4,7 @@ using MaltiezFirearms.FiniteStateMachine.API;
 
 namespace MaltiezFirearms.FiniteStateMachine.Inputs
 {
-    public class BasicHotkey : UniqueIdFactoryObject, IHotkeyInput
+    public class BasicHotkey : BaseInput, IHotkeyInput
     {
         public const string keyAttrName = "key";
         public const string keyPressTypeAttrName = "type";
@@ -12,13 +12,13 @@ namespace MaltiezFirearms.FiniteStateMachine.Inputs
         public const string ctrlAttrName = "ctrl";
         public const string shiftAttrName = "shift";
 
-        private string mCode;
         private string mKey;
         private KeyPressModifiers mModifiers;
 
         public override void Init(string name, JsonObject definition, CollectibleObject collectible, ICoreAPI api)
         {
-            mCode = definition["code"].AsString();
+            base.Init(name, definition, collectible, api);
+
             mKey = definition[keyAttrName].AsString(); // @TODO @LOCAL Add localization
             mModifiers = new KeyPressModifiers
             (
@@ -28,10 +28,6 @@ namespace MaltiezFirearms.FiniteStateMachine.Inputs
             );
         }
 
-        public string GetName()
-        {
-            return mCode;
-        }
         public KeyPressModifiers GetIfAltCtrlShiftPressed()
         {
             return mModifiers;

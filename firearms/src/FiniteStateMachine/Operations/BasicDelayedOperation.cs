@@ -16,7 +16,8 @@ namespace MaltiezFirearms.FiniteStateMachine.Operations
     {
         public const string mainTransitionsAttrName = "states";
         public const string systemsAttrName = "systems";
-        public const string inputsAttrName = "inputs";
+        public const string inputsAttrName = "inputsToHandle";
+        public const string inputsToInterceptAttrName = "inputsToIntercept";
         public const string attributesAttrName = "attributes";
         public const string initialName = "initial";
         public const string cancelAttrName = "cancel";
@@ -33,13 +34,20 @@ namespace MaltiezFirearms.FiniteStateMachine.Operations
         private readonly Dictionary<Tuple<string, string>, int?> mTimersInitialData = new();
         private readonly List<string> mInputsInitialData = new();
         private readonly List<Tuple<string, string, string>> mTriggerConditions = new();
+        private readonly List<string> mInputsToPreventInitialData = new();
 
         // Final data for operation's logic
         private readonly Dictionary<Tuple<IState, IInput>, Tuple<IState, Dictionary<ISystem, JsonObject>>> mTransitions = new();
         private readonly Dictionary<Tuple<IState, IInput>, int?> mTimers = new();
+        private readonly List<IInput> mInputsToPrevent = new();
 
         public override void Init(string name, JsonObject definition, CollectibleObject collectible, ICoreAPI api)
         {
+            foreach (JsonObject input in definition[inputsToInterceptAttrName].AsArray())
+            {
+                mInputsToPreventInitialData.Add(input.AsString());
+            }
+
             mApi = api;
 
             Dictionary<string, JsonObject> systemsInitial = new();
@@ -62,33 +70,64 @@ namespace MaltiezFirearms.FiniteStateMachine.Operations
                 systemsFinal.Add(system["code"].AsString(), system[attributesAttrName]);
             }
 
-            string inputInitial = definition[inputsAttrName][initialName].AsString();
-            string inputCancel = definition[inputsAttrName][cancelAttrName].AsString();
-            mInputsInitialData.Add(inputInitial);
-            mInputsInitialData.Add(inputCancel);
+            List<string> cancelInputs = new();
+            if (definition[inputsAttrName][cancelAttrName].IsArray())
+            {
+                foreach (JsonObject cancelInput in definition[inputsAttrName][cancelAttrName].AsArray())
+                {
+                    cancelInputs.Add(cancelInput.AsString());
+                    mInputsInitialData.Add(cancelInput.AsString());
+                }
+            }
+            else
+            {
+                cancelInputs.Add(definition[inputsAttrName][cancelAttrName].AsString());
+                mInputsInitialData.Add(definition[inputsAttrName][cancelAttrName].AsString());
+            }
+
+            List<string> inputsInitial = new List<string>();
+            if (definition[inputsAttrName][initialName].IsArray())
+            {
+                foreach (JsonObject input in definition[inputsAttrName][initialName].AsArray())
+                {
+                    inputsInitial.Add(input.AsString());
+                }
+            }
+            else
+            {
+                inputsInitial.Add(definition[initialName].AsString());
+            }
+
             int? timerDelay = definition.KeyExists(delayAttrName) ? definition[delayAttrName].AsInt() : null;
 
             JsonObject[] mainTransitions = definition[mainTransitionsAttrName].AsArray();
             foreach (JsonObject transition in mainTransitions)
             {
-                string initial = transition[initialName].AsString();
-                string cancel = transition[cancelAttrName].AsString();
-                string final = transition[finalAttrName].AsString();
-                string intermediate = initial + "_to_" + final + "_op." + name;
+                string initialState = transition[initialName].AsString();
+                string finalState = transition[finalAttrName].AsString();
+                string cancelState = transition[cancelAttrName].AsString();
+                string intermediateState = initialState + "_to_" + finalState + "_op." + name;
 
-                mStatesInitialData.Add(new Tuple<string, string>(initial, intermediate));
-                mStatesInitialData.Add(new Tuple<string, string>(intermediate, cancel));
-                mStatesInitialData.Add(new Tuple<string, string>(intermediate, final));
+                mStatesInitialData.Add(new Tuple<string, string>(initialState, intermediateState));
+                mStatesInitialData.Add(new Tuple<string, string>(intermediateState, finalState));
+                mStatesInitialData.Add(new Tuple<string, string>(intermediateState, cancelState));
 
-                mTransitionsInitialData.Add(new Tuple<string, string>(initial, inputInitial), new Tuple<string, Dictionary<string, JsonObject>>(intermediate,  systemsInitial));
-                mTransitionsInitialData.Add(new Tuple<string, string>(intermediate, inputCancel), new Tuple<string, Dictionary<string, JsonObject>>(cancel, systemsCancel));
-                mTransitionsInitialData.Add(new Tuple<string, string>(intermediate, inputInitial), new Tuple<string, Dictionary<string, JsonObject>>(final, systemsFinal));
+                foreach (string inputInitial in inputsInitial)  mTransitionsInitialData.Add(new Tuple<string, string>(initialState, inputInitial), new Tuple<string, Dictionary<string, JsonObject>>(intermediateState,  systemsInitial));
+                foreach (string inputInitial in inputsInitial) mTransitionsInitialData.Add(new Tuple<string, string>(intermediateState, inputInitial), new Tuple<string, Dictionary<string, JsonObject>>(finalState, systemsFinal));
+                foreach (string inputCancel in cancelInputs) mTransitionsInitialData.Add(new Tuple<string, string>(intermediateState, inputCancel), new Tuple<string, Dictionary<string, JsonObject>>(cancelState, systemsCancel));
 
-                mTimersInitialData.Add(new Tuple<string, string>(initial, inputInitial), timerDelay);
+                foreach (string inputInitial in inputsInitial) mTimersInitialData.Add(new Tuple<string, string>(initialState, inputInitial), timerDelay);
 
-                mTriggerConditions.Add(new(inputInitial, initial, intermediate));
-                mTriggerConditions.Add(new(inputCancel, intermediate, cancel));
-                mTriggerConditions.Add(new(cTimerInput, intermediate, final));
+                foreach (string inputInitial in inputsInitial) mTriggerConditions.Add(new(inputInitial, initialState, intermediateState));
+                mTriggerConditions.Add(new(cTimerInput, intermediateState, finalState));
+                foreach (string inputCancel in cancelInputs) mTriggerConditions.Add(new(inputCancel, intermediateState, cancelState));
+
+                foreach (string input in mInputsToPreventInitialData)
+                {
+                    mTriggerConditions.Add(new(input, intermediateState, intermediateState));
+                    mStatesInitialData.Add(new Tuple<string, string>(intermediateState, intermediateState));
+                    mTransitionsInitialData.Add(new Tuple<string, string>(intermediateState, input), new Tuple<string, Dictionary<string, JsonObject>>(intermediateState, new Dictionary<string, JsonObject>()));
+                }
             }
 
         }
@@ -120,12 +159,25 @@ namespace MaltiezFirearms.FiniteStateMachine.Operations
                 mTimers.Add(transition, entry.Value);
             }
 
+            foreach (string input in mInputsToPreventInitialData)
+            {
+                mInputsToPrevent.Add(inputs[input]);
+            }
+
             mStatesInitialData.Clear();
             mTransitionsInitialData.Clear();
             mTimersInitialData.Clear();
             mInputsInitialData.Clear();
+            mInputsToPreventInitialData.Clear();
         }
+        public bool StopTimer(ItemSlot slot, EntityAgent player, IState state, IInput input)
+        {
+            Tuple<IState, IInput> transitionId = new Tuple<IState, IInput>(state, input);
 
+            if (!mTransitions.ContainsKey(transitionId)) return false;
+
+            return !mInputsToPrevent.Contains(input);
+        }
         public IState Perform(ItemSlot weaponSlot, EntityAgent player, IState state, IInput input)
         {
             Tuple<IState, IInput> transitionId = new Tuple<IState, IInput>(state, input);

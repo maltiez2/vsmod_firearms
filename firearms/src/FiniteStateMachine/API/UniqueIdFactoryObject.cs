@@ -13,7 +13,7 @@ namespace MaltiezFirearms.FiniteStateMachine.API
     {
         private int? mId = null;
 
-        public abstract void Init(string name, JsonObject definition, CollectibleObject collectible, ICoreAPI api);
+        public abstract void Init(string code, JsonObject definition, CollectibleObject collectible, ICoreAPI api);
 
         /// <summary>
         /// For setting object unique id after <see cref="Init"/> call.<br/>

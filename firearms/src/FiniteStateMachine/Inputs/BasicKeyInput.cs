@@ -7,7 +7,7 @@ using System;
 
 namespace MaltiezFirearms.FiniteStateMachine.Inputs
 {
-    public class BasicKey : UniqueIdFactoryObject, IKeyInput
+    public class BasicKey : BaseInput, IKeyInput
     {
         public const string keyAttrName = "key";
         public const string keyPressTypeAttrName = "type";
@@ -15,7 +15,6 @@ namespace MaltiezFirearms.FiniteStateMachine.Inputs
         public const string ctrlAttrName = "ctrl";
         public const string shiftAttrName = "shift";
 
-        private string mCode;
         private string mKey;
         private KeyEventType mType;
         private int mKeyEnum;
@@ -24,7 +23,8 @@ namespace MaltiezFirearms.FiniteStateMachine.Inputs
 
         public override void Init(string name, JsonObject definition, CollectibleObject collectible, ICoreAPI api)
         {
-            mCode = definition["code"].AsString();
+            base.Init(name, definition, collectible, api);
+
             mKey = definition[keyAttrName].AsString();
             mKeyEnum = (int)Enum.Parse(typeof(GlKeys), mKey);
             switch (definition[keyPressTypeAttrName].AsString())
@@ -65,10 +65,6 @@ namespace MaltiezFirearms.FiniteStateMachine.Inputs
             return true;
         }
 
-        public string GetName()
-        {
-            return mCode;
-        }
         public KeyPressModifiers GetIfAltCtrlShiftPressed()
         {
             return mModifiers;

@@ -1,5 +1,7 @@
 ﻿using Vintagestory.API.Common;
 using MaltiezFirearms.FiniteStateMachine.API;
+using Vintagestory.API.Client;
+using MaltiezFirearms.FiniteStateMachine.Inputs;
 
 namespace MaltiezFirearms.FiniteStateMachine
 {
@@ -9,9 +11,10 @@ namespace MaltiezFirearms.FiniteStateMachine
         private IFactory<ISystem> mSystemFactory;
         private IFactory<IInput> mInputFactory;
         private IInputManager mInputManager;
+        private IActiveSlotListener mActiveSlotListener;
 
         public override void Start(ICoreAPI api)
-        {
+        {  
             base.Start(api);
 
             api.RegisterCollectibleBehaviorClass("firearms.finitestatemachine", typeof(Framework.FiniteStateMachineBehaviour));
@@ -24,7 +27,8 @@ namespace MaltiezFirearms.FiniteStateMachine
             RegisterOperations();
             RegisterInputs();
 
-            mInputManager = new Framework.InputManager(api);
+            mActiveSlotListener = (api.Side == EnumAppSide.Client) ? new Framework.ActiveSlotActiveListener((ICoreClientAPI)api) : null;
+            mInputManager = new Framework.InputManager(api, mActiveSlotListener);
         }
 
         public void RegisterSystems()
@@ -45,6 +49,8 @@ namespace MaltiezFirearms.FiniteStateMachine
             mInputFactory.RegisterType<Inputs.BasicKey>("Key");
             mInputFactory.RegisterType<Inputs.BasicMouse>("MouseKey");
             mInputFactory.RegisterType<Inputs.BasicHotkey>("Hotkey");
+            mInputFactory.RegisterType<Inputs.BasicSlotBefore>("SlotChange");
+            mInputFactory.RegisterType<Inputs.ItemDropped>("ItemDropped");
         }
 
         public IFactory<IOperation> GetOperationFactory()

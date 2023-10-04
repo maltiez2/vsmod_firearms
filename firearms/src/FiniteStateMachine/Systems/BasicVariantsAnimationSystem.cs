@@ -62,6 +62,8 @@ namespace MaltiezFirearms.FiniteStateMachine.Systems
 
         private void SetRenderVariant(int renderVariant, ItemSlot weaponSlot, EntityAgent byEntity)
         {
+            if (weaponSlot?.Itemstack == null) return;
+            
             int prevRenderVariant = weaponSlot.Itemstack.Attributes.GetInt("renderVariant", 0);
 
             weaponSlot.Itemstack.TempAttributes.SetInt("renderVariant", renderVariant);

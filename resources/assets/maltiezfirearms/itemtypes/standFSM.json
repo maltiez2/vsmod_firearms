@@ -57,7 +57,8 @@
 						"code": "shoot",
 						"class": "Instant",
 						"attributes": {
-							"input": "mouse_left",
+							"input": "mouse_right_up",
+							"inputsToIntercept": [],
 							"states": [
 								{
 									"initial": "loaded",
@@ -79,13 +80,43 @@
 						}
 					},
 					{
+						"code": "ease",
+						"class": "Instant",
+						"attributes": {
+							"input": [ "dropped", "handle_slot_change" ],
+							"inputsToIntercept": [],
+							"states": [
+								{
+									"initial": "loaded",
+									"final": "unloaded"
+								}
+							],
+							"systems": [
+								{
+									"code": "reload_system",
+									"attributes": {
+										"ammoCode": "arrow",
+										"action": "put"
+									}
+								},
+								{
+									"code": "animation_system",
+									"attributes": {
+										"code": "ease"
+									}
+								}
+							]
+						}
+					},
+					{
 						"code": "reload",
 						"class": "Delayed",
 						"attributes": {
 							"delay_ms": 1500,
-							"inputs": {
-								"initial": "key_r_down",
-								"cancel": "key_r_up"
+							"inputsToIntercept": [],
+							"inputsToHandle": {
+								"initial": [ "mouse_right_down", "key_r_down" ],
+								"cancel": [ "mouse_right_up", "key_r_up", "handle_slot_change", "dropped" ]
 							},
 							"states": [
 								{
@@ -139,18 +170,46 @@
 				],
 				"inputs": [
 					{
-						"code": "mouse_left",
+						"code": "prevent_slot_change",
+						"class": "SlotChange",
+						"attributes": {
+							"type": "prevent"
+						}
+					},
+					{
+						"code": "handle_slot_change",
+						"class": "SlotChange",
+						"attributes": {
+							"type": "handle"
+						}
+					},
+					{
+						"code": "mouse_right_down",
 						"class": "MouseKey",
 						"attributes": {
-							"code": "mouse_left",
-							"key": "Left"
+							"key": "Right",
+							"type": "pressed"
+						}
+					},
+					{
+						"code": "mouse_right_up",
+						"class": "MouseKey",
+						"attributes": {
+							"key": "Right",
+							"type": "released"
+						}
+					},
+					{
+						"code": "dropped",
+						"class": "ItemDropped",
+						"attributes": {
+							"handle": false
 						}
 					},
 					{
 						"code": "key_r_down",
 						"class": "Key",
 						"attributes": {
-							"code": "key_r_down",
 							"key": "R",
 							"type": "pressed"
 						}
@@ -159,7 +218,6 @@
 						"code": "key_r_up",
 						"class": "Key",
 						"attributes": {
-							"code": "key_r_up",
 							"key": "R",
 							"type": "released"
 						}
