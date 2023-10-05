@@ -14,7 +14,12 @@ namespace MaltiezFirearms.FiniteStateMachine.Systems
     {
         void PlaySound(string soundCode, ItemSlot slot, EntityAgent player);
     }
-    
+
+    public interface IPlayerAnimationSystem
+    {
+        void PlayAnimation(string soundCode, ItemSlot slot, EntityAgent player);
+    }
+
     public interface IAmmoSelector
     {
         ItemStack GetSelectedAmmo(ItemSlot slot);

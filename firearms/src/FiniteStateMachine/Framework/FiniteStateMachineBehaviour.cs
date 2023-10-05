@@ -1,6 +1,7 @@
 ﻿using Vintagestory.API.Common;
 using Vintagestory.API.Datastructures;
 using MaltiezFirearms.FiniteStateMachine.API;
+using Vintagestory.API.Client;
 
 namespace MaltiezFirearms.FiniteStateMachine.Framework
 {
@@ -17,6 +18,9 @@ namespace MaltiezFirearms.FiniteStateMachine.Framework
         private IInputManager mInputIterceptor;
         private JsonObject mProperties;
 
+        public ModelTransform tpTransform { get; set; }
+        public ModelTransform fpTransform { get; set; }
+
         public override void OnLoaded(ICoreAPI api)
         {
             base.OnLoaded(api);
@@ -24,6 +28,7 @@ namespace MaltiezFirearms.FiniteStateMachine.Framework
             mApi = api;
             mFactories = mApi.ModLoader.GetModSystem<FiniteStateMachineSystem>();
             mInputIterceptor = mApi.ModLoader.GetModSystem<FiniteStateMachineSystem>().GetInputInterceptor();
+            tpTransform = null;
 
             IBehaviourAttributesParser parser = new BehaviourAttributesParser();
             parser.ParseDefinition(mFactories.GetOperationFactory(), mFactories.GetSystemFactory(), mFactories.GetInputFactory(), mProperties, collObj);
@@ -52,6 +57,33 @@ namespace MaltiezFirearms.FiniteStateMachine.Framework
             base.Initialize(properties);
 
             mProperties = properties;
+        }
+
+        public override void OnBeforeRender(ICoreClientAPI capi, ItemStack itemstack, EnumItemRenderTarget target, ref ItemRenderInfo renderinfo)
+        {            
+            if (target == EnumItemRenderTarget.HandTp && tpTransform != null)
+            {
+                renderinfo.Transform = renderinfo.Transform.Clone();
+                renderinfo.Transform.Translation.X += tpTransform.Translation.X;
+                renderinfo.Transform.Translation.Y += tpTransform.Translation.Y;
+                renderinfo.Transform.Translation.Z += tpTransform.Translation.Z;
+                renderinfo.Transform.Rotation.X += tpTransform.Rotation.X;
+                renderinfo.Transform.Rotation.Y += tpTransform.Rotation.Y;
+                renderinfo.Transform.Rotation.Z += tpTransform.Rotation.Z;
+            }
+
+            if (target == EnumItemRenderTarget.HandFp && fpTransform != null)
+            {
+                renderinfo.Transform = renderinfo.Transform.Clone();
+                renderinfo.Transform.Translation.X += fpTransform.Translation.X;
+                renderinfo.Transform.Translation.Y += fpTransform.Translation.Y;
+                renderinfo.Transform.Translation.Z += fpTransform.Translation.Z;
+                renderinfo.Transform.Rotation.X += fpTransform.Rotation.X;
+                renderinfo.Transform.Rotation.Y += fpTransform.Rotation.Y;
+                renderinfo.Transform.Rotation.Z += fpTransform.Rotation.Z;
+            }
+
+            base.OnBeforeRender(capi, itemstack, target, ref renderinfo);
         }
     }
 }

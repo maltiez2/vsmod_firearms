@@ -37,6 +37,7 @@ namespace MaltiezFirearms.FiniteStateMachine
             mSystemFactory.RegisterType<Systems.BasicShooting>("Shooting");
             mSystemFactory.RegisterType<Systems.BasicVariantsAnimation<Systems.TickBasedAnimation>>("VariantsAnimation");
             mSystemFactory.RegisterType<Systems.BasicRequirements>("Requirements");
+            mSystemFactory.RegisterType<Systems.BasicTransformAnimation>("TransformAnimation");
         }
         public void RegisterOperations()
         {
