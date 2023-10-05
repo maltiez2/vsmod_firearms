@@ -56,11 +56,13 @@ namespace MaltiezFirearms.FiniteStateMachine.Systems
         {
             string code = parameters[codeAttrName].AsString();
             string mode = parameters[modeAttrName].AsString();
+            int duration = mDurations[code];
+            if (parameters.KeyExists(durationAttrName)) duration = parameters[durationAttrName].AsInt();
 
             if (!mFpAnimations.ContainsKey(code)) return false;
 
             mTimer?.Stop();
-            mTimer?.Init(mApi, mDurations[code], (float progress) => PlayAnimation(progress, code, player));
+            mTimer?.Init(mApi, duration, (float progress) => PlayAnimation(progress, code, player));
             
             switch (mode)
             {

@@ -68,7 +68,7 @@
               "animations": [
                 {
                   "code": "aiming",
-                  "duration": 500,
+                  "duration": 1500,
                   "fpTransform": {
                     "translation": { "x": -0.5, "y": 0.35, "z": 0 },
                     "rotation": { "x": 0.0, "y": 0.0, "z": 0.0 },
@@ -131,7 +131,8 @@
                   "code": "transform_animation_system",
                   "attributes": {
                     "code": "aiming",
-                    "mode": "backward"
+                    "mode": "backward",
+                    "duration": 200
                   }
                 }
               ]
@@ -170,7 +171,8 @@
                   "code": "transform_animation_system",
                   "attributes": {
                     "code": "aiming",
-                    "mode": "backward"
+                    "mode": "backward",
+                    "duration": 200
                   }
                 }
               ]
@@ -249,7 +251,8 @@
                     "code": "transform_animation_system",
                     "attributes": {
                       "code": "aiming",
-                      "mode": "backward"
+                      "mode": "backward",
+                      "duration": 200
                     }
                   }
                 ],
