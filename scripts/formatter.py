@@ -1,5 +1,4 @@
 import pythonmonkey as pm
-import json
 import argparse
 import os
 from glob import iglob
@@ -7,8 +6,7 @@ from glob import iglob
 def format(path):
     formatter = pm.require('./formatter')
     f = open(path, "r", encoding='utf-8-sig')
-    data = json.load(f);
-    content = formatter.stringify(json.dumps(data), {"maxLength": length})
+    content = formatter.stringify(f.read(), {"maxLength": length})
     f.close()
     f = open(path, "w", encoding='utf-8-sig')
     f.write(content)
