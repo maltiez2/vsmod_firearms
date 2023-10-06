@@ -36,6 +36,7 @@ namespace MaltiezFirearms.FiniteStateMachine.Systems
         public virtual bool Process(ItemSlot slot, EntityAgent player, JsonObject parameters)
         {
             ItemStack ammoStack = mReloadSystem.TakeSelectedAmmo(slot);
+            if (ammoStack == null) return false;
             return mProjectileSpawner.SpawnProjectile(ammoStack, player, parameters);
         }
         public virtual bool Verify(ItemSlot slot, EntityAgent player, JsonObject parameters)
@@ -54,9 +55,9 @@ namespace MaltiezFirearms.FiniteStateMachine.Systems
             
             Vec3d projectilePosition = ProjectilePosition(projectileStack, byEntity, new Vec3f(0.0f, 0.0f, 0.0f));
             Vec3d projectileVelocity = ProjectileVelocity(projectileStack, byEntity);
-            float projectileDamage = projectileStack.Collectible.Attributes["damage"].AsFloat(0);
+            float? projectileDamage = projectileStack.Collectible?.Attributes["damage"].AsFloat(0);
 
-            SpawnProjectile(projectileStack, byEntity, projectilePosition, projectileVelocity, projectileDamage);
+            SpawnProjectile(projectileStack, byEntity, projectilePosition, projectileVelocity, projectileDamage == null ? 0 : (float)projectileDamage);
 
             return true;
         }
@@ -90,6 +91,8 @@ namespace MaltiezFirearms.FiniteStateMachine.Systems
         }
         protected virtual void SpawnProjectile(ItemStack projectileStack, EntityAgent byEntity, Vec3d position, Vec3d velocity, float damage)
         {
+            if (projectileStack?.Item?.Code == null) return;
+
             EntityProperties type = byEntity.World.GetEntityType(projectileStack.Item.Code);
             var projectile = byEntity.World.ClassRegistry.CreateEntity(type) as EntityProjectile;
             projectile.FiredBy = byEntity;

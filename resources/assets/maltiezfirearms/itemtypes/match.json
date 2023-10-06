@@ -1,157 +1,37 @@
 ﻿{
-    "code": "match",
-    "class": "MaltiezMatch",
-    "creativeinventory": { "maltiezfirearms": [ "*" ] },
-    "attributes": {
-        "groundStorageTransform": {
-            "translation": {
-                "x": 0.3,
-                "y": 0,
-                "z": 0.6
-            },
-            "rotation": {
-                "x": 0,
-                "y": -10,
-                "z": 90
-            },
-            "origin": {
-                "x": 0,
-                "y": 0,
-                "z": 0
-            },
-            "scale": 1.22
-        }
+  "code": "match",
+  "class": "MaltiezMatch",
+  "creativeinventory": {"maltiezfirearms": ["*"]},
+  "attributes": {"groundStorageTransform": {"translation": {"x": 0.3, "y": 0, "z": 0.6}, "rotation": {"x": 0, "y": -10, "z": 90}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 1.22}},
+  "behaviors": [{"name": "GroundStorable", "properties": {"layout": "Quadrants", "placeRemoveSound": "sounds/player/build", "collisionBox": {"x1": 0, "y1": 0, "z1": 0, "x2": 1, "y2": 0.1, "z2": 1}}}],
+  "storageFlags": 257,
+  "variantgroups": [{"code": "state", "states": ["unlit", "lit", "extinct"]}],
+  "shapebytype": {"*": {"base": "match-{state}"}},
+  "combustiblePropsbyType": {
+    "*-lit": {"burnTemperature": 600, "burnDuration": 1},
+    "*-extinct": {
+      "burnTemperature": 600,
+      "burnDuration": 1,
+      "meltingPoint": 300,
+      "meltingDuration": 1,
+      "smeltedRatio": 1,
+      "smeltingType": "convert",
+      "smeltedStack": {"type": "item", "code": "match-lit"},
+      "requiresContainer": false
     },
-    "behaviors": [
-        {
-            "name": "GroundStorable",
-            "properties": {
-                "layout": "Quadrants",
-                "placeRemoveSound": "sounds/player/build",
-                "collisionBox": {
-                    "x1": 0,
-                    "y1": 0,
-                    "z1": 0,
-                    "x2": 1,
-                    "y2": 0.1,
-                    "z2": 1
-                }
-            }
-        }
-    ],
-    "storageFlags": 257,
-    "variantgroups": [
-        {
-            "code": "state",
-            "states": [ "unlit", "lit", "extinct" ]
-        }
-    ],
-    "shapebytype": {
-        "*": { "base": "match-{state}" }
-    },
-    "combustiblePropsbyType": {
-        "*-lit": {
-            "burnTemperature": 600,
-            "burnDuration": 1
-        },
-        "*-extinct": {
-            "burnTemperature": 600,
-            "burnDuration": 1,
-            "meltingPoint": 300,
-            "meltingDuration": 1,
-            "smeltedRatio": 1,
-            "smeltingType": "convert",
-            "smeltedStack": {
-                "type": "item",
-                "code": "match-lit"
-            },
-            "requiresContainer": false
-        },
-        "*-unlit": {
-            "burnTemperature": 600,
-            "burnDuration": 1,
-            "meltingPoint": 300,
-            "meltingDuration": 1,
-            "smeltedRatio": 1,
-            "smeltingType": "convert",
-            "smeltedStack": {
-                "type": "item",
-                "code": "match-lit"
-            },
-            "requiresContainer": false
-        }
-    },
-
-    "guiTransform": {
-        "translation": {
-            "x": 0,
-            "y": 0,
-            "z": 0
-        },
-        "rotation": {
-            "x": 166,
-            "y": -150,
-            "z": 0
-        },
-        "origin": {
-            "x": 0.13,
-            "y": -0.18,
-            "z": -0.3
-        },
-        "scale": 6
-    },
-    "fpHandTransform": {
-        "translation": {
-            "x": 0,
-            "y": 0,
-            "z": 0
-        },
-        "rotation": {
-            "x": 10,
-            "y": -172,
-            "z": 0
-        },
-        "origin": {
-            "x": 0.3,
-            "y": -0.5,
-            "z": 0
-        },
-        "scale": 4
-    },
-    "tpHandTransform": {
-        "translation": {
-            "x": -0.2,
-            "y": 0,
-            "z": 0
-        },
-        "rotation": {
-            "x": 0,
-            "y": 90,
-            "z": 0
-        },
-        "origin": {
-            "x": 0,
-            "y": 0,
-            "z": 0
-        },
-        "scale": 0.69
-    },
-    "groundTransform": {
-        "translation": {
-            "x": 0,
-            "y": 0,
-            "z": 0
-        },
-        "rotation": {
-            "x": 0,
-            "y": 0,
-            "z": 90
-        },
-        "origin": {
-            "x": 0,
-            "y": 0,
-            "z": 0
-        },
-        "scale": 4
+    "*-unlit": {
+      "burnTemperature": 600,
+      "burnDuration": 1,
+      "meltingPoint": 300,
+      "meltingDuration": 1,
+      "smeltedRatio": 1,
+      "smeltingType": "convert",
+      "smeltedStack": {"type": "item", "code": "match-lit"},
+      "requiresContainer": false
     }
+  },
+  "guiTransform": {"translation": {"x": 0, "y": 0, "z": 0}, "rotation": {"x": 166, "y": -150, "z": 0}, "origin": {"x": 0.13, "y": -0.18, "z": -0.3}, "scale": 6},
+  "fpHandTransform": {"translation": {"x": 0, "y": 0, "z": 0}, "rotation": {"x": 10, "y": -172, "z": 0}, "origin": {"x": 0.3, "y": -0.5, "z": 0}, "scale": 4},
+  "tpHandTransform": {"translation": {"x": -0.2, "y": 0, "z": 0}, "rotation": {"x": 0, "y": 90, "z": 0}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 0.69},
+  "groundTransform": {"translation": {"x": 0, "y": 0, "z": 0}, "rotation": {"x": 0, "y": 0, "z": 90}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 4}
 }

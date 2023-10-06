@@ -2,12 +2,8 @@
 using Vintagestory.API.Common;
 using MaltiezFirearms.FiniteStateMachine.API;
 using System.Collections.Generic;
-using Vintagestory.API.MathTools;
 using System;
-using System.Diagnostics;
 using MaltiezFirearms.FiniteStateMachine.Framework;
-using Vintagestory.API.Common.Entities;
-using static HarmonyLib.Code;
 
 namespace MaltiezFirearms.FiniteStateMachine.Systems
 {

@@ -25,7 +25,7 @@ namespace MaltiezFirearms.FiniteStateMachine.Operations
         private readonly Dictionary<ISystem, JsonObject> mSystems = new();
         private readonly List<IInput> mInputsToPrevent = new();
 
-        public override void Init(string name, JsonObject definition, CollectibleObject collectible, ICoreAPI api)
+        public override void Init(string code, JsonObject definition, CollectibleObject collectible, ICoreAPI api)
         {
             List<string> inputs = new List<string>();
             if (definition[inputAttrName].IsArray())

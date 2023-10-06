@@ -1,40 +1,16 @@
-{
+﻿{
   "code": "musket",
   "class": "MaltiezMusket",
-  "creativeinventorybytype": {
-    "musket-none": { "maltiezfirearms": [ "*" ] },
-    "musket-bayonet": {}
-  },
-
-  "damagedby": [ "attacking" ],
-  "attackRangebytype": {
-    "musket-none": 2.5,
-    "musket-bayonet": 3.5
-  },
-  "attackpowerbytype": {
-    "musket-none": 1.0,
-    "musket-bayonet": 4.5
-  },
-  "tooltierbytype": {
-    "musket-none": 0,
-    "musket-bayonet": 5
-  },
-
-  "variantgroups": [
-    {
-      "code": "attachment",
-      "states": [ "none", "bayonet" ]
-    }
-  ],
-
+  "creativeinventorybytype": {"musket-none": {"maltiezfirearms": ["*"]}, "musket-bayonet": {}},
+  "damagedby": ["attacking"],
+  "attackRangebytype": {"musket-none": 2.5, "musket-bayonet": 3.5},
+  "attackpowerbytype": {"musket-none": 1, "musket-bayonet": 4.5},
+  "tooltierbytype": {"musket-none": 0, "musket-bayonet": 5},
+  "variantgroups": [{"code": "attachment", "states": ["none", "bayonet"]}],
   "maxstacksize": 1,
   "durability": 900,
-  "toolbytype": {
-    "musket-none": "bow",
-    "musket-bayonet": "spear"
-  },
+  "toolbytype": {"musket-none": "bow", "musket-bayonet": "spear"},
   "rackable": true,
-
   "behaviors": [
     {
       "name": "GroundStorable",
@@ -42,22 +18,8 @@
         "layout": "WallHalves",
         "wallOffY": 2,
         "sprintKey": true,
-        "selectionBox": {
-          "x1": 0,
-          "y1": 0,
-          "z1": 0,
-          "x2": 1,
-          "y2": 0.1,
-          "z2": 1
-        },
-        "collisionBox": {
-          "x1": 0,
-          "y1": 0,
-          "z1": 0,
-          "x2": 0,
-          "y2": 0,
-          "z2": 0
-        }
+        "selectionBox": {"x1": 0, "y1": 0, "z1": 0, "x2": 1, "y2": 0.1, "z2": 1},
+        "collisionBox": {"x1": 0, "y1": 0, "z1": 0, "x2": 0, "y2": 0, "z2": 0}
       }
     }
   ],
@@ -71,178 +33,43 @@
     "firingStage": 3,
     "firedVariant": 3,
     "readyVariant": 2,
-    "muzzlePosition": {
-      "x": 0.0,
-      "y": -0.2,
-      "z": 0.1
-    },
-    "aimingPosition": {
-      "x": -0.5,
-      "y": 0.35,
-      "z": 0
-    },
+    "muzzlePosition": {"x": 0, "y": -0.2, "z": 0.1},
+    "aimingPosition": {"x": -0.5, "y": 0.35, "z": 0},
     "aimingTransform": {
-      "fpTransform": {
-        "translation": {
-          "x": -0.5,
-          "y": 0.35,
-          "z": 0
-        },
-        "rotation": {
-          "x": 0.0,
-          "y": 0.0,
-          "z": 0.0
-        },
-        "origin": {
-          "x": 0,
-          "y": 0,
-          "z": 0
-        },
-        "scale": 1
-      },
-      "tpTransform": {
-        "translation": {
-          "x": -0.1,
-          "y": 0.5,
-          "z": 0.3
-        },
-        "rotation": {
-          "x": 105.0,
-          "y": 90.0,
-          "z": -90.0
-        },
-        "origin": {
-          "x": 0,
-          "y": 0,
-          "z": 0
-        },
-        "scale": 1
-      }
+      "fpTransform": {"translation": {"x": -0.5, "y": 0.35, "z": 0}, "rotation": {"x": 0, "y": 0, "z": 0}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 1},
+      "tpTransform": {"translation": {"x": -0.1, "y": 0.5, "z": 0.3}, "rotation": {"x": 105, "y": 90, "z": -90}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 1}
     },
     "aimingDuration": 0.5,
     "aimingWalkspeed": -0.5,
     "particleEffects": [
-      {
-        "type": "fireSmoke",
-        "intensity": 2,
-        "position": {
-          "x": 0.1,
-          "y": -0.1,
-          "z": 3.0
-        },
-        "velocity": {
-          "x": 0,
-          "y": 0,
-          "z": 1
-        }
-      },
-      {
-        "type": "fireSmoke",
-        "intensity": 1.5,
-        "position": {
-          "x": 0.1,
-          "y": -0.1,
-          "z": 2.6
-        },
-        "velocity": {
-          "x": 0,
-          "y": 0,
-          "z": 2
-        }
-      },
-      {
-        "type": "fireSmoke",
-        "intensity": 1,
-        "position": {
-          "x": 0.1,
-          "y": -0.1,
-          "z": 2.3
-        },
-        "velocity": {
-          "x": 0,
-          "y": 0,
-          "z": 3
-        }
-      },
-      {
-        "type": "fireBlast",
-        "intensity": 1,
-        "position": {
-          "x": 0.1,
-          "y": -0.1,
-          "z": 2.3
-        },
-        "velocity": {
-          "x": 0,
-          "y": 0,
-          "z": 16
-        }
-      },
-      {
-        "type": "fireSmoke",
-        "intensity": 0.5,
-        "position": {
-          "x": 0.1,
-          "y": -0.6,
-          "z": 0.5
-        },
-        "velocity": {
-          "x": 0.1,
-          "y": 0.3,
-          "z": 0
-        }
-      }
+      {"type": "fireSmoke", "intensity": 2, "position": {"x": 0.1, "y": -0.1, "z": 3}, "velocity": {"x": 0, "y": 0, "z": 1}},
+      {"type": "fireSmoke", "intensity": 1.5, "position": {"x": 0.1, "y": -0.1, "z": 2.6}, "velocity": {"x": 0, "y": 0, "z": 2}},
+      {"type": "fireSmoke", "intensity": 1, "position": {"x": 0.1, "y": -0.1, "z": 2.3}, "velocity": {"x": 0, "y": 0, "z": 3}},
+      {"type": "fireBlast", "intensity": 1, "position": {"x": 0.1, "y": -0.1, "z": 2.3}, "velocity": {"x": 0, "y": 0, "z": 16}},
+      {"type": "fireSmoke", "intensity": 0.5, "position": {"x": 0.1, "y": -0.6, "z": 0.5}, "velocity": {"x": 0.1, "y": 0.3, "z": 0}}
     ],
     "operationStages": [
       {
         "name": "reload",
-        "lengthInSeconds": 15.0,
+        "lengthInSeconds": 15,
         "firstVariant": 4,
         "lastVariant": 60,
         "walkspeed": -0.9,
         "interruptInteraction": false,
         "advanceReloadState": true,
-        "requirements": [
-          {
-            "code": "powderflask",
-            "amount": 1,
-            "durability": 15
-          },
-          {
-            "code": "slug",
-            "amount": 1
-          },
-          {
-            "code": "linenpatch",
-            "amount": 1
-          }
-        ]
+        "requirements": [{"code": "powderflask", "amount": 1, "durability": 15}, {"code": "slug", "amount": 1}, {"code": "linenpatch", "amount": 1}]
       },
       {
         "name": "priming",
-        "lengthInSeconds": 3.0,
+        "lengthInSeconds": 3,
         "firstVariant": 61,
         "lastVariant": 78,
         "walkspeed": -0.5,
         "interruptInteraction": false,
         "advanceReloadState": true,
-        "requirements": [
-          {
-            "code": "powderflask",
-            "amount": 1,
-            "durability": 1
-          }
-        ]
+        "requirements": [{"code": "powderflask", "amount": 1, "durability": 1}]
       },
-      {
-        "name": "firing",
-        "lengthInSeconds": 0.1,
-        "firstVariant": 79,
-        "lastVariant": 85,
-        "interruptInteraction": false,
-        "advanceReloadState": false,
-        "requirements": []
-      }
+      {"name": "firing", "lengthInSeconds": 0.1, "firstVariant": 79, "lastVariant": 85, "interruptInteraction": false, "advanceReloadState": false, "requirements": []}
     ],
     "operationSounds": {
       "12": "powder-pour-long",
@@ -273,84 +100,16 @@
         "start-hold": 8,
         "stop-hold": 56,
         "stop-animation": 60,
-        "fpTransform": {
-          "translation": {
-            "x": -2.0,
-            "y": -4.8,
-            "z": 0.0
-          },
-          "rotation": {
-            "x": 80.0,
-            "y": 0.0,
-            "z": 10.0
-          },
-          "origin": {
-            "x": 0,
-            "y": 0,
-            "z": 0
-          },
-          "scale": 1
-        },
-        "tpTransform": {
-          "translation": {
-            "x": -0.5,
-            "y": -0.3,
-            "z": 0.6
-          },
-          "rotation": {
-            "x": 90.0,
-            "y": -90.0,
-            "z": -90.0
-          },
-          "origin": {
-            "x": 0,
-            "y": 0,
-            "z": 0
-          },
-          "scale": 1
-        }
+        "fpTransform": {"translation": {"x": -2, "y": -4.8, "z": 0}, "rotation": {"x": 80, "y": 0, "z": 10}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 1},
+        "tpTransform": {"translation": {"x": -0.5, "y": -0.3, "z": 0.6}, "rotation": {"x": 90, "y": -90, "z": -90}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 1}
       },
       {
         "start-animation": 61,
         "start-hold": 62,
         "stop-hold": 77,
         "stop-animation": 78,
-        "fpTransform": {
-          "translation": {
-            "x": -0.3,
-            "y": 0.2,
-            "z": 0.0
-          },
-          "rotation": {
-            "x": 5.0,
-            "y": 0.0,
-            "z": 20.0
-          },
-          "origin": {
-            "x": 0,
-            "y": 0,
-            "z": 0
-          },
-          "scale": 1
-        },
-        "tpTransform": {
-          "translation": {
-            "x": 0.0,
-            "y": 0.0,
-            "z": 0.0
-          },
-          "rotation": {
-            "x": 0.0,
-            "y": 0.0,
-            "z": 0.0
-          },
-          "origin": {
-            "x": 0.0,
-            "y": 0.0,
-            "z": 0.0
-          },
-          "scale": 1
-        }
+        "fpTransform": {"translation": {"x": -0.3, "y": 0.2, "z": 0}, "rotation": {"x": 5, "y": 0, "z": 20}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 1},
+        "tpTransform": {"translation": {"x": 0, "y": 0, "z": 0}, "rotation": {"x": 0, "y": 0, "z": 0}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 1}
       }
     ],
     "sounds": {
@@ -364,27 +123,9 @@
           "maltiezfirearms:sounds/musket/musket-fire-4"
         ]
       },
-      "strike": {
-        "volume": 1,
-        "range": 8,
-        "location": [
-          "maltiezfirearms:sounds/musket/flintlock-strike"
-        ]
-      },
-      "cock": {
-        "volume": 1,
-        "range": 8,
-        "location": [
-          "maltiezfirearms:sounds/musket/musket-cock"
-        ]
-      },
-      "click": {
-        "volume": 1,
-        "range": 8,
-        "location": [
-          "maltiezfirearms:sounds/musket/musket-short-click"
-        ]
-      },
+      "strike": {"volume": 1, "range": 8, "location": ["maltiezfirearms:sounds/musket/flintlock-strike"]},
+      "cock": {"volume": 1, "range": 8, "location": ["maltiezfirearms:sounds/musket/musket-cock"]},
+      "click": {"volume": 1, "range": 8, "location": ["maltiezfirearms:sounds/musket/musket-short-click"]},
       "ramrod-pull": {
         "volume": 1,
         "range": 8,
@@ -417,251 +158,116 @@
           "maltiezfirearms:sounds/ramrod/ramrod-hit-10"
         ]
       },
-      "ramrod-putback": {
-        "volume": 1,
-        "range": 8,
-        "location": [
-          "maltiezfirearms:sounds/ramrod/ramrod-putback"
-        ]
-      },
-      "ramrod-take": {
-        "volume": 1,
-        "range": 8,
-        "location": [
-          "maltiezfirearms:sounds/ramrod/ramrod-take"
-        ]
-      },
-      "powder-pour-long": {
-        "volume": 1,
-        "range": 8,
-        "location": [
-          "maltiezfirearms:sounds/powder/powder-pour-long"
-        ]
-      },
-      "powder-prime": {
-        "volume": 0.2,
-        "range": 8,
-        "location": [
-          "maltiezfirearms:sounds/powder/powder-prime"
-        ]
-      }
+      "ramrod-putback": {"volume": 1, "range": 8, "location": ["maltiezfirearms:sounds/ramrod/ramrod-putback"]},
+      "ramrod-take": {"volume": 1, "range": 8, "location": ["maltiezfirearms:sounds/ramrod/ramrod-take"]},
+      "powder-pour-long": {"volume": 1, "range": 8, "location": ["maltiezfirearms:sounds/powder/powder-pour-long"]},
+      "powder-prime": {"volume": 0.2, "range": 8, "location": ["maltiezfirearms:sounds/powder/powder-prime"]}
     },
-
-    "toolrackTransform": {
-      "translation": {
-        "x": 1.4,
-        "y": 0.5,
-        "z": 0.5
-      },
-      "rotation": {
-        "x": 1,
-        "y": 95,
-        "z": -90
-      },
-      "origin": {
-        "x": 0,
-        "y": 0,
-        "z": 0
-      },
-      "scale": 1.34
-    },
-    "groundStorageTransform": {
-      "translation": {
-        "x": 0.55,
-        "y": 0.44,
-        "z": 0.75
-      },
-      "rotation": {
-        "x": 98,
-        "y": 4,
-        "z": -101
-      },
-      "origin": {
-        "x": 0,
-        "y": 0,
-        "z": 0
-      },
-      "scale": 0.81
-    }
+    "toolrackTransform": {"translation": {"x": 1.4, "y": 0.5, "z": 0.5}, "rotation": {"x": 1, "y": 95, "z": -90}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 1.34},
+    "groundStorageTransform": {"translation": {"x": 0.55, "y": 0.44, "z": 0.75}, "rotation": {"x": 98, "y": 4, "z": -101}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 0.81}
   },
-
   "textures": {
-    "charcoal": { "base": "game:block/coal/charcoal" },
-    "linen": { "base": "game:block/linen" },
-    "brass": { "base": "game:block/metal/plate/brass" },
-    "iron": { "base": "game:block/metal/plate/iron" },
-    "steel": { "base": "game:block/metal/plate/steel" },
-    "lead": { "base": "game:block/metal/plate/lead" },
-    "flint": { "base": "game:block/stone/flint" },
-    "kapok": { "base": "game:block/wood/debarked/oak" },
-    "oak": { "base": "game:block/wood/debarked/oak" }
+    "charcoal": {"base": "game:block/coal/charcoal"},
+    "linen": {"base": "game:block/linen"},
+    "brass": {"base": "game:block/metal/plate/brass"},
+    "iron": {"base": "game:block/metal/plate/iron"},
+    "steel": {"base": "game:block/metal/plate/steel"},
+    "lead": {"base": "game:block/metal/plate/lead"},
+    "flint": {"base": "game:block/stone/flint"},
+    "kapok": {"base": "game:block/wood/debarked/oak"},
+    "oak": {"base": "game:block/wood/debarked/oak"}
   },
   "shape": {
     "base": "maltiezfirearms:musket/musket-{attachment}",
     "alternates": [
-      { "base": "maltiezfirearms:musket/musket-{attachment}-02-ready" },
-      { "base": "maltiezfirearms:musket/musket-{attachment}-03-fired" },
-
-      { "base": "maltiezfirearms:musket/musket-{attachment}-04-load" }, // 4
-      { "base": "maltiezfirearms:musket/musket-{attachment}-04-load" },
-      { "base": "maltiezfirearms:musket/musket-{attachment}-04-load" },
-      { "base": "maltiezfirearms:musket/musket-{attachment}-04-load" },
-      { "base": "maltiezfirearms:musket/musket-{attachment}-04-load" },
-      { "base": "maltiezfirearms:musket/musket-{attachment}-04-load" },
-      { "base": "maltiezfirearms:musket/musket-{attachment}-09-flask-take" }, // 10
-      { "base": "maltiezfirearms:musket/musket-{attachment}-10-flask-tilt" },
-      { "base": "maltiezfirearms:musket/musket-{attachment}-11-flask-pour" },
-      { "base": "maltiezfirearms:musket/musket-{attachment}-11-flask-pour" },
-      { "base": "maltiezfirearms:musket/musket-{attachment}-10-flask-tilt" },
-      { "base": "maltiezfirearms:musket/musket-{attachment}-11-flask-pour" }, // 15
-      { "base": "maltiezfirearms:musket/musket-{attachment}-11-flask-pour" },
-      { "base": "maltiezfirearms:musket/musket-{attachment}-10-flask-tilt" },
-      { "base": "maltiezfirearms:musket/musket-{attachment}-09-flask-take" },
-      { "base": "maltiezfirearms:musket/musket-{attachment}-04-load" },
-      { "base": "maltiezfirearms:musket/musket-{attachment}-16-linen-take" }, // 20
-      { "base": "maltiezfirearms:musket/musket-{attachment}-17-linen-put" },
-      { "base": "maltiezfirearms:musket/musket-{attachment}-17-linen-put" },
-      { "base": "maltiezfirearms:musket/musket-{attachment}-18-bullet-take" },
-      { "base": "maltiezfirearms:musket/musket-{attachment}-19-bullet-put-0" },
-      { "base": "maltiezfirearms:musket/musket-{attachment}-19-bullet-put" }, // 25
-      { "base": "maltiezfirearms:musket/musket-{attachment}-20-ramrod-take-1" },
-      { "base": "maltiezfirearms:musket/musket-{attachment}-21-ramrod-take-2" },
-      { "base": "maltiezfirearms:musket/musket-{attachment}-22-ramrod-take-3" },
-      { "base": "maltiezfirearms:musket/musket-{attachment}-23-ramrod-turn-1" },
-      { "base": "maltiezfirearms:musket/musket-{attachment}-24-ramrod-turn-2" }, // 30
-      { "base": "maltiezfirearms:musket/musket-{attachment}-25-ramrod-turn-3" },
-      { "base": "maltiezfirearms:musket/musket-{attachment}-26-ramrod-push-0" },
-      { "base": "maltiezfirearms:musket/musket-{attachment}-27-ramrod-push-1" },
-      { "base": "maltiezfirearms:musket/musket-{attachment}-28-ramrod-push-2" },
-      { "base": "maltiezfirearms:musket/musket-{attachment}-27-ramrod-push-1" }, // 35
-      { "base": "maltiezfirearms:musket/musket-{attachment}-30-ramrod-push-3" },
-      { "base": "maltiezfirearms:musket/musket-{attachment}-28-ramrod-push-2" },
-      { "base": "maltiezfirearms:musket/musket-{attachment}-32-ramrod-push-4" },
-      { "base": "maltiezfirearms:musket/musket-{attachment}-30-ramrod-push-3" },
-      { "base": "maltiezfirearms:musket/musket-{attachment}-34-ramrod-push-5" }, // 40
-      { "base": "maltiezfirearms:musket/musket-{attachment}-32-ramrod-push-4" },
-      { "base": "maltiezfirearms:musket/musket-{attachment}-36-ramrod-push-6" },
-      { "base": "maltiezfirearms:musket/musket-{attachment}-34-ramrod-push-5" },
-      { "base": "maltiezfirearms:musket/musket-{attachment}-36-ramrod-push-6" },
-      { "base": "maltiezfirearms:musket/musket-{attachment}-34-ramrod-push-5" }, // 45
-      { "base": "maltiezfirearms:musket/musket-{attachment}-32-ramrod-push-4" },
-      { "base": "maltiezfirearms:musket/musket-{attachment}-30-ramrod-push-3" },
-      { "base": "maltiezfirearms:musket/musket-{attachment}-28-ramrod-push-2" },
-      { "base": "maltiezfirearms:musket/musket-{attachment}-39-ramrod-pull" },
-      { "base": "maltiezfirearms:musket/musket-{attachment}-40-ramrod-turn-1" }, // 50
-      { "base": "maltiezfirearms:musket/musket-{attachment}-41-ramrod-turn-2" },
-      { "base": "maltiezfirearms:musket/musket-{attachment}-42-putback-1" },
-      { "base": "maltiezfirearms:musket/musket-{attachment}-43-putback-2" },
-      { "base": "maltiezfirearms:musket/musket-{attachment}-44-putback-3" },
-      { "base": "maltiezfirearms:musket/musket-{attachment}-49-loaded" }, // 55
-      { "base": "maltiezfirearms:musket/musket-{attachment}-49-loaded" },
-      { "base": "maltiezfirearms:musket/musket-{attachment}-49-loaded" },
-      { "base": "maltiezfirearms:musket/musket-{attachment}-49-loaded" },
-      { "base": "maltiezfirearms:musket/musket-{attachment}-49-loaded" },
-      { "base": "maltiezfirearms:musket/musket-{attachment}-49-loaded" }, // 60
-
-      { "base": "maltiezfirearms:musket/musket-{attachment}-50-priming" },
-      { "base": "maltiezfirearms:musket/musket-{attachment}-50-priming" },
-      { "base": "maltiezfirearms:musket/musket-{attachment}-50-priming" },
-      { "base": "maltiezfirearms:musket/musket-{attachment}-52-flint-raise-1" },
-      { "base": "maltiezfirearms:musket/musket-{attachment}-53-flint-raise-2" }, // 65
-      { "base": "maltiezfirearms:musket/musket-{attachment}-53-flint-raise-2" },
-      { "base": "maltiezfirearms:musket/musket-{attachment}-54-flask-take" },
-      { "base": "maltiezfirearms:musket/musket-{attachment}-55-flask-tilt" },
-      { "base": "maltiezfirearms:musket/musket-{attachment}-56-flask-pour" },
-      { "base": "maltiezfirearms:musket/musket-{attachment}-56-flask-pour" }, // 70
-      { "base": "maltiezfirearms:musket/musket-{attachment}-55-flask-tilt" },
-      { "base": "maltiezfirearms:musket/musket-{attachment}-54-flask-take" },
-      { "base": "maltiezfirearms:musket/musket-{attachment}-53-flint-raise-2" },
-      { "base": "maltiezfirearms:musket/musket-{attachment}-59-frizzen-close-1" },
-      { "base": "maltiezfirearms:musket/musket-{attachment}-60-frizzen-close-2" }, // 75
-      { "base": "maltiezfirearms:musket/musket-{attachment}-61-cock" },
-      { "base": "maltiezfirearms:musket/musket-{attachment}-61-cock" },
-      { "base": "maltiezfirearms:musket/musket-{attachment}-61-cock" },
-
-      { "base": "maltiezfirearms:musket/musket-{attachment}-62-ready" },
-      { "base": "maltiezfirearms:musket/musket-{attachment}-63-trigger-pull" }, // 80
-      { "base": "maltiezfirearms:musket/musket-{attachment}-64-hammer-strike-1" },
-      { "base": "maltiezfirearms:musket/musket-{attachment}-65-hammer-strike-2" },
-      { "base": "maltiezfirearms:musket/musket-{attachment}-66-hammer-strike-3" },
-      { "base": "maltiezfirearms:musket/musket-{attachment}-67-hammer-strike-4" },
-      { "base": "maltiezfirearms:musket/musket-{attachment}-68-fire" } // 85
+      {"base": "maltiezfirearms:musket/musket-{attachment}-02-ready"},
+      {"base": "maltiezfirearms:musket/musket-{attachment}-03-fired"},
+      {"base": "maltiezfirearms:musket/musket-{attachment}-04-load"},
+      {"base": "maltiezfirearms:musket/musket-{attachment}-04-load"},
+      {"base": "maltiezfirearms:musket/musket-{attachment}-04-load"},
+      {"base": "maltiezfirearms:musket/musket-{attachment}-04-load"},
+      {"base": "maltiezfirearms:musket/musket-{attachment}-04-load"},
+      {"base": "maltiezfirearms:musket/musket-{attachment}-04-load"},
+      {"base": "maltiezfirearms:musket/musket-{attachment}-09-flask-take"},
+      {"base": "maltiezfirearms:musket/musket-{attachment}-10-flask-tilt"},
+      {"base": "maltiezfirearms:musket/musket-{attachment}-11-flask-pour"},
+      {"base": "maltiezfirearms:musket/musket-{attachment}-11-flask-pour"},
+      {"base": "maltiezfirearms:musket/musket-{attachment}-10-flask-tilt"},
+      {"base": "maltiezfirearms:musket/musket-{attachment}-11-flask-pour"},
+      {"base": "maltiezfirearms:musket/musket-{attachment}-11-flask-pour"},
+      {"base": "maltiezfirearms:musket/musket-{attachment}-10-flask-tilt"},
+      {"base": "maltiezfirearms:musket/musket-{attachment}-09-flask-take"},
+      {"base": "maltiezfirearms:musket/musket-{attachment}-04-load"},
+      {"base": "maltiezfirearms:musket/musket-{attachment}-16-linen-take"},
+      {"base": "maltiezfirearms:musket/musket-{attachment}-17-linen-put"},
+      {"base": "maltiezfirearms:musket/musket-{attachment}-17-linen-put"},
+      {"base": "maltiezfirearms:musket/musket-{attachment}-18-bullet-take"},
+      {"base": "maltiezfirearms:musket/musket-{attachment}-19-bullet-put-0"},
+      {"base": "maltiezfirearms:musket/musket-{attachment}-19-bullet-put"},
+      {"base": "maltiezfirearms:musket/musket-{attachment}-20-ramrod-take-1"},
+      {"base": "maltiezfirearms:musket/musket-{attachment}-21-ramrod-take-2"},
+      {"base": "maltiezfirearms:musket/musket-{attachment}-22-ramrod-take-3"},
+      {"base": "maltiezfirearms:musket/musket-{attachment}-23-ramrod-turn-1"},
+      {"base": "maltiezfirearms:musket/musket-{attachment}-24-ramrod-turn-2"},
+      {"base": "maltiezfirearms:musket/musket-{attachment}-25-ramrod-turn-3"},
+      {"base": "maltiezfirearms:musket/musket-{attachment}-26-ramrod-push-0"},
+      {"base": "maltiezfirearms:musket/musket-{attachment}-27-ramrod-push-1"},
+      {"base": "maltiezfirearms:musket/musket-{attachment}-28-ramrod-push-2"},
+      {"base": "maltiezfirearms:musket/musket-{attachment}-27-ramrod-push-1"},
+      {"base": "maltiezfirearms:musket/musket-{attachment}-30-ramrod-push-3"},
+      {"base": "maltiezfirearms:musket/musket-{attachment}-28-ramrod-push-2"},
+      {"base": "maltiezfirearms:musket/musket-{attachment}-32-ramrod-push-4"},
+      {"base": "maltiezfirearms:musket/musket-{attachment}-30-ramrod-push-3"},
+      {"base": "maltiezfirearms:musket/musket-{attachment}-34-ramrod-push-5"},
+      {"base": "maltiezfirearms:musket/musket-{attachment}-32-ramrod-push-4"},
+      {"base": "maltiezfirearms:musket/musket-{attachment}-36-ramrod-push-6"},
+      {"base": "maltiezfirearms:musket/musket-{attachment}-34-ramrod-push-5"},
+      {"base": "maltiezfirearms:musket/musket-{attachment}-36-ramrod-push-6"},
+      {"base": "maltiezfirearms:musket/musket-{attachment}-34-ramrod-push-5"},
+      {"base": "maltiezfirearms:musket/musket-{attachment}-32-ramrod-push-4"},
+      {"base": "maltiezfirearms:musket/musket-{attachment}-30-ramrod-push-3"},
+      {"base": "maltiezfirearms:musket/musket-{attachment}-28-ramrod-push-2"},
+      {"base": "maltiezfirearms:musket/musket-{attachment}-39-ramrod-pull"},
+      {"base": "maltiezfirearms:musket/musket-{attachment}-40-ramrod-turn-1"},
+      {"base": "maltiezfirearms:musket/musket-{attachment}-41-ramrod-turn-2"},
+      {"base": "maltiezfirearms:musket/musket-{attachment}-42-putback-1"},
+      {"base": "maltiezfirearms:musket/musket-{attachment}-43-putback-2"},
+      {"base": "maltiezfirearms:musket/musket-{attachment}-44-putback-3"},
+      {"base": "maltiezfirearms:musket/musket-{attachment}-49-loaded"},
+      {"base": "maltiezfirearms:musket/musket-{attachment}-49-loaded"},
+      {"base": "maltiezfirearms:musket/musket-{attachment}-49-loaded"},
+      {"base": "maltiezfirearms:musket/musket-{attachment}-49-loaded"},
+      {"base": "maltiezfirearms:musket/musket-{attachment}-49-loaded"},
+      {"base": "maltiezfirearms:musket/musket-{attachment}-49-loaded"},
+      {"base": "maltiezfirearms:musket/musket-{attachment}-50-priming"},
+      {"base": "maltiezfirearms:musket/musket-{attachment}-50-priming"},
+      {"base": "maltiezfirearms:musket/musket-{attachment}-50-priming"},
+      {"base": "maltiezfirearms:musket/musket-{attachment}-52-flint-raise-1"},
+      {"base": "maltiezfirearms:musket/musket-{attachment}-53-flint-raise-2"},
+      {"base": "maltiezfirearms:musket/musket-{attachment}-53-flint-raise-2"},
+      {"base": "maltiezfirearms:musket/musket-{attachment}-54-flask-take"},
+      {"base": "maltiezfirearms:musket/musket-{attachment}-55-flask-tilt"},
+      {"base": "maltiezfirearms:musket/musket-{attachment}-56-flask-pour"},
+      {"base": "maltiezfirearms:musket/musket-{attachment}-56-flask-pour"},
+      {"base": "maltiezfirearms:musket/musket-{attachment}-55-flask-tilt"},
+      {"base": "maltiezfirearms:musket/musket-{attachment}-54-flask-take"},
+      {"base": "maltiezfirearms:musket/musket-{attachment}-53-flint-raise-2"},
+      {"base": "maltiezfirearms:musket/musket-{attachment}-59-frizzen-close-1"},
+      {"base": "maltiezfirearms:musket/musket-{attachment}-60-frizzen-close-2"},
+      {"base": "maltiezfirearms:musket/musket-{attachment}-61-cock"},
+      {"base": "maltiezfirearms:musket/musket-{attachment}-61-cock"},
+      {"base": "maltiezfirearms:musket/musket-{attachment}-61-cock"},
+      {"base": "maltiezfirearms:musket/musket-{attachment}-62-ready"},
+      {"base": "maltiezfirearms:musket/musket-{attachment}-63-trigger-pull"},
+      {"base": "maltiezfirearms:musket/musket-{attachment}-64-hammer-strike-1"},
+      {"base": "maltiezfirearms:musket/musket-{attachment}-65-hammer-strike-2"},
+      {"base": "maltiezfirearms:musket/musket-{attachment}-66-hammer-strike-3"},
+      {"base": "maltiezfirearms:musket/musket-{attachment}-67-hammer-strike-4"},
+      {"base": "maltiezfirearms:musket/musket-{attachment}-68-fire"}
     ]
   },
-  "guiTransform": {
-    "translation": {
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "rotation": {
-      "x": -11,
-      "y": 16,
-      "z": -180
-    },
-    "origin": {
-      "x": -0.65,
-      "y": -0.5,
-      "z": -3
-    },
-    "scaleXyz": {
-      "x": -1.89,
-      "y": 1.89,
-      "z": 1.89
-    }
-  },
-  "fpHandTransform": {
-    "translation": {
-      "x": 0.2,
-      "y": 0.6,
-      "z": 1
-    },
-    "rotation": {
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "origin": {
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "scale": 4
-  },
-  "tpHandTransform": {
-    "translation": {
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "rotation": {
-      "x": 0,
-      "y": -90,
-      "z": 0
-    },
-    "origin": {
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "scale": 0.8
-  },
-  "groundTransform": {
-    "translation": {
-      "x": 0,
-      "y": 0.05,
-      "z": 0
-    },
-    "rotation": {
-      "x": 0,
-      "y": 0,
-      "z": 90
-    },
-    "origin": {
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "scale": 4.8
-  }
+  "guiTransform": {"translation": {"x": 0, "y": 0, "z": 0}, "rotation": {"x": -11, "y": 16, "z": -180}, "origin": {"x": -0.65, "y": -0.5, "z": -3}, "scaleXyz": {"x": -1.89, "y": 1.89, "z": 1.89}},
+  "fpHandTransform": {"translation": {"x": 0.2, "y": 0.6, "z": 1}, "rotation": {"x": 0, "y": 0, "z": 0}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 4},
+  "tpHandTransform": {"translation": {"x": 0, "y": 0, "z": 0}, "rotation": {"x": 0, "y": -90, "z": 0}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 0.8},
+  "groundTransform": {"translation": {"x": 0, "y": 0.05, "z": 0}, "rotation": {"x": 0, "y": 0, "z": 90}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 4.8}
 }

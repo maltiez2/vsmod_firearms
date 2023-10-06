@@ -16,9 +16,9 @@ namespace MaltiezFirearms.FiniteStateMachine.Inputs
         
         private EnumHandling mInputType;
 
-        public override void Init(string name, JsonObject definition, CollectibleObject collectible, ICoreAPI api)
+        public override void Init(string code, JsonObject definition, CollectibleObject collectible, ICoreAPI api)
         {
-            base.Init(name, definition, collectible, api);
+            base.Init(code, definition, collectible, api);
 
             mInputType = types[definition[typeAttrName].AsString()];
         }

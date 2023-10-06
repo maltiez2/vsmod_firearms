@@ -41,7 +41,7 @@ namespace MaltiezFirearms.FiniteStateMachine.Operations
         private readonly Dictionary<Tuple<IState, IInput>, int?> mTimers = new();
         private readonly List<IInput> mInputsToPrevent = new();
 
-        public override void Init(string name, JsonObject definition, CollectibleObject collectible, ICoreAPI api)
+        public override void Init(string code, JsonObject definition, CollectibleObject collectible, ICoreAPI api)
         {
             foreach (JsonObject input in definition[inputsToInterceptAttrName].AsArray())
             {
@@ -106,7 +106,7 @@ namespace MaltiezFirearms.FiniteStateMachine.Operations
                 string initialState = transition[initialName].AsString();
                 string finalState = transition[finalAttrName].AsString();
                 string cancelState = transition[cancelAttrName].AsString();
-                string intermediateState = initialState + "_to_" + finalState + "_op." + name;
+                string intermediateState = initialState + "_to_" + finalState + "_op." + code;
 
                 mStatesInitialData.Add(new Tuple<string, string>(initialState, intermediateState));
                 mStatesInitialData.Add(new Tuple<string, string>(intermediateState, finalState));

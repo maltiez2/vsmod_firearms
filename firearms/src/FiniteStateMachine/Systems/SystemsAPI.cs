@@ -23,7 +23,7 @@ namespace MaltiezFirearms.FiniteStateMachine.Systems
     public interface IAmmoSelector
     {
         ItemStack GetSelectedAmmo(ItemSlot slot);
-        ItemStack TakeSelectedAmmo(ItemSlot slot);
+        ItemStack TakeSelectedAmmo(ItemSlot slot, int amount = 0);
     }
 
     public interface IAimingSystem
