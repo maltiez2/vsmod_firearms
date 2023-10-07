@@ -155,7 +155,7 @@
             "class": "Requirements",
             "attributes": {
               "requirementSets": [
-                {"code": "load", "requirements": [{"code": "powderflask", "amount": 1, "durability": 11}, {"code": "slug", "amount": 1}, {"code": "linenpatch", "amount": 1}]},
+                {"code": "load", "requirements": [{"code": "powderflask", "amount": 1, "durability": 11}, {"code": "linenpatch", "amount": 1}]},
                 {"code": "prime", "requirements": [{"code": "powderflask", "amount": 1, "durability": 1}]}
               ]
             }

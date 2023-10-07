@@ -3,18 +3,31 @@ using System.Collections.Generic;
 using Vintagestory.API.Common;
 using Vintagestory.API.Datastructures;
 using MaltiezFirearms.FiniteStateMachine.API;
-using static MaltiezFirearms.FiniteStateMachine.Framework.FiniteStateMachine;
+using System.Diagnostics.CodeAnalysis;
 
 namespace MaltiezFirearms.FiniteStateMachine.Framework
 {    
     public class FiniteStateMachine : IFiniteStateMachine
     {    
-        public readonly struct State : IState // @OPT Change base type to int
+        public class State : IState // @OPT Change base type to int
         {
             private readonly string mState;
+            private readonly int mHash;
 
-            public State(string inputState) { mState = inputState; }
+            public State(string inputState)
+            { 
+                mState = inputState;
+                mHash = mState.GetHashCode();
+            }
             public override string ToString() { return mState; }
+            public override bool Equals(object obj)
+            {
+                return (obj as State)?.mHash == mHash;
+            }
+            public override int GetHashCode()
+            { 
+                return mHash;
+            }
         }
 
         public class DelayedCallback
@@ -57,7 +70,7 @@ namespace MaltiezFirearms.FiniteStateMachine.Framework
 
         private string mInitialState;
         private readonly Dictionary<State, Dictionary<IInput, IOperation>> mOperationsByInputAndState = new();
-        private readonly Dictionary<IOperation, State> mStatesByOperationForTimer = new();
+        private readonly Dictionary<IOperation, HashSet<State>> mStatesByOperationForTimer = new();
         private DelayedCallback mTimer;
 
         private CollectibleObject mCollectible;
@@ -97,7 +110,9 @@ namespace MaltiezFirearms.FiniteStateMachine.Framework
 
                     if (input == "")
                     {
-                        mStatesByOperationForTimer.Add(operation, initialState);
+                        if (!mStatesByOperationForTimer.ContainsKey(operation)) mStatesByOperationForTimer.Add(operation, new());
+
+                        mStatesByOperationForTimer[operation].Add(initialState);
                         continue;
                     }
 
@@ -132,7 +147,10 @@ namespace MaltiezFirearms.FiniteStateMachine.Framework
             if (slot?.Itemstack?.Collectible != mCollectible || player == null) return false;
 
             State state = ReadStateFrom(slot);
-            if (!mStatesByOperationForTimer.ContainsKey(operation) || mStatesByOperationForTimer[operation].ToString() != state.ToString()) return false;
+            if (!mStatesByOperationForTimer.ContainsKey(operation) || !mStatesByOperationForTimer[operation].Contains(state))
+            {
+                return false;
+            }
 
             return RunOperation(slot, player, operation, input, state);
         }
@@ -141,12 +159,12 @@ namespace MaltiezFirearms.FiniteStateMachine.Framework
         {
             if (operation.StopTimer(slot, player, state, input)) mTimer?.Cancel();
 
-            State newState = (State)operation.Perform(slot, player, state, input);
+            IState newState = operation.Perform(slot, player, state, input);
             if (state.ToString() != newState.ToString())
             {
-                if (mApi.Side == EnumAppSide.Server) mApi.Logger.Warning("[Firearms] [FsmPrototype] [SERVER] State moved from '" + state.ToString() + "' to '" + newState.ToString() + "'."); // @DEBUG
-                if (mApi.Side == EnumAppSide.Client) mApi.Logger.Warning("[Firearms] [FsmPrototype] [CLIENT] State moved from '" + state.ToString() + "' to '" + newState.ToString() + "'."); // @DEBUG
-                WriteStateTo(slot, newState);
+                if (mApi.Side == EnumAppSide.Server) mApi.Logger.Warning("[Firearms] [SERVER] State moved from '" + state.ToString() + "' to '" + newState.ToString() + "'."); // @DEBUG
+                if (mApi.Side == EnumAppSide.Client) mApi.Logger.Warning("[Firearms] [CLIENT] State moved from '" + state.ToString() + "' to '" + newState.ToString() + "'."); // @DEBUG
+                WriteStateTo(slot, newState as State);
             }
 
             int? timerDelayMs = operation.Timer(slot, player, state, input);
