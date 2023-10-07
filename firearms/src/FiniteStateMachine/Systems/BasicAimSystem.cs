@@ -1,11 +1,9 @@
 ﻿using MaltiezFirearms.FiniteStateMachine.API;
 using System;
 using System.Collections.Generic;
-using System.Runtime.InteropServices;
 using Vintagestory.API.Client;
 using Vintagestory.API.Common;
 using Vintagestory.API.Datastructures;
-using Vintagestory.API.MathTools;
 using Vintagestory.Client.NoObf;
 using static MaltiezFirearms.FiniteStateMachine.Systems.IAimingSystem;
 

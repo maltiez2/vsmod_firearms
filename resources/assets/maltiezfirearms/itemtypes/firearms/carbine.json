@@ -83,17 +83,8 @@
             }
           },
           {"code": "reload_system", "class": "Reload", "attributes": {}},
-          {"code": "aiming_system", "class": "Aiming", "attributes": {
-             "duration":  500,
-             "dispersionMin_MOA": 90,
-             "dispersionMax_MOA": 900
-           }},
-          {"code": "shooting_system", "class": "Shooting", "attributes": {
-             "reloadSystem": "reload_system",
-             "aimingSystem": "aiming_system",
-             "projectileVelocity": 2,
-             "projectileDamage": 39
-           }},
+          {"code": "aiming_system", "class": "Aiming", "attributes": {"duration": 500, "dispersionMin_MOA": 90, "dispersionMax_MOA": 900}},
+          {"code": "shooting_system", "class": "Shooting", "attributes": {"reloadSystem": "reload_system", "aimingSystem": "aiming_system", "projectileVelocity": 2.6, "projectileDamage": 39}},
           {
             "code": "animation_system",
             "class": "VariantsAnimation",
@@ -263,8 +254,8 @@
             "code": "aim",
             "class": "Instant",
             "attributes": {
-              "input": ["mouse_right_down"],
-              "inputsToIntercept": ["item_dropped", "handle_slot_change"],
+              "input": ["mouse_right_down", "handle_slot_change", "item_dropped"],
+              "inputsToIntercept": [],
               "states": [{"initial": "primed", "final": "primed"}],
               "systems": [
                 {"code": "transform_animation_system", "attributes": {"code": "aim", "mode": "forward"}},
@@ -278,8 +269,8 @@
             "code": "ease",
             "class": "Instant",
             "attributes": {
-              "input": ["mouse_right_up"],
-              "inputsToIntercept": ["item_dropped", "handle_slot_change"],
+              "input": ["mouse_right_up", "handle_slot_change", "item_dropped"],
+              "inputsToIntercept": [],
               "states": [{"initial": "primed", "final": "primed"}, {"initial": "unloaded", "final": "unloaded"}],
               "systems": [
                 {"code": "transform_animation_system", "attributes": {"code": "aim", "mode": "backward", "duration": 100}},

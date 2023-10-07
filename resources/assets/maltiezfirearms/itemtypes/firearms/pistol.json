@@ -1,6 +1,6 @@
 ﻿{
   "code": "pistol",
-  "class": "MaltiezFirearm",
+  "class": "Item",
   "creativeinventory": {"maltiezfirearms": ["*"]},
   "maxstacksize": 1,
   "durability": 300,
@@ -16,106 +16,245 @@
         "selectionBox": {"x1": 0, "y1": 0, "z1": 0, "x2": 1, "y2": 0.1, "z2": 1},
         "collisionBox": {"x1": 0, "y1": 0, "z1": 0, "x2": 0, "y2": 0, "z2": 0}
       }
+    },
+    {
+      "name": "firearms.finitestatemachine",
+      "properties": {
+        "initialState": "unloaded",
+        "systems": [
+          {
+            "code": "sound_system",
+            "class": "Sound",
+            "attributes": {
+              "sounds": [
+                {
+                  "code": "fire_sound",
+                  "volume": 1,
+                  "range": 64,
+                  "location": [
+                    "maltiezfirearms:sounds/pistol/pistol-fire-1",
+                    "maltiezfirearms:sounds/pistol/pistol-fire-2",
+                    "maltiezfirearms:sounds/pistol/pistol-fire-3",
+                    "maltiezfirearms:sounds/pistol/pistol-fire-4"
+                  ]
+                },
+                {"code": "ramrod_take_sound", "volume": 1, "range": 32, "location": "maltiezfirearms:sounds/pistol/ramrod-get"},
+                {"code": "ramrod_push_multiple_sound", "volume": 1, "range": 16, "location": "maltiezfirearms:sounds/pistol/ramrod-push-multiple"},
+                {"code": "ramrod_putback_sound", "volume": 1, "range": 32, "location": "maltiezfirearms:sounds/pistol/ramrod-putback"},
+                {"code": "powder_pour_sound", "volume": 1, "range": 8, "location": "maltiezfirearms:sounds/pistol/powder-pour"},
+                {"code": "powder_prime_sound", "volume": 0.2, "range": 8, "location": "maltiezfirearms:sounds/pistol/powder-prime"},
+                {"code": "flint_raise_sound", "volume": 1, "range": 8, "location": "maltiezfirearms:sounds/pistol/flint-raise"},
+                {"code": "flint_set_sound", "volume": 1, "range": 8, "location": "maltiezfirearms:sounds/pistol/flint-set"},
+                {"code": "cocked_sound", "volume": 1, "range": 8, "location": "maltiezfirearms:sounds/pistol/cocked"},
+              ]
+            }
+          },
+          {"code": "reload_system", "class": "Reload", "attributes": {}},
+          {"code": "aiming_system", "class": "Aiming", "attributes": {"duration": 200, "dispersionMin_MOA": 160, "dispersionMax_MOA": 600}},
+          {"code": "shooting_system", "class": "Shooting", "attributes": {"reloadSystem": "reload_system", "aimingSystem": "aiming_system", "projectileVelocity": 2, "projectileDamage": 12}},
+          {
+            "code": "animation_system",
+            "class": "VariantsAnimation",
+            "attributes": {
+              "soundSystem": "sound_system",
+              "animations": [
+                {
+                  "code": "load",
+                  "firstVariant": 4,
+                  "lastVariant": 25,
+                  "duration": 4000,
+                  "sounds": [
+                    {"variant": 7, "code": "powder_pour_sound"},
+                    {"variant": 14, "code": "ramrod_take_sound"},
+                    {"variant": 17, "code": "ramrod_push_multiple_sound"},
+                    {"variant": 22, "code": "ramrod_putback_sound"}
+                  ]
+                },
+                {
+                  "code": "prime",
+                  "firstVariant": 26,
+                  "lastVariant": 41,
+                  "duration": 2000,
+                  "sounds": [
+                    {"variant": 27, "code": "flint_raise_sound"},
+                    {"variant": 30, "code": "powder_prime_sound"},
+                    {"variant": 37, "code": "cocked_sound"},
+                    {"variant": 40, "code": "flint_set_sound"}
+                  ]
+                },
+                {"code": "fire", "firstVariant": 42, "lastVariant": 43, "duration": 100, "sounds": [{"variant": 43, "code": "fire_sound"}]},
+                {"code": "unload", "firstVariant": 2, "lastVariant": 2, "duration": 0},
+                {"code": "unprime", "firstVariant": 25, "lastVariant": 25, "duration": 0}
+              ]
+            }
+          },
+          {
+            "code": "transform_animation_system",
+            "class": "TransformAnimation",
+            "attributes": {
+              "animations": [
+                {
+                  "code": "load",
+                  "duration": 300,
+                  "fpTransform": {"translation": {"x": -2.3, "y": -1.7, "z": -0.8}, "rotation": {"x": 80, "y": 0, "z": 10}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 1},
+                  "tpTransform": {"translation": {"x": -0.5, "y": 0.5, "z": 0.5}, "rotation": {"x": 90, "y": -90, "z": -90}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 1}
+                },
+                {
+                  "code": "prime",
+                  "duration": 200,
+                  "fpTransform": {"translation": {"x": 0, "y": 0, "z": 0}, "rotation": {"x": 15, "y": 0, "z": 20}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 1},
+                  "tpTransform": {"translation": {"x": 0, "y": 0, "z": 0}, "rotation": {"x": 0, "y": 0, "z": 0}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 1}
+                },
+                {
+                  "code": "aim",
+                  "duration": 200,
+                  "fpTransform": {"translation": {"x": -0.2, "y": 0.3, "z": 0.2}, "rotation": {"x": 0, "y": 0, "z": 0}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 1},
+                  "tpTransform": {"translation": {"x": 0, "y": 0, "z": 0}, "rotation": {"x": 105, "y": 90, "z": -90}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 1}
+                }
+              ]
+            }
+          },
+          {
+            "code": "requirement_system",
+            "class": "Requirements",
+            "attributes": {
+              "requirementSets": [
+                {"code": "load", "requirements": [{"code": "powderflask", "amount": 1, "durability": 3}, {"code": "linenpatch", "amount": 1}]},
+                {"code": "prime", "requirements": [{"code": "powderflask", "amount": 1, "durability": 1}, {"code": "cockinglever", "amount": 1, "durability": 0}]}
+              ]
+            }
+          },
+          {
+            "code": "particles_system",
+            "class": "Particles",
+            "attributes": {
+              "effects": [
+                {"code": "smoke_1", "type": "fireSmoke", "intensity": 0.5, "position": {"x": 0.1, "y": -0.1, "z": 2}, "velocity": {"x": 0, "y": 0, "z": 1}},
+                {"code": "smoke_2", "type": "fireSmoke", "intensity": 0.5, "position": {"x": 0.1, "y": -0.1, "z": 1.7}, "velocity": {"x": 0, "y": 0, "z": 2}},
+                {"code": "smoke_3", "type": "fireSmoke", "intensity": 0.3, "position": {"x": 0.1, "y": -0.1, "z": 1.5}, "velocity": {"x": 0, "y": 0, "z": 3}},
+                {"code": "fire_blast", "type": "fireBlast", "intensity": 0.1, "position": {"x": 0.1, "y": -0.1, "z": 1.5}, "velocity": {"x": 0, "y": 0, "z": 16}},
+                {"code": "smoke_small", "type": "fireSmoke", "intensity": 0.5, "position": {"x": 0.1, "y": -0.6, "z": 0.5}, "velocity": {"x": 0.1, "y": 0.3, "z": 0}}
+              ]
+            }
+          },
+          {"code": "player_stats_system", "class": "PlayerStats", "attributes": {}},
+          {"code": "player_animation_system", "class": "PlayerAnimation", "attributes": {}}
+        ],
+        "operations": [
+          {
+            "code": "load",
+            "class": "Delayed",
+            "attributes": {
+              "delay_ms": 4000,
+              "inputsToIntercept": [],
+              "inputsToHandle": {"initial": ["mouse_right_down"], "cancel": ["mouse_right_up", "handle_slot_change", "item_dropped"]},
+              "states": [{"initial": "unloaded", "cancel": "unloaded", "final": "loaded"}],
+              "systems": {
+                "initial": [
+                  {"code": "reload_system", "attributes": {"ammoCode": "bullet", "action": "take"}},
+                  {"code": "animation_system", "attributes": {"code": "load"}},
+                  {"code": "transform_animation_system", "attributes": {"code": "load", "mode": "forward"}},
+                  {"code": "requirement_system", "attributes": {"code": "load", "type": "check"}},
+                  {"code": "player_stats_system", "attributes": {"code": "walkspeed", "value": -0.4}}
+                ],
+                "cancel": [
+                  {"code": "reload_system", "attributes": {"ammoCode": "bullet", "action": "put"}},
+                  {"code": "animation_system", "attributes": {"code": "unload"}},
+                  {"code": "transform_animation_system", "attributes": {"code": "load", "mode": "backward", "duration": 100}},
+                  {"code": "player_stats_system", "attributes": {"code": "walkspeed", "value": 0}}
+                ],
+                "final": [
+                  {"code": "requirement_system", "attributes": {"code": "load", "type": "take"}},
+                  {"code": "transform_animation_system", "attributes": {"code": "load", "mode": "backward", "duration": 100}},
+                  {"code": "player_stats_system", "attributes": {"code": "walkspeed", "value": 0}}
+                ]
+              }
+            }
+          },
+          {
+            "code": "prime",
+            "class": "Delayed",
+            "attributes": {
+              "delay_ms": 2000,
+              "inputsToIntercept": [],
+              "inputsToHandle": {"initial": ["mouse_right_down"], "cancel": ["mouse_right_up", "handle_slot_change", "item_dropped"]},
+              "states": [{"initial": "loaded", "cancel": "loaded", "final": "primed"}],
+              "systems": {
+                "initial": [
+                  {"code": "animation_system", "attributes": {"code": "prime"}},
+                  {"code": "transform_animation_system", "attributes": {"code": "prime", "mode": "forward"}},
+                  {"code": "requirement_system", "attributes": {"code": "prime", "type": "check"}},
+                  {"code": "player_stats_system", "attributes": {"code": "walkspeed", "value": -0.3}}
+                ],
+                "cancel": [
+                  {"code": "animation_system", "attributes": {"code": "unprime"}},
+                  {"code": "transform_animation_system", "attributes": {"code": "prime", "mode": "backward", "duration": 100}},
+                  {"code": "player_stats_system", "attributes": {"code": "walkspeed", "value": 0}}
+                ],
+                "final": [
+                  {"code": "requirement_system", "attributes": {"code": "prime", "type": "take"}},
+                  {"code": "transform_animation_system", "attributes": {"code": "prime", "mode": "backward", "duration": 100}},
+                  {"code": "player_stats_system", "attributes": {"code": "walkspeed", "value": 0}}
+                ]
+              }
+            }
+          },
+          {
+            "code": "shoot",
+            "class": "Instant",
+            "attributes": {
+              "input": "mouse_left_down",
+              "inputsToIntercept": [],
+              "states": [{"initial": "primed", "final": "unloaded"}],
+              "systems": [
+                {"code": "shooting_system", "attributes": {}},
+                {"code": "animation_system", "attributes": {"code": "fire"}},
+                {"code": "particles_system", "attributes": {"effects": ["smoke_1", "smoke_2", "smoke_3", "smoke_small", "fire_blast"]}}
+              ]
+            }
+          },
+          {
+            "code": "aim",
+            "class": "Instant",
+            "attributes": {
+              "input": ["mouse_right_down"],
+              "inputsToIntercept": [],
+              "states": [{"initial": "primed", "final": "primed"}],
+              "systems": [
+                {"code": "transform_animation_system", "attributes": {"code": "aim", "mode": "forward"}},
+                {"code": "aiming_system", "attributes": {"action": "start"}},
+                {"code": "player_stats_system", "attributes": {"code": "walkspeed", "value": -0.1}},
+                {"code": "player_animation_system", "attributes": {"code": "bowaim", "type": "start"}}
+              ]
+            }
+          },
+          {
+            "code": "ease",
+            "class": "Instant",
+            "attributes": {
+              "input": ["mouse_right_up", "handle_slot_change", "item_dropped"],
+              "inputsToIntercept": [],
+              "states": [{"initial": "primed", "final": "primed"}, {"initial": "unloaded", "final": "unloaded"}],
+              "systems": [
+                {"code": "transform_animation_system", "attributes": {"code": "aim", "mode": "backward", "duration": 100}},
+                {"code": "aiming_system", "attributes": {"action": "stop"}},
+                {"code": "player_stats_system", "attributes": {"code": "walkspeed", "value": 0}},
+                {"code": "player_animation_system", "attributes": {"code": "bowaim", "type": "stop"}}
+              ]
+            }
+          }
+        ],
+        "inputs": [
+          {"code": "handle_slot_change", "class": "SlotChange", "attributes": {"type": "handle"}},
+          {"code": "mouse_right_down", "class": "MouseKey", "attributes": {"key": "Right", "type": "pressed"}},
+          {"code": "mouse_right_up", "class": "MouseKey", "attributes": {"key": "Right", "type": "released"}},
+          {"code": "mouse_left_down", "class": "MouseKey", "attributes": {"key": "Left", "type": "pressed"}},
+          {"code": "item_dropped", "class": "ItemDropped", "attributes": {"handle": false}}
+        ]
+      }
     }
   ],
   "attributes": {
-    "accuracyBonus": 0.1,
-    "projectile": "bullet",
-    "damage": 12,
-    "velocityMultiplier": 1,
-    "dispersionMOA": 160,
-    "firedVariant": 2,
-    "readyVariant": 3,
-    "loadedStage": 2,
-    "firingStage": 3,
-    "muzzlePosition": {"x": 0, "y": -0.2, "z": 0.1},
-    "aimingPosition": {"x": -0.5, "y": 0.3, "z": 0.2},
-    "aimingTransform": {
-      "fpTransform": {"translation": {"x": -0.2, "y": 0.3, "z": 0.2}, "rotation": {"x": 0, "y": 0, "z": 0}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 1},
-      "tpTransform": {"translation": {"x": 0, "y": 0, "z": 0}, "rotation": {"x": 105, "y": 90, "z": -90}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 1}
-    },
-    "aimingDuration": 0.2,
-    "aimingWalkspeed": 0,
-    "particleEffects": [
-      {"type": "fireSmoke", "intensity": 0.5, "position": {"x": 0.1, "y": -0.1, "z": 2}, "velocity": {"x": 0, "y": 0, "z": 1}},
-      {"type": "fireSmoke", "intensity": 0.5, "position": {"x": 0.1, "y": -0.1, "z": 1.7}, "velocity": {"x": 0, "y": 0, "z": 2}},
-      {"type": "fireSmoke", "intensity": 0.3, "position": {"x": 0.1, "y": -0.1, "z": 1.5}, "velocity": {"x": 0, "y": 0, "z": 3}},
-      {"type": "fireBlast", "intensity": 0.1, "position": {"x": 0.1, "y": -0.1, "z": 1.5}, "velocity": {"x": 0, "y": 0, "z": 16}},
-      {"type": "fireSmoke", "intensity": 0.5, "position": {"x": 0.1, "y": -0.6, "z": 0.5}, "velocity": {"x": 0.1, "y": 0.3, "z": 0}}
-    ],
-    "operationStages": [
-      {
-        "name": "reload",
-        "lengthInSeconds": 4,
-        "firstVariant": 4,
-        "lastVariant": 25,
-        "walkspeed": -0.2,
-        "interruptInteraction": false,
-        "advanceReloadState": true,
-        "requirements": [{"code": "powderflask", "amount": 1, "durability": 3}, {"code": "bullet", "amount": 1}, {"code": "linenpatch", "amount": 1}]
-      },
-      {
-        "name": "priming",
-        "lengthInSeconds": 2,
-        "firstVariant": 26,
-        "lastVariant": 41,
-        "walkspeed": -0.2,
-        "interruptInteraction": false,
-        "advanceReloadState": true,
-        "requirements": [{"code": "powderflask", "amount": 1, "durability": 1}, {"code": "cockinglever", "amount": 1, "durability": 0}]
-      },
-      {"name": "firing", "lengthInSeconds": 0.1, "firstVariant": 42, "lastVariant": 43, "interruptInteraction": false, "advanceReloadState": false, "requirements": []}
-    ],
-    "operationSounds": {
-      "7": "powder-pour",
-      "14": "ramrod-get",
-      "17": "ramrod-push-multiple",
-      "22": "ramrod-putback",
-      "27": "flint-raise",
-      "30": "powder-prime",
-      "37": "cocked",
-      "40": "flint-set",
-      "43": "firing"
-    },
-    "operationModelTransformations": [
-      {
-        "start-animation": 4,
-        "start-hold": 5,
-        "stop-hold": 24,
-        "stop-animation": 25,
-        "fpTransform": {"translation": {"x": -2.3, "y": -1.7, "z": -0.8}, "rotation": {"x": 80, "y": 0, "z": 10}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 1},
-        "tpTransform": {"translation": {"x": -0.5, "y": 0.5, "z": 0.5}, "rotation": {"x": 90, "y": -90, "z": -90}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 1}
-      },
-      {
-        "start-animation": 26,
-        "start-hold": 27,
-        "stop-hold": 40,
-        "stop-animation": 41,
-        "fpTransform": {"translation": {"x": 0, "y": 0, "z": 0}, "rotation": {"x": 15, "y": 0, "z": 20}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 1},
-        "tpTransform": {"translation": {"x": 0, "y": 0, "z": 0}, "rotation": {"x": 0, "y": 0, "z": 0}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 1}
-      }
-    ],
-    "sounds": {
-      "firing": {
-        "volume": 1,
-        "range": 64,
-        "location": [
-          "maltiezfirearms:sounds/pistol/pistol-fire-1",
-          "maltiezfirearms:sounds/pistol/pistol-fire-2",
-          "maltiezfirearms:sounds/pistol/pistol-fire-3",
-          "maltiezfirearms:sounds/pistol/pistol-fire-4"
-        ]
-      },
-      "ramrod-get": {"volume": 0.4, "range": 4, "location": ["maltiezfirearms:sounds/pistol/ramrod-get"]},
-      "ramrod-push-once": {"volume": 0.4, "range": 4, "location": ["maltiezfirearms:sounds/pistol/ramrod-push-once"]},
-      "ramrod-push-multiple": {"volume": 0.4, "range": 4, "location": ["maltiezfirearms:sounds/pistol/ramrod-push-multiple"]},
-      "ramrod-putback": {"volume": 0.4, "range": 4, "location": ["maltiezfirearms:sounds/pistol/ramrod-putback"]},
-      "powder-pour": {"volume": 0.4, "range": 4, "location": ["maltiezfirearms:sounds/pistol/powder-pour"]},
-      "powder-prime": {"volume": 0.2, "range": 4, "location": ["maltiezfirearms:sounds/pistol/powder-prime"]},
-      "flint-raise": {"volume": 0.4, "range": 4, "location": ["maltiezfirearms:sounds/pistol/flint-raise"]},
-      "cocked": {"volume": 0.4, "range": 4, "location": ["maltiezfirearms:sounds/pistol/cocked"]},
-      "flint-set": {"volume": 0.4, "range": 4, "location": ["maltiezfirearms:sounds/pistol/flint-set"]}
-    },
     "toolrackTransform": {"translation": {"x": 1.05, "y": 0.55, "z": 0.5}, "rotation": {"x": -1, "y": 95, "z": -90}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 1.34},
     "groundStorageTransform": {"translation": {"x": 0.65, "y": 0.04, "z": 0.65}, "rotation": {"x": 0, "y": 50, "z": 90}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 0.81}
   },
