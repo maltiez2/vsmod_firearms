@@ -145,7 +145,8 @@
             }
           },
           {"code": "player_stats_system", "class": "PlayerStats", "attributes": {}},
-          {"code": "player_animation_system", "class": "PlayerAnimation", "attributes": {}}
+          {"code": "player_animation_system", "class": "PlayerAnimation", "attributes": {}},
+          {"code": "no_sway_system", "class": "NoSway", "attributes": {}}
         ],
         "operations": [
           {
@@ -160,6 +161,7 @@
                 "initial": [
                   {"code": "reload_system", "attributes": {"ammoCode": "bullet", "action": "take"}},
                   {"code": "animation_system", "attributes": {"code": "load"}},
+                  {"code": "no_sway_system", "attributes": {"action": "start"}},
                   {"code": "transform_animation_system", "attributes": {"code": "load", "mode": "forward"}},
                   {"code": "requirement_system", "attributes": {"code": "load", "type": "check"}},
                   {"code": "player_stats_system", "attributes": {"code": "walkspeed", "value": -0.6}}
@@ -167,11 +169,13 @@
                 "cancel": [
                   {"code": "reload_system", "attributes": {"ammoCode": "bullet", "action": "put"}},
                   {"code": "animation_system", "attributes": {"code": "unload"}},
+                  {"code": "no_sway_system", "attributes": {"action": "stop"}},
                   {"code": "transform_animation_system", "attributes": {"code": "load", "mode": "backward", "duration": 200}},
                   {"code": "player_stats_system", "attributes": {"code": "walkspeed", "value": 0}}
                 ],
                 "final": [
                   {"code": "requirement_system", "attributes": {"code": "load", "type": "take"}},
+                  {"code": "no_sway_system", "attributes": {"action": "stop"}},
                   {"code": "transform_animation_system", "attributes": {"code": "load", "mode": "backward", "duration": 200}},
                   {"code": "player_stats_system", "attributes": {"code": "walkspeed", "value": 0}}
                 ]
@@ -189,17 +193,20 @@
               "systems": {
                 "initial": [
                   {"code": "animation_system", "attributes": {"code": "prime"}},
+                  {"code": "no_sway_system", "attributes": {"action": "start"}},
                   {"code": "transform_animation_system", "attributes": {"code": "prime", "mode": "forward"}},
                   {"code": "requirement_system", "attributes": {"code": "prime", "type": "check"}},
                   {"code": "player_stats_system", "attributes": {"code": "walkspeed", "value": -0.5}}
                 ],
                 "cancel": [
                   {"code": "animation_system", "attributes": {"code": "unprime"}},
+                  {"code": "no_sway_system", "attributes": {"action": "stop"}},
                   {"code": "transform_animation_system", "attributes": {"code": "prime", "mode": "backward", "duration": 100}},
                   {"code": "player_stats_system", "attributes": {"code": "walkspeed", "value": 0}}
                 ],
                 "final": [
                   {"code": "requirement_system", "attributes": {"code": "prime", "type": "take"}},
+                  {"code": "no_sway_system", "attributes": {"action": "stop"}},
                   {"code": "transform_animation_system", "attributes": {"code": "prime", "mode": "backward", "duration": 100}},
                   {"code": "player_stats_system", "attributes": {"code": "walkspeed", "value": 0}}
                 ]
@@ -217,15 +224,18 @@
               "systems": {
                 "initial": [
                   {"code": "animation_system", "attributes": {"code": "ready"}},
+                  {"code": "no_sway_system", "attributes": {"action": "start"}},
                   {"code": "requirement_system", "attributes": {"code": "ready", "type": "check"}},
                   {"code": "player_stats_system", "attributes": {"code": "walkspeed", "value": -0.3}}
                 ],
                 "cancel": [
                   {"code": "animation_system", "attributes": {"code": "unready"}},
+                  {"code": "no_sway_system", "attributes": {"action": "stop"}},
                   {"code": "player_stats_system", "attributes": {"code": "walkspeed", "value": 0}}
                 ],
                 "final": [
                   {"code": "requirement_system", "attributes": {"code": "ready", "type": "take"}},
+                  {"code": "no_sway_system", "attributes": {"action": "stop"}},
                   {"code": "player_stats_system", "attributes": {"code": "walkspeed", "value": 0}}
                 ]
               }
@@ -255,6 +265,7 @@
               "systems": [
                 {"code": "transform_animation_system", "attributes": {"code": "aim", "mode": "backward", "duration": 10}},
                 {"code": "aiming_system", "attributes": {"action": "stop"}},
+                {"code": "no_sway_system", "attributes": {"action": "stop"}},
                 {"code": "player_stats_system", "attributes": {"code": "walkspeed", "value": 0}},
                 {"code": "player_animation_system", "attributes": {"code": "bowaim", "type": "stop"}},
                 {"code": "animation_system", "attributes": {"code": "unready"}}
@@ -271,6 +282,7 @@
               "systems": [
                 {"code": "transform_animation_system", "attributes": {"code": "aim", "mode": "forward"}},
                 {"code": "aiming_system", "attributes": {"action": "start"}},
+                {"code": "no_sway_system", "attributes": {"action": "start"}},
                 {"code": "player_stats_system", "attributes": {"code": "walkspeed", "value": -0.1}},
                 {"code": "player_animation_system", "attributes": {"code": "bowaim", "type": "start"}}
               ]
@@ -286,6 +298,7 @@
               "systems": [
                 {"code": "transform_animation_system", "attributes": {"code": "aim", "mode": "backward", "duration": 100}},
                 {"code": "aiming_system", "attributes": {"action": "stop"}},
+                {"code": "no_sway_system", "attributes": {"action": "stop"}},
                 {"code": "player_stats_system", "attributes": {"code": "walkspeed", "value": 0}},
                 {"code": "player_animation_system", "attributes": {"code": "bowaim", "type": "stop"}},
               ]
@@ -301,6 +314,7 @@
               "systems": [
                 {"code": "transform_animation_system", "attributes": {"code": "aim", "mode": "backward", "duration": 100}},
                 {"code": "aiming_system", "attributes": {"action": "stop"}},
+                {"code": "no_sway_system", "attributes": {"action": "stop"}},
                 {"code": "player_stats_system", "attributes": {"code": "walkspeed", "value": 0}},
                 {"code": "player_animation_system", "attributes": {"code": "bowaim", "type": "stop"}},
                 {"code": "animation_system", "attributes": {"code": "unload"}}

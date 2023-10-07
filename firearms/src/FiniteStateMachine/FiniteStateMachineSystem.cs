@@ -42,6 +42,7 @@ namespace MaltiezFirearms.FiniteStateMachine
             mSystemFactory.RegisterType<Systems.BasicPlayerStats>("PlayerStats");
             mSystemFactory.RegisterType<Systems.BasicParticles>("Particles");
             mSystemFactory.RegisterType<Systems.BasicAim>("Aiming");
+            mSystemFactory.RegisterType<Systems.NoSway>("NoSway");
         }
         public void RegisterOperations()
         {

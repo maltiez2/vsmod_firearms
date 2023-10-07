@@ -64,7 +64,7 @@ namespace MaltiezFirearms.FiniteStateMachine.Framework
             mProperties = properties;
         }
 
-        public override void OnHeldInteractStart(ItemSlot slot, EntityAgent byEntity, BlockSelection blockSel, EntitySelection entitySel, bool firstEvent, ref EnumHandHandling handHandling, ref EnumHandling handling)
+        /*public override void OnHeldInteractStart(ItemSlot slot, EntityAgent byEntity, BlockSelection blockSel, EntitySelection entitySel, bool firstEvent, ref EnumHandHandling handHandling, ref EnumHandling handling)
         {
             mApi.Logger.Notification("[Firearms] OnHeldInteractStart");
             handHandling = EnumHandHandling.PreventDefaultAnimation;
@@ -73,7 +73,7 @@ namespace MaltiezFirearms.FiniteStateMachine.Framework
             {
                 ((mApi as ICoreClientAPI).World as ClientMain).EntityPlayer.Controls.HandUse = EnumHandInteract.HeldItemInteract;
             }
-        }
+        }*/
 
         public override void OnBeforeRender(ICoreClientAPI capi, ItemStack itemstack, EnumItemRenderTarget target, ref ItemRenderInfo renderinfo)
         {            

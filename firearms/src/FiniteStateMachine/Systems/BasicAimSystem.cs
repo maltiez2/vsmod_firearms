@@ -13,7 +13,6 @@ namespace MaltiezFirearms.FiniteStateMachine.Systems
     {
         private static Random sRand = new Random();
         
-        private TimerForAimimg mTimer;
         private float mDispersionMin;
         private float mDispersionMax;
         private long mAimTime_ms;
@@ -27,8 +26,6 @@ namespace MaltiezFirearms.FiniteStateMachine.Systems
             mDispersionMax = definition["dispersionMax_MOA"].AsFloat();
             mAimTime_ms = definition["duration"].AsInt();
             mApi = api;
-            mTimer = new();
-            mTimer.Init(api, SetAimAnimationCrutch);
         }
 
         void ISystem.SetSystems(Dictionary<string, ISystem> systems)
@@ -42,32 +39,13 @@ namespace MaltiezFirearms.FiniteStateMachine.Systems
             {
                 case "start":
                     mAimStartTime = mApi.World.ElapsedMilliseconds;
-                    if (mApi is ICoreClientAPI) mTimer.Start();
                     mIsAiming = true;
                     break;
                 case "stop":
                     mIsAiming = false;
-                    if (mApi is ICoreClientAPI) mTimer.Stop();
                     break;
             }
             return true;
-        }
-
-        void SetAimAnimationCrutch(bool interact)
-        {
-            EntityPlayer player = ((mApi as ICoreClientAPI)?.World as ClientMain)?.EntityPlayer;
-
-            if (player?.Controls?.HandUse == null) return;
-            
-            if (interact)
-            {
-                player.AnimManager.StopAnimation("placeblock");
-                player.Controls.HandUse = EnumHandInteract.HeldItemInteract;
-            }
-            else
-            {
-                player.Controls.HandUse = EnumHandInteract.None;
-            }
         }
 
         bool ISystem.Verify(ItemSlot slot, EntityAgent player, JsonObject parameters)
@@ -83,45 +61,6 @@ namespace MaltiezFirearms.FiniteStateMachine.Systems
             float randomPitch = (float)(2 * (sRand.NextDouble() - 0.5) * (Math.PI / 180 / 60) * dispersion);
             float randomYaw = (float)(2 * (sRand.NextDouble() - 0.5) * (Math.PI / 180 / 60) * dispersion);
             return (randomPitch, randomYaw);
-        }
-    }
-
-    public sealed class TimerForAimimg
-    {
-        private Action<bool> mCallback;
-        private ICoreAPI mApi;
-        private long? mCallbackId;
-
-        public void Init(ICoreAPI api, Action<bool> callback)
-        {
-            mCallback = callback;
-            mApi = api;
-        }
-        public void Start()
-        {
-            mCallback(true);
-            SetListener();
-        }
-        public void Handler(float time)
-        {
-            mCallback(true);
-            SetListener();
-        }
-        public void Stop()
-        {
-            StopListener();
-            mCallback(false);
-        }
-
-        private void SetListener()
-        {
-            StopListener();
-            mCallbackId = mApi.World.RegisterGameTickListener(Handler, 0);
-        }
-        private void StopListener()
-        {
-            if (mCallbackId != null) mApi.World.UnregisterGameTickListener((long)mCallbackId);
-            mCallbackId = null;
         }
     }
 }
