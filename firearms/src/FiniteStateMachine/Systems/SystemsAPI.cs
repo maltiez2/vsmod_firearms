@@ -28,7 +28,17 @@ namespace MaltiezFirearms.FiniteStateMachine.Systems
 
     public interface IAimingSystem
     {
-        Vec3f GetSpawnLocationOffset();
-        Vec3f GetShootingDirectionOffset();
+        public struct DirectionOffset
+        {
+            public float pitch { get; set; }
+            public float yaw { get; set; }
+
+            public static implicit operator DirectionOffset((float pitch, float yaw) parameters)
+            {
+                return new DirectionOffset() { pitch = parameters.pitch, yaw = parameters.yaw };
+            }
+        }
+        DirectionOffset GetShootingDirectionOffset();
+
     }
 }

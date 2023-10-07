@@ -2,6 +2,10 @@
 using Vintagestory.API.Datastructures;
 using MaltiezFirearms.FiniteStateMachine.API;
 using Vintagestory.API.Client;
+using Cairo;
+using Vintagestory.Client.NoObf;
+using System.Reflection;
+using System;
 
 namespace MaltiezFirearms.FiniteStateMachine.Framework
 {
@@ -29,6 +33,7 @@ namespace MaltiezFirearms.FiniteStateMachine.Framework
             mFactories = mApi.ModLoader.GetModSystem<FiniteStateMachineSystem>();
             mInputIterceptor = mApi.ModLoader.GetModSystem<FiniteStateMachineSystem>().GetInputInterceptor();
             tpTransform = null;
+            fpTransform = null;
 
             IBehaviourAttributesParser parser = new BehaviourAttributesParser();
             parser.ParseDefinition(mFactories.GetOperationFactory(), mFactories.GetSystemFactory(), mFactories.GetInputFactory(), mProperties, collObj);
@@ -57,6 +62,17 @@ namespace MaltiezFirearms.FiniteStateMachine.Framework
             base.Initialize(properties);
 
             mProperties = properties;
+        }
+
+        public override void OnHeldInteractStart(ItemSlot slot, EntityAgent byEntity, BlockSelection blockSel, EntitySelection entitySel, bool firstEvent, ref EnumHandHandling handHandling, ref EnumHandling handling)
+        {
+            mApi.Logger.Notification("[Firearms] OnHeldInteractStart");
+            handHandling = EnumHandHandling.PreventDefaultAnimation;
+            handling = EnumHandling.Handled;
+            if (((mApi as ICoreClientAPI)?.World as ClientMain)?.EntityPlayer?.Controls?.HandUse != null)
+            {
+                ((mApi as ICoreClientAPI).World as ClientMain).EntityPlayer.Controls.HandUse = EnumHandInteract.HeldItemInteract;
+            }
         }
 
         public override void OnBeforeRender(ICoreClientAPI capi, ItemStack itemstack, EnumItemRenderTarget target, ref ItemRenderInfo renderinfo)

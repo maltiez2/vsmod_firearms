@@ -9,7 +9,7 @@ namespace MaltiezFirearms.FiniteStateMachine.API
     /// It is recommended to use this class as a base for classes that implement <see cref="ISystem"/>, <see cref="IOperation"/> or <see cref="IInput"/>.<br/>
     /// It is also recommended to use it with <see cref="Framework.UniqueIdGeneratorForFactory"/>, as it provides unique id for objects produced by <see cref="IFactory{ProductClass}"/>.
     /// </summary>
-    public abstract class UniqueIdFactoryObject : IFactoryObject
+    public abstract class UniqueIdFactoryObject : IFactoryObject // @TODO May be move to dependency injection instead of inheritance
     {
         private int? mId = null;
 

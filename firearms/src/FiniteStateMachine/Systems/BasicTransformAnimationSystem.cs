@@ -80,7 +80,6 @@ namespace MaltiezFirearms.FiniteStateMachine.Systems
         {
             mCollectible.GetBehavior<FiniteStateMachineBehaviour>().tpTransform = GetTransform(progress, mTpAnimations[code]);
             mCollectible.GetBehavior<FiniteStateMachineBehaviour>().fpTransform = GetTransform(progress, mFpAnimations[code]);
-            if (mApi.Side == EnumAppSide.Client) mApi.Logger.Notification("[Firearms] Fp transform set to: " + progress);
         }
 
         protected ModelTransform GetTransform(float animationProgress, JsonObject transform)
@@ -137,7 +136,6 @@ namespace MaltiezFirearms.FiniteStateMachine.Systems
         }
         public void Revert()
         {
-            mApi.Logger.Warning("[Firearms] mCurrentDuration: " + mCurrentDuration);
             mCurrentDuration = mDuration_ms * (1 - mCurrentProgress);
             mForward = false;
             SetAnimation(CalculateProgress(mCurrentDuration));

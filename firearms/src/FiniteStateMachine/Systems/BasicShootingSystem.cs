@@ -9,103 +9,89 @@ using Vintagestory.GameContent;
 
 namespace MaltiezFirearms.FiniteStateMachine.Systems
 {
-    public interface IProjectileSpawner
-    {
-        bool SpawnProjectile(ItemStack projectileStack, EntityAgent byEntity, JsonObject parameters);
-        bool CanSpawnProjectile(ItemStack projectileStack, EntityAgent byEntity, JsonObject parameters);
-    }
-    
     public class BasicShooting : UniqueIdFactoryObject, ISystem
     {
-        public const string ammoSelectorSystemAttrName = "ammoSource";
-        
-        private IProjectileSpawner mProjectileSpawner;
+        public const string ammoSelectorSystemAttrName = "reloadSystem";
+        public const string aimingSystemAttrName = "aimingSystem";
+        public const string velocityAttrName = "projectileVelocity";
+        public const string damageAttrName = "projectileDamage";
+
+        private static Random sRand = new Random();
+
         private string mReloadSystemName;
+        private string mAimingSystemName;
         private IAmmoSelector mReloadSystem;
+        private IAimingSystem mAimingSystem;
+        private float mProjectileVelocity;
+        private float mProjectileDamage;
 
         public override void Init(string name, JsonObject definition, CollectibleObject collectible, ICoreAPI api)
         {
-            mProjectileSpawner = new BasicProjectileSpawner();
             mReloadSystemName = definition[ammoSelectorSystemAttrName].AsString();
+            mAimingSystemName = definition[aimingSystemAttrName].AsString();
+            mProjectileVelocity = definition[velocityAttrName].AsFloat();
+            mProjectileDamage = definition[damageAttrName].AsFloat();
         }
-        public virtual void SetSystems(Dictionary<string, ISystem> systems)
+        public void SetSystems(Dictionary<string, ISystem> systems)
         {
             mReloadSystem = systems[mReloadSystemName] as IAmmoSelector;
+            mAimingSystem = systems[mAimingSystemName] as IAimingSystem;
         }
 
-        public virtual bool Process(ItemSlot slot, EntityAgent player, JsonObject parameters)
+        public bool Process(ItemSlot slot, EntityAgent player, JsonObject parameters)
         {
             ItemStack ammoStack = mReloadSystem.TakeSelectedAmmo(slot);
             if (ammoStack == null) return false;
-            return mProjectileSpawner.SpawnProjectile(ammoStack, player, parameters);
-        }
-        public virtual bool Verify(ItemSlot slot, EntityAgent player, JsonObject parameters)
-        {
-            return true;
-        }
-    }
 
-    public class BasicProjectileSpawner : IProjectileSpawner
-    {
-        private static Random sRand = new Random();
+            Vec3d projectilePosition = ProjectilePosition(player, new Vec3f(0.0f, 0.0f, 0.0f));
+            Vec3d projectileVelocity = ProjectileVelocity(player, mAimingSystem.GetShootingDirectionOffset());
 
-        public virtual bool SpawnProjectile(ItemStack projectileStack, EntityAgent byEntity, JsonObject parameters)
-        {
-            if (projectileStack == null) return false;
-            
-            Vec3d projectilePosition = ProjectilePosition(projectileStack, byEntity, new Vec3f(0.0f, 0.0f, 0.0f));
-            Vec3d projectileVelocity = ProjectileVelocity(projectileStack, byEntity);
-            float? projectileDamage = projectileStack.Collectible?.Attributes["damage"].AsFloat(0);
-
-            SpawnProjectile(projectileStack, byEntity, projectilePosition, projectileVelocity, projectileDamage == null ? 0 : (float)projectileDamage);
+            SpawnProjectile(ammoStack, player, projectilePosition, projectileVelocity, mProjectileDamage);
 
             return true;
         }
-        public virtual bool CanSpawnProjectile(ItemStack projectileStack, EntityAgent byEntity, JsonObject parameters)
+        public bool Verify(ItemSlot slot, EntityAgent player, JsonObject parameters)
         {
-            return projectileStack != null;
+            return mReloadSystem.GetSelectedAmmo(slot) != null;
         }
 
-        protected virtual Vec3d ProjectilePosition(ItemStack projectileStack, EntityAgent byEntity, Vec3f muzzlePosition)
+        private Vec3d ProjectilePosition(EntityAgent player, Vec3f muzzlePosition)
         {
-            Vec3f worldPosition = FromCameraReferenceFrame(projectileStack, byEntity, muzzlePosition);
-            return byEntity.SidedPos.AheadCopy(0).XYZ.Add(worldPosition.X, byEntity.LocalEyePos.Y + worldPosition.Y, worldPosition.Z);
+            Vec3f worldPosition = FromCameraReferenceFrame(player, muzzlePosition);
+            return player.SidedPos.AheadCopy(0).XYZ.Add(worldPosition.X, player.LocalEyePos.Y + worldPosition.Y, worldPosition.Z);
         }
-        protected virtual Vec3d ProjectileVelocity(ItemStack projectileStack, EntityAgent byEntity, float dispersion = 0.001f, float muzzleVelocity = 2)
+        private Vec3d ProjectileVelocity(EntityAgent player, IAimingSystem.DirectionOffset dispersion)
         {
-            double randomPitch = 2 * (sRand.NextDouble() - 0.5) * (Math.PI / 180 / 60) * dispersion;
-            double randomYaw = 2 * (sRand.NextDouble() - 0.5) * (Math.PI / 180 / 60) * dispersion;
-
-            Vec3d pos = byEntity.ServerPos.XYZ.Add(0, byEntity.LocalEyePos.Y, 0);
-            Vec3d aheadPos = pos.AheadCopy(1, byEntity.SidedPos.Pitch + randomPitch, byEntity.SidedPos.Yaw + randomYaw);
-            return (aheadPos - pos) * muzzleVelocity;
+            Vec3d pos = player.ServerPos.XYZ.Add(0, player.LocalEyePos.Y, 0);
+            Vec3d aheadPos = pos.AheadCopy(1, player.SidedPos.Pitch + dispersion.pitch, player.SidedPos.Yaw + dispersion.yaw);
+            return (aheadPos - pos) * mProjectileVelocity;
         }
-        protected virtual Vec3f FromCameraReferenceFrame(ItemStack projectileStack, EntityAgent byEntity, Vec3f position)
+        private Vec3f FromCameraReferenceFrame(EntityAgent player, Vec3f position)
         {
-            Vec3f viewVector = byEntity.SidedPos.GetViewVector();
+            Vec3f viewVector = player.SidedPos.GetViewVector();
             Vec3f vertical = new Vec3f(0, 1, 0);
             Vec3f localZ = viewVector.Normalize();
             Vec3f localX = viewVector.Cross(vertical).Normalize();
             Vec3f localY = localX.Cross(localZ);
             return localX * position.X + localY * position.Y + localZ * position.Z;
         }
-        protected virtual void SpawnProjectile(ItemStack projectileStack, EntityAgent byEntity, Vec3d position, Vec3d velocity, float damage)
+        private void SpawnProjectile(ItemStack projectileStack, EntityAgent player, Vec3d position, Vec3d velocity, float damage)
         {
             if (projectileStack?.Item?.Code == null) return;
 
-            EntityProperties type = byEntity.World.GetEntityType(projectileStack.Item.Code);
-            var projectile = byEntity.World.ClassRegistry.CreateEntity(type) as EntityProjectile;
-            projectile.FiredBy = byEntity;
+            EntityProperties type = player.World.GetEntityType(projectileStack.Item.Code);
+            var projectile = player.World.ClassRegistry.CreateEntity(type) as EntityProjectile;
+            projectile.FiredBy = player;
             projectile.Damage = damage;
             projectile.ProjectileStack = projectileStack;
             projectile.DropOnImpactChance = projectileStack.Collectible.Attributes["breakChanceOnImpact"].AsFloat(0);
             projectile.ServerPos.SetPos(position);
             projectile.ServerPos.Motion.Set(velocity);
             projectile.Pos.SetFrom(projectile.ServerPos);
-            projectile.World = byEntity.World;
+            projectile.World = player.World;
             projectile.SetRotation();
 
-            byEntity.World.SpawnEntity(projectile);
+            player.World.SpawnEntity(projectile);
         }
     }
 }

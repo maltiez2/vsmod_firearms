@@ -13,14 +13,17 @@ namespace MaltiezFirearms.FiniteStateMachine.Systems
         public const string takeAction = "take";
         public const string putAction = "put";
 
-        public string AmmoStackAttrName = "firearms.ammo.id";
+        public string AmmoStackAttrName = "firearms.ammo.";
+
+        private string mCode;
         
-        public override void Init(string name, JsonObject definition, CollectibleObject collectible, ICoreAPI api)
+        public override void Init(string code, JsonObject definition, CollectibleObject collectible, ICoreAPI api)
         {
+            mCode = code;
         }
         public void SetSystems(Dictionary<string, ISystem> systems)
         {
-            AmmoStackAttrName += GetId().ToString();
+            AmmoStackAttrName += mCode;
         }
         public bool Verify(ItemSlot slot, EntityAgent player, JsonObject parameters)
         {
@@ -89,6 +92,7 @@ namespace MaltiezFirearms.FiniteStateMachine.Systems
         private void WriteAmmoStackTo(ItemSlot slot, ItemStack ammoStack)
         {
             slot.Itemstack.Attributes.SetItemstack(AmmoStackAttrName, ammoStack);
+            slot.MarkDirty();
         }
         private ItemStack ReadAmmoStackFrom(ItemSlot slot)
         {
@@ -100,6 +104,7 @@ namespace MaltiezFirearms.FiniteStateMachine.Systems
             if (amount == 0 || ammoStack.StackSize == amount)
             {
                 slot.Itemstack.Attributes.RemoveAttribute(AmmoStackAttrName);
+                slot.MarkDirty();
                 return ammoStack;
             }
 

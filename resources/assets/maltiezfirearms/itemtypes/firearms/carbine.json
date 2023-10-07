@@ -83,7 +83,17 @@
             }
           },
           {"code": "reload_system", "class": "Reload", "attributes": {}},
-          {"code": "shooting_system", "class": "Shooting", "attributes": {"ammoSource": "reload_system"}},
+          {"code": "aiming_system", "class": "Aiming", "attributes": {
+             "duration":  500,
+             "dispersionMin_MOA": 90,
+             "dispersionMax_MOA": 900
+           }},
+          {"code": "shooting_system", "class": "Shooting", "attributes": {
+             "reloadSystem": "reload_system",
+             "aimingSystem": "aiming_system",
+             "projectileVelocity": 2,
+             "projectileDamage": 39
+           }},
           {
             "code": "animation_system",
             "class": "VariantsAnimation",
@@ -258,6 +268,7 @@
               "states": [{"initial": "primed", "final": "primed"}],
               "systems": [
                 {"code": "transform_animation_system", "attributes": {"code": "aim", "mode": "forward"}},
+                {"code": "aiming_system", "attributes": {"action": "start"}},
                 {"code": "player_stats_system", "attributes": {"code": "walkspeed", "value": -0.2}},
                 {"code": "player_animation_system", "attributes": {"code": "bowaim", "type": "start"}}
               ]
@@ -272,6 +283,7 @@
               "states": [{"initial": "primed", "final": "primed"}, {"initial": "unloaded", "final": "unloaded"}],
               "systems": [
                 {"code": "transform_animation_system", "attributes": {"code": "aim", "mode": "backward", "duration": 100}},
+                {"code": "aiming_system", "attributes": {"action": "stop"}},
                 {"code": "player_stats_system", "attributes": {"code": "walkspeed", "value": 0}},
                 {"code": "player_animation_system", "attributes": {"code": "bowaim", "type": "stop"}}
               ]

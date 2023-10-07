@@ -143,21 +143,17 @@ namespace MaltiezFirearms.FiniteStateMachine.Systems
         }
         public void Play()
         {
-            mApi.Logger.Debug("[Firearms] Setting variant: " + mNextVariant + ", from: " + mLastVariant); // @TODO @DEBUG @LOG
             mCallback(mNextVariant++);
             if (mNextVariant > mLastVariant) return;
-            mApi.Logger.Debug("[Firearms] Setting timer with delay: " + mDelay_ms);
             mCallbackId = mApi.World.RegisterCallback(Handler, mDelay_ms);
         }
         public void Handler(float time)
         {
-            mApi.Logger.Debug("[Firearms] Setting variant: " + mNextVariant + ", from: " + mLastVariant); // @TODO @DEBUG @LOG
             mCallback(mNextVariant++);
 
             if (mNextVariant > mLastVariant) return;
 
             int newDelay = 2 * mDelay_ms - (int)(time * 1000);
-            mApi.Logger.Debug("[Firearms] Setting timer with delay: " + newDelay); // @TODO @DEBUG @LOG
             mCallbackId = mApi.World.RegisterCallback(Handler, newDelay);
         }
         public void Stop()
@@ -170,7 +166,6 @@ namespace MaltiezFirearms.FiniteStateMachine.Systems
         public void Revert()
         {
             Stop();
-            mApi.Logger.Debug("[Firearms] Reverting to variant: " + mFirstVariant); // @TODO @DEBUG @LOG
             mCallback(mFirstVariant);
         }
     }
