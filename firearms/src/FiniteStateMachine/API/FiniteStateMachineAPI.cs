@@ -133,6 +133,7 @@ namespace MaltiezFirearms.FiniteStateMachine.API
         }
         MouseEventType GetEventType();
         bool CheckIfShouldBeHandled(MouseEvent mouseEvent, MouseEventType eventType);
+        bool IsRepeatable();
     }
     public interface ISlotInput : IEventInput
     {

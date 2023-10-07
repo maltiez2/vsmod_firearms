@@ -71,7 +71,9 @@ namespace MaltiezFirearms.FiniteStateMachine.Framework
         private string mInitialState;
         private readonly Dictionary<State, Dictionary<IInput, IOperation>> mOperationsByInputAndState = new();
         private readonly Dictionary<IOperation, HashSet<State>> mStatesByOperationForTimer = new();
+        private readonly Dictionary<IInput, IInput> mRepeatedInputs = new();
         private DelayedCallback mTimer;
+        private DelayedCallback mRepeater;
 
         private CollectibleObject mCollectible;
         private ICoreAPI mApi;
@@ -140,7 +142,13 @@ namespace MaltiezFirearms.FiniteStateMachine.Framework
 
             IOperation operation = mOperationsByInputAndState[state][input];
 
-            return RunOperation(slot, player, operation, input, state);
+            if (RunOperation(slot, player, operation, input, state))
+            {
+                TryRepeat(slot, player, input);
+                return true;
+            }
+
+            return false;
         }
         public bool OnTimer(ItemSlot slot, EntityAgent player, IInput input, IOperation operation)
         {
@@ -152,7 +160,38 @@ namespace MaltiezFirearms.FiniteStateMachine.Framework
                 return false;
             }
 
-            return RunOperation(slot, player, operation, input, state);
+            if (RunOperation(slot, player, operation, input, state))
+            {
+                TryRepeat(slot, player, input);
+                return true;
+            }
+
+            return false;
+        }
+
+        private void TryRepeat(ItemSlot slot, EntityAgent player, IInput input)
+        {
+            if ((input as IMouseInput)?.IsRepeatable() == true) mRepeater = new DelayedCallback(mApi, 1, () => Repeat(slot, player, input));
+        }
+
+        private void Repeat(ItemSlot slot, EntityAgent player, IInput input)
+        {
+            if (slot?.Itemstack?.Collectible != mCollectible || player == null) return;
+
+            State state = ReadStateFrom(slot);
+            if (!mOperationsByInputAndState.ContainsKey(state))
+            {
+                WriteStateTo(slot, new State(mInitialState));
+                return;
+            }
+            if (!mOperationsByInputAndState[state].ContainsKey(input))
+            {
+                return;
+            }
+
+            IOperation operation = mOperationsByInputAndState[state][input];
+
+            RunOperation(slot, player, operation, input, state);
         }
 
         private bool RunOperation(ItemSlot slot, EntityAgent player, IOperation operation, IInput input, State state)

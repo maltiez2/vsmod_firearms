@@ -16,7 +16,7 @@ namespace MaltiezFirearms.FiniteStateMachine
         {  
             base.Start(api);
 
-            api.RegisterCollectibleBehaviorClass("firearms.finitestatemachine", typeof(Framework.FiniteStateMachineBehaviour));
+            api.RegisterCollectibleBehaviorClass("FirearmsFiniteStateMachine", typeof(Framework.FiniteStateMachineBehaviour));
 
             mOperationFactory = new Framework.Factory<IOperation, Framework.UniqueIdGeneratorForFactory>(api);
             mSystemFactory = new Framework.Factory<ISystem, Framework.UniqueIdGeneratorForFactory>(api);

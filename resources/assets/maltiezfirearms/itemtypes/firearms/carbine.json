@@ -18,7 +18,7 @@
       }
     },
     {
-      "name": "firearms.finitestatemachine",
+      "name": "FirearmsFiniteStateMachine",
       "properties": {
         "initialState": "unloaded",
         "systems": [

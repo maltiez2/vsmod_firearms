@@ -1,6 +1,6 @@
 ﻿{
   "code": "arquebus",
-  "class": "MaltiezFirearm",
+  "class": "Item",
   "creativeinventory": {"maltiezfirearms": ["*"]},
   "maxstacksize": 1,
   "durability": 500,
@@ -16,112 +16,310 @@
         "selectionBox": {"x1": 0, "y1": 0, "z1": 0, "x2": 1, "y2": 0.1, "z2": 1},
         "collisionBox": {"x1": 0, "y1": 0, "z1": 0, "x2": 0, "y2": 0, "z2": 0}
       }
+    },
+    {
+      "name": "FirearmsFiniteStateMachine",
+      "properties": {
+        "initialState": "unloaded",
+        "systems": [
+          {
+            "code": "sound_system",
+            "class": "Sound",
+            "attributes": {
+              "sounds": [
+                {
+                  "code": "fire_sound",
+                  "volume": 1,
+                  "range": 64,
+                  "location": [
+                    "maltiezfirearms:sounds/arquebus/arquebus-fire-1",
+                    "maltiezfirearms:sounds/arquebus/arquebus-fire-2",
+                    "maltiezfirearms:sounds/arquebus/arquebus-fire-3"
+                  ]
+                },
+                {"code": "ramrod_take_sound", "volume": 1, "range": 32, "location": "maltiezfirearms:sounds/arquebus/ramrod-get"},
+                {"code": "ramrod_push_once_sound", "volume": 1, "range": 16, "location": "maltiezfirearms:sounds/arquebus/ramrod-push-once"},
+                {"code": "ramrod_push_multiple_sound", "volume": 1, "range": 16, "location": "maltiezfirearms:sounds/arquebus/ramrod-push-multiple"},
+                {"code": "ramrod_putback_sound", "volume": 1, "range": 32, "location": "maltiezfirearms:sounds/arquebus/ramrod-putback"},
+                {"code": "powder_pour_sound", "volume": 1, "range": 8, "location": "maltiezfirearms:sounds/arquebus/powder-pour"},
+                {"code": "powder_prime_sound", "volume": 0.2, "range": 8, "location": "maltiezfirearms:sounds/arquebus/powder-prime"},
+                {"code": "short_click_sound", "volume": 1, "range": 8, "location": "maltiezfirearms:sounds/arquebus/arquebus-short-click-2"}
+              ]
+            }
+          },
+          {"code": "reload_system", "class": "Reload", "attributes": {}},
+          {"code": "aiming_system", "class": "Aiming", "attributes": {"duration": 200, "dispersionMin_MOA": 120, "dispersionMax_MOA": 600}},
+          {"code": "shooting_system", "class": "Shooting", "attributes": {"reloadSystem": "reload_system", "aimingSystem": "aiming_system", "projectileVelocity": 3.2, "projectileDamage": 20}},
+          {
+            "code": "animation_system",
+            "class": "VariantsAnimation",
+            "attributes": {
+              "soundSystem": "sound_system",
+              "animations": [
+                {
+                  "code": "load",
+                  "firstVariant": 5,
+                  "lastVariant": 39,
+                  "duration": 7000,
+                  "sounds": [
+                    {"variant": 9, "code": "powder_pour_sound"},
+                    {"variant": 13, "code": "ramrod_take_sound"},
+                    {"variant": 16, "code": "ramrod_push_once_sound"},
+                    {"variant": 25, "code": "ramrod_push_multiple_sound"},
+                    {"variant": 35, "code": "ramrod_putback_sound"}
+                  ]
+                },
+                {
+                  "code": "prime",
+                  "firstVariant": 40,
+                  "lastVariant": 53,
+                  "duration": 2000,
+                  "sounds": [
+                    {"variant": 43, "code": "short_click_sound"},
+                    {"variant": 45, "code": "powder_prime_sound"},
+                    {"variant": 52, "code": "short_click_sound"}
+                  ]
+                },
+                {
+                  "code": "ready",
+                  "firstVariant": 54,
+                  "lastVariant": 60,
+                  "duration": 1000,
+                  "sounds": []
+                },
+                {"code": "fire", "firstVariant": 61, "lastVariant": 66, "duration": 300, "sounds": [{"variant": 61, "code": "fire_sound"}]},
+                {"code": "unload", "firstVariant": 2, "lastVariant": 2, "duration": 0},
+                {"code": "unprime", "firstVariant": 39, "lastVariant": 39, "duration": 0},
+                {"code": "unready", "firstVariant": 52, "lastVariant": 52, "duration": 0}
+              ]
+            }
+          },
+          {
+            "code": "transform_animation_system",
+            "class": "TransformAnimation",
+            "attributes": {
+              "animations": [
+                {
+                  "code": "load",
+                  "duration": 300,
+                  "fpTransform": {"translation": {"x": -2, "y": -2.5, "z": 0}, "rotation": {"x": 80, "y": 0, "z": 10}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 1},
+                  "tpTransform": {"translation": {"x": -0.2, "y": -0.2, "z": 0.6}, "rotation": {"x": 90, "y": -90, "z": -90}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 1}
+                },
+                {
+                  "code": "prime",
+                  "duration": 200,
+                  "fpTransform": {"translation": {"x": -0.3, "y": 0.2, "z": 0}, "rotation": {"x": 5, "y": 0, "z": 20}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 1},
+                  "tpTransform": {"translation": {"x": 0, "y": 0, "z": 0}, "rotation": {"x": 0, "y": 0, "z": 0}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 1}
+                },
+                {
+                  "code": "aim",
+                  "duration": 200,
+                  "fpTransform": {"translation": {"x": -0.5, "y": 0.5, "z": 0}, "rotation": {"x": 0, "y": 0, "z": 0}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 1},
+                  "tpTransform": {"translation": {"x": 0.2, "y": 0.5, "z": 0.2}, "rotation": {"x": 105, "y": 90, "z": -90}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 1}
+                }
+              ]
+            }
+          },
+          {
+            "code": "requirement_system",
+            "class": "Requirements",
+            "attributes": {
+              "requirementSets": [
+                {"code": "load", "requirements": [{"code": "powderflask", "amount": 1, "durability": 7}, {"code": "linenpatch", "amount": 1}]},
+                {"code": "prime", "requirements": [{"code": "powderflask", "amount": 1, "durability": 1}]},
+                {"code": "ready", "requirements": [{"code": "match-lit", "amount": 1, "durability": 0, "offhand": 1}]}
+              ]
+            }
+          },
+          {
+            "code": "particles_system",
+            "class": "Particles",
+            "attributes": {
+              "effects": [
+                {"code": "smoke_1", "type": "fireSmoke", "intensity": 1, "position": {"x": 0.1, "y": -0.1, "z": 2.5}, "velocity": {"x": 0, "y": 0, "z": 1}},
+                {"code": "smoke_2", "type": "fireSmoke", "intensity": 1, "position": {"x": 0.1, "y": -0.1, "z": 2}, "velocity": {"x": 0, "y": 0, "z": 2}},
+                {"code": "smoke_3", "type": "fireSmoke", "intensity": 0.5, "position": {"x": 0.1, "y": -0.1, "z": 1.3}, "velocity": {"x": 0, "y": 0, "z": 3}},
+                {"code": "fire_blast", "type": "fireBlast", "intensity": 0.5, "position": {"x": 0.1, "y": -0.1, "z": 1.3}, "velocity": {"x": 0, "y": 0, "z": 16}},
+                {"code": "smoke_small", "type": "fireSmoke", "intensity": 0.5, "position": {"x": 0.1, "y": -0.6, "z": 0.5}, "velocity": {"x": 0.1, "y": 0.3, "z": 0}}
+              ]
+            }
+          },
+          {"code": "player_stats_system", "class": "PlayerStats", "attributes": {}},
+          {"code": "player_animation_system", "class": "PlayerAnimation", "attributes": {}}
+        ],
+        "operations": [
+          {
+            "code": "load",
+            "class": "Delayed",
+            "attributes": {
+              "delay_ms": 7000,
+              "inputsToIntercept": [],
+              "inputsToHandle": {"initial": ["mouse_right_down"], "cancel": ["mouse_right_up", "handle_slot_change", "item_dropped"]},
+              "states": [{"initial": "unloaded", "cancel": "unloaded", "final": "loaded"}],
+              "systems": {
+                "initial": [
+                  {"code": "reload_system", "attributes": {"ammoCode": "bullet", "action": "take"}},
+                  {"code": "animation_system", "attributes": {"code": "load"}},
+                  {"code": "transform_animation_system", "attributes": {"code": "load", "mode": "forward"}},
+                  {"code": "requirement_system", "attributes": {"code": "load", "type": "check"}},
+                  {"code": "player_stats_system", "attributes": {"code": "walkspeed", "value": -0.6}}
+                ],
+                "cancel": [
+                  {"code": "reload_system", "attributes": {"ammoCode": "bullet", "action": "put"}},
+                  {"code": "animation_system", "attributes": {"code": "unload"}},
+                  {"code": "transform_animation_system", "attributes": {"code": "load", "mode": "backward", "duration": 200}},
+                  {"code": "player_stats_system", "attributes": {"code": "walkspeed", "value": 0}}
+                ],
+                "final": [
+                  {"code": "requirement_system", "attributes": {"code": "load", "type": "take"}},
+                  {"code": "transform_animation_system", "attributes": {"code": "load", "mode": "backward", "duration": 200}},
+                  {"code": "player_stats_system", "attributes": {"code": "walkspeed", "value": 0}}
+                ]
+              }
+            }
+          },
+          {
+            "code": "prime",
+            "class": "Delayed",
+            "attributes": {
+              "delay_ms": 2000,
+              "inputsToIntercept": [],
+              "inputsToHandle": {"initial": ["mouse_right_down"], "cancel": ["mouse_right_up", "handle_slot_change", "item_dropped"]},
+              "states": [{"initial": "loaded", "cancel": "loaded", "final": "primed"}],
+              "systems": {
+                "initial": [
+                  {"code": "animation_system", "attributes": {"code": "prime"}},
+                  {"code": "transform_animation_system", "attributes": {"code": "prime", "mode": "forward"}},
+                  {"code": "requirement_system", "attributes": {"code": "prime", "type": "check"}},
+                  {"code": "player_stats_system", "attributes": {"code": "walkspeed", "value": -0.5}}
+                ],
+                "cancel": [
+                  {"code": "animation_system", "attributes": {"code": "unprime"}},
+                  {"code": "transform_animation_system", "attributes": {"code": "prime", "mode": "backward", "duration": 100}},
+                  {"code": "player_stats_system", "attributes": {"code": "walkspeed", "value": 0}}
+                ],
+                "final": [
+                  {"code": "requirement_system", "attributes": {"code": "prime", "type": "take"}},
+                  {"code": "transform_animation_system", "attributes": {"code": "prime", "mode": "backward", "duration": 100}},
+                  {"code": "player_stats_system", "attributes": {"code": "walkspeed", "value": 0}}
+                ]
+              }
+            }
+          },
+          {
+            "code": "ready",
+            "class": "Delayed",
+            "attributes": {
+              "delay_ms": 1000,
+              "inputsToIntercept": [],
+              "inputsToHandle": {"initial": ["mouse_right_down_repeatable"], "cancel": ["mouse_right_up", "handle_slot_change", "item_dropped"]},
+              "states": [{"initial": "primed", "cancel": "primed", "final": "ready"}],
+              "systems": {
+                "initial": [
+                  {"code": "animation_system", "attributes": {"code": "ready"}},
+                  {"code": "requirement_system", "attributes": {"code": "ready", "type": "check"}},
+                  {"code": "player_stats_system", "attributes": {"code": "walkspeed", "value": -0.3}}
+                ],
+                "cancel": [
+                  {"code": "animation_system", "attributes": {"code": "unready"}},
+                  {"code": "player_stats_system", "attributes": {"code": "walkspeed", "value": 0}}
+                ],
+                "final": [
+                  {"code": "requirement_system", "attributes": {"code": "ready", "type": "take"}},
+                  {"code": "player_stats_system", "attributes": {"code": "walkspeed", "value": 0}}
+                ]
+              }
+            }
+          },
+          {
+            "code": "shoot",
+            "class": "Instant",
+            "attributes": {
+              "input": ["mouse_left_down"],
+              "inputsToIntercept": [],
+              "states": [{"initial": "ready", "final": "unloaded"}],
+              "systems": [
+                {"code": "shooting_system", "attributes": {}},
+                {"code": "animation_system", "attributes": {"code": "fire"}},
+                {"code": "particles_system", "attributes": {"effects": ["smoke_1", "smoke_2", "smoke_3", "smoke_small", "fire_blast"]}}
+              ]
+            }
+          },
+          {
+            "code": "unready",
+            "class": "Instant",
+            "attributes": {
+              "input": ["handle_slot_change", "item_dropped"],
+              "inputsToIntercept": [],
+              "states": [{"initial": "ready", "final": "primed"}],
+              "systems": [
+                {"code": "transform_animation_system", "attributes": {"code": "aim", "mode": "backward", "duration": 10}},
+                {"code": "aiming_system", "attributes": {"action": "stop"}},
+                {"code": "player_stats_system", "attributes": {"code": "walkspeed", "value": 0}},
+                {"code": "player_animation_system", "attributes": {"code": "bowaim", "type": "stop"}},
+                {"code": "animation_system", "attributes": {"code": "unready"}}
+              ]
+            }
+          },
+          {
+            "code": "aim",
+            "class": "Instant",
+            "attributes": {
+              "input": ["mouse_right_down_repeatable"],
+              "inputsToIntercept": [],
+              "states": [{"initial": "ready", "final": "ready"}],
+              "systems": [
+                {"code": "transform_animation_system", "attributes": {"code": "aim", "mode": "forward"}},
+                {"code": "aiming_system", "attributes": {"action": "start"}},
+                {"code": "player_stats_system", "attributes": {"code": "walkspeed", "value": -0.1}},
+                {"code": "player_animation_system", "attributes": {"code": "bowaim", "type": "start"}}
+              ]
+            }
+          },
+          {
+            "code": "ease",
+            "class": "Instant",
+            "attributes": {
+              "input": ["mouse_right_up", "handle_slot_change", "item_dropped"],
+              "inputsToIntercept": [],
+              "states": [{"initial": "ready", "final": "ready"}],
+              "systems": [
+                {"code": "transform_animation_system", "attributes": {"code": "aim", "mode": "backward", "duration": 100}},
+                {"code": "aiming_system", "attributes": {"action": "stop"}},
+                {"code": "player_stats_system", "attributes": {"code": "walkspeed", "value": 0}},
+                {"code": "player_animation_system", "attributes": {"code": "bowaim", "type": "stop"}},
+              ]
+            }
+          },
+          {
+            "code": "put_match_away",
+            "class": "Instant",
+            "attributes": {
+              "input": ["mouse_right_up", "handle_slot_change", "item_dropped"],
+              "inputsToIntercept": [],
+              "states": [{"initial": "unloaded", "final": "unloaded"}],
+              "systems": [
+                {"code": "transform_animation_system", "attributes": {"code": "aim", "mode": "backward", "duration": 100}},
+                {"code": "aiming_system", "attributes": {"action": "stop"}},
+                {"code": "player_stats_system", "attributes": {"code": "walkspeed", "value": 0}},
+                {"code": "player_animation_system", "attributes": {"code": "bowaim", "type": "stop"}},
+                {"code": "animation_system", "attributes": {"code": "unload"}}
+              ]
+            }
+          }
+        ],
+        "inputs": [
+          {"code": "handle_slot_change", "class": "SlotChange", "attributes": {"type": "handle"}},
+          {"code": "mouse_right_down", "class": "MouseKey", "attributes": {"key": "Right", "type": "pressed"}},
+          {"code": "mouse_right_down_repeatable", "class": "MouseKey", "attributes": {"key": "Right", "type": "pressed", "repeat": true}},
+          {"code": "mouse_right_up", "class": "MouseKey", "attributes": {"key": "Right", "type": "released"}},
+          {"code": "mouse_left_down", "class": "MouseKey", "attributes": {"key": "Left", "type": "pressed"}},
+          {"code": "item_dropped", "class": "ItemDropped", "attributes": {"handle": false}}
+        ]
+      }
     }
   ],
   "attributes": {
-    "projectile": "bullet",
-    "damage": 20,
-    "velocityMultiplier": 1.6,
-    "dispersionMOA": 120,
-    "loadedStage": 3,
-    "firingStage": 4,
-    "firedVariant": 66,
-    "readyVariant": 4,
-    "muzzlePosition": {"x": 0, "y": -0.3, "z": 0.1},
-    "aimingTransform": {
-      "fpTransform": {"translation": {"x": -0.5, "y": 0.5, "z": 0}, "rotation": {"x": 0, "y": 0, "z": 0}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 1},
-      "tpTransform": {"translation": {"x": 0.2, "y": 0.5, "z": 0.2}, "rotation": {"x": 105, "y": 90, "z": -90}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 1}
-    },
-    "aimingDuration": 0.4,
-    "aimingWalkspeed": -0.2,
-    "particleEffects": [
-      {"type": "fireSmoke", "intensity": 1, "position": {"x": 0.1, "y": -0.1, "z": 2.5}, "velocity": {"x": 0, "y": 0, "z": 1}},
-      {"type": "fireSmoke", "intensity": 1, "position": {"x": 0.1, "y": -0.1, "z": 2}, "velocity": {"x": 0, "y": 0, "z": 2}},
-      {"type": "fireSmoke", "intensity": 0.5, "position": {"x": 0.1, "y": -0.1, "z": 1.3}, "velocity": {"x": 0, "y": 0, "z": 3}},
-      {"type": "fireBlast", "intensity": 0.5, "position": {"x": 0.1, "y": -0.1, "z": 1.3}, "velocity": {"x": 0, "y": 0, "z": 16}},
-      {"type": "fireSmoke", "intensity": 0.5, "position": {"x": 0.1, "y": -0.6, "z": 0.5}, "velocity": {"x": 0.1, "y": 0.3, "z": 0}}
-    ],
-    "operationStages": [
-      {
-        "name": "reload",
-        "lengthInSeconds": 7,
-        "firstVariant": 5,
-        "lastVariant": 39,
-        "walkspeed": -0.7,
-        "interruptInteraction": false,
-        "advanceReloadState": true,
-        "requirements": [{"code": "powderflask", "amount": 1, "durability": 7}, {"code": "bullet", "amount": 1}, {"code": "linenpatch", "amount": 1}]
-      },
-      {
-        "name": "priming",
-        "lengthInSeconds": 2,
-        "firstVariant": 40,
-        "lastVariant": 53,
-        "walkspeed": -0.5,
-        "interruptInteraction": true,
-        "advanceReloadState": true,
-        "requirements": [{"code": "powderflask", "amount": 1, "durability": 1}]
-      },
-      {
-        "name": "cocking",
-        "lengthInSeconds": 1,
-        "firstVariant": 54,
-        "lastVariant": 60,
-        "walkspeed": -0.3,
-        "interruptInteraction": false,
-        "advanceReloadState": false,
-        "requirements": [{"code": "match-lit", "amount": 1, "durability": 0, "offhand": 1}]
-      },
-      {"name": "firing", "lengthInSeconds": 0.3, "firstVariant": 61, "lastVariant": 66, "interruptInteraction": false, "advanceReloadState": false, "requirements": []}
-    ],
-    "operationSounds": {
-      "9": "powder-pour",
-      "13": "ramrod-get",
-      "16": "ramrod-push-once",
-      "25": "ramrod-push-multiple",
-      "35": "ramrod-putback",
-      "43": "short-click",
-      "45": "powder-prime",
-      "52": "short-click",
-      "61": "firing"
-    },
-    "operationModelTransformations": [
-      {
-        "start-animation": 5,
-        "start-hold": 8,
-        "stop-hold": 36,
-        "stop-animation": 39,
-        "fpTransform": {"translation": {"x": -2, "y": -2.5, "z": 0}, "rotation": {"x": 80, "y": 0, "z": 10}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 1},
-        "tpTransform": {"translation": {"x": -0.2, "y": -0.2, "z": 0.6}, "rotation": {"x": 90, "y": -90, "z": -90}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 1}
-      },
-      {
-        "start-animation": 40,
-        "start-hold": 41,
-        "stop-hold": 52,
-        "stop-animation": 53,
-        "fpTransform": {"translation": {"x": -0.3, "y": 0.2, "z": 0}, "rotation": {"x": 5, "y": 0, "z": 20}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 1},
-        "tpTransform": {"translation": {"x": 0, "y": 0, "z": 0}, "rotation": {"x": 0, "y": 0, "z": 0}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 1}
-      }
-    ],
-    "sounds": {
-      "firing": {
-        "volume": 4,
-        "range": 64,
-        "location": ["maltiezfirearms:sounds/arquebus/arquebus-fire-1", "maltiezfirearms:sounds/arquebus/arquebus-fire-2", "maltiezfirearms:sounds/arquebus/arquebus-fire-3"]
-      },
-      "ramrod-get": {"volume": 0.4, "range": 4, "location": ["maltiezfirearms:sounds/arquebus/ramrod-get"]},
-      "ramrod-push-once": {"volume": 0.4, "range": 4, "location": ["maltiezfirearms:sounds/arquebus/ramrod-push-once"]},
-      "ramrod-push-multiple": {"volume": 0.4, "range": 4, "location": ["maltiezfirearms:sounds/arquebus/ramrod-push-multiple"]},
-      "ramrod-putback": {"volume": 0.4, "range": 4, "location": ["maltiezfirearms:sounds/arquebus/ramrod-putback"]},
-      "powder-pour": {"volume": 0.4, "range": 4, "location": ["maltiezfirearms:sounds/arquebus/powder-pour"]},
-      "powder-prime": {"volume": 0.2, "range": 4, "location": ["maltiezfirearms:sounds/arquebus/powder-prime"]},
-      "short-click": {"volume": 0.6, "range": 4, "location": ["maltiezfirearms:sounds/arquebus/arquebus-short-click-2"]},
-      "short-drag": {"volume": 0.2, "range": 4, "location": ["maltiezfirearms:sounds/arquebus/arquebus-short-drag-reverse"]},
-      "short-drag-and-click": {"volume": 0.2, "range": 4, "location": ["maltiezfirearms:sounds/arquebus/arquebus-short-drag-and-click"]},
-      "long-drag-and-click": {"volume": 0.2, "range": 4, "location": ["maltiezfirearms:sounds/arquebus/arquebus-long-drag-and-click-2"]},
-      "long-drag-and-click-reverse": {"volume": 0.2, "range": 4, "location": ["maltiezfirearms:sounds/arquebus/arquebus-long-drag-and-click-reverse"]},
-      "arquebus-short-drag-and-click-and-creak": {"volume": 0.6, "range": 4, "location": ["maltiezfirearms:sounds/arquebus/arquebus-short-drag-and-click-and-creak"]}
-    },
     "toolrackTransform": {"translation": {"x": 0.9, "y": 0.55, "z": 0.5}, "rotation": {"x": 0, "y": 95, "z": -90}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 1.34},
     "groundStorageTransform": {"translation": {"x": 0.5, "y": 0.5, "z": 0.75}, "rotation": {"x": 105, "y": 1, "z": -121}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 0.81}
   },

@@ -18,7 +18,7 @@
       }
     },
     {
-      "name": "firearms.finitestatemachine",
+      "name": "FirearmsFiniteStateMachine",
       "properties": {
         "initialState": "unloaded",
         "systems": [
@@ -160,12 +160,12 @@
                 "cancel": [
                   {"code": "reload_system", "attributes": {"ammoCode": "bullet", "action": "put"}},
                   {"code": "animation_system", "attributes": {"code": "unload"}},
-                  {"code": "transform_animation_system", "attributes": {"code": "load", "mode": "backward", "duration": 100}},
+                  {"code": "transform_animation_system", "attributes": {"code": "load", "mode": "backward", "duration": 200}},
                   {"code": "player_stats_system", "attributes": {"code": "walkspeed", "value": 0}}
                 ],
                 "final": [
                   {"code": "requirement_system", "attributes": {"code": "load", "type": "take"}},
-                  {"code": "transform_animation_system", "attributes": {"code": "load", "mode": "backward", "duration": 100}},
+                  {"code": "transform_animation_system", "attributes": {"code": "load", "mode": "backward", "duration": 200}},
                   {"code": "player_stats_system", "attributes": {"code": "walkspeed", "value": 0}}
                 ]
               }

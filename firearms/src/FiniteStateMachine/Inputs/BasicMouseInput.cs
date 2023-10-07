@@ -15,18 +15,21 @@ namespace MaltiezFirearms.FiniteStateMachine.Inputs
         public const string altAttrName = "alt";
         public const string ctrlAttrName = "ctrl";
         public const string shiftAttrName = "shift";
+        public const string repeatAttrName = "repeat";
 
         private string mKey;
+        private bool mRepeatable;
         private EnumMouseButton mKeyEnum;
         private MouseEventType mType;
         private KeyPressModifiers mModifiers;
         private ICoreClientAPI mClientApi;
 
-        public override void Init(string name, JsonObject definition, CollectibleObject collectible, ICoreAPI api)
+        public override void Init(string code, JsonObject definition, CollectibleObject collectible, ICoreAPI api)
         {
-            base.Init(name, definition, collectible, api);
+            base.Init(code, definition, collectible, api);
 
             mKey = definition[keyAttrName].AsString();
+            mRepeatable = definition[repeatAttrName].AsBool(false);
             mKeyEnum = (EnumMouseButton)Enum.Parse(typeof(EnumMouseButton), mKey);
             switch (definition[keyPressTypeAttrName].AsString())
             {
@@ -72,6 +75,11 @@ namespace MaltiezFirearms.FiniteStateMachine.Inputs
         public string GetKey()
         {
             return mKey;
+        }
+
+        public bool IsRepeatable()
+        {
+            return mRepeatable;
         }
 
         protected bool ClientCheckModifiers()
