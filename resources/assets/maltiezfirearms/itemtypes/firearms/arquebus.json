@@ -18,7 +18,7 @@
       }
     },
     {
-      "name": "FirearmsFiniteStateMachine",
+      "name": "FiniteStateMachine",
       "properties": {
         "initialState": "unloaded",
         "systems": [
@@ -31,11 +31,7 @@
                   "code": "fire_sound",
                   "volume": 1,
                   "range": 64,
-                  "location": [
-                    "maltiezfirearms:sounds/arquebus/arquebus-fire-1",
-                    "maltiezfirearms:sounds/arquebus/arquebus-fire-2",
-                    "maltiezfirearms:sounds/arquebus/arquebus-fire-3"
-                  ]
+                  "location": ["maltiezfirearms:sounds/arquebus/arquebus-fire-1", "maltiezfirearms:sounds/arquebus/arquebus-fire-2", "maltiezfirearms:sounds/arquebus/arquebus-fire-3"]
                 },
                 {"code": "ramrod_take_sound", "volume": 1, "range": 32, "location": "maltiezfirearms:sounds/arquebus/ramrod-get"},
                 {"code": "ramrod_push_once_sound", "volume": 1, "range": 16, "location": "maltiezfirearms:sounds/arquebus/ramrod-push-once"},
@@ -74,19 +70,9 @@
                   "firstVariant": 40,
                   "lastVariant": 53,
                   "duration": 2000,
-                  "sounds": [
-                    {"variant": 43, "code": "short_click_sound"},
-                    {"variant": 45, "code": "powder_prime_sound"},
-                    {"variant": 52, "code": "short_click_sound"}
-                  ]
+                  "sounds": [{"variant": 43, "code": "short_click_sound"}, {"variant": 45, "code": "powder_prime_sound"}, {"variant": 52, "code": "short_click_sound"}]
                 },
-                {
-                  "code": "ready",
-                  "firstVariant": 54,
-                  "lastVariant": 60,
-                  "duration": 1000,
-                  "sounds": []
-                },
+                {"code": "ready", "firstVariant": 54, "lastVariant": 60, "duration": 1000, "sounds": []},
                 {"code": "fire", "firstVariant": 61, "lastVariant": 66, "duration": 300, "sounds": [{"variant": 61, "code": "fire_sound"}]},
                 {"code": "unload", "firstVariant": 2, "lastVariant": 2, "duration": 0},
                 {"code": "unprime", "firstVariant": 39, "lastVariant": 39, "duration": 0},
@@ -300,7 +286,7 @@
                 {"code": "aiming_system", "attributes": {"action": "stop"}},
                 {"code": "no_sway_system", "attributes": {"action": "stop"}},
                 {"code": "player_stats_system", "attributes": {"code": "walkspeed", "value": 0}},
-                {"code": "player_animation_system", "attributes": {"code": "bowaim", "type": "stop"}},
+                {"code": "player_animation_system", "attributes": {"code": "bowaim", "type": "stop"}}
               ]
             }
           },

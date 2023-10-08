@@ -1,10 +1,10 @@
 ﻿{
   "code": "musket",
-  "class": "Item",
+  "class": "FirearmsNoMelee",
   "creativeinventorybytype": {"musket-none": {"maltiezfirearms": ["*"]}, "musket-bayonet": {}},
   "damagedby": ["attacking"],
   "attackRangebytype": {"musket-none": 2.5, "musket-bayonet": 3.5},
-  "attackpowerbytype": {"musket-none": 1, "musket-bayonet": 4.5},
+  "attackpowerbytype": {"musket-none": 2, "musket-bayonet": 4.5},
   "tooltierbytype": {"musket-none": 0, "musket-bayonet": 5},
   "variantgroups": [{"code": "attachment", "states": ["none", "bayonet"]}],
   "maxstacksize": 1,
@@ -23,7 +23,7 @@
       }
     },
     {
-      "name": "FirearmsFiniteStateMachine",
+      "name": "FiniteStateMachine",
       "properties": {
         "initialState": "unloaded",
         "systems": [
@@ -90,6 +90,7 @@
             }
           },
           {"code": "reload_system", "class": "Reload", "attributes": {}},
+          {"code": "bayonet_holder_system", "class": "Reload", "attributes": {}},
           {"code": "aiming_system", "class": "Aiming", "attributes": {"duration": 700, "dispersionMin_MOA": 60, "dispersionMax_MOA": 900}},
           {"code": "shooting_system", "class": "Shooting", "attributes": {"reloadSystem": "reload_system", "aimingSystem": "aiming_system", "projectileVelocity": 3.2, "projectileDamage": 63}},
           {
@@ -143,7 +144,7 @@
                 {
                   "code": "load",
                   "duration": 700,
-                  "fpTransform": {"translation": {"x": -2, "y": -4.0, "z": 0}, "rotation": {"x": 80, "y": 0, "z": 10}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 1},
+                  "fpTransform": {"translation": {"x": -2, "y": -4, "z": 0}, "rotation": {"x": 80, "y": 0, "z": 10}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 1},
                   "tpTransform": {"translation": {"x": -0.5, "y": -0.3, "z": 0.6}, "rotation": {"x": 90, "y": -90, "z": -90}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 1}
                 },
                 {
@@ -186,7 +187,9 @@
           },
           {"code": "player_stats_system", "class": "PlayerStats", "attributes": {}},
           {"code": "player_animation_system", "class": "PlayerAnimation", "attributes": {}},
-          {"code": "no_sway_system", "class": "NoSway", "attributes": {}}
+          {"code": "no_sway_system", "class": "NoSway", "attributes": {}},
+          {"code": "attachment_system", "class": "ChangeGroup", "attributes": {}},
+          {"code": "melee_system", "class": "BasicMelee", "attributes": {}}
         ],
         "operations": [
           {
@@ -254,6 +257,25 @@
             }
           },
           {
+            "code": "melee",
+            "class": "Delayed",
+            "attributes": {
+              "delay_ms": 1200,
+              "inputsToIntercept": [],
+              "inputsToHandle": {"initial": ["Weapon melee attack"], "cancel": ["handle_slot_change", "item_dropped"]},
+              "states": [
+                {"initial": "loaded", "cancel": "loaded", "final": "loaded"},
+                {"initial": "primed", "cancel": "primed", "final": "primed"},
+                {"initial": "unloaded", "cancel": "unloaded", "final": "unloaded"}
+              ],
+              "systems": {
+                "initial": [{"code": "melee_system", "attributes": {"action": "start"}}],
+                "cancel": [{"code": "melee_system", "attributes": {"action": "stop"}}],
+                "final": [{"code": "melee_system", "attributes": {"action": "stop"}}]
+              }
+            }
+          },
+          {
             "code": "shoot",
             "class": "Instant",
             "attributes": {
@@ -298,6 +320,32 @@
                 {"code": "player_animation_system", "attributes": {"code": "bowaim", "type": "stop"}}
               ]
             }
+          },
+          {
+            "code": "attach",
+            "class": "Instant",
+            "attributes": {
+              "input": ["Attach bayonet"],
+              "inputsToIntercept": [],
+              "states": [{"initial": "primed", "final": "primed"}, {"initial": "unloaded", "final": "unloaded"}, {"initial": "loaded", "final": "loaded"}],
+              "systems": [
+                {"code": "attachment_system", "attributes": {"group": "attachment", "value": "bayonet"}},
+                {"code": "bayonet_holder_system", "attributes": {"ammoCode": "bayonet", "action": "take"}}
+              ]
+            }
+          },
+          {
+            "code": "deattach",
+            "class": "Instant",
+            "attributes": {
+              "input": ["Deattach bayonet"],
+              "inputsToIntercept": [],
+              "states": [{"initial": "primed", "final": "primed"}, {"initial": "unloaded", "final": "unloaded"}, {"initial": "loaded", "final": "loaded"}],
+              "systems": [
+                {"code": "attachment_system", "attributes": {"group": "attachment", "value": "none"}},
+                {"code": "bayonet_holder_system", "attributes": {"ammoCode": "bayonet", "action": "put"}}
+              ]
+            }
           }
         ],
         "inputs": [
@@ -305,7 +353,10 @@
           {"code": "mouse_right_down", "class": "MouseKey", "attributes": {"key": "Right", "type": "pressed"}},
           {"code": "mouse_right_up", "class": "MouseKey", "attributes": {"key": "Right", "type": "released"}},
           {"code": "mouse_left_down", "class": "MouseKey", "attributes": {"key": "Left", "type": "pressed"}},
-          {"code": "item_dropped", "class": "ItemDropped", "attributes": {"handle": false}}
+          {"code": "item_dropped", "class": "ItemDropped", "attributes": {"handle": false}},
+          {"code": "Weapon melee attack", "class": "Hotkey", "attributes": {"key": "R", "type": "pressed"}},
+          {"code": "Attach bayonet", "class": "Hotkey", "attributes": {"key": "B", "type": "pressed"}},
+          {"code": "Deattach bayonet", "class": "Hotkey", "attributes": {"key": "B", "type": "pressed", "shift": true}}
         ]
       }
     }

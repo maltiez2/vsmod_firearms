@@ -1,9 +1,12 @@
 ﻿{
   "code": "carbine",
-  "class": "Item",
+  "class": "FirearmsNoMelee",
   "creativeinventory": {"maltiezfirearms": ["*"]},
   "maxstacksize": 1,
   "durability": 700,
+  "damagedby": ["attacking"],
+  "attackRange": 2,
+  "attackpower": 1.5,
   "tool": "bow",
   "rackable": true,
   "behaviors": [
@@ -18,7 +21,7 @@
       }
     },
     {
-      "name": "FirearmsFiniteStateMachine",
+      "name": "FiniteStateMachine",
       "properties": {
         "initialState": "unloaded",
         "systems": [
@@ -178,7 +181,8 @@
           },
           {"code": "player_stats_system", "class": "PlayerStats", "attributes": {}},
           {"code": "player_animation_system", "class": "PlayerAnimation", "attributes": {}},
-          {"code": "no_sway_system", "class": "NoSway", "attributes": {}}
+          {"code": "no_sway_system", "class": "NoSway", "attributes": {}},
+          {"code": "melee_system", "class": "BasicMelee", "attributes": {}}
         ],
         "operations": [
           {
@@ -246,6 +250,25 @@
             }
           },
           {
+            "code": "melee",
+            "class": "Delayed",
+            "attributes": {
+              "delay_ms": 1200,
+              "inputsToIntercept": [],
+              "inputsToHandle": {"initial": ["melee"], "cancel": ["handle_slot_change", "item_dropped"]},
+              "states": [
+                {"initial": "loaded", "cancel": "loaded", "final": "loaded"},
+                {"initial": "primed", "cancel": "primed", "final": "primed"},
+                {"initial": "unloaded", "cancel": "unloaded", "final": "unloaded"}
+              ],
+              "systems": {
+                "initial": [{"code": "melee_system", "attributes": {"action": "start"}}],
+                "cancel": [{"code": "melee_system", "attributes": {"action": "stop"}}],
+                "final": [{"code": "melee_system", "attributes": {"action": "stop"}}]
+              }
+            }
+          },
+          {
             "code": "shoot",
             "class": "Instant",
             "attributes": {
@@ -297,6 +320,7 @@
           {"code": "mouse_right_down", "class": "MouseKey", "attributes": {"key": "Right", "type": "pressed"}},
           {"code": "mouse_right_up", "class": "MouseKey", "attributes": {"key": "Right", "type": "released"}},
           {"code": "mouse_left_down", "class": "MouseKey", "attributes": {"key": "Left", "type": "pressed"}},
+          {"code": "melee", "class": "Key", "attributes": {"key": "R", "type": "pressed"}},
           {"code": "item_dropped", "class": "ItemDropped", "attributes": {"handle": false}}
         ]
       }

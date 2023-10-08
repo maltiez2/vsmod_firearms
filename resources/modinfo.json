@@ -6,7 +6,8 @@
   "description": "Black powder firearms. Beta version.",
   "version": "0.2.0",
   "dependencies": {
-    "game": "1.18.8-rc.1",
-    "survival": "1.18.8-rc.1"
+    "game": "1.18.8",
+    "survival": "1.18.8",
+    "fsmlib": "0.1.0"
   }
 }

@@ -18,7 +18,7 @@
       }
     },
     {
-      "name": "FirearmsFiniteStateMachine",
+      "name": "FiniteStateMachine",
       "properties": {
         "initialState": "unloaded",
         "systems": [
@@ -45,7 +45,7 @@
                 {"code": "powder_prime_sound", "volume": 0.2, "range": 8, "location": "maltiezfirearms:sounds/pistol/powder-prime"},
                 {"code": "flint_raise_sound", "volume": 1, "range": 8, "location": "maltiezfirearms:sounds/pistol/flint-raise"},
                 {"code": "flint_set_sound", "volume": 1, "range": 8, "location": "maltiezfirearms:sounds/pistol/flint-set"},
-                {"code": "cocked_sound", "volume": 1, "range": 8, "location": "maltiezfirearms:sounds/pistol/cocked"},
+                {"code": "cocked_sound", "volume": 1, "range": 8, "location": "maltiezfirearms:sounds/pistol/cocked"}
               ]
             }
           },
