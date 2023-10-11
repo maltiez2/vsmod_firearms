@@ -255,7 +255,7 @@
             "attributes": {
               "delay_ms": 1200,
               "inputsToIntercept": [],
-              "inputsToHandle": {"initial": ["melee"], "cancel": ["handle_slot_change", "item_dropped"]},
+              "inputsToHandle": {"initial": ["Weapon melee attack"], "cancel": ["handle_slot_change", "item_dropped"]},
               "states": [
                 {"initial": "loaded", "cancel": "loaded", "final": "loaded"},
                 {"initial": "primed", "cancel": "primed", "final": "primed"},
@@ -320,7 +320,7 @@
           {"code": "mouse_right_down", "class": "MouseKey", "attributes": {"key": "Right", "type": "pressed"}},
           {"code": "mouse_right_up", "class": "MouseKey", "attributes": {"key": "Right", "type": "released"}},
           {"code": "mouse_left_down", "class": "MouseKey", "attributes": {"key": "Left", "type": "pressed"}},
-          {"code": "melee", "class": "Key", "attributes": {"key": "R", "type": "pressed"}},
+          {"code": "Weapon melee attack", "class": "Hotkey", "attributes": {"key": "R"}},
           {"code": "item_dropped", "class": "ItemDropped", "attributes": {"handle": false}}
         ]
       }

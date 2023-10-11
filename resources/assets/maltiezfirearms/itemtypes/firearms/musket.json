@@ -338,7 +338,7 @@
             "code": "deattach",
             "class": "Instant",
             "attributes": {
-              "input": ["Deattach bayonet"],
+              "input": ["Detach bayonet"],
               "inputsToIntercept": [],
               "states": [{"initial": "primed", "final": "primed"}, {"initial": "unloaded", "final": "unloaded"}, {"initial": "loaded", "final": "loaded"}],
               "systems": [
@@ -354,9 +354,9 @@
           {"code": "mouse_right_up", "class": "MouseKey", "attributes": {"key": "Right", "type": "released"}},
           {"code": "mouse_left_down", "class": "MouseKey", "attributes": {"key": "Left", "type": "pressed"}},
           {"code": "item_dropped", "class": "ItemDropped", "attributes": {"handle": false}},
-          {"code": "Weapon melee attack", "class": "Hotkey", "attributes": {"key": "R", "type": "pressed"}},
-          {"code": "Attach bayonet", "class": "Hotkey", "attributes": {"key": "B", "type": "pressed"}},
-          {"code": "Deattach bayonet", "class": "Hotkey", "attributes": {"key": "B", "type": "pressed", "shift": true}}
+          {"code": "Weapon melee attack", "class": "Hotkey", "attributes": {"key": "R"}},
+          {"code": "Attach bayonet", "class": "Hotkey", "attributes": {"key": "B"}},
+          {"code": "Detach bayonet", "class": "Hotkey", "attributes": {"key": "B", "shift": true}}
         ]
       }
     }
