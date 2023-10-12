@@ -8,6 +8,6 @@
 		},
 		width: 3,
 		height: 1,
-		output: { type: "item", code: "maltiezfirearms:powderflask" }
+		output: { type: "item", code: "maltiezfirearms:powderflask-initial" }
 	}
 ]

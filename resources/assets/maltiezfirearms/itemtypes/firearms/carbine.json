@@ -161,8 +161,8 @@
             "class": "Requirements",
             "attributes": {
               "requirementSets": [
-                {"code": "load", "requirements": [{"code": "powderflask", "amount": 1, "durability": 11}, {"code": "linenpatch", "amount": 1}]},
-                {"code": "prime", "requirements": [{"code": "powderflask", "amount": 1, "durability": 1}]}
+                {"code": "load", "requirements": [{"code": "powderflask-ready", "durability": 11}, {"code": "linenpatch"}]},
+                {"code": "prime", "requirements": [{"code": "powderflask-ready", "durability": 1}]}
               ]
             }
           },
@@ -182,7 +182,21 @@
           {"code": "player_stats_system", "class": "PlayerStats", "attributes": {}},
           {"code": "player_animation_system", "class": "PlayerAnimation", "attributes": {}},
           {"code": "no_sway_system", "class": "NoSway", "attributes": {}},
-          {"code": "melee_system", "class": "BasicMelee", "attributes": {}}
+          {
+            "code": "melee_system",
+            "class": "BasicMelee",
+            "attributes": {
+              "windUp_ms": 450,
+              "strike_ms": 150,
+              "easeOff_ms": 500,
+              "fpWindUp": {"translation": {"x": 0, "y": 0.5, "z": 0.5}, "rotation": {"x": 180, "y": 0, "z": 0}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 1},
+              "fpStrike": {"translation": {"x": -0.5, "y": 0.2, "z": -2}, "rotation": {"x": 170, "y": 0, "z": -30}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 1},
+              "tpWindUp": {"translation": {"x": 0, "y": 1, "z": -0.5}, "rotation": {"x": 90, "y": -180, "z": -90}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 1},
+              "tpStrike": {"translation": {"x": 0, "y": 0.5, "z": -2}, "rotation": {"x": 90, "y": -180, "z": -90}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 1},
+              "flipTpAxles": true
+            }
+          },
+          {"code": "durability_system", "class": "DurabilityDamage", "attributes": {}}
         ],
         "operations": [
           {
@@ -278,7 +292,8 @@
               "systems": [
                 {"code": "shooting_system", "attributes": {}},
                 {"code": "animation_system", "attributes": {"code": "fire"}},
-                {"code": "particles_system", "attributes": {"effects": ["smoke_1", "smoke_2", "smoke_3", "smoke_small", "fire_blast"]}}
+                {"code": "particles_system", "attributes": {"effects": ["smoke_1", "smoke_2", "smoke_3", "smoke_small", "fire_blast"]}},
+                {"code": "durability_system", "attributes": {}}
               ]
             }
           },
@@ -302,7 +317,7 @@
             "code": "ease",
             "class": "Instant",
             "attributes": {
-              "input": ["mouse_right_up", "handle_slot_change", "item_dropped"],
+              "input": ["mouse_right_up_not_handle", "handle_slot_change", "item_dropped"],
               "inputsToIntercept": [],
               "states": [{"initial": "primed", "final": "primed"}, {"initial": "unloaded", "final": "unloaded"}],
               "systems": [
@@ -317,9 +332,10 @@
         ],
         "inputs": [
           {"code": "handle_slot_change", "class": "SlotChange", "attributes": {"type": "handle"}},
-          {"code": "mouse_right_down", "class": "MouseKey", "attributes": {"key": "Right", "type": "pressed"}},
-          {"code": "mouse_right_up", "class": "MouseKey", "attributes": {"key": "Right", "type": "released"}},
-          {"code": "mouse_left_down", "class": "MouseKey", "attributes": {"key": "Left", "type": "pressed"}},
+          {"code": "mouse_right_down", "class": "MouseKey", "attributes": {"key": "Right", "type": "pressed", "alt": false}},
+          {"code": "mouse_right_up", "class": "MouseKey", "attributes": {"key": "Right", "type": "released", "alt": false}},
+          {"code": "mouse_left_down", "class": "MouseKey", "attributes": {"key": "Left", "type": "pressed", "alt": false}},
+          {"code": "mouse_right_up_not_handle", "class": "MouseKey", "attributes": {"key": "Right", "type": "released", "alt": false, "handle": false}},
           {"code": "Weapon melee attack", "class": "Hotkey", "attributes": {"key": "R"}},
           {"code": "item_dropped", "class": "ItemDropped", "attributes": {"handle": false}}
         ]

@@ -10,7 +10,7 @@
 	"item-wetpowder": "Mokry proch strzelniczy (WIP)",
 	"item-coarsepowder": "Gruby proch strzelniczy (WIP)",
 	"item-gunpowder": "Proch strzelniczy",
-	"item-powderflask": "Flaszka z prochem",
+	"item-powderflask-*": "Flaszka z prochem",
 	"item-cockinglever": "Dźwignia nakręcająca",
 	"item-match-lit": "Zapałka (zapalona)",
 	"item-match-*": "Zapałka",

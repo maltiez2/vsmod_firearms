@@ -10,7 +10,7 @@
   "item-wetpowder": "Wet blasting powder (WIP)",
   "item-coarsepowder": "Coarse powder (WIP)",
   "item-gunpowder": "Gunpowder",
-  "item-powderflask": "Powder flask",
+  "item-powderflask-*": "Powder flask",
   "item-cockinglever": "Cocking lever",
   "item-match-lit": "Match (lit)",
   "item-match-*": "Match",

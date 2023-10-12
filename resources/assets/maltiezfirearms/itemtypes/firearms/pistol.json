@@ -1,9 +1,12 @@
 ﻿{
   "code": "pistol",
-  "class": "Item",
+  "class": "FirearmsNoMelee",
   "creativeinventory": {"maltiezfirearms": ["*"]},
   "maxstacksize": 1,
   "durability": 300,
+  "damagedby": ["attacking"],
+  "attackRange": 1,
+  "attackpower": 0.5,
   "tool": "bow",
   "rackable": true,
   "behaviors": [
@@ -119,8 +122,8 @@
             "class": "Requirements",
             "attributes": {
               "requirementSets": [
-                {"code": "load", "requirements": [{"code": "powderflask", "amount": 1, "durability": 3}, {"code": "linenpatch", "amount": 1}]},
-                {"code": "prime", "requirements": [{"code": "powderflask", "amount": 1, "durability": 1}, {"code": "cockinglever", "amount": 1, "durability": 0}]}
+                {"code": "load", "requirements": [{"code": "powderflask-ready", "durability": 3}, {"code": "linenpatch"}]},
+                {"code": "prime", "requirements": [{"code": "powderflask-ready", "durability": 1}]}
               ]
             }
           },
@@ -139,7 +142,23 @@
           },
           {"code": "player_stats_system", "class": "PlayerStats", "attributes": {}},
           {"code": "player_animation_system", "class": "PlayerAnimation", "attributes": {}},
-          {"code": "no_sway_system", "class": "NoSway", "attributes": {}}
+          {"code": "no_sway_system", "class": "NoSway", "attributes": {}},
+          {"code": "cocking_lever_system", "class": "Reload", "attributes": {}},
+          {"code": "durability_system", "class": "DurabilityDamage", "attributes": {}},
+          {
+            "code": "melee_system",
+            "class": "BasicMelee",
+            "attributes": {
+              "windUp_ms": 450,
+              "strike_ms": 150,
+              "easeOff_ms": 500,
+              "fpWindUp": {"translation": {"x": 0, "y": 0.5, "z": 0.5}, "rotation": {"x": 180, "y": 0, "z": 0}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 1},
+              "fpStrike": {"translation": {"x": -0.5, "y": 0.2, "z": -1}, "rotation": {"x": 170, "y": 0, "z": -30}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 1},
+              "tpWindUp": {"translation": {"x": 0, "y": 1, "z": 0}, "rotation": {"x": 90, "y": -180, "z": -90}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 1},
+              "tpStrike": {"translation": {"x": 0, "y": 0.5, "z": -1}, "rotation": {"x": 90, "y": -180, "z": -90}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 1},
+              "flipTpAxles": true
+            }
+          }
         ],
         "operations": [
           {
@@ -187,6 +206,7 @@
                 "initial": [
                   {"code": "animation_system", "attributes": {"code": "prime"}},
                   {"code": "no_sway_system", "attributes": {"action": "start"}},
+                  {"code": "cocking_lever_system", "attributes": {"ammoCode": "cockinglever", "action": "take", "offHand": true}},
                   {"code": "transform_animation_system", "attributes": {"code": "prime", "mode": "forward"}},
                   {"code": "requirement_system", "attributes": {"code": "prime", "type": "check"}},
                   {"code": "player_stats_system", "attributes": {"code": "walkspeed", "value": -0.3}}
@@ -194,12 +214,14 @@
                 "cancel": [
                   {"code": "animation_system", "attributes": {"code": "unprime"}},
                   {"code": "no_sway_system", "attributes": {"action": "stop"}},
+                  {"code": "cocking_lever_system", "attributes": {"action": "put", "offHand": true}},
                   {"code": "transform_animation_system", "attributes": {"code": "prime", "mode": "backward", "duration": 100}},
                   {"code": "player_stats_system", "attributes": {"code": "walkspeed", "value": 0}}
                 ],
                 "final": [
                   {"code": "requirement_system", "attributes": {"code": "prime", "type": "take"}},
                   {"code": "no_sway_system", "attributes": {"action": "stop"}},
+                  {"code": "cocking_lever_system", "attributes": {"action": "put", "offHand": true}},
                   {"code": "transform_animation_system", "attributes": {"code": "prime", "mode": "backward", "duration": 100}},
                   {"code": "player_stats_system", "attributes": {"code": "walkspeed", "value": 0}}
                 ]
@@ -216,6 +238,7 @@
               "systems": [
                 {"code": "shooting_system", "attributes": {}},
                 {"code": "animation_system", "attributes": {"code": "fire"}},
+                {"code": "durability_system", "attributes": {}},
                 {"code": "particles_system", "attributes": {"effects": ["smoke_1", "smoke_2", "smoke_3", "smoke_small", "fire_blast"]}}
               ]
             }
@@ -240,7 +263,7 @@
             "code": "ease",
             "class": "Instant",
             "attributes": {
-              "input": ["mouse_right_up", "handle_slot_change", "item_dropped"],
+              "input": ["mouse_right_up_not_handle", "handle_slot_change", "item_dropped"],
               "inputsToIntercept": [],
               "states": [{"initial": "primed", "final": "primed"}, {"initial": "unloaded", "final": "unloaded"}],
               "systems": [
@@ -251,13 +274,34 @@
                 {"code": "player_animation_system", "attributes": {"code": "bowaim", "type": "stop"}}
               ]
             }
+          },
+          {
+            "code": "melee",
+            "class": "Delayed",
+            "attributes": {
+              "delay_ms": 1200,
+              "inputsToIntercept": [],
+              "inputsToHandle": {"initial": ["Weapon melee attack"], "cancel": ["handle_slot_change", "item_dropped"]},
+              "states": [
+                {"initial": "loaded", "cancel": "loaded", "final": "loaded"},
+                {"initial": "primed", "cancel": "primed", "final": "primed"},
+                {"initial": "unloaded", "cancel": "unloaded", "final": "unloaded"}
+              ],
+              "systems": {
+                "initial": [{"code": "melee_system", "attributes": {"action": "start"}}],
+                "cancel": [{"code": "melee_system", "attributes": {"action": "stop"}}],
+                "final": [{"code": "melee_system", "attributes": {"action": "stop"}}]
+              }
+            }
           }
         ],
         "inputs": [
           {"code": "handle_slot_change", "class": "SlotChange", "attributes": {"type": "handle"}},
-          {"code": "mouse_right_down", "class": "MouseKey", "attributes": {"key": "Right", "type": "pressed"}},
-          {"code": "mouse_right_up", "class": "MouseKey", "attributes": {"key": "Right", "type": "released"}},
-          {"code": "mouse_left_down", "class": "MouseKey", "attributes": {"key": "Left", "type": "pressed"}},
+          {"code": "mouse_right_down", "class": "MouseKey", "attributes": {"key": "Right", "type": "pressed", "alt": false}},
+          {"code": "mouse_right_up", "class": "MouseKey", "attributes": {"key": "Right", "type": "released", "alt": false}},
+          {"code": "mouse_left_down", "class": "MouseKey", "attributes": {"key": "Left", "type": "pressed", "alt": false}},
+          {"code": "mouse_right_up_not_handle", "class": "MouseKey", "attributes": {"key": "Right", "type": "released", "alt": false, "handle": false}},
+          {"code": "Weapon melee attack", "class": "Hotkey", "attributes": {"key": "R"}},
           {"code": "item_dropped", "class": "ItemDropped", "attributes": {"handle": false}}
         ]
       }
