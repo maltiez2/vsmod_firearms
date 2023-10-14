@@ -4,7 +4,6 @@
   "maxstacksize": 1,
   "shape": {"base": "powder/powderflask"},
   "durability": 256,
-  "storageFlags": 257,
   "creativeinventory": {"maltiezfirearms": ["*"]},
   "variantgroups": [{"code": "state", "states": ["initial", "ready"]}],
   "behaviors": [
@@ -12,28 +11,49 @@
       "name": "FiniteStateMachine",
       "properties": {
         "initialState": "initial_state",
-        "inputs": [{"code": "Load powder flask", "class": "Hotkey", "attributes": {"key": "R"}}],
+        "inputs": [
+          {"code": "load", "class": "Hotkey", "attributes": {"key": "R", "name": "maltiezfirearms:flask-refill"}},
+          {"code": "handle_slot_change", "class": "SlotChange", "attributes": {"type": "handle"}},
+          {"code": "item_dropped", "class": "ItemDropped", "attributes": {"handle": false}}
+        ],
         "systems": [
           {"code": "requirement_system", "class": "Requirements", "attributes": {"requirementSets": [{"code": "gunpowder", "requirements": [{"code": "gunpowder", "amount": 1}]}]}},
           {"code": "durability_system", "class": "Durability", "attributes": {}},
-          {"code": "variants_system", "class": "ChangeGroup", "attributes": {}}
+          {"code": "variants_system", "class": "ChangeGroup", "attributes": {}},
+          {
+            "code": "sound_system",
+            "class": "Sound",
+            "attributes": {
+              "sounds": [
+                {"code": "powder_pour", "volume": 0.5, "range": 8, "location": "maltiezfirearms:sounds/powder/powder-prime"}
+              ]
+            }
+          }
         ],
         "operations": [
           {
             "code": "load",
-            "class": "Instant",
+            "class": "Delayed",
             "attributes": {
-              "input": "Load powder flask",
-              "inputsToIntercept": [],
-              "states": [{"initial": "loadable_state", "final": "loadable_state"}],
-              "systems": [{"code": "requirement_system", "attributes": {"code": "gunpowder", "type": "take"}}, {"code": "durability_system", "attributes": {"value": 8}}]
+              "delay_ms": 500,
+              "inputsToHandle": {"initial": ["load"], "cancel": ["handle_slot_change", "item_dropped"]},
+              "states": [{"initial": "loadable_state", "cancel": "loadable_state", "final": "loadable_state"}],
+              "systems": {
+                "initial": [
+                  {"code": "requirement_system", "attributes": {"code": "gunpowder", "type": "take"}},
+                  {"code": "durability_system", "attributes": {"value": 8}},
+                  {"code": "sound_system", "attributes": {"code": "powder_pour"}}
+                ],
+                "cancel": [],
+                "final": []
+              }
             }
           },
           {
             "code": "init",
             "class": "Instant",
             "attributes": {
-              "input": "Load powder flask",
+              "input": "load",
               "inputsToIntercept": [],
               "states": [{"initial": "initial_state", "final": "loadable_state"}],
               "systems": [{"code": "durability_system", "attributes": {"value": -256}}, {"code": "variants_system", "attributes": {"group": "state", "value": "ready"}}]

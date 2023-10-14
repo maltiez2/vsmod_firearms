@@ -29,9 +29,7 @@
         }
       }
     ],
-    "*": [
-      {"name": "GroundStorable", "properties": {"layout": "Quadrants", "placeRemoveSound": "sounds/player/build", "collisionBox": {"x1": 0, "y1": 0, "z1": 0, "x2": 1, "y2": 0.1, "z2": 1}}}
-    ]
+    "*": [{"name": "GroundStorable", "properties": {"layout": "Quadrants", "placeRemoveSound": "sounds/player/build", "collisionBox": {"x1": 0, "y1": 0, "z1": 0, "x2": 1, "y2": 0.1, "z2": 1}}}]
   },
   "storageFlags": 257,
   "variantgroups": [{"code": "state", "states": ["unlit", "lit", "extinct"]}],

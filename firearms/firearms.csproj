@@ -60,4 +60,8 @@
   <Content Remove="..\resources\assets\maltiezfirearms\itemtypes\standNetwork.json" />
 </ItemGroup>
 
+<ItemGroup>
+  <Folder Include="src\" />
+</ItemGroup>
+
 </Project>

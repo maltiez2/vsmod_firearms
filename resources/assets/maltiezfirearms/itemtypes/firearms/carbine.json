@@ -1,6 +1,6 @@
 ﻿{
   "code": "carbine",
-  "class": "FirearmsNoMelee",
+  "class": "NoMelee",
   "creativeinventory": {"maltiezfirearms": ["*"]},
   "maxstacksize": 1,
   "durability": 700,
@@ -83,7 +83,7 @@
                 {"code": "ramrod_putback_sound", "volume": 1, "range": 8, "location": "maltiezfirearms:sounds/ramrod/ramrod-putback"},
                 {"code": "ramrod_take_sound", "volume": 1, "range": 8, "location": "maltiezfirearms:sounds/ramrod/ramrod-take"},
                 {"code": "powder_pour_long_sound", "volume": 1, "range": 8, "location": "maltiezfirearms:sounds/powder/powder-pour-long"},
-                {"code": "powder_prime_sound", "volume": 0.2, "range": 8, "location": "maltiezfirearms:sounds/powder/powder-prime"}
+                {"code": "powder_prime_sound", "volume": 0.5, "range": 8, "location": "maltiezfirearms:sounds/powder/powder-prime"}
               ]
             }
           },
@@ -161,8 +161,14 @@
             "class": "Requirements",
             "attributes": {
               "requirementSets": [
-                {"code": "load", "requirements": [{"code": "powderflask-ready", "durability": 11}, {"code": "linenpatch"}]},
-                {"code": "prime", "requirements": [{"code": "powderflask-ready", "durability": 1}]}
+                {"code": "load", "requirements": [
+                   {"code": "powderflask-ready", "durability": 11, "name": "maltiezfirearms:item-powderflask-ready"},
+                   {"code": "linenpatch", "name": "maltiezfirearms:item-linenpatch"}
+                 ]},
+                {"code": "prime", "requirements": [
+                   {"code": "powderflask-ready", "durability": 1, "name": "maltiezfirearms:item-powderflask-ready"}
+                 ]
+                }
               ]
             }
           },
@@ -209,7 +215,7 @@
               "states": [{"initial": "unloaded", "cancel": "unloaded", "final": "loaded"}],
               "systems": {
                 "initial": [
-                  {"code": "reload_system", "attributes": {"ammoCode": "slug", "action": "take"}},
+                  {"code": "reload_system", "attributes": {"ammoCode": "slug", "action": "take", "ammoName": "maltiezfirearms:item-slug"}},
                   {"code": "animation_system", "attributes": {"code": "load"}},
                   {"code": "no_sway_system", "attributes": {"action": "start"}},
                   {"code": "transform_animation_system", "attributes": {"code": "load", "mode": "forward"}},
@@ -269,16 +275,16 @@
             "attributes": {
               "delay_ms": 1200,
               "inputsToIntercept": [],
-              "inputsToHandle": {"initial": ["Weapon melee attack"], "cancel": ["handle_slot_change", "item_dropped"]},
+              "inputsToHandle": {"initial": ["melee_attack"], "cancel": ["handle_slot_change", "item_dropped"]},
               "states": [
                 {"initial": "loaded", "cancel": "loaded", "final": "loaded"},
                 {"initial": "primed", "cancel": "primed", "final": "primed"},
                 {"initial": "unloaded", "cancel": "unloaded", "final": "unloaded"}
               ],
               "systems": {
-                "initial": [{"code": "melee_system", "attributes": {"action": "start"}}],
-                "cancel": [{"code": "melee_system", "attributes": {"action": "stop"}}],
-                "final": [{"code": "melee_system", "attributes": {"action": "stop"}}]
+                "initial": [{"code": "no_sway_system", "attributes": {"action": "start"}}, {"code": "melee_system", "attributes": {"action": "start"}}],
+                "cancel": [{"code": "no_sway_system", "attributes": {"action": "start"}}, {"code": "melee_system", "attributes": {"action": "stop"}}],
+                "final": [{"code": "no_sway_system", "attributes": {"action": "start"}}, {"code": "melee_system", "attributes": {"action": "stop"}}]
               }
             }
           },
@@ -301,7 +307,7 @@
             "code": "aim",
             "class": "Instant",
             "attributes": {
-              "input": ["mouse_right_down"],
+              "input": ["mouse_right_down_aim"],
               "inputsToIntercept": [],
               "states": [{"initial": "primed", "final": "primed"}],
               "systems": [
@@ -332,11 +338,12 @@
         ],
         "inputs": [
           {"code": "handle_slot_change", "class": "SlotChange", "attributes": {"type": "handle"}},
-          {"code": "mouse_right_down", "class": "MouseKey", "attributes": {"key": "Right", "type": "pressed", "alt": false}},
+          {"code": "mouse_right_down", "class": "MouseKey", "attributes": {"key": "Right", "type": "pressed", "alt": false, "name": "maltiezfirearms:weapon-reload"}},
+          {"code": "mouse_right_down_aim", "class": "MouseKey", "attributes": {"key": "Right", "type": "pressed", "alt": false, "name": "maltiezfirearms:weapon-aim"}},
           {"code": "mouse_right_up", "class": "MouseKey", "attributes": {"key": "Right", "type": "released", "alt": false}},
-          {"code": "mouse_left_down", "class": "MouseKey", "attributes": {"key": "Left", "type": "pressed", "alt": false}},
+          {"code": "mouse_left_down", "class": "MouseKey", "attributes": {"key": "Left", "type": "pressed", "alt": false, "name": "maltiezfirearms:weapon-range-attack"}},
           {"code": "mouse_right_up_not_handle", "class": "MouseKey", "attributes": {"key": "Right", "type": "released", "alt": false, "handle": false}},
-          {"code": "Weapon melee attack", "class": "Hotkey", "attributes": {"key": "R"}},
+          {"code": "melee_attack", "class": "Hotkey", "attributes": {"key": "R", "name": "maltiezfirearms:weapon-melee-attack"}},
           {"code": "item_dropped", "class": "ItemDropped", "attributes": {"handle": false}}
         ]
       }
