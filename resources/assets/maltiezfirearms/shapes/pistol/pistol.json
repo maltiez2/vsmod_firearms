@@ -8,7 +8,14 @@
 	"textureHeight": 16,
 	"textureSizes": {
 	},
-	"textures": {},
+	"textures": {
+		"brass": "block/metal/plate/brass",
+		"tinbronze": "block/metal/plate/tinbronze",
+		"lead1": "block/metal/sheet-plain/lead1",
+		"rusty-iron2": "block/metal/tarnished/rusty-iron2",
+		"flint": "block/stone/flint",
+		"oak": "block/wood/debarked/oak"
+	},
 	"elements": [
 		{
 			"name": "Pistol",

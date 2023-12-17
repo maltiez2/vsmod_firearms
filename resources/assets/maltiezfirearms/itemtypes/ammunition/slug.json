@@ -6,8 +6,8 @@
   "shape": {"base": "maltiezfirearms:slug"},
   "creativeinventory": {"maltiezfirearms": ["*"]},
   "guiTransform": {"rotation": {"x": 66, "y": 0, "z": 45}, "origin": {"x": 0.6, "y": 0.6, "z": 0.6}, "scale": 4.1},
-  "fpHandTransform": {"translation": {"x": 0.15, "y": 0, "z": 0}, "rotation": {"x": 91, "y": 0, "z": -30}, "scale": 1.14},
+  "fpHandTransform": {"translation": {"x": 0.15, "y": 0, "z": 0}, "rotation": {"x": 91, "y": 0, "z": -30}, "scale": 2},
   "tpHandTransform": {"translation": {"x": -1.05, "y": -0.59, "z": -0.96}, "rotation": {"x": 0, "y": 2, "z": 3}, "scale": 0.48},
-  "groundTransform": {"translation": {"x": 0, "y": 0, "z": 0}, "rotation": {"x": 0, "y": 0, "z": 0}, "origin": {"x": 0.5, "y": 0.37, "z": 0.5}, "scale": 1.44},
+  "groundTransform": {"translation": {"x": 0, "y": 0, "z": 0}, "rotation": {"x": 0, "y": 0, "z": 0}, "origin": {"x": 0.5, "y": 0.37, "z": 0.5}, "scale": 3},
   "attributes": {"breakChanceOnImpact": 1}
 }

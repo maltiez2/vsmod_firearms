@@ -1,13 +1,13 @@
-[
+﻿[
   {
-		ingredientPattern: "ABC",
-		ingredients: {
-			"A": { type: "item", code: "game:metalplate-*", quantity: 1 },
-			"B": { type: "item", code: "game:metalnailsandstrips-*", quantity: 1 },
-			"C": { type: "item", code: "game:plank-*", quantity: 2 },
-		},
-		width: 3,
-		height: 1,
-		output: { type: "item", code: "maltiezfirearms:powderflask-initial" }
-	}
+    "ingredientPattern": "ABC",
+    "ingredients": {
+      "A": {"type": "item", "code": "game:metalplate-*", "quantity": 1},
+      "B": {"type": "item", "code": "game:metalnailsandstrips-*", "quantity": 1},
+      "C": {"type": "item", "code": "game:plank-*", "quantity": 2}
+    },
+    "width": 3,
+    "height": 1,
+    "output": {"type": "item", "code": "maltiezfirearms:powderflask-initial"}
+  }
 ]

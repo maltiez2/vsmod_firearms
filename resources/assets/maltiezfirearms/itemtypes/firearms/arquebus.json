@@ -6,7 +6,8 @@
   "durability": 500,
   "damagedby": ["attacking"],
   "attackRange": 1.5,
-  "attackpower": 0.5,
+  "attackpower": 1.5,
+  "tooltier": 0,
   "tool": "bow",
   "rackable": true,
   "behaviors": [
@@ -48,8 +49,18 @@
           },
           {"code": "reload_system", "class": "Reload", "attributes": {}},
           {"code": "match_system", "class": "Reload", "attributes": {}},
-          {"code": "aiming_system", "class": "Aiming", "attributes": {"duration": 200, "dispersionMin_MOA": 120, "dispersionMax_MOA": 600}},
-          {"code": "shooting_system", "class": "Shooting", "attributes": {"reloadSystem": "reload_system", "aimingSystem": "aiming_system", "projectileVelocity": 3.2, "projectileDamage": 20}},
+          {"code": "aiming_system", "class": "Aiming", "attributes": {"duration": 200, "dispersionMin_MOA": 120, "dispersionMax_MOA": 600, "description": "maltiezfirearms:system-desctiption-aim"}},
+          {
+            "code": "shooting_system",
+            "class": "Shooting",
+            "attributes": {
+              "description": "maltiezfirearms:weapon-projectile-stats",
+              "reloadSystem": "reload_system",
+              "aimingSystem": "aiming_system",
+              "projectileVelocity": 3.2,
+              "projectileDamage": 20
+            }
+          },
           {
             "code": "animation_system",
             "class": "VariantsAnimation",
@@ -61,6 +72,7 @@
                   "firstVariant": 5,
                   "lastVariant": 39,
                   "duration": 7000,
+                  "description": "maltiezfirearms:loading-time",
                   "sounds": [
                     {"variant": 9, "code": "powder_pour_sound"},
                     {"variant": 13, "code": "ramrod_take_sound"},
@@ -74,6 +86,7 @@
                   "firstVariant": 40,
                   "lastVariant": 53,
                   "duration": 2000,
+                  "description": "maltiezfirearms:priming-time",
                   "sounds": [{"variant": 43, "code": "short_click_sound"}, {"variant": 45, "code": "powder_prime_sound"}, {"variant": 52, "code": "short_click_sound"}]
                 },
                 {"code": "ready", "firstVariant": 54, "lastVariant": 60, "duration": 1000, "sounds": []},
@@ -93,20 +106,20 @@
                 {
                   "code": "load",
                   "duration": 300,
-                  "fpTransform": {"translation": {"x": -2, "y": -2.5, "z": 0}, "rotation": {"x": 80, "y": 0, "z": 10}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 1},
-                  "tpTransform": {"translation": {"x": -0.2, "y": -0.2, "z": 0.6}, "rotation": {"x": 90, "y": -90, "z": -90}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 1}
+                  "fpTransform": {"translation": {"x": -1.7, "y": -1.5, "z": 0.5}, "rotation": {"x": 80, "y": 0, "z": 10}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 1},
+                  "tpTransform": {"translation": {"x": -0.5, "y": -0.2, "z": 0.6}, "rotation": {"x": 90, "y": -180, "z": -90}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 1}
                 },
                 {
                   "code": "prime",
                   "duration": 200,
-                  "fpTransform": {"translation": {"x": -0.3, "y": 0.2, "z": 0}, "rotation": {"x": 5, "y": 0, "z": 20}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 1},
-                  "tpTransform": {"translation": {"x": 0, "y": 0, "z": 0}, "rotation": {"x": 0, "y": 0, "z": 0}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 1}
+                  "fpTransform": {"translation": {"x": 0.0, "y": 0.7, "z": 0.5}, "rotation": {"x": 5, "y": 0, "z": 20}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 1},
+                  "tpTransform": {"translation": {"x": -0.3, "y": 0, "z": 0}, "rotation": {"x": 0, "y": -90, "z": 0}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 1}
                 },
                 {
                   "code": "aim",
                   "duration": 200,
-                  "fpTransform": {"translation": {"x": -0.5, "y": 0.3, "z": 0}, "rotation": {"x": 0, "y": 0, "z": 0}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 1},
-                  "tpTransform": {"translation": {"x": 0.2, "y": 0.5, "z": 0.2}, "rotation": {"x": 105, "y": 90, "z": -90}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 1}
+                  "fpTransform": {"translation": {"x": -0.2, "y": 0.8, "z": 0.5}, "rotation": {"x": 0, "y": 0, "z": 0}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 1},
+                  "tpTransform": {"translation": {"x": -0.1, "y": 0.5, "z": 0.2}, "rotation": {"x": 105, "y": 0, "z": -90}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 1}
                 }
               ]
             }
@@ -116,8 +129,19 @@
             "class": "Requirements",
             "attributes": {
               "requirementSets": [
-                {"code": "load", "requirements": [{"code": "powderflask-ready", "name": "maltiezfirearms:item-powderflask-ready", "durability": 7}, {"code": "linenpatch", "name": "maltiezfirearms:item-linenpatch", "amount": 1}]},
-                {"code": "prime", "requirements": [{"code": "powderflask-ready", "name": "maltiezfirearms:item-powderflask-ready", "durability": 1}]}
+                {
+                  "code": "load",
+                  "description": "maltiezfirearms:loading-requirements",
+                  "requirements": [
+                    {"code": "powderflask-ready", "name": "maltiezfirearms:item-powderflask-ready", "durability": 7},
+                    {"code": "linenpatch", "name": "maltiezfirearms:item-linenpatch", "amount": 1}
+                  ]
+                },
+                {
+                  "code": "prime",
+                  "description": "maltiezfirearms:priming-requirements",
+                  "requirements": [{"code": "powderflask-ready", "name": "maltiezfirearms:item-powderflask-ready", "durability": 1}]
+                }
               ]
             }
           },
@@ -145,10 +169,10 @@
               "windUp_ms": 450,
               "strike_ms": 150,
               "easeOff_ms": 500,
-              "fpWindUp": {"translation": {"x": 0, "y": 0.5, "z": 0.5}, "rotation": {"x": 180, "y": 0, "z": 0}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 1},
-              "fpStrike": {"translation": {"x": -0.5, "y": 0.2, "z": -1}, "rotation": {"x": 170, "y": 0, "z": -30}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 1},
-              "tpWindUp": {"translation": {"x": 0, "y": 1, "z": 0}, "rotation": {"x": 90, "y": -180, "z": -90}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 1},
-              "tpStrike": {"translation": {"x": 0, "y": 0.5, "z": -1}, "rotation": {"x": 90, "y": -180, "z": -90}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 1},
+              "fpWindUp": {"translation": {"x": 0.3, "y": 1.0, "z": 1}, "rotation": {"x": 180, "y": 0, "z": 0}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 1},
+              "fpStrike": {"translation": {"x": -0.2, "y": 0.7, "z": -0.5}, "rotation": {"x": 170, "y": 0, "z": -30}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 1},
+              "tpWindUp": {"translation": {"x": -0.3, "y": 1, "z": 0}, "rotation": {"x": 90, "y": -180, "z": -90}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 1},
+              "tpStrike": {"translation": {"x": -0.3, "y": 0.5, "z": -1}, "rotation": {"x": 90, "y": -180, "z": -90}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 1},
               "flipTpAxles": true
             }
           }
@@ -160,28 +184,28 @@
             "attributes": {
               "delay_ms": 7000,
               "inputsToIntercept": [],
-              "inputsToHandle": {"initial": ["mouse_right_down"], "cancel": ["mouse_right_up", "handle_slot_change", "item_dropped"]},
+              "inputsToHandle": {"initial": ["mouse_right_down"], "cancel": ["mouse_right_up_not_handle", "handle_slot_change", "item_dropped"]},
               "states": [{"initial": "unloaded", "cancel": "unloaded", "final": "loaded"}],
               "systems": {
                 "initial": [
-                  {"code": "reload_system", "attributes": {"ammoCode": "bullet", "ammoName": "maltiezfirearms:item-bullet", "action": "take"}},
+                  {"code": "reload_system", "attributes": {"ammoCode": "maltiezfirearms:bullet", "ammoName": "maltiezfirearms:item-bullet", "action": "take"}},
                   {"code": "animation_system", "attributes": {"code": "load"}},
                   {"code": "no_sway_system", "attributes": {"action": "start"}},
-                  {"code": "transform_animation_system", "attributes": {"code": "load", "mode": "forward"}},
+                  {"code": "transform_animation_system", "attributes": {"code": "load", "action": "forward"}},
                   {"code": "requirement_system", "attributes": {"code": "load", "type": "check"}},
                   {"code": "player_stats_system", "attributes": {"code": "walkspeed", "value": -0.6}}
                 ],
                 "cancel": [
-                  {"code": "reload_system", "attributes": {"ammoCode": "bullet", "action": "put"}},
+                  {"code": "reload_system", "attributes": {"ammoCode": "maltiezfirearms:bullet", "action": "put"}},
                   {"code": "animation_system", "attributes": {"code": "unload"}},
                   {"code": "no_sway_system", "attributes": {"action": "stop"}},
-                  {"code": "transform_animation_system", "attributes": {"code": "load", "mode": "backward", "duration": 200}},
+                  {"code": "transform_animation_system", "attributes": {"code": "load", "action": "backward", "duration": 200}},
                   {"code": "player_stats_system", "attributes": {"code": "walkspeed", "value": 0}}
                 ],
                 "final": [
                   {"code": "requirement_system", "attributes": {"code": "load", "type": "take"}},
                   {"code": "no_sway_system", "attributes": {"action": "stop"}},
-                  {"code": "transform_animation_system", "attributes": {"code": "load", "mode": "backward", "duration": 200}},
+                  {"code": "transform_animation_system", "attributes": {"code": "load", "action": "backward", "duration": 200}},
                   {"code": "player_stats_system", "attributes": {"code": "walkspeed", "value": 0}}
                 ]
               }
@@ -199,20 +223,20 @@
                 "initial": [
                   {"code": "animation_system", "attributes": {"code": "prime"}},
                   {"code": "no_sway_system", "attributes": {"action": "start"}},
-                  {"code": "transform_animation_system", "attributes": {"code": "prime", "mode": "forward"}},
+                  {"code": "transform_animation_system", "attributes": {"code": "prime", "action": "forward"}},
                   {"code": "requirement_system", "attributes": {"code": "prime", "type": "check"}},
                   {"code": "player_stats_system", "attributes": {"code": "walkspeed", "value": -0.5}}
                 ],
                 "cancel": [
                   {"code": "animation_system", "attributes": {"code": "unprime"}},
                   {"code": "no_sway_system", "attributes": {"action": "stop"}},
-                  {"code": "transform_animation_system", "attributes": {"code": "prime", "mode": "backward", "duration": 100}},
+                  {"code": "transform_animation_system", "attributes": {"code": "prime", "action": "backward", "duration": 100}},
                   {"code": "player_stats_system", "attributes": {"code": "walkspeed", "value": 0}}
                 ],
                 "final": [
                   {"code": "requirement_system", "attributes": {"code": "prime", "type": "take"}},
                   {"code": "no_sway_system", "attributes": {"action": "stop"}},
-                  {"code": "transform_animation_system", "attributes": {"code": "prime", "mode": "backward", "duration": 100}},
+                  {"code": "transform_animation_system", "attributes": {"code": "prime", "action": "backward", "duration": 100}},
                   {"code": "player_stats_system", "attributes": {"code": "walkspeed", "value": 0}}
                 ]
               }
@@ -230,7 +254,7 @@
                 "initial": [
                   {"code": "animation_system", "attributes": {"code": "ready"}},
                   {"code": "no_sway_system", "attributes": {"action": "start"}},
-                  {"code": "match_system", "attributes": {"ammoCode": "match-lit", "ammoName": "maltiezfirearms:item-match-lit", "action": "take", "offHand": true}},
+                  {"code": "match_system", "attributes": {"ammoCode": "maltiezfirearms:match-lit", "ammoName": "maltiezfirearms:item-match-lit", "action": "take", "offHand": true}},
                   {"code": "player_stats_system", "attributes": {"code": "walkspeed", "value": -0.3}}
                 ],
                 "cancel": [
@@ -266,11 +290,11 @@
             "code": "unready",
             "class": "Instant",
             "attributes": {
-              "input": ["handle_slot_change", "item_dropped", "swimming"],
+              "input": ["handle_slot_change", "item_dropped", "swimming", "mouse_right_down_mouseslot", "mouse_left_down_mouseslot"],
               "inputsToIntercept": [],
               "states": [{"initial": "ready", "final": "primed"}],
               "systems": [
-                {"code": "transform_animation_system", "attributes": {"code": "aim", "mode": "backward", "duration": 10}},
+                {"code": "transform_animation_system", "attributes": {"code": "aim", "action": "backward", "duration": 10}},
                 {"code": "aiming_system", "attributes": {"action": "stop"}},
                 {"code": "no_sway_system", "attributes": {"action": "stop"}},
                 {"code": "player_stats_system", "attributes": {"code": "walkspeed", "value": 0}},
@@ -288,7 +312,7 @@
               "inputsToIntercept": [],
               "states": [{"initial": "ready", "final": "ready"}],
               "systems": [
-                {"code": "transform_animation_system", "attributes": {"code": "aim", "mode": "forward"}},
+                {"code": "transform_animation_system", "attributes": {"code": "aim", "action": "forward"}},
                 {"code": "aiming_system", "attributes": {"action": "start"}},
                 {"code": "no_sway_system", "attributes": {"action": "start"}},
                 {"code": "player_stats_system", "attributes": {"code": "walkspeed", "value": -0.1}},
@@ -304,7 +328,7 @@
               "inputsToIntercept": [],
               "states": [{"initial": "ready", "final": "ready"}],
               "systems": [
-                {"code": "transform_animation_system", "attributes": {"code": "aim", "mode": "backward", "duration": 100}},
+                {"code": "transform_animation_system", "attributes": {"code": "aim", "action": "backward", "duration": 100}},
                 {"code": "aiming_system", "attributes": {"action": "stop"}},
                 {"code": "no_sway_system", "attributes": {"action": "stop"}},
                 {"code": "player_stats_system", "attributes": {"code": "walkspeed", "value": 0}},
@@ -316,11 +340,11 @@
             "code": "put_match_away",
             "class": "Instant",
             "attributes": {
-              "input": ["mouse_right_up", "handle_slot_change", "item_dropped", "swimming"],
+              "input": ["mouse_right_up_not_handle", "handle_slot_change", "item_dropped", "swimming"],
               "inputsToIntercept": [],
               "states": [{"initial": "unloaded", "final": "unloaded"}],
               "systems": [
-                {"code": "transform_animation_system", "attributes": {"code": "aim", "mode": "backward", "duration": 100}},
+                {"code": "transform_animation_system", "attributes": {"code": "aim", "action": "backward", "duration": 100}},
                 {"code": "aiming_system", "attributes": {"action": "stop"}},
                 {"code": "no_sway_system", "attributes": {"action": "stop"}},
                 {"code": "player_stats_system", "attributes": {"code": "walkspeed", "value": 0}},
@@ -344,7 +368,13 @@
                 {"initial": "ready", "cancel": "ready", "final": "ready"}
               ],
               "systems": {
-                "initial": [{"code": "no_sway_system", "attributes": {"action": "start"}}, {"code": "melee_system", "attributes": {"action": "start"}}],
+                "initial": [
+                  {"code": "player_animation_system", "attributes": {"code": "bowaim", "type": "stop"}},
+                  {"code": "transform_animation_system", "attributes": {"code": "aim", "action": "cancel"}},
+                  {"code": "aiming_system", "attributes": {"action": "stop"}},
+                  {"code": "no_sway_system", "attributes": {"action": "start"}},
+                  {"code": "melee_system", "attributes": {"action": "start"}}
+                ],
                 "cancel": [{"code": "no_sway_system", "attributes": {"action": "start"}}, {"code": "melee_system", "attributes": {"action": "stop"}}],
                 "final": [{"code": "no_sway_system", "attributes": {"action": "start"}}, {"code": "melee_system", "attributes": {"action": "stop"}}]
               }
@@ -363,7 +393,9 @@
           {"code": "item_dropped_prevent", "class": "ItemDropped", "attributes": {"handle": true}},
           {"code": "melee_attack", "class": "Hotkey", "attributes": {"key": "R", "name": "maltiezfirearms:weapon-melee-attack"}},
           {"code": "prevent_slot_change", "class": "SlotChange", "attributes": {"type": "prevent"}},
-          {"code": "swimming", "class": "Swimming", "attributes": {}}
+          {"code": "swimming", "class": "Swimming", "attributes": {}},
+          {"code": "mouse_right_down_mouseslot", "class": "MouseKey", "attributes": {"key": "Right", "type": "pressed", "slot": "mouse", "handle": false}},
+          {"code": "mouse_left_down_mouseslot", "class": "MouseKey", "attributes": {"key": "Left", "type": "pressed", "slot": "mouse", "handle": false}}
         ]
       }
     }

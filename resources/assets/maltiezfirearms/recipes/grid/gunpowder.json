@@ -1,12 +1,22 @@
-[
+﻿[
   {
-		ingredientPattern: "P",
-		ingredients: {
-			"P": { type: "item", code: "game:blastingpowder", quantity: 3 },
-		},
-		width: 1,
-		height: 1,
-		shapeless: true,
-		output: { type: "item", code: "maltiezfirearms:gunpowder", quantity: 1  }
-	}
+    "ingredientPattern": "WF",
+    "ingredients": {"W": {"type": "block", "code": "game:woodbucket"}, "F": {"type": "item", "code": "game:blastingpowder", "quantity": 4}},
+    "width": 2,
+    "height": 1,
+    "attributes": {"liquidContainerProps": {"requiresContent": {"type": "item", "code": "waterportion"}, "requiresLitres": 0.05}},
+    "name": "wetblastingpowder",
+    "shapeless": true,
+    "output": {"type": "item", "code": "maltiezfirearms:gunpowder-wet", "quantity": 4}
+  },
+  {
+    "ingredientPattern": "WF",
+    "ingredients": {"W": {"type": "block", "code": "game:bowl-fired"}, "F": {"type": "item", "code": "game:blastingpowder", "quantity": 4}},
+    "width": 2,
+    "height": 1,
+    "attributes": {"liquidContainerProps": {"requiresContent": {"type": "item", "code": "waterportion"}, "requiresLitres": 0.05}},
+    "name": "wetblastingpowder",
+    "shapeless": true,
+    "output": {"type": "item", "code": "maltiezfirearms:gunpowder-wet", "quantity": 4}
+  }
 ]

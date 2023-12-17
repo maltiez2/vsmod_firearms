@@ -1,0 +1,11 @@
+﻿[
+  {
+    "ingredientPattern": "A",
+    "ingredients": {
+      "A": {"type": "item", "code": "maltiezfirearms:gunpowder"}
+    },
+    "width": 1,
+    "height": 1,
+    "output": {"type": "item", "code": "maltiezfirearms:gunpowder-fine"}
+  }
+]

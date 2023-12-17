@@ -1,0 +1,72 @@
+{
+	"editor": {
+		"allAngles": false,
+		"entityTextureMode": false
+	},
+	"textureWidth": 16,
+	"textureHeight": 16,
+	"textureSizes": {
+	},
+	"textures": {
+		"lead": "block/metal/plate/lead"
+	},
+	"elements": [
+		{
+			"name": "Cube2",
+			"from": [ 5.5, 1.0, 2.5 ],
+			"to": [ 7.5, 3.0, 4.5 ],
+			"rotationOrigin": [ 5.5, 1.0, 2.5 ],
+			"faces": {
+				"north": { "texture": "#lead", "uv": [ 0.0, 0.0, 2.0, 2.0 ] },
+				"east": { "texture": "#lead", "uv": [ 0.0, 0.0, 2.0, 2.0 ] },
+				"south": { "texture": "#lead", "uv": [ 0.0, 0.0, 2.0, 2.0 ] },
+				"west": { "texture": "#lead", "uv": [ 0.0, 0.0, 2.0, 2.0 ] },
+				"up": { "texture": "#lead", "uv": [ 0.0, 0.0, 2.0, 2.0 ] },
+				"down": { "texture": "#lead", "uv": [ 0.0, 0.0, 2.0, 2.0 ] }
+			},
+			"children": [
+				{
+					"name": "Cube4",
+					"from": [ 0.0, 0.0, 3.0 ],
+					"to": [ 2.0, 2.0, 5.0 ],
+					"rotationOrigin": [ 0.0, 0.0, 3.0 ],
+					"faces": {
+						"north": { "texture": "#lead", "uv": [ 0.0, 0.0, 2.0, 2.0 ] },
+						"east": { "texture": "#lead", "uv": [ 0.0, 0.0, 2.0, 2.0 ] },
+						"south": { "texture": "#lead", "uv": [ 0.0, 0.0, 2.0, 2.0 ] },
+						"west": { "texture": "#lead", "uv": [ 0.0, 0.0, 2.0, 2.0 ] },
+						"up": { "texture": "#lead", "uv": [ 0.0, 0.0, 2.0, 2.0 ] },
+						"down": { "texture": "#lead", "uv": [ 0.0, 0.0, 2.0, 2.0 ] }
+					}
+				},
+				{
+					"name": "Cube11",
+					"from": [ 1.0, 1.0, 0.0 ],
+					"to": [ 1.5, 1.5, 5.5 ],
+					"rotationOrigin": [ 1.0, 1.0, 0.0 ],
+					"faces": {
+						"north": { "texture": "#lead", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+						"east": { "texture": "#lead", "uv": [ 0.0, 0.0, 5.5, 0.5 ] },
+						"south": { "texture": "#lead", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+						"west": { "texture": "#lead", "uv": [ 0.0, 0.0, 5.5, 0.5 ] },
+						"up": { "texture": "#lead", "uv": [ 0.0, 0.0, 0.5, 5.5 ] },
+						"down": { "texture": "#lead", "uv": [ 0.0, 0.0, 0.5, 5.5 ] }
+					}
+				},
+				{
+					"name": "Cube12",
+					"from": [ 1.0, 1.0, 4.0 ],
+					"to": [ 2.5, 1.5, 4.5 ],
+					"rotationOrigin": [ 1.0, 1.0, 4.0 ],
+					"faces": {
+						"north": { "texture": "#lead", "uv": [ 0.0, 0.0, 1.5, 0.5 ] },
+						"east": { "texture": "#lead", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+						"south": { "texture": "#lead", "uv": [ 0.0, 0.0, 1.5, 0.5 ] },
+						"west": { "texture": "#lead", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+						"up": { "texture": "#lead", "uv": [ 0.0, 0.0, 1.5, 0.5 ] },
+						"down": { "texture": "#lead", "uv": [ 0.0, 0.0, 1.5, 0.5 ] }
+					}
+				}
+			]
+		}
+	]}

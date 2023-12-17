@@ -17,18 +17,14 @@
           {"code": "item_dropped", "class": "ItemDropped", "attributes": {"handle": false}}
         ],
         "systems": [
-          {"code": "requirement_system", "class": "Requirements", "attributes": {"requirementSets": [{"code": "gunpowder", "requirements": [{"code": "gunpowder", "amount": 1}]}]}},
+          {
+            "code": "requirement_system",
+            "class": "Requirements",
+            "attributes": {"requirementSets": [{"code": "gunpowder", "requirements": [{"code": "gunpowder-fine", "amount": 1, "name": "maltiezfirearms:item-gunpowder-fine"}]}]}
+          },
           {"code": "durability_system", "class": "Durability", "attributes": {}},
           {"code": "variants_system", "class": "ChangeGroup", "attributes": {}},
-          {
-            "code": "sound_system",
-            "class": "Sound",
-            "attributes": {
-              "sounds": [
-                {"code": "powder_pour", "volume": 0.5, "range": 8, "location": "maltiezfirearms:sounds/powder/powder-prime"}
-              ]
-            }
-          }
+          {"code": "sound_system", "class": "Sound", "attributes": {"sounds": [{"code": "powder_pour", "volume": 0.5, "range": 8, "location": "maltiezfirearms:sounds/powder/powder-prime"}]}}
         ],
         "operations": [
           {

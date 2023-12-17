@@ -9,7 +9,7 @@
         "name": "FiniteStateMachine",
         "properties": {
           "initialState": "initial_state",
-          "inputs": [{"code": "swimming_mainhand", "class": "Swimming", "attributes": {}}, {"code": "swimming_offhand", "class": "Swimming", "attributes": {"slot": "offhand"}}],
+          "inputs": [{"code": "swimming_mainhand", "class": "Swimming", "attributes": {"slot": "mouse"}}, {"code": "swimming_offhand", "class": "Swimming", "attributes": {"slot": "inventory"}}],
           "systems": [
             {"code": "extinguish_system", "class": "ChangeGroup", "attributes": {}},
             {"code": "sound_system", "class": "Sound", "attributes": {"sounds": [{"code": "extinguish", "volume": 1, "range": 8, "location": "game:sounds/effect/extinguish"}]}}

@@ -1,12 +1,9 @@
-[
+﻿[
   {
-		ingredientPattern: "AB",
-		ingredients: {
-			"A": { type: "item", code: "game:rope", quantity: 1 },
-			"B": { type: "item", code: "game:saltpeter", quantity: 1 }
-		},
-		width: 2,
-		height: 1,
-		output: { type: "item", code: "maltiezfirearms:match-unlit" }
-	}
+    "ingredientPattern": "AB",
+    "ingredients": {"A": {"type": "item", "code": "game:rope", "quantity": 1}, "B": {"type": "item", "code": "game:saltpeter", "quantity": 1}},
+    "width": 2,
+    "height": 1,
+    "output": {"type": "item", "code": "maltiezfirearms:match-unlit"}
+  }
 ]

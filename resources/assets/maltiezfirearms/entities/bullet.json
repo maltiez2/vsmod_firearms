@@ -1,38 +1,13 @@
-{
+﻿{
   "code": "bullet",
   "class": "EntityProjectile",
-  "hitboxSize": {
-    "x": 0.125,
-    "y": 0.125
-  },
+  "hitboxSize": {"x": 0.125, "y": 0.125},
   "client": {
     "size": 0.5,
     "renderer": "Shape",
-    "shape": { "base": "maltiezfirearms:bullet" },
-    "behaviors": [
-      {
-        "code": "passivephysics",
-        "groundDragFactor": 1,
-        "airDragFactor": 0.1,
-        "gravityFactor": 0.75
-      },
-      { "code": "interpolateposition" }
-    ]
+    "shape": {"base": "maltiezfirearms:bullet"},
+    "behaviors": [{"code": "passivephysics", "groundDragFactor": 1, "airDragFactor": 0.1, "gravityFactor": 0.75}, {"code": "interpolateposition"}]
   },
-  "server": {
-    "behaviors": [
-      {
-        "code": "passivephysics",
-        "groundDragFactor": 1,
-        "airDragFactor": 0.1,
-        "gravityFactor": 0.75
-      },
-      {
-        "code": "despawn",
-        "minSeconds": 600
-      }
-    ]
-  },
-  "sounds": {
-  }
+  "server": {"behaviors": [{"code": "passivephysics", "groundDragFactor": 1, "airDragFactor": 0.1, "gravityFactor": 0.75}, {"code": "despawn", "minSeconds": 600}]},
+  "sounds": {}
 }

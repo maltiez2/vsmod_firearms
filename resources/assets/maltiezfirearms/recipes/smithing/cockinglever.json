@@ -1,19 +1,6 @@
-{
-  "ingredient": {
-    "type": "item",
-    "code": "game:ingot-*",
-    "allowedVariants": [ "tinbronze", "bismuthbronze", "blackbronze" ]
-  },
-  "pattern": [
-    [
-      "______###_",
-      "___####_#_",
-      "_###__###_"
-    ]
-  ],
+﻿{
+  "ingredient": {"type": "item", "code": "game:ingot-*", "allowedVariants": ["tinbronze", "bismuthbronze", "blackbronze"]},
+  "pattern": [["______###_", "___####_#_", "_###__###_"]],
   "name": "Cocking lever",
-  "output": {
-    "type": "item",
-    "code": "maltiezfirearms:cockinglever"
-  }
+  "output": {"type": "item", "code": "maltiezfirearms:cockinglever"}
 }

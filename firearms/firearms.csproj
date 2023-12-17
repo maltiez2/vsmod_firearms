@@ -56,6 +56,8 @@
 </ItemGroup>
 
 <ItemGroup>
+  <Content Remove="..\resources\assets\maltiezfirearms\itemtypes\powder\coarsepowder.json" />
+  <Content Remove="..\resources\assets\maltiezfirearms\itemtypes\powder\wetpowder.json" />
   <Content Remove="..\resources\assets\maltiezfirearms\itemtypes\standFSM.json" />
   <Content Remove="..\resources\assets\maltiezfirearms\itemtypes\standNetwork.json" />
 </ItemGroup>

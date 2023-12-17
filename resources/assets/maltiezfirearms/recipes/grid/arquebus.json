@@ -1,13 +1,13 @@
-[
-	{
-		ingredientPattern: "III,WN_",
-		ingredients: {
-			"I": { type: "item", code: "game:metalplate-iron", quantity: 2 },
-			"N": { type: "item", code: "game:metalnailsandstrips-iron", quantity: 2 },
-			"W": { type: "item", code: "game:plank-*", quantity: 2 }
-		},
-		width: 3,
-		height: 2,
-		output: { type: "item", code: "maltiezfirearms:arquebus" }
-	}
+﻿[
+  {
+    "ingredientPattern": "III,WN_",
+    "ingredients": {
+      "I": {"type": "item", "code": "game:metalplate-iron", "quantity": 2},
+      "N": {"type": "item", "code": "game:metalnailsandstrips-iron", "quantity": 2},
+      "W": {"type": "item", "code": "game:plank-*", "quantity": 2}
+    },
+    "width": 3,
+    "height": 2,
+    "output": {"type": "item", "code": "maltiezfirearms:arquebus"}
+  }
 ]
