@@ -13,11 +13,15 @@
   "attributes": {},
   "shapeByType": {"*-slug-*": {"base": "maltiezfirearms:shapes/casting/slugsmold"}, "*-bullet-*": {"base": "maltiezfirearms:shapes/casting/bulletsmold"}},
   "attributesByType": {
-    "ammomold-*-burned": {"requiredUnits": 100, "fillHeight": 2, "moldrackable": false, "drop": {"type": "item", "code": "maltiezfirearms:ammocasting-{itemtype}-{metal}", "quantity": 1}}
+    "ammomold-*-burned": {
+      "requiredUnits": 100,
+      "fillHeight": 1,
+      "moldrackable": true,
+      "onmoldrackTransform": {"rotation": {"z": 90}},
+      "drop": {"type": "item", "code": "maltiezfirearms:ammocasting-{itemtype}-{metal}", "quantity": 1, "attributes": {"durabilityByType": {"*-slug-*": 8, "*-bullet-*": 16}}}
+    }
   },
-  "entityClassByType": {
-		"ammomold-*-burned": "ToolMold"
-	},
+  "entityClassByType": {"ammomold-*-burned": "ToolMold"},
   "blockmaterial": "Ceramic",
   "creativeinventory": {"maltiezfirearms": ["*"]},
   "replaceable": 700,
@@ -26,8 +30,8 @@
   "lightAbsorption": 0,
   "texturesByType": {"*-raw": {"all": {"base": "game:block/clay/blueclay"}}, "*-burned": {"floor": {"base": "game:block/clay/ceramic-dark"}, "other": {"base": "game:block/clay/ceramic"}}},
   "sounds": {"walk": "walk/stone"},
-  "collisionbox": {"x1": 0.094, "y1": 0, "z1": 0.094, "x2": 0.906, "y2": 0.188, "z2": 0.906},
-  "selectionBox": {"x1": 0.094, "y1": 0, "z1": 0.094, "x2": 0.906, "y2": 0.188, "z2": 0.906},
+  "collisionbox": {"x1": 0.094, "y1": 0, "z1": 0.094, "x2": 0.906, "y2": 0.12, "z2": 0.906},
+  "selectionBox": {"x1": 0.094, "y1": 0, "z1": 0.094, "x2": 0.906, "y2": 0.12, "z2": 0.906},
   "sideopaque": {"all": false},
   "sidesolid": {"all": false},
   "combustiblePropsByType": {

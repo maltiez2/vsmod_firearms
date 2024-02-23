@@ -4,63 +4,72 @@
   "maxstacksize": 1,
   "shape": {"base": "powder/powderflask"},
   "durability": 256,
-  "creativeinventory": {"maltiezfirearms": ["*"]},
-  "variantgroups": [{"code": "state", "states": ["initial", "ready"]}],
+  "variantgroups": [{"code": "metal", "loadFromProperties": "block/toolmetal"}],
+  "allowedVariants": ["*-brass", "*-tinbronze"],
+  "textures": {"metal": {"base": "game:block/metal/plate/{metal}"}},
+  "creativeinventoryStacks": [{"tabs": ["maltiezfirearms"], "stacks": [{"type": "item", "code": "powderflask-{metal}", "attributes": {"durability": 0}}]}],
   "behaviors": [
     {
       "name": "FiniteStateMachine",
       "properties": {
-        "initialState": "initial_state",
-        "inputs": [
-          {"code": "load", "class": "Hotkey", "attributes": {"key": "R", "name": "maltiezfirearms:flask-refill"}},
-          {"code": "handle_slot_change", "class": "SlotChange", "attributes": {"type": "handle"}},
-          {"code": "item_dropped", "class": "ItemDropped", "attributes": {"handle": false}}
-        ],
-        "systems": [
-          {
-            "code": "requirement_system",
+        "initialState": "ready",
+        "systems": {
+          "powder": {
             "class": "Requirements",
-            "attributes": {"requirementSets": [{"code": "gunpowder", "requirements": [{"code": "gunpowder-fine", "amount": 1, "name": "maltiezfirearms:item-gunpowder-fine"}]}]}
+            "powder": {"requirements": [{"amount": 1, "slot": "OffHand", "location": "maltiezfirearms:gunpowder-fine", "name": "maltiezfirearms:requirement-powder"}]}
           },
-          {"code": "durability_system", "class": "Durability", "attributes": {}},
-          {"code": "variants_system", "class": "ChangeGroup", "attributes": {}},
-          {"code": "sound_system", "class": "Sound", "attributes": {"sounds": [{"code": "powder_pour", "volume": 0.5, "range": 8, "location": "maltiezfirearms:sounds/powder/powder-prime"}]}}
-        ],
-        "operations": [
-          {
-            "code": "load",
+          "durability": {"Class": "Durability"},
+          "sounds": {"class": "Sounds", "domain": "maltiezfirearms"}
+        },
+        "operations": {
+          "load": {
             "class": "Delayed",
-            "attributes": {
-              "delay_ms": 500,
-              "inputsToHandle": {"initial": ["load"], "cancel": ["handle_slot_change", "item_dropped"]},
-              "states": [{"initial": "loadable_state", "cancel": "loadable_state", "final": "loadable_state"}],
-              "systems": {
-                "initial": [
-                  {"code": "requirement_system", "attributes": {"code": "gunpowder", "type": "take"}},
-                  {"code": "durability_system", "attributes": {"value": 8}},
-                  {"code": "sound_system", "attributes": {"code": "powder_pour"}}
-                ],
-                "cancel": [],
-                "final": []
-              }
+            "timeout": 350,
+            "states": {"initial": "ready", "timeout": "ready-hold", "transitional": "cooldown", "final": "ready"},
+            "inputs": {"initial": "mouse-right-down", "ready": "mouse-right-up"},
+            "systems": {
+              "initial": [
+                {"code": "powder", "action": "take", "requirement": "powder"},
+                {"code": "sounds", "action": "play", "sound": "flask"},
+                {"code": "durability", "action": "check", "amount": 1, "require": true},
+                {"code": "durability", "action": "change", "amount": 8, "require": false}
+              ]
             }
           },
-          {
-            "code": "init",
-            "class": "Instant",
-            "attributes": {
-              "input": "load",
-              "inputsToIntercept": [],
-              "states": [{"initial": "initial_state", "final": "loadable_state"}],
-              "systems": [{"code": "durability_system", "attributes": {"value": -256}}, {"code": "variants_system", "attributes": {"group": "state", "value": "ready"}}]
+          "load-hold": {
+            "class": "Delayed",
+            "timeout": 350,
+            "states": {"initial": "ready-hold", "timeout": "ready-hold", "transitional": "cooldown", "final": "ready"},
+            "inputs": {"initial": ["load-finished", "load-hold-finished"], "ready": "mouse-right-up"},
+            "systems": {
+              "initial": [
+                {"code": "powder", "action": "take", "requirement": "powder"},
+                {"code": "sounds", "action": "play", "sound": "flask"},
+                {"code": "durability", "action": "check", "amount": 1, "require": true},
+                {"code": "durability", "action": "change", "amount": 8, "require": false}
+              ]
             }
+          },
+          "selected": {
+            "class": "Instant",
+            "inputs": ["slot-modified-added", "slot-selected"],
+            "states": [{"initial": "ready-hold", "final": "ready"}, {"initial": "cooldown", "final": "ready"}],
+            "systems": []
           }
-        ]
+        },
+        "inputs": {
+          "mouse-right-down": {"class": "Mouse", "key": "Right", "alt": false, "type": "pressed", "name": "maltiezfirearms:cut-ammo"},
+          "mouse-right-up": {"class": "Mouse", "key": "Right", "type": "released", "handle": false},
+          "load-finished": {"class": "OperationFinished", "operation": "load"},
+          "load-hold-finished": {"class": "OperationFinished", "operation": "load-hold"},
+          "slot-modified-added": {"class": "SlotContent", "type": "AfterModified"},
+          "slot-selected": {"class": "SlotSelected"}
+        }
       }
     },
     {"name": "GroundStorable", "properties": {"layout": "Quadrants", "placeRemoveSound": "sounds/player/build", "collisionBox": {"x1": 0, "y1": 0, "z1": 0, "x2": 1, "y2": 0.3125, "z2": 1}}}
   ],
-  "attributes": {"groundStorageTransform": {"rotation": {"x": 0, "y": -28, "z": 0}, "origin": {"x": 0.5, "y": 0, "z": 0.5}, "scale": 0.5}},
+  "attributes": {"groundStorageTransform": {"rotation": {"x": 0, "y": -28, "z": 0}, "origin": {"x": 0.5, "y": 0, "z": 0.5}, "scale": 0.5}, "handbook": {"groupBy": ["powderflask-*"]}},
   "guiTransform": {"translation": {"x": 0, "y": 0, "z": 0}, "rotation": {"x": 163, "y": 56, "z": 0}, "origin": {"x": -0.1, "y": 0.1, "z": 0.8}, "scale": 2.19},
   "fpHandTransform": {"translation": {"x": 0, "y": 0, "z": 0}, "rotation": {"x": 0, "y": 0, "z": 0}, "origin": {"x": 0.3, "y": 0.9, "z": 0.8}, "scale": 1.8},
   "tpHandTransform": {"translation": {"x": 0, "y": 0, "z": 0}, "rotation": {"x": 0, "y": -90, "z": 0}, "origin": {"x": -0.2, "y": -0.2, "z": 0.33}, "scale": 0.47},

@@ -3,11 +3,9 @@
   "class": "Item",
   "maxstacksize": 1,
   "storageFlags": 257,
-  "durabilityByType": {
-    "*-slug-*": 8,
-    "*-bullet-*": 16
-  },
-  "variantgroups": [{"code": "itemtype", "states": ["slug", "bullet"]}, {"code": "material", "states": ["lead"]}],
+  "durabilityByType": {"*-slug-*": 8, "*-bullet-*": 16},
+  "variantgroups": [{"code": "itemtype", "states": ["slug", "bullet"]}, {"code": "material", "states": ["lead", "copper", "steel"]}],
+  "allowedVariants": ["*-lead", "*-copper", "*-steel"],
   "shapeByType": {
     "*-slug-*": {
       "base": "maltiezfirearms:casting/slugscast",
@@ -18,6 +16,19 @@
         {"base": "maltiezfirearms:casting/slugcasting/slugcasting-4"},
         {"base": "maltiezfirearms:casting/slugcasting/slugcasting-3"},
         {"base": "maltiezfirearms:casting/slugcasting/slugcasting-2"},
+        {"base": "maltiezfirearms:casting/slugcasting/slugcasting-1"},
+        {"base": "maltiezfirearms:casting/slugcasting/slugcasting-1"},
+        {"base": "maltiezfirearms:casting/slugcasting/slugcasting-1"},
+        {"base": "maltiezfirearms:casting/slugcasting/slugcasting-1"},
+        {"base": "maltiezfirearms:casting/slugcasting/slugcasting-1"},
+        {"base": "maltiezfirearms:casting/slugcasting/slugcasting-1"},
+        {"base": "maltiezfirearms:casting/slugcasting/slugcasting-1"},
+        {"base": "maltiezfirearms:casting/slugcasting/slugcasting-1"},
+        {"base": "maltiezfirearms:casting/slugcasting/slugcasting-1"},
+        {"base": "maltiezfirearms:casting/slugcasting/slugcasting-1"},
+        {"base": "maltiezfirearms:casting/slugcasting/slugcasting-1"},
+        {"base": "maltiezfirearms:casting/slugcasting/slugcasting-1"},
+        {"base": "maltiezfirearms:casting/slugcasting/slugcasting-1"},
         {"base": "maltiezfirearms:casting/slugcasting/slugcasting-1"}
       ]
     },
@@ -38,70 +49,92 @@
         {"base": "maltiezfirearms:casting/bulletcasting/bulletcasting-4"},
         {"base": "maltiezfirearms:casting/bulletcasting/bulletcasting-3"},
         {"base": "maltiezfirearms:casting/bulletcasting/bulletcasting-2"},
+        {"base": "maltiezfirearms:casting/bulletcasting/bulletcasting-1"},
+        {"base": "maltiezfirearms:casting/bulletcasting/bulletcasting-1"},
+        {"base": "maltiezfirearms:casting/bulletcasting/bulletcasting-1"},
+        {"base": "maltiezfirearms:casting/bulletcasting/bulletcasting-1"},
         {"base": "maltiezfirearms:casting/bulletcasting/bulletcasting-1"}
       ]
     }
   },
+  "textures": {"metal": {"base": "game:block/metal/plate/{material}"}},
   "creativeinventory": {"maltiezfirearms": ["*"]},
-  "fpHandTransform": {
-		"translation": { "x": 0.05, "y": 0.75, "z": 0 },
-		"rotation": { "x": 52, "y": 0, "z": 0 },
-		"origin": { "x": -0, "y": -0, "z": -0 },
-		"scale": 1.8
-	},
+  "heldLeftTpIdleAnimation": "firearmsammocasthold",
+  "fpHandTransform": {"translation": {"x": 0.05, "y": 0.75, "z": 0}, "rotation": {"x": 52, "y": 0, "z": 0}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 1.8},
   "guiTransform": {"translation": {"x": 3, "y": 0, "z": 0}, "rotation": {"x": -30, "y": -44, "z": -180}, "origin": {"x": 0.5, "y": 0.0625, "z": 0.5}, "scale": 1.85},
   "groundTransform": {"translation": {"x": 0, "y": 0, "z": 0}, "rotation": {"x": 0, "y": 90, "z": 0}, "origin": {"x": 0.5, "y": 0, "z": 0.5}, "scale": 3.31},
   "tpHandTransform": {"translation": {"x": -0.7, "y": 0.1, "z": -0.53}, "rotation": {"x": 94, "y": 0, "z": 0}, "origin": {"x": 0.5, "y": 0.1, "z": 0.5}, "scale": 0.75},
-  "attributes": {"breakChanceOnImpact": 1},
-   "behaviors": [
+  "tpOffHandTransform": {"translation": {"x": 0.35, "y": -0.2, "z": 0.15}, "rotation": {"x": 1, "y": 1, "z": 0}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 0.75},
+  "behaviors": [
+    {
+      "name": "GroundStorable",
+      "propertiesByType": {
+        "*-slug-*": {
+          "layout": "Stacking",
+          "placeRemoveSound": "game:sounds/block/ceramicplace",
+          "stackingModel": "maltiezfirearms:piles/slugcastings",
+          "modelItemsToStackSizeRatio": 12,
+          "stackingCapacity": 16,
+          "upSolid": false,
+          "transferQuantity": 1,
+          "bulkTransferQuantity": 4,
+          "collisionBox": {"x1": 0.1, "y1": 0, "z1": 0.1, "x2": 0.9, "y2": 0.0625, "z2": 0.9},
+          "cbScaleYByLayer": 1
+        },
+        "*-bullet-*": {
+          "layout": "Stacking",
+          "placeRemoveSound": "game:sounds/block/ceramicplace",
+          "stackingModel": "maltiezfirearms:piles/bulletcastings",
+          "modelItemsToStackSizeRatio": 22,
+          "stackingCapacity": 10,
+          "upSolid": false,
+          "transferQuantity": 1,
+          "bulkTransferQuantity": 5,
+          "collisionBox": {"x1": 0.1, "y1": 0, "z1": 0.1, "x2": 0.9, "y2": 0.1, "z2": 0.9},
+          "cbScaleYByLayer": 1
+        }
+      }
+    },
     {
       "name": "FiniteStateMachine",
       "properties": {
-        "initialState": "initial_state",
-        "inputs": [
-          {"code": "cut", "class": "MouseKey", "attributes": {"key": "Right", "type": "pressed", "slot": "offHand", "alt": false, "repeat": true, "name": "maltiezfirearms:cut-ammo"}},
-          {"code": "handle_slot_change", "class": "SlotChange", "attributes": {"type": "handle", "slot": "offHand"}},
-          {"code": "item_dropped", "class": "ItemDropped", "attributes": {"handle": false, "slot": "offHand"}}
-        ],
-        "systems": [
-          {
-            "code": "requirement_system",
-            "class": "Requirements",
-            "attributes": {"requirementSets": [{"code": "shears", "requirements": [{"code": "game:shears-*", "durability": 1, "name": "game:shears", "slot": "mainhand"}]}]}
-          },
-          {"code": "durability_system", "class": "DurabilityDamage", "attributes": {}},
-          {"code": "bullet_giver_system", "class": "ItemStackGiver", "attributes": {}},
-          {"code": "sound_system", "class": "Sound", "attributes": {"sounds": [{"code": "cut", "volume": 0.2, "range": 8, "location": "game:sounds/tool/slash"}]}},
-          {
-            "code": "animation_system",
-            "class": "VariantsAnimation",
-            "attributes": {
-              "animations": []
-            }
-          }
-        ],
-        "operations": [
-          {
-            "code": "cut",
+        "initialState": "ready",
+        "systems": {
+          "shears": {"class": "Requirements", "shears": {"requirements": [{"durability": 1, "slot": "MainHand", "location": "game:shears-*", "description": "maltiezfirearms:shears-requirement"}]}},
+          "durability": {"Class": "Durability"},
+          "stack-giver": {"Class": "ItemStackGiver"},
+          "sounds": {"class": "Sounds", "domain": "maltiezfirearms"},
+          "attributes": {"class": "ChangeAttribute"}
+        },
+        "operations": {
+          "cut": {
             "class": "Delayed",
-            "attributes": {
-              "delay_msByType": {"*-slug-*": 1000, "*-bullet-*": 500},
-              "inputsToHandle": {"initial": ["cut"], "cancel": ["handle_slot_change", "item_dropped"]},
-              "states": [{"initial": "initial_state", "cancel": "initial_state", "final": "initial_state"}],
-              "systems": {
-                "initial": [
-                  {"code": "requirement_system", "attributes": {"code": "shears", "type": "take"}},
-                  {"code": "sound_system", "attributes": {"code": "cut"}},
-                  {"code": "animation_system", "attributes": {"progressive": true, "limitByType": {"*-slug-*": 8, "*-bullet-*": 16}}},
-                  {"code": "bullet_giver_system", "attributes": {"codeByType": {"*-slug-*": "slug", "*-bullet-*": "bullet"}, "domain": "maltiezfirearms", "type": "Item", "attributes": {}}},
-                  {"code": "durability_system", "attributes": {}}
-                ],
-                "cancel": [],
-                "final": []
-              }
+            "timeoutByType": {"*-slug-*": 500, "*-bullet-*": 250},
+            "states": {"initial": "ready", "timeout": "ready", "transitional": "cooldown", "final": "ready"},
+            "inputs": {"initial": "mouse-right-hold", "ready": "mouse-right-up"},
+            "systems": {
+              "initial": [{"code": "shears", "action": "check", "requirement": "shears"}],
+              "timeout": [
+                {"code": "shears", "action": "take", "requirement": "shears"},
+                {"code": "sounds", "action": "play", "sound": "cut"},
+                {"code": "durability", "action": "change", "amount": -1, "destroy": true},
+                {"code": "stack-giver", "stack": {"type": "item", "code": "maltiezfirearms:{itemtype}-{material}"}},
+                {
+                  "code": "attributes",
+                  "attribute": "renderVariant",
+                  "type": "int",
+                  "valueFromAttr": {"formulaByType": {"*-slug-*": "equal(durability, 1, 2, 10 - durability)", "*-bullet-*": "equal(durability, 1, 2, 18 - durability)"}, "durability": "durability"}
+                }
+              ]
             }
-          }
-        ]
+          },
+          "selected": {"class": "Instant", "inputs": "slot-modified-added", "states": {"initial": "cooldown", "final": "ready"}, "systems": []}
+        },
+        "inputs": {
+          "mouse-right-hold": {"class": "Mouse", "key": "Right", "alt": false, "type": "hold", "slot": "OffHand", "name": "maltiezfirearms:cut-ammo"},
+          "mouse-right-up": {"class": "Mouse", "key": "Right", "type": "released", "handle": false, "slot": "OffHand"},
+          "slot-modified-added": {"class": "SlotContent", "type": "AfterModified", "slot": "OffHand"}
+        }
       }
     }
   ]

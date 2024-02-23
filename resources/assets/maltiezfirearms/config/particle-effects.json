@@ -1,0 +1,584 @@
+{
+  "smoke-1": {
+    "HsvaColor": [
+      {
+        "offset": 0.0,
+        "avg": 0.0,
+        "var": 5.0,
+        "dist": 0
+      },
+      {
+        "offset": 0.0,
+        "avg": 0.0,
+        "var": 5.0,
+        "dist": 0
+      },
+      {
+        "offset": 0.0,
+        "avg": 96.0,
+        "var": 5.0,
+        "dist": 0
+      },
+      {
+        "offset": 0.0,
+        "avg": 100.0,
+        "var": 0.0,
+        "dist": 0
+      }
+    ],
+    "PosOffset": [
+      {
+        "offset": 0.0,
+        "avg": 0.0,
+        "var": 0.3,
+        "dist": 0
+      },
+      {
+        "offset": 0.0,
+        "avg": 0.0,
+        "var": 0.3,
+        "dist": 0
+      },
+      {
+        "offset": 0.0,
+        "avg": 0.0,
+        "var": 0.3,
+        "dist": 0
+      }
+    ],
+    "RandomVelocityChange": true,
+    "DieOnRainHeightmap": false,
+    "SecondarySpawnInterval": {
+      "offset": 0.0,
+      "avg": 0.0,
+      "var": 0.0,
+      "dist": 0
+    },
+    "Bounciness": 0.0,
+    "DieInAir": false,
+    "DieInLiquid": false,
+    "SwimOnLiquid": true,
+    "ColorByBlock": false,
+    "OpacityEvolve": {
+      "transform": 5,
+      "factor": -20.0
+    },
+    "GravityEffect": {
+      "offset": 0.0,
+      "avg": 0.0,
+      "var": 0.0,
+      "dist": 6
+    },
+    "LifeLength": {
+      "offset": 0.0,
+      "avg": 10.0,
+      "var": 0.0,
+      "dist": 0
+    },
+    "Quantity": {
+      "offset": 0.0,
+      "avg": 40.0,
+      "var": 5.0,
+      "dist": 0
+    },
+    "Size": {
+      "offset": 0.0,
+      "avg": 0.1,
+      "var": 0.05,
+      "dist": 0
+    },
+    "SizeEvolve": {
+      "transform": 7,
+      "factor": 200.0
+    },
+    "Velocity": [
+      {
+        "offset": 0.0,
+        "avg": 0.5,
+        "var": 1.5,
+        "dist": 0
+      },
+      {
+        "offset": 0.0,
+        "avg": 0.0,
+        "var": 1.0,
+        "dist": 0
+      },
+      {
+        "offset": 0.0,
+        "avg": 0.0,
+        "var": 1.0,
+        "dist": 0
+      }
+    ],
+    "ParticleModel": 0,
+    "VertexFlags": 0,
+    "SelfPropelled": false,
+    "TerrainCollision": true,
+    "WindAffectednes": 0.6
+  },
+  "smoke-2": {
+    "HsvaColor": [
+      {
+        "offset": 0.0,
+        "avg": 0.0,
+        "var": 5.0,
+        "dist": 0
+      },
+      {
+        "offset": 0.0,
+        "avg": 0.0,
+        "var": 5.0,
+        "dist": 0
+      },
+      {
+        "offset": 0.0,
+        "avg": 96.0,
+        "var": 5.0,
+        "dist": 0
+      },
+      {
+        "offset": 0.0,
+        "avg": 100.0,
+        "var": 0.0,
+        "dist": 0
+      }
+    ],
+    "PosOffset": [
+      {
+        "offset": 0.0,
+        "avg": 0.0,
+        "var": 0.3,
+        "dist": 0
+      },
+      {
+        "offset": 0.0,
+        "avg": 0.0,
+        "var": 0.3,
+        "dist": 0
+      },
+      {
+        "offset": 0.0,
+        "avg": 0.0,
+        "var": 0.3,
+        "dist": 0
+      }
+    ],
+    "RandomVelocityChange": false,
+    "DieOnRainHeightmap": false,
+    "SecondarySpawnInterval": {
+      "offset": 0.0,
+      "avg": 0.0,
+      "var": 0.0,
+      "dist": 0
+    },
+    "Bounciness": 0.0,
+    "DieInAir": false,
+    "DieInLiquid": false,
+    "SwimOnLiquid": true,
+    "ColorByBlock": false,
+    "OpacityEvolve": {
+      "transform": 5,
+      "factor": -20.0
+    },
+    "GravityEffect": {
+      "offset": 0.0,
+      "avg": 0.0,
+      "var": 0.0,
+      "dist": 6
+    },
+    "LifeLength": {
+      "offset": 0.0,
+      "avg": 10.0,
+      "var": 0.0,
+      "dist": 0
+    },
+    "Quantity": {
+      "offset": 0.0,
+      "avg": 40.0,
+      "var": 5.0,
+      "dist": 0
+    },
+    "Size": {
+      "offset": 0.0,
+      "avg": 0.1,
+      "var": 0.05,
+      "dist": 0
+    },
+    "SizeEvolve": {
+      "transform": 7,
+      "factor": 200.0
+    },
+    "Velocity": [
+      {
+        "offset": 0.0,
+        "avg": 0.0,
+        "var": 1.0,
+        "dist": 0
+      },
+      {
+        "offset": 0.0,
+        "avg": 0.5,
+        "var": 1.0,
+        "dist": 0
+      },
+      {
+        "offset": 0.0,
+        "avg": 0.0,
+        "var": 1.0,
+        "dist": 0
+      }
+    ],
+    "ParticleModel": 0,
+    "VertexFlags": 0,
+    "SelfPropelled": false,
+    "TerrainCollision": true,
+    "WindAffectednes": 0.6
+  },
+  "smoke-3": {
+    "HsvaColor": [
+      {
+        "offset": 0.0,
+        "avg": 0.0,
+        "var": 5.0,
+        "dist": 0
+      },
+      {
+        "offset": 0.0,
+        "avg": 0.0,
+        "var": 5.0,
+        "dist": 0
+      },
+      {
+        "offset": 0.0,
+        "avg": 96.0,
+        "var": 5.0,
+        "dist": 0
+      },
+      {
+        "offset": 0.0,
+        "avg": 100.0,
+        "var": 0.0,
+        "dist": 0
+      }
+    ],
+    "PosOffset": [
+      {
+        "offset": 0.0,
+        "avg": 0.0,
+        "var": 0.3,
+        "dist": 0
+      },
+      {
+        "offset": 0.0,
+        "avg": 0.0,
+        "var": 0.3,
+        "dist": 0
+      },
+      {
+        "offset": 0.0,
+        "avg": 0.0,
+        "var": 0.3,
+        "dist": 0
+      }
+    ],
+    "RandomVelocityChange": false,
+    "DieOnRainHeightmap": false,
+    "SecondarySpawnInterval": {
+      "offset": 0.0,
+      "avg": 0.0,
+      "var": 0.0,
+      "dist": 0
+    },
+    "Bounciness": 0.0,
+    "DieInAir": false,
+    "DieInLiquid": false,
+    "SwimOnLiquid": true,
+    "ColorByBlock": false,
+    "OpacityEvolve": {
+      "transform": 5,
+      "factor": -20.0
+    },
+    "GravityEffect": {
+      "offset": 0.0,
+      "avg": 0.0,
+      "var": 0.0,
+      "dist": 6
+    },
+    "LifeLength": {
+      "offset": 0.0,
+      "avg": 10.0,
+      "var": 0.0,
+      "dist": 0
+    },
+    "Quantity": {
+      "offset": 0.0,
+      "avg": 40.0,
+      "var": 5.0,
+      "dist": 0
+    },
+    "Size": {
+      "offset": 0.0,
+      "avg": 0.1,
+      "var": 0.05,
+      "dist": 0
+    },
+    "SizeEvolve": {
+      "transform": 7,
+      "factor": 200.0
+    },
+    "Velocity": [
+      {
+        "offset": 0.0,
+        "avg": 0.0,
+        "var": 0.5,
+        "dist": 0
+      },
+      {
+        "offset": 0.0,
+        "avg": 0.5,
+        "var": 1.0,
+        "dist": 0
+      },
+      {
+        "offset": 0.0,
+        "avg": 0.0,
+        "var": 1.5,
+        "dist": 0
+      }
+    ],
+    "ParticleModel": 0,
+    "VertexFlags": 0,
+    "SelfPropelled": false,
+    "TerrainCollision": true,
+    "WindAffectednes": 0.6
+  },
+  "smoke-small": {
+    "HsvaColor": [
+      {
+        "offset": 0.0,
+        "avg": 0.0,
+        "var": 20.0,
+        "dist": 0
+      },
+      {
+        "offset": 0.0,
+        "avg": 0.0,
+        "var": 50.0,
+        "dist": 0
+      },
+      {
+        "offset": 0.0,
+        "avg": 95.95091,
+        "var": 50.0,
+        "dist": 0
+      },
+      {
+        "offset": 0.0,
+        "avg": 150.0,
+        "var": 0.0,
+        "dist": 0
+      }
+    ],
+    "PosOffset": [
+      {
+        "offset": 0.0,
+        "avg": 0.0,
+        "var": 0.0,
+        "dist": 0
+      },
+      {
+        "offset": 0.0,
+        "avg": 0.0,
+        "var": 0.0,
+        "dist": 0
+      },
+      {
+        "offset": 0.0,
+        "avg": 0.0,
+        "var": 0.0,
+        "dist": 0
+      }
+    ],
+    "RandomVelocityChange": false,
+    "DieOnRainHeightmap": false,
+    "SecondarySpawnInterval": {
+      "offset": 0.0,
+      "avg": 0.0,
+      "var": 0.0,
+      "dist": 0
+    },
+    "Bounciness": 0.0,
+    "DieInAir": false,
+    "DieInLiquid": false,
+    "SwimOnLiquid": true,
+    "ColorByBlock": false,
+    "OpacityEvolve": {
+      "transform": 1,
+      "factor": -1.0
+    },
+    "GravityEffect": {
+      "offset": 0.0,
+      "avg": 0.0,
+      "var": 0.0,
+      "dist": 6
+    },
+    "LifeLength": {
+      "offset": 0.0,
+      "avg": 0.5,
+      "var": 0.0,
+      "dist": 0
+    },
+    "Quantity": {
+      "offset": 0.0,
+      "avg": 2.0,
+      "var": 0.0,
+      "dist": 0
+    },
+    "Size": {
+      "offset": 0.0,
+      "avg": 2.0,
+      "var": 0.2,
+      "dist": 0
+    },
+    "SizeEvolve": {
+      "transform": 7,
+      "factor": 1.0
+    },
+    "Velocity": [
+      {
+        "offset": 0.0,
+        "avg": 0.0,
+        "var": 0.5,
+        "dist": 0
+      },
+      {
+        "offset": 0.0,
+        "avg": 0.0,
+        "var": 0.5,
+        "dist": 0
+      },
+      {
+        "offset": 0.0,
+        "avg": 0.0,
+        "var": 0.5,
+        "dist": 0
+      }
+    ],
+    "ParticleModel": 0,
+    "VertexFlags": 0,
+    "SelfPropelled": false,
+    "TerrainCollision": true,
+    "WindAffectednes": 0.6
+  },
+  "fireblast-1": {
+    "HsvaColor": [
+      {
+        "offset": 0.0,
+        "avg": 26.0,
+        "var": 5.0,
+        "dist": 0
+      },
+      {
+        "offset": 0.0,
+        "avg": 182.0,
+        "var": 20.0,
+        "dist": 0
+      },
+      {
+        "offset": 0.0,
+        "avg": 255.0,
+        "var": 20.0,
+        "dist": 0
+      },
+      {
+        "offset": 0.0,
+        "avg": 250.0,
+        "var": 0.0,
+        "dist": 0
+      }
+    ],
+    "PosOffset": [
+      {
+        "offset": 0.0,
+        "avg": 0.0,
+        "var": 0.0,
+        "dist": 0
+      },
+      {
+        "offset": 0.0,
+        "avg": 0.0,
+        "var": 0.0,
+        "dist": 0
+      },
+      {
+        "offset": 0.0,
+        "avg": 0.0,
+        "var": 0.0,
+        "dist": 0
+      }
+    ],
+    "RandomVelocityChange": false,
+    "DieOnRainHeightmap": false,
+    "SecondarySpawnInterval": {
+      "offset": 0.0,
+      "avg": 0.0,
+      "var": 0.0,
+      "dist": 0
+    },
+    "Bounciness": 0.0,
+    "DieInAir": false,
+    "DieInLiquid": false,
+    "SwimOnLiquid": true,
+    "ColorByBlock": false,
+    "GravityEffect": {
+      "offset": 0.0,
+      "avg": 1.0,
+      "var": 0.0,
+      "dist": 6
+    },
+    "LifeLength": {
+      "offset": 0.0,
+      "avg": 1.0,
+      "var": 0.0,
+      "dist": 0
+    },
+    "Quantity": {
+      "offset": 0.0,
+      "avg": 6.0,
+      "var": 4.0,
+      "dist": 0
+    },
+    "Size": {
+      "offset": 0.0,
+      "avg": 0.2,
+      "var": 0.1,
+      "dist": 0
+    },
+    "Velocity": [
+      {
+        "offset": 0.0,
+        "avg": 0.0,
+        "var": 1.0,
+        "dist": 0
+      },
+      {
+        "offset": 0.0,
+        "avg": 0.0,
+        "var": 1.0,
+        "dist": 0
+      },
+      {
+        "offset": 0.0,
+        "avg": 0.0,
+        "var": 1.0,
+        "dist": 0
+      }
+    ],
+    "ParticleModel": 1,
+    "VertexFlags": 2303,
+    "SelfPropelled": false,
+    "TerrainCollision": true,
+    "WindAffectednes": 0.0
+  }
+}

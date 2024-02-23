@@ -1,0 +1,654 @@
+{
+  "musket-load": [
+    {
+      "location": "maltiezfirearms:sounds/powder/powder-pour-long",
+      "randomizePitch": true,
+      "time": {
+        "total": 239,
+        "duration": 9000,
+        "offset": 2000,
+        "frames": [
+          11
+        ]
+      }
+    },
+    {
+      "location": "maltiezfirearms:sounds/ramrod/ramrod-take",
+      "randomizePitch": true,
+      "time": {
+        "total": 239,
+        "duration": 9000,
+        "offset": 2000,
+        "frames": [
+          100
+        ]
+      }
+    },
+    {
+      "location": [
+        "maltiezfirearms:sounds/ramrod/ramrod-hit-1",
+        "maltiezfirearms:sounds/ramrod/ramrod-hit-2",
+        "maltiezfirearms:sounds/ramrod/ramrod-hit-3",
+        "maltiezfirearms:sounds/ramrod/ramrod-hit-4",
+        "maltiezfirearms:sounds/ramrod/ramrod-hit-5",
+        "maltiezfirearms:sounds/ramrod/ramrod-hit-6",
+        "maltiezfirearms:sounds/ramrod/ramrod-hit-7",
+        "maltiezfirearms:sounds/ramrod/ramrod-hit-8",
+        "maltiezfirearms:sounds/ramrod/ramrod-hit-9",
+        "maltiezfirearms:sounds/ramrod/ramrod-hit-10"
+      ],
+      "randomizePitch": true,
+      "time": {
+        "total": 239,
+        "duration": 9000,
+        "offset": 2000,
+        "frames": [
+          128,
+          140,
+          153,
+          164,
+          177,
+          188
+        ]
+      }
+    },
+    {
+      "location": [
+        "maltiezfirearms:sounds/ramrod/ramrod-pull-1",
+        "maltiezfirearms:sounds/ramrod/ramrod-pull-2",
+        "maltiezfirearms:sounds/ramrod/ramrod-pull-3",
+        "maltiezfirearms:sounds/ramrod/ramrod-pull-4",
+        "maltiezfirearms:sounds/ramrod/ramrod-pull-5",
+        "maltiezfirearms:sounds/ramrod/ramrod-pull-6",
+        "maltiezfirearms:sounds/ramrod/ramrod-pull-7",
+        "maltiezfirearms:sounds/ramrod/ramrod-pull-8",
+        "maltiezfirearms:sounds/ramrod/ramrod-pull-9",
+        "maltiezfirearms:sounds/ramrod/ramrod-pull-10"
+      ],
+      "randomizePitch": true,
+      "time": {
+        "total": 239,
+        "duration": 9000,
+        "offset": 2000,
+        "frames": [
+          132,
+          144,
+          157,
+          169,
+          179,
+          193
+        ]
+      }
+    },
+    {
+      "location": "maltiezfirearms:sounds/ramrod/ramrod-putback",
+      "randomizePitch": true,
+      "time": {
+        "total": 239,
+        "duration": 9000,
+        "offset": 2000,
+        "frames": [
+          225
+        ]
+      }
+    }
+  ],
+  "musket-prime": [
+    {
+      "location": "maltiezfirearms:sounds/powder/powder-prime",
+      "volume": 0.5,
+      "randomizePitch": true,
+      "time": {
+        "total": 59,
+        "duration": 3000,
+        "offset": 1000,
+        "frames": [
+          17
+        ]
+      }
+    },
+    {
+      "location": "maltiezfirearms:sounds/musket/musket-short-click",
+      "randomizePitch": true,
+      "time": {
+        "total": 59,
+        "duration": 3000,
+        "offset": 1000,
+        "frames": [
+          47
+        ]
+      }
+    },
+    {
+      "location": "maltiezfirearms:sounds/musket/musket-cock",
+      "randomizePitch": true,
+      "time": {
+        "total": 59,
+        "duration": 3000,
+        "offset": 1000,
+        "frames": [
+          53
+        ]
+      }
+    }
+  ],
+  "musket-fire": [
+    {
+      "location": "maltiezfirearms:sounds/musket/flintlock-strike",
+      "randomizePitch": true,
+      "time": {
+        "total": 29,
+        "duration": 150,
+        "offset": 0,
+        "frames": [
+          0
+        ]
+      }
+    },
+    {
+      "location": [
+        "maltiezfirearms:sounds/musket/musket-fire-1",
+        "maltiezfirearms:sounds/musket/musket-fire-2",
+        "maltiezfirearms:sounds/musket/musket-fire-3",
+        "maltiezfirearms:sounds/musket/musket-fire-4"
+      ],
+      "range": 128.0,
+      "randomizePitch": true,
+      "time": {
+        "total": 29,
+        "duration": 150,
+        "offset": 0,
+        "frames": [
+          29
+        ]
+      }
+    }
+  ],
+  "carbine-load": [
+    {
+      "location": "maltiezfirearms:sounds/powder/powder-pour-long",
+      "randomizePitch": true,
+      "time": {
+        "total": 213,
+        "duration": 8000,
+        "offset": 1000,
+        "frames": [
+          13
+        ]
+      }
+    },
+    {
+      "location": "maltiezfirearms:sounds/ramrod/ramrod-take",
+      "randomizePitch": true,
+      "time": {
+        "total": 213,
+        "duration": 8000,
+        "offset": 1000,
+        "frames": [
+          104
+        ]
+      }
+    },
+    {
+      "location": [
+        "maltiezfirearms:sounds/ramrod/ramrod-hit-1",
+        "maltiezfirearms:sounds/ramrod/ramrod-hit-2",
+        "maltiezfirearms:sounds/ramrod/ramrod-hit-3",
+        "maltiezfirearms:sounds/ramrod/ramrod-hit-4",
+        "maltiezfirearms:sounds/ramrod/ramrod-hit-5",
+        "maltiezfirearms:sounds/ramrod/ramrod-hit-6",
+        "maltiezfirearms:sounds/ramrod/ramrod-hit-7",
+        "maltiezfirearms:sounds/ramrod/ramrod-hit-8",
+        "maltiezfirearms:sounds/ramrod/ramrod-hit-9",
+        "maltiezfirearms:sounds/ramrod/ramrod-hit-10"
+      ],
+      "randomizePitch": true,
+      "time": {
+        "total": 213,
+        "duration": 8000,
+        "offset": 1000,
+        "frames": [
+          134,
+          144,
+          155,
+          165
+        ]
+      }
+    },
+    {
+      "location": [
+        "maltiezfirearms:sounds/ramrod/ramrod-pull-1",
+        "maltiezfirearms:sounds/ramrod/ramrod-pull-2",
+        "maltiezfirearms:sounds/ramrod/ramrod-pull-3",
+        "maltiezfirearms:sounds/ramrod/ramrod-pull-4",
+        "maltiezfirearms:sounds/ramrod/ramrod-pull-5",
+        "maltiezfirearms:sounds/ramrod/ramrod-pull-6",
+        "maltiezfirearms:sounds/ramrod/ramrod-pull-7",
+        "maltiezfirearms:sounds/ramrod/ramrod-pull-8",
+        "maltiezfirearms:sounds/ramrod/ramrod-pull-9",
+        "maltiezfirearms:sounds/ramrod/ramrod-pull-10"
+      ],
+      "randomizePitch": true,
+      "time": {
+        "total": 213,
+        "duration": 8000,
+        "offset": 1000,
+        "frames": [
+          140,
+          150,
+          160,
+          170
+        ]
+      }
+    },
+    {
+      "location": "maltiezfirearms:sounds/ramrod/ramrod-putback",
+      "randomizePitch": true,
+      "time": {
+        "total": 213,
+        "duration": 8000,
+        "offset": 1000,
+        "frames": [
+          202
+        ]
+      }
+    }
+  ],
+  "carbine-prime": [
+    {
+      "location": "maltiezfirearms:sounds/powder/powder-prime",
+      "volume": 0.5,
+      "randomizePitch": true,
+      "time": {
+        "total": 59,
+        "duration": 2500,
+        "offset": 500,
+        "frames": [
+          14
+        ]
+      }
+    },
+    {
+      "location": "maltiezfirearms:sounds/musket/musket-short-click",
+      "randomizePitch": true,
+      "time": {
+        "total": 59,
+        "duration": 2500,
+        "offset": 500,
+        "frames": [
+          47
+        ]
+      }
+    },
+    {
+      "location": "maltiezfirearms:sounds/musket/musket-cock",
+      "randomizePitch": true,
+      "time": {
+        "total": 59,
+        "duration": 2500,
+        "offset": 500,
+        "frames": [
+          53
+        ]
+      }
+    }
+  ],
+  "carbine-fire": [
+    {
+      "location": "maltiezfirearms:sounds/musket/flintlock-strike",
+      "randomizePitch": true,
+      "time": {
+        "total": 29,
+        "duration": 150,
+        "offset": 0,
+        "frames": [
+          0
+        ]
+      }
+    },
+    {
+      "location": [
+        "maltiezfirearms:sounds/musket/musket-fire-1",
+        "maltiezfirearms:sounds/musket/musket-fire-2",
+        "maltiezfirearms:sounds/musket/musket-fire-3",
+        "maltiezfirearms:sounds/musket/musket-fire-4"
+      ],
+      "range": 128.0,
+      "volume": 0.7,
+      "randomizePitch": true,
+      "time": {
+        "total": 29,
+        "duration": 150,
+        "offset": 0,
+        "frames": [
+          22
+        ]
+      }
+    }
+  ],
+  "arquebus-load": [
+    {
+      "location": "maltiezfirearms:sounds/arquebus/powder-pour",
+      "randomizePitch": true,
+      "time": {
+        "total": 199,
+        "duration": 6000,
+        "offset": 1000,
+        "frames": [
+          22
+        ]
+      }
+    },
+    {
+      "location": "maltiezfirearms:sounds/ramrod/ramrod-take",
+      "randomizePitch": true,
+      "time": {
+        "total": 199,
+        "duration": 6000,
+        "offset": 1000,
+        "frames": [
+          90
+        ]
+      }
+    },
+    {
+      "location": [
+        "maltiezfirearms:sounds/ramrod/ramrod-hit-1",
+        "maltiezfirearms:sounds/ramrod/ramrod-hit-2",
+        "maltiezfirearms:sounds/ramrod/ramrod-hit-3",
+        "maltiezfirearms:sounds/ramrod/ramrod-hit-4",
+        "maltiezfirearms:sounds/ramrod/ramrod-hit-5",
+        "maltiezfirearms:sounds/ramrod/ramrod-hit-6",
+        "maltiezfirearms:sounds/ramrod/ramrod-hit-7",
+        "maltiezfirearms:sounds/ramrod/ramrod-hit-8",
+        "maltiezfirearms:sounds/ramrod/ramrod-hit-9",
+        "maltiezfirearms:sounds/ramrod/ramrod-hit-10"
+      ],
+      "randomizePitch": true,
+      "time": {
+        "total": 199,
+        "duration": 6000,
+        "offset": 1000,
+        "frames": [
+          137,
+          145,
+          157
+        ]
+      }
+    },
+    {
+      "location": [
+        "maltiezfirearms:sounds/ramrod/ramrod-pull-1",
+        "maltiezfirearms:sounds/ramrod/ramrod-pull-2",
+        "maltiezfirearms:sounds/ramrod/ramrod-pull-3",
+        "maltiezfirearms:sounds/ramrod/ramrod-pull-4",
+        "maltiezfirearms:sounds/ramrod/ramrod-pull-5",
+        "maltiezfirearms:sounds/ramrod/ramrod-pull-6",
+        "maltiezfirearms:sounds/ramrod/ramrod-pull-7",
+        "maltiezfirearms:sounds/ramrod/ramrod-pull-8",
+        "maltiezfirearms:sounds/ramrod/ramrod-pull-9",
+        "maltiezfirearms:sounds/ramrod/ramrod-pull-10"
+      ],
+      "randomizePitch": true,
+      "time": {
+        "total": 199,
+        "duration": 6000,
+        "offset": 1000,
+        "frames": [
+          144,
+          153,
+          164
+        ]
+      }
+    },
+    {
+      "location": "maltiezfirearms:sounds/ramrod/ramrod-putback",
+      "randomizePitch": true,
+      "time": {
+        "total": 199,
+        "duration": 6000,
+        "offset": 1000,
+        "frames": [
+          191
+        ]
+      }
+    }
+  ],
+  "arquebus-prime": [
+    {
+      "location": "maltiezfirearms:sounds/powder/powder-prime",
+      "volume": 0.4,
+      "randomizePitch": true,
+      "time": {
+        "total": 59,
+        "duration": 2500,
+        "offset": 500,
+        "frames": [
+          20
+        ]
+      }
+    },
+    {
+      "location": "maltiezfirearms:sounds/arquebus/arquebus-short-click-2",
+      "volume": 0.4,
+      "randomizePitch": true,
+      "time": {
+        "total": 59,
+        "duration": 2500,
+        "offset": 500,
+        "frames": [
+          14,
+          55
+        ]
+      }
+    }
+  ],
+  "arquebus-fire": [
+    {
+      "location": [
+        "maltiezfirearms:sounds/arquebus/arquebus-fire-1",
+        "maltiezfirearms:sounds/arquebus/arquebus-fire-2",
+        "maltiezfirearms:sounds/arquebus/arquebus-fire-3"
+      ],
+      "range": 128.0,
+      "randomizePitch": true,
+      "time": {
+        "total": 20,
+        "duration": 400,
+        "offset": 0,
+        "frames": [
+          3
+        ]
+      }
+    }
+  ],
+  "pistol-load": [
+    {
+      "location": "maltiezfirearms:sounds/powder/powder-prime",
+      "randomizePitch": true,
+      "time": {
+        "total": 100,
+        "duration": 4000,
+        "offset": 500,
+        "frames": [
+          11
+        ]
+      }
+    },
+    {
+      "location": "maltiezfirearms:sounds/ramrod/ramrod-take",
+      "randomizePitch": true,
+      "time": {
+        "total": 100,
+        "duration": 4000,
+        "offset": 500,
+        "frames": [
+          44
+        ]
+      }
+    },
+    {
+      "location": [
+        "maltiezfirearms:sounds/ramrod/ramrod-hit-1",
+        "maltiezfirearms:sounds/ramrod/ramrod-hit-2",
+        "maltiezfirearms:sounds/ramrod/ramrod-hit-3",
+        "maltiezfirearms:sounds/ramrod/ramrod-hit-4",
+        "maltiezfirearms:sounds/ramrod/ramrod-hit-5",
+        "maltiezfirearms:sounds/ramrod/ramrod-hit-6",
+        "maltiezfirearms:sounds/ramrod/ramrod-hit-7",
+        "maltiezfirearms:sounds/ramrod/ramrod-hit-8",
+        "maltiezfirearms:sounds/ramrod/ramrod-hit-9",
+        "maltiezfirearms:sounds/ramrod/ramrod-hit-10"
+      ],
+      "randomizePitch": true,
+      "time": {
+        "total": 100,
+        "duration": 4000,
+        "offset": 500,
+        "frames": [
+          68,
+          74
+        ]
+      }
+    },
+    {
+      "location": [
+        "maltiezfirearms:sounds/ramrod/ramrod-pull-1",
+        "maltiezfirearms:sounds/ramrod/ramrod-pull-2",
+        "maltiezfirearms:sounds/ramrod/ramrod-pull-3",
+        "maltiezfirearms:sounds/ramrod/ramrod-pull-4",
+        "maltiezfirearms:sounds/ramrod/ramrod-pull-5",
+        "maltiezfirearms:sounds/ramrod/ramrod-pull-6",
+        "maltiezfirearms:sounds/ramrod/ramrod-pull-7",
+        "maltiezfirearms:sounds/ramrod/ramrod-pull-8",
+        "maltiezfirearms:sounds/ramrod/ramrod-pull-9",
+        "maltiezfirearms:sounds/ramrod/ramrod-pull-10"
+      ],
+      "randomizePitch": true,
+      "time": {
+        "total": 100,
+        "duration": 4000,
+        "offset": 500,
+        "frames": [
+          77
+        ]
+      }
+    },
+    {
+      "location": "maltiezfirearms:sounds/ramrod/ramrod-putback",
+      "randomizePitch": true,
+      "time": {
+        "total": 100,
+        "duration": 4000,
+        "offset": 500,
+        "frames": [
+          92
+        ]
+      }
+    }
+  ],
+  "pistol-prime": [
+    {
+      "location": "maltiezfirearms:sounds/pistol/flint-raise",
+      "randomizePitch": true,
+      "time": {
+        "total": 110,
+        "duration": 3250,
+        "offset": 250,
+        "frames": [
+          2
+        ]
+      }
+    },
+    {
+      "location": "maltiezfirearms:sounds/powder/powder-prime",
+      "volume": 0.5,
+      "randomizePitch": true,
+      "time": {
+        "total": 110,
+        "duration": 3250,
+        "offset": 250,
+        "frames": [
+          15
+        ]
+      }
+    },
+    {
+      "location": "maltiezfirearms:sounds/pistol/flint-set",
+      "randomizePitch": true,
+      "time": {
+        "total": 110,
+        "duration": 3250,
+        "offset": 250,
+        "frames": [
+          55
+        ]
+      }
+    },
+    {
+      "location": "maltiezfirearms:sounds/pistol/cocked",
+      "randomizePitch": true,
+      "time": {
+        "total": 110,
+        "duration": 3250,
+        "offset": 250,
+        "frames": [
+          89
+        ]
+      }
+    }
+  ],
+  "pistol-fire": [
+    {
+      "location": "maltiezfirearms:sounds/musket/flintlock-strike",
+      "randomizePitch": true,
+      "time": {
+        "total": 30,
+        "duration": 150,
+        "offset": 0,
+        "frames": [
+          15
+        ]
+      }
+    },
+    {
+      "location": [
+        "maltiezfirearms:sounds/pistol/pistol-fire-1",
+        "maltiezfirearms:sounds/pistol/pistol-fire-2",
+        "maltiezfirearms:sounds/pistol/pistol-fire-3",
+        "maltiezfirearms:sounds/pistol/pistol-fire-4"
+      ],
+      "range": 128.0,
+      "volume": 0.7,
+      "randomizePitch": true,
+      "time": {
+        "total": 30,
+        "duration": 150,
+        "offset": 0,
+        "frames": [
+          29
+        ]
+      }
+    }
+  ],
+  "flask": {
+    "location": "maltiezfirearms:sounds/powder/powder-prime",
+    "range": 8.0,
+    "volume": 0.5,
+    "randomizePitch": true
+  },
+  "cut": {
+    "location": "game:sounds/tool/slash",
+    "range": 8.0,
+    "volume": 0.2,
+    "randomizePitch": true
+  },
+  "extinguish": {
+    "location": "game:sounds/effect/extinguish",
+    "randomizePitch": true
+  },
+  "lit": {
+    "location": "game:sounds/held/torch-equip",
+    "randomizePitch": true
+  }
+}

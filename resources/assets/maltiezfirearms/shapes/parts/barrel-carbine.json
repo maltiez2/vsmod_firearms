@@ -1,0 +1,154 @@
+{
+	"editor": {
+		"collapsedPaths": "Root/Band_second,Root/Musket/Band_first,Root/Band_first,Root/Carbine/Band_third,Root/Stock,Root/Carbine/Flask_origin,Root/Flintlock,Root/Carbine/Trigger_assembly/Trigger_assemly_base,Root/Band_third,Root/Carbine/Flintlock,Root/Musket/Trigger_assembly,Root/Musket/Band_second,Root/Carbine/Trigger_assembly/Guard,Root/Musket/Flintlock/Plate,Root/Carbine/Ramrod_origin/Ramrod,Root/Musket,Root/Musket/Flintlock,Root/Musket/Stock,Root/origin/Bottom_plate,Root/Carbine/Flintlock/Hammer,Root/Musket/Stock/Buttstock/Buttstock_bottom/Buttstock_butt/Buttstock_butt_plate,Root/Carbine/Flintlock/Pan,Root/Musket/Band_third,Root/Carbine/Flintlock/Hammer/Hammer_arm,Root/Carbine/Ramrod_origin,Root/Carbine/Barrel,Root/Carbine/Stock,Root/Trigger_assembly,Root/Carbine/Flintlock/Frizzen,Root/Musket/Stock/Buttstock/Buttstock_butt,Root/Carbine/Patch,Root/Ramrod,Root/Carbine/Band_second,Root/Musket/Barrel,Root/Carbine/Trigger_assembly",
+		"allAngles": false,
+		"entityTextureMode": false
+	},
+	"textureWidth": 16,
+	"textureHeight": 16,
+	"textureSizes": {
+	},
+	"textures": {
+		"metal": "game:block/metal/plate/steel"
+	},
+	"elements": [
+		{
+			"name": "Barrel",
+			"from": [ 0.0, 0.8, -9.5 ],
+			"to": [ 0.0, 0.8, -9.5 ],
+			"rotationOrigin": [ 0.0, 0.8, -9.5 ],
+			"faces": {
+				"north": { "texture": "#null", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+				"east": { "texture": "#null", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+				"south": { "texture": "#null", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+				"west": { "texture": "#null", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+				"up": { "texture": "#null", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+				"down": { "texture": "#null", "uv": [ 0.0, 0.0, 0.5, 0.5 ] }
+			},
+			"children": [
+				{
+					"name": "Barrel_top",
+					"from": [ -0.31, 0.25, -17.0 ],
+					"to": [ 0.31, 0.5, 6.0 ],
+					"rotationOrigin": [ -0.1, -0.1, 8.0 ],
+					"faces": {
+						"north": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+						"east": { "texture": "#metal", "uv": [ 0.0, 0.0, 16.0, 0.5 ], "autoUv": false },
+						"south": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+						"west": { "texture": "#metal", "uv": [ 0.0, 0.0, 16.0, 0.5 ], "autoUv": false },
+						"up": { "texture": "#metal", "uv": [ 10.0, 0.0, 10.5, 16.0 ], "autoUv": false },
+						"down": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.5, 16.0 ], "autoUv": false }
+					}
+				},
+				{
+					"name": "Barrel_bottom",
+					"from": [ -0.11, 0.45, -17.0 ],
+					"to": [ 0.51, 0.7, 7.0 ],
+					"rotationOrigin": [ 0.1, 0.1, -3.0 ],
+					"rotationZ": -180.0,
+					"faces": {
+						"north": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+						"east": { "texture": "#metal", "uv": [ 0.0, 0.0, 16.0, 0.5 ], "autoUv": false },
+						"south": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+						"west": { "texture": "#metal", "uv": [ 0.0, 0.0, 16.0, 0.5 ], "autoUv": false },
+						"up": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.5, 16.0 ], "autoUv": false },
+						"down": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.5, 16.0 ], "autoUv": false }
+					}
+				},
+				{
+					"name": "Barrel_left",
+					"from": [ -0.11, 0.25, -17.0 ],
+					"to": [ 0.51, 0.5, 7.0 ],
+					"rotationOrigin": [ 0.1, -0.1, -3.0 ],
+					"rotationZ": 90.0,
+					"faces": {
+						"north": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+						"east": { "texture": "#metal", "uv": [ 0.0, 0.0, 16.0, 0.5 ], "autoUv": false },
+						"south": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+						"west": { "texture": "#metal", "uv": [ 0.0, 0.0, 16.0, 0.5 ], "autoUv": false },
+						"up": { "texture": "#metal", "uv": [ 6.5, 0.0, 7.0, 16.0 ], "autoUv": false },
+						"down": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.5, 16.0 ], "autoUv": false }
+					}
+				},
+				{
+					"name": "Barrel_right",
+					"from": [ -0.31, 0.45, -17.0 ],
+					"to": [ 0.31, 0.7, 7.0 ],
+					"rotationOrigin": [ -0.1, 0.1, 2.0 ],
+					"rotationZ": -90.0,
+					"faces": {
+						"north": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+						"east": { "texture": "#metal", "uv": [ 0.0, 0.0, 16.0, 0.5 ], "autoUv": false },
+						"south": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+						"west": { "texture": "#metal", "uv": [ 0.0, 0.0, 16.0, 0.5 ], "autoUv": false },
+						"up": { "texture": "#metal", "uv": [ 1.0, 0.0, 1.5, 16.0 ], "autoUv": false },
+						"down": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.5, 16.0 ], "autoUv": false }
+					}
+				},
+				{
+					"name": "Barrel_ramrod-attachment",
+					"from": [ -0.26, 0.22, -14.7 ],
+					"to": [ 0.26, 0.87, -14.2 ],
+					"rotationOrigin": [ 0.0, -0.1, -0.7 ],
+					"rotationZ": -180.0,
+					"faces": {
+						"north": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+						"east": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+						"south": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+						"west": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+						"up": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+						"down": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.5, 0.5 ], "windMode": [-1,-1,-1,-1] }
+					}
+				},
+				{
+					"name": "Barrel_top2",
+					"from": [ -0.31, -0.25, 6.0 ],
+					"to": [ 0.31, 0.4, 7.0 ],
+					"rotationOrigin": [ -0.1, -0.6, 31.0 ],
+					"faces": {
+						"north": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+						"east": { "texture": "#metal", "uv": [ 0.0, 0.0, 16.0, 0.5 ], "autoUv": false },
+						"south": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+						"west": { "texture": "#metal", "uv": [ 0.0, 0.0, 16.0, 0.5 ], "autoUv": false },
+						"up": { "texture": "#metal", "uv": [ 10.0, 0.0, 10.5, 1.0 ], "windMode": [-1,-1,-1,-1] },
+						"down": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.5, 16.0 ], "autoUv": false }
+					}
+				}
+			]
+		}
+	],
+	"animations": [
+		{
+			"name": "Load",
+			"code": "load",
+			"quantityframes": 215,
+			"onActivityStopped": "Stop",
+			"onAnimationEnd": "Hold",
+			"keyframes": [
+
+			]
+		},
+
+		{
+			"name": "Prime",
+			"code": "prime",
+			"quantityframes": 60,
+			"onActivityStopped": "Stop",
+			"onAnimationEnd": "Hold",
+			"keyframes": [
+
+			]
+		},
+
+		{
+			"name": "Fire",
+			"code": "fire",
+			"quantityframes": 30,
+			"onActivityStopped": "Stop",
+			"onAnimationEnd": "Hold",
+			"keyframes": [
+
+			]
+		}
+	]
+}

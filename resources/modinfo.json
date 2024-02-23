@@ -1,14 +1,14 @@
 {
   "type": "content",
   "modid": "maltiezfirearms",
-  "name": "Firearms (Beta)",
+  "name": "Firearms",
   "authors": ["Maltiez"],
-  "description": "Black powder firearms. Beta version.",
-  "version": "0.3.9",
-  "Translation": ["Kaofan - Polish"],
+  "description": "Black powder firearms",
+  "version": "0.4.2",
+  "Translation": ["Kaofan - Polish", "Толстый Бубба - Russian"],
   "dependencies": {
-    "game": "1.18.8",
-    "survival": "1.18.8",
-    "fsmlib": "0.1.13"
+    "game": "1.19.0",
+    "fsmlib": "0.2.12",
+    "configlib": "0.4.2"
   }
 }

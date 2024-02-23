@@ -1,0 +1,48 @@
+[
+  {
+    "ingredientPattern": "CBA",
+    "ingredients": {
+      "A": {"type": "item", "code": "maltiezfirearms:bayonet-blade-socket", "quantity": 1},
+      "B": {"type": "item", "code": "game:metalnailsandstrips-steel", "quantity": 1},
+      "C": {"type": "item", "code": "maltiezfirearms:schematic-bayonet"}
+    },
+    "width": 3,
+    "height": 1,
+    "output": {"type": "item", "code": "maltiezfirearms:bayonet-socket-plain"}
+  },
+  {
+    "ingredientPattern": "CBA,_G_",
+    "ingredients": {
+      "A": {"type": "item", "code": "maltiezfirearms:bayonet-blade-socket", "quantity": 1},
+      "B": {"type": "item", "code": "game:metalnailsandstrips-steel", "quantity": 1},
+      "C": {"type": "item", "code": "maltiezfirearms:schematic-bayonet", "quantity": 1},
+      "G": {"type": "item", "code": "game:metalbit-gold", "quantity": 10}
+    },
+    "width": 3,
+    "height": 2,
+    "output": {"type": "item", "code": "maltiezfirearms:bayonet-socket-decorated"}
+  },
+  {
+    "ingredientPattern": "BCA",
+    "ingredients": {
+      "A": {"type": "item", "code": "maltiezfirearms:bayonet-blade-plug", "quantity": 1},
+      "B": {"type": "item", "code": "game:metalnailsandstrips-steel", "quantity": 1},
+      "C": {"type": "item", "code": "game:plank-*", "quantity": 1}
+    },
+    "width": 3,
+    "height": 1,
+    "output": {"type": "item", "code": "maltiezfirearms:bayonet-plug-plain"}
+  },
+  {
+    "ingredientPattern": "BCA,_G_",
+    "ingredients": {
+      "A": {"type": "item", "code": "maltiezfirearms:bayonet-blade-plug", "quantity": 1},
+      "B": {"type": "item", "code": "game:metalnailsandstrips-steel", "quantity": 1},
+      "C": {"type": "item", "code": "game:plank-*", "quantity": 1},
+      "G": {"type": "item", "code": "game:metalbit-gold", "quantity": 5}
+    },
+    "width": 3,
+    "height": 2,
+    "output": {"type": "item", "code": "maltiezfirearms:bayonet-plug-decorated"}
+  }
+]

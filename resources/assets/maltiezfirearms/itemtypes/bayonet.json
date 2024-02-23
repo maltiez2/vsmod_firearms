@@ -1,13 +1,25 @@
 ﻿{
   "code": "bayonet",
-  "class": "Item",
-  "shape": {"base": "maltiezfirearms:musket/bayonet"},
+  "class": "ItemKnife",
+  "tool": "knife",
+  "damagedby": ["blockbreaking"],
+  "miningspeedByType": {"*-plug-*": {"plant": 2.4}, "*-socket-*": {"plant": 1.6}},
+  "durabilityByType": {"*-plug-*": 2250, "*-socket-*": 1200},
+  "shape": {"base": "maltiezfirearms:bayonet/bayonet-{type}-{visuals}"},
+  "variantgroups": [{"code": "type", "states": ["plug", "socket"]}, {"code": "visuals", "states": ["plain", "decorated"]}],
   "storageFlags": 257,
-  "attributes": {"groundStorageTransform": {"translation": {"x": 0.3, "y": 0.04, "z": 0.4}, "rotation": {"x": 1, "y": -110, "z": 169}, "origin": {"x": 0, "y": 0, "z": 0}}},
+  "attributes": {
+    "groundStorageTransform": {"translation": {"x": 0.3, "y": 0.04, "z": 0.4}, "rotation": {"x": 1, "y": -110, "z": 169}, "origin": {"x": 0, "y": 0, "z": 0}},
+    "knifeHitBlockAnimation": "knifecut",
+    "knifeHitEntityAnimation": "knifestab"
+  },
   "behaviors": [{"name": "GroundStorable", "properties": {"layout": "Quadrants", "placeRemoveSound": "sounds/player/build", "collisionBox": {"x1": 0, "y1": 0, "z1": 0, "x2": 1, "y2": 0.1, "z2": 1}}}],
   "creativeinventory": {"maltiezfirearms": ["*"]},
   "guiTransform": {"translation": {"x": 0, "y": 0, "z": 0}, "rotation": {"x": -23, "y": -25, "z": 0}, "origin": {"x": -0.3, "y": 0.25, "z": -0.9}, "scale": 3.71},
   "fpHandTransform": {"translation": {"x": 0.6, "y": 0.2, "z": 0.3}, "rotation": {"x": 82, "y": -4, "z": 161}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 3.43},
-  "tpHandTransform": {"translation": {"x": -0.1, "y": 0, "z": 0}, "rotation": {"x": 0, "y": -91, "z": 0}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 1},
+  "tpHandTransformByType": {
+    "*-plug-*": {"translation": {"x": -0.05, "y": 0, "z": 0}, "rotation": {"x": -90, "y": -90, "z": 0}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 1},
+    "*-socket-*": {"translation": {"x": -0.1, "y": 0, "z": 0}, "rotation": {"x": 0, "y": -90, "z": 0}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 1}
+  },
   "groundTransform": {"translation": {"x": 0, "y": 0.06, "z": 0}, "rotation": {"x": -2, "y": 0, "z": 3}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 4.8}
 }

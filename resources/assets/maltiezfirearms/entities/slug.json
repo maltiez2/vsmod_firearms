@@ -1,11 +1,13 @@
 ﻿{
   "code": "slug",
-  "class": "EntityProjectile",
+  "class": "AdvancedEntityProjectile",
+  "variantgroups": [{"code": "material", "states": ["lead", "copper", "steel"]}],
   "hitboxSize": {"x": 0.2, "y": 0.2},
   "client": {
     "size": 0.5,
     "renderer": "Shape",
     "shape": {"base": "maltiezfirearms:slug"},
+    "textures": {"metal": {"base": "game:block/metal/plate/{material}"}},
     "behaviors": [{"code": "passivephysics", "groundDragFactor": 1, "airDragFactor": 0.15, "gravityFactor": 0.75}, {"code": "interpolateposition"}]
   },
   "server": {"behaviors": [{"code": "passivephysics", "groundDragFactor": 1, "airDragFactor": 0.15, "gravityFactor": 0.75}, {"code": "despawn", "minSeconds": 0}]},

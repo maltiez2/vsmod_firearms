@@ -1,0 +1,27 @@
+﻿[
+  {
+    "ingredientPattern": "WLB,MWP,__R",
+    "ingredients": {
+      "B": {"type": "item", "code": "maltiezfirearms:barrel-musket-steel", "quantity": 1},
+      "P": {"type": "item", "code": "game:metalplate-brass", "quantity": 2},
+      "M": {"type": "item", "code": "game:metalplate-steel", "quantity": 2},
+      "L": {"type": "item", "code": "maltiezfirearms:lock-flintlock", "quantity": 1},
+      "W": {"type": "item", "code": "game:plank-*", "quantity": 2},
+      "R": {"type": "item", "code": "maltiezfirearms:ramrod-musket", "quantity": 1}
+    },
+    "width": 3,
+    "height": 3,
+    "output": {"type": "item", "code": "maltiezfirearms:musket"}
+  },
+  {
+    "ingredientPattern": "PPP,NFF,PPP",
+    "ingredients": {
+      "P": {"type": "item", "code": "game:metalplate-steel", "quantity": 1},
+      "N": {"type": "item", "code": "game:metalnailsandstrips-steel", "quantity": 1},
+      "F": {"type": "item", "code": "game:powderedborax", "quantity": 3}
+    },
+    "width": 3,
+    "height": 3,
+    "output": {"type": "item", "code": "maltiezfirearms:barrel-musket-steel"}
+  }
+]

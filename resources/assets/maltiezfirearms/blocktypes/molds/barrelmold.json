@@ -1,0 +1,67 @@
+﻿{
+  "code": "barrelmold",
+  "variantgroups": [{"code": "type", "states": ["raw", "burned"]}],
+  "classByType": {"*-raw": "Block", "*-burned": "BlockToolMold"},
+  "behaviorsByType": {
+    "*-raw": [
+      {"name": "GroundStorable", "properties": {"layout": "SingleCenter"}},
+      {"name": "Unplaceable", "__comment": "The ground storable obsoletes this being a block. Should be an item, but is kept a block for backwards compatibility"},
+      {"name": "RightClickPickup"}
+    ],
+    "*": [{"name": "UnstableFalling"}]
+  },
+  "attributes": {},
+  "shape": {"base": "maltiezfirearms:shapes/casting/barrelmold"},
+  "attributesByType": {
+    "barrelmold-burned": {
+      "requiredUnits": 300,
+      "fillHeight": 15,
+      "fillQuadsByLevel": [
+        {"x1": 6.5, "z1": 6.5, "x2": 9.5, "z2": 9.5},
+        {"x1": 6.5, "z1": 6.5, "x2": 9.5, "z2": 9.5},
+        {"x1": 6.5, "z1": 6.5, "x2": 9.5, "z2": 9.5},
+        {"x1": 6.5, "z1": 6.5, "x2": 9.5, "z2": 9.5},
+        {"x1": 6.5, "z1": 6.5, "x2": 9.5, "z2": 9.5},
+        {"x1": 6.5, "z1": 6.5, "x2": 9.5, "z2": 9.5},
+        {"x1": 6.5, "z1": 6.5, "x2": 9.5, "z2": 9.5},
+        {"x1": 6.5, "z1": 6.5, "x2": 9.5, "z2": 9.5},
+        {"x1": 6.5, "z1": 6.5, "x2": 9.5, "z2": 9.5},
+        {"x1": 6.5, "z1": 6.5, "x2": 9.5, "z2": 9.5},
+        {"x1": 6.5, "z1": 6.5, "x2": 9.5, "z2": 9.5},
+        {"x1": 6.5, "z1": 6.5, "x2": 9.5, "z2": 9.5},
+        {"x1": 6.5, "z1": 6.5, "x2": 9.5, "z2": 9.5},
+        {"x1": 6.5, "z1": 6.5, "x2": 9.5, "z2": 9.5},
+        {"x1": 6.5, "z1": 6.5, "x2": 9.5, "z2": 9.5}
+      ],
+      "moldrackable": false,
+      "drop": {"type": "item", "code": "maltiezfirearms:barrel-pistol-{metal}", "quantity": 1}
+    }
+  },
+  "entityClassByType": {"barrelmold-burned": "ToolMold"},
+  "blockmaterial": "Ceramic",
+  "creativeinventory": {"maltiezfirearms": ["*"]},
+  "replaceable": 700,
+  "resistance": 2,
+  "maxStackSize": 8,
+  "lightAbsorption": 0,
+  "texturesByType": {"*-raw": {"all": {"base": "game:block/clay/blueclay"}}, "*-burned": {"floor": {"base": "game:block/clay/ceramic-dark"}, "other": {"base": "game:block/clay/ceramic"}}},
+  "sounds": {"walk": "walk/stone"},
+  "collisionbox": {"x1": 0.3, "y1": 0, "z1": 0.3, "x2": 0.7, "y2": 1, "z2": 0.7},
+  "selectionBox": {"x1": 0.3, "y1": 0, "z1": 0.3, "x2": 0.7, "y2": 1, "z2": 0.7},
+  "sideopaque": {"all": false},
+  "sidesolid": {"all": false},
+  "combustiblePropsByType": {
+    "*-raw": {
+      "meltingPoint": 650,
+      "meltingDuration": 45,
+      "smeltedRatio": 1,
+      "smeltingType": "fire",
+      "smeltedStack": {"type": "block", "code": "maltiezfirearms:barrelmold-burned"},
+      "requiresContainer": false
+    }
+  },
+  "guiTransform": {"translation": {"x": 0, "y": 13, "z": 0}, "rotation": {"x": -22, "y": -45.3, "z": 0}, "origin": {"x": 0.5, "y": 0.0625, "z": 0.5}, "scale": 1.33},
+  "fpHandTransform": {"translation": {"x": 0.2, "y": 0.3, "z": 0}},
+  "tpHandTransform": {"translation": {"x": -1.1, "y": -0.9, "z": -1.3}, "rotation": {"x": -80, "y": -81, "z": -1}, "scale": 0.5},
+  "groundTransform": {"translation": {"x": 0, "y": 0, "z": 0}, "rotation": {"x": 0, "y": -45, "z": 0}, "origin": {"x": 0.5, "y": 0, "z": 0.5}, "scale": 4.7}
+}

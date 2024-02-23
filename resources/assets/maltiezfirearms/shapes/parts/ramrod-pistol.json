@@ -1,0 +1,91 @@
+{
+	"editor": {
+		"collapsedPaths": "Root/Pistol/Lever_origin/Wheel_charging_lever,Root/Pistol/Stock,Root/Pistol/Barrel,Root/Pistol/Flask_origin/Flask_origin_inner,Root/Pistol/Wheellock/Plate,Root/Pistol/Ramrod,Root/Pistol/Patch,Root/Pistol/Barrel/Barrel_top4,Root/Pistol/Wheellock,Root/Pistol/Barrel/Barrel_top3,Root/Pistol/Barrel/Barrel_top2,Root/Pistol/Trigger_assembly/Guard_plate,Root/Pistol/Flask_origin/Flask/Bottom_plate,Root/Arquebus_origin/Stock,Root/Pistol/Wheellock/Flint_arm,Root/Pistol/Barrel/Barrel_top,Root/Arquebus_origin/Barrel,Root/Arquebus_origin/Ramrod,Root/Pistol/Trigger_assembly",
+		"allAngles": true,
+		"entityTextureMode": false
+	},
+	"textureWidth": 16,
+	"textureHeight": 16,
+	"textureSizes": {
+	},
+	"textures": {
+		"brass": "game:block/metal/plate/brass",
+		"tinbronze": "game:block/metal/plate/tinbronze"
+	},
+	"elements": [
+		{
+			"name": "Ramrod",
+			"from": [ -0.15, 0.1, -13.6 ],
+			"to": [ 0.15, 0.4, -3.1 ],
+			"rotationOrigin": [ -0.1, 0.4, -13.6 ],
+			"faces": {
+			},
+			"children": [
+				{
+					"name": "Ramrod_shaft",
+					"from": [ 0.0, 0.0, 0.0 ],
+					"to": [ 0.3, 0.3, 10.5 ],
+					"rotationOrigin": [ 0.05, 0.3, 4.0 ],
+					"faces": {
+						"north": { "texture": "#tinbronze", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+						"east": { "texture": "#tinbronze", "uv": [ 0.0, 0.0, 16.0, 0.5 ], "autoUv": false },
+						"south": { "texture": "#tinbronze", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+						"west": { "texture": "#tinbronze", "uv": [ 0.0, 0.0, 16.0, 0.5 ], "autoUv": false },
+						"up": { "texture": "#tinbronze", "uv": [ 0.0, 0.0, 0.5, 16.0 ], "autoUv": false },
+						"down": { "texture": "#tinbronze", "uv": [ 0.0, 0.0, 0.5, 16.0 ], "autoUv": false }
+					},
+					"children": [
+						{
+							"name": "Ramrod_cap",
+							"from": [ -0.05, -0.05, -0.4 ],
+							"to": [ 0.35, 0.35, 0.0 ],
+							"rotationOrigin": [ 0.0, 0.1, -0.5 ],
+							"faces": {
+								"north": { "texture": "#brass", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+								"east": { "texture": "#brass", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+								"south": { "texture": "#brass", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+								"west": { "texture": "#brass", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+								"up": { "texture": "#brass", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+								"down": { "texture": "#brass", "uv": [ 0.0, 0.0, 0.5, 0.5 ] }
+							}
+						}
+					]
+				}
+			]
+		}
+	],
+	"animations": [
+		{
+			"name": "Load",
+			"code": "load",
+			"quantityframes": 200,
+			"onActivityStopped": "Stop",
+			"onAnimationEnd": "Hold",
+			"keyframes": [
+
+			]
+		},
+
+		{
+			"name": "Prime",
+			"code": "prime",
+			"quantityframes": 130,
+			"onActivityStopped": "Stop",
+			"onAnimationEnd": "Hold",
+			"keyframes": [
+
+			]
+		},
+
+		{
+			"name": "Fire",
+			"code": "fire",
+			"quantityframes": 30,
+			"onActivityStopped": "Stop",
+			"onAnimationEnd": "Hold",
+			"keyframes": [
+
+			]
+		}
+	]
+}

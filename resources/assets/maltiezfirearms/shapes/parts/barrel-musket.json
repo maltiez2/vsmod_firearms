@@ -1,0 +1,153 @@
+{
+	"editor": {
+		"collapsedPaths": "Root/Band_second,Root/Musket/Band_first,Root/Band_first,Root/Carbine/Band_third,Root/Stock,Root/Carbine/Flask_origin,Root/Flintlock,Root/Band_third,Root/Carbine/Flintlock,Root/Musket/Band_second,Root/Musket/Trigger_assembly,Root/Musket/Ramrod,Root/Carbine/Band_first,Root/Musket/Flintlock/Frizzen,Root/Musket/Band_third,Root/Carbine/Ramrod_origin,Root/Trigger_assembly,Root/Carbine/Patch,Root/Ramrod,Root/Carbine/Band_second,Root/Carbine/Trigger_assembly",
+		"allAngles": false,
+		"entityTextureMode": false
+	},
+	"textureWidth": 16,
+	"textureHeight": 16,
+	"textureSizes": {
+	},
+	"textures": {
+		"metal": "game:block/metal/plate/steel"
+	},
+	"elements": [
+		{
+			"name": "Barrel",
+			"from": [ 0.0, 0.8, -9.5 ],
+			"to": [ 0.0, 0.8, -9.5 ],
+			"rotationOrigin": [ 0.0, 0.8, -9.5 ],
+			"faces": {
+				"north": { "texture": "#null", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+				"east": { "texture": "#null", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+				"south": { "texture": "#null", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+				"west": { "texture": "#null", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+				"up": { "texture": "#null", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+				"down": { "texture": "#null", "uv": [ 0.0, 0.0, 0.5, 0.5 ] }
+			},
+			"children": [
+				{
+					"name": "Barrel_top",
+					"from": [ -0.31, 0.25, -26.0 ],
+					"to": [ 0.31, 0.5, 6.0 ],
+					"rotationOrigin": [ -0.1, -0.1, -1.0 ],
+					"faces": {
+						"north": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+						"east": { "texture": "#metal", "uv": [ 0.0, 0.0, 16.0, 0.5 ], "autoUv": false },
+						"south": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+						"west": { "texture": "#metal", "uv": [ 0.0, 0.0, 16.0, 0.5 ], "autoUv": false },
+						"up": { "texture": "#metal", "uv": [ 10.0, 0.0, 10.5, 16.0 ], "autoUv": false },
+						"down": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.5, 16.0 ], "autoUv": false }
+					}
+				},
+				{
+					"name": "Barrel_bottom",
+					"from": [ -0.11, 0.45, -26.0 ],
+					"to": [ 0.51, 0.7, 6.0 ],
+					"rotationOrigin": [ 0.1, 0.1, -12.0 ],
+					"rotationZ": -180.0,
+					"faces": {
+						"north": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+						"east": { "texture": "#metal", "uv": [ 0.0, 0.0, 16.0, 0.5 ], "autoUv": false },
+						"south": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+						"west": { "texture": "#metal", "uv": [ 0.0, 0.0, 16.0, 0.5 ], "autoUv": false },
+						"up": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.5, 16.0 ], "autoUv": false },
+						"down": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.5, 16.0 ], "autoUv": false }
+					}
+				},
+				{
+					"name": "Barrel_left",
+					"from": [ -0.11, 0.25, -26.0 ],
+					"to": [ 0.51, 0.5, 6.0 ],
+					"rotationOrigin": [ 0.1, -0.1, -12.0 ],
+					"rotationZ": 90.0,
+					"faces": {
+						"north": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+						"east": { "texture": "#metal", "uv": [ 0.0, 0.0, 16.0, 0.5 ], "autoUv": false },
+						"south": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+						"west": { "texture": "#metal", "uv": [ 0.0, 0.0, 16.0, 0.5 ], "autoUv": false },
+						"up": { "texture": "#metal", "uv": [ 6.5, 0.0, 7.0, 16.0 ], "autoUv": false },
+						"down": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.5, 16.0 ], "autoUv": false }
+					}
+				},
+				{
+					"name": "Barrel_right",
+					"from": [ -0.31, 0.45, -26.0 ],
+					"to": [ 0.31, 0.7, 6.0 ],
+					"rotationOrigin": [ -0.1, 0.1, -7.0 ],
+					"rotationZ": -90.0,
+					"faces": {
+						"north": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+						"east": { "texture": "#metal", "uv": [ 0.0, 0.0, 16.0, 0.5 ], "autoUv": false },
+						"south": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+						"west": { "texture": "#metal", "uv": [ 0.0, 0.0, 16.0, 0.5 ], "autoUv": false },
+						"up": { "texture": "#metal", "uv": [ 1.0, 0.0, 1.5, 16.0 ], "autoUv": false },
+						"down": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.5, 16.0 ], "autoUv": false }
+					}
+				},
+				{
+					"name": "Bayonet_lag",
+					"from": [ -0.1, -0.68, -25.0 ],
+					"to": [ 0.1, -0.48, -24.8 ],
+					"rotationOrigin": [ 0.0, -0.7, -25.0 ],
+					"faces": {
+						"north": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+						"east": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+						"south": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+						"west": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+						"up": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+						"down": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.5, 0.5 ] }
+					}
+				},
+				{
+					"name": "Barrel_top2",
+					"from": [ -0.3, -0.3, 6.0 ],
+					"to": [ 0.3, 0.3, 6.2 ],
+					"rotationOrigin": [ -0.1, -0.7, 31.0 ],
+					"faces": {
+						"north": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.5, 0.5 ], "windMode": [-1,-1,-1,-1] },
+						"east": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.5, 0.5 ], "windMode": [-1,-1,-1,-1] },
+						"south": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.5, 0.5 ], "windMode": [-1,-1,-1,-1] },
+						"west": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+						"up": { "texture": "#metal", "uv": [ 10.0, 0.0, 10.5, 0.5 ], "windMode": [-1,-1,-1,-1] },
+						"down": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.5, 0.5 ], "windMode": [-1,-1,-1,-1] }
+					}
+				}
+			]
+		}
+	],
+	"animations": [
+		{
+			"name": "Load",
+			"code": "load",
+			"quantityframes": 285,
+			"onActivityStopped": "Stop",
+			"onAnimationEnd": "Hold",
+			"keyframes": [
+
+			]
+		},
+
+		{
+			"name": "Prime",
+			"code": "prime",
+			"quantityframes": 60,
+			"onActivityStopped": "Stop",
+			"onAnimationEnd": "Hold",
+			"keyframes": [
+
+			]
+		},
+
+		{
+			"name": "Fire",
+			"code": "fire",
+			"quantityframes": 30,
+			"onActivityStopped": "Stop",
+			"onAnimationEnd": "Hold",
+			"keyframes": [
+
+			]
+		}
+	]
+}

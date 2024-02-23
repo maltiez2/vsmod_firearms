@@ -3,11 +3,42 @@
   "class": "Item",
   "maxstacksize": 16,
   "storageFlags": 513,
+  "variantgroups": [{"code": "material", "states": ["lead", "copper", "steel"]}],
+  "allowedVariants": ["*-lead", "*-copper", "*-steel"],
   "shape": {"base": "maltiezfirearms:slug"},
+  "textures": {"metal": {"base": "game:block/metal/plate/{material}"}},
   "creativeinventory": {"maltiezfirearms": ["*"]},
   "guiTransform": {"rotation": {"x": 66, "y": 0, "z": 45}, "origin": {"x": 0.6, "y": 0.6, "z": 0.6}, "scale": 4.1},
   "fpHandTransform": {"translation": {"x": 0.15, "y": 0, "z": 0}, "rotation": {"x": 91, "y": 0, "z": -30}, "scale": 2},
   "tpHandTransform": {"translation": {"x": -1.05, "y": -0.59, "z": -0.96}, "rotation": {"x": 0, "y": 2, "z": 3}, "scale": 0.48},
   "groundTransform": {"translation": {"x": 0, "y": 0, "z": 0}, "rotation": {"x": 0, "y": 0, "z": 0}, "origin": {"x": 0.5, "y": 0.37, "z": 0.5}, "scale": 3},
-  "attributes": {"breakChanceOnImpact": 1}
+  "attributes": {"breakChanceOnImpact": 1, "projectile": "maltiezfirearms:slug-{material}"},
+  "behaviors": [
+    {
+      "name": "GroundStorable",
+      "properties": {
+        "layout": "Stacking",
+        "placeRemoveSound": "game:sounds/block/ceramicplace",
+        "stackingModel": "maltiezfirearms:piles/slugs",
+        "modelItemsToStackSizeRatio": 1,
+        "stackingCapacity": 64,
+        "upSolid": false,
+        "transferQuantity": 1,
+        "bulkTransferQuantity": 8,
+        "collisionBox": {"x1": 0.2, "y1": 0, "z1": 0.2, "x2": 0.8, "y2": 0.05, "z2": 0.8},
+        "cbScaleYByLayer": 0.1
+      }
+    },
+    {
+      "name": "FSMAdvancedProjectile",
+      "properties": {
+        "damageTypesByType": {
+          "*-lead": [{"damage": 38, "knockback": 0.5, "type": "BluntAttack", "tier": 5}],
+          "*-copper": [{"damage": 20, "knockback": 0.2, "type": "BluntAttack", "tier": 3}, {"damage": 10, "knockback": 0, "type": "PiercingAttack", "tier": 3}],
+          "*-steel": [{"damage": 25, "knockback": 0.1, "type": "PiercingAttack", "tier": 10}]
+        },
+        "additionalDurabilityCostByType": {"*-lead": 0, "*-copper": 0, "*-steel": 9}
+      }
+    }
+  ]
 }

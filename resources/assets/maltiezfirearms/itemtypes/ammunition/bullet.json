@@ -1,15 +1,43 @@
 ﻿{
   "code": "bullet",
   "class": "Item",
-  "maxstacksize": 64,
+  "maxstacksize": 32,
   "storageFlags": 513,
+  "variantgroups": [{"code": "material", "states": ["lead", "copper", "steel"]}],
+  "allowedVariants": ["*-lead", "*-copper", "*-steel"],
   "shape": {"base": "maltiezfirearms:bullet"},
+  "textures": {"metal": {"base": "game:block/metal/plate/{material}"}},
   "behaviors": [
-    {"name": "GroundStorable", "properties": {"layout": "Quadrants", "placeRemoveSound": "sounds/player/build", "collisionBox": {"x1": 0, "y1": 0, "z1": 0, "x2": 1, "y2": 0.3125, "z2": 1}}}
+    {
+      "name": "GroundStorable",
+      "properties": {
+        "layout": "Stacking",
+        "placeRemoveSound": "game:sounds/block/ceramicplace",
+        "stackingModel": "maltiezfirearms:piles/bullets",
+        "modelItemsToStackSizeRatio": 1.125,
+        "stackingCapacity": 128,
+        "upSolid": false,
+        "transferQuantity": 8,
+        "bulkTransferQuantity": 32,
+        "collisionBox": {"x1": 0.2, "y1": 0, "z1": 0.2, "x2": 0.8, "y2": 0.0125, "z2": 0.8},
+        "cbScaleYByLayer": 0.1
+      }
+    },
+    {
+      "name": "FSMAdvancedProjectile",
+      "properties": {
+        "damageTypesByType": {
+          "*-lead": [{"damage": 16, "knockback": 0.3, "type": "BluntAttack", "tier": 3}],
+          "*-copper": [{"damage": 8, "knockback": 0.1, "type": "BluntAttack", "tier": 2}, {"damage": 4, "knockback": 0, "type": "PiercingAttack", "tier": 2}],
+          "*-steel": [{"damage": 10, "knockback": 0, "type": "PiercingAttack", "tier": 7}]
+        },
+        "additionalDurabilityCostByType": {"*-lead": 0, "*-copper": 0, "*-steel": 4}
+      }
+    }
   ],
   "creativeinventory": {"maltiezfirearms": ["*"]},
   "guiTransform": {"rotation": {"x": 66, "y": 0, "z": 44}, "origin": {"x": 0.6, "y": 0.6, "z": 0.6}, "scale": 4},
   "fpHandTransform": {"translation": {"x": 0.15, "y": 0, "z": 0}, "rotation": {"x": 119, "y": 90, "z": -30}, "scale": 3},
   "groundTransform": {"translation": {"x": 0, "y": 0, "z": 0}, "rotation": {"x": 0, "y": 0, "z": 0}, "origin": {"x": 0.5, "y": 0.47, "z": 0.5}, "scale": 2},
-  "attributes": {"breakChanceOnImpact": 1}
+  "attributes": {"breakChanceOnImpact": 1, "projectile": "maltiezfirearms:bullet-{material}"}
 }

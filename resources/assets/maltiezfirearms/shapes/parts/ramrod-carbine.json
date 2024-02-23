@@ -1,0 +1,97 @@
+{
+	"editor": {
+		"collapsedPaths": "Root/Band_second,Root/Musket/Band_first,Root/Band_first,Root/Stock,Root/Carbine/Flask_origin,Root/Flintlock,Root/Carbine/Trigger_assembly/Trigger_assemly_base,Root/Barrel,Root/Band_third,Root/Carbine/Flintlock,Root/Musket/Trigger_assembly,Root/Musket/Band_second,Root/Carbine/Trigger_assembly/Guard,Root/Musket/Flintlock/Plate,Root/Carbine/Ramrod_origin/Ramrod,Root/Musket,Root/Musket/Flintlock,Root/Musket/Stock,Root/origin/Bottom_plate,Root/Carbine/Flintlock/Hammer,Root/Musket/Stock/Buttstock/Buttstock_bottom/Buttstock_butt/Buttstock_butt_plate,Root/Carbine/Flintlock/Pan,Root/Musket/Band_third,Root/Carbine/Flintlock/Hammer/Hammer_arm,Root/Carbine/Ramrod_origin,Root/Carbine/Barrel,Root/Carbine/Stock,Root/Trigger_assembly,Root/Carbine/Flintlock/Frizzen,Root/Musket/Stock/Buttstock/Buttstock_butt,Root/Carbine/Patch,Root/Ramrod,Root/Carbine/Band_second,Root/Musket/Barrel,Root/Carbine/Trigger_assembly",
+		"allAngles": false,
+		"entityTextureMode": false
+	},
+	"textureWidth": 16,
+	"textureHeight": 16,
+	"textureSizes": {
+	},
+	"textures": {
+		"brass": "game:block/metal/plate/brass",
+		"steel": "game:block/metal/plate/steel"
+	},
+	"elements": [
+		{
+			"name": "Ramrod_origin",
+			"from": [ -0.15, -0.19, -25.0 ],
+			"to": [ -0.15, -0.19, -25.0 ],
+			"rotationOrigin": [ -0.15, -0.19, -25.0 ],
+			"faces": {
+				"north": { "texture": "#steel", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+				"east": { "texture": "#steel", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+				"south": { "texture": "#steel", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+				"west": { "texture": "#steel", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+				"up": { "texture": "#steel", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+				"down": { "texture": "#steel", "uv": [ 0.0, 0.0, 0.5, 0.5 ] }
+			},
+			"children": [
+				{
+					"name": "Ramrod",
+					"from": [ 0.0, 0.0, 0.0 ],
+					"to": [ 0.3, 0.3, 24.0 ],
+					"rotationOrigin": [ 0.05, 0.09, 7.3 ],
+					"faces": {
+						"north": { "texture": "#steel", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+						"east": { "texture": "#steel", "uv": [ 0.0, 0.0, 16.0, 0.5 ], "autoUv": false },
+						"south": { "texture": "#steel", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+						"west": { "texture": "#steel", "uv": [ 0.0, 0.0, 16.0, 0.5 ], "autoUv": false },
+						"up": { "texture": "#steel", "uv": [ 0.0, 0.0, 0.5, 16.0 ], "autoUv": false },
+						"down": { "texture": "#steel", "uv": [ 0.0, 0.0, 0.5, 16.0 ], "autoUv": false }
+					},
+					"children": [
+						{
+							"name": "Ramrod_cap",
+							"from": [ -0.05, -0.05, -0.2 ],
+							"to": [ 0.35, 0.35, 0.0 ],
+							"rotationOrigin": [ 0.0, 0.1, -0.3 ],
+							"faces": {
+								"north": { "texture": "#brass", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+								"east": { "texture": "#brass", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+								"south": { "texture": "#brass", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+								"west": { "texture": "#brass", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+								"up": { "texture": "#brass", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+								"down": { "texture": "#brass", "uv": [ 0.0, 0.0, 0.5, 0.5 ] }
+							}
+						}
+					]
+				}
+			]
+		}
+	],
+	"animations": [
+		{
+			"name": "Load",
+			"code": "load",
+			"quantityframes": 215,
+			"onActivityStopped": "Stop",
+			"onAnimationEnd": "Hold",
+			"keyframes": [
+
+			]
+		},
+
+		{
+			"name": "Prime",
+			"code": "prime",
+			"quantityframes": 60,
+			"onActivityStopped": "Stop",
+			"onAnimationEnd": "Hold",
+			"keyframes": [
+
+			]
+		},
+
+		{
+			"name": "Fire",
+			"code": "fire",
+			"quantityframes": 30,
+			"onActivityStopped": "Stop",
+			"onAnimationEnd": "Hold",
+			"keyframes": [
+
+			]
+		}
+	]
+}

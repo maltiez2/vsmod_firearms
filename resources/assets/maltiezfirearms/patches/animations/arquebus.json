@@ -1,0 +1,333 @@
+﻿[
+  {"file": "game:entities/humanoid/player", "op": "add", "path": "/client/animations/-", "value": {"code": "arquebus-idle", "animation": "arquebus-idle", "animationSpeed": 1, "blendMode": "Add"}},
+  {
+    "file": "game:shapes/entity/humanoid/seraph-faceless",
+    "op": "add",
+    "path": "/animations/-",
+    "value": {
+      "name": "arquebus-idle",
+      "code": "arquebus-idle",
+      "quantityframes": 1,
+      "onActivityStopped": "EaseOut",
+      "onAnimationEnd": "Hold",
+      "keyframes": [
+        {
+          "frame": 0,
+          "elements": {
+            "UpperArmR": {"rotationX": 25, "rotationY": 0, "rotationZ": -5, "offsetX": 0, "offsetY": 0, "offsetZ": 0},
+            "LowerArmR": {"rotationX": 0, "rotationY": 54, "rotationZ": -73},
+            "ItemAnchor": {"rotationX": -26, "rotationY": 0, "rotationZ": 41, "offsetX": 0.67, "offsetY": -0.03, "offsetZ": 0.19},
+            "UpperArmL": {"rotationX": -12, "rotationY": 0, "rotationZ": 5, "offsetX": 0, "offsetY": 0, "offsetZ": 0},
+            "LowerArmL": {"rotationX": 0, "rotationY": 0, "rotationZ": -82}
+          }
+        }
+      ]
+    }
+  },
+  {"file": "game:entities/humanoid/player", "op": "add", "path": "/client/animations/-", "value": {"code": "arquebus-aim", "animation": "arquebus-aim", "animationSpeed": 1, "blendMode": "Add"}},
+  {
+    "file": "game:shapes/entity/humanoid/seraph-faceless",
+    "op": "add",
+    "path": "/animations/-",
+    "value": {
+      "name": "arquebus-aim",
+      "code": "arquebus-aim",
+      "quantityframes": 1,
+      "onActivityStopped": "EaseOut",
+      "onAnimationEnd": "Hold",
+      "keyframes": [
+        {
+          "frame": 0,
+          "elements": {
+            "UpperArmR": {"rotationX": 0, "rotationY": -60, "rotationZ": -80, "offsetX": 0.5, "offsetY": 0, "offsetZ": 1},
+            "LowerArmR": {"rotationX": -115, "rotationY": 11, "rotationZ": 0},
+            "ItemAnchor": {"rotationX": 49, "rotationY": 6, "rotationZ": 90, "offsetX": 1.55, "offsetY": 0.68, "offsetZ": 0.76},
+            "UpperArmL": {"rotationX": 0, "rotationY": 4, "rotationZ": -97, "offsetX": 0, "offsetY": 0, "offsetZ": 0},
+            "UpperTorso": {"rotationX": 0, "rotationY": -10, "rotationZ": 10},
+            "Neck": {"rotationX": -11, "rotationY": 13, "rotationZ": -3},
+            "LowerArmL": {"rotationX": 16, "rotationY": 0, "rotationZ": 0}
+          }
+        }
+      ]
+    }
+  },
+  {"file": "game:entities/humanoid/player", "op": "add", "path": "/client/animations/-", "value": {"code": "arquebus-load", "animation": "arquebus-load", "animationSpeed": 1, "blendMode": "Add"}},
+  {
+    "file": "game:shapes/entity/humanoid/seraph-faceless",
+    "op": "add",
+    "path": "/animations/-",
+    "value": {
+      "name": "arquebus-load",
+      "code": "arquebus-load",
+      "quantityframes": 1,
+      "onActivityStopped": "EaseOut",
+      "onAnimationEnd": "Hold",
+      "keyframes": [
+        {
+          "frame": 0,
+          "elements": {
+            "UpperArmR": {"rotationX": 0, "rotationY": 0, "rotationZ": -43, "offsetX": 0, "offsetY": 0, "offsetZ": 0},
+            "LowerArmR": {"rotationX": -55, "rotationY": 28, "rotationZ": -6},
+            "ItemAnchor": {"rotationX": 126, "rotationY": -21, "rotationZ": 0, "offsetX": 13.21, "offsetY": -1.1, "offsetZ": 0},
+            "UpperArmL": {"rotationX": 4, "rotationY": 0, "rotationZ": -27, "offsetX": 0, "offsetY": 0, "offsetZ": 0},
+            "LowerArmL": {"rotationX": 18, "rotationY": 0, "rotationZ": 0},
+            "UpperTorso": {"rotationX": 0, "rotationY": 0, "rotationZ": 0},
+            "Neck": {"rotationX": 0, "rotationY": 0, "rotationZ": 0}
+          }
+        }
+      ]
+    }
+  },
+  {"file": "game:entities/humanoid/player", "op": "add", "path": "/client/animations/-", "value": {"code": "arquebus-prime", "animation": "arquebus-prime", "animationSpeed": 1, "blendMode": "Add"}},
+  {
+    "file": "game:shapes/entity/humanoid/seraph-faceless",
+    "op": "add",
+    "path": "/animations/-",
+    "value": {
+      "name": "arquebus-prime",
+      "code": "arquebus-prime",
+      "quantityframes": 1,
+      "onActivityStopped": "EaseOut",
+      "onAnimationEnd": "Hold",
+      "keyframes": [
+        {
+          "frame": 0,
+          "elements": {
+            "UpperArmR": {"rotationX": 0, "rotationY": -11, "rotationZ": -77, "offsetX": 0.5, "offsetY": 0, "offsetZ": 0},
+            "LowerArmR": {"rotationX": -55, "rotationY": 0, "rotationZ": 0},
+            "ItemAnchor": {"rotationX": 52, "rotationY": 0, "rotationZ": 67, "offsetX": 3.07, "offsetY": 0.61, "offsetZ": -0.18},
+            "UpperArmL": {"rotationX": -20, "rotationY": 32, "rotationZ": -32, "offsetX": 0, "offsetY": 0, "offsetZ": 0},
+            "LowerArmL": {"rotationX": 98, "rotationY": 0, "rotationZ": 0},
+            "UpperTorso": {"rotationX": 0, "rotationY": 0, "rotationZ": 0},
+            "Neck": {"rotationX": 0, "rotationY": 0, "rotationZ": 0}
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "game:entities/humanoid/player",
+    "op": "add",
+    "path": "/client/animations/-",
+    "value": {"code": "arquebus-idle-fp", "animation": "arquebus-idle-fp", "animationSpeed": 1, "blendMode": "Add"}
+  },
+  {
+    "file": "game:shapes/entity/humanoid/seraph-faceless",
+    "op": "add",
+    "path": "/animations/-",
+    "value": {
+      "name": "arquebus-idle-fp",
+      "code": "arquebus-idle-fp",
+      "quantityframes": 1,
+      "onActivityStopped": "EaseOut",
+      "onAnimationEnd": "Hold",
+      "keyframes": [
+        {
+          "frame": 0,
+          "elements": {
+            "UpperArmR": {"rotationX": 25, "rotationY": 0, "rotationZ": -12, "offsetX": 0, "offsetY": -2, "offsetZ": -2.01},
+            "LowerArmR": {"rotationX": 0, "rotationY": 54, "rotationZ": -76},
+            "ItemAnchor": {"rotationX": -26, "rotationY": 0, "rotationZ": 41, "offsetX": 0.67, "offsetY": -0.03, "offsetZ": 0.19},
+            "UpperArmL": {"rotationX": -12, "rotationY": 0, "rotationZ": 5, "offsetX": 0.99, "offsetY": 0, "offsetZ": 1},
+            "LowerArmL": {"rotationX": 0, "rotationY": 0, "rotationZ": -82}
+          }
+        }
+      ]
+    }
+  },
+  {"file": "game:entities/humanoid/player", "op": "add", "path": "/client/animations/-", "value": {"code": "arquebus-aim-fp", "animation": "arquebus-aim-fp", "animationSpeed": 1, "blendMode": "Add"}},
+  {
+    "file": "game:shapes/entity/humanoid/seraph-faceless",
+    "op": "add",
+    "path": "/animations/-",
+    "value": {
+      "name": "arquebus-aim-fp",
+      "code": "arquebus-aim-fp",
+      "quantityframes": 1,
+      "onActivityStopped": "EaseOut",
+      "onAnimationEnd": "Hold",
+      "keyframes": [
+        {
+          "frame": 0,
+          "elements": {
+            "UpperArmR": {"rotationX": 0, "rotationY": -90, "rotationZ": -90, "offsetX": 2.34, "offsetY": 3.1, "offsetZ": 0.99},
+            "LowerArmR": {"rotationX": -102, "rotationY": 0, "rotationZ": -9},
+            "ItemAnchor": {"rotationX": 20.5, "rotationY": 3, "rotationZ": 110, "offsetX": 2.23999, "offsetY": 0.51, "offsetZ": 1.26},
+            "UpperArmL": {"rotationX": 0, "rotationY": -15, "rotationZ": -89, "offsetX": 0.81, "offsetY": 0, "offsetZ": 0},
+            "LowerArmL": {"rotationX": 17, "rotationY": 0, "rotationZ": -12}
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "game:entities/humanoid/player",
+    "op": "add",
+    "path": "/client/animations/-",
+    "value": {"code": "arquebus-load-fp", "animation": "arquebus-load-fp", "animationSpeed": 1, "blendMode": "Add"}
+  },
+  {
+    "file": "game:shapes/entity/humanoid/seraph-faceless",
+    "op": "add",
+    "path": "/animations/-",
+    "value": {
+      "name": "arquebus-load-fp",
+      "code": "arquebus-load-fp",
+      "quantityframes": 1,
+      "onActivityStopped": "EaseOut",
+      "onAnimationEnd": "Hold",
+      "keyframes": [
+        {
+          "frame": 0,
+          "elements": {
+            "UpperArmR": {"rotationX": 0, "rotationY": 0, "rotationZ": -43, "offsetX": 0, "offsetY": 0, "offsetZ": 0},
+            "LowerArmR": {"rotationX": -55, "rotationY": 28, "rotationZ": -6},
+            "ItemAnchor": {"rotationX": 111, "rotationY": -21, "rotationZ": -5, "offsetX": 9.81, "offsetY": -1.1, "offsetZ": 0},
+            "UpperArmL": {"rotationX": 4, "rotationY": 0, "rotationZ": -27, "offsetX": 0, "offsetY": 0, "offsetZ": 0},
+            "LowerArmL": {"rotationX": 18, "rotationY": 0, "rotationZ": 0},
+            "UpperTorso": {"rotationX": 0, "rotationY": 0, "rotationZ": 0},
+            "Neck": {"rotationX": 0, "rotationY": 0, "rotationZ": 0}
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "game:entities/humanoid/player",
+    "op": "add",
+    "path": "/client/animations/-",
+    "value": {"code": "arquebus-prime-fp", "animation": "arquebus-prime-fp", "animationSpeed": 1, "blendMode": "Add"}
+  },
+  {
+    "file": "game:shapes/entity/humanoid/seraph-faceless",
+    "op": "add",
+    "path": "/animations/-",
+    "value": {
+      "name": "arquebus-prime-fp",
+      "code": "arquebus-prime-fp",
+      "quantityframes": 1,
+      "onActivityStopped": "EaseOut",
+      "onAnimationEnd": "Hold",
+      "keyframes": [
+        {
+          "frame": 0,
+          "elements": {
+            "UpperArmR": {"rotationX": 0, "rotationY": -11, "rotationZ": -77, "offsetX": 5, "offsetY": 2, "offsetZ": 0},
+            "LowerArmR": {"rotationX": -63, "rotationY": 0, "rotationZ": 0},
+            "ItemAnchor": {"rotationX": 59, "rotationY": 0, "rotationZ": 72, "offsetX": 1.31, "offsetY": 6.64, "offsetZ": 0.78},
+            "UpperArmL": {"rotationX": 0, "rotationY": 0, "rotationZ": 0, "offsetX": 0, "offsetY": 0, "offsetZ": 0},
+            "LowerArmL": {"rotationX": 0, "rotationY": 0, "rotationZ": 0}
+          }
+        }
+      ]
+    }
+  },
+  {"file": "game:entities/humanoid/player", "op": "add", "path": "/client/animations/-", "value": {"code": "arquebus-recoil", "animation": "arquebus-recoil", "animationSpeed": 1, "blendMode": "Add"}},
+  {
+    "file": "game:shapes/entity/humanoid/seraph-faceless",
+    "op": "add",
+    "path": "/animations/-",
+    "value": {
+      "name": "arquebusRecoil",
+      "code": "arquebus-recoil",
+      "quantityframes": 1,
+      "onActivityStopped": "Stop",
+      "onAnimationEnd": "Hold",
+      "keyFrames": [
+        {
+          "frame": 0,
+          "elements": {
+            "UpperArmR": {"rotationX": 0, "rotationY": 0, "rotationZ": 0, "offsetX": 0.15, "offsetY": 0, "offsetZ": -0.3},
+            "LowerArmR": {"rotationX": 0, "rotationY": 0, "rotationZ": -1},
+            "UpperArmL": {"rotationX": 0, "rotationY": 0, "rotationZ": -1, "offsetX": 0.2, "offsetY": 0.3, "offsetZ": 0},
+            "LowerArmL": {"rotationX": 0, "rotationY": 0, "rotationZ": -2},
+            "ItemAnchor": {"rotationX": 0, "rotationY": 0, "rotationZ": 1, "offsetX": 0, "offsetY": 0, "offsetZ": 0}
+          }
+        }
+      ]
+    }
+  },
+  {"file": "game:entities/humanoid/player", "op": "add", "path": "/client/animations/-", "value": {"code": "arquebus-melee", "animation": "arquebus-melee", "animationSpeed": 1, "blendMode": "Add"}},
+  {
+    "file": "game:shapes/entity/humanoid/seraph-faceless",
+    "op": "add",
+    "path": "/animations/-",
+    "value": {
+      "name": "arquebusMelee",
+      "code": "arquebus-melee",
+      "quantityframes": 2,
+      "onActivityStopped": "Stop",
+      "onAnimationEnd": "Hold",
+      "keyFrames": [
+        {
+          "frame": 0,
+          "elements": {
+            "UpperTorso": {"rotationX": 0, "rotationY": -10, "rotationZ": 0},
+            "UpperArmR": {"rotationX": 0, "rotationY": 5, "rotationZ": -90, "offsetX": 0, "offsetY": 1, "offsetZ": 0},
+            "LowerArmR": {"rotationX": -50, "rotationY": 0, "rotationZ": -25},
+            "ItemAnchor": {"rotationX": 68, "rotationY": 25, "rotationZ": -74, "offsetX": 3, "offsetY": 0, "offsetZ": 0},
+            "UpperArmL": {"rotationX": 0, "rotationY": 0, "rotationZ": -47, "offsetX": 0, "offsetY": 0, "offsetZ": 0},
+            "LowerArmL": {"rotationX": 0, "rotationY": 0, "rotationZ": -130},
+            "Neck": {"rotationX": 0, "rotationY": 10, "rotationZ": 0}
+          }
+        },
+        {
+          "frame": 1,
+          "elements": {
+            "UpperTorso": {"rotationX": 0, "rotationY": 10, "rotationZ": 0},
+            "UpperArmR": {"rotationX": 0, "rotationY": -6, "rotationZ": -90, "offsetX": 0, "offsetY": 0, "offsetZ": 0},
+            "LowerArmR": {"rotationX": -9, "rotationY": 0, "rotationZ": 0},
+            "ItemAnchor": {"rotationX": 41, "rotationY": 1, "rotationZ": -73, "offsetX": 3, "offsetY": 0, "offsetZ": 0},
+            "UpperArmL": {"rotationX": 0, "rotationY": -25, "rotationZ": -50, "offsetX": 0, "offsetY": 0, "offsetZ": 0},
+            "LowerArmL": {"rotationX": 0, "rotationY": 0, "rotationZ": -87},
+            "Neck": {"rotationX": 0, "rotationY": -10, "rotationZ": 0}
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "game:entities/humanoid/player",
+    "op": "add",
+    "path": "/client/animations/-",
+    "value": {"code": "arquebus-melee-fp", "animation": "arquebus-melee-fp", "animationSpeed": 1, "blendMode": "Add"}
+  },
+  {
+    "file": "game:shapes/entity/humanoid/seraph-faceless",
+    "op": "add",
+    "path": "/animations/-",
+    "value": {
+      "name": "arquebusMelee",
+      "code": "arquebus-melee-fp",
+      "quantityframes": 2,
+      "onActivityStopped": "Stop",
+      "onAnimationEnd": "Hold",
+      "keyFrames": [
+        {
+          "frame": 0,
+          "elements": {
+            "UpperTorso": {"rotationX": 0, "rotationY": 0, "rotationZ": 0},
+            "UpperArmR": {"rotationX": 0, "rotationY": 0, "rotationZ": -48, "offsetX": 0, "offsetY": 0, "offsetZ": -2},
+            "LowerArmR": {"rotationX": 0, "rotationY": 0, "rotationZ": -110},
+            "ItemAnchor": {"rotationX": 0, "rotationY": 0, "rotationZ": -15, "offsetX": 1, "offsetY": -0.15, "offsetZ": 0},
+            "UpperArmL": {"rotationX": 0, "rotationY": 0, "rotationZ": 0, "offsetX": 0, "offsetY": 0, "offsetZ": 0},
+            "LowerArmL": {"rotationX": 0, "rotationY": 0, "rotationZ": 0},
+            "Neck": {"rotationX": 0, "rotationY": 0, "rotationZ": 0}
+          }
+        },
+        {
+          "frame": 1,
+          "elements": {
+            "UpperTorso": {"rotationX": 0, "rotationY": 0, "rotationZ": 0},
+            "UpperArmR": {"rotationX": 0, "rotationY": 0, "rotationZ": -96, "offsetX": 0.5, "offsetY": 0, "offsetZ": -2},
+            "LowerArmR": {"rotationX": 0, "rotationY": 0, "rotationZ": 0},
+            "ItemAnchor": {"rotationX": 0, "rotationY": 0, "rotationZ": -76, "offsetX": 2.55, "offsetY": -2.01, "offsetZ": 0},
+            "UpperArmL": {"rotationX": 0, "rotationY": 0, "rotationZ": 0, "offsetX": 0, "offsetY": 0, "offsetZ": 0},
+            "LowerArmL": {"rotationX": 0, "rotationY": 0, "rotationZ": 0},
+            "Neck": {"rotationX": 0, "rotationY": 0, "rotationZ": 0}
+          }
+        }
+      ]
+    }
+  }
+]

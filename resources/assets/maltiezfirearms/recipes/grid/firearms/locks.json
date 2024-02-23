@@ -1,0 +1,52 @@
+[
+  {
+    "ingredientPattern": "PGF,NP_",
+    "ingredients": {
+      "P": {"type": "item", "code": "game:metalplate-tinbronze", "quantity": 1},
+      "N": {"type": "item", "code": "game:metalplate-brass", "quantity": 1},
+      "G": {"type": "item", "code": "game:gear-rusty", "quantity": 1},
+      "F": {"type": "item", "code": "game:flint", "quantity": 1}
+    },
+    "width": 3,
+    "height": 2,
+    "requiresTrait": "tinkerer",
+    "output": {"type": "item", "code": "maltiezfirearms:lock-wheellock"}
+  },
+  {
+    "ingredientPattern": "INI,_B_",
+    "ingredients": {
+      "I": {"type": "item", "code": "game:metalplate-iron", "quantity": 1},
+      "N": {"type": "item", "code": "game:metalnailsandstrips-iron", "quantity": 1},
+      "B": {"type": "item", "code": "game:metalplate-brass", "quantity": 1}
+    },
+    "width": 3,
+    "height": 2,
+    "output": {"type": "item", "code": "maltiezfirearms:lock-matchlock"}
+  },
+  {
+    "ingredientPattern": "ISF,CBI",
+    "ingredients": {
+      "I": {"type": "item", "code": "game:metalplate-iron", "quantity": 1},
+      "S": {"type": "item", "code": "game:metalnailsandstrips-steel", "quantity": 2},
+      "B": {"type": "item", "code": "game:metalplate-brass", "quantity": 1},
+      "F": {"type": "item", "code": "game:flint", "quantity": 1},
+      "C": {"type": "item", "code": "maltiezfirearms:schematic-flintlock"}
+    },
+    "width": 3,
+    "height": 2,
+    "output": {"type": "item", "code": "maltiezfirearms:lock-flintlock"}
+  },
+  {
+    "ingredientPattern": "ISF,IBI",
+    "ingredients": {
+      "I": {"type": "item", "code": "game:metalplate-iron", "quantity": 1},
+      "S": {"type": "item", "code": "game:metalnailsandstrips-steel", "quantity": 2},
+      "B": {"type": "item", "code": "game:metalplate-brass", "quantity": 1},
+      "F": {"type": "item", "code": "game:flint", "quantity": 1}
+    },
+    "width": 3,
+    "height": 2,
+    "requiresTrait": "tinkerer",
+    "output": {"type": "item", "code": "maltiezfirearms:lock-flintlock"}
+  }
+]

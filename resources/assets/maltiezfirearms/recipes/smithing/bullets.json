@@ -1,0 +1,18 @@
+{
+  "ingredient": {"type": "item", "code": "game:ingot-steel"},
+  "pattern": [
+    [
+      "#_#_#_#_#",
+      "_________",
+      "#_#_#_#_#",
+      "_________",
+      "#_#_#_#_#",
+      "_________",
+      "#_#_#_#_#",
+      "_________",
+      "#_#_#_#_#"
+    ]
+  ],
+  "name": "Bullets",
+  "output": {"type": "item", "code": "maltiezfirearms:bullet-steel", "quantity": 25}
+}

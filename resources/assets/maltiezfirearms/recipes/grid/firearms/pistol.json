@@ -1,0 +1,15 @@
+﻿[
+  {
+    "ingredientPattern": "WLB,MWR",
+    "ingredients": {
+      "B": {"type": "item", "code": "maltiezfirearms:barrel-pistol-tinbronze", "quantity": 1},
+      "M": {"type": "item", "code": "game:metalplate-brass", "quantity": 1},
+      "L": {"type": "item", "code": "maltiezfirearms:lock-wheellock", "quantity": 1},
+      "W": {"type": "item", "code": "game:plank-*", "quantity": 1},
+      "R": {"type": "item", "code": "maltiezfirearms:ramrod-pistol", "quantity": 1}
+    },
+    "width": 3,
+    "height": 2,
+    "output": {"type": "item", "code": "maltiezfirearms:pistol"}
+  }
+]

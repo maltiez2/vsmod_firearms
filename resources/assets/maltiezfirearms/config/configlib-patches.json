@@ -1,0 +1,254 @@
+{
+  "version": 2,
+  "patches": {
+    "float": {
+      "maltiezfirearms:itemtypes/firearms/musket.json": {
+        "behaviors/2/properties/systems/projectile/damageMultiplier": "DAMAGE * 1.63",
+        "behaviors/2/properties/systems/aiming/dispersionMin_MOA": "DISPERSION * 60",
+        "behaviors/2/properties/systems/melee/attacks/bayonet/damageTypes/0/damage": "BAYONET_DAMAGE",
+        "behaviors/2/properties/systems/melee/attacks/bayonet/damageTypes/0/tier": "BAYONET_TIER",
+        "behaviors/2/properties/systems/particles/fire/0/intensity": "SMOKE_DENSITY * 1.6",
+        "behaviors/2/properties/systems/particles/fire/1/intensity": "SMOKE_DENSITY * 1.6",
+        "behaviors/2/properties/systems/particles/fire/2/intensity": "SMOKE_DENSITY * 1.6",
+        "behaviors/2/properties/systems/particles/fire/3/intensity": "SMOKE_DENSITY * 1.6",
+        "behaviors/2/properties/systems/particles/fire/4/intensity": "FIREBLAST_DENSITY * 1.6"
+      },
+      "maltiezfirearms:itemtypes/firearms/carbine.json": {
+        "behaviors/2/properties/systems/projectile/damageMultiplier": "DAMAGE * 1.0",
+        "behaviors/2/properties/systems/aiming/dispersionMin_MOA": "DISPERSION * 90",
+        "behaviors/2/properties/systems/particles/fire/0/intensity": "SMOKE_DENSITY * 1.0",
+        "behaviors/2/properties/systems/particles/fire/1/intensity": "SMOKE_DENSITY * 1.0",
+        "behaviors/2/properties/systems/particles/fire/2/intensity": "SMOKE_DENSITY * 1.0",
+        "behaviors/2/properties/systems/particles/fire/3/intensity": "SMOKE_DENSITY * 1.0",
+        "behaviors/2/properties/systems/particles/fire/4/intensity": "FIREBLAST_DENSITY * 1.0"
+      },
+      "maltiezfirearms:itemtypes/firearms/arquebus.json": {
+        "behaviors/2/properties/systems/projectile/damageMultiplier": "DAMAGE * 1.375",
+        "behaviors/2/properties/systems/aiming/dispersionMin_MOA": "DISPERSION * 120",
+        "behaviors/2/properties/systems/particles/fire/0/intensity": "SMOKE_DENSITY * 0.6",
+        "behaviors/2/properties/systems/particles/fire/1/intensity": "SMOKE_DENSITY * 0.6",
+        "behaviors/2/properties/systems/particles/fire/2/intensity": "SMOKE_DENSITY * 0.6",
+        "behaviors/2/properties/systems/particles/fire/3/intensity": "SMOKE_DENSITY * 0.6",
+        "behaviors/2/properties/systems/particles/fire/4/intensity": "FIREBLAST_DENSITY * 0.6"
+      },
+      "maltiezfirearms:itemtypes/firearms/pistol.json": {
+        "behaviors/2/properties/systems/projectile/damageMultiplier": "DAMAGE * 1.0",
+        "behaviors/2/properties/systems/aiming/dispersionMin_MOA": "DISPERSION * 150",
+        "behaviors/2/properties/systems/particles/fire/0/intensity": "SMOKE_DENSITY * 0.3",
+        "behaviors/2/properties/systems/particles/fire/1/intensity": "SMOKE_DENSITY * 0.3",
+        "behaviors/2/properties/systems/particles/fire/2/intensity": "SMOKE_DENSITY * 0.3",
+        "behaviors/2/properties/systems/particles/fire/3/intensity": "SMOKE_DENSITY * 0.3",
+        "behaviors/2/properties/systems/particles/fire/4/intensity": "FIREBLAST_DENSITY * 0.3"
+      },
+      "maltiezfirearms:itemtypes/ammunition/powderflask.json": {
+        "behaviors/0/properties/operations/load/systems/initial/3/amount": "POWDER_CONSUMPTION"
+      },
+      "maltiezfirearms:patches/schematics.json": {
+        "0/value/chance": "SCHEMATIC_CHANCE",
+        "1/value/chance": "SCHEMATIC_CHANCE",
+        "2/value/chance": "SCHEMATIC_CHANCE",
+        "3/value/chance": "SCHEMATIC_CHANCE"
+      }
+    },
+    "integer": {
+      "maltiezfirearms:itemtypes/ammunition/bullet.json": {
+        "behaviors/1/properties/damageTypesByType/*-steel/0/tier": "STEEL_BULLET_TIER"
+      },
+      "maltiezfirearms:itemtypes/ammunition/slug.json": {
+        "behaviors/1/properties/damageTypesByType/*-steel/0/tier": "STEEL_SLUG_TIER"
+      }
+    },
+    "other": {
+      "maltiezfirearms:itemtypes/ammunition/gunpowder.json": {
+        "behaviorsbyType/*-fine/0/properties/operations/wet/states/initial": "POWER_WETTING",
+        "behaviorsbyType/*-coarse/0/properties/operations/wet/states/initial": "POWER_WETTING"
+      },
+      "maltiezfirearms:itemtypes/match.json": {
+        "behaviorsbyType/*-lit/0/properties/operations/extinguish/states/initial": "MATCH_PUT_OUT"
+      },
+      "maltiezfirearms:recipes/grid/firearms/locks.json": {
+        "0/requiresTrait": "TRAIT_REQUIREMENT",
+        "3/requiresTrait": "TRAIT_REQUIREMENT"
+      },
+      "maltiezfirearms:itemtypes/ammunition/bullet.json": {
+        "allowedVariants": "STEEL_AMMUNITION"
+      },
+      "maltiezfirearms:itemtypes/ammunition/slug.json": {
+        "allowedVariants": "STEEL_AMMUNITION"
+      },
+      "maltiezfirearms:itemtypes/ammunition/ammoscast.json": {
+        "allowedVariants": "STEEL_AMMUNITION"
+      }
+    }
+  },
+  "settings": {
+    "float": {
+      "DAMAGE": {
+        "name": "damage-multiplier",
+        "weight": 2.1,
+        "comment": "Multiplies damage caused by firearms projectiles. It is recommended to leave in on 1.0. Default damages are balanced with considiration to vanilla animals and mobs hp values.",
+        "default": 1.0,
+        "range": {
+          "min": 0.5,
+          "max": 2.0
+        }
+      },
+      "DISPERSION": {
+        "name": "dispersion-multiplier",
+        "weight": 2.2,
+        "comment": "Lower values correspond to higher accuracy",
+        "default": 1.0,
+        "range": {
+          "min": 0.0,
+          "max": 3.0
+        }
+      },
+      "POWDER_CONSUMPTION": {
+        "name": "powder-to-flask-ratio",
+        "weight": 2.3,
+        "comment": "How much flask durability one powder item will fill",
+        "default": 8,
+        "range": {
+          "min": 1,
+          "max": 64,
+          "step": 1
+        }
+      },
+      "BAYONET_DAMAGE": {
+        "name": "bayonet-damage-when-attached",
+        "weight": 3.1,
+        "comment": "Value in description will not change and will show wrong number",
+        "default": 4.8,
+        "values": [
+          4.3,
+          4.8,
+          5.3
+        ]
+      },
+      "BAYONET_TIER": {
+        "name": "bayonet-damage-tier-when-attached",
+        "weight": 3.2,
+        "comment": "Affects it effectiveness against armor. Steel falx has 5, all spears have 0. Value in description will not change and will show wrong number.",
+        "default": 5,
+        "range": {
+          "min": 0,
+          "max": 6,
+          "step": 1
+        }
+      },
+      "SCHEMATIC_CHANCE": {
+        "name": "schematic-spawn-chance",
+        "comment": "Chance that schematic will spawn in ruins in chests.\nHigher number means higher chance to find.\nBut high chance will result in jonas parts becoming rare, cause they share smae stack randomizers.",
+        "default": 1,
+        "weight": 1.1,
+        "range": {
+          "min": 0,
+          "max": 100,
+          "step": 1
+        }
+      },
+      "SMOKE_DENSITY": {
+        "name": "smoke-density",
+        "comment": "Multiplier for amount of smoke particles produced on firing",
+        "default": 1.0,
+        "weight": 4.1,
+        "range": {
+          "min": 0.0,
+          "max": 3.0
+        }
+      },
+      "FIREBLAST_DENSITY": {
+        "name": "fireblast-density",
+        "comment": "Multiplier for amount of glowing unburned powder particles on firing",
+        "default": 1.0,
+        "weight": 4.2,
+        "range": {
+          "min": 0.0,
+          "max": 3.0
+        }
+      }
+    },
+    "integer": {
+      "STEEL_BULLET_TIER": {
+        "name": "steel-bullet-tier",
+        "weight": 2.6,
+        "comment": "Attack tier of a steel bullet (main usecase against heavily armoured players). It is balanced (at tier 7) to deal more damage to player in fullplate steel armour then lead alternative",
+        "default": 7,
+        "range": {
+          "min": 0,
+          "max": 20
+        }
+      },
+      "STEEL_SLUG_TIER": {
+        "name": "steel-slug-tier",
+        "weight": 2.7,
+        "comment": "Attack tier of a steel slug (main usecase against heavily armoured players).\nIt is balanced (at tier 10) to oneshot a 16 hp player in fullplate steel armour from a musket.",
+        "default": 10,
+        "range": {
+          "min": 0,
+          "max": 20
+        }
+      }
+    },
+    "other": {
+      "STEEL_AMMUNITION": {
+        "name": "steel-ammunition",
+        "weight": 2.4,
+        "comment": "Turns on/off steel amunition.",
+        "default": "Enabled",
+        "mapping": {
+          "Enabled": ["*-lead", "*-copper", "*-steel"],
+          "Disabled": ["*-lead", "*-copper"]
+        }
+      },
+      "TRAIT_REQUIREMENT": {
+        "name": "recipes-locked-to-tinkerer",
+        "comment": "Weahter certain locks recipes require 'tinkerer' trait",
+        "default": "Required",
+        "weight": 0.3,
+        "mapping": {
+          "Required": "tinkerer",
+          "Not Required": null
+        }
+      },
+      "MATCH_PUT_OUT": {
+        "name": "match-put-out-by-water",
+        "comment": "Match being put out when player is swimming",
+        "default": "Enabled",
+        "weight": 0.1,
+        "mapping": {
+          "Enabled": "lit",
+          "Disabled": "disabled"
+        }
+      },
+      "POWER_WETTING": {
+        "name": "powder-wet-out-by-water",
+        "comment": "Gunpowder becoming wet outside of powder flask if player is swimming",
+        "default": "Enabled",
+        "weight": 0.2,
+        "mapping": {
+          "Enabled": "dry",
+          "Disabled": "disabled"
+        }
+      }
+    }
+  },
+  "formatting": [
+    {
+      "type": "separator",
+      "weight": 1.0
+    },
+    {
+      "type": "separator",
+      "weight": 2.0
+    },
+    {
+      "type": "separator",
+      "weight": 3.0
+    },
+    {
+      "type": "separator",
+      "weight": 4.0
+    }
+  ]
+}

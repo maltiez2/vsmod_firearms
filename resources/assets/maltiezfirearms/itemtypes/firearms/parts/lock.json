@@ -1,0 +1,23 @@
+﻿{
+  "code": "lock",
+  "class": "Item",
+  "variantgroups": [{"code": "type", "states": ["wheellock", "matchlock", "flintlock"]}],
+  "shape": {"base": "maltiezfirearms:parts/{type}"},
+  "attributes": {
+    "groundStorageTransformByType": {
+      "*-wheellock": {"translation": {"x": 0.4, "y": 0.04, "z": 0.4}, "rotation": {"x": 1, "y": -110, "z": 89}, "origin": {"x": 0, "y": 0, "z": 0}},
+      "*-matchlock": {"translation": {"x": 0.4, "y": 0.11, "z": 0.5}, "rotation": {"x": 0, "y": -139, "z": 158}, "origin": {"x": 0, "y": 0, "z": 0}},
+      "*-flintlock": {"translation": {"x": 0.3, "y": 0.02, "z": 0.45}, "rotation": {"x": -2, "y": -110, "z": 88}, "origin": {"x": 0, "y": 0, "z": 0}}
+    }
+  },
+  "behaviors": [{"name": "GroundStorable", "properties": {"layout": "Quadrants", "placeRemoveSound": "sounds/player/build", "collisionBox": {"x1": 0, "y1": 0, "z1": 0, "x2": 1, "y2": 0.1, "z2": 1}}}],
+  "creativeinventory": {"maltiezfirearms": ["*"]},
+  "guiTransformByType": {
+    "*-wheellock": {"translation": {"x": 0, "y": 0, "z": 0}, "rotation": {"x": 165, "y": 47, "z": 10}, "origin": {"x": -0.2, "y": 0, "z": 0}, "scale": 5.19},
+    "*-matchlock": {"translation": {"x": 0, "y": 0, "z": 0}, "rotation": {"x": 165, "y": 47, "z": 10}, "origin": {"x": 0, "y": 0.1, "z": 0}, "scale": 4.41},
+    "*-flintlock": {"translation": {"x": 0, "y": 0, "z": 0}, "rotation": {"x": 165, "y": 47, "z": 10}, "origin": {"x": -0.2, "y": 0, "z": 0}, "scale": 4.51}
+  },
+  "fpHandTransform": {"translation": {"x": 0.6, "y": 0.2, "z": 0.3}, "rotation": {"x": 82, "y": -4, "z": 161}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 3.43},
+  "tpHandTransform": {"translation": {"x": -0.1, "y": 0, "z": 0}, "rotation": {"x": 0, "y": -91, "z": 0}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 1},
+  "groundTransform": {"translation": {"x": 0, "y": 0.06, "z": 0}, "rotation": {"x": -2, "y": 0, "z": 3}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 4.8}
+}

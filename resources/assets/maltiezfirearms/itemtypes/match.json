@@ -8,30 +8,44 @@
       {
         "name": "FiniteStateMachine",
         "properties": {
-          "initialState": "initial_state",
-          "inputs": [{"code": "swimming_mainhand", "class": "Swimming", "attributes": {"slot": "mouse"}}, {"code": "swimming_offhand", "class": "Swimming", "attributes": {"slot": "inventory"}}],
-          "systems": [
-            {"code": "extinguish_system", "class": "ChangeGroup", "attributes": {}},
-            {"code": "sound_system", "class": "Sound", "attributes": {"sounds": [{"code": "extinguish", "volume": 1, "range": 8, "location": "game:sounds/effect/extinguish"}]}}
-          ],
-          "operations": [
-            {
-              "code": "extinguish",
+          "initialState": "lit",
+          "systems": {"extinguish": {"class": "ChangeGroup"}, "sounds": {"class": "Sounds", "domain": "maltiezfirearms"}},
+          "operations": {
+            "extinguish": {
               "class": "Instant",
-              "attributes": {
-                "input": ["swimming_mainhand", "swimming_offhand"],
-                "inputsToIntercept": [],
-                "states": [{"initial": "initial_state", "final": "initial_state"}],
-                "systems": [{"code": "extinguish_system", "attributes": {"group": "state", "value": "extinct"}}, {"code": "sound_system", "attributes": {"code": "extinguish"}}]
-              }
+              "inputs": ["status-swimming", "status-submerged"],
+              "states": {"initial": "lit", "final": "unlit"},
+              "systems": [{"code": "sounds", "action": "play", "sound": "extinguish"}, {"code": "extinguish", "group": "state", "value": "extinct"}]
             }
-          ]
+          },
+          "inputs": {"status-swimming": {"class": "Status", "status": "Swimming", "slot": "Inventory"}, "status-submerged": {"class": "Status", "status": "EyesSubmerged", "slot": "Inventory"}}
         }
       }
     ],
-    "*": [{"name": "GroundStorable", "properties": {"layout": "Quadrants", "placeRemoveSound": "sounds/player/build", "collisionBox": {"x1": 0, "y1": 0, "z1": 0, "x2": 1, "y2": 0.1, "z2": 1}}}]
+    "*": [
+      {"name": "GroundStorable", "properties": {"layout": "Quadrants", "placeRemoveSound": "game:sounds/player/build", "collisionBox": {"x1": 0, "y1": 0, "z1": 0, "x2": 1, "y2": 0.1, "z2": 1}}},
+      {
+        "name": "FiniteStateMachine",
+        "properties": {
+          "initialState": "unlit",
+          "systems": {
+            "lit": {"class": "ChangeGroup"},
+            "sounds": {"class": "Sounds", "domain": "maltiezfirearms"},
+            "selection": {"class": "SelectionMatch", "something-burning": ["torch-*-lit-*", "torchholder-*-filled-*", "firepit-lit", "*-oillamp-*", "candle"]}
+          },
+          "operations": {
+            "extinguish": {
+              "class": "Instant",
+              "inputs": "right-mouse-shift",
+              "states": {"initial": "unlit", "final": "lit"},
+              "systems": [{"code": "selection", "match": "something-burning"}, {"code": "sounds", "action": "play", "sound": "lit"}, {"code": "lit", "group": "state", "value": "lit"}]
+            }
+          },
+          "inputs": {"right-mouse-shift": {"class": "Mouse", "key": "Right", "shift": true, "type": "pressed", "name": "maltiezfirearms:lit-match"}}
+        }
+      }
+    ]
   },
-  "storageFlags": 257,
   "variantgroups": [{"code": "state", "states": ["unlit", "lit", "extinct"]}],
   "shapebytype": {"*": {"base": "match-{state}"}},
   "combustiblePropsbyType": {

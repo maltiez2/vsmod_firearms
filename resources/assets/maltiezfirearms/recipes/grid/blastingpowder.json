@@ -1,0 +1,28 @@
+[
+	{
+		"ingredientPattern": "SXC",
+		"ingredients": {
+			"S": { "type": "item", "code": "game:saltpeter", "quantity": 4 },
+			"X": { "type": "item", "code": "game:powderedsulfur", "quantity": 2 },
+			"C": { "type": "item", "code": "game:charcoal", "quantity": 2 }
+		},
+		"name": "game:blastingpowder",
+		"width": 3,
+		"height": 1,
+		"shapeless": true,
+		"output": { "type": "item", "code": "game:blastingpowder", "quantity": 6  }
+	},
+	{
+		"ingredientPattern": "SXC",
+		"ingredients": {
+			"S": { "type": "item", "code": "game:saltpeter", "quantity": 4 },
+			"X": { "type": "item", "code": "game:powderedsulfur", "quantity": 2 },
+			"C": { "type": "item", "code": "game:ore-lignite", "quantity": 4 }
+		},
+		"name": "game:blastingpowder",
+		"width": 3,
+		"height": 1,
+		"shapeless": true,
+		"output": { "type": "item", "code": "game:blastingpowder", "quantity": 6  }
+	}
+]

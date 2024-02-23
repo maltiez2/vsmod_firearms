@@ -3,13 +3,13 @@
     "Client": {
       "commandName": "Executable",
       "executablePath": "dotnet",
-      "commandLineArgs": "$(VINTAGE_STORY)/Vintagestory.dll --tracelog --addModPath $(ProjectDir)/bin/$(Configuration)/Mods",
+      "commandLineArgs": "\"$(VINTAGE_STORY)/Vintagestory.dll\" --tracelog --addModPath \"$(ProjectDir)/bin/$(Configuration)/Mods\" \"-o\" \"test_fsm\"",
       "workingDirectory": "$(VINTAGE_STORY)"
     },
     "Server": {
       "commandName": "Executable",
       "executablePath": "dotnet",
-      "commandLineArgs": "$(VINTAGE_STORY)/VintagestoryServer.dll --tracelog --addModPath $(ProjectDir)/bin/$(Configuration)/Mods",
+      "commandLineArgs": "\"$(VINTAGE_STORY)/VintagestoryServer.dll\" --tracelog --addModPath \"$(ProjectDir)/bin/$(Configuration)/Mods\" \"-o\" \"test_fsm\"",
       "workingDirectory": "$(VINTAGE_STORY)"
     }
   }

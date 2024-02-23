@@ -1,0 +1,188 @@
+{
+	"editor": {
+		"collapsedPaths": "Root/Band_second,Root/Musket/Band_first,Root/Band_first,Root/Carbine/Band_third,Root/Musket/Bayonet/Band,Root/Stock,Root/Carbine/Flask_origin,Root/Flintlock,Root/Barrel,Root/Musket/Patch,Root/Band_third,Root/Carbine/Flintlock,Root/Musket/Band_second,Root/Musket/Trigger_assembly,Root/Musket/Bayonet/Bayonet_blade_tongue_1/Bayonet_blade_tongue_2,Root/Musket/Bayonet,Root/Musket/Ramrod_origin,Root/Musket/Flintlock,Root/Musket/Bayonet/Bayonet_blade_tongue_2/Bayonet_blade,Root/Bayonet/Bayonet_blade_tongue_1,Root/Musket/Stock,Root/Musket/Ramrod,Root/Carbine/Band_first,Root/Musket/Flintlock/Frizzen,Root/Musket/Band_third,Root/Carbine/Barrel,Root/Carbine/Stock,Root/Carbine/Ramrod_origin,Root/Trigger_assembly,Root/Carbine/Patch,Root/Ramrod,Root/Carbine/Band_second,Root/Musket/Barrel,Root/Carbine/Trigger_assembly",
+		"allAngles": false,
+		"entityTextureMode": false
+	},
+	"textureWidth": 16,
+	"textureHeight": 16,
+	"textureSizes": {
+	},
+	"textures": {
+		"steel": "game:block/metal/plate/steel"
+	},
+	"elements": [
+		{
+			"name": "Bayonet",
+			"from": [ 0.0, 0.0, 0.0 ],
+			"to": [ 0.0, 0.0, 0.0 ],
+			"faces": {
+				"north": { "texture": "#null", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+				"east": { "texture": "#null", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+				"south": { "texture": "#null", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+				"west": { "texture": "#null", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+				"up": { "texture": "#null", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+				"down": { "texture": "#null", "uv": [ 0.0, 0.0, 0.5, 0.5 ] }
+			},
+			"children": [
+				{
+					"name": "Bayonet_blade_tongue_2",
+					"from": [ -0.25, -0.25, -2.0 ],
+					"to": [ 0.25, 0.25, -1.6 ],
+					"rotationOrigin": [ 0.0, 0.0, -2.0 ],
+					"rotationZ": 90.0,
+					"faces": {
+						"north": { "texture": "#steel", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+						"east": { "texture": "#steel", "uv": [ 10.0, 6.0, 10.5, 6.5 ] },
+						"south": { "texture": "#steel", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+						"west": { "texture": "#steel", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+						"up": { "texture": "#steel", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+						"down": { "texture": "#steel", "uv": [ 0.0, 0.0, 0.5, 0.5 ] }
+					},
+					"children": [
+						{
+							"name": "Bayonet_blade",
+							"from": [ 0.35, 0.15, 0.2 ],
+							"to": [ 0.35, 0.15, 0.2 ],
+							"rotationOrigin": [ 0.3, 0.25, 0.2 ],
+							"faces": {
+								"north": { "texture": "#steel", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+								"east": { "texture": "#steel", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+								"south": { "texture": "#steel", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+								"west": { "texture": "#steel", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+								"up": { "texture": "#steel", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+								"down": { "texture": "#steel", "uv": [ 0.0, 0.0, 0.5, 0.5 ] }
+							},
+							"children": [
+								{
+									"name": "Bayonet_blade_1",
+									"from": [ -0.2, -0.1, -9.0 ],
+									"to": [ 0.0, 0.5, 0.0 ],
+									"rotationOrigin": [ -0.2, -0.1, -9.0 ],
+									"rotationX": -2.5,
+									"faces": {
+										"north": { "texture": "#steel", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+										"east": { "texture": "#steel", "uv": [ 0.0, 4.0, 9.0, 4.5 ] },
+										"south": { "texture": "#steel", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+										"west": { "texture": "#steel", "uv": [ 0.0, 0.0, 9.0, 0.5 ] },
+										"up": { "texture": "#steel", "uv": [ 0.0, 0.0, 0.5, 9.0 ] },
+										"down": { "texture": "#steel", "uv": [ 0.0, 0.0, 0.5, 9.0 ] }
+									}
+								},
+								{
+									"name": "Bayonet_blade_2",
+									"from": [ -0.2, -0.3, -9.0 ],
+									"to": [ 0.0, 0.3, 0.0 ],
+									"rotationOrigin": [ -0.2, 0.1, -9.0 ],
+									"rotationX": 2.5,
+									"faces": {
+										"north": { "texture": "#steel", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+										"east": { "texture": "#steel", "uv": [ 0.0, 4.0, 9.0, 4.5 ] },
+										"south": { "texture": "#steel", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+										"west": { "texture": "#steel", "uv": [ 0.0, 0.0, 9.0, 0.5 ] },
+										"up": { "texture": "#steel", "uv": [ 0.0, 0.0, 0.5, 9.0 ] },
+										"down": { "texture": "#steel", "uv": [ 0.0, 0.0, 0.5, 9.0 ] }
+									}
+								},
+								{
+									"name": "Bayonet_blade_tip",
+									"from": [ -0.2, -0.21, -9.21 ],
+									"to": [ 0.0, 0.36, -8.64 ],
+									"rotationOrigin": [ 0.0, 0.0, -9.0 ],
+									"rotationX": -45.0,
+									"faces": {
+										"north": { "texture": "#steel", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+										"east": { "texture": "#steel", "uv": [ 0.0, 4.0, 0.5, 4.5 ] },
+										"south": { "texture": "#steel", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+										"west": { "texture": "#steel", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+										"up": { "texture": "#steel", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+										"down": { "texture": "#steel", "uv": [ 0.0, 0.0, 0.5, 0.5 ] }
+									}
+								},
+								{
+									"name": "Bayonet_blade_3",
+									"from": [ -0.2, -0.1, -9.0 ],
+									"to": [ 0.0, 0.3, 0.0 ],
+									"rotationOrigin": [ -0.2, 0.1, -9.0 ],
+									"rotationY": 1.0,
+									"faces": {
+										"north": { "texture": "#steel", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+										"east": { "texture": "#steel", "uv": [ 3.5, 8.5, 12.5, 9.0 ] },
+										"south": { "texture": "#steel", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+										"west": { "texture": "#steel", "uv": [ 3.0, 8.5, 12.0, 9.0 ] },
+										"up": { "texture": "#steel", "uv": [ 0.0, 0.0, 0.5, 9.0 ] },
+										"down": { "texture": "#steel", "uv": [ 0.0, 0.0, 0.5, 9.0 ] }
+									}
+								},
+								{
+									"name": "Bayonet_blade_4",
+									"from": [ -0.2, -0.1, -9.0 ],
+									"to": [ 0.0, 0.3, 0.0 ],
+									"rotationOrigin": [ -0.2, 0.1, -9.0 ],
+									"rotationY": -1.0,
+									"faces": {
+										"north": { "texture": "#steel", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+										"east": { "texture": "#steel", "uv": [ 3.5, 8.5, 12.5, 9.0 ] },
+										"south": { "texture": "#steel", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+										"west": { "texture": "#steel", "uv": [ 0.0, 0.0, 9.0, 0.5 ] },
+										"up": { "texture": "#steel", "uv": [ 0.0, 0.0, 0.5, 9.0 ] },
+										"down": { "texture": "#steel", "uv": [ 0.0, 0.0, 0.5, 9.0 ] }
+									}
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Bayonet_blade_tongue_3",
+					"from": [ -0.35, -0.15, -1.6 ],
+					"to": [ -0.05, 0.15, 2.4 ],
+					"rotationOrigin": [ -0.1, 0.1, -1.6 ],
+					"rotationZ": 90.0,
+					"faces": {
+						"north": { "texture": "#steel", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+						"east": { "texture": "#steel", "uv": [ 10.0, 6.0, 14.0, 6.5 ] },
+						"south": { "texture": "#steel", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+						"west": { "texture": "#steel", "uv": [ 0.0, 0.0, 4.0, 0.5 ] },
+						"up": { "texture": "#steel", "uv": [ 0.0, 0.0, 0.5, 4.0 ] },
+						"down": { "texture": "#steel", "uv": [ 0.0, 0.0, 0.5, 4.0 ] }
+					}
+				}
+			]
+		}
+	],
+	"animations": [
+		{
+			"name": "Load",
+			"code": "load",
+			"quantityframes": 285,
+			"onActivityStopped": "Stop",
+			"onAnimationEnd": "Hold",
+			"keyframes": [
+
+			]
+		},
+
+		{
+			"name": "Prime",
+			"code": "prime",
+			"quantityframes": 60,
+			"onActivityStopped": "Stop",
+			"onAnimationEnd": "Hold",
+			"keyframes": [
+
+			]
+		},
+
+		{
+			"name": "Fire",
+			"code": "fire",
+			"quantityframes": 30,
+			"onActivityStopped": "Stop",
+			"onAnimationEnd": "Hold",
+			"keyframes": [
+
+			]
+		}
+	]
+}
