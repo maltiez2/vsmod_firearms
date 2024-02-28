@@ -26,7 +26,7 @@
             "class": "Delayed",
             "timeout": 350,
             "states": {"initial": "ready", "timeout": "ready-hold", "transitional": "cooldown", "final": "ready"},
-            "inputs": {"initial": "mouse-right-down", "ready": "mouse-right-up"},
+            "inputs": {"initial": "action-on", "ready": "action-off"},
             "systems": {
               "initial": [
                 {"code": "powder", "action": "take", "requirement": "powder"},
@@ -40,7 +40,7 @@
             "class": "Delayed",
             "timeout": 350,
             "states": {"initial": "ready-hold", "timeout": "ready-hold", "transitional": "cooldown", "final": "ready"},
-            "inputs": {"initial": ["load-finished", "load-hold-finished"], "ready": "mouse-right-up"},
+            "inputs": {"initial": ["load-finished", "load-hold-finished"], "ready": "action-off"},
             "systems": {
               "initial": [
                 {"code": "powder", "action": "take", "requirement": "powder"},
@@ -58,8 +58,8 @@
           }
         },
         "inputs": {
-          "mouse-right-down": {"class": "Mouse", "key": "Right", "alt": false, "type": "pressed", "name": "maltiezfirearms:cut-ammo"},
-          "mouse-right-up": {"class": "Mouse", "key": "Right", "type": "released", "handle": false},
+          "action-on": {"class": "ActionInput", "actions": ["RightMouseDown"], "name": "maltiezfirearms:flask-refill"},
+          "action-off": {"class": "ActionInput", "actions": ["RightMouseDown"], "onRelease": true, "name": "maltiezfirearms:flask-refill"},
           "load-finished": {"class": "OperationFinished", "operation": "load"},
           "load-hold-finished": {"class": "OperationFinished", "operation": "load-hold"},
           "slot-modified-added": {"class": "SlotContent", "type": "AfterModified"},

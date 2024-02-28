@@ -1,0 +1,28 @@
+[
+  {
+	  "enabled": false,
+		"ingredientPattern": "SP",
+	  "ingredients": {
+		  "S": { "type": "item", "code": "game:paper-parchment", "quantity": 2 },
+		  "P": { "type": "item", "code": "maltiezfirearms:schematic-flintlock", "name": "type" }
+	  },
+	  "shapeless": true,
+	  "width": 2,
+	  "height": 1,
+	  "name": "schematiccopy-flintlock",
+	  "output": { "type": "item", "code": "maltiezfirearms:schematic-flintlock", "quantity": 1  }
+  },
+	{
+	  "enabled": false,
+		"ingredientPattern": "SP",
+	  "ingredients": {
+		  "S": { "type": "item", "code": "game:paper-parchment", "quantity": 2 },
+		  "P": { "type": "item", "code": "maltiezfirearms:schematic-bayonet", "name": "type" }
+	  },
+	  "shapeless": true,
+	  "width": 2,
+	  "height": 1,
+	  "name": "schematiccopy-bayonet",
+	  "output": { "type": "item", "code": "maltiezfirearms:schematic-bayonet", "quantity": 1  }
+  }
+]

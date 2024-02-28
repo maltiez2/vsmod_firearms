@@ -23,7 +23,7 @@ length = args.length
 directory = args.directory
 
 if (args.all):
-    rootdir_glob = f'../resources/**/{directory}/**/*.json'
+    rootdir_glob = f'{directory}/**/*.json'
     file_list = [f for f in iglob(rootdir_glob, recursive=True) if os.path.isfile(f)]
     for f in file_list:
         print(f"formatting: {f}")

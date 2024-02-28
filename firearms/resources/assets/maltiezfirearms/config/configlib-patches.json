@@ -70,6 +70,10 @@
         "0/requiresTrait": "TRAIT_REQUIREMENT",
         "3/requiresTrait": "TRAIT_REQUIREMENT"
       },
+      "maltiezfirearms:recipes/grid/schematics.json": {
+        "0/enabled": "SCHEMATIC_COPY",
+        "1/enabled": "SCHEMATIC_COPY"
+      },
       "maltiezfirearms:itemtypes/ammunition/bullet.json": {
         "allowedVariants": "STEEL_AMMUNITION"
       },
@@ -85,6 +89,7 @@
     "float": {
       "DAMAGE": {
         "name": "damage-multiplier",
+        "ingui": "maltiezfirearms:setting-damage-multiplier",
         "weight": 2.1,
         "comment": "Multiplies damage caused by firearms projectiles. It is recommended to leave in on 1.0. Default damages are balanced with considiration to vanilla animals and mobs hp values.",
         "default": 1.0,
@@ -95,6 +100,7 @@
       },
       "DISPERSION": {
         "name": "dispersion-multiplier",
+        "ingui": "maltiezfirearms:setting-dispersion-multiplier",
         "weight": 2.2,
         "comment": "Lower values correspond to higher accuracy",
         "default": 1.0,
@@ -105,6 +111,7 @@
       },
       "POWDER_CONSUMPTION": {
         "name": "powder-to-flask-ratio",
+        "ingui": "maltiezfirearms:setting-powder-to-flask-ratio",
         "weight": 2.3,
         "comment": "How much flask durability one powder item will fill",
         "default": 8,
@@ -116,6 +123,7 @@
       },
       "BAYONET_DAMAGE": {
         "name": "bayonet-damage-when-attached",
+        "ingui": "maltiezfirearms:setting-bayonet-damage-when-attached",
         "weight": 3.1,
         "comment": "Value in description will not change and will show wrong number",
         "default": 4.8,
@@ -127,6 +135,7 @@
       },
       "BAYONET_TIER": {
         "name": "bayonet-damage-tier-when-attached",
+        "ingui": "maltiezfirearms:setting-bayonet-damage-tier-when-attached",
         "weight": 3.2,
         "comment": "Affects it effectiveness against armor. Steel falx has 5, all spears have 0. Value in description will not change and will show wrong number.",
         "default": 5,
@@ -138,6 +147,7 @@
       },
       "SCHEMATIC_CHANCE": {
         "name": "schematic-spawn-chance",
+        "ingui": "maltiezfirearms:setting-schematic-spawn-chance",
         "comment": "Chance that schematic will spawn in ruins in chests.\nHigher number means higher chance to find.\nBut high chance will result in jonas parts becoming rare, cause they share smae stack randomizers.",
         "default": 1,
         "weight": 1.1,
@@ -149,6 +159,7 @@
       },
       "SMOKE_DENSITY": {
         "name": "smoke-density",
+        "ingui": "maltiezfirearms:setting-smoke-density",
         "comment": "Multiplier for amount of smoke particles produced on firing",
         "default": 1.0,
         "weight": 4.1,
@@ -159,6 +170,7 @@
       },
       "FIREBLAST_DENSITY": {
         "name": "fireblast-density",
+        "ingui": "maltiezfirearms:setting-fireblast-density",
         "comment": "Multiplier for amount of glowing unburned powder particles on firing",
         "default": 1.0,
         "weight": 4.2,
@@ -171,6 +183,7 @@
     "integer": {
       "STEEL_BULLET_TIER": {
         "name": "steel-bullet-tier",
+        "ingui": "maltiezfirearms:setting-steel-bullet-tier",
         "weight": 2.6,
         "comment": "Attack tier of a steel bullet (main usecase against heavily armoured players). It is balanced (at tier 7) to deal more damage to player in fullplate steel armour then lead alternative",
         "default": 7,
@@ -181,6 +194,7 @@
       },
       "STEEL_SLUG_TIER": {
         "name": "steel-slug-tier",
+        "ingui": "maltiezfirearms:setting-steel-slug-tier",
         "weight": 2.7,
         "comment": "Attack tier of a steel slug (main usecase against heavily armoured players).\nIt is balanced (at tier 10) to oneshot a 16 hp player in fullplate steel armour from a musket.",
         "default": 10,
@@ -193,6 +207,7 @@
     "other": {
       "STEEL_AMMUNITION": {
         "name": "steel-ammunition",
+        "ingui": "maltiezfirearms:setting-steel-ammunition",
         "weight": 2.4,
         "comment": "Turns on/off steel amunition.",
         "default": "Enabled",
@@ -203,6 +218,7 @@
       },
       "TRAIT_REQUIREMENT": {
         "name": "recipes-locked-to-tinkerer",
+        "ingui": "maltiezfirearms:setting-recipes-locked-to-tinkerer",
         "comment": "Weahter certain locks recipes require 'tinkerer' trait",
         "default": "Required",
         "weight": 0.3,
@@ -213,6 +229,7 @@
       },
       "MATCH_PUT_OUT": {
         "name": "match-put-out-by-water",
+        "ingui": "maltiezfirearms:setting-match-put-out-by-water",
         "comment": "Match being put out when player is swimming",
         "default": "Enabled",
         "weight": 0.1,
@@ -223,12 +240,24 @@
       },
       "POWER_WETTING": {
         "name": "powder-wet-out-by-water",
+        "ingui": "maltiezfirearms:setting-powder-wet-out-by-water",
         "comment": "Gunpowder becoming wet outside of powder flask if player is swimming",
         "default": "Enabled",
         "weight": 0.2,
         "mapping": {
           "Enabled": "dry",
           "Disabled": "disabled"
+        }
+      },
+      "SCHEMATIC_COPY": {
+        "name": "schematic-copy-recipe",
+        "ingui": "maltiezfirearms:setting-schematic-copy-recipe",
+        "comment": "Allow to copy schematics for flintlock and socket bayonet",
+        "default": "Disabled",
+        "weight": 0.4,
+        "mapping": {
+          "Enabled": true,
+          "Disabled": false
         }
       }
     }

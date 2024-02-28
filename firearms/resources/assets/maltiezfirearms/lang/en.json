@@ -60,6 +60,22 @@
   "requirement-powder": "Gunpowder in offhand",
   "requirement-powderflask": "Powder flask with gunpowder",
 
+  "setting-damage-multiplier": "Damage multiplier",
+  "setting-dispersion-multiplier": "Dispersion multiplier",
+  "setting-powder-to-flask-ratio": "Powder to flask ratio",
+  "setting-bayonet-damage-when-attached": "Bayonet damage (attached)",
+  "setting-bayonet-damage-tier-when-attached": "Bayonet damage tier (attached)",
+  "setting-schematic-spawn-chance": "Schematic spawn chance",
+  "setting-smoke-density": "Smoke density",
+  "setting-fireblast-density": "Fireblast density",
+  "setting-steel-bullet-tier": "Steel bullet damage tier",
+  "setting-steel-slug-tier": "Steel slug damage tier",
+  "setting-steel-ammunition": "Steel ammunition",
+  "setting-recipes-locked-to-tinkerer": "Tinkerer trait required",
+  "setting-match-put-out-by-water": "Match put put by swimming",
+  "setting-powder-wet-out-by-water": "Powder get wet from swimming",
+  "setting-schematic-copy-recipe": "Schematics copying recipes",
+
   "attach-bayonet": "Attach/detach bayonet",
   "lit-match": "Lit",
   
