@@ -3,8 +3,8 @@
   <PropertyGroup>
     <ModName>Firearms</ModName>
     <ModType>content</ModType>
-    <GameVersion>1.19.4-rc.2</GameVersion>
-    <Version>0.4.3</Version>
+    <GameVersion>1.19.4</GameVersion>
+    <Version>0.4.4</Version>
     <ModId>maltiezfirearms</ModId>
     <Description>Black powder firearms</Description>
     <Side>Universal</Side>
@@ -62,10 +62,13 @@
     <Formatter>$(Scripts)\formatter.py</Formatter>
   </PropertyGroup>
   <ItemGroup>
-    <AssetsToFormat Include="$(AssetsDir)\$(ModId)\blocktypes"/>
-    <AssetsToFormat Include="$(AssetsDir)\$(ModId)\itemtypes"/>
-    <AssetsToFormat Include="$(AssetsDir)\$(ModId)\patches"/>
-    <AssetsToFormat Include="$(AssetsDir)\$(ModId)\entities"/>
+    <AssetsToFormat Include="$(AssetsDir)\$(ModId)\blocktypes" />
+    <AssetsToFormat Include="$(AssetsDir)\$(ModId)\itemtypes" />
+    <AssetsToFormat Include="$(AssetsDir)\$(ModId)\patches" />
+    <AssetsToFormat Include="$(AssetsDir)\$(ModId)\entities" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="resources\assets\maltiezfirearms\shapes\ruins\" />
   </ItemGroup>
 
   <!-- Startup settings -->
@@ -117,8 +120,9 @@
       <ModIcon Include="$(ModIconFile)" />
       <AssetsFolder Include="$(AssetsDir)\**\*.*" />
     </ItemGroup>
-    <Copy SourceFiles="@(AssetsFolder)" DestinationFiles="@(AssetsFolder->'$(OutputPath)assets\%(RecursiveDir)%(Filename)%(Extension)')" Condition="Exists('$(AssetsDir)')"/>
-    <Copy SourceFiles="@(ModIcon)" DestinationFolder="$(OutputPath)" Condition="Exists('$(ModIconFile)')"/>
+    <Delete Files="@(OutputPath)\assets" />
+    <Copy SourceFiles="@(AssetsFolder)" DestinationFiles="@(AssetsFolder->'$(OutputPath)assets\%(RecursiveDir)%(Filename)%(Extension)')" Condition="Exists('$(AssetsDir)')" />
+    <Copy SourceFiles="@(ModIcon)" DestinationFolder="$(OutputPath)" Condition="Exists('$(ModIconFile)')" />
   </Target>
 
   <!-- Archives output directory into zip and puts it into Releases folder -->

@@ -1,0 +1,50 @@
+﻿{
+  "code": "clutter",
+  "class": "BlockClutter",
+  "entityBehaviors": [{"name": "ShapeFromAttributes"}],
+  "behaviors": [{"name": "WrenchOrientable", "properties": {"hideInteractionHelpInSurvival": true}}, {"name": "Reparable"}],
+  "attributes": {
+    "shapeBasePath": "clutter",
+    "canChisel": false,
+    "overrideTextureGroups": {
+      "wood": {
+        "mossy": {"base": "block/wood/debarked/mossy"},
+        "aged": {"base": "block/wood/debarked/aged"},
+        "agedplanks": {"base": "block/wood/planks/aged/generic1"},
+        "veryaged": {"base": "block/wood/debarked/veryagedrotten"},
+        "charred": {"base": "block/wood/charred"}
+      },
+      "metal": {
+        "rusty": {"base": "block/metal/corroded/rusty1"},
+        "iron": {"base": "block/metal/tarnished/iron"},
+        "corroded": {"base": "block/metal/corroded/normal2"},
+        "tarnishedcopper": {"base": "block/metal/tarnished/copper1"},
+        "bronze": {"base": "block/metal/tarnished/tarnished-bronze"},
+        "brass": {"base": "block/metal/tarnished/brass"}
+      }
+    },
+    "reparability": 6,
+    "types": [
+      {
+        "code": "firearms/ruined-arquebus-1",
+        "colSelBoxes": [{"x1": 0, "y1": 0, "z1": 0, "x2": 0.9438, "y2": 0.3619, "z2": 1}],
+        "guiTf": {"rotation": {"x": -42, "y": -45, "z": 0}, "origin": {"x": 0.5, "y": 0.1, "z": 0.55}, "scale": 1.21},
+        "fpTf": {"translation": {"x": -0.6, "y": 0.15, "z": 0.8}, "rotation": {"x": -2, "y": -53, "z": 90}, "scale": 1.48},
+        "tpTf": {"translation": {"x": -1.4, "y": -1.6, "z": -1.6}, "rotation": {"x": -82, "y": -47, "z": -22}, "scale": 0.38},
+        "groundTf": {"translation": {"y": 0.33}, "scale": 3},
+        "textureFlipCode": "charred",
+        "textureFlipGroupCode": "wood"
+      }
+    ],
+    "randomizers": {}
+  },
+  "faceCullMode": "NeverCull",
+  "creativeinventory": {"maltiezfirearms": [""]},
+  "shape": {"base": "game:block/basic/cube"},
+  "replaceable": 90,
+  "sidesolid": {"all": false},
+  "sideopaque": {"all": false},
+  "sideao": {"all": true},
+  "emitsideao": {"all": false},
+  "lightAbsorption": 1
+}
