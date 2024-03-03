@@ -1,6 +1,6 @@
 {
 	"editor": {
-		"collapsedPaths": "Root/Flask_origin/Flask_origin_inner/Flask,Root/flask_0,Root/box_1/rack_10,Root/box_1,Root/rack_0/rack_3,Root/Arquebus_origin/Patch,Root/origin,Root/rack_0/rack_6,Root/Arquebus_origin/Flask_origin/Flask_origin_inner/Flask,Root/box_1/rack_8,Root/barrel/barrel_6,Root/Arquebus_origin,Root/box_0,Root/Arquebus_origin/Flask_origin,Root/box_1/content_0,Root/Flask/Bottom_plate,Root/Match",
+		"collapsedPaths": "Root/Flask_origin/Flask_origin_inner/Flask,Root/flask_0,Root/box_1/rack_10,Root/rack_0/rack_3,Root/Arquebus_origin/Patch,Root/origin,Root/rack_0/rack_6,Root/Arquebus_origin/Flask_origin/Flask_origin_inner/Flask,Root/box_1/rack_8,Root/barrel/barrel_6,Root/Arquebus_origin,Root/box_0,Root/Arquebus_origin/Flask_origin,Root/box_1/content_0,Root/Flask/Bottom_plate,Root/Match",
 		"allAngles": false,
 		"entityTextureMode": false
 	},
@@ -22,10 +22,10 @@
 			"rotationOrigin": [ 0.5, 0.0, 11.0 ],
 			"rotationY": 67.5,
 			"faces": {
-				"north": { "texture": "#wood", "uv": [ 2.5, 1.5, 8.5, 2.5 ] },
-				"east": { "texture": "#wood", "uv": [ 3.5, 1.5, 9.5, 2.5 ] },
-				"south": { "texture": "#wood", "uv": [ 4.0, 1.5, 10.0, 2.5 ] },
-				"west": { "texture": "#wood", "uv": [ 4.0, 1.5, 10.0, 2.5 ] },
+				"north": { "texture": "#wood", "uv": [ 2.5, 2.0, 8.5, 3.0 ] },
+				"east": { "texture": "#wood", "uv": [ 3.5, 2.0, 9.5, 3.0 ] },
+				"south": { "texture": "#wood", "uv": [ 4.0, 2.0, 10.0, 3.0 ] },
+				"west": { "texture": "#wood", "uv": [ 4.0, 2.0, 10.0, 3.0 ] },
 				"up": { "texture": "#wood", "uv": [ 0.0, 0.0, 6.0, 6.0 ] },
 				"down": { "texture": "#wood", "uv": [ 0.0, 0.0, 6.0, 6.0 ] }
 			},

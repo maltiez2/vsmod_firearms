@@ -1,6 +1,6 @@
 {
 	"editor": {
-		"collapsedPaths": "Root/Flask_origin/Flask_origin_inner/Flask,Root/Arquebus_origin/Matchlock/Lock_lever,Root/Arquebus_origin/Patch,Root/Arquebus_origin/Flask_origin/Flask_origin_inner/Flask,Root/Arquebus_origin/Stock,Root/Arquebus_origin/Flask_origin,Root/Flask/Bottom_plate,Root/Match",
+		"collapsedPaths": "Root/Arquebus_origin/Matchlock/Lock_lever,Root/Arquebus_origin/Stock,Root/Arquebus_origin/Flask_origin,Root/Flask/Bottom_plate,Root/Match,Root/Flask_origin/Flask_origin_inner/Flask,Root/Arquebus_origin/Patch,Root/Arquebus_origin/Flask_origin/Flask_origin_inner/Flask",
 		"allAngles": false,
 		"entityTextureMode": false
 	},
@@ -562,9 +562,9 @@
 									"from": [ 0.5707, -0.095, -0.6 ],
 									"to": [ 0.9707, 0.105, 0.0 ],
 									"rotationOrigin": [ 0.4707, 0.105, 0.0 ],
-									"rotationX": -11.462,
+									"rotationX": -10.46,
 									"rotationY": -11.239,
-									"rotationZ": 43.868,
+									"rotationZ": 70.87,
 									"faces": {
 										"north": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
 										"east": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
@@ -623,7 +623,6 @@
 									"from": [ 0.0, 0.0, -1.0 ],
 									"to": [ 0.8, 0.2, 0.0 ],
 									"rotationOrigin": [ 0.0, 0.2, 0.0 ],
-									"rotationX": -14.0,
 									"faces": {
 										"north": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
 										"east": { "texture": "#metal", "uv": [ 0.0, 0.0, 1.0, 0.5 ] },
@@ -637,7 +636,7 @@
 									"from": [ 0.5707, -0.095, -0.6 ],
 									"to": [ 0.9707, 0.105, 0.0 ],
 									"rotationOrigin": [ 0.4707, 0.105, 0.0 ],
-									"rotationX": -11.462,
+									"rotationX": 4.54,
 									"rotationY": -11.239,
 									"rotationZ": 43.868,
 									"faces": {

@@ -47,6 +47,7 @@
   "block-ammomold-bullet-*": "Bullets mold",
   "block-ammomold-slug-*": "Slugs mold",
   "block-barrelmold-*": "Pistol barrel mold",
+  "game:clutter-firearms-*": "Clutter (Firearms mod)",
   
   "weapon-melee-attack": "Melee attack",
   "weapon-range-attack": "Range attack",

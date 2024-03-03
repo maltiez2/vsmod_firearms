@@ -4,7 +4,7 @@
     <ModName>Firearms</ModName>
     <ModType>content</ModType>
     <GameVersion>1.19.4</GameVersion>
-    <Version>0.4.4</Version>
+    <Version>0.4.3</Version>
     <ModId>maltiezfirearms</ModId>
     <Description>Black powder firearms</Description>
     <Side>Universal</Side>
@@ -67,9 +67,6 @@
     <AssetsToFormat Include="$(AssetsDir)\$(ModId)\patches" />
     <AssetsToFormat Include="$(AssetsDir)\$(ModId)\entities" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="resources\assets\maltiezfirearms\shapes\ruins\" />
-  </ItemGroup>
 
   <!-- Startup settings -->
   <PropertyGroup>
@@ -120,7 +117,6 @@
       <ModIcon Include="$(ModIconFile)" />
       <AssetsFolder Include="$(AssetsDir)\**\*.*" />
     </ItemGroup>
-    <Delete Files="@(OutputPath)\assets" />
     <Copy SourceFiles="@(AssetsFolder)" DestinationFiles="@(AssetsFolder->'$(OutputPath)assets\%(RecursiveDir)%(Filename)%(Extension)')" Condition="Exists('$(AssetsDir)')" />
     <Copy SourceFiles="@(ModIcon)" DestinationFolder="$(OutputPath)" Condition="Exists('$(ModIconFile)')" />
   </Target>

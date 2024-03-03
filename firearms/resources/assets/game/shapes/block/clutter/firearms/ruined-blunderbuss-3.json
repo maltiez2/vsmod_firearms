@@ -1,6 +1,6 @@
 {
 	"editor": {
-		"collapsedPaths": "Root/Flask_origin/Flask_origin_inner/Flask,Root/Arquebus_origin/Matchlock/Lock_lever,Root/Arquebus_origin/Patch,Root/Arquebus_origin/Flask_origin/Flask_origin_inner/Flask,Root/Arquebus_origin/Stock,Root/Arquebus_origin/Flask_origin,Root/Flask/Bottom_plate,Root/Match",
+		"collapsedPaths": "Root/Arquebus_origin/Matchlock/Lock_lever,Root/Arquebus_origin/Stock,Root/Arquebus_origin/Barrel,Root/Arquebus_origin/Flask_origin,Root/Flask/Bottom_plate,Root/Match,Root/Flask_origin/Flask_origin_inner/Flask,Root/Arquebus_origin/Patch,Root/Arquebus_origin_2/Barrel_2,Root/Arquebus_origin/Flask_origin/Flask_origin_inner/Flask,Root/Arquebus_origin_2/Matchlock_2,Root/Arquebus_origin/Lever,Root/Arquebus_origin/Ramdrod_origin,Root/Arquebus_origin/Parts,Root/Arquebus_origin_2/Ramdrod_origin_2",
 		"allAngles": false,
 		"entityTextureMode": false
 	},
@@ -14,9 +14,9 @@
 	"elements": [
 		{
 			"name": "Arquebus_origin",
-			"from": [ 10.0, 0.7, 12.0 ],
-			"to": [ 10.0, 0.7, 12.0 ],
-			"rotationOrigin": [ 10.0, 0.7, 12.0 ],
+			"from": [ 10.0, 0.7, 15.0 ],
+			"to": [ 10.0, 0.7, 15.0 ],
+			"rotationOrigin": [ 10.0, 0.7, 15.0 ],
 			"rotationZ": 90.0,
 			"faces": {
 				"north": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
@@ -145,9 +145,9 @@
 						},
 						{
 							"name": "Lock_lever",
-							"from": [ -0.1, -0.1, -1.1 ],
-							"to": [ 0.4, 0.5, -0.5 ],
-							"rotationOrigin": [ -0.1, 0.2, -0.8 ],
+							"from": [ 0.0, -0.1, -1.1 ],
+							"to": [ 0.5, 0.5, -0.5 ],
+							"rotationOrigin": [ 0.0, 0.2, -0.8 ],
 							"rotationX": -67.5,
 							"rotationY": -36.5,
 							"faces": {
@@ -357,9 +357,10 @@
 				},
 				{
 					"name": "Barrel",
-					"from": [ -0.5, 1.3, -14.4 ],
-					"to": [ -0.5, 1.3, -14.4 ],
-					"rotationOrigin": [ -0.5, 1.3, -14.4 ],
+					"from": [ -0.3, 1.3, -14.4 ],
+					"to": [ -0.3, 1.3, -14.4 ],
+					"rotationOrigin": [ -0.3, 1.3, -14.4 ],
+					"rotationY": -0.8,
 					"faces": {
 						"north": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
 						"east": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
@@ -731,9 +732,9 @@
 		},
 		{
 			"name": "Arquebus_origin_2",
-			"from": [ 19.0, 0.7, 12.0 ],
-			"to": [ 19.0, 0.7, 12.0 ],
-			"rotationOrigin": [ 19.0, 0.7, 12.0 ],
+			"from": [ 19.0, 0.7, 14.0 ],
+			"to": [ 19.0, 0.7, 14.0 ],
+			"rotationOrigin": [ 19.0, 0.7, 14.0 ],
 			"rotationZ": 90.0,
 			"faces": {
 				"north": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
@@ -1060,11 +1061,11 @@
 				},
 				{
 					"name": "Barrel_2",
-					"from": [ -0.5, 6.3, -12.4 ],
-					"to": [ -0.5, 6.3, -12.4 ],
-					"rotationOrigin": [ -0.5, 6.3, -12.4 ],
-					"rotationX": -24.0,
-					"rotationY": 7.0,
+					"from": [ -0.2, 6.3, -12.4 ],
+					"to": [ -0.2, 6.3, -12.4 ],
+					"rotationOrigin": [ -0.2, 6.3, -12.4 ],
+					"rotationX": -25.0,
+					"rotationY": 6.0,
 					"faces": {
 						"north": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
 						"east": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
