@@ -35,21 +35,21 @@
             "class": "ProceduralPlayerAnimation",
             "categories": {"hands": {"blending": "Average", "weight": 1024}, "recoil": {"blending": "AddAverage", "weight": 1}, "empty": {"blending": "Average", "weight": 16}},
             "animations": {
-              "idle": [{"action": "EaseIn", "animation": "carbine-idle", "duration_ms": 700, "dynamic": "CosShifted", "frame": 0}],
-              "load": [{"action": "EaseIn", "animation": "carbine-load", "duration_ms": 700, "dynamic": "CosShifted", "frame": 0}],
-              "prime": [{"action": "EaseIn", "animation": "carbine-prime", "duration_ms": 700, "dynamic": "CosShifted", "frame": 0}],
-              "aim": [{"action": "EaseIn", "animation": "carbine-aim", "duration_ms": 600, "dynamic": "SinQuadratic", "frame": 0}],
-              "ease": [{"action": "EaseOut", "animation": "carbine-idle", "duration_ms": 300, "dynamic": "CosShifted", "frame": 0}],
-              "empty": [{"action": "EaseIn", "animation": "firearmsempty", "duration_ms": 200, "dynamic": "Linear", "frame": 0}],
-              "empty-stop": [{"action": "EaseOut", "animation": "firearmsempty", "duration_ms": 200, "dynamic": "Linear", "frame": 0}],
+              "idle": [{"action": "EaseIn", "animation": "carbine-idle", "duration_ms": 700, "dynamic": "CosShifted", "frame": 0, "separateFp": true}],
+              "load": [{"action": "EaseIn", "animation": "carbine-load", "duration_ms": 700, "dynamic": "CosShifted", "frame": 0, "separateFp": true}],
+              "prime": [{"action": "EaseIn", "animation": "carbine-prime", "duration_ms": 700, "dynamic": "CosShifted", "frame": 0, "separateFp": true}],
+              "aim": [{"action": "EaseIn", "animation": "carbine-aim", "duration_ms": 600, "dynamic": "SinQuadratic", "frame": 0, "separateFp": true}],
+              "ease": [{"action": "EaseOut", "animation": "carbine-idle", "duration_ms": 300, "dynamic": "CosShifted", "frame": 0, "separateFp": true}],
+              "empty": [{"action": "EaseIn", "animation": "firearmsempty", "duration_ms": 200, "dynamic": "Linear", "frame": 0, "separateFp": true}],
+              "empty-stop": [{"action": "EaseOut", "animation": "firearmsempty", "duration_ms": 200, "dynamic": "Linear", "frame": 0, "separateFp": true}],
               "recoil": [
                 {"action": "EaseIn", "animation": "carbine-recoil", "duration_ms": 150, "dynamic": "Sin", "frame": 0},
                 {"action": "EaseOut", "animation": "carbine-recoil", "duration_ms": 600, "dynamic": "CosShifted", "frame": 0}
               ],
               "melee": [
-                {"action": "EaseIn", "animation": "carbine-melee", "duration_ms": 200, "dynamic": "Sin", "frame": 0},
-                {"action": "EaseIn", "animation": "carbine-melee", "duration_ms": 200, "dynamic": "Cubic", "frame": 1},
-                {"action": "EaseOut", "animation": "carbine-melee", "duration_ms": 300, "dynamic": "CosShifted"}
+                {"action": "EaseIn", "animation": "carbine-melee", "duration_ms": 200, "dynamic": "Sin", "frame": 0, "separateFp": true},
+                {"action": "EaseIn", "animation": "carbine-melee", "duration_ms": 200, "dynamic": "Cubic", "frame": 1, "separateFp": true},
+                {"action": "EaseOut", "animation": "carbine-melee", "duration_ms": 300, "dynamic": "CosShifted", "separateFp": true}
               ]
             }
           },
@@ -253,7 +253,7 @@
     "toolrackTransform": {"translation": {"x": 1.4, "y": 0.55, "z": 0.5}, "rotation": {"x": 1, "y": 95, "z": -90}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 1.34},
     "groundStorageTransform": {"translation": {"x": 0.55, "y": 0.44, "z": 0.75}, "rotation": {"x": 100, "y": 4, "z": -101}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 0.81}
   },
-  "shape": {"base": "maltiezfirearms:firearms/carbine-base", "alternates": []},
+  "shape": {"base": "maltiezfirearms:firearms/carbine-animated-tp", "alternates": []},
   "heldTpHitAnimation": "firearmsempty",
   "heldLeftTpIdleAnimation": "firearmsempty",
   "heldLeftReadyAnimation": "firearmsempty",

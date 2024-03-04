@@ -18,6 +18,7 @@
 			"from": [ 8.0, 0.0, 8.0 ],
 			"to": [ 8.0, 0.0, 8.0 ],
 			"rotationOrigin": [ 8.0, 0.0, 8.0 ],
+			"rotationY": -90.0,
 			"faces": {
 				"north": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
 				"east": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },

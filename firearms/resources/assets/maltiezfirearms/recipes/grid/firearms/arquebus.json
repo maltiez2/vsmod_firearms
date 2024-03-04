@@ -10,6 +10,15 @@
     },
     "width": 3,
     "height": 2,
-    "output": {"type": "item", "code": "maltiezfirearms:arquebus"}
+    "output": {"type": "item", "code": "maltiezfirearms:arquebus-plain"}
+  },
+  {
+    "ingredientPattern": "B",
+    "ingredients": {
+      "B": {"type": "item", "code": "maltiezfirearms:arquebus", "quantity": 1}
+    },
+    "width": 1,
+    "height": 1,
+    "output": {"type": "item", "code": "maltiezfirearms:arquebus-plain"}
   }
 ]
