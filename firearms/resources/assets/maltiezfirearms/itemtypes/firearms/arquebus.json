@@ -2,9 +2,9 @@
   "code": "arquebus",
   "class": "Item",
   "creativeinventory": {"maltiezfirearms": ["*"]},
-  "variantgroups": [{"code": "type", "states": ["plain", "ruined", "old"]}],
+  "variantgroups": [{"code": "type", "states": ["plain", "ruined", "rusted"]}],
   "maxstacksize": 1,
-  "durabilityByType": {"*-plain": 400, "*-ruined": 0, "*-old": 10},
+  "durabilityByType": {"*-plain": 400, "*-ruined": 0, "*-rusted": 10},
   "rackable": true,
   "tool": "bow",
   "behaviorsByType": {
@@ -439,11 +439,14 @@
   "attributes": {
     "toolrackTransform": {"translation": {"x": 0.9, "y": 0.55, "z": 0.5}, "rotation": {"x": 0, "y": 95, "z": -90}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 1.34},
     "groundStorageTransform": {"translation": {"x": 0.5, "y": 0.47, "z": 0.78}, "rotation": {"x": 105, "y": 1, "z": -121}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 0.81},
-    "inViceTransform": {"translation": {"x": 0.15, "y": 0.15, "z": 0.635}, "rotation": {"x": 0, "y": -90, "z": 0}, "origin": {"x": 0, "y": 0, "z": 0}}
+    "inViceTransform": {"translation": {"x": -0.35, "y": -0.08, "z": 0.01}, "rotation": {"x": 0, "y": -90, "z": 0}, "origin": {"x": 0, "y": 0, "z": 0}},
+    "inWallmountTransform": {"translation": {"x": -0.2, "y": -0.07, "z": -0.04}, "rotation": {"x": 90, "y": -84, "z": 90}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 0.81},
+    "inWeaponrackTransform": {"translation": {"x": 0, "y": 0.05, "z": 0}, "rotation": {"x": 76, "y": 0, "z": 0}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 0.81},
+    "inPistolstandTransform": {"translation": {"x": -0.2, "y": -0.12, "z": 0.02}, "rotation": {"x": 90, "y": -93, "z": 109}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 0.81}
   },
   "shapeByType": {"*-ruined": {"base": "maltiezfirearms:firearms/arquebus-ruined"}, "*": {"base": "maltiezfirearms:firearms/arquebus-animated-tp"}},
   "texturesByType": {
-    "*-old": {"metal": {"base": "game:block/metal/corroded/normal1"}, "brass": {"base": "game:block/metal/tarnished/brass"}, "wood": {"base": "game:block/wood/charred"}},
+    "*-rusted": {"metal": {"base": "game:block/metal/corroded/normal1"}, "brass": {"base": "game:block/metal/tarnished/brass"}, "wood": {"base": "game:block/wood/charred"}},
     "*-ruined": {"metal": {"base": "game:block/metal/corroded/normal1"}, "brass": {"base": "game:block/metal/tarnished/brass"}, "wood": {"base": "game:block/wood/charred"}},
     "*-plain": {"metal": {"base": "game:block/metal/plate/iron"}, "brass": {"base": "game:block/metal/plate/brass"}, "wood": {"base": "game:block/wood/debarked/oak"}}
   },

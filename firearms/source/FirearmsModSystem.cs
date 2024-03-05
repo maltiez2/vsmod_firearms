@@ -6,7 +6,7 @@ internal class FirearmsModSystem : ModSystem
 {
     public override void Start(ICoreAPI api)
     {
-        api.RegisterBlockClass("Firearms:ViceBlock", typeof(ViceBlock));
-        api.RegisterBlockEntityClass("Firearms:ViceEntity", typeof(ViceEntity));
+        api.RegisterBlockClass("Firearms:GenericDisplayBlock", typeof(GenericDisplayBlock));
+        api.RegisterBlockEntityClass("Firearms:GenericDisplayBlockEntity", typeof(GenericDisplayBlockEntity));
     }
 }

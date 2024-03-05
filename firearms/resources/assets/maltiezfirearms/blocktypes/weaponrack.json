@@ -1,0 +1,36 @@
+﻿{
+  "code": "weaponrack",
+  "behaviors": [{"name": "UnstableFalling", "properties": {"fallSound": null, "dustIntensity": 0}}, {"name": "HorizontalOrientable", "properties": {"dropBlockFace": "east"}}],
+  "variantgroups": [{"code": "type", "states": ["plain", "charred", "aged"]}, {"code": "side", "loadFromProperties": "abstract/horizontalorientation"}],
+  "attributes": {"inventorySize": 1, "inventoryTransformAttribute": "inWeaponrackTransform", "rotateByType": {"*-north": {"y": 0}, "*-east": {"y": 270}, "*-west": {"y": 90}, "*-south": {"y": 180}}},
+  "class": "Firearms:GenericDisplayBlock",
+  "entityClass": "Firearms:GenericDisplayBlockEntity",
+  "creativeinventory": {"maltiezfirearms": ["*-east"], "clutter": ["*-rusty-east"]},
+  "shapeByType": {
+    "*-north": {"base": "blocks/weaponrack", "rotateY": 0},
+    "*-east": {"base": "blocks/weaponrack", "rotateY": 270},
+    "*-west": {"base": "blocks/weaponrack", "rotateY": 90},
+    "*-south": {"base": "blocks/weaponrack", "rotateY": 180}
+  },
+  "drawtype": "json",
+  "blockmaterial": "Metal",
+  "replaceable": 600,
+  "resistance": 3,
+  "lightAbsorption": 0,
+  "heldTpIdleAnimation": "holdbothhandslarge",
+  "heldRightReadyAnimation": "heldblockready",
+  "heldTpUseAnimation": "twohandplaceblock",
+  "collisionSelectionBoxes": [
+    {"x1": 0, "y1": 0, "z1": 0.1, "x2": 0.2, "y2": 1, "z2": 0.4, "rotateYByType": {"*-north": 0, "*-east": 270, "*-west": 90, "*-south": 180}},
+    {"x1": 0.2, "y1": 0, "z1": 0.1, "x2": 0.4, "y2": 1, "z2": 0.4, "rotateYByType": {"*-north": 0, "*-east": 270, "*-west": 90, "*-south": 180}},
+    {"x1": 0.4, "y1": 0, "z1": 0.1, "x2": 0.6, "y2": 1, "z2": 0.4, "rotateYByType": {"*-north": 0, "*-east": 270, "*-west": 90, "*-south": 180}},
+    {"x1": 0.6, "y1": 0, "z1": 0.1, "x2": 0.8, "y2": 1, "z2": 0.4, "rotateYByType": {"*-north": 0, "*-east": 270, "*-west": 90, "*-south": 180}},
+    {"x1": 0.8, "y1": 0, "z1": 0.1, "x2": 1, "y2": 1, "z2": 0.4, "rotateYByType": {"*-north": 0, "*-east": 270, "*-west": 90, "*-south": 180}}
+  ],
+  "texturesByType": {"*-charred-*": {"wood": {"base": "game:block/wood/charred"}}, "*-aged-*": {"wood": {"base": "game:block/wood/planks/aged1"}}, "*": {}},
+  "sideopaque": {"all": false},
+  "sideao": {"all": true},
+  "emitsideao": {"all": false},
+  "sidesolid": {"all": false},
+  "tpHandTransform": {"translation": {"x": 0.1, "y": 0.4, "z": 1.05}, "rotation": {"x": 19, "y": 9, "z": -99}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 0.42}
+}

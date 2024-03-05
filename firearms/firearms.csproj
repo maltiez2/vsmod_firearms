@@ -137,6 +137,9 @@
     <AssetsToFormat Include="$(AssetsDir)\$(ModId)\patches" />
     <AssetsToFormat Include="$(AssetsDir)\$(ModId)\entities" />
   </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="VSImGui" Version="0.0.6" />
+  </ItemGroup>
 
   <!-- Startup settings -->
   <PropertyGroup>
@@ -186,7 +189,9 @@
     <ItemGroup>
       <ModIcon Include="$(ModIconFile)" />
       <AssetsFolder Include="$(AssetsDir)\**\*.*" />
+      <AssetsOutput Include="$(OutputPath)\assets\**\*.*" />
     </ItemGroup>
+    <Delete Files="@(AssetsOutput)" />
     <Copy SourceFiles="@(AssetsFolder)" DestinationFiles="@(AssetsFolder->'$(OutputPath)assets\%(RecursiveDir)%(Filename)%(Extension)')" Condition="Exists('$(AssetsDir)')" />
     <Copy SourceFiles="@(ModIcon)" DestinationFolder="$(OutputPath)" Condition="Exists('$(ModIconFile)')" />
   </Target>

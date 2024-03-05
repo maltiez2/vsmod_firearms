@@ -2,10 +2,10 @@
   "code": "pistol",
   "class": "Item",
   "creativeinventory": {"maltiezfirearms": ["*"]},
-  "variantgroups": [{"code": "type", "states": ["plain", "ruined", "old"]}],
+  "variantgroups": [{"code": "type", "states": ["plain", "ruined", "tarnished"]}],
   "maxstacksize": 1,
   "storageFlags": 257,
-  "durabilityByType": {"*-plain": 600, "*-ruined": 0, "*-old": 60},
+  "durabilityByType": {"*-plain": 600, "*-ruined": 0, "*-tarnished": 60},
   "rackable": true,
   "tool": "bow",
   "behaviorsByType": {
@@ -500,7 +500,8 @@
   },
   "attributes": {
     "toolrackTransform": {"translation": {"x": 1.05, "y": 0.55, "z": 0.5}, "rotation": {"x": -1, "y": 95, "z": -90}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 1.34},
-    "groundStorageTransform": {"translation": {"x": 0.7, "y": 0.04, "z": 0.7}, "rotation": {"x": 0, "y": 57, "z": 90}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 0.8}
+    "groundStorageTransform": {"translation": {"x": 0.7, "y": 0.04, "z": 0.7}, "rotation": {"x": 0, "y": 57, "z": 90}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 0.8},
+    "inPistolstandTransform": {"translation": {"x": -0.25, "y": -0.05, "z": 0}, "rotation": {"x": 90, "y": -96, "z": 103}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 0.81}
   },
   "heldLeftTpIdleAnimation": "firearmsempty",
   "heldLeftReadyAnimation": "firearmsempty",
@@ -509,7 +510,7 @@
   "heldTpUseAnimation": "firearmsempty",
   "shapeByType": {"*-ruined": {"base": "maltiezfirearms:firearms/pistol-ruined"}, "*": {"base": "maltiezfirearms:firearms/pistol-animated-tp"}},
   "texturesByType": {
-    "*-old": {"metal": {"base": "game:block/metal/tarnished/tinbronze"}, "brass": {"base": "game:block/metal/tarnished/brass"}, "wood": {"base": "game:block/wood/debarked/aged"}},
+    "*-tarnished": {"metal": {"base": "game:block/metal/tarnished/tinbronze"}, "brass": {"base": "game:block/metal/tarnished/brass"}, "wood": {"base": "game:block/wood/debarked/aged"}},
     "*": {}
   },
   "guiTransform": {"translation": {"x": 0, "y": 0, "z": 0}, "rotation": {"x": -27, "y": 30, "z": -180}, "origin": {"x": -0.38, "y": -0.34, "z": -0.9}, "scaleXyz": {"x": -2.22, "y": 2.22, "z": 2.22}},
