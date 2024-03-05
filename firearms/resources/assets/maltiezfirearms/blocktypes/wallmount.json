@@ -28,8 +28,5 @@
   "sideao": {"all": true},
   "emitsideao": {"all": false},
   "sidesolid": {"all": false},
-  "tpHandTransform": {"translation": { "x": 0.3, "y": 0, "z": -0.52 },
-		"rotation": { "x": 0, "y": 90, "z": 0 },
-		"origin": { "x": 0, "y": 0, "z": 0 },
-		"scale": 0.95}
+  "tpHandTransform": {"translation": {"x": 0.3, "y": 0, "z": -0.52}, "rotation": {"x": 0, "y": 90, "z": 0}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 0.95}
 }

@@ -5,7 +5,7 @@
     "file": "game:blocktypes/clutter.json",
     "side": "Server",
     "value": {
-      "code": "firearms/ruined-parts-1-0",
+      "code": "maltiezfirearms/iron/parts/barrels-0",
       "colSelBoxes": [{"x1": 0, "y1": 0, "z1": 0, "x2": 1, "y2": 0.2, "z2": 1}],
       "guiTf": {"rotation": {"x": -42, "y": -45, "z": 0}, "origin": {"x": 0.5, "y": 0.1, "z": 0.55}, "scale": 1.21},
       "fpTf": {"translation": {"x": -0.6, "y": 0.15, "z": 0.8}, "rotation": {"x": -2, "y": -53, "z": 90}, "scale": 1.48},
@@ -21,7 +21,7 @@
     "file": "game:blocktypes/clutter.json",
     "side": "Server",
     "value": {
-      "code": "firearms/ruined-parts-2-0",
+      "code": "maltiezfirearms/iron/parts/barrels-1",
       "colSelBoxes": [{"x1": 0, "y1": 0, "z1": 0, "x2": 1, "y2": 0.2, "z2": 1}],
       "guiTf": {"rotation": {"x": -42, "y": -45, "z": 0}, "origin": {"x": 0.5, "y": 0.1, "z": 0.55}, "scale": 1.21},
       "fpTf": {"translation": {"x": -0.6, "y": 0.15, "z": 0.8}, "rotation": {"x": -2, "y": -53, "z": 90}, "scale": 1.48},
@@ -37,7 +37,7 @@
     "file": "game:blocktypes/clutter.json",
     "side": "Server",
     "value": {
-      "code": "firearms/ruined-parts-1-1",
+      "code": "maltiezfirearms/iron/parts/barrels-2",
       "colSelBoxes": [{"x1": 0, "y1": 0, "z1": 0, "x2": 1, "y2": 0.2, "z2": 1}],
       "guiTf": {"rotation": {"x": -42, "y": -45, "z": 0}, "origin": {"x": 0.5, "y": 0.1, "z": 0.55}, "scale": 1.21},
       "fpTf": {"translation": {"x": -0.6, "y": 0.15, "z": 0.8}, "rotation": {"x": -2, "y": -53, "z": 90}, "scale": 1.48},
@@ -53,7 +53,7 @@
     "file": "game:blocktypes/clutter.json",
     "side": "Server",
     "value": {
-      "code": "firearms/ruined-parts-2-1",
+      "code": "maltiezfirearms/iron/parts/barrels-3",
       "colSelBoxes": [{"x1": 0, "y1": 0, "z1": 0, "x2": 1, "y2": 0.2, "z2": 1}],
       "guiTf": {"rotation": {"x": -42, "y": -45, "z": 0}, "origin": {"x": 0.5, "y": 0.1, "z": 0.55}, "scale": 1.21},
       "fpTf": {"translation": {"x": -0.6, "y": 0.15, "z": 0.8}, "rotation": {"x": -2, "y": -53, "z": 90}, "scale": 1.48},
@@ -69,7 +69,7 @@
     "file": "game:blocktypes/clutter.json",
     "side": "Server",
     "value": {
-      "code": "firearms/ruined-parts-1-2",
+      "code": "maltiezfirearms/iron/parts/locks-0",
       "colSelBoxes": [{"x1": 0, "y1": 0, "z1": 0, "x2": 1, "y2": 0.2, "z2": 1}],
       "guiTf": {"rotation": {"x": -42, "y": -45, "z": 0}, "origin": {"x": 0.5, "y": 0.1, "z": 0.55}, "scale": 1.21},
       "fpTf": {"translation": {"x": -0.6, "y": 0.15, "z": 0.8}, "rotation": {"x": -2, "y": -53, "z": 90}, "scale": 1.48},
@@ -85,7 +85,7 @@
     "file": "game:blocktypes/clutter.json",
     "side": "Server",
     "value": {
-      "code": "firearms/ruined-parts-2-2",
+      "code": "maltiezfirearms/iron/parts/locks-1",
       "colSelBoxes": [{"x1": 0, "y1": 0, "z1": 0, "x2": 1, "y2": 0.2, "z2": 1}],
       "guiTf": {"rotation": {"x": -42, "y": -45, "z": 0}, "origin": {"x": 0.5, "y": 0.1, "z": 0.55}, "scale": 1.21},
       "fpTf": {"translation": {"x": -0.6, "y": 0.15, "z": 0.8}, "rotation": {"x": -2, "y": -53, "z": 90}, "scale": 1.48},
@@ -101,7 +101,7 @@
     "file": "game:blocktypes/clutter.json",
     "side": "Server",
     "value": {
-      "code": "firearms/ruined-parts-2-3",
+      "code": "maltiezfirearms/iron/parts/locks-2",
       "colSelBoxes": [{"x1": 0, "y1": 0, "z1": 0, "x2": 1, "y2": 0.2, "z2": 1}],
       "guiTf": {"rotation": {"x": -42, "y": -45, "z": 0}, "origin": {"x": 0.5, "y": 0.1, "z": 0.55}, "scale": 1.21},
       "fpTf": {"translation": {"x": -0.6, "y": 0.15, "z": 0.8}, "rotation": {"x": -2, "y": -53, "z": 90}, "scale": 1.48},
@@ -117,7 +117,7 @@
     "file": "game:blocktypes/clutter.json",
     "side": "Server",
     "value": {
-      "code": "firearms/ruined-parts-3-0",
+      "code": "maltiezfirearms/iron/parts/locks-3",
       "colSelBoxes": [{"x1": 0, "y1": 0, "z1": 0, "x2": 1, "y2": 0.2, "z2": 1}],
       "guiTf": {"rotation": {"x": -42, "y": -45, "z": 0}, "origin": {"x": 0.5, "y": 0.1, "z": 0.55}, "scale": 1.21},
       "fpTf": {"translation": {"x": -0.6, "y": 0.15, "z": 0.8}, "rotation": {"x": -2, "y": -53, "z": 90}, "scale": 1.48},
@@ -133,8 +133,8 @@
     "file": "game:blocktypes/clutter.json",
     "side": "Server",
     "value": {
-      "code": "firearms/ruined-parts-3-1",
-      "colSelBoxes": [{"x1": 0, "y1": 0, "z1": 0, "x2": 1, "y2": 0.2, "z2": 1}],
+      "code": "maltiezfirearms/iron/parts/vice-0",
+      "colSelBoxes": [{"x1": 0.3, "y1": 0, "z1": 0.4, "x2": 0.7, "y2": 0.3, "z2": 1}],
       "guiTf": {"rotation": {"x": -42, "y": -45, "z": 0}, "origin": {"x": 0.5, "y": 0.1, "z": 0.55}, "scale": 1.21},
       "fpTf": {"translation": {"x": -0.6, "y": 0.15, "z": 0.8}, "rotation": {"x": -2, "y": -53, "z": 90}, "scale": 1.48},
       "tpTf": {"translation": {"x": -1.4, "y": -1.6, "z": -1.6}, "rotation": {"x": -82, "y": -47, "z": -22}, "scale": 0.38},
@@ -149,8 +149,8 @@
     "file": "game:blocktypes/clutter.json",
     "side": "Server",
     "value": {
-      "code": "firearms/ruined-parts-3-2",
-      "colSelBoxes": [{"x1": 0, "y1": 0, "z1": 0, "x2": 1, "y2": 0.2, "z2": 1}],
+      "code": "maltiezfirearms/iron/parts/vice-1",
+      "colSelBoxes": [{"x1": 0.3, "y1": 0, "z1": 0.4, "x2": 0.7, "y2": 0.3, "z2": 1}],
       "guiTf": {"rotation": {"x": -42, "y": -45, "z": 0}, "origin": {"x": 0.5, "y": 0.1, "z": 0.55}, "scale": 1.21},
       "fpTf": {"translation": {"x": -0.6, "y": 0.15, "z": 0.8}, "rotation": {"x": -2, "y": -53, "z": 90}, "scale": 1.48},
       "tpTf": {"translation": {"x": -1.4, "y": -1.6, "z": -1.6}, "rotation": {"x": -82, "y": -47, "z": -22}, "scale": 0.38},
@@ -165,8 +165,8 @@
     "file": "game:blocktypes/clutter.json",
     "side": "Server",
     "value": {
-      "code": "firearms/ruined-parts-3-3",
-      "colSelBoxes": [{"x1": 0, "y1": 0, "z1": 0, "x2": 1, "y2": 0.2, "z2": 1}],
+      "code": "maltiezfirearms/iron/parts/vice-2",
+      "colSelBoxes": [{"x1": 0.3, "y1": 0, "z1": 0.4, "x2": 0.7, "y2": 0.3, "z2": 1}],
       "guiTf": {"rotation": {"x": -42, "y": -45, "z": 0}, "origin": {"x": 0.5, "y": 0.1, "z": 0.55}, "scale": 1.21},
       "fpTf": {"translation": {"x": -0.6, "y": 0.15, "z": 0.8}, "rotation": {"x": -2, "y": -53, "z": 90}, "scale": 1.48},
       "tpTf": {"translation": {"x": -1.4, "y": -1.6, "z": -1.6}, "rotation": {"x": -82, "y": -47, "z": -22}, "scale": 0.38},
@@ -181,8 +181,8 @@
     "file": "game:blocktypes/clutter.json",
     "side": "Server",
     "value": {
-      "code": "firearms/ruined-parts-3-4",
-      "colSelBoxes": [{"x1": 0, "y1": 0, "z1": 0, "x2": 1, "y2": 0.2, "z2": 1}],
+      "code": "maltiezfirearms/iron/parts/vice-3",
+      "colSelBoxes": [{"x1": 0.3, "y1": 0, "z1": 0.4, "x2": 0.7, "y2": 0.3, "z2": 1}],
       "guiTf": {"rotation": {"x": -42, "y": -45, "z": 0}, "origin": {"x": 0.5, "y": 0.1, "z": 0.55}, "scale": 1.21},
       "fpTf": {"translation": {"x": -0.6, "y": 0.15, "z": 0.8}, "rotation": {"x": -2, "y": -53, "z": 90}, "scale": 1.48},
       "tpTf": {"translation": {"x": -1.4, "y": -1.6, "z": -1.6}, "rotation": {"x": -82, "y": -47, "z": -22}, "scale": 0.38},
@@ -197,8 +197,24 @@
     "file": "game:blocktypes/clutter.json",
     "side": "Server",
     "value": {
-      "code": "firearms/ruined-parts-3-5",
-      "colSelBoxes": [{"x1": 0, "y1": 0, "z1": 0, "x2": 1, "y2": 0.2, "z2": 1}],
+      "code": "maltiezfirearms/iron/parts/vice-4",
+      "colSelBoxes": [{"x1": 0.3, "y1": 0, "z1": 0.4, "x2": 0.7, "y2": 0.3, "z2": 1}],
+      "guiTf": {"rotation": {"x": -42, "y": -45, "z": 0}, "origin": {"x": 0.5, "y": 0.1, "z": 0.55}, "scale": 1.21},
+      "fpTf": {"translation": {"x": -0.6, "y": 0.15, "z": 0.8}, "rotation": {"x": -2, "y": -53, "z": 90}, "scale": 1.48},
+      "tpTf": {"translation": {"x": -1.4, "y": -1.6, "z": -1.6}, "rotation": {"x": -82, "y": -47, "z": -22}, "scale": 0.38},
+      "groundTf": {"translation": {"y": 0.33}, "scale": 3},
+      "textureFlipCode": "charred",
+      "textureFlipGroupCode": "wood"
+    }
+  },
+  {
+    "op": "add",
+    "path": "/attributes/types/-",
+    "file": "game:blocktypes/clutter.json",
+    "side": "Server",
+    "value": {
+      "code": "maltiezfirearms/iron/parts/vice-5",
+      "colSelBoxes": [{"x1": 0.3, "y1": 0, "z1": 0.4, "x2": 0.7, "y2": 0.3, "z2": 1}],
       "guiTf": {"rotation": {"x": -42, "y": -45, "z": 0}, "origin": {"x": 0.5, "y": 0.1, "z": 0.55}, "scale": 1.21},
       "fpTf": {"translation": {"x": -0.6, "y": 0.15, "z": 0.8}, "rotation": {"x": -2, "y": -53, "z": 90}, "scale": 1.48},
       "tpTf": {"translation": {"x": -1.4, "y": -1.6, "z": -1.6}, "rotation": {"x": -82, "y": -47, "z": -22}, "scale": 0.38},

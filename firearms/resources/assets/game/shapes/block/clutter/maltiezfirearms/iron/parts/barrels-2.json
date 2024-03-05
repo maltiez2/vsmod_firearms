@@ -1,6 +1,6 @@
 {
 	"editor": {
-		"collapsedPaths": "Root/Arquebus_origin/Matchlock/Lock_lever,Root/box_2/parts_0/Lever_base_1,Root/box_2/parts_0/Lever_base,Root/box_0/parts_1/Barrel2,Root/Arquebus_origin/Matchlock,Root/Arquebus_origin/Barrel2,Root/Arquebus_origin/Matchlock2,Root/Arquebus_origin/Stock,Root/Arquebus_origin/Barrel,Root/Arquebus_origin,Root/Arquebus_origin/Flask_origin,Root/Flask/Bottom_plate,Root/Match,Root/Flask_origin/Flask_origin_inner/Flask,Root/Arquebus_origin/Patch,Root/Arquebus_origin/Flask_origin/Flask_origin_inner/Flask,Root/Arquebus_origin/Lever2,Root/Arquebus_origin/Matchlock2/Pan2,Root/box_1/parts/Lock_lever_2,Root/box_1/parts/Lock_lever_1,Root/box_1/parts/Lock_lever_0,Root/Arquebus_origin/Ramdrod_origin,Root/Arquebus_origin/Lever,Root/box_0/parts_1/Matchlock2,Root/box_1/parts/Lock_lever_6,Root/box_1/parts/Lock_lever_5,Root/box_0/parts_1/barrel_1,Root/box_1/parts/Lock_lever_4,Root/box_0/parts_1/barrel_2,Root/box_1/parts/Lock_lever_3",
+		"collapsedPaths": "Root/Arquebus_origin/Matchlock/Lock_lever,Root/box_2/parts_0/Lever_base_1,Root/box_1,Root/box_2,Root/box_2/parts_0/Lever_base,Root/box_0/parts_1/Barrel2,Root/box_0/rack_3,Root/Arquebus_origin/Matchlock,Root/Arquebus_origin/Barrel2,Root/Arquebus_origin/Matchlock2,Root/box_0/rack_6,Root/Arquebus_origin/Stock,Root/Arquebus_origin/Barrel,Root/Arquebus_origin,Root/Arquebus_origin/Flask_origin,Root/Flask/Bottom_plate,Root/Match,Root/Flask_origin/Flask_origin_inner/Flask,Root/Arquebus_origin/Patch,Root/Arquebus_origin/Flask_origin/Flask_origin_inner/Flask,Root/Arquebus_origin/Lever2,Root/Arquebus_origin/Matchlock2/Pan2,Root/box_1/parts/Lock_lever_2,Root/box_1/parts/Lock_lever_1,Root/box_1/parts/Lock_lever_0,Root/Arquebus_origin/Ramdrod_origin,Root/Arquebus_origin/Lever,Root/box_0/parts_1/Matchlock2,Root/box_1/parts/Lock_lever_6,Root/box_1/parts/Lock_lever_5,Root/box_0/parts_1/barrel_1,Root/box_1/parts/Lock_lever_4,Root/box_0/parts_1/barrel_2,Root/box_1/parts/Lock_lever_3",
 		"allAngles": false,
 		"entityTextureMode": false
 	},
@@ -158,28 +158,13 @@
 					},
 					"children": [
 						{
-							"name": "barrel_0",
-							"from": [ 0.0, -0.5, -0.3 ],
-							"to": [ 0.0, -0.5, -0.3 ],
-							"rotationOrigin": [ 0.5, 1.5, 1.7 ],
-							"rotationZ": 3.4,
-							"faces": {
-								"north": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
-								"east": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
-								"south": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
-								"west": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
-								"up": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
-								"down": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.5, 0.5 ] }
-							}
-						},
-						{
 							"name": "barrel_1",
-							"from": [ 0.2, -0.5, 1.1 ],
-							"to": [ 0.2, -0.5, 1.1 ],
-							"rotationOrigin": [ 0.7, 1.5, 3.1 ],
+							"from": [ 0.2, -0.5, 0.1 ],
+							"to": [ 0.2, -0.5, 0.1 ],
+							"rotationOrigin": [ 0.7, 1.5, 2.1 ],
 							"rotationX": -90.0,
 							"rotationY": -3.7,
-							"rotationZ": -0.8,
+							"rotationZ": -3.8,
 							"faces": {
 								"north": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
 								"east": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
