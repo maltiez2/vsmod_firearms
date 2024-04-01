@@ -2,10 +2,14 @@
   "code": "vice",
   "behaviors": [{"name": "UnstableFalling", "properties": {"fallSound": null, "dustIntensity": 0}}, {"name": "HorizontalOrientable", "properties": {"dropBlockFace": "east"}}],
   "variantgroups": [{"code": "type", "states": ["iron", "tinbronze", "rusty", "tarnished"]}, {"code": "side", "loadFromProperties": "abstract/horizontalorientation"}],
-  "attributes": {"inventorySize": 1, "inventoryTransformAttribute": "inViceTransform", "rotateByType": {"*-north": {"y": 0}, "*-east": {"y": 270}, "*-west": {"y": 90}, "*-south": {"y": 180}}},
+  "attributes": {
+    "inventorySize": 1,
+    "inventoryTransformAttribute": "inViceTransform",
+    "rotateByType": {"*-north": {"y": 0}, "*-east": {"y": 270}, "*-west": {"y": 90}, "*-south": {"y": 180}}
+  },
   "class": "Firearms:GenericDisplayBlock",
   "entityClass": "Firearms:GenericDisplayBlockEntity",
-  "creativeinventory": {"maltiezfirearms": ["*-east"], "clutter": ["*-rusty-east"]},
+  "creativeinventory": {"maltiezfirearms": ["*-east"]},
   "shapeByType": {
     "*-north": {"base": "blocks/vice", "rotateY": 0},
     "*-east": {"base": "blocks/vice", "rotateY": 270},
@@ -15,6 +19,7 @@
   "drawtype": "json",
   "blockmaterial": "Metal",
   "replaceable": 600,
+  "maxstacksize": 1,
   "resistance": 3,
   "lightAbsorption": 0,
   "heldTpIdleAnimation": "holdbothhandslarge",

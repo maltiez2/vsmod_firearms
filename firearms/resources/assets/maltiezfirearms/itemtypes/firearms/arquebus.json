@@ -29,11 +29,11 @@
               "class": "ProceduralPlayerAnimation",
               "categories": {"hands": {"blending": "Average", "weight": 1024}, "recoil": {"blending": "AddAverage", "weight": 1}, "empty": {"blending": "Average", "weight": 16}},
               "animations": {
-                "idle": [{"action": "EaseIn", "animation": "arquebus-idle", "duration_ms": 700, "dynamic": "CosShifted", "frame": 0}],
-                "aim": [{"action": "EaseIn", "animation": "arquebus-aim", "duration_ms": 550, "dynamic": "SinQuadratic", "frame": 0}],
-                "ease": [{"action": "EaseOut", "animation": "arquebus-idle", "duration_ms": 300, "dynamic": "CosShifted", "frame": 0}],
-                "empty": [{"action": "EaseIn", "animation": "firearmsempty", "duration_ms": 200, "dynamic": "Linear", "frame": 0}],
-                "empty-stop": [{"action": "EaseOut", "animation": "firearmsempty", "duration_ms": 200, "dynamic": "Linear", "frame": 0}]
+                "idle": [{"action": "EaseIn", "animation": "arquebus-idle", "duration_ms": 700, "dynamic": "CosShifted", "frame": 0, "separateFp": true}],
+                "aim": [{"action": "EaseIn", "animation": "arquebus-aim", "duration_ms": 550, "dynamic": "SinQuadratic", "frame": 0, "separateFp": true}],
+                "ease": [{"action": "EaseOut", "animation": "arquebus-idle", "duration_ms": 300, "dynamic": "CosShifted", "frame": 0, "separateFp": true}],
+                "empty": [{"action": "EaseIn", "animation": "firearmsempty", "duration_ms": 200, "dynamic": "Linear", "frame": 0, "separateFp": true}],
+                "empty-stop": [{"action": "EaseOut", "animation": "firearmsempty", "duration_ms": 200, "dynamic": "Linear", "frame": 0, "separateFp": true}]
               }
             },
             "stats": {"class": "Stats"}
@@ -84,7 +84,6 @@
             "mouse-right-down": {"class": "Mouse", "key": "Right", "alt": false, "type": "pressed"},
             "mouse-right-up": {"class": "Mouse", "key": "Right", "alt": false, "type": "released", "handle": false},
             "mouse-left-up": {"class": "Mouse", "key": "Left", "alt": false, "type": "released", "handle": false},
-            "load-finished": {"class": "OperationFinished", "operation": "load"},
             "slot-added": {"class": "SlotContent", "type": "AfterModified"},
             "slot-dropped": {"class": "SlotContent", "type": "AllTaken"},
             "slot-selected": {"class": "SlotSelected"},
@@ -106,7 +105,11 @@
       },
       {
         "name": "AnimatableProcedural",
-        "properties": {"animated-shape": "maltiezfirearms:firearms/arquebus-animated-tp", "animated-shape-fp": "maltiezfirearms:firearms/arquebus-animated-fp", "only-when-animating": false}
+        "properties": {
+          "animated-shape": "maltiezfirearms:firearms/arquebus-animated-tp",
+          "animated-shape-fp": "maltiezfirearms:firearms/arquebus-animated-fp",
+          "only-when-animating": false
+        }
       },
       {
         "name": "FiniteStateMachine",
@@ -178,9 +181,13 @@
             },
             "ammo-other": {
               "class": "Requirements",
-              "load-powder": {"requirements": [{"durability": 7, "location": "maltiezfirearms:powderflask-*", "destroy": false, "description": "maltiezfirearms:requirement-powderflask"}]},
+              "load-powder": {
+                "requirements": [{"durability": 7, "location": "maltiezfirearms:powderflask-*", "destroy": false, "description": "maltiezfirearms:requirement-powderflask"}]
+              },
               "load-patch": {"requirements": [{"amount": 1, "location": "maltiezfirearms:linenpatch", "description": "maltiezfirearms:item-linenpatch"}]},
-              "prime": {"requirements": [{"durability": 1, "location": "maltiezfirearms:powderflask-*", "destroy": false, "description": "maltiezfirearms:requirement-powderflask"}]},
+              "prime": {
+                "requirements": [{"durability": 1, "location": "maltiezfirearms:powderflask-*", "destroy": false, "description": "maltiezfirearms:requirement-powderflask"}]
+              },
               "empty-offhand": {"slot": "OffHand", "search": "Blacklist"}
             },
             "ammo-bullet": {
@@ -188,7 +195,10 @@
               "selectorRequirement": "bullet",
               "bullet": {"requirements": [{"amount": 1, "location": "maltiezfirearms:bullet-*", "description": "maltiezfirearms:requirement-bullet"}]}
             },
-            "ammo-match": {"class": "Requirements", "match": {"requirements": [{"amount": 1, "location": "maltiezfirearms:match-lit", "description": "maltiezfirearms:item-match-lit"}]}},
+            "ammo-match": {
+              "class": "Requirements",
+              "match": {"requirements": [{"amount": 1, "location": "maltiezfirearms:match-lit", "description": "maltiezfirearms:item-match-lit"}]}
+            },
             "projectile": {
               "class": "Projectiles",
               "stackSystem": "ammo-bullet",
@@ -456,7 +466,12 @@
   "heldRightReadyAnimation": "firearmsempty",
   "heldOldTpIdleAnimation": "firearmsempty",
   "heldTpUseAnimation": "firearmsempty",
-  "guiTransform": {"translation": {"x": 0, "y": 0, "z": 0}, "rotation": {"x": -19, "y": 24, "z": -180}, "origin": {"x": -0.55, "y": -0.4, "z": -1.4}, "scaleXyz": {"x": -1.95, "y": 1.95, "z": 1.95}},
+  "guiTransform": {
+    "translation": {"x": 0, "y": 0, "z": 0},
+    "rotation": {"x": -19, "y": 24, "z": -180},
+    "origin": {"x": -0.55, "y": -0.4, "z": -1.4},
+    "scaleXyz": {"x": -1.95, "y": 1.95, "z": 1.95}
+  },
   "fpHandTransform": {"translation": {"x": 0.3, "y": 0.5, "z": 0.5}, "rotation": {"x": 0, "y": 0, "z": 0}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 4},
   "tpHandTransform": {"translation": {"x": -0.3, "y": 0, "z": 0}, "rotation": {"x": 0, "y": -90, "z": 0}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 0.8},
   "groundTransform": {"translation": {"x": 0.5, "y": 0.05, "z": 0.5}, "rotation": {"x": 0, "y": 0, "z": 90}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 4.8}

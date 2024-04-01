@@ -4,7 +4,7 @@
     <ModName>Firearms</ModName>
     <ModType>code</ModType>
     <GameVersion>1.19.4</GameVersion>
-    <Version>0.4.4</Version>
+    <Version>0.5.0</Version>
     <ModId>maltiezfirearms</ModId>
     <Description>Black powder firearms</Description>
     <Side>Universal</Side>
@@ -29,7 +29,7 @@
       <Version>$(GameVersion)</Version>
     </Dependencies>
     <Dependencies Include="fsmlib">
-      <Version>0.2.12</Version>
+      <Version>0.2.15</Version>
     </Dependencies>
     <Dependencies Include="configlib">
       <Version>0.4.2</Version>

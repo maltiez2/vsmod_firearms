@@ -2,7 +2,11 @@
   "code": "weaponrack",
   "behaviors": [{"name": "UnstableFalling", "properties": {"fallSound": null, "dustIntensity": 0}}, {"name": "HorizontalOrientable", "properties": {"dropBlockFace": "east"}}],
   "variantgroups": [{"code": "type", "states": ["plain", "charred", "aged"]}, {"code": "side", "loadFromProperties": "abstract/horizontalorientation"}],
-  "attributes": {"inventorySize": 1, "inventoryTransformAttribute": "inWeaponrackTransform", "rotateByType": {"*-north": {"y": 0}, "*-east": {"y": 270}, "*-west": {"y": 90}, "*-south": {"y": 180}}},
+  "attributes": {
+    "inventorySize": 1,
+    "inventoryTransformAttribute": "inWeaponrackTransform",
+    "rotateByType": {"*-north": {"y": 0}, "*-east": {"y": 270}, "*-west": {"y": 90}, "*-south": {"y": 180}}
+  },
   "class": "Firearms:GenericDisplayBlock",
   "entityClass": "Firearms:GenericDisplayBlockEntity",
   "creativeinventory": {"maltiezfirearms": ["*-east"], "clutter": ["*-rusty-east"]},
@@ -15,6 +19,7 @@
   "drawtype": "json",
   "blockmaterial": "Metal",
   "replaceable": 600,
+  "maxstacksize": 8,
   "resistance": 3,
   "lightAbsorption": 0,
   "heldTpIdleAnimation": "holdbothhandslarge",

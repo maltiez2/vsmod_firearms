@@ -1,0 +1,20 @@
+[
+  {
+    "ingredientPattern": "AA",
+    "ingredients": {
+      "A": {"type": "block", "code": "maltiezfirearms:wallmount-*-east", "quantity": 1, "name": "type", "allowedVariants": ["iron", "tinbronze", "copper", "steel", "brass", "rusty", "tarnished"]}
+    },
+    "width": 2,
+    "height": 1,
+    "output": {"type": "block", "code": "maltiezfirearms:wallmountdouble-{type}-east", "quantity": 1}
+  },
+  {
+    "ingredientPattern": "A",
+    "ingredients": {
+      "A": {"type": "block", "code": "maltiezfirearms:wallmountdouble-*-east", "quantity": 1, "name": "type", "allowedVariants": ["iron", "tinbronze", "copper", "steel", "brass", "rusty", "tarnished"]}
+    },
+    "width": 1,
+    "height": 1,
+    "output": {"type": "block", "code": "maltiezfirearms:wallmount-{type}-east", "quantity": 2}
+  }
+]

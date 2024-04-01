@@ -19,7 +19,11 @@
     },
     {
       "name": "AnimatableProcedural",
-      "properties": {"animated-shape": "maltiezfirearms:firearms/carbine-animated-tp", "animated-shape-fp": "maltiezfirearms:firearms/carbine-animated-fp", "only-when-animating": false}
+      "properties": {
+        "animated-shape": "maltiezfirearms:firearms/carbine-animated-tp",
+        "animated-shape-fp": "maltiezfirearms:firearms/carbine-animated-fp",
+        "only-when-animating": false
+      }
     },
     {
       "name": "FiniteStateMachine",
@@ -86,7 +90,9 @@
           },
           "ammo-other": {
             "class": "Requirements",
-            "load-powder": {"requirements": [{"durability": 11, "location": "maltiezfirearms:powderflask-*", "destroy": false, "description": "maltiezfirearms:requirement-powderflask"}]},
+            "load-powder": {
+              "requirements": [{"durability": 11, "location": "maltiezfirearms:powderflask-*", "destroy": false, "description": "maltiezfirearms:requirement-powderflask"}]
+            },
             "load-patch": {"requirements": [{"amount": 1, "location": "maltiezfirearms:linenpatch", "description": "maltiezfirearms:item-linenpatch"}]},
             "prime": {"requirements": [{"durability": 1, "location": "maltiezfirearms:powderflask-*", "destroy": false, "description": "maltiezfirearms:requirement-powderflask"}]},
             "empty-offhand": {"slot": "OffHand", "search": "Blacklist"}
@@ -211,7 +217,12 @@
           "easeOut": {
             "class": "Instant",
             "inputs": ["slot-dropped", "slot-deselected"],
-            "states": [{"initial": "aimed", "final": "primed"}, {"initial": "primed", "final": "primed"}, {"initial": "unloaded", "final": "unloaded"}, {"initial": "loaded", "final": "loaded"}],
+            "states": [
+              {"initial": "aimed", "final": "primed"},
+              {"initial": "primed", "final": "primed"},
+              {"initial": "unloaded", "final": "unloaded"},
+              {"initial": "loaded", "final": "loaded"}
+            ],
             "systems": [
               {"code": "player-animation", "action": "start", "animation": "ease", "category": "hands"},
               {"code": "player-animation", "action": "start", "animation": "empty-stop", "category": "empty"},
@@ -263,7 +274,12 @@
   "heldRightReadyAnimation": "firearmsempty",
   "heldOldTpIdleAnimation": "firearmsempty",
   "heldTpUseAnimation": "firearmsempty",
-  "guiTransform": {"translation": {"x": 0, "y": 0, "z": 0}, "rotation": {"x": -14, "y": 20, "z": -180}, "origin": {"x": -0.93, "y": -0.7, "z": -3}, "scaleXyz": {"x": -1.89, "y": 1.89, "z": 1.89}},
+  "guiTransform": {
+    "translation": {"x": 0, "y": 0, "z": 0},
+    "rotation": {"x": -14, "y": 20, "z": -180},
+    "origin": {"x": -0.93, "y": -0.7, "z": -3},
+    "scaleXyz": {"x": -1.89, "y": 1.89, "z": 1.89}
+  },
   "fpHandTransform": {"translation": {"x": 0.2, "y": 0.6, "z": 1}, "rotation": {"x": 0, "y": 0, "z": 0}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 4},
   "tpHandTransform": {"translation": {"x": 0, "y": 0, "z": 0}, "rotation": {"x": 0, "y": -90, "z": 0}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 0.8},
   "groundTransform": {"translation": {"x": 0, "y": 0.05, "z": 0}, "rotation": {"x": 0, "y": 0, "z": 90}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 4.8}

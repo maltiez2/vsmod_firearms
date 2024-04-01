@@ -1,5 +1,10 @@
 ﻿[
-  {"file": "game:entities/humanoid/player", "op": "add", "path": "/client/animations/-", "value": {"code": "firearmsempty", "animation": "firearmsempty", "animationSpeed": 1, "blendMode": "Add"}},
+  {
+    "file": "game:entities/humanoid/player",
+    "op": "add",
+    "path": "/client/animations/-",
+    "value": {"code": "firearmsempty", "animation": "firearmsempty", "animationSpeed": 1, "blendMode": "Add"}
+  },
   {
     "file": "game:shapes/entity/humanoid/seraph-faceless",
     "op": "add",

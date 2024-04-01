@@ -29,7 +29,12 @@
   "heldOldTpIdleAnimation": "firearmsempty",
   "heldTpUseAnimation": "firearmsempty",
   "shape": {"base": "maltiezfirearms:firearms/pistol-animated-tp"},
-  "guiTransform": {"translation": {"x": 0, "y": 0, "z": 0}, "rotation": {"x": -27, "y": 30, "z": -180}, "origin": {"x": -0.38, "y": -0.34, "z": -0.9}, "scaleXyz": {"x": -2.22, "y": 2.22, "z": 2.22}},
+  "guiTransform": {
+    "translation": {"x": 0, "y": 0, "z": 0},
+    "rotation": {"x": -27, "y": 30, "z": -180},
+    "origin": {"x": -0.38, "y": -0.34, "z": -0.9},
+    "scaleXyz": {"x": -2.22, "y": 2.22, "z": 2.22}
+  },
   "fpHandTransform": {"translation": {"x": 0.2, "y": 0.6, "z": 0.9}, "rotation": {"x": 0, "y": 0, "z": 0}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 4},
   "tpHandTransform": {"translation": {"x": -0.1, "y": 0, "z": 0}, "rotation": {"x": 90, "y": 0, "z": -90}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 0.8},
   "groundTransform": {"translation": {"x": 0, "y": 0.05, "z": 0}, "rotation": {"x": 0, "y": 0, "z": 90}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 4.8},

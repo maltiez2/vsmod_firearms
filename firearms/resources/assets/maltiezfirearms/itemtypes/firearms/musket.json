@@ -19,7 +19,11 @@
     },
     {
       "name": "AnimatableProcedural",
-      "properties": {"animated-shape": "maltiezfirearms:firearms/musket-animated-tp", "animated-shape-fp": "maltiezfirearms:firearms/musket-animated-fp", "only-when-animating": false}
+      "properties": {
+        "animated-shape": "maltiezfirearms:firearms/musket-animated-tp",
+        "animated-shape-fp": "maltiezfirearms:firearms/musket-animated-fp",
+        "only-when-animating": false
+      }
     },
     {
       "name": "FiniteStateMachine",
@@ -97,7 +101,9 @@
           },
           "ammo-other": {
             "class": "Requirements",
-            "load-powder": {"requirements": [{"durability": 15, "location": "maltiezfirearms:powderflask-*", "destroy": false, "description": "maltiezfirearms:requirement-powderflask"}]},
+            "load-powder": {
+              "requirements": [{"durability": 15, "location": "maltiezfirearms:powderflask-*", "destroy": false, "description": "maltiezfirearms:requirement-powderflask"}]
+            },
             "load-patch": {"requirements": [{"amount": 1, "location": "maltiezfirearms:linenpatch", "description": "maltiezfirearms:item-linenpatch"}]},
             "prime": {"requirements": [{"durability": 1, "location": "maltiezfirearms:powderflask-*", "destroy": false, "description": "maltiezfirearms:requirement-powderflask"}]},
             "hammer": {"requirements": [{"durability": 1, "slot": "OffHand", "location": "game:hammer-*"}]},
@@ -456,7 +462,12 @@
   "heldRightReadyAnimation": "firearmsempty",
   "heldOldTpIdleAnimation": "firearmsempty",
   "heldTpUseAnimation": "firearmsempty",
-  "guiTransform": {"translation": {"x": 0, "y": 0, "z": 0}, "rotation": {"x": -11, "y": 16, "z": -180}, "origin": {"x": -0.65, "y": -0.5, "z": -3}, "scaleXyz": {"x": -1.89, "y": 1.89, "z": 1.89}},
+  "guiTransform": {
+    "translation": {"x": 0, "y": 0, "z": 0},
+    "rotation": {"x": -11, "y": 16, "z": -180},
+    "origin": {"x": -0.65, "y": -0.5, "z": -3},
+    "scaleXyz": {"x": -1.89, "y": 1.89, "z": 1.89}
+  },
   "fpHandTransform": {"translation": {"x": 0.2, "y": 0.6, "z": 1}, "rotation": {"x": 0, "y": 0, "z": 0}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 4},
   "tpHandTransform": {"translation": {"x": 0, "y": 0, "z": 0}, "rotation": {"x": 0, "y": -90, "z": 0}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 0.8},
   "groundTransform": {"translation": {"x": 0, "y": 0.05, "z": 0}, "rotation": {"x": 0, "y": 0, "z": 90}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 4.8}

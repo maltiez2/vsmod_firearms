@@ -14,7 +14,7 @@ def format(path):
 
 parser = argparse.ArgumentParser(description="Requires 'pip install pythonmonkey'")
 parser.add_argument("-f", "--file", default="input.json", help="path to file")
-parser.add_argument("-l", "--length", default=200, help="max width")
+parser.add_argument("-l", "--length", default=180, help="max width")
 parser.add_argument("-a", "--all", action="store_true", help="format all recursively")
 parser.add_argument("-d", "--directory", default="itemtypes", help="look for specific folder in the path")
 args = parser.parse_args()

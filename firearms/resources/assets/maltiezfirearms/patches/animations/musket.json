@@ -1,5 +1,10 @@
 ﻿[
-  {"file": "game:entities/humanoid/player", "op": "add", "path": "/client/animations/-", "value": {"code": "musket-idle", "animation": "musket-idle", "animationSpeed": 1, "blendMode": "Add"}},
+  {
+    "file": "game:entities/humanoid/player",
+    "op": "add",
+    "path": "/client/animations/-",
+    "value": {"code": "musket-idle", "animation": "musket-idle", "animationSpeed": 1, "blendMode": "Add"}
+  },
   {
     "file": "game:shapes/entity/humanoid/seraph-faceless",
     "op": "add",
@@ -22,7 +27,12 @@
       ]
     }
   },
-  {"file": "game:entities/humanoid/player", "op": "add", "path": "/client/animations/-", "value": {"code": "musket-aim", "animation": "musket-aim", "animationSpeed": 1, "blendMode": "Add"}},
+  {
+    "file": "game:entities/humanoid/player",
+    "op": "add",
+    "path": "/client/animations/-",
+    "value": {"code": "musket-aim", "animation": "musket-aim", "animationSpeed": 1, "blendMode": "Add"}
+  },
   {
     "file": "game:shapes/entity/humanoid/seraph-faceless",
     "op": "add",
@@ -49,7 +59,12 @@
       ]
     }
   },
-  {"file": "game:entities/humanoid/player", "op": "add", "path": "/client/animations/-", "value": {"code": "musket-load", "animation": "musket-load", "animationSpeed": 1, "blendMode": "Add"}},
+  {
+    "file": "game:entities/humanoid/player",
+    "op": "add",
+    "path": "/client/animations/-",
+    "value": {"code": "musket-load", "animation": "musket-load", "animationSpeed": 1, "blendMode": "Add"}
+  },
   {
     "file": "game:shapes/entity/humanoid/seraph-faceless",
     "op": "add",
@@ -76,7 +91,12 @@
       ]
     }
   },
-  {"file": "game:entities/humanoid/player", "op": "add", "path": "/client/animations/-", "value": {"code": "musket-prime", "animation": "musket-prime", "animationSpeed": 1, "blendMode": "Add"}},
+  {
+    "file": "game:entities/humanoid/player",
+    "op": "add",
+    "path": "/client/animations/-",
+    "value": {"code": "musket-prime", "animation": "musket-prime", "animationSpeed": 1, "blendMode": "Add"}
+  },
   {
     "file": "game:shapes/entity/humanoid/seraph-faceless",
     "op": "add",
@@ -103,7 +123,12 @@
       ]
     }
   },
-  {"file": "game:entities/humanoid/player", "op": "add", "path": "/client/animations/-", "value": {"code": "musket-idle-fp", "animation": "musket-idle-fp", "animationSpeed": 1, "blendMode": "Add"}},
+  {
+    "file": "game:entities/humanoid/player",
+    "op": "add",
+    "path": "/client/animations/-",
+    "value": {"code": "musket-idle-fp", "animation": "musket-idle-fp", "animationSpeed": 1, "blendMode": "Add"}
+  },
   {
     "file": "game:shapes/entity/humanoid/seraph-faceless",
     "op": "add",
@@ -126,7 +151,12 @@
       ]
     }
   },
-  {"file": "game:entities/humanoid/player", "op": "add", "path": "/client/animations/-", "value": {"code": "musket-aim-fp", "animation": "musket-aim-fp", "animationSpeed": 1, "blendMode": "Add"}},
+  {
+    "file": "game:entities/humanoid/player",
+    "op": "add",
+    "path": "/client/animations/-",
+    "value": {"code": "musket-aim-fp", "animation": "musket-aim-fp", "animationSpeed": 1, "blendMode": "Add"}
+  },
   {
     "file": "game:shapes/entity/humanoid/seraph-faceless",
     "op": "add",
@@ -151,7 +181,12 @@
       ]
     }
   },
-  {"file": "game:entities/humanoid/player", "op": "add", "path": "/client/animations/-", "value": {"code": "musket-load-fp", "animation": "musket-load-fp", "animationSpeed": 1, "blendMode": "Add"}},
+  {
+    "file": "game:entities/humanoid/player",
+    "op": "add",
+    "path": "/client/animations/-",
+    "value": {"code": "musket-load-fp", "animation": "musket-load-fp", "animationSpeed": 1, "blendMode": "Add"}
+  },
   {
     "file": "game:shapes/entity/humanoid/seraph-faceless",
     "op": "add",
@@ -176,7 +211,12 @@
       ]
     }
   },
-  {"file": "game:entities/humanoid/player", "op": "add", "path": "/client/animations/-", "value": {"code": "musket-prime-fp", "animation": "musket-prime-fp", "animationSpeed": 1, "blendMode": "Add"}},
+  {
+    "file": "game:entities/humanoid/player",
+    "op": "add",
+    "path": "/client/animations/-",
+    "value": {"code": "musket-prime-fp", "animation": "musket-prime-fp", "animationSpeed": 1, "blendMode": "Add"}
+  },
   {
     "file": "game:shapes/entity/humanoid/seraph-faceless",
     "op": "add",
@@ -201,7 +241,12 @@
       ]
     }
   },
-  {"file": "game:entities/humanoid/player", "op": "add", "path": "/client/animations/-", "value": {"code": "musket-recoil", "animation": "musket-recoil", "animationSpeed": 1, "blendMode": "Add"}},
+  {
+    "file": "game:entities/humanoid/player",
+    "op": "add",
+    "path": "/client/animations/-",
+    "value": {"code": "musket-recoil", "animation": "musket-recoil", "animationSpeed": 1, "blendMode": "Add"}
+  },
   {
     "file": "game:shapes/entity/humanoid/seraph-faceless",
     "op": "add",
@@ -226,7 +271,12 @@
       ]
     }
   },
-  {"file": "game:entities/humanoid/player", "op": "add", "path": "/client/animations/-", "value": {"code": "musket-melee", "animation": "musket-melee", "animationSpeed": 1, "blendMode": "Add"}},
+  {
+    "file": "game:entities/humanoid/player",
+    "op": "add",
+    "path": "/client/animations/-",
+    "value": {"code": "musket-melee", "animation": "musket-melee", "animationSpeed": 1, "blendMode": "Add"}
+  },
   {
     "file": "game:shapes/entity/humanoid/seraph-faceless",
     "op": "add",
@@ -265,7 +315,12 @@
       ]
     }
   },
-  {"file": "game:entities/humanoid/player", "op": "add", "path": "/client/animations/-", "value": {"code": "musket-melee-fp", "animation": "musket-melee-fp", "animationSpeed": 1, "blendMode": "Add"}},
+  {
+    "file": "game:entities/humanoid/player",
+    "op": "add",
+    "path": "/client/animations/-",
+    "value": {"code": "musket-melee-fp", "animation": "musket-melee-fp", "animationSpeed": 1, "blendMode": "Add"}
+  },
   {
     "file": "game:shapes/entity/humanoid/seraph-faceless",
     "op": "add",

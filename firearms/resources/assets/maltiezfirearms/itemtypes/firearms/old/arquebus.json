@@ -29,7 +29,12 @@
   "heldRightReadyAnimation": "firearmsempty",
   "heldOldTpIdleAnimation": "firearmsempty",
   "heldTpUseAnimation": "firearmsempty",
-  "guiTransform": {"translation": {"x": 0, "y": 0, "z": 0}, "rotation": {"x": -19, "y": 24, "z": -180}, "origin": {"x": -0.55, "y": -0.4, "z": -1.4}, "scaleXyz": {"x": -1.95, "y": 1.95, "z": 1.95}},
+  "guiTransform": {
+    "translation": {"x": 0, "y": 0, "z": 0},
+    "rotation": {"x": -19, "y": 24, "z": -180},
+    "origin": {"x": -0.55, "y": -0.4, "z": -1.4},
+    "scaleXyz": {"x": -1.95, "y": 1.95, "z": 1.95}
+  },
   "fpHandTransform": {"translation": {"x": 0.3, "y": 0.5, "z": 0.5}, "rotation": {"x": 0, "y": 0, "z": 0}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 4},
   "tpHandTransform": {"translation": {"x": -0.3, "y": 0, "z": 0}, "rotation": {"x": 0, "y": -90, "z": 0}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 0.8},
   "groundTransform": {"translation": {"x": 0.5, "y": 0.05, "z": 0.5}, "rotation": {"x": 0, "y": 0, "z": 90}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 4.8}

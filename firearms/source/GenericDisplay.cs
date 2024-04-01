@@ -12,7 +12,7 @@ namespace Firearms;
 
 public class GenericDisplayBlockEntity : BlockEntityDisplay
 {
-    private InventoryGeneric _inventory;
+    private readonly InventoryGeneric _inventory;
     private string _inventoryTranformName = "inGenericDisplayTransform";
     private float[][]? _transforms;
 

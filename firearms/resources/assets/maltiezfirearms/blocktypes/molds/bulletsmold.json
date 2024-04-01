@@ -28,7 +28,10 @@
   "resistance": 2,
   "maxStackSize": 8,
   "lightAbsorption": 0,
-  "texturesByType": {"*-raw": {"all": {"base": "game:block/clay/blueclay"}}, "*-burned": {"floor": {"base": "game:block/clay/ceramic-dark"}, "other": {"base": "game:block/clay/ceramic"}}},
+  "texturesByType": {
+    "*-raw": {"all": {"base": "game:block/clay/blueclay"}},
+    "*-burned": {"floor": {"base": "game:block/clay/ceramic-dark"}, "other": {"base": "game:block/clay/ceramic"}}
+  },
   "sounds": {"walk": "walk/stone"},
   "collisionbox": {"x1": 0.094, "y1": 0, "z1": 0.094, "x2": 0.906, "y2": 0.12, "z2": 0.906},
   "selectionBox": {"x1": 0.094, "y1": 0, "z1": 0.094, "x2": 0.906, "y2": 0.12, "z2": 0.906},
