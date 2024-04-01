@@ -100,7 +100,10 @@
       "properties": {
         "initialState": "ready",
         "systems": {
-          "shears": {"class": "Requirements", "shears": {"requirements": [{"durability": 1, "slot": "MainHand", "location": "game:shears-*", "description": "maltiezfirearms:shears-requirement"}]}},
+          "shears": {
+            "class": "Requirements",
+            "shears": {"requirements": [{"durability": 1, "slot": "MainHand", "location": "game:shears-*", "description": "maltiezfirearms:shears-requirement"}]}
+          },
           "durability": {"Class": "Durability"},
           "stack-giver": {"Class": "ItemStackGiver"},
           "sounds": {"class": "Sounds", "domain": "maltiezfirearms"},
@@ -123,7 +126,10 @@
                   "code": "attributes",
                   "attribute": "renderVariant",
                   "type": "int",
-                  "valueFromAttr": {"formulaByType": {"*-slug-*": "equal(durability, 1, 2, 10 - durability)", "*-bullet-*": "equal(durability, 1, 2, 18 - durability)"}, "durability": "durability"}
+                  "valueFromAttr": {
+                    "formulaByType": {"*-slug-*": "equal(durability, 1, 2, 10 - durability)", "*-bullet-*": "equal(durability, 1, 2, 18 - durability)"},
+                    "durability": "durability"
+                  }
                 }
               ]
             }

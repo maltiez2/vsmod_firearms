@@ -19,9 +19,17 @@
           "initialState": "dry",
           "systems": {"wet": {"class": "ChangeGroup"}},
           "operations": {
-            "wet": {"class": "Instant", "inputs": ["status-swimming", "status-submerged"], "states": {"initial": "dry", "final": "dry"}, "systems": [{"code": "wet", "group": "state", "value": "wet"}]}
+            "wet": {
+              "class": "Instant",
+              "inputs": ["status-swimming", "status-submerged"],
+              "states": {"initial": "dry", "final": "dry"},
+              "systems": [{"code": "wet", "group": "state", "value": "wet"}]
+            }
           },
-          "inputs": {"status-swimming": {"class": "Status", "status": "Swimming", "slot": "Inventory"}, "status-submerged": {"class": "Status", "status": "EyesSubmerged", "slot": "Inventory"}}
+          "inputs": {
+            "status-swimming": {"class": "Status", "status": "Swimming", "slot": "Inventory"},
+            "status-submerged": {"class": "Status", "status": "EyesSubmerged", "slot": "Inventory"}
+          }
         }
       }
     ],
@@ -32,9 +40,17 @@
           "initialState": "dry",
           "systems": {"wet": {"class": "ChangeGroup"}},
           "operations": {
-            "wet": {"class": "Instant", "inputs": ["status-swimming", "status-submerged"], "states": {"initial": "dry", "final": "dry"}, "systems": [{"code": "wet", "group": "state", "value": "wet"}]}
+            "wet": {
+              "class": "Instant",
+              "inputs": ["status-swimming", "status-submerged"],
+              "states": {"initial": "dry", "final": "dry"},
+              "systems": [{"code": "wet", "group": "state", "value": "wet"}]
+            }
           },
-          "inputs": {"status-swimming": {"class": "Status", "status": "Swimming", "slot": "Inventory"}, "status-submerged": {"class": "Status", "status": "EyesSubmerged", "slot": "Inventory"}}
+          "inputs": {
+            "status-swimming": {"class": "Status", "status": "Swimming", "slot": "Inventory"},
+            "status-submerged": {"class": "Status", "status": "EyesSubmerged", "slot": "Inventory"}
+          }
         }
       }
     ]

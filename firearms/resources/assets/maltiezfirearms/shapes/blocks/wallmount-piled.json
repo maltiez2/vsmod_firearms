@@ -1,0 +1,187 @@
+{
+	"editor": {
+		"collapsedPaths": "Root/Flask_origin/Flask_origin_inner/Flask,Root/Mount/Left_mouint_2,Root/Mount/Left_mouint_5,Root/Arquebus_origin/Patch,Root/Mount_point/Arquebus_origin,Root/Arquebus_origin,Root/Arquebus_origin/Flask_origin/Flask_origin_inner/Flask,Root/Arquebus_origin/Flask_origin,Root/Flask/Bottom_plate,Root/Match",
+		"allAngles": false,
+		"entityTextureMode": false
+	},
+	"textureWidth": 16,
+	"textureHeight": 16,
+	"textureSizes": {
+	},
+	"textures": {
+		"metal": "game:block/metal/corroded/normal1"
+	},
+	"elements": [
+		{
+			"name": "Mount_point",
+			"from": [ 8.0, 8.0, 0.0 ],
+			"to": [ 8.0, 8.0, 0.0 ],
+			"rotationOrigin": [ 8.0, 8.0, 0.0 ],
+			"rotationZ": 3.8,
+			"faces": {
+				"north": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+				"east": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+				"south": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+				"west": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+				"up": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+				"down": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.5, 0.5 ] }
+			}
+		},
+		{
+			"name": "Mount",
+			"from": [ 8.0, 0.0, 8.0 ],
+			"to": [ 8.0, 0.0, 8.0 ],
+			"rotationOrigin": [ 8.0, 0.0, 8.0 ],
+			"faces": {
+				"north": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+				"east": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+				"south": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+				"west": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+				"up": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+				"down": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.5, 0.5 ] }
+			},
+			"children": [
+				{
+					"name": "Left_mouint_2",
+					"from": [ -1.0, 0.0, -3.0 ],
+					"to": [ 0.0, 0.5, 2.0 ],
+					"rotationOrigin": [ -1.0, 0.0, -3.0 ],
+					"rotationX": -5.0,
+					"rotationY": 18.0,
+					"faces": {
+						"north": { "texture": "#metal", "uv": [ 6.0, 5.5, 7.0, 6.0 ] },
+						"east": { "texture": "#metal", "uv": [ 2.0, 4.5, 7.0, 5.0 ] },
+						"south": { "texture": "#metal", "uv": [ 6.0, 4.5, 7.0, 5.0 ] },
+						"west": { "texture": "#metal", "uv": [ 2.5, 4.5, 7.5, 5.0 ] },
+						"up": { "texture": "#metal", "uv": [ 5.5, 1.0, 6.5, 6.0 ] },
+						"down": { "texture": "#metal", "uv": [ 5.5, 1.0, 6.5, 6.0 ] }
+					},
+					"children": [
+						{
+							"name": "Left_mouint_3",
+							"from": [ 0.0, 0.0, 5.0 ],
+							"to": [ 1.0, 1.0, 5.5 ],
+							"rotationOrigin": [ 0.0, 0.0, 5.0 ],
+							"faces": {
+								"north": { "texture": "#metal", "uv": [ 8.0, 5.5, 9.0, 6.5 ] },
+								"east": { "texture": "#metal", "uv": [ 7.0, 6.0, 7.5, 7.0 ] },
+								"south": { "texture": "#metal", "uv": [ 8.5, 5.0, 9.5, 6.0 ] },
+								"west": { "texture": "#metal", "uv": [ 9.0, 5.5, 9.5, 6.5 ] },
+								"up": { "texture": "#metal", "uv": [ 7.5, 6.0, 8.5, 6.5 ] },
+								"down": { "texture": "#metal", "uv": [ 9.0, 6.0, 10.0, 6.5 ] }
+							}
+						},
+						{
+							"name": "Left_mouint_4",
+							"from": [ 0.25, 0.0, 0.0 ],
+							"to": [ 0.75, 0.5, 5.48 ],
+							"rotationOrigin": [ 0.2, 0.0, 0.0 ],
+							"rotationX": 5.2,
+							"faces": {
+								"north": { "texture": "#metal", "uv": [ 7.0, 5.5, 7.5, 6.0 ] },
+								"east": { "texture": "#metal", "uv": [ 2.5, 4.0, 7.5, 4.5 ] },
+								"south": { "texture": "#metal", "uv": [ 7.0, 4.5, 7.5, 5.0 ] },
+								"west": { "texture": "#metal", "uv": [ 2.5, 4.5, 7.5, 5.0 ] },
+								"up": { "texture": "#metal", "uv": [ 6.0, 1.0, 6.5, 6.0 ] },
+								"down": { "texture": "#metal", "uv": [ 6.0, 1.0, 6.5, 6.0 ] }
+							}
+						}
+					]
+				},
+				{
+					"name": "Left_mouint_5",
+					"from": [ 1.6, 0.0, -3.4 ],
+					"to": [ 2.6, 0.5, 1.6 ],
+					"rotationOrigin": [ 1.6, 0.0, -3.4 ],
+					"rotationX": -19.5,
+					"rotationY": -20.5,
+					"rotationZ": -7.0,
+					"faces": {
+						"north": { "texture": "#metal", "uv": [ 6.0, 6.0, 7.0, 6.5 ] },
+						"east": { "texture": "#metal", "uv": [ 6.5, 4.5, 11.5, 5.0 ] },
+						"south": { "texture": "#metal", "uv": [ 6.5, 4.0, 7.5, 4.5 ] },
+						"west": { "texture": "#metal", "uv": [ 6.0, 4.5, 11.0, 5.0 ] },
+						"up": { "texture": "#metal", "uv": [ 6.0, 0.5, 7.0, 5.5 ] },
+						"down": { "texture": "#metal", "uv": [ 6.0, 0.0, 7.0, 5.0 ] }
+					},
+					"children": [
+						{
+							"name": "Left_mouint_6",
+							"from": [ 0.0, 0.0, 5.0 ],
+							"to": [ 1.0, 1.0, 5.5 ],
+							"rotationOrigin": [ 0.0, 0.0, 5.0 ],
+							"faces": {
+								"north": { "texture": "#metal", "uv": [ 5.5, 4.5, 6.5, 5.5 ] },
+								"east": { "texture": "#metal", "uv": [ 6.5, 4.5, 7.0, 5.5 ] },
+								"south": { "texture": "#metal", "uv": [ 6.5, 4.0, 7.5, 5.0 ] },
+								"west": { "texture": "#metal", "uv": [ 6.0, 4.0, 6.5, 5.0 ] },
+								"up": { "texture": "#metal", "uv": [ 7.0, 4.5, 8.0, 5.0 ] },
+								"down": { "texture": "#metal", "uv": [ 7.0, 4.0, 8.0, 4.5 ] }
+							}
+						},
+						{
+							"name": "Left_mouint_7",
+							"from": [ 0.25, 0.0, 0.0 ],
+							"to": [ 0.75, 0.5, 5.48 ],
+							"rotationOrigin": [ 0.2, 0.0, 0.0 ],
+							"rotationX": 5.2,
+							"faces": {
+								"north": { "texture": "#metal", "uv": [ 6.5, 5.0, 7.0, 5.5 ] },
+								"east": { "texture": "#metal", "uv": [ 5.5, 5.0, 10.5, 5.5 ] },
+								"south": { "texture": "#metal", "uv": [ 6.0, 4.5, 6.5, 5.0 ] },
+								"west": { "texture": "#metal", "uv": [ 5.0, 5.5, 10.0, 6.0 ] },
+								"up": { "texture": "#metal", "uv": [ 6.5, 1.5, 7.0, 6.5 ] },
+								"down": { "texture": "#metal", "uv": [ 6.5, 1.0, 7.0, 6.0 ] }
+							}
+						}
+					]
+				}
+			]
+		}
+	],
+	"animations": [
+		{
+			"name": "Load",
+			"code": "load",
+			"quantityframes": 200,
+			"onActivityStopped": "Stop",
+			"onAnimationEnd": "Hold",
+			"keyframes": [
+
+			]
+		},
+
+		{
+			"name": "Prime",
+			"code": "prime",
+			"quantityframes": 60,
+			"onActivityStopped": "Stop",
+			"onAnimationEnd": "Hold",
+			"keyframes": [
+
+			]
+		},
+
+		{
+			"name": "Match",
+			"code": "match",
+			"quantityframes": 30,
+			"onActivityStopped": "Stop",
+			"onAnimationEnd": "Hold",
+			"keyframes": [
+
+			]
+		},
+
+		{
+			"name": "Fire",
+			"code": "fire",
+			"quantityframes": 20,
+			"onActivityStopped": "Stop",
+			"onAnimationEnd": "Hold",
+			"keyframes": [
+
+			]
+		}
+	]
+}

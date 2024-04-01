@@ -1,0 +1,10 @@
+{
+  "ingredientPattern": "PPP,_N_",
+  "ingredients": {
+    "N": {"type": "item", "code": "game:metalnailsandstrips-*", "quantity": 1},
+    "P": {"type": "item", "code": "game:plank-*", "quantity": 2}
+  },
+  "width": 3,
+  "height": 2,
+  "output": {"type": "block", "code": "maltiezfirearms:pistolstand-plain-east", "quantity": 2}
+}

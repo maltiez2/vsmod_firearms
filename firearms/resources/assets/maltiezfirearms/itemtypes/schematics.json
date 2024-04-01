@@ -7,7 +7,12 @@
   "shape": {"base": "game:item/utility/schematic-glider"},
   "textures": {"schematic-glider": {"base": "schematic-{type}"}},
   "creativeinventory": {"maltiezfirearms": ["*"]},
-  "guiTransform": {"translation": {"x": 0, "y": 0, "z": 0}, "rotation": {"x": -54, "y": -24, "z": -180}, "origin": {"x": 0.5, "y": 0.1, "z": 0.5}, "scaleXyz": {"x": -1.3, "y": 1.3, "z": 1.3}},
+  "guiTransform": {
+    "translation": {"x": 0, "y": 0, "z": 0},
+    "rotation": {"x": -54, "y": -24, "z": -180},
+    "origin": {"x": 0.5, "y": 0.1, "z": 0.5},
+    "scaleXyz": {"x": -1.3, "y": 1.3, "z": 1.3}
+  },
   "fpHandTransform": {"translation": {"x": -0.1, "y": 0, "z": 0}, "rotation": {"x": 3, "y": 3, "z": 8}, "origin": {"x": 0.5, "y": 0.02, "z": 0.5}, "scale": 1.36},
   "groundTransform": {"translation": {"x": 0, "y": 0, "z": 0}, "rotation": {"x": 0, "y": 0, "z": 0}, "origin": {"x": 0.5, "y": -0.02, "z": 0.5}, "scale": 1.8},
   "tpHandTransform": {"translation": {"x": -1.3, "y": -0.7, "z": -1.2}, "rotation": {"x": -57, "y": -165, "z": 92}, "origin": {"x": 0.4, "y": 0.2, "z": 0.4}}

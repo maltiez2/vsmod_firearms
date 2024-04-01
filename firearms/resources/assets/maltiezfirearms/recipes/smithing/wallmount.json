@@ -1,0 +1,23 @@
+[
+  {
+    "ingredient": {"type": "item", "code": "game:ingot-*", "name": "metal", "allowedVariants": ["iron", "tinbronze", "copper", "steel", "brass"]},
+    "pattern": [
+      [
+        "_______",
+        "_######",
+        "_______",
+        "_######",
+        "_______"
+      ],
+      [
+        "_______",
+        "______#",
+        "_______",
+        "______#",
+        "_______"
+      ]
+    ],
+    "name": "Wallmount",
+    "output": {"type": "block", "code": "maltiezfirearms:wallmount-{metal}-east"}
+  }
+]

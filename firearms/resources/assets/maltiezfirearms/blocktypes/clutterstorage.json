@@ -1,0 +1,105 @@
+﻿{
+  "code": "clutterstorage",
+  "class": "BlockGenericTypedContainer",
+  "entityclass": "GenericTypedContainer",
+  "attributes": {
+    "partialAttachable": true,
+    "inventoryClassName": "clutterstorage",
+    "defaultType": "supplies0",
+    "types": ["supplies0", "supplies1", "supplies2", "supplies3", "supplies4"],
+    "collisionSelectionBoxes": {
+      "supplies0": [{"x1": 0, "y1": 0, "z1": 0, "x2": 1, "y2": 0.5, "z2": 1}],
+      "supplies1": [{"x1": 0, "y1": 0, "z1": 0, "x2": 1, "y2": 0.5, "z2": 1}],
+      "supplies2": [{"x1": 0, "y1": 0, "z1": 0, "x2": 1, "y2": 0.5, "z2": 1}],
+      "supplies3": [{"x1": 0, "y1": 0, "z1": 0, "x2": 1, "y2": 0.8, "z2": 1}],
+      "supplies4": [{"x1": 0, "y1": 0, "z1": 0, "x2": 1, "y2": 1, "z2": 1}]
+    },
+    "rotatatableInterval": {"supplies0": "22.5deg", "supplies1": "22.5deg", "supplies2": "22.5deg", "supplies3": "22.5deg", "supplies4": "22.5deg"},
+    "drop": {"supplies0": false, "supplies1": false, "supplies2": false, "supplies3": false, "supplies4": false},
+    "quantitySlots": {"supplies0": 1, "supplies1": 2, "supplies2": 2, "supplies3": 3, "supplies4": 4},
+    "dialogTitleLangCode": {"supplies0": "chestcontents", "supplies1": "chestcontents", "supplies2": "chestcontents", "supplies3": "chestcontents", "supplies4": "chestcontents"},
+    "storageType": {"supplies0": 189, "supplies1": 189, "supplies2": 189, "supplies3": 189, "supplies4": 189},
+    "retrieveOnly": {"supplies0": true, "supplies1": true, "supplies2": true, "supplies3": true, "supplies4": true},
+    "shape": {
+      "supplies0": "game:block/clutter/maltiezfirearms/iron/storage/supplies-0",
+      "supplies1": "game:block/clutter/maltiezfirearms/iron/storage/supplies-1",
+      "supplies2": "game:block/clutter/maltiezfirearms/iron/storage/supplies-2",
+      "supplies3": "game:block/clutter/maltiezfirearms/iron/storage/supplies-3",
+      "supplies4": "game:block/clutter/maltiezfirearms/iron/storage/supplies-4"
+    },
+    "typedOpenSound": {
+      "supplies0": "game:sounds/block/largechestopen",
+      "supplies1": "game:sounds/block/largechestopen",
+      "supplies2": "game:sounds/block/largechestopen",
+      "supplies3": "game:sounds/block/largechestopen",
+      "supplies4": "game:sounds/block/largechestopen"
+    },
+    "typedCloseSound": {
+      "normal-generic": "sounds/block/largechestclose",
+      "normal-aged": "sounds/block/largechestclose",
+      "collapsed1": "sounds/block/largechestclose",
+      "collapsed2": "sounds/block/largechestclose",
+      "collapsed3": "sounds/block/largechestclose"
+    },
+    "variantByGroup": "side",
+    "variantByGroupInventory": null
+  },
+  "behaviors": [{"name": "Lockable"}, {"name": "Container"}],
+  "entityBehaviors": [{"name": "Animatable"}],
+  "variantgroups": [{"code": "side", "loadFromProperties": "abstract/horizontalorientation"}],
+  "creativeinventory": {},
+  "creativeinventoryStacksByType": {
+    "*-east": [
+      {
+        "tabs": ["maltiezfirearms", "clutter"],
+        "stacks": [
+          {"type": "block", "code": "clutterstorage-east", "attributes": {"type": "supplies0"}},
+          {"type": "block", "code": "clutterstorage-east", "attributes": {"type": "supplies1"}},
+          {"type": "block", "code": "clutterstorage-east", "attributes": {"type": "supplies2"}},
+          {"type": "block", "code": "clutterstorage-east", "attributes": {"type": "supplies3"}},
+          {"type": "block", "code": "clutterstorage-east", "attributes": {"type": "supplies4"}}
+        ]
+      }
+    ]
+  },
+  "heldTpIdleAnimation": "holdunderarm",
+  "shapeInventory": {"base": "game:block/clutter/maltiezfirearms/iron/storage/supplies-0", "rotateY": 270},
+  "shapeByType": {
+    "*-north": {"base": "game:block/clutter/maltiezfirearms/iron/storage/supplies-0", "rotateY": 0},
+    "*-east": {"base": "game:block/clutter/maltiezfirearms/iron/storage/supplies-0", "rotateY": 270},
+    "*-west": {"base": "game:block/clutter/maltiezfirearms/iron/storage/supplies-0", "rotateY": 90},
+    "*-south": {"base": "game:block/clutter/maltiezfirearms/iron/storage/supplies-0", "rotateY": 180}
+  },
+  "textures": {
+    "supplies0-metal": {"base": "game:block/metal/corroded/normal3"},
+    "supplies0-wood": {"base": "game:block/wood/charred"},
+    "supplies1-metal": {"base": "game:block/metal/corroded/normal3"},
+    "supplies1-wood": {"base": "game:block/wood/charred"},
+    "supplies1-cloth": {"base": "game:block/cloth/cloth-ruined"},
+    "supplies1-lead": {"base": "game:block/metal/tarnished/lead"},
+    "supplies2-metal": {"base": "game:block/metal/corroded/normal3"},
+    "supplies2-wood": {"base": "game:block/wood/charred"},
+    "supplies2-cloth": {"base": "game:block/cloth/cloth-ruined"},
+    "supplies2-lead": {"base": "game:block/metal/tarnished/lead"},
+    "supplies3-metal": {"base": "game:block/metal/corroded/normal3"},
+    "supplies3-wood": {"base": "game:block/wood/charred"},
+    "supplies3-cloth": {"base": "game:block/cloth/cloth-ruined"},
+    "supplies3-lead": {"base": "game:block/metal/tarnished/lead"},
+    "supplies4-metal": {"base": "game:block/metal/corroded/normal3"},
+    "supplies4-wood": {"base": "game:block/wood/charred"},
+    "supplies4-lead": {"base": "game:block/metal/tarnished/lead"}
+  },
+  "blockmaterial": "Wood",
+  "replaceable": 900,
+  "resistance": 3,
+  "lightAbsorption": 0,
+  "sideAo": {"all": false},
+  "sidesolid": {"all": false},
+  "sideopaque": {"all": false},
+  "collisionbox": {"x1": 0, "y1": 0, "z1": 0, "x2": 1, "y2": 1, "z2": 1},
+  "selectionbox": {"x1": 0, "y1": 0, "z1": 0, "x2": 1, "y2": 1, "z2": 1},
+  "sounds": {"place": "game:block/planks", "hit": "game:block/planks", "break": "game:block/planks", "walk": "game:walk/wood"},
+  "materialDensity": 600,
+  "tpHandTransform": {"translation": {"x": -0.9, "y": -0.5, "z": -0.3}, "rotation": {"x": 0, "y": 90, "z": -102}, "scale": 0.56},
+  "guiTransform": {"origin": {"x": 0.5, "y": 0.4, "z": 0.5}, "scale": 1.16}
+}

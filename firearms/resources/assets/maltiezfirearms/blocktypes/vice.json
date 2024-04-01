@@ -1,0 +1,40 @@
+﻿{
+  "code": "vice",
+  "behaviors": [{"name": "UnstableFalling", "properties": {"fallSound": null, "dustIntensity": 0}}, {"name": "HorizontalOrientable", "properties": {"dropBlockFace": "east"}}],
+  "variantgroups": [{"code": "type", "states": ["iron", "tinbronze", "rusty", "tarnished"]}, {"code": "side", "loadFromProperties": "abstract/horizontalorientation"}],
+  "attributes": {
+    "inventorySize": 1,
+    "inventoryTransformAttribute": "inViceTransform",
+    "rotateByType": {"*-north": {"y": 0}, "*-east": {"y": 270}, "*-west": {"y": 90}, "*-south": {"y": 180}}
+  },
+  "class": "Firearms:GenericDisplayBlock",
+  "entityClass": "Firearms:GenericDisplayBlockEntity",
+  "creativeinventory": {"maltiezfirearms": ["*-east"]},
+  "shapeByType": {
+    "*-north": {"base": "blocks/vice", "rotateY": 0},
+    "*-east": {"base": "blocks/vice", "rotateY": 270},
+    "*-west": {"base": "blocks/vice", "rotateY": 90},
+    "*-south": {"base": "blocks/vice", "rotateY": 180}
+  },
+  "drawtype": "json",
+  "blockmaterial": "Metal",
+  "replaceable": 600,
+  "maxstacksize": 1,
+  "resistance": 3,
+  "lightAbsorption": 0,
+  "heldTpIdleAnimation": "holdbothhandslarge",
+  "heldRightReadyAnimation": "heldblockready",
+  "heldTpUseAnimation": "twohandplaceblock",
+  "collisionSelectionBoxes": [{"x1": 0.3, "y1": 0.1, "z1": 0.55, "x2": 0.7, "y2": 0.3, "z2": 0.7, "rotateYByType": {"*-north": 0, "*-east": 270, "*-west": 90, "*-south": 180}}],
+  "texturesByType": {
+    "*-iron-*": {"metal": {"base": "game:block/metal/plate/iron"}, "brass": {"base": "game:block/metal/plate/brass"}},
+    "*-tinbronze-*": {"metal": {"base": "game:block/metal/plate/tinbronze"}, "brass": {"base": "game:block/metal/plate/brass"}},
+    "*-rusty-*": {"metal": {"base": "game:block/metal/corroded/normal1"}, "brass": {"base": "game:block/metal/tarnished/brass"}},
+    "*-tarnished-*": {"metal": {"base": "game:block/metal/tarnished/tinbronze"}, "brass": {"base": "game:block/metal/tarnished/brass"}}
+  },
+  "sideopaque": {"all": false},
+  "sideao": {"all": true},
+  "emitsideao": {"all": false},
+  "sidesolid": {"all": false},
+  "tpHandTransform": {"translation": {"x": -0.1, "y": 0.5, "z": 0.1}, "rotation": {"x": -70, "y": 9, "z": -102}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 0.75}
+}

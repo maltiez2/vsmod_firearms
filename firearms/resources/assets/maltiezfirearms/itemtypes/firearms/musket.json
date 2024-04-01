@@ -19,7 +19,11 @@
     },
     {
       "name": "AnimatableProcedural",
-      "properties": {"animated-shape": "maltiezfirearms:firearms/musket-animated-tp", "animated-shape-fp": "maltiezfirearms:firearms/musket-animated-fp", "only-when-animating": false}
+      "properties": {
+        "animated-shape": "maltiezfirearms:firearms/musket-animated-tp",
+        "animated-shape-fp": "maltiezfirearms:firearms/musket-animated-fp",
+        "only-when-animating": false
+      }
     },
     {
       "name": "FiniteStateMachine",
@@ -35,26 +39,26 @@
             "class": "ProceduralPlayerAnimation",
             "categories": {"hands": {"blending": "Average", "weight": 1024}, "recoil": {"blending": "AddAverage", "weight": 1}, "empty": {"blending": "Average", "weight": 16}},
             "animations": {
-              "idle": [{"action": "EaseIn", "animation": "musket-idle", "duration_ms": 1000, "dynamic": "CosShifted", "frame": 0}],
-              "load": [{"action": "EaseIn", "animation": "musket-load", "duration_ms": 1000, "dynamic": "CosShifted", "frame": 0}],
-              "prime": [{"action": "EaseIn", "animation": "musket-prime", "duration_ms": 1000, "dynamic": "CosShifted", "frame": 0}],
-              "aim": [{"action": "EaseIn", "animation": "musket-aim", "duration_ms": 700, "dynamic": "SinQuadratic", "frame": 0}],
-              "ease": [{"action": "EaseOut", "animation": "musket-idle", "duration_ms": 300, "dynamic": "CosShifted", "frame": 0}],
-              "empty": [{"action": "EaseIn", "animation": "firearmsempty", "duration_ms": 200, "dynamic": "Linear", "frame": 0}],
-              "empty-stop": [{"action": "EaseOut", "animation": "firearmsempty", "duration_ms": 200, "dynamic": "Linear", "frame": 0}],
+              "idle": [{"action": "EaseIn", "animation": "musket-idle", "duration_ms": 1000, "dynamic": "CosShifted", "frame": 0, "separateFp": true}],
+              "load": [{"action": "EaseIn", "animation": "musket-load", "duration_ms": 1000, "dynamic": "CosShifted", "frame": 0, "separateFp": true}],
+              "prime": [{"action": "EaseIn", "animation": "musket-prime", "duration_ms": 1000, "dynamic": "CosShifted", "frame": 0, "separateFp": true}],
+              "aim": [{"action": "EaseIn", "animation": "musket-aim", "duration_ms": 700, "dynamic": "SinQuadratic", "frame": 0, "separateFp": true}],
+              "ease": [{"action": "EaseOut", "animation": "musket-idle", "duration_ms": 300, "dynamic": "CosShifted", "frame": 0, "separateFp": true}],
+              "empty": [{"action": "EaseIn", "animation": "firearmsempty", "duration_ms": 200, "dynamic": "Linear", "frame": 0, "separateFp": true}],
+              "empty-stop": [{"action": "EaseOut", "animation": "firearmsempty", "duration_ms": 200, "dynamic": "Linear", "frame": 0, "separateFp": true}],
               "recoil": [
                 {"action": "EaseIn", "animation": "musket-recoil", "duration_ms": 150, "dynamic": "Sin", "frame": 0},
                 {"action": "EaseOut", "animation": "musket-recoil", "duration_ms": 600, "dynamic": "CosShifted", "frame": 0}
               ],
               "melee": [
-                {"action": "EaseIn", "animation": "musket-melee", "duration_ms": 200, "dynamic": "Sin", "frame": 0},
-                {"action": "EaseIn", "animation": "musket-melee", "duration_ms": 200, "dynamic": "Cubic", "frame": 1},
-                {"action": "EaseOut", "animation": "musket-melee", "duration_ms": 300, "dynamic": "CosShifted"}
+                {"action": "EaseIn", "animation": "musket-melee", "duration_ms": 200, "dynamic": "Sin", "frame": 0, "separateFp": true},
+                {"action": "EaseIn", "animation": "musket-melee", "duration_ms": 200, "dynamic": "Cubic", "frame": 1, "separateFp": true},
+                {"action": "EaseOut", "animation": "musket-melee", "duration_ms": 300, "dynamic": "CosShifted", "separateFp": true}
               ],
               "melee-bayonet": [
-                {"action": "EaseIn", "animation": "musket-melee-bayonet", "duration_ms": 400, "dynamic": "Sin", "frame": 0},
-                {"action": "EaseIn", "animation": "musket-melee-bayonet", "duration_ms": 300, "dynamic": "Cubic", "frame": 1},
-                {"action": "EaseOut", "animation": "musket-melee-bayonet", "duration_ms": 300, "dynamic": "CosShifted"}
+                {"action": "EaseIn", "animation": "musket-melee-bayonet", "duration_ms": 400, "dynamic": "Sin", "frame": 0, "separateFp": true},
+                {"action": "EaseIn", "animation": "musket-melee-bayonet", "duration_ms": 300, "dynamic": "Cubic", "frame": 1, "separateFp": true},
+                {"action": "EaseOut", "animation": "musket-melee-bayonet", "duration_ms": 300, "dynamic": "CosShifted", "separateFp": true}
               ]
             }
           },
@@ -97,7 +101,9 @@
           },
           "ammo-other": {
             "class": "Requirements",
-            "load-powder": {"requirements": [{"durability": 15, "location": "maltiezfirearms:powderflask-*", "destroy": false, "description": "maltiezfirearms:requirement-powderflask"}]},
+            "load-powder": {
+              "requirements": [{"durability": 15, "location": "maltiezfirearms:powderflask-*", "destroy": false, "description": "maltiezfirearms:requirement-powderflask"}]
+            },
             "load-patch": {"requirements": [{"amount": 1, "location": "maltiezfirearms:linenpatch", "description": "maltiezfirearms:item-linenpatch"}]},
             "prime": {"requirements": [{"durability": 1, "location": "maltiezfirearms:powderflask-*", "destroy": false, "description": "maltiezfirearms:requirement-powderflask"}]},
             "hammer": {"requirements": [{"durability": 1, "slot": "OffHand", "location": "game:hammer-*"}]},
@@ -148,7 +154,7 @@
             "class": "Delayed",
             "timeout": 12000,
             "states": {"initial": "unloaded", "timeout": "loaded", "transitional": "load", "final": "unloaded"},
-            "inputs": {"initial": "mouse_right_down", "unloaded": ["mouse_right_up", "slot_deselected", "item_dropped"]},
+            "inputs": {"initial": "mouse_right_down", "unloaded": ["mouse_right_up", "slot-dropped", "slot-deselected"]},
             "systems": {
               "initial": [
                 {"code": "player-animation", "action": "start", "animation": "load", "category": "hands"},
@@ -177,7 +183,7 @@
             "class": "Delayed",
             "timeout": 4000,
             "states": [{"initial": "loaded", "timeout": "primed", "transitional": "prime", "final": "loaded"}],
-            "inputs": {"initial": ["mouse_right_down", "loading-finished"], "loaded": ["mouse_right_up", "slot_deselected", "item_dropped"]},
+            "inputs": {"initial": ["mouse_right_down", "loading-finished"], "loaded": ["mouse_right_up", "slot-dropped", "slot-deselected"]},
             "systems": {
               "initial": [
                 {"code": "player-animation", "action": "start", "animation": "prime", "category": "hands"},
@@ -230,7 +236,7 @@
           },
           "ease": {
             "class": "Instant",
-            "inputs": ["slot_selected", "mouse_right_up"],
+            "inputs": ["slot-selected", "slot-added", "mouse_right_up"],
             "states": [{"initial": "aimed", "final": "primed"}, {"initial": "unloaded", "final": "unloaded"}],
             "systems": [
               {"code": "player-animation", "action": "start", "animation": "idle", "category": "hands"},
@@ -242,7 +248,7 @@
           },
           "easeOut": {
             "class": "Instant",
-            "inputs": ["slot_deselected", "item_dropped"],
+            "inputs": ["slot-dropped", "slot-deselected"],
             "states": [
               {"initial": "aimed", "final": "primed"},
               {"initial": "primed", "final": "primed"},
@@ -262,12 +268,12 @@
           "melee-bayonet-destroyed": {
             "class": "Instant",
             "states": [{"initial": "primed-bayonet", "final": "primed"}, {"initial": "loaded-bayonet", "final": "loaded"}, {"initial": "unloaded-bayonet", "final": "unloaded"}],
-            "inputs": ["mouse_left_down", "slot_selected"],
+            "inputs": ["mouse_left_down", "slot-selected", "slot-added"],
             "systems": [{"code": "ammo-bayonet", "action": "empty"}]
           },
           "easeIn": {
             "class": "Instant",
-            "inputs": ["slot_selected"],
+            "inputs": ["slot-selected", "slot-added"],
             "states": [
               {"initial": "primed", "final": "primed"},
               {"initial": "loaded", "final": "loaded"},
@@ -329,7 +335,7 @@
               {"initial": "loaded", "timeout": "loaded", "final": "loaded"},
               {"initial": "primed", "timeout": "primed", "final": "primed"}
             ],
-            "inputs": {"initial": ["mouse_left_down"], "loaded": ["slot_deselected", "item_dropped"]},
+            "inputs": {"initial": ["mouse_left_down"], "loaded": ["slot-dropped", "slot-deselected"]},
             "systems": {
               "initial": [
                 {"code": "ammo-bayonet", "action": "empty"},
@@ -352,7 +358,7 @@
               {"initial": "loaded-bayonet", "transitional": "loaded-bayonet-melee", "timeout": "loaded-bayonet", "final": "loaded-bayonet"},
               {"initial": "unloaded-bayonet", "transitional": "unloaded-bayonet-melee", "timeout": "unloaded-bayonet", "final": "unloaded-bayonet"}
             ],
-            "inputs": {"initial": ["mouse_left_down"], "loaded": ["slot_deselected", "item_dropped"]},
+            "inputs": {"initial": ["mouse_left_down"], "loaded": ["slot-dropped", "slot-deselected"]},
             "systems": {
               "initial": [
                 {"code": "ammo-other", "action": "check", "requirement": "empty-offhand"},
@@ -434,23 +440,34 @@
           "priming-finished": {"class": "OperationFinished", "operation": "prime"},
           "melee-hit-finished": {"class": "OperationFinished", "operation": "bayonet-hit"},
           "bayonet-hit": {"class": "Custom"},
-          "buttstock-hit": {"class": "Custom"}
+          "buttstock-hit": {"class": "Custom"},
+          "slot-added": {"class": "SlotContent", "type": "AfterModified"},
+          "slot-dropped": {"class": "SlotContent", "type": "AllTaken"},
+          "slot-selected": {"class": "SlotSelected"},
+          "slot-deselected": {"class": "SlotChange"}
         }
       }
     }
   ],
   "attributes": {
     "toolrackTransform": {"translation": {"x": 1.4, "y": 0.52, "z": 0.5}, "rotation": {"x": 1, "y": 95, "z": -90}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 1.34},
-    "groundStorageTransform": {"translation": {"x": 0.55, "y": 0.44, "z": 0.75}, "rotation": {"x": 98, "y": 4, "z": -101}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 0.81}
+    "groundStorageTransform": {"translation": {"x": 0.55, "y": 0.44, "z": 0.75}, "rotation": {"x": 98, "y": 4, "z": -101}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 0.81},
+    "inWallmountTransform": {"translation": {"x": -0.6, "y": -0.06, "z": -0.04}, "rotation": {"x": 90, "y": -83, "z": 90}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 0.81},
+    "inWeaponrackTransform": {"translation": {"x": 0, "y": 0.02, "z": 0.08}, "rotation": {"x": 82, "y": 0, "z": 0}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 0.81}
   },
-  "shape": {"base": "maltiezfirearms:firearms/musket-base"},
+  "shape": {"base": "maltiezfirearms:firearms/musket-animated-tp"},
   "heldTpHitAnimation": "firearmsempty",
   "heldLeftTpIdleAnimation": "firearmsempty",
   "heldLeftReadyAnimation": "firearmsempty",
   "heldRightReadyAnimation": "firearmsempty",
   "heldOldTpIdleAnimation": "firearmsempty",
   "heldTpUseAnimation": "firearmsempty",
-  "guiTransform": {"translation": {"x": 0, "y": 0, "z": 0}, "rotation": {"x": -11, "y": 16, "z": -180}, "origin": {"x": -0.65, "y": -0.5, "z": -3}, "scaleXyz": {"x": -1.89, "y": 1.89, "z": 1.89}},
+  "guiTransform": {
+    "translation": {"x": 0, "y": 0, "z": 0},
+    "rotation": {"x": -11, "y": 16, "z": -180},
+    "origin": {"x": -0.65, "y": -0.5, "z": -3},
+    "scaleXyz": {"x": -1.89, "y": 1.89, "z": 1.89}
+  },
   "fpHandTransform": {"translation": {"x": 0.2, "y": 0.6, "z": 1}, "rotation": {"x": 0, "y": 0, "z": 0}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 4},
   "tpHandTransform": {"translation": {"x": 0, "y": 0, "z": 0}, "rotation": {"x": 0, "y": -90, "z": 0}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 0.8},
   "groundTransform": {"translation": {"x": 0, "y": 0.05, "z": 0}, "rotation": {"x": 0, "y": 0, "z": 90}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 4.8}

@@ -1,0 +1,613 @@
+{
+	"editor": {
+		"collapsedPaths": "Root/Arquebus_origin,Root/Arquebus_origin2,Root/Arquebus_origin3,Root/Arquebus_origin/Flask_origin,Root/Flask/Bottom_plate,Root/Match,Root/Flask_origin/Flask_origin_inner/Flask,Root/Arquebus_origin/Patch,Root/Arquebus_origin/Flask_origin/Flask_origin_inner/Flask,Root/rack_0/content",
+		"allAngles": false,
+		"entityTextureMode": false
+	},
+	"textureWidth": 16,
+	"textureHeight": 16,
+	"textureSizes": {
+	},
+	"textures": {
+		"metal": "block/metal/corroded/normal3",
+		"wood": "block/wood/charred"
+	},
+	"elements": [
+		{
+			"name": "rack_0",
+			"from": [ 16.0, 0.0, 8.0 ],
+			"to": [ 32.0, 1.0, 16.0 ],
+			"rotationOrigin": [ 16.0, 0.0, 8.0 ],
+			"rotationY": 180.0,
+			"faces": {
+				"north": { "texture": "#wood", "uv": [ 0.0, 0.0, 16.0, 1.0 ] },
+				"east": { "texture": "#wood", "uv": [ 0.0, 0.0, 8.0, 1.0 ] },
+				"south": { "texture": "#wood", "uv": [ 0.0, 0.0, 16.0, 1.0 ] },
+				"west": { "texture": "#wood", "uv": [ 0.0, 0.0, 8.0, 1.0 ] },
+				"up": { "texture": "#wood", "uv": [ 0.0, 8.0, 16.0, 16.0 ] },
+				"down": { "texture": "#wood", "uv": [ 0.0, 7.5, 16.0, 15.5 ] }
+			},
+			"children": [
+				{
+					"name": "structure",
+					"from": [ 0.0, 0.0, 0.0 ],
+					"to": [ 0.0, 0.0, 0.0 ],
+					"faces": {
+						"north": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+						"east": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+						"south": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+						"west": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+						"up": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+						"down": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.5, 0.5 ] }
+					},
+					"children": [
+						{
+							"name": "rack_3",
+							"from": [ 15.0, 1.0, 4.0 ],
+							"to": [ 16.0, 16.0, 6.5 ],
+							"rotationOrigin": [ 15.0, 1.0, 4.0 ],
+							"faces": {
+								"north": { "texture": "#wood", "uv": [ 0.0, 0.0, 1.0, 15.0 ] },
+								"east": { "texture": "#wood", "uv": [ 0.5, 9.0, 15.5, 11.5 ], "rotation": 90 },
+								"south": { "texture": "#wood", "uv": [ 0.0, 0.0, 1.0, 15.0 ] },
+								"west": { "texture": "#wood", "uv": [ 1.0, 7.0, 16.0, 9.5 ], "rotation": 90 },
+								"up": { "texture": "#wood", "uv": [ 0.0, 0.0, 1.0, 2.5 ] },
+								"down": { "texture": "#wood", "uv": [ 0.0, 0.0, 1.0, 2.5 ] }
+							},
+							"children": [
+								{
+									"name": "nail_1",
+									"from": [ 0.6, 13.0, 1.0 ],
+									"to": [ 1.1, 13.5, 1.5 ],
+									"rotationOrigin": [ 0.6, 13.0, 1.0 ],
+									"faces": {
+										"north": { "texture": "#metal", "uv": [ 9.5, 8.5, 10.0, 9.0 ] },
+										"east": { "texture": "#metal", "uv": [ 11.0, 11.5, 11.5, 12.0 ] },
+										"south": { "texture": "#metal", "uv": [ 12.0, 11.0, 12.5, 11.5 ] },
+										"west": { "texture": "#metal", "uv": [ 12.0, 11.0, 12.5, 11.5 ] },
+										"up": { "texture": "#metal", "uv": [ 11.0, 11.5, 11.5, 12.0 ] },
+										"down": { "texture": "#metal", "uv": [ 10.5, 11.0, 11.0, 11.5 ] }
+									}
+								},
+								{
+									"name": "nail_3",
+									"from": [ 0.6, -0.7, 1.0 ],
+									"to": [ 1.1, -0.2, 1.5 ],
+									"rotationOrigin": [ 0.6, -0.7, 1.0 ],
+									"faces": {
+										"north": { "texture": "#metal", "uv": [ 9.5, 8.5, 10.0, 9.0 ] },
+										"east": { "texture": "#metal", "uv": [ 11.0, 11.5, 11.5, 12.0 ] },
+										"south": { "texture": "#metal", "uv": [ 12.0, 11.0, 12.5, 11.5 ] },
+										"west": { "texture": "#metal", "uv": [ 12.0, 11.0, 12.5, 11.5 ] },
+										"up": { "texture": "#metal", "uv": [ 11.0, 11.5, 11.5, 12.0 ] },
+										"down": { "texture": "#metal", "uv": [ 10.5, 11.0, 11.0, 11.5 ] }
+									}
+								}
+							]
+						},
+						{
+							"name": "rack_4",
+							"from": [ 0.0, 1.0, 0.0 ],
+							"to": [ 16.0, 2.0, 1.0 ],
+							"rotationOrigin": [ 0.0, 1.0, 0.0 ],
+							"faces": {
+								"north": { "texture": "#wood", "uv": [ 0.0, 2.0, 16.0, 3.0 ] },
+								"east": { "texture": "#wood", "uv": [ 0.0, 0.0, 1.0, 1.0 ] },
+								"south": { "texture": "#wood", "uv": [ 0.0, 2.0, 16.0, 3.0 ] },
+								"west": { "texture": "#wood", "uv": [ 0.0, 0.0, 1.0, 1.0 ] },
+								"up": { "texture": "#wood", "uv": [ 0.0, 2.0, 16.0, 3.0 ] },
+								"down": { "texture": "#wood", "uv": [ 0.0, 2.0, 16.0, 3.0 ] }
+							}
+						},
+						{
+							"name": "rack_2",
+							"from": [ 0.0, 1.0, 4.0 ],
+							"to": [ 1.0, 16.0, 6.5 ],
+							"rotationOrigin": [ 0.0, 1.0, 4.0 ],
+							"faces": {
+								"north": { "texture": "#wood", "uv": [ 0.0, 0.0, 1.0, 15.0 ] },
+								"east": { "texture": "#wood", "uv": [ 1.0, 7.0, 16.0, 9.5 ], "rotation": 90 },
+								"south": { "texture": "#wood", "uv": [ 0.0, 0.0, 1.0, 15.0 ] },
+								"west": { "texture": "#wood", "uv": [ 0.5, 9.0, 15.5, 11.5 ], "rotation": 90 },
+								"up": { "texture": "#wood", "uv": [ 0.0, 0.0, 1.0, 2.5 ] },
+								"down": { "texture": "#wood", "uv": [ 0.0, 0.0, 1.0, 2.5 ] }
+							},
+							"children": [
+								{
+									"name": "nail_0",
+									"from": [ -0.1, 13.0, 1.0 ],
+									"to": [ 0.4, 13.5, 1.5 ],
+									"rotationOrigin": [ -0.1, 13.0, 1.0 ],
+									"faces": {
+										"north": { "texture": "#metal", "uv": [ 11.5, 12.5, 12.0, 13.0 ] },
+										"east": { "texture": "#metal", "uv": [ 12.0, 12.0, 12.5, 12.5 ] },
+										"south": { "texture": "#metal", "uv": [ 12.0, 11.5, 12.5, 12.0 ] },
+										"west": { "texture": "#metal", "uv": [ 11.0, 11.0, 11.5, 11.5 ] },
+										"up": { "texture": "#metal", "uv": [ 10.0, 10.0, 10.5, 10.5 ] },
+										"down": { "texture": "#metal", "uv": [ 11.0, 11.5, 11.5, 12.0 ] }
+									}
+								},
+								{
+									"name": "nail_2",
+									"from": [ -0.1, -0.7, 1.0 ],
+									"to": [ 0.4, -0.2, 1.5 ],
+									"rotationOrigin": [ -0.1, -0.7, 1.0 ],
+									"faces": {
+										"north": { "texture": "#metal", "uv": [ 11.5, 12.5, 12.0, 13.0 ] },
+										"east": { "texture": "#metal", "uv": [ 12.0, 12.0, 12.5, 12.5 ] },
+										"south": { "texture": "#metal", "uv": [ 12.0, 11.5, 12.5, 12.0 ] },
+										"west": { "texture": "#metal", "uv": [ 11.0, 11.0, 11.5, 11.5 ] },
+										"up": { "texture": "#metal", "uv": [ 10.0, 10.0, 10.5, 10.5 ] },
+										"down": { "texture": "#metal", "uv": [ 11.0, 11.5, 11.5, 12.0 ] }
+									}
+								}
+							]
+						},
+						{
+							"name": "rack_1",
+							"from": [ 1.0, 13.0, 5.2 ],
+							"to": [ 15.0, 14.0, 7.2 ],
+							"rotationOrigin": [ 1.0, 13.0, 5.2 ],
+							"rotationX": -74.5,
+							"faces": {
+								"north": { "texture": "#wood", "uv": [ 0.0, 0.0, 14.0, 1.0 ] },
+								"east": { "texture": "#wood", "uv": [ 0.0, 0.0, 2.0, 1.0 ] },
+								"south": { "texture": "#wood", "uv": [ 0.0, 0.0, 14.0, 1.0 ] },
+								"west": { "texture": "#wood", "uv": [ 0.0, 0.0, 2.0, 1.0 ] },
+								"up": { "texture": "#wood", "uv": [ 0.0, 0.0, 14.0, 2.0 ] },
+								"down": { "texture": "#wood", "uv": [ 0.0, 0.0, 14.0, 2.0 ] }
+							}
+						}
+					]
+				}
+			]
+		}
+	],
+	"animations": [
+		{
+			"name": "Load",
+			"code": "load",
+			"quantityframes": 200,
+			"onActivityStopped": "Stop",
+			"onAnimationEnd": "Hold",
+			"keyframes": [
+
+			]
+		},
+
+		{
+			"name": "Prime",
+			"code": "prime",
+			"quantityframes": 60,
+			"onActivityStopped": "Stop",
+			"onAnimationEnd": "Hold",
+			"keyframes": [
+
+			]
+		},
+
+		{
+			"name": "Match",
+			"code": "match",
+			"quantityframes": 30,
+			"onActivityStopped": "Stop",
+			"onAnimationEnd": "Hold",
+			"keyframes": [
+
+			]
+		},
+
+		{
+			"name": "Fire",
+			"code": "fire",
+			"quantityframes": 20,
+			"onActivityStopped": "Stop",
+			"onAnimationEnd": "Hold",
+			"keyframes": [
+
+			]
+		},
+
+		{
+			"name": "Load",
+			"code": "load",
+			"quantityframes": 200,
+			"onActivityStopped": "Stop",
+			"onAnimationEnd": "Hold",
+			"keyframes": [
+
+			]
+		},
+
+		{
+			"name": "Prime",
+			"code": "prime",
+			"quantityframes": 60,
+			"onActivityStopped": "Stop",
+			"onAnimationEnd": "Hold",
+			"keyframes": [
+
+			]
+		},
+
+		{
+			"name": "Match",
+			"code": "match",
+			"quantityframes": 30,
+			"onActivityStopped": "Stop",
+			"onAnimationEnd": "Hold",
+			"keyframes": [
+
+			]
+		},
+
+		{
+			"name": "Fire",
+			"code": "fire",
+			"quantityframes": 20,
+			"onActivityStopped": "Stop",
+			"onAnimationEnd": "Hold",
+			"keyframes": [
+
+			]
+		},
+
+		{
+			"name": "Load",
+			"code": "load",
+			"quantityframes": 200,
+			"onActivityStopped": "Stop",
+			"onAnimationEnd": "Hold",
+			"keyframes": [
+				{
+					"frame": 0,
+					"elements": {
+
+					}
+				},
+				{
+					"frame": 15,
+					"elements": {
+
+					}
+				},
+				{
+					"frame": 20,
+					"elements": {
+
+					}
+				},
+				{
+					"frame": 26,
+					"elements": {
+
+					}
+				},
+				{
+					"frame": 30,
+					"elements": {
+
+					}
+				},
+				{
+					"frame": 37,
+					"elements": {
+
+					}
+				},
+				{
+					"frame": 40,
+					"elements": {
+
+					}
+				},
+				{
+					"frame": 45,
+					"elements": {
+
+					}
+				},
+				{
+					"frame": 60,
+					"elements": {
+
+					}
+				},
+				{
+					"frame": 70,
+					"elements": {
+
+					}
+				},
+				{
+					"frame": 75,
+					"elements": {
+
+					}
+				},
+				{
+					"frame": 80,
+					"elements": {
+
+					}
+				},
+				{
+					"frame": 82,
+					"elements": {
+
+					}
+				},
+				{
+					"frame": 90,
+					"elements": {
+
+					}
+				},
+				{
+					"frame": 95,
+					"elements": {
+
+					}
+				},
+				{
+					"frame": 100,
+					"elements": {
+
+					}
+				},
+				{
+					"frame": 105,
+					"elements": {
+
+					}
+				},
+				{
+					"frame": 115,
+					"elements": {
+
+					}
+				},
+				{
+					"frame": 120,
+					"elements": {
+
+					}
+				},
+				{
+					"frame": 125,
+					"elements": {
+
+					}
+				},
+				{
+					"frame": 130,
+					"elements": {
+
+					}
+				},
+				{
+					"frame": 140,
+					"elements": {
+
+					}
+				},
+				{
+					"frame": 145,
+					"elements": {
+
+					}
+				},
+				{
+					"frame": 150,
+					"elements": {
+
+					}
+				},
+				{
+					"frame": 155,
+					"elements": {
+
+					}
+				},
+				{
+					"frame": 160,
+					"elements": {
+
+					}
+				},
+				{
+					"frame": 165,
+					"elements": {
+
+					}
+				},
+				{
+					"frame": 170,
+					"elements": {
+
+					}
+				},
+				{
+					"frame": 180,
+					"elements": {
+
+					}
+				},
+				{
+					"frame": 185,
+					"elements": {
+
+					}
+				},
+				{
+					"frame": 190,
+					"elements": {
+
+					}
+				},
+				{
+					"frame": 199,
+					"elements": {
+
+					}
+				}
+			]
+		},
+
+		{
+			"name": "Prime",
+			"code": "prime",
+			"quantityframes": 60,
+			"onActivityStopped": "Stop",
+			"onAnimationEnd": "Hold",
+			"keyframes": [
+				{
+					"frame": 0,
+					"elements": {
+
+					}
+				},
+				{
+					"frame": 5,
+					"elements": {
+
+					}
+				},
+				{
+					"frame": 10,
+					"elements": {
+
+					}
+				},
+				{
+					"frame": 20,
+					"elements": {
+
+					}
+				},
+				{
+					"frame": 25,
+					"elements": {
+
+					}
+				},
+				{
+					"frame": 30,
+					"elements": {
+
+					}
+				},
+				{
+					"frame": 35,
+					"elements": {
+
+					}
+				},
+				{
+					"frame": 40,
+					"elements": {
+
+					}
+				},
+				{
+					"frame": 50,
+					"elements": {
+
+					}
+				},
+				{
+					"frame": 55,
+					"elements": {
+
+					}
+				},
+				{
+					"frame": 59,
+					"elements": {
+
+					}
+				}
+			]
+		},
+
+		{
+			"name": "Match",
+			"code": "match",
+			"quantityframes": 30,
+			"onActivityStopped": "Stop",
+			"onAnimationEnd": "Hold",
+			"keyframes": [
+				{
+					"frame": 0,
+					"elements": {
+
+					}
+				},
+				{
+					"frame": 15,
+					"elements": {
+
+					}
+				},
+				{
+					"frame": 19,
+					"elements": {
+
+					}
+				},
+				{
+					"frame": 24,
+					"elements": {
+
+					}
+				},
+				{
+					"frame": 29,
+					"elements": {
+
+					}
+				}
+			]
+		},
+
+		{
+			"name": "Fire",
+			"code": "fire",
+			"quantityframes": 20,
+			"onActivityStopped": "Stop",
+			"onAnimationEnd": "Hold",
+			"keyframes": [
+				{
+					"frame": 0,
+					"elements": {
+
+					}
+				},
+				{
+					"frame": 5,
+					"elements": {
+
+					}
+				},
+				{
+					"frame": 10,
+					"elements": {
+
+					}
+				},
+				{
+					"frame": 15,
+					"elements": {
+
+					}
+				},
+				{
+					"frame": 19,
+					"elements": {
+
+					}
+				}
+			]
+		}
+	]
+}

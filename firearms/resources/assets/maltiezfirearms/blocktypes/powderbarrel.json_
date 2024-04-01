@@ -1,0 +1,151 @@
+﻿{
+  "code": "powderbarrel",
+  "class": "BlockGenericTypedContainer",
+  "entityclass": "GenericTypedContainer",
+  "attributes": {
+    "partialAttachable": true,
+    "inventoryClassName": "powderbarrel",
+    "defaultType": "plain",
+    "types": ["plain", "rusty", "tarnished", "ruined"],
+    "collisionSelectionBoxes": {"ruined": [{"x1": 0.125, "y1": 0, "z1": 0.1875, "x2": 0.875, "y2": 0.4875, "z2": 0.75}]},
+    "rotatatableInterval": {"plain": "22.5degnot45deg", "rusty": "22.5deg", "tarnished": "22.5degnot45deg", "ruined": "22.5deg"},
+    "drop": {"plain": true, "rusty": true, "tarnished": true, "ruined": false},
+    "quantitySlots": {"plain": 4, "rusty": 4, "tarnished": 4, "ruined": 4},
+    "dialogTitleLangCode": {"plain": "chestcontents", "rusty": "chestcontents", "tarnished": "chestcontents", "ruined": "chestcontents"},
+    "storageType": {"plain": 72, "rusty": 189, "tarnished": 189, "ruined": 189},
+    "retrieveOnly": {"plain": false, "rusty": false, "tarnished": false, "ruined": true},
+    "shape": {"plain": "", "rusty": "", "tarnished": "", "ruined": ""},
+    "typedOpenSound": {"plain": "sounds/block/largechestopen", "rusty": "sounds/block/largechestopen", "tarnished": "sounds/block/largechestopen", "ruined": "sounds/block/largechestopen"},
+    "typedCloseSound": {
+      "normal-generic": "sounds/block/largechestclose",
+      "normal-aged": "sounds/block/largechestclose",
+      "collapsed1": "sounds/block/largechestclose",
+      "collapsed2": "sounds/block/largechestclose",
+      "collapsed3": "sounds/block/largechestclose"
+    },
+    "variantByGroup": "side",
+    "variantByGroupInventory": null
+  },
+  "behaviors": [{"name": "Lockable"}, {"name": "Container"}],
+  "entityBehaviors": [{"name": "Animatable"}],
+  "variantgroups": [{"code": "side", "loadFromProperties": "abstract/horizontalorientation"}],
+  "creativeinventory": {},
+  "creativeinventoryStacksByType": {
+    "*-east": [
+      {
+        "tabs": ["general", "decorative"],
+        "stacks": [
+          {"type": "block", "code": "chest-east", "attributes": {"type": "normal-generic"}},
+          {"type": "block", "code": "chest-east", "attributes": {"type": "golden"}},
+          {"type": "block", "code": "chest-east", "attributes": {"type": "owl"}}
+        ]
+      },
+      {
+        "tabs": ["general", "clutter"],
+        "stacks": [
+          {"type": "block", "code": "chest-east", "attributes": {"type": "normal-aged"}},
+          {"type": "block", "code": "chest-east", "attributes": {"type": "golden-aged"}},
+          {"type": "block", "code": "chest-east", "attributes": {"type": "owl-aged"}},
+          {"type": "block", "code": "chest-east", "attributes": {"type": "collapsed1"}},
+          {"type": "block", "code": "chest-east", "attributes": {"type": "collapsed2"}},
+          {"type": "block", "code": "chest-east", "attributes": {"type": "collapsed3"}}
+        ]
+      }
+    ]
+  },
+  "heldTpIdleAnimation": "holdunderarm",
+  "shapeInventory": {"base": "block/wood/chest/normal", "rotateY": 270},
+  "shapeByType": {
+    "*-north": {"base": "block/wood/chest/normal", "rotateY": 0},
+    "*-east": {"base": "block/wood/chest/normal", "rotateY": 270},
+    "*-west": {"base": "block/wood/chest/normal", "rotateY": 90},
+    "*-south": {"base": "block/wood/chest/normal", "rotateY": 180}
+  },
+  "_comment": "Must declare textures so they get added to the block texture atlas",
+  "textures": {
+    "normal-generic-sides2": {"base": "block/wood/trunk/sides"},
+    "normal-generic-lid": {"base": "block/wood/trunk/lid"},
+    "normal-generic-accessories": {"base": "block/wood/trunk/accessories"},
+    "normal-aged-sides2": {"base": "block/wood/trunk/aged-sides"},
+    "normal-aged-lid": {"base": "block/wood/trunk/aged-lid"},
+    "normal-aged-accessories": {"base": "block/wood/trunk/aged-accessories"},
+    "collapsed1-corners": {
+      "base": "block/wood/chest/aged/corners",
+      "alternates": [{"base": "block/wood/chest/aged/corners", "overlays": ["block/overlay/lichen1"]}, {"base": "block/wood/chest/aged/corners", "overlays": ["block/overlay/lichen2"]}]
+    },
+    "collapsed1-lid": {
+      "base": "block/wood/chest/aged/lid",
+      "alternates": [{"base": "block/wood/chest/aged/lid", "overlays": ["block/overlay/lichen1"]}, {"base": "block/wood/chest/aged/lid", "overlays": ["block/overlay/lichen2"]}]
+    },
+    "collapsed1-sides": {
+      "base": "block/wood/chest/aged/sides",
+      "alternates": [{"base": "block/wood/chest/aged/sides", "overlays": ["block/overlay/lichen1"]}, {"base": "block/wood/chest/aged/sides", "overlays": ["block/overlay/lichen2"]}]
+    },
+    "collapsed1-floor": {
+      "base": "block/wood/chest/aged/floor",
+      "alternates": [{"base": "block/wood/chest/aged/floor", "overlays": ["block/overlay/lichen1"]}, {"base": "block/wood/chest/aged/floor", "overlays": ["block/overlay/lichen2"]}]
+    },
+    "collapsed2-corners": {
+      "base": "block/wood/chest/aged/corners",
+      "alternates": [{"base": "block/wood/chest/aged/corners", "overlays": ["block/overlay/lichen1"]}, {"base": "block/wood/chest/aged/corners", "overlays": ["block/overlay/lichen2"]}]
+    },
+    "collapsed2-lid": {
+      "base": "block/wood/chest/aged/lid",
+      "alternates": [{"base": "block/wood/chest/aged/lid", "overlays": ["block/overlay/lichen1"]}, {"base": "block/wood/chest/aged/lid", "overlays": ["block/overlay/lichen2"]}]
+    },
+    "collapsed2-sides": {
+      "base": "block/wood/chest/aged/sides",
+      "alternates": [{"base": "block/wood/chest/aged/sides", "overlays": ["block/overlay/lichen1"]}, {"base": "block/wood/chest/aged/sides", "overlays": ["block/overlay/lichen2"]}]
+    },
+    "collapsed2-floor": {
+      "base": "block/wood/chest/aged/floor",
+      "alternates": [{"base": "block/wood/chest/aged/floor", "overlays": ["block/overlay/lichen1"]}, {"base": "block/wood/chest/aged/floor", "overlays": ["block/overlay/lichen2"]}]
+    },
+    "collapsed3-corners": {
+      "base": "block/wood/chest/aged/corners",
+      "alternates": [{"base": "block/wood/chest/aged/corners", "overlays": ["block/overlay/lichen1"]}, {"base": "block/wood/chest/aged/corners", "overlays": ["block/overlay/lichen2"]}]
+    },
+    "collapsed3-lid": {
+      "base": "block/wood/chest/aged/lid",
+      "alternates": [{"base": "block/wood/chest/aged/lid", "overlays": ["block/overlay/lichen1"]}, {"base": "block/wood/chest/aged/lid", "overlays": ["block/overlay/lichen2"]}]
+    },
+    "collapsed3-sides": {
+      "base": "block/wood/chest/aged/sides",
+      "alternates": [{"base": "block/wood/chest/aged/sides", "overlays": ["block/overlay/lichen1"]}, {"base": "block/wood/chest/aged/sides", "overlays": ["block/overlay/lichen2"]}]
+    },
+    "collapsed3-floor": {
+      "base": "block/wood/chest/aged/floor",
+      "alternates": [{"base": "block/wood/chest/aged/floor", "overlays": ["block/overlay/lichen1"]}, {"base": "block/wood/chest/aged/floor", "overlays": ["block/overlay/lichen2"]}]
+    },
+    "golden-top": {"base": "block/wood/chest/golden/top"},
+    "golden-sides2": {"base": "block/wood/chest/golden/sides2"},
+    "golden-sides1": {"base": "block/wood/chest/golden/sides1"},
+    "golden-inside": {"base": "block/wood/chest/golden/inside"},
+    "owl-top": {"base": "block/wood/chest/owl/top"},
+    "owl-sides2": {"base": "block/wood/chest/owl/sides2"},
+    "owl-sides1": {"base": "block/wood/chest/owl/sides1"},
+    "owl-inside": {"base": "block/wood/chest/owl/inside"},
+    "golden-aged-top": {"base": "block/wood/chest/golden-aged/top"},
+    "golden-aged-sides2": {"base": "block/wood/chest/golden-aged/sides2"},
+    "golden-aged-sides1": {"base": "block/wood/chest/golden-aged/sides1"},
+    "golden-aged-inside": {"base": "block/wood/chest/golden-aged/inside"},
+    "owl-aged-top": {"base": "block/wood/chest/owl-aged/top"},
+    "owl-aged-sides2": {"base": "block/wood/chest/owl-aged/sides2"},
+    "owl-aged-sides1": {"base": "block/wood/chest/owl-aged/sides1"},
+    "owl-aged-inside": {"base": "block/wood/chest/owl-aged/inside"}
+  },
+  "blockmaterial": "Wood",
+  "replaceable": 900,
+  "resistance": 3,
+  "lightAbsorption": 0,
+  "sideAo": {"all": false},
+  "sidesolid": {"all": false},
+  "sideopaque": {"all": false},
+  "collisionbox": {"x1": 0.0625, "y1": 0, "z1": 0.0625, "x2": 0.9375, "y2": 0.8125, "z2": 0.9375},
+  "selectionbox": {"x1": 0.0625, "y1": 0, "z1": 0.0625, "x2": 0.9375, "y2": 0.8125, "z2": 0.9375},
+  "combustibleProps": {"burnTemperature": 600, "burnDuration": 35},
+  "sounds": {"place": "block/planks", "hit": "block/planks", "break": "block/planks", "walk": "walk/wood"},
+  "materialDensity": 600,
+  "tpHandTransform": {"translation": {"x": -0.9, "y": -0.5, "z": -0.3}, "rotation": {"x": 0, "y": 90, "z": -102}, "scale": 0.56},
+  "guiTransform": {"origin": {"x": 0.5, "y": 0.4, "z": 0.5}, "scale": 1.16}
+}

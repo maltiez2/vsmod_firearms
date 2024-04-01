@@ -1,0 +1,43 @@
+﻿{
+  "code": "wallmountdouble",
+  "behaviors": [{"name": "HorizontalOrientable", "properties": {"dropBlockFace": "east"}}],
+  "variantgroups": [
+    {"code": "type", "states": ["iron", "tinbronze", "copper", "steel", "brass", "rusty", "tarnished"]},
+    {"code": "side", "loadFromProperties": "abstract/horizontalorientation"}
+  ],
+  "attributes": {
+    "inventorySize": 2,
+    "inventoryTransformAttribute": "inWallmountTransform",
+    "rotateByType": {"*-north": {"y": 0}, "*-east": {"y": 270}, "*-west": {"y": 90}, "*-south": {"y": 180}}
+  },
+  "class": "Firearms:GenericDisplayBlock",
+  "entityClass": "Firearms:GenericDisplayBlockEntity",
+  "creativeinventory": {"maltiezfirearms": ["*-east"]},
+  "shapeByType": {
+    "*-north": {"base": "blocks/wallmount-double", "rotateY": 0},
+    "*-east": {"base": "blocks/wallmount-double", "rotateY": 270},
+    "*-west": {"base": "blocks/wallmount-double", "rotateY": 90},
+    "*-south": {"base": "blocks/wallmount-double", "rotateY": 180}
+  },
+  "shapeInventory": {"base": "blocks/wallmount-double-piled"},
+  "drawtype": "json",
+  "blockmaterial": "Metal",
+  "replaceable": 600,
+  "maxstacksize": 32,
+  "resistance": 3,
+  "lightAbsorption": 0,
+  "collisionSelectionBoxes": [
+    {"x1": 0, "y1": 0.65, "z1": 0, "x2": 1, "y2": 0.95, "z2": 0.2, "rotateYByType": {"*-north": 0, "*-east": 270, "*-west": 90, "*-south": 180}},
+    {"x1": 0, "y1": 0.15, "z1": 0, "x2": 1, "y2": 0.45, "z2": 0.2, "rotateYByType": {"*-north": 0, "*-east": 270, "*-west": 90, "*-south": 180}}
+  ],
+  "texturesByType": {
+    "*-rusty-*": {"metal": {"base": "game:block/metal/corroded/normal1"}},
+    "*-tarnished-*": {"metal": {"base": "game:block/metal/tarnished/tinbronze"}},
+    "*": {"metal": {"base": "game:block/metal/plate/{type}"}}
+  },
+  "sideopaque": {"all": false},
+  "sideao": {"all": true},
+  "emitsideao": {"all": false},
+  "sidesolid": {"all": false},
+  "tpHandTransform": {"translation": {"x": 0.3, "y": 0, "z": -0.52}, "rotation": {"x": 0, "y": 90, "z": 0}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 0.95}
+}

@@ -1,0 +1,38 @@
+﻿{
+  "code": "pistolstand",
+  "behaviors": [{"name": "UnstableFalling", "properties": {"fallSound": null, "dustIntensity": 0}}, {"name": "HorizontalOrientable", "properties": {"dropBlockFace": "east"}}],
+  "variantgroups": [{"code": "type", "states": ["plain", "charred", "aged"]}, {"code": "side", "loadFromProperties": "abstract/horizontalorientation"}],
+  "attributes": {
+    "inventorySize": 1,
+    "inventoryTransformAttribute": "inPistolstandTransform",
+    "rotateByType": {"*-north": {"y": 0}, "*-east": {"y": 270}, "*-west": {"y": 90}, "*-south": {"y": 180}}
+  },
+  "class": "Firearms:GenericDisplayBlock",
+  "entityClass": "Firearms:GenericDisplayBlockEntity",
+  "creativeinventory": {"maltiezfirearms": ["*-east"], "clutter": ["*-rusty-east"]},
+  "shapeByType": {
+    "*-north": {"base": "blocks/pistolstand", "rotateY": 0},
+    "*-east": {"base": "blocks/pistolstand", "rotateY": 270},
+    "*-west": {"base": "blocks/pistolstand", "rotateY": 90},
+    "*-south": {"base": "blocks/pistolstand", "rotateY": 180}
+  },
+  "drawtype": "json",
+  "blockmaterial": "Metal",
+  "maxstacksize": 8,
+  "replaceable": 600,
+  "resistance": 3,
+  "lightAbsorption": 0,
+  "heldTpIdleAnimation": "holdbothhandslarge",
+  "heldRightReadyAnimation": "heldblockready",
+  "heldTpUseAnimation": "twohandplaceblock",
+  "collisionSelectionBoxes": [
+    {"x1": 0.2, "y1": 0.48, "z1": 0.3, "x2": 0.8, "y2": 0.68, "z2": 0.4, "rotateYByType": {"*-north": 0, "*-east": 270, "*-west": 90, "*-south": 180}},
+    {"x1": 0.2, "y1": 0.2, "z1": 0.45, "x2": 0.8, "y2": 0.4, "z2": 0.55, "rotateYByType": {"*-north": 0, "*-east": 270, "*-west": 90, "*-south": 180}}
+  ],
+  "texturesByType": {"*-charred-*": {"wood": {"base": "game:block/wood/charred"}}, "*-aged-*": {"wood": {"base": "game:block/wood/planks/aged1"}}, "*": {}},
+  "sideopaque": {"all": false},
+  "sideao": {"all": true},
+  "emitsideao": {"all": false},
+  "sidesolid": {"all": false},
+  "tpHandTransform": {"translation": {"x": 0.1, "y": 0.4, "z": 1.05}, "rotation": {"x": 19, "y": 9, "z": -99}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 0.42}
+}

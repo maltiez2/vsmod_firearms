@@ -1,0 +1,118 @@
+{
+	"editor": {
+		"allAngles": false,
+		"entityTextureMode": false
+	},
+	"textureWidth": 16,
+	"textureHeight": 16,
+	"textureSizes": {
+	},
+	"textures": {
+		"charred": "block/wood/charred"
+	},
+	"elements": [
+		{
+			"name": "origin",
+			"from": [ 8.0, 0.0, 8.0 ],
+			"to": [ 8.0, 0.0, 8.0 ],
+			"rotationOrigin": [ 8.0, 0.0, 8.0 ],
+			"faces": {
+			},
+			"children": [
+				{
+					"name": "tabletop R",
+					"from": [ -8.0, 14.0, -12.0 ],
+					"to": [ 8.0, 16.0, 0.0 ],
+					"rotationOrigin": [ -5.0, 14.0, -11.0 ],
+					"faces": {
+						"north": { "texture": "#charred", "uv": [ 0.0, 2.5, 16.0, 4.5 ] },
+						"east": { "texture": "#charred", "uv": [ 0.5, 5.0, 12.5, 7.0 ] },
+						"west": { "texture": "#charred", "uv": [ 1.5, 6.5, 13.5, 8.5 ] },
+						"up": { "texture": "#charred", "uv": [ 2.5, 0.0, 14.5, 16.0 ], "rotation": 90 },
+						"down": { "texture": "#charred", "uv": [ 0.0, 1.5, 16.0, 13.5 ] }
+					}
+				},
+				{
+					"name": "tabletop L",
+					"from": [ -8.0, 14.0, 0.0 ],
+					"to": [ 8.0, 16.0, 12.0 ],
+					"rotationOrigin": [ -5.0, 14.0, 1.0 ],
+					"faces": {
+						"east": { "texture": "#charred", "uv": [ 0.0, 2.5, 12.0, 4.5 ] },
+						"south": { "texture": "#charred", "uv": [ 0.0, 3.0, 16.0, 5.0 ] },
+						"west": { "texture": "#charred", "uv": [ 0.5, 13.5, 12.5, 15.5 ] },
+						"up": { "texture": "#charred", "uv": [ 1.0, 0.0, 13.0, 16.0 ], "rotation": 90 },
+						"down": { "texture": "#charred", "uv": [ 0.0, 2.5, 16.0, 14.5 ] }
+					}
+				},
+				{
+					"name": "feet_1",
+					"from": [ 0.0, 0.0, -8.5 ],
+					"to": [ 0.0, 0.0, -8.5 ],
+					"rotationOrigin": [ 0.0, 0.0, -8.5 ],
+					"rotationY": 180.0,
+					"faces": {
+						"north": { "texture": "#charred", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+						"east": { "texture": "#charred", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+						"south": { "texture": "#charred", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+						"west": { "texture": "#charred", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+						"up": { "texture": "#charred", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+						"down": { "texture": "#charred", "uv": [ 0.0, 0.0, 0.5, 0.5 ] }
+					},
+					"children": [
+						{
+							"name": "feet_base_1",
+							"from": [ -6.5, 0.0, -2.0 ],
+							"to": [ 6.5, 1.5, 2.0 ],
+							"rotationOrigin": [ -3.5, 0.0, -1.0 ],
+							"faces": {
+								"north": { "texture": "#charred", "uv": [ 1.0, 3.0, 14.0, 4.5 ] },
+								"east": { "texture": "#charred", "uv": [ 2.0, 6.5, 6.0, 8.0 ] },
+								"south": { "texture": "#charred", "uv": [ 1.5, 9.0, 14.5, 10.5 ] },
+								"west": { "texture": "#charred", "uv": [ 6.5, 10.0, 10.5, 11.5 ] },
+								"up": { "texture": "#charred", "uv": [ 1.5, 8.0, 14.5, 12.0 ] },
+								"down": { "texture": "#charred", "uv": [ 0.5, 1.5, 13.5, 5.5 ] }
+							}
+						},
+						{
+							"name": "foot_0_1",
+							"from": [ 3.0, 1.0, -1.5 ],
+							"to": [ 6.0, 14.0, 1.5 ],
+							"rotationOrigin": [ 4.0, 1.0, -0.5 ],
+							"faces": {
+								"north": { "texture": "#charred", "uv": [ 1.5, 9.0, 14.5, 12.0 ], "rotation": 90 },
+								"east": { "texture": "#charred", "uv": [ 3.0, 4.0, 16.0, 7.0 ], "rotation": 90 },
+								"south": { "texture": "#charred", "uv": [ 1.0, 11.5, 14.0, 14.5 ], "rotation": 90 },
+								"west": { "texture": "#charred", "uv": [ 0.5, 8.0, 13.5, 11.0 ], "rotation": 90 }
+							}
+						},
+						{
+							"name": "foot_1_1",
+							"from": [ -6.0, 1.0, -1.5 ],
+							"to": [ -3.0, 14.0, 1.5 ],
+							"rotationOrigin": [ -5.0, 1.0, -0.5 ],
+							"faces": {
+								"north": { "texture": "#charred", "uv": [ 1.0, 6.5, 14.0, 9.5 ], "rotation": 90 },
+								"east": { "texture": "#charred", "uv": [ 0.5, 1.0, 13.5, 4.0 ], "rotation": 90 },
+								"south": { "texture": "#charred", "uv": [ 3.5, 3.0, 16.5, 6.0 ], "rotation": 90 },
+								"west": { "texture": "#charred", "uv": [ 0.0, 0.5, 13.0, 3.5 ], "rotation": 90 }
+							}
+						},
+						{
+							"name": "support_1",
+							"from": [ -7.0, 12.5, -2.0 ],
+							"to": [ 7.0, 14.0, 2.0 ],
+							"rotationOrigin": [ -4.0, 12.5, -1.0 ],
+							"faces": {
+								"north": { "texture": "#charred", "uv": [ 1.5, 4.0, 15.5, 5.5 ] },
+								"east": { "texture": "#charred", "uv": [ 7.5, 4.5, 11.5, 6.0 ] },
+								"south": { "texture": "#charred", "uv": [ 0.5, 10.0, 14.5, 11.5 ] },
+								"west": { "texture": "#charred", "uv": [ 8.5, 8.0, 12.5, 9.5 ] },
+								"down": { "texture": "#charred", "uv": [ 0.5, 5.5, 14.5, 9.5 ] }
+							}
+						}
+					]
+				}
+			]
+		}
+	]}

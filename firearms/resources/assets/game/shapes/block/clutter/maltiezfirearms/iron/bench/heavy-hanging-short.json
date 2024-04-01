@@ -1,0 +1,71 @@
+{
+	"editor": {
+		"collapsedPaths": "Root/origin/tabletop R3,Root/origin/tabletop R/tabletop_segment_3",
+		"allAngles": false,
+		"entityTextureMode": false
+	},
+	"textureWidth": 16,
+	"textureHeight": 16,
+	"textureSizes": {
+	},
+	"textures": {
+		"normal2": "block/metal/corroded/normal2",
+		"charred": "block/wood/charred"
+	},
+	"elements": [
+		{
+			"name": "origin",
+			"from": [ 8.0, 0.0, 8.0 ],
+			"to": [ 8.0, 0.0, 8.0 ],
+			"rotationOrigin": [ 8.0, 0.0, 8.0 ],
+			"rotationY": -90.0,
+			"faces": {
+			},
+			"children": [
+				{
+					"name": "tabletop L",
+					"from": [ -8.0, 13.0, -4.0 ],
+					"to": [ 8.0, 16.0, 4.0 ],
+					"rotationOrigin": [ -5.0, 13.0, -3.0 ],
+					"faces": {
+						"north": { "texture": "#charred", "uv": [ 0.0, 0.0, 16.0, 3.0 ], "windMode": [-1,-1,-1,-1], "windData": [0,1,1,0] },
+						"east": { "texture": "#charred", "uv": [ 0.0, 2.5, 8.0, 5.5 ], "windMode": [-1,-1,-1,-1], "windData": [0,1,1,0] },
+						"south": { "texture": "#charred", "uv": [ 0.0, 3.0, 16.0, 6.0 ], "windMode": [-1,-1,-1,-1], "windData": [0,0,1,1] },
+						"west": { "texture": "#charred", "uv": [ 0.0, 13.0, 8.0, 16.0 ] },
+						"up": { "texture": "#charred", "uv": [ 4.0, 0.0, 12.0, 16.0 ], "rotation": 90 },
+						"down": { "texture": "#charred", "uv": [ 0.0, 3.5, 16.0, 11.5 ] }
+					},
+					"children": [
+						{
+							"name": "tabletop R3",
+							"from": [ -0.2, 0.5, 0.2 ],
+							"to": [ 16.2, 2.5, 7.8 ],
+							"rotationOrigin": [ 2.8, 0.5, 1.2 ],
+							"faces": {
+								"north": { "texture": "#normal2", "uv": [ 0.0, 2.5, 16.0, 4.5 ] },
+								"east": { "texture": "#normal2", "uv": [ 0.0, 5.0, 7.5, 7.0 ] },
+								"south": { "texture": "#normal2", "uv": [ 0.0, 0.0, 16.0, 2.0 ], "windMode": [-1,-1,-1,-1] },
+								"west": { "texture": "#normal2", "uv": [ 0.0, 6.5, 7.5, 8.5 ], "windMode": [-1,-1,-1,-1] },
+								"up": { "texture": "#normal2", "uv": [ 0.0, 0.0, 7.5, 16.0 ], "rotation": 90 },
+								"down": { "texture": "#normal2", "uv": [ 0.0, 0.0, 16.0, 7.5 ] }
+							}
+						},
+						{
+							"name": "tabletop R4",
+							"from": [ -0.1, 0.5, -0.2 ],
+							"to": [ 16.1, 2.5, 8.2 ],
+							"rotationOrigin": [ 2.9, 0.5, 0.8 ],
+							"faces": {
+								"north": { "texture": "#normal2", "uv": [ 0.0, 2.5, 16.0, 4.5 ] },
+								"east": { "texture": "#normal2", "uv": [ 0.0, 5.0, 8.0, 7.0 ] },
+								"south": { "texture": "#normal2", "uv": [ 0.0, 0.0, 16.0, 2.0 ] },
+								"west": { "texture": "#normal2", "uv": [ 0.0, 6.5, 8.0, 8.5 ] },
+								"up": { "texture": "#normal2", "uv": [ 0.0, 0.0, 8.0, 16.0 ], "rotation": 90 },
+								"down": { "texture": "#normal2", "uv": [ 0.0, 0.0, 16.0, 8.0 ] }
+							}
+						}
+					]
+				}
+			]
+		}
+	]}
