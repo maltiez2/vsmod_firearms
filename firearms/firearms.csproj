@@ -4,7 +4,7 @@
     <ModName>Firearms</ModName>
     <ModType>code</ModType>
     <GameVersion>1.19.4</GameVersion>
-    <Version>0.5.0</Version>
+    <Version>0.5.4</Version>
     <ModId>maltiezfirearms</ModId>
     <Description>Black powder firearms</Description>
     <Side>Universal</Side>
@@ -21,6 +21,7 @@
   <ItemGroup>
     <ModInfoTranslators Include="Kaofan - Polish" />
     <ModInfoTranslators Include="Толстый Бубба - Russian" />
+    <ModInfoTranslators Include="DeanBro - Ukrainian" />
   </ItemGroup>
 
   <!-- Dependencies -->
@@ -55,6 +56,10 @@
     <ReleaseFile>$(ModId)_$(Version).zip</ReleaseFile>
     <ReleasePath>$(ReleasesDir)\$(ReleaseFile)</ReleasePath>
   </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="VSImGui" Version="0.0.6" />
+  </ItemGroup>
 
   <!-- References to libraries that are being used in project -->
   <ItemGroup>
@@ -137,9 +142,7 @@
     <AssetsToFormat Include="$(AssetsDir)\$(ModId)\patches" />
     <AssetsToFormat Include="$(AssetsDir)\$(ModId)\entities" />
   </ItemGroup>
-  <ItemGroup>
-    <PackageReference Include="VSImGui" Version="0.0.6" />
-  </ItemGroup>
+  
 
   <!-- Startup settings -->
   <PropertyGroup>

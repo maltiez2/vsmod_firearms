@@ -23,22 +23,22 @@
         "behaviors/2/properties/systems/particles/fire/4/intensity": "FIREBLAST_DENSITY * 1.0"
       },
       "maltiezfirearms:itemtypes/firearms/arquebus.json": {
-        "behaviors/2/properties/systems/projectile/damageMultiplier": "DAMAGE * 1.375",
-        "behaviors/2/properties/systems/aiming/dispersionMin_MOA": "DISPERSION * 120",
-        "behaviors/2/properties/systems/particles/fire/0/intensity": "SMOKE_DENSITY * 0.6",
-        "behaviors/2/properties/systems/particles/fire/1/intensity": "SMOKE_DENSITY * 0.6",
-        "behaviors/2/properties/systems/particles/fire/2/intensity": "SMOKE_DENSITY * 0.6",
-        "behaviors/2/properties/systems/particles/fire/3/intensity": "SMOKE_DENSITY * 0.6",
-        "behaviors/2/properties/systems/particles/fire/4/intensity": "FIREBLAST_DENSITY * 0.6"
+        "behaviorsByType/*/2/properties/systems/projectile/damageMultiplier": "DAMAGE * 1.375",
+        "behaviorsByType/*/2/properties/systems/aiming/dispersionMin_MOA": "DISPERSION * 120",
+        "behaviorsByType/*/2/properties/systems/particles/fire/0/intensity": "SMOKE_DENSITY * 0.6",
+        "behaviorsByType/*/2/properties/systems/particles/fire/1/intensity": "SMOKE_DENSITY * 0.6",
+        "behaviorsByType/*/2/properties/systems/particles/fire/2/intensity": "SMOKE_DENSITY * 0.6",
+        "behaviorsByType/*/2/properties/systems/particles/fire/3/intensity": "SMOKE_DENSITY * 0.6",
+        "behaviorsByType/*/2/properties/systems/particles/fire/4/intensity": "FIREBLAST_DENSITY * 0.6"
       },
       "maltiezfirearms:itemtypes/firearms/pistol.json": {
-        "behaviors/2/properties/systems/projectile/damageMultiplier": "DAMAGE * 1.0",
-        "behaviors/2/properties/systems/aiming/dispersionMin_MOA": "DISPERSION * 150",
-        "behaviors/2/properties/systems/particles/fire/0/intensity": "SMOKE_DENSITY * 0.3",
-        "behaviors/2/properties/systems/particles/fire/1/intensity": "SMOKE_DENSITY * 0.3",
-        "behaviors/2/properties/systems/particles/fire/2/intensity": "SMOKE_DENSITY * 0.3",
-        "behaviors/2/properties/systems/particles/fire/3/intensity": "SMOKE_DENSITY * 0.3",
-        "behaviors/2/properties/systems/particles/fire/4/intensity": "FIREBLAST_DENSITY * 0.3"
+        "behaviorsByType/*/2/properties/systems/projectile/damageMultiplier": "DAMAGE * 1.0",
+        "behaviorsByType/*/2/properties/systems/aiming/dispersionMin_MOA": "DISPERSION * 150",
+        "behaviorsByType/*/2/properties/systems/particles/fire/0/intensity": "SMOKE_DENSITY * 0.3",
+        "behaviorsByType/*/2/properties/systems/particles/fire/1/intensity": "SMOKE_DENSITY * 0.3",
+        "behaviorsByType/*/2/properties/systems/particles/fire/2/intensity": "SMOKE_DENSITY * 0.3",
+        "behaviorsByType/*/2/properties/systems/particles/fire/3/intensity": "SMOKE_DENSITY * 0.3",
+        "behaviorsByType/*/2/properties/systems/particles/fire/4/intensity": "FIREBLAST_DENSITY * 0.3"
       },
       "maltiezfirearms:itemtypes/ammunition/powderflask.json": {
         "behaviors/0/properties/operations/load/systems/initial/3/amount": "POWDER_CONSUMPTION"
