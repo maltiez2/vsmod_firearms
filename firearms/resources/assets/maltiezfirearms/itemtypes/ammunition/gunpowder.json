@@ -11,50 +11,7 @@
     "shelvable": true,
     "onDisplayTransform": {"translation": {"x": 0.05, "y": 0, "z": 0}, "origin": {"x": 0.5, "y": 0, "z": 0.5}, "scale": 0.65}
   },
-  "behaviorsbyType": {
-    "*-fine": [
-      {
-        "name": "FiniteStateMachine",
-        "properties": {
-          "initialState": "dry",
-          "systems": {"wet": {"class": "ChangeGroup"}},
-          "operations": {
-            "wet": {
-              "class": "Instant",
-              "inputs": ["status-swimming", "status-submerged"],
-              "states": {"initial": "dry", "final": "dry"},
-              "systems": [{"code": "wet", "group": "state", "value": "wet"}]
-            }
-          },
-          "inputs": {
-            "status-swimming": {"class": "Status", "status": "Swimming", "slot": "Inventory"},
-            "status-submerged": {"class": "Status", "status": "EyesSubmerged", "slot": "Inventory"}
-          }
-        }
-      }
-    ],
-    "*-coarse": [
-      {
-        "name": "FiniteStateMachine",
-        "properties": {
-          "initialState": "dry",
-          "systems": {"wet": {"class": "ChangeGroup"}},
-          "operations": {
-            "wet": {
-              "class": "Instant",
-              "inputs": ["status-swimming", "status-submerged"],
-              "states": {"initial": "dry", "final": "dry"},
-              "systems": [{"code": "wet", "group": "state", "value": "wet"}]
-            }
-          },
-          "inputs": {
-            "status-swimming": {"class": "Status", "status": "Swimming", "slot": "Inventory"},
-            "status-submerged": {"class": "Status", "status": "EyesSubmerged", "slot": "Inventory"}
-          }
-        }
-      }
-    ]
-  },
+  "behaviors": [],
   "storageFlags": 257,
   "maxstacksize": 64,
   "materialDensity": 500,

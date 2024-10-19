@@ -1,0 +1,76 @@
+﻿{
+  "firearms-shoulder": {
+    "Hold": true,
+    "PlayerKeyFrames": [
+      {
+        "EasingTime": 300,
+        "EasingFunction": "Sin",
+        "DetachedAnchor": false,
+        "SwitchArms": false,
+        "PitchFollow": false,
+        "FOVMultiplier": 1,
+        "BobbingAmplitude": 1,
+        "Elements": {"ItemAnchor": [-7.5, 0, 0, 0, 2, -60], "LowerArmR": [0, 0, 0, 0, 0, -45], "UpperArmR": [0, 0, 0, 0, 0, 0]}
+      }
+    ],
+    "ItemKeyFrames": [],
+    "SoundFrames": [],
+    "ItemAnimationStart": -1,
+    "ItemAnimationEnd": -1
+  },
+  "firearms-ready": {
+    "Hold": true,
+    "PlayerKeyFrames": [
+      {
+        "EasingTime": 300,
+        "EasingFunction": "Sin",
+        "DetachedAnchor": false,
+        "SwitchArms": false,
+        "PitchFollow": true,
+        "FOVMultiplier": 1,
+        "BobbingAmplitude": 0.8,
+        "Elements": {
+          "ItemAnchor": [-1.2, 1.6, -0.4, -36, -10, 110],
+          "LowerArmR": [0, 0, 0, 0, 0, -109],
+          "UpperArmR": [0, 0, 0, 0, 27, 0],
+          "ItemAnchorL": [0, 0, 0, 0, 0, 0],
+          "LowerArmL": [0, 0, 0, 0, 0, -35],
+          "UpperArmL": [0, 0, 0, 0, 12, -45]
+        }
+      }
+    ],
+    "ItemKeyFrames": [],
+    "SoundFrames": [],
+    "ItemAnimationStart": -1,
+    "ItemAnimationEnd": -1
+  },
+  "firearms-aim": {
+    "Hold": true,
+    "PlayerKeyFrames": [
+      {
+        "EasingTime": 300,
+        "EasingFunction": "Sin",
+        "DetachedAnchor": false,
+        "SwitchArms": false,
+        "PitchFollow": true,
+        "PitchDontFollow": false,
+        "FOVMultiplier": 0.85,
+        "BobbingAmplitude": 0.65,
+        "Elements": {
+          "ItemAnchor": [0, 1.97, 0.93999994, 18.6, 19, 139.6],
+          "LowerArmR": [0, 0, 0, 0, 0, -111],
+          "UpperArmR": [0, 0, 0, 0, 23, -34],
+          "ItemAnchorL": [0, 0, 0, 0, 0, 0],
+          "LowerArmL": [0, 0, 0, 0, 0, -11],
+          "UpperArmL": [0, 0, 0, 0, -10, -92]
+        }
+      }
+    ],
+    "ItemKeyFrames": [],
+    "SoundFrames": [],
+    "ParticlesFrames": [],
+    "CallbackFrames": [],
+    "ItemAnimationStart": -1,
+    "ItemAnimationEnd": -1
+  }
+}

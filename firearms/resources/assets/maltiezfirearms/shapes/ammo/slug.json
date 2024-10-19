@@ -1,0 +1,27 @@
+{
+	"editor": {
+		"allAngles": false,
+		"entityTextureMode": false
+	},
+	"textureWidth": 16,
+	"textureHeight": 16,
+	"textureSizes": {
+	},
+	"textures": {
+	},
+	"elements": [
+		{
+			"name": "Bullet",
+			"from": [ 7.25, -0.75, 7.25 ],
+			"to": [ 8.75, 0.75, 8.75 ],
+			"rotationOrigin": [ 8.0, 0.0, 8.0 ],
+			"faces": {
+				"north": { "texture": "#metal", "uv": [ 6.5, 7.0, 8.0, 8.5 ] },
+				"east": { "texture": "#metal", "uv": [ 6.5, 6.5, 8.0, 8.0 ] },
+				"south": { "texture": "#metal", "uv": [ 6.5, 6.0, 8.0, 7.5 ] },
+				"west": { "texture": "#metal", "uv": [ 4.0, 8.0, 5.5, 9.5 ] },
+				"up": { "texture": "#metal", "uv": [ 7.0, 6.5, 8.5, 8.0 ] },
+				"down": { "texture": "#metal", "uv": [ 9.0, 4.5, 10.5, 6.0 ] }
+			}
+		}
+	]}

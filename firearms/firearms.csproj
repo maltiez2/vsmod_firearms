@@ -3,13 +3,13 @@
   <PropertyGroup>
     <ModName>Firearms</ModName>
     <ModType>code</ModType>
-    <GameVersion>1.19.4</GameVersion>
-    <Version>0.5.4</Version>
+    <GameVersion>1.20.0-pre.5</GameVersion>
+    <ModVersion>0.6.0</ModVersion>
     <ModId>maltiezfirearms</ModId>
     <Description>Black powder firearms</Description>
     <Side>Universal</Side>
     <RequiredOnClient>true</RequiredOnClient>
-    <RequiredOnServer>false</RequiredOnServer>
+    <RequiredOnServer>true</RequiredOnServer>
   </PropertyGroup>
 
   <!-- Authors -->
@@ -29,11 +29,8 @@
     <Dependencies Include="game">
       <Version>$(GameVersion)</Version>
     </Dependencies>
-    <Dependencies Include="fsmlib">
-      <Version>0.2.15</Version>
-    </Dependencies>
-    <Dependencies Include="configlib">
-      <Version>0.4.2</Version>
+    <Dependencies Include="combatoverhaul">
+      <Version>*</Version>
     </Dependencies>
   </ItemGroup>
 
@@ -42,6 +39,7 @@
     <TargetFramework>net7.0</TargetFramework>
     <Nullable>enable</Nullable>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
   <!-- Paths -->
@@ -53,84 +51,23 @@
     <AssetsDir>$(ProjectDir)\resources\assets</AssetsDir>
     <ModIconFile>$(ProjectDir)\resources\modicon.png</ModIconFile>
     <ReleasesDir>$(ProjectDir)\Releases</ReleasesDir>
-    <ReleaseFile>$(ModId)_$(Version).zip</ReleaseFile>
+    <ReleaseFile>$(ModId)_$(ModVersion).zip</ReleaseFile>
     <ReleasePath>$(ReleasesDir)\$(ReleaseFile)</ReleasePath>
+    <CombatOverhaulDir></CombatOverhaulDir>
   </PropertyGroup>
-
-  <ItemGroup>
-    <PackageReference Include="VSImGui" Version="0.0.6" />
-  </ItemGroup>
 
   <!-- References to libraries that are being used in project -->
   <ItemGroup>
-    <!-- Vintage Story dependencies: wont be copied into output directory -->
-    <Reference Include="OpenTK.Compute">
-      <HintPath>$(GameDirectory)\Lib\OpenTK.Compute.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="OpenTK.Core">
-      <HintPath>$(GameDirectory)\Lib\OpenTK.Core.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="OpenTK.Graphics">
-      <HintPath>$(GameDirectory)\Lib\OpenTK.Graphics.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="OpenTK.Input">
-      <HintPath>$(GameDirectory)\Lib\OpenTK.Input.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="OpenTK.Mathematics">
-      <HintPath>$(GameDirectory)\Lib\OpenTK.Mathematics.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="OpenTK.Windowing.Common">
-      <HintPath>$(GameDirectory)\Lib\OpenTK.Windowing.Common.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="OpenTK.Windowing.Desktop">
-      <HintPath>$(GameDirectory)\Lib\OpenTK.Windowing.Desktop.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="OpenTK.Windowing.GraphicsLibraryFramework">
-      <HintPath>$(GameDirectory)\Lib\OpenTK.Windowing.GraphicsLibraryFramework.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="protobuf-net">
-      <HintPath>$(GameDirectory)/Lib/protobuf-net.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="0Harmony">
-      <HintPath>$(GameDirectory)/Lib/0Harmony.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>$(GameDirectory)/Lib/Newtonsoft.Json.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <!-- Vintage Story own libraries: wont be copied into output directory -->
-    <Reference Include="VintagestoryAPI">
-      <HintPath>$(GameDirectory)/VintagestoryAPI.dll</HintPath>
-      <Private>false</Private>
-    </Reference>
-    <Reference Include="VintagestoryLib">
-      <HintPath>$(GameDirectory)/VintagestoryLib.dll</HintPath>
-      <Private>false</Private>
-    </Reference>
-    <Reference Include="VSSurvivalMod">
-      <HintPath>$(GameDirectory)/Mods/VSSurvivalMod.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="VSEssentials">
-      <HintPath>$(GameDirectory)/Mods/VSEssentials.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="VSCreativeMod">
-      <HintPath>$(GameDirectory)/Mods/VSCreativeMod.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
+    <PackageReference Include="VSImGui" Version="0.0.6" />
+    <Reference Include="$(GameDirectory)/**/*.dll" Private="false" />
+    <Reference Include="$(ProjectDir)/../../CombatOverhaul/bin/Release/Mods/combatoverhaul/CombatOverhaul.dll" Private="false" />
   </ItemGroup>
-  
+
+  <!-- Forces rebuild -->
+  <Target Name="ForceRebuild" BeforeTargets="BeforeBuild">
+    <Touch Files="@(Compile)" AlwaysCreate="true" />
+  </Target>
+ 
   <!-- Formatting JSON files -->
   <PropertyGroup>
     <Scripts>$(ProjectDir)\..\scripts</Scripts>
@@ -141,6 +78,7 @@
     <AssetsToFormat Include="$(AssetsDir)\$(ModId)\itemtypes" />
     <AssetsToFormat Include="$(AssetsDir)\$(ModId)\patches" />
     <AssetsToFormat Include="$(AssetsDir)\$(ModId)\entities" />
+    <AssetsToFormat Include="$(AssetsDir)\$(ModId)\config\animations" />
   </ItemGroup>
   
 
@@ -155,21 +93,21 @@
   </PropertyGroup>
 
   <!-- Creates/updates modinfo.json file in build directory -->
-  <Target Name="ModInfo" AfterTargets="Build">
+  <Target Name="ModInfo" BeforeTargets="CopyFilesToOutput">
     <PropertyGroup>
       <ModInfo>
 {
     "type": "$(ModType)",
     "name": "$(ModName)",
     "modid": "$(ModId)",
-    "version": "$(Version)",
+    "version": "$(ModVersion)",
 
     "description": "$(Description)",
     "authors": [ @(ModInfoAuthors->'"%(Identity)"', ', ') ],
     "translation": [ @(ModInfoTranslators->'"%(Identity)"', ', ') ],
 
     "dependencies": {
-        @(Dependencies->'"%(Identity)": "%(Version)"', ', ')
+        @(Dependencies->'"%(Identity)": "%(ModVersion)"', ', ')
     },
 
     "side" : "$(Side)",
@@ -183,12 +121,12 @@
   </Target>
 
   <!-- Formats asssets files -->
-  <Target Name="Format" AfterTargets="ModInfo">
+  <Target Name="Format" AfterTargets="ModInfo" BeforeTargets="CopyFilesToOutput">
     <Exec Command="python $(Formatter) -a -d %(AssetsToFormat.Identity)" />
   </Target>
 
   <!-- Copies modicon and assets if it exists into output directory -->
-  <Target Name="CopyFilesToOutput" AfterTargets="Format">
+  <Target Name="CopyFilesToOutput" AfterTargets="Format" BeforeTargets="BeforeBuild">
     <ItemGroup>
       <ModIcon Include="$(ModIconFile)" />
       <AssetsFolder Include="$(AssetsDir)\**\*.*" />
@@ -200,12 +138,7 @@
   </Target>
 
   <!-- Archives output directory into zip and puts it into Releases folder -->
-  <Target Name="ZipFiles" AfterTargets="CopyFilesToOutput" Condition=" '$(Configuration)' == 'Release' ">
-    <!-- Content mod does not need empty dll, but csproj is required to build one, so we just delete it -->
-    <ItemGroup>
-      <ExtraFiles Include="$(OutputPath)\*.deps.json" />
-    </ItemGroup>
-    <Delete Files="@(ExtraFiles)" />
+  <Target Name="ZipFiles" AfterTargets="Build" Condition=" '$(Configuration)' == 'Release' ">
     <Message Text="Pachaging into '$(ReleaseFile)'" Importance="high" />
     <MakeDir Directories="$(ReleasesDir)" />
     <Delete Files="$(ReleasePath)" />

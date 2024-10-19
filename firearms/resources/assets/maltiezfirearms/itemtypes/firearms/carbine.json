@@ -1,6 +1,6 @@
 ﻿{
   "code": "carbine",
-  "class": "Item",
+  "class": "Firearms:Muzzleloader",
   "creativeinventory": {"maltiezfirearms": ["*"]},
   "maxstacksize": 1,
   "durability": 1250,
@@ -17,257 +17,54 @@
         "collisionBox": {"x1": 0, "y1": 0, "z1": 0, "x2": 0, "y2": 0, "z2": 0}
       }
     },
-    {
-      "name": "AnimatableProcedural",
-      "properties": {
-        "animated-shape": "maltiezfirearms:firearms/carbine-animated-tp",
-        "animated-shape-fp": "maltiezfirearms:firearms/carbine-animated-fp",
-        "only-when-animating": false
-      }
-    },
-    {
-      "name": "FiniteStateMachine",
-      "properties": {
-        "PreventAttack": true,
-        "initialState": "unloaded",
-        "systems": {
-          "camera": {"class": "CameraSettings"},
-          "suppress-animation": {"class": "PlayerAnimation"},
-          "durability": {"Class": "Durability"},
-          "sound": {"class": "Sounds", "domain": "maltiezfirearms"},
-          "player-animation": {
-            "class": "ProceduralPlayerAnimation",
-            "categories": {"hands": {"blending": "Average", "weight": 1024}, "recoil": {"blending": "AddAverage", "weight": 1}, "empty": {"blending": "Average", "weight": 16}},
-            "animations": {
-              "idle": [{"action": "EaseIn", "animation": "carbine-idle", "duration_ms": 700, "dynamic": "CosShifted", "frame": 0, "separateFp": true}],
-              "load": [{"action": "EaseIn", "animation": "carbine-load", "duration_ms": 700, "dynamic": "CosShifted", "frame": 0, "separateFp": true}],
-              "prime": [{"action": "EaseIn", "animation": "carbine-prime", "duration_ms": 700, "dynamic": "CosShifted", "frame": 0, "separateFp": true}],
-              "aim": [{"action": "EaseIn", "animation": "carbine-aim", "duration_ms": 600, "dynamic": "SinQuadratic", "frame": 0, "separateFp": true}],
-              "ease": [{"action": "EaseOut", "animation": "carbine-idle", "duration_ms": 300, "dynamic": "CosShifted", "frame": 0, "separateFp": true}],
-              "empty": [{"action": "EaseIn", "animation": "firearmsempty", "duration_ms": 200, "dynamic": "Linear", "frame": 0, "separateFp": true}],
-              "empty-stop": [{"action": "EaseOut", "animation": "firearmsempty", "duration_ms": 200, "dynamic": "Linear", "frame": 0, "separateFp": true}],
-              "recoil": [
-                {"action": "EaseIn", "animation": "carbine-recoil", "duration_ms": 150, "dynamic": "Sin", "frame": 0},
-                {"action": "EaseOut", "animation": "carbine-recoil", "duration_ms": 600, "dynamic": "CosShifted", "frame": 0}
-              ],
-              "melee": [
-                {"action": "EaseIn", "animation": "carbine-melee", "duration_ms": 200, "dynamic": "Sin", "frame": 0, "separateFp": true},
-                {"action": "EaseIn", "animation": "carbine-melee", "duration_ms": 200, "dynamic": "Cubic", "frame": 1, "separateFp": true},
-                {"action": "EaseOut", "animation": "carbine-melee", "duration_ms": 300, "dynamic": "CosShifted", "separateFp": true}
-              ]
-            }
-          },
-          "stats": {"class": "Stats"},
-          "item-animation": {
-            "class": "ProceduralItemAnimation",
-            "categories": {"main": {}},
-            "animations": {
-              "unloaded": [{"action": "Set", "animation": "load", "frame": 0}],
-              "loaded": [{"action": "Set", "animation": "prime", "frame": 0}],
-              "primed": [{"action": "Set", "animation": "fire", "frame": 0}],
-              "load": [
-                {"action": "Set", "animation": "load", "frame": 1},
-                {"action": "EaseIn", "animation": "load", "duration_ms": 1000, "dynamic": "Linear", "frame": 1},
-                {"action": "Play", "animation": "load", "duration_ms": 8000, "dynamic": "Linear", "startFrame": 1, "endFrame": 214}
-              ],
-              "prime": [
-                {"action": "Set", "animation": "prime", "frame": 0},
-                {"action": "EaseIn", "animation": "prime", "duration_ms": 500, "dynamic": "Linear", "frame": 0},
-                {"action": "Play", "animation": "prime", "duration_ms": 2500, "dynamic": "Linear", "startFrame": 0, "endFrame": 59}
-              ],
-              "fire": [{"action": "Play", "animation": "fire", "duration_ms": 150, "dynamic": "Linear", "startFrame": 0, "endFrame": 29}]
-            }
-          },
-          "particles": {
-            "class": "Particles",
-            "fire": [
-              {"domain": "maltiezfirearms", "code": "smoke-1", "position": [0.15, -0.2, 1.5], "velocity": [0, 0, 0.3]},
-              {"domain": "maltiezfirearms", "code": "smoke-2", "position": [0.15, -0.2, 2], "velocity": [0, 0, 1]},
-              {"domain": "maltiezfirearms", "code": "smoke-3", "position": [0.15, -0.2, 2.5], "velocity": [0, 0, 2]},
-              {"domain": "maltiezfirearms", "code": "smoke-small", "position": [0.15, -0.2, 0.5], "velocity": [0.3, 0.3, 0]},
-              {"domain": "maltiezfirearms", "code": "fireblast-1", "position": [0.15, -0.12, 1.5], "velocity": [0, 0, 50]}
-            ]
-          },
-          "ammo-other": {
-            "class": "Requirements",
-            "load-powder": {
-              "requirements": [{"durability": 11, "location": "maltiezfirearms:powderflask-*", "destroy": false, "description": "maltiezfirearms:requirement-powderflask"}]
-            },
-            "load-patch": {"requirements": [{"amount": 1, "location": "maltiezfirearms:linenpatch", "description": "maltiezfirearms:item-linenpatch"}]},
-            "prime": {"requirements": [{"durability": 1, "location": "maltiezfirearms:powderflask-*", "destroy": false, "description": "maltiezfirearms:requirement-powderflask"}]},
-            "empty-offhand": {"slot": "OffHand", "search": "Blacklist"}
-          },
-          "ammo-bullet": {
-            "class": "Requirements",
-            "selectorRequirement": "bullet",
-            "bullet": {"requirements": [{"amount": 1, "location": "maltiezfirearms:slug-*", "description": "maltiezfirearms:requirement-slug"}]}
-          },
-          "projectile": {"class": "Projectiles", "stackSystem": "ammo-bullet", "speed": 3, "aimingSystem": "aiming", "description": "maltiezfirearms:weapon-projectile-stats"},
-          "aiming": {"class": "Aiming", "duration": 600, "dispersionMin_MOA": 70, "dispersionMax_MOA": 480, "description": "maltiezfirearms:system-desctiption-aim"},
-          "melee": {
-            "class": "Melee",
-            "soundSystem": "sound",
-            "attacks": {
-              "melee": {
-                "duration": 400,
-                "hitWindowStart_ms": 360,
-                "hitWindowEnd_ms": 410,
-                "damageTypes": [{"sound": "slash_sound", "damage": 2, "knockback": 1, "reach": 1.5, "type": "BluntAttack", "damage_stats": "value * meleeWeaponsDamage"}]
-              }
-            }
-          }
-        },
-        "operations": {
-          "load": {
-            "class": "Delayed",
-            "timeout": 9000,
-            "states": {"initial": "unloaded", "timeout": "loaded", "transitional": "load", "final": "unloaded"},
-            "inputs": {"initial": "mouse_right_down", "unloaded": ["mouse_right_up", "slot-dropped", "slot-deselected"]},
-            "systems": {
-              "initial": [
-                {"code": "player-animation", "action": "start", "animation": "load", "category": "hands"},
-                {"code": "item-animation", "action": "start", "animation": "load", "category": "main"},
-                {"code": "camera", "action": "set", "setting": "WalkBobbingAmplitude", "value": 0.67},
-                {"code": "sound", "action": "play", "sound": "carbine-load"},
-                {"code": "stats", "stat": "walkspeed", "value": -0.8},
-                {"code": "ammo-other", "action": "check", "requirement": "empty-offhand"},
-                {"code": "ammo-other", "action": "check", "requirement": "load-powder"},
-                {"code": "ammo-other", "action": "take", "requirement": "load-patch"},
-                {"code": "ammo-bullet", "action": "take", "requirement": "bullet"}
-              ],
-              "unloaded": [
-                {"code": "player-animation", "action": "start", "animation": "idle", "category": "hands"},
-                {"code": "item-animation", "action": "start", "animation": "unloaded", "category": "main"},
-                {"code": "sound", "action": "stop", "sound": "carbine-load"},
-                {"code": "camera", "action": "reset", "setting": "WalkBobbingAmplitude"},
-                {"code": "stats", "stat": "walkspeed", "value": 0},
-                {"code": "ammo-other", "action": "put"},
-                {"code": "ammo-bullet", "action": "put"}
-              ],
-              "timeout": [{"code": "ammo-other", "action": "take", "requirement": "load-powder"}, {"code": "ammo-other", "action": "clear"}]
-            }
-          },
-          "prime": {
-            "class": "Delayed",
-            "timeout": 3000,
-            "states": [{"initial": "loaded", "timeout": "primed", "transitional": "prime", "final": "loaded"}],
-            "inputs": {"initial": ["mouse_right_down", "loading-finished"], "loaded": ["mouse_right_up", "slot-dropped", "slot-deselected"]},
-            "systems": {
-              "initial": [
-                {"code": "player-animation", "action": "start", "animation": "prime", "category": "hands"},
-                {"code": "item-animation", "action": "start", "animation": "prime", "category": "main"},
-                {"code": "camera", "action": "set", "setting": "WalkBobbingAmplitude", "value": 0.67},
-                {"code": "sound", "action": "play", "sound": "carbine-prime"},
-                {"code": "stats", "stat": "walkspeed", "value": -0.4},
-                {"code": "ammo-other", "action": "check", "requirement": "empty-offhand"},
-                {"code": "ammo-other", "action": "check", "requirement": "prime"}
-              ],
-              "timeout": [{"code": "ammo-other", "action": "take", "requirement": "prime"}, {"code": "ammo-other", "action": "clear"}],
-              "loaded": [
-                {"code": "player-animation", "action": "start", "animation": "idle", "category": "hands"},
-                {"code": "item-animation", "action": "start", "animation": "loaded", "category": "main"},
-                {"code": "camera", "action": "reset", "setting": "WalkBobbingAmplitude"},
-                {"code": "sound", "action": "stop", "sound": "carbine-prime"},
-                {"code": "stats", "stat": "walkspeed", "value": 0},
-                {"code": "ammo-other", "action": "put"}
-              ]
-            }
-          },
-          "aim": {
-            "class": "Instant",
-            "inputs": ["mouse_right_down_aim", "priming-finished"],
-            "states": [{"initial": "primed", "final": "aimed"}],
-            "systems": [
-              {"code": "ammo-other", "action": "check", "requirement": "empty-offhand"},
-              {"code": "player-animation", "action": "start", "animation": "aim", "category": "hands"},
-              {"code": "player-animation", "action": "start", "animation": "empty", "category": "empty"},
-              {"code": "camera", "action": "set", "setting": "FirstPersonHandsPitch", "value": 1.25},
-              {"code": "camera", "action": "set", "setting": "WalkBobbingAmplitude", "value": 0.65},
-              {"code": "stats", "stat": "walkspeed", "value": -0.3},
-              {"code": "aiming", "action": "start"}
-            ]
-          },
-          "shoot": {
-            "class": "Instant",
-            "inputs": "mouse_left_up",
-            "states": [{"initial": "aimed", "final": "unloaded"}],
-            "systems": [
-              {"code": "player-animation", "action": "start", "animation": "recoil", "category": "recoil"},
-              {"code": "item-animation", "action": "start", "animation": "fire", "category": "main"},
-              {"code": "sound", "action": "play", "sound": "carbine-fire"},
-              {"code": "particles", "effects": "fire"},
-              {"code": "projectile"},
-              {"code": "ammo-other", "action": "clear"},
-              {"code": "ammo-bullet", "action": "clear"},
-              {"code": "durability", "action": "change", "amount": -1, "destroy": true}
-            ]
-          },
-          "ease": {
-            "class": "Instant",
-            "inputs": ["slot-selected", "slot-added", "mouse_right_up"],
-            "states": [{"initial": "aimed", "final": "primed"}, {"initial": "unloaded", "final": "unloaded"}],
-            "systems": [
-              {"code": "player-animation", "action": "start", "animation": "idle", "category": "hands"},
-              {"code": "player-animation", "action": "start", "animation": "empty-stop", "category": "empty"},
-              {"code": "camera", "action": "reset", "setting": "FirstPersonHandsPitch"},
-              {"code": "camera", "action": "reset", "setting": "WalkBobbingAmplitude"},
-              {"code": "stats", "stat": "walkspeed", "value": 0}
-            ]
-          },
-          "easeOut": {
-            "class": "Instant",
-            "inputs": ["slot-dropped", "slot-deselected"],
-            "states": [
-              {"initial": "aimed", "final": "primed"},
-              {"initial": "primed", "final": "primed"},
-              {"initial": "unloaded", "final": "unloaded"},
-              {"initial": "loaded", "final": "loaded"}
-            ],
-            "systems": [
-              {"code": "player-animation", "action": "start", "animation": "ease", "category": "hands"},
-              {"code": "player-animation", "action": "start", "animation": "empty-stop", "category": "empty"},
-              {"code": "stats", "stat": "walkspeed", "value": 0},
-              {"code": "aiming", "action": "stop"}
-            ]
-          },
-          "easeIn": {
-            "class": "Instant",
-            "inputs": ["slot-selected", "slot-added"],
-            "states": [
-              {"initial": "primed", "final": "primed"},
-              {"initial": "loaded", "final": "loaded"},
-              {"initial": "unloaded", "final": "unloaded"},
-              {"initial": "aimed", "final": "primed"},
-              {"initial": "load", "final": "unloaded"},
-              {"initial": "prime", "final": "loaded"}
-            ],
-            "systems": [{"code": "player-animation", "action": "start", "animation": "idle", "category": "hands"}]
-          }
-        },
-        "inputs": {
-          "mouse_right_down": {"class": "Mouse", "key": "Right", "alt": false, "type": "pressed", "name": "maltiezfirearms:weapon-reload"},
-          "mouse_right_down_aim": {"class": "Mouse", "key": "Right", "alt": false, "type": "pressed", "name": "maltiezfirearms:weapon-aim"},
-          "mouse_left_down": {"class": "Mouse", "key": "Left", "alt": false, "type": "pressed"},
-          "mouse_right_up": {"class": "Mouse", "key": "Right", "alt": false, "type": "released", "handle": false},
-          "mouse_left_up": {"class": "Mouse", "key": "Left", "alt": false, "type": "released", "handle": false, "name": "maltiezfirearms:weapon-range-attack"},
-          "melee_attack": {"class": "Key", "key": "R", "name": "maltiezfirearms:weapon-melee-attack"},
-          "loading-finished": {"class": "OperationFinished", "operation": "load"},
-          "priming-finished": {"class": "OperationFinished", "operation": "prime"},
-          "slot-added": {"class": "SlotContent", "type": "AfterModified"},
-          "slot-dropped": {"class": "SlotContent", "type": "AllTaken"},
-          "slot-selected": {"class": "SlotSelected"},
-          "slot-deselected": {"class": "SlotChange"}
-        }
-      }
-    }
+    {"name": "CombatOverhaul:AnimatableAttachable", "properties": {"animated-shape": "maltiezfirearms:firearms/carbine"}}
   ],
   "attributes": {
     "toolrackTransform": {"translation": {"x": 1.4, "y": 0.55, "z": 0.5}, "rotation": {"x": 1, "y": 95, "z": -90}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 1.34},
     "groundStorageTransform": {"translation": {"x": 0.55, "y": 0.44, "z": 0.75}, "rotation": {"x": 100, "y": 4, "z": -101}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 0.81},
     "inWallmountTransform": {"translation": {"x": -0.38, "y": -0.03, "z": -0.04}, "rotation": {"x": 90, "y": -84, "z": 90}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 0.81},
-    "inWeaponrackTransform": {"translation": {"x": 0, "y": 0.02, "z": 0.08}, "rotation": {"x": 82, "y": 0, "z": 0}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 0.81}
+    "inWeaponrackTransform": {"translation": {"x": 0, "y": 0.02, "z": 0.08}, "rotation": {"x": 82, "y": 0, "z": 0}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 0.81},
+    "BulletDamageMultiplier": 1,
+    "BulletDamageStrength": 1,
+    "BulletVelocity": 4,
+    "BulletTransform": {"translation": {"x": -2.2, "y": 0.2, "z": -2.2}, "rotation": {"x": 0, "y": 0, "z": 0}, "scale": 0.3},
+    "FlaskTransform": {"Translation": {"X": 0, "Y": 0, "Z": 0}, "Rotation": {"X": 0, "Y": 0, "Z": 0}, "Origin": {"X": 0, "Y": 0, "Z": 0}, "Scale": 1},
+    "WaddingTransform": {"Translation": {"x": 0, "y": 0, "z": 0}, "Rotation": {"x": 0, "y": 0, "z": 0}, "Origin": {"X": 0, "Y": 0, "Z": 0}, "scale": 1},
+    "PrimingEquipmentTransform": {"Translation": {"X": 0, "Y": 0, "Z": 0}, "Rotation": {"X": 0, "Y": 0, "Z": 0}, "Origin": {"X": 0, "Y": 0, "Z": 0}, "Scale": 1},
+    "ProficiencyStat": "firearmsProficiency",
+    "IdleAnimation": "maltiezfirearms:firearms-shoulder",
+    "ReadyAnimation": "maltiezfirearms:firearms-ready",
+    "LoadAnimation": ["maltiezfirearms:firearms-carbine-load"],
+    "PrimeAnimation": "maltiezfirearms:firearms-carbine-prime",
+    "AimAnimation": "maltiezfirearms:firearms-carbine-aim",
+    "ShootAnimation": ["maltiezfirearms:firearms-carbine-shoot"],
+    "LoadedAnimation": "maltiezfirearms:firearms-carbine-loaded",
+    "PrimedAnimation": "maltiezfirearms:firearms-carbine-primed",
+    "MagazineSize": 1,
+    "BulletLoadedPerReload": 1,
+    "WaddingUsedPerReload": 1,
+    "LoadPowderConsumption": 3,
+    "PrimePowderConsumption": 1,
+    "LoadingRequirementWildcard": "",
+    "PrimingRequirementWildcard": "",
+    "AimingRequirementWildcard": "",
+    "BulletWildcard": "*slug-*",
+    "Aiming": {
+      "AimDifficulty": 1,
+      "CursorType": "None",
+      "AccuracyOvertimeSec": 0,
+      "ZeroingAngle": 0,
+      "AllowSprint": false,
+      "MoveSpeedPenalty": 0.1,
+      "AimDrift": 90,
+      "AimTwitch": 20,
+      "AnimationFollowX": 5.5,
+      "AnimationFollowY": 5.5,
+      "VerticalLimit": 0.25,
+      "VerticalOffset": -0.05
+    }
   },
-  "shape": {"base": "maltiezfirearms:firearms/carbine-animated-tp", "alternates": []},
+  "shape": {"base": "maltiezfirearms:firearms/carbine", "alternates": []},
   "heldTpHitAnimation": "firearmsempty",
   "heldLeftTpIdleAnimation": "firearmsempty",
   "heldLeftReadyAnimation": "firearmsempty",

@@ -7,8 +7,8 @@
     "inventoryTransformAttribute": "inPistolstandTransform",
     "rotateByType": {"*-north": {"y": 0}, "*-east": {"y": 270}, "*-west": {"y": 90}, "*-south": {"y": 180}}
   },
-  "class": "Firearms:GenericDisplayBlock",
-  "entityClass": "Firearms:GenericDisplayBlockEntity",
+  "class": "CombatOverhaul:GenericDisplayBlock",
+  "entityClass": "CombatOverhaul:GenericDisplayBlockEntity",
   "creativeinventory": {"maltiezfirearms": ["*-east"], "clutter": ["*-rusty-east"]},
   "shapeByType": {
     "*-north": {"base": "blocks/pistolstand", "rotateY": 0},

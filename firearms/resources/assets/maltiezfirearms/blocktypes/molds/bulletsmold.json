@@ -18,7 +18,7 @@
       "fillHeight": 1,
       "moldrackable": true,
       "onmoldrackTransform": {"rotation": {"z": 90}},
-      "drop": {"type": "item", "code": "maltiezfirearms:ammocasting-{itemtype}-{metal}", "quantity": 1, "attributes": {"durabilityByType": {"*-slug-*": 8, "*-bullet-*": 16}}}
+      "drop": {"type": "item", "code": "maltiezfirearms:{itemtype}-{metal}", "quantityByType": {"*-slug-*": 8, "*-bullet-*": 16}}
     }
   },
   "entityClassByType": {"ammomold-*-burned": "ToolMold"},

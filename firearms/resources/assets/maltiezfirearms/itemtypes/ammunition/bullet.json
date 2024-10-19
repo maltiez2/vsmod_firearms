@@ -4,8 +4,7 @@
   "maxstacksize": 32,
   "storageFlags": 513,
   "variantgroups": [{"code": "material", "states": ["lead", "copper", "steel"]}],
-  "allowedVariants": ["*-lead", "*-copper", "*-steel"],
-  "shape": {"base": "maltiezfirearms:bullet"},
+  "shape": {"base": "ammo/bullet"},
   "textures": {"metal": {"base": "game:block/metal/plate/{material}"}},
   "behaviors": [
     {
@@ -24,20 +23,27 @@
       }
     },
     {
-      "name": "FSMAdvancedProjectile",
+      "name": "CombatOverhaul:Projectile",
       "properties": {
-        "damageTypesByType": {
-          "*-lead": [{"damage": 16, "knockback": 0.3, "type": "BluntAttack", "tier": 3}],
-          "*-copper": [{"damage": 8, "knockback": 0.1, "type": "BluntAttack", "tier": 2}, {"damage": 4, "knockback": 0, "type": "PiercingAttack", "tier": 2}],
-          "*-steel": [{"damage": 10, "knockback": 0, "type": "PiercingAttack", "tier": 7}]
-        },
-        "additionalDurabilityCostByType": {"*-lead": 0, "*-copper": 0, "*-steel": 4}
+        "stats": {
+          "AdditionalDurabilityCost": 0,
+          "CollisionRadius": 0.05,
+          "DamageStatsByType": {
+            "*-lead": {"DamageType": "BluntAttack", "Damage": 16},
+            "*-copper": {"DamageType": "BluntAttack", "Damage": 12},
+            "*-steel": {"DamageType": "BluntAttack", "Damage": 8}
+          },
+          "SpeedThreshold": 0.3,
+          "Knockback": 0.1,
+          "EntityCode": "maltiezfirearms:bullet-{material}",
+          "DurabilityDamage": 0,
+          "DropChance": 0
+        }
       }
     }
   ],
   "creativeinventory": {"maltiezfirearms": ["*"]},
-  "guiTransform": {"rotation": {"x": 66, "y": 0, "z": 44}, "origin": {"x": 0.6, "y": 0.6, "z": 0.6}, "scale": 4},
-  "fpHandTransform": {"translation": {"x": 0.15, "y": 0, "z": 0}, "rotation": {"x": 119, "y": 90, "z": -30}, "scale": 3},
-  "groundTransform": {"translation": {"x": 0, "y": 0, "z": 0}, "rotation": {"x": 0, "y": 0, "z": 0}, "origin": {"x": 0.5, "y": 0.47, "z": 0.5}, "scale": 2},
-  "attributes": {"breakChanceOnImpact": 1, "projectile": "maltiezfirearms:bullet-{material}"}
+  "guiTransform": {"translation": {"x": 0, "y": 0, "z": 0}, "rotation": {"x": 66, "y": 0, "z": 44}, "origin": {"x": 0, "y": -0.5, "z": 0.2}, "scale": 4},
+  "tpHandTransform": {"translation": {"x": -1.7, "y": -1.15, "z": -1.4}},
+  "groundTransform": {"translation": {"x": 0, "y": 0, "z": 0}, "rotation": {"x": 0, "y": 0, "z": 0}, "origin": {"x": 0.5, "y": 0.47, "z": 0.5}, "scale": 2}
 }

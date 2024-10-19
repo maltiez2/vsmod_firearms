@@ -1,6 +1,6 @@
 ﻿{
   "code": "bullet",
-  "class": "AdvancedEntityProjectile",
+  "class": "CombatOverhaul:Projectile",
   "variantgroups": [{"code": "material", "states": ["lead", "copper", "steel"]}],
   "hitboxSize": {"x": 0.125, "y": 0.125},
   "client": {

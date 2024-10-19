@@ -1,6 +1,6 @@
 {
 	"editor": {
-		"collapsedPaths": "Root/Pistol/Lever_origin/Wheel_charging_lever,Root/Pistol/Stock,Root/Pistol/Barrel,Root/Pistol/Flask_origin/Flask_origin_inner,Root/Pistol/Wheellock/Plate,Root/Pistol/Patch,Root/Pistol/Barrel/Barrel_top4,Root/Pistol/Wheellock,Root/Pistol/Barrel/Barrel_top3,Root/Pistol/Barrel/Barrel_top2,Root/Pistol/Trigger_assembly/Guard_plate,Root/Pistol/Flask_origin/Flask/Bottom_plate,Root/Arquebus_origin/Stock,Root/Pistol/Wheellock/Flint_arm,Root/Pistol/Barrel/Barrel_top,Root/Arquebus_origin/Barrel,Root/Arquebus_origin/Ramrod,Root/Pistol/Trigger_assembly",
+		"collapsedPaths": "Root/Pistol/Stock,Root/Pistol/Barrel,Root/Pistol/Wheellock/Plate,Root/Pistol/Patch,Root/Pistol/Barrel/Barrel_top4,Root/Pistol/Barrel/Barrel_top3,Root/Pistol/Barrel/Barrel_top2,Root/Pistol/Lever_origin,Root/Pistol/Flask_origin/Flask_origin_inner/Flask,Root/Pistol/Trigger_assembly/Guard_plate,Root/Pistol/Flask_origin/Flask/Bottom_plate,Root/Arquebus_origin/Stock,Root/Pistol/Wheellock/Flint_arm,Root/Pistol/Barrel/Barrel_top,Root/Arquebus_origin/Barrel,Root/Arquebus_origin/Ramrod,Root/Pistol/Trigger_assembly",
 		"allAngles": true,
 		"entityTextureMode": false
 	},
@@ -9,14 +9,14 @@
 	"textureSizes": {
 	},
 	"textures": {
-		"wood": "game:block/wood/debarked/oak",
-		"flaskwood": "game:block/wood/debarked/oak",
-		"brass": "game:block/metal/plate/brass",
-		"metal": "game:block/metal/plate/tinbronze",
-		"plain": "game:block/cloth/linen/plain",
-		"lead1": "game:block/metal/sheet-plain/lead1",
-		"rusty-iron2": "game:block/metal/tarnished/rusty-iron2",
-		"flint": "game:block/stone/flint"
+		"plain": "block/cloth/linen/plain",
+		"brass": "block/metal/plate/brass",
+		"metal": "block/metal/plate/tinbronze",
+		"lead1": "block/metal/sheet-plain/lead1",
+		"rusty-iron2": "block/metal/tarnished/rusty-iron2",
+		"flint": "block/stone/flint",
+		"flaskwood": "block/wood/debarked/oak",
+		"wood": "block/wood/debarked/oak"
 	},
 	"elements": [
 		{
@@ -328,9 +328,9 @@
 						},
 						{
 							"name": "Wheel_pin",
-							"from": [ -1.3, -1.1, -0.6 ],
-							"to": [ 0.5, -0.9, -0.4 ],
-							"rotationOrigin": [ -1.3, -1.1, -0.6 ],
+							"from": [ -1.2, -1.1, -0.6 ],
+							"to": [ 0.6, -0.9, -0.4 ],
+							"rotationOrigin": [ -1.2, -1.1, -0.6 ],
 							"faces": {
 								"north": { "texture": "#brass", "uv": [ 0.0, 0.0, 1.5, 0.5 ] },
 								"east": { "texture": "#brass", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
@@ -1035,8 +1035,8 @@
 					},
 					"attachmentpoints": [
 						{
-							"code": "bullet_attachment",
-							"posX": "0.15","posY": "0.15","posZ": "0.15",
+							"code": "bullet",
+							"posX": "0.1","posY": "0.1","posZ": "0.1",
 							"rotationX": "0.0","rotationY": "0.0","rotationZ": "0.0"
 						}
 					]
@@ -1368,6 +1368,13 @@
 												}
 											]
 										}
+									],
+									"attachmentpoints": [
+										{
+											"code": "flask",
+											"posX": "0.0","posY": "0.0","posZ": "0.0",
+											"rotationX": "0.0","rotationY": "0.0","rotationZ": "0.0"
+										}
 									]
 								}
 							]
@@ -1390,9 +1397,9 @@
 					"children": [
 						{
 							"name": "Wheel_charging_lever",
-							"from": [ 0.0, -0.15, -0.15 ],
-							"to": [ 0.3, 0.25, 1.15 ],
-							"rotationOrigin": [ 0.0, 0.05, 0.05 ],
+							"from": [ 0.0, -0.15, -1.15 ],
+							"to": [ 0.3, 0.25, 0.15 ],
+							"rotationOrigin": [ 0.0, 0.05, -0.95 ],
 							"faces": {
 								"north": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
 								"east": { "texture": "#metal", "uv": [ 0.0, 0.0, 1.0, 0.5 ] },
@@ -1464,6 +1471,13 @@
 										}
 									]
 								}
+							],
+							"attachmentpoints": [
+								{
+									"code": "priming",
+									"posX": "0.0","posY": "0.0","posZ": "0.0",
+									"rotationX": "0.0","rotationY": "0.0","rotationZ": "0.0"
+								}
 							]
 						}
 					]
@@ -1484,30 +1498,13 @@
 					"elements": {
 						"Ramrod": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
 						"Ramrod_shaft": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Bullet": { "offsetX": 64.0, "offsetY": 0.0, "offsetZ": 64.0 },
-						"Patch": { "offsetX": 64.0, "offsetY": 0.0, "offsetZ": 64.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Bullet": { "offsetX": 8.0, "offsetY": 0.0, "offsetZ": 23.0 },
+						"Patch": { "offsetX": 8.0, "offsetY": 0.0, "offsetZ": 23.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
 						"Linen_0": { "offsetX": 0.15, "offsetY": 0.15, "offsetZ": 0.0 },
 						"Linen_1": { "offsetX": -0.15, "offsetY": 0.15, "offsetZ": 0.0 },
 						"Linen_2": { "offsetX": 0.15, "offsetY": -0.15, "offsetZ": 0.0 },
 						"Linen_3": { "offsetX": -0.15, "offsetY": -0.15, "offsetZ": 0.0 },
-						"Flask_origin": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
-						"Flask_origin_inner": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Flask": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Plug": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
-					}
-				},
-				{
-					"frame": 1,
-					"elements": {
-						"Ramrod": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Ramrod_shaft": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Bullet": { "offsetX": 64.0, "offsetY": 0.0, "offsetZ": 64.0 },
-						"Patch": { "offsetX": 64.0, "offsetY": 0.0, "offsetZ": 64.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Linen_0": { "offsetX": 0.15, "offsetY": 0.15, "offsetZ": 0.0 },
-						"Linen_1": { "offsetX": -0.15, "offsetY": 0.15, "offsetZ": 0.0 },
-						"Linen_2": { "offsetX": 0.15, "offsetY": -0.15, "offsetZ": 0.0 },
-						"Linen_3": { "offsetX": -0.15, "offsetY": -0.15, "offsetZ": 0.0 },
-						"Flask_origin": { "offsetX": -48.0, "offsetY": 16.0, "offsetZ": -64.0 },
+						"Flask_origin": { "offsetX": -56.0, "offsetY": 0.0, "offsetZ": -48.0 },
 						"Flask_origin_inner": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
 						"Flask": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
 						"Plug": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
@@ -1522,7 +1519,7 @@
 						"Linen_1": { "offsetX": -0.15, "offsetY": 0.15, "offsetZ": 0.0 },
 						"Linen_2": { "offsetX": 0.15, "offsetY": -0.15, "offsetZ": 0.0 },
 						"Linen_3": { "offsetX": -0.15, "offsetY": -0.15, "offsetZ": 0.0 },
-						"Flask_origin": { "offsetX": -60.0, "offsetY": 0.9, "offsetZ": -79.0 },
+						"Flask_origin": { "offsetX": -56.0, "offsetY": 0.9, "offsetZ": -79.0 },
 						"Flask_origin_inner": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
 						"Flask": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
 						"Plug": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
@@ -1593,13 +1590,13 @@
 					"elements": {
 						"Ramrod": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
 						"Ramrod_shaft": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Bullet": { "offsetX": 16.0, "offsetY": 16.0, "offsetZ": 12.9 },
-						"Patch": { "offsetX": 16.0, "offsetY": 16.0, "offsetZ": 13.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Bullet": { "offsetX": 8.0, "offsetY": 0.0, "offsetZ": 23.0 },
+						"Patch": { "offsetX": 8.0, "offsetY": 0.0, "offsetZ": 23.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
 						"Linen_0": { "offsetX": 0.15, "offsetY": 0.15, "offsetZ": 0.0 },
 						"Linen_1": { "offsetX": -0.15, "offsetY": 0.15, "offsetZ": 0.0 },
 						"Linen_2": { "offsetX": 0.15, "offsetY": -0.15, "offsetZ": 0.0 },
 						"Linen_3": { "offsetX": -0.15, "offsetY": -0.15, "offsetZ": 0.0 },
-						"Flask_origin": { "offsetX": -48.0, "offsetY": 16.0, "offsetZ": -64.0 },
+						"Flask_origin": { "offsetX": -56.0, "offsetY": 0.0, "offsetZ": -48.0 },
 						"Flask_origin_inner": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
 						"Flask": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
 						"Plug": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
@@ -1616,7 +1613,6 @@
 						"Linen_1": { "offsetX": -0.15, "offsetY": 0.15, "offsetZ": 0.0 },
 						"Linen_2": { "offsetX": 0.15, "offsetY": -0.15, "offsetZ": 0.0 },
 						"Linen_3": { "offsetX": -0.15, "offsetY": -0.15, "offsetZ": 0.0 },
-						"Flask_origin": { "offsetX": -48.0, "offsetY": 16.0, "offsetZ": -64.0 },
 						"Flask_origin_inner": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
 						"Flask": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
 						"Plug": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
@@ -1633,14 +1629,13 @@
 						"Linen_1": { "offsetX": -0.15, "offsetY": 0.15, "offsetZ": 0.0 },
 						"Linen_2": { "offsetX": 0.15, "offsetY": -0.15, "offsetZ": 0.0 },
 						"Linen_3": { "offsetX": -0.15, "offsetY": -0.15, "offsetZ": 0.0 },
-						"Flask_origin": { "offsetX": -48.0, "offsetY": 16.0, "offsetZ": -64.0 },
 						"Flask_origin_inner": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
 						"Flask": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
 						"Plug": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
 					}
 				},
 				{
-					"frame": 47,
+					"frame": 46,
 					"elements": {
 						"Ramrod": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
 						"Bullet": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": -0.8 },
@@ -1649,6 +1644,22 @@
 						"Linen_1": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
 						"Linen_2": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
 						"Linen_3": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 }
+					}
+				},
+				{
+					"frame": 50,
+					"elements": {
+						"Ramrod": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Ramrod_shaft": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Bullet": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": -0.8 },
+						"Patch": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": -0.95, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Linen_0": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+						"Linen_1": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+						"Linen_2": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+						"Linen_3": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+						"Flask_origin_inner": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Flask": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Plug": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
 					}
 				},
 				{
@@ -1791,7 +1802,8 @@
 						"Linen_0": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
 						"Linen_1": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
 						"Linen_2": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
-						"Linen_3": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 }
+						"Linen_3": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+						"Flask_origin": { "offsetX": -56.0, "offsetY": 0.0, "offsetZ": -48.0 }
 					}
 				}
 			]
@@ -1807,14 +1819,13 @@
 				{
 					"frame": 0,
 					"elements": {
-						"Pistol": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Flask_origin": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Flask_origin": { "offsetX": -56.0, "offsetY": -16.0, "offsetZ": -64.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
 						"Flask_origin_inner": { "rotationX": 90.0, "rotationY": 0.0, "rotationZ": 0.0 },
 						"Flask": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
 						"Plug": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
 						"Flint_arm": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
 						"Pan_cover": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
-						"Lever_origin": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Lever_origin": { "offsetX": -56.0, "offsetY": -16.0, "offsetZ": -64.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
 						"Wheel_charging_lever": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
 					}
 				},
@@ -1823,11 +1834,23 @@
 					"elements": {
 						"Pan_cover": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
 						"Flint_arm": { "rotationX": -45.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Flask_origin": { "offsetX": -48.0, "offsetY": 0.0, "offsetZ": -48.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Flask_origin": { "offsetX": -56.0, "offsetY": -16.0, "offsetZ": -64.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
 						"Flask_origin_inner": { "rotationX": 90.0, "rotationY": 0.0, "rotationZ": 0.0 },
 						"Flask": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
 						"Plug": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Lever_origin": { "offsetX": -68.0, "offsetY": 0.0, "offsetZ": -40.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Wheel_charging_lever": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 10,
+					"elements": {
+						"Pan_cover": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+						"Flint_arm": { "rotationX": -45.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Flask_origin": { "offsetX": -56.0, "offsetY": -16.0, "offsetZ": -64.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Flask_origin_inner": { "rotationX": 90.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Flask": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Plug": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Lever_origin": { "offsetX": -56.0, "offsetY": -16.0, "offsetZ": -64.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
 						"Wheel_charging_lever": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
 					}
 				},
@@ -1858,7 +1881,6 @@
 				{
 					"frame": 28,
 					"elements": {
-						"Pistol": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
 						"Pan_cover": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
 						"Flint_arm": { "rotationX": -45.0, "rotationY": 0.0, "rotationZ": 0.0 },
 						"Flask_origin": { "offsetX": -60.0, "offsetY": 2.0, "offsetZ": -66.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
@@ -1871,13 +1893,25 @@
 				{
 					"frame": 40,
 					"elements": {
-						"Pistol": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
 						"Pan_cover": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
 						"Flint_arm": { "rotationX": -45.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Flask_origin": { "offsetX": -48.0, "offsetY": 0.0, "offsetZ": -48.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Flask_origin": { "offsetX": -56.0, "offsetY": -16.0, "offsetZ": -64.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
 						"Flask_origin_inner": { "rotationX": 90.0, "rotationY": 0.0, "rotationZ": 0.0 },
 						"Flask": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
 						"Plug": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Wheel_charging_lever": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 45,
+					"elements": {
+						"Pan_cover": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+						"Flint_arm": { "rotationX": -45.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Flask_origin": { "offsetX": -56.0, "offsetY": -16.0, "offsetZ": -64.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Flask_origin_inner": { "rotationX": 90.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Flask": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Plug": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Lever_origin": { "offsetX": -56.0, "offsetY": -16.0, "offsetZ": -64.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
 						"Wheel_charging_lever": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
 					}
 				},
@@ -1886,7 +1920,6 @@
 					"elements": {
 						"Pan_cover": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": -0.6 },
 						"Flint_arm": { "rotationX": -45.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Flask_origin": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
 						"Flask_origin_inner": { "rotationX": 90.0, "rotationY": 0.0, "rotationZ": 0.0 },
 						"Flask": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
 						"Plug": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
@@ -1896,10 +1929,8 @@
 				{
 					"frame": 55,
 					"elements": {
-						"Pistol": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
 						"Pan_cover": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": -0.6 },
 						"Flint_arm": { "rotationX": -11.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Flask_origin": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
 						"Flask_origin_inner": { "rotationX": 90.0, "rotationY": 0.0, "rotationZ": 0.0 },
 						"Flask": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
 						"Plug": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
@@ -1909,112 +1940,97 @@
 				{
 					"frame": 60,
 					"elements": {
-						"Pistol": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -15.0 },
 						"Pan_cover": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": -0.6 },
 						"Flint_arm": { "rotationX": -11.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Flask_origin": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
 						"Flask_origin_inner": { "rotationX": 90.0, "rotationY": 0.0, "rotationZ": 0.0 },
 						"Flask": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
 						"Plug": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Lever_origin": { "offsetX": -68.0, "offsetY": 0.0, "offsetZ": -40.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Lever_origin": { "offsetX": -56.0, "offsetY": -16.0, "offsetZ": -64.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
 						"Wheel_charging_lever": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
 					}
 				},
 				{
 					"frame": 68,
 					"elements": {
-						"Pistol": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -15.0 },
 						"Pan_cover": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": -0.6 },
 						"Flint_arm": { "rotationX": -11.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Flask_origin": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
 						"Flask_origin_inner": { "rotationX": 90.0, "rotationY": 0.0, "rotationZ": 0.0 },
 						"Flask": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
 						"Plug": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Lever_origin": { "offsetX": -66.0, "offsetY": -0.1, "offsetZ": -68.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Lever_origin": { "offsetX": -62.0, "offsetY": -0.1, "offsetZ": -67.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
 						"Wheel_charging_lever": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
 					}
 				},
 				{
 					"frame": 73,
 					"elements": {
-						"Pistol": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -15.0 },
 						"Pan_cover": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": -0.6 },
 						"Flint_arm": { "rotationX": -11.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Flask_origin": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
 						"Flask_origin_inner": { "rotationX": 90.0, "rotationY": 0.0, "rotationZ": 0.0 },
 						"Flask": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
 						"Plug": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Lever_origin": { "offsetX": -65.0, "offsetY": -0.1, "offsetZ": -67.2, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Wheel_charging_lever": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": -15.0, "rotationZ": 0.0 }
+						"Lever_origin": { "offsetX": -63.0, "offsetY": -0.1, "offsetZ": -66.2, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Wheel_charging_lever": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 14.0, "rotationZ": 0.0 }
 					}
 				},
 				{
 					"frame": 76,
 					"elements": {
-						"Pistol": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -15.0 },
 						"Pan_cover": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": -0.6 },
 						"Flint_arm": { "rotationX": -11.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Flask_origin": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
 						"Flask_origin_inner": { "rotationX": 90.0, "rotationY": 0.0, "rotationZ": 0.0 },
 						"Flask": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
 						"Plug": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Lever_origin": { "offsetX": -65.0, "offsetY": -0.1, "offsetZ": -67.2, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Lever_origin": { "offsetX": -63.0, "offsetY": -0.1, "offsetZ": -66.2, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
 						"Wheel_charging_lever": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
 					}
 				},
 				{
 					"frame": 90,
 					"elements": {
-						"Pistol": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -15.0 },
 						"Pan_cover": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": -0.6 },
 						"Flint_arm": { "rotationX": -11.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Flask_origin": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
 						"Flask_origin_inner": { "rotationX": 90.0, "rotationY": 0.0, "rotationZ": 0.0 },
 						"Flask": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
 						"Plug": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Lever_origin": { "offsetX": -65.0, "offsetY": -0.1, "offsetZ": -67.1, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Lever_origin": { "offsetX": -63.0, "offsetY": -0.1, "offsetZ": -66.1, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
 						"Wheel_charging_lever": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 152.0, "rotationY": 0.0, "rotationZ": 0.0 }
 					}
 				},
 				{
 					"frame": 93,
 					"elements": {
-						"Pistol": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -15.0 },
 						"Pan_cover": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": -0.6 },
 						"Flint_arm": { "rotationX": -11.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Flask_origin": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
 						"Flask_origin_inner": { "rotationX": 90.0, "rotationY": 0.0, "rotationZ": 0.0 },
 						"Flask": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
 						"Plug": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Lever_origin": { "offsetX": -65.0, "offsetY": -0.1, "offsetZ": -67.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Wheel_charging_lever": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 152.0, "rotationY": -14.0, "rotationZ": 0.0 }
+						"Lever_origin": { "offsetX": -63.0, "offsetY": -0.1, "offsetZ": -66.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Wheel_charging_lever": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 152.0, "rotationY": 14.0, "rotationZ": 0.0 }
 					}
 				},
 				{
 					"frame": 106,
 					"elements": {
-						"Pistol": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -15.0 },
 						"Pan_cover": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": -0.6 },
 						"Flint_arm": { "rotationX": -11.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Flask_origin": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
 						"Flask_origin_inner": { "rotationX": 90.0, "rotationY": 0.0, "rotationZ": 0.0 },
 						"Flask": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
 						"Plug": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Lever_origin": { "offsetX": -68.0, "offsetY": 0.0, "offsetZ": -40.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Lever_origin": { "offsetX": -56.0, "offsetY": -16.0, "offsetZ": -64.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
 						"Wheel_charging_lever": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
 					}
 				},
 				{
 					"frame": 109,
 					"elements": {
-						"Pistol": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
 						"Pan_cover": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": -0.6 },
 						"Flint_arm": { "rotationX": -11.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Flask_origin": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Flask_origin": { "offsetX": -56.0, "offsetY": -16.0, "offsetZ": -64.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
 						"Flask_origin_inner": { "rotationX": 90.0, "rotationY": 0.0, "rotationZ": 0.0 },
 						"Flask": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
 						"Plug": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Lever_origin": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Lever_origin": { "offsetX": -56.0, "offsetY": -16.0, "offsetZ": -64.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
 						"Wheel_charging_lever": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
 					}
 				}

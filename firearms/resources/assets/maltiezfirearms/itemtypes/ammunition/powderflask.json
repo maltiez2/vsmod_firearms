@@ -1,72 +1,14 @@
 ﻿{
   "code": "powderflask",
-  "class": "Item",
+  "class": "Firearms:PowderFlask",
   "maxstacksize": 1,
   "shape": {"base": "powder/powderflask"},
   "durability": 256,
   "variantgroups": [{"code": "metal", "loadFromProperties": "block/toolmetal"}],
   "allowedVariants": ["*-brass", "*-tinbronze"],
   "textures": {"metal": {"base": "game:block/metal/plate/{metal}"}},
-  "creativeinventoryStacks": [{"tabs": ["maltiezfirearms"], "stacks": [{"type": "item", "code": "powderflask-{metal}", "attributes": {"durability": 0}}]}],
+  "creativeinventory": {"maltiezfirearms": ["*"]},
   "behaviors": [
-    {
-      "name": "FiniteStateMachine",
-      "properties": {
-        "initialState": "ready",
-        "systems": {
-          "powder": {
-            "class": "Requirements",
-            "powder": {"requirements": [{"amount": 1, "slot": "OffHand", "location": "maltiezfirearms:gunpowder-fine", "name": "maltiezfirearms:requirement-powder"}]}
-          },
-          "durability": {"Class": "Durability"},
-          "sounds": {"class": "Sounds", "domain": "maltiezfirearms"}
-        },
-        "operations": {
-          "load": {
-            "class": "Delayed",
-            "timeout": 350,
-            "states": {"initial": "ready", "timeout": "ready-hold", "transitional": "cooldown", "final": "ready"},
-            "inputs": {"initial": "action-on", "ready": "action-off"},
-            "systems": {
-              "initial": [
-                {"code": "powder", "action": "take", "requirement": "powder"},
-                {"code": "sounds", "action": "play", "sound": "flask"},
-                {"code": "durability", "action": "check", "amount": 1, "require": true},
-                {"code": "durability", "action": "change", "amount": 8, "require": false}
-              ]
-            }
-          },
-          "load-hold": {
-            "class": "Delayed",
-            "timeout": 350,
-            "states": {"initial": "ready-hold", "timeout": "ready-hold", "transitional": "cooldown", "final": "ready"},
-            "inputs": {"initial": ["load-finished", "load-hold-finished"], "ready": "action-off"},
-            "systems": {
-              "initial": [
-                {"code": "powder", "action": "take", "requirement": "powder"},
-                {"code": "sounds", "action": "play", "sound": "flask"},
-                {"code": "durability", "action": "check", "amount": 1, "require": true},
-                {"code": "durability", "action": "change", "amount": 8, "require": false}
-              ]
-            }
-          },
-          "selected": {
-            "class": "Instant",
-            "inputs": ["slot-modified-added", "slot-selected"],
-            "states": [{"initial": "ready-hold", "final": "ready"}, {"initial": "cooldown", "final": "ready"}],
-            "systems": []
-          }
-        },
-        "inputs": {
-          "action-on": {"class": "ActionInput", "actions": ["RightMouseDown"], "name": "maltiezfirearms:flask-refill"},
-          "action-off": {"class": "ActionInput", "actions": ["RightMouseDown"], "onRelease": true, "name": "maltiezfirearms:flask-refill"},
-          "load-finished": {"class": "OperationFinished", "operation": "load"},
-          "load-hold-finished": {"class": "OperationFinished", "operation": "load-hold"},
-          "slot-modified-added": {"class": "SlotContent", "type": "AfterModified"},
-          "slot-selected": {"class": "SlotSelected"}
-        }
-      }
-    },
     {
       "name": "GroundStorable",
       "properties": {"layout": "Quadrants", "placeRemoveSound": "sounds/player/build", "collisionBox": {"x1": 0, "y1": 0, "z1": 0, "x2": 1, "y2": 0.3125, "z2": 1}}
@@ -74,7 +16,7 @@
   ],
   "attributes": {
     "groundStorageTransform": {"rotation": {"x": 0, "y": -28, "z": 0}, "origin": {"x": 0.5, "y": 0, "z": 0.5}, "scale": 0.5},
-    "handbook": {"groupBy": ["powderflask-*"]}
+    "attachableShape": "maltiezfirearms:shapes/powder/powderflask-opened"
   },
   "guiTransform": {"translation": {"x": 0, "y": 0, "z": 0}, "rotation": {"x": 163, "y": 56, "z": 0}, "origin": {"x": -0.1, "y": 0.1, "z": 0.8}, "scale": 2.19},
   "fpHandTransform": {"translation": {"x": 0, "y": 0, "z": 0}, "rotation": {"x": 0, "y": 0, "z": 0}, "origin": {"x": 0.3, "y": 0.9, "z": 0.8}, "scale": 1.8},

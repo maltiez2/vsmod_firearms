@@ -1,6 +1,6 @@
 {
 	"editor": {
-		"collapsedPaths": "Root/Flask_origin/Flask_origin_inner/Flask,Root/Arquebus_origin/Lever,Root/Arquebus_origin/Ramdrod_origin,Root/Arquebus_origin/Stock,Root/Arquebus_origin/Barrel,Root/Arquebus_origin/Matchlock/Lock_lever/Match_origin/Match,Root/Arquebus_origin/Matchlock/Lock_lever/Lever_arm,Root/Arquebus_origin/Flask_origin/Flask_origin_inner/Flask,Root/Arquebus_origin/Matchlock,Root/Arquebus_origin/Matchlock/Pan,Root/Flask/Bottom_plate,Root/Match",
+		"collapsedPaths": "Root/Band_second,Root/Musket/Band_first,Root/Band_first,Root/Carbine/Band_third,Root/Stock,Root/Flintlock,Root/Carbine/Trigger_assembly/Trigger_assemly_base,Root/Barrel,Root/Band_third,Root/Carbine/Flintlock,Root/Arquebus_origin/Stock,Root/Musket/Trigger_assembly,Root/Musket/Band_second,Root/Arquebus_origin/Barrel,Root/Carbine/Trigger_assembly/Guard,Root/Carbine,Root/Musket/Flintlock/Plate,Root/Carbine/Ramrod_origin/Ramrod,Root/Musket,Root/Musket/Flintlock,Root/Carbine/Flask_origin/Flask_origin_inner,Root/Arquebus_origin/Patch,Root/Musket/Stock,Root/Arquebus_origin/Flask_origin/Flask_origin_inner/Flask,Root/origin/Bottom_plate,Root/Carbine/Flintlock/Hammer,Root/Musket/Stock/Buttstock/Buttstock_bottom/Buttstock_butt/Buttstock_butt_plate,Root/Carbine/Flintlock/Pan,Root/Musket/Band_third,Root/Carbine/Flintlock/Hammer/Hammer_arm,Root/Arquebus_origin/Ramdrod_origin,Root/Carbine/Ramrod_origin,Root/Carbine/Barrel,Root/Carbine/Stock,Root/Trigger_assembly,Root/Carbine/Flintlock/Frizzen,Root/Musket/Stock/Buttstock/Buttstock_butt,Root/Ramrod,Root/Carbine/Band_second,Root/Musket/Barrel,Root/Carbine/Trigger_assembly",
 		"allAngles": false,
 		"entityTextureMode": false
 	},
@@ -9,20 +9,21 @@
 	"textureSizes": {
 	},
 	"textures": {
-		"plain": "game:block/cloth/linen/plain",
-		"ropedcloth": "game:block/cloth/ropedcloth",
-		"ember": "game:block/coal/ember",
-		"brass": "game:block/metal/plate/brass",
-		"metal": "game:block/metal/plate/iron",
-		"lead": "game:block/metal/plate/lead",
-		"wood": "game:block/wood/debarked/oak",
-		"flaskwood": "game:block/wood/debarked/oak"
+		"plain": "block/cloth/linen/plain",
+		"ropedcloth": "block/cloth/ropedcloth",
+		"ember": "block/coal/ember",
+		"brass": "block/metal/plate/brass",
+		"metal": "block/metal/plate/iron",
+		"lead": "block/metal/plate/lead",
+		"flaskwood": "block/wood/debarked/oak",
+		"wood": "block/wood/debarked/oak"
 	},
 	"elements": [
 		{
 			"name": "Arquebus_origin",
-			"from": [ 0.0, 0.0, 0.0 ],
-			"to": [ 0.0, 0.0, 0.0 ],
+			"from": [ 0.0, -1.2, -2.3 ],
+			"to": [ 0.0, -1.2, -2.3 ],
+			"rotationOrigin": [ 0.0, -1.2, -2.3 ],
 			"faces": {
 				"north": { "texture": "#wood", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
 				"east": { "texture": "#wood", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
@@ -538,7 +539,7 @@
 										"north": { "texture": "#metal", "uv": [ 9.0, 8.0, 9.5, 8.5 ] },
 										"east": { "texture": "#metal", "uv": [ 9.0, 7.5, 10.0, 8.0 ] },
 										"south": { "texture": "#metal", "uv": [ 9.5, 7.5, 10.0, 8.0 ] },
-										"west": { "texture": "#metal", "uv": [ 9.0, 8.5, 10.0, 9.0 ] },
+										"west": { "texture": "#metal", "uv": [ 8.5, 8.5, 9.5, 9.0 ] },
 										"up": { "texture": "#metal", "uv": [ 9.5, 7.5, 10.0, 8.5 ] },
 										"down": { "texture": "#metal", "uv": [ 9.5, 7.5, 10.0, 8.5 ] }
 									}
@@ -829,8 +830,8 @@
 					},
 					"attachmentpoints": [
 						{
-							"code": "bullet_attachmnt",
-							"posX": "0.15","posY": "0.15","posZ": "0.15",
+							"code": "bullet",
+							"posX": "0.1","posY": "0.1","posZ": "0.1",
 							"rotationX": "0.0","rotationY": "0.0","rotationZ": "0.0"
 						}
 					]
@@ -1160,6 +1161,13 @@
 												}
 											]
 										}
+									],
+									"attachmentpoints": [
+										{
+											"code": "flask",
+											"posX": "0.0","posY": "0.0","posZ": "0.0",
+											"rotationX": "0.0","rotationY": "0.0","rotationZ": "0.0"
+										}
 									]
 								}
 							]
@@ -1217,585 +1225,9 @@
 	],
 	"animations": [
 		{
-			"name": "Load",
-			"code": "load",
-			"quantityframes": 200,
-			"onActivityStopped": "Stop",
-			"onAnimationEnd": "Hold",
-			"keyframes": [
-				{
-					"frame": 0,
-					"elements": {
-						"Ramdrod_origin": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
-						"Ramrod": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Bullet": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
-						"Patch": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
-						"Linen_0": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": -0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Linen_1": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Linen_2": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Linen_3": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Flask_origin": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Flask_origin_inner": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": -90.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Plug": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Match_origin": { "offsetX": 0.0, "offsetY": 60.0, "offsetZ": 0.0 }
-					}
-				},
-				{
-					"frame": 1,
-					"elements": {
-						"Bullet": { "offsetX": 9.0, "offsetY": 0.0, "offsetZ": 46.0 },
-						"Patch": { "offsetX": 8.0, "offsetY": -1.0, "offsetZ": 46.0 },
-						"Linen_0": { "offsetX": 0.2, "offsetY": 0.2, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Linen_1": { "offsetX": -0.2, "offsetY": 0.2, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Linen_2": { "offsetX": -0.3, "offsetY": -0.2, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Linen_3": { "offsetX": 0.3, "offsetY": -0.2, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Flask_origin": { "offsetX": -60.0, "offsetY": -52.0, "offsetZ": -85.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 22.5 },
-						"Flask_origin_inner": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": -90.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Plug": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Ramdrod_origin": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
-						"Ramrod": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
-					}
-				},
-				{
-					"frame": 15,
-					"elements": {
-						"Ramrod": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Bullet": { "offsetX": 9.0, "offsetY": 0.0, "offsetZ": 46.0 },
-						"Patch": { "offsetX": 8.0, "offsetY": -1.0, "offsetZ": 46.0 },
-						"Linen_0": { "offsetX": 0.2, "offsetY": 0.2, "offsetZ": 0.0 },
-						"Linen_1": { "offsetX": -0.2, "offsetY": 0.2, "offsetZ": 0.0 },
-						"Linen_2": { "offsetX": -0.3, "offsetY": -0.2, "offsetZ": 0.0 },
-						"Linen_3": { "offsetX": 0.3, "offsetY": -0.2, "offsetZ": 0.0 },
-						"Flask_origin": { "offsetX": -60.0, "offsetY": -56.0, "offsetZ": -108.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Flask_origin_inner": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": -90.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Plug": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
-					}
-				},
-				{
-					"frame": 20,
-					"elements": {
-						"Ramrod": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Bullet": { "offsetX": 9.0, "offsetY": 0.0, "offsetZ": 46.0 },
-						"Patch": { "offsetX": 8.0, "offsetY": -1.0, "offsetZ": 46.0 },
-						"Linen_0": { "offsetX": 0.2, "offsetY": 0.2, "offsetZ": 0.0 },
-						"Linen_1": { "offsetX": -0.2, "offsetY": 0.2, "offsetZ": 0.0 },
-						"Linen_2": { "offsetX": -0.3, "offsetY": -0.2, "offsetZ": 0.0 },
-						"Linen_3": { "offsetX": 0.3, "offsetY": -0.2, "offsetZ": 0.0 },
-						"Flask_origin": { "offsetX": -63.0, "offsetY": -56.0, "offsetZ": -109.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Flask_origin_inner": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": -90.0, "rotationY": 0.0, "rotationZ": 35.0 },
-						"Plug": { "rotationX": -28.0, "rotationY": 0.0, "rotationZ": 0.0 }
-					}
-				},
-				{
-					"frame": 26,
-					"elements": {
-						"Ramrod": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Bullet": { "offsetX": 9.0, "offsetY": 0.0, "offsetZ": 46.0 },
-						"Patch": { "offsetX": 8.0, "offsetY": -1.0, "offsetZ": 46.0 },
-						"Linen_0": { "offsetX": 0.2, "offsetY": 0.2, "offsetZ": 0.0 },
-						"Linen_1": { "offsetX": -0.2, "offsetY": 0.2, "offsetZ": 0.0 },
-						"Linen_2": { "offsetX": -0.3, "offsetY": -0.2, "offsetZ": 0.0 },
-						"Linen_3": { "offsetX": 0.3, "offsetY": -0.2, "offsetZ": 0.0 },
-						"Flask_origin": { "offsetX": -63.8, "offsetY": -56.0, "offsetZ": -109.8, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Flask_origin_inner": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": -90.0, "rotationY": 0.0, "rotationZ": 85.0 },
-						"Plug": { "rotationX": -28.0, "rotationY": 0.0, "rotationZ": 0.0 }
-					}
-				},
-				{
-					"frame": 30,
-					"elements": {
-						"Ramrod": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Bullet": { "offsetX": 9.0, "offsetY": 0.0, "offsetZ": 46.0 },
-						"Patch": { "offsetX": 8.0, "offsetY": -1.0, "offsetZ": 46.0 },
-						"Linen_0": { "offsetX": 0.2, "offsetY": 0.2, "offsetZ": 0.0 },
-						"Linen_1": { "offsetX": -0.2, "offsetY": 0.2, "offsetZ": 0.0 },
-						"Linen_2": { "offsetX": -0.3, "offsetY": -0.2, "offsetZ": 0.0 },
-						"Linen_3": { "offsetX": 0.3, "offsetY": -0.2, "offsetZ": 0.0 },
-						"Flask_origin": { "offsetX": -63.2, "offsetY": -56.0, "offsetZ": -110.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Flask_origin_inner": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": -90.0, "rotationY": 0.0, "rotationZ": 60.0 },
-						"Plug": { "rotationX": -28.0, "rotationY": 0.0, "rotationZ": 0.0 }
-					}
-				},
-				{
-					"frame": 36,
-					"elements": {
-						"Ramrod": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Bullet": { "offsetX": 9.0, "offsetY": 0.0, "offsetZ": 46.0 },
-						"Patch": { "offsetX": 8.0, "offsetY": -1.0, "offsetZ": 46.0 },
-						"Linen_0": { "offsetX": 0.2, "offsetY": 0.2, "offsetZ": 0.0 },
-						"Linen_1": { "offsetX": -0.2, "offsetY": 0.2, "offsetZ": 0.0 },
-						"Linen_2": { "offsetX": -0.3, "offsetY": -0.2, "offsetZ": 0.0 },
-						"Linen_3": { "offsetX": 0.3, "offsetY": -0.2, "offsetZ": 0.0 },
-						"Flask_origin": { "offsetX": -60.0, "offsetY": -56.0, "offsetZ": -108.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Flask_origin_inner": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": -90.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Plug": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
-					}
-				},
-				{
-					"frame": 50,
-					"elements": {
-						"Ramrod": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Bullet": { "offsetX": 9.0, "offsetY": 0.0, "offsetZ": 21.0 },
-						"Patch": { "offsetX": 8.0, "offsetY": -1.0, "offsetZ": 21.0 },
-						"Linen_0": { "offsetX": 0.2, "offsetY": 0.2, "offsetZ": 0.0 },
-						"Linen_1": { "offsetX": -0.2, "offsetY": 0.2, "offsetZ": 0.0 },
-						"Linen_2": { "offsetX": -0.3, "offsetY": -0.2, "offsetZ": 0.0 },
-						"Linen_3": { "offsetX": 0.3, "offsetY": -0.2, "offsetZ": 0.0 },
-						"Flask_origin": { "offsetX": -60.0, "offsetY": -52.0, "offsetZ": -86.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Flask_origin_inner": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": -90.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Plug": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
-					}
-				},
-				{
-					"frame": 60,
-					"elements": {
-						"Ramrod": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Bullet": { "offsetX": 9.0, "offsetY": 0.0, "offsetZ": 21.0 },
-						"Patch": { "offsetX": 8.0, "offsetY": 0.0, "offsetZ": 0.0 },
-						"Linen_0": { "offsetX": 0.2, "offsetY": 0.2, "offsetZ": 0.0 },
-						"Linen_1": { "offsetX": -0.2, "offsetY": 0.2, "offsetZ": 0.0 },
-						"Linen_2": { "offsetX": -0.3, "offsetY": -0.2, "offsetZ": 0.0 },
-						"Linen_3": { "offsetX": 0.3, "offsetY": -0.2, "offsetZ": 0.0 },
-						"Flask_origin": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Flask_origin_inner": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": -90.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Plug": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
-					}
-				},
-				{
-					"frame": 65,
-					"elements": {
-						"Ramrod": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Bullet": { "offsetX": 9.0, "offsetY": 0.0, "offsetZ": 21.0 },
-						"Patch": { "offsetX": 4.0, "offsetY": 0.0, "offsetZ": -4.0 },
-						"Linen_0": { "offsetX": 0.2, "offsetY": 0.2, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Linen_1": { "offsetX": -0.2, "offsetY": 0.2, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Linen_2": { "offsetX": -0.3, "offsetY": -0.2, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Linen_3": { "offsetX": 0.3, "offsetY": -0.2, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Flask_origin_inner": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": -90.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Plug": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
-					}
-				},
-				{
-					"frame": 68,
-					"elements": {
-						"Ramrod": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Bullet": { "offsetX": 9.0, "offsetY": 0.0, "offsetZ": 21.0 },
-						"Patch": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": -1.3 },
-						"Linen_0": { "offsetX": 0.2, "offsetY": 0.2, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Linen_1": { "offsetX": -0.2, "offsetY": 0.2, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Linen_2": { "offsetX": -0.3, "offsetY": -0.2, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Linen_3": { "offsetX": 0.3, "offsetY": -0.2, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Flask_origin_inner": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": -90.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Plug": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
-					}
-				},
-				{
-					"frame": 72,
-					"elements": {
-						"Ramrod": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Bullet": { "offsetX": 9.0, "offsetY": 0.0, "offsetZ": 21.0 },
-						"Patch": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": -1.21 },
-						"Linen_0": { "offsetX": 0.1, "offsetY": 0.1, "offsetZ": 0.0, "rotationX": -5.0, "rotationY": 5.0, "rotationZ": 0.0 },
-						"Linen_1": { "offsetX": -0.1, "offsetY": 0.1, "offsetZ": 0.0, "rotationX": -5.0, "rotationY": -5.0, "rotationZ": 0.0 },
-						"Linen_2": { "offsetX": -0.2, "offsetY": -0.1, "offsetZ": 0.0, "rotationX": 8.0, "rotationY": -5.0, "rotationZ": 0.0 },
-						"Linen_3": { "offsetX": 0.2, "offsetY": -0.1, "offsetZ": 0.0, "rotationX": 8.0, "rotationY": 5.0, "rotationZ": 0.0 },
-						"Flask_origin_inner": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": -90.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Plug": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
-					}
-				},
-				{
-					"frame": 82,
-					"elements": {
-						"Ramrod": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Bullet": { "offsetX": 8.0, "offsetY": 0.0, "offsetZ": 0.0 },
-						"Linen_0": { "offsetX": 0.1, "offsetY": 0.1, "offsetZ": 0.0 },
-						"Linen_1": { "offsetX": -0.1, "offsetY": 0.1, "offsetZ": 0.0 },
-						"Linen_2": { "offsetX": -0.2, "offsetY": -0.1, "offsetZ": 0.0 },
-						"Linen_3": { "offsetX": 0.2, "offsetY": -0.1, "offsetZ": 0.0 },
-						"Flask_origin_inner": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": -90.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Plug": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
-					}
-				},
-				{
-					"frame": 85,
-					"elements": {
-						"Ramrod": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Bullet": { "offsetX": 4.0, "offsetY": 0.0, "offsetZ": -4.0 },
-						"Linen_0": { "offsetX": 0.1, "offsetY": 0.1, "offsetZ": 0.0 },
-						"Linen_1": { "offsetX": -0.1, "offsetY": 0.1, "offsetZ": 0.0 },
-						"Linen_2": { "offsetX": -0.2, "offsetY": -0.1, "offsetZ": 0.0 },
-						"Linen_3": { "offsetX": 0.2, "offsetY": -0.1, "offsetZ": 0.0 },
-						"Flask_origin_inner": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": -90.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Plug": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
-					}
-				},
-				{
-					"frame": 87,
-					"elements": {
-						"Ramrod": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Bullet": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": -1.46 },
-						"Patch": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": -1.21 },
-						"Linen_0": { "offsetX": 0.1, "offsetY": 0.1, "offsetZ": 0.0, "rotationX": -5.0, "rotationY": 5.0, "rotationZ": 0.0 },
-						"Linen_1": { "offsetX": -0.1, "offsetY": 0.1, "offsetZ": 0.0, "rotationX": -5.0, "rotationY": -5.0, "rotationZ": 0.0 },
-						"Linen_2": { "offsetX": -0.2, "offsetY": -0.1, "offsetZ": 0.0, "rotationX": 8.0, "rotationY": -5.0, "rotationZ": 0.0 },
-						"Linen_3": { "offsetX": 0.2, "offsetY": -0.1, "offsetZ": 0.0, "rotationX": 8.0, "rotationY": 5.0, "rotationZ": 0.0 },
-						"Flask_origin_inner": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": -90.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Plug": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
-					}
-				},
-				{
-					"frame": 93,
-					"elements": {
-						"Ramdrod_origin": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
-						"Ramrod": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Bullet": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": -1.28 },
-						"Patch": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": -1.09 },
-						"Linen_0": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": -15.0, "rotationY": 10.0, "rotationZ": 0.0 },
-						"Linen_1": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": -15.0, "rotationY": -10.0, "rotationZ": 0.0 },
-						"Linen_2": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 15.0, "rotationY": 10.0, "rotationZ": 0.0 },
-						"Linen_3": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 15.0, "rotationY": -10.0, "rotationZ": 0.0 },
-						"Flask_origin_inner": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": -90.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Plug": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
-					}
-				},
-				{
-					"frame": 105,
-					"elements": {
-						"Ramdrod_origin": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": -21.0 },
-						"Ramrod": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Linen_0": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
-						"Linen_1": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
-						"Linen_2": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
-						"Linen_3": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
-						"Flask_origin_inner": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": -90.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Plug": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
-					}
-				},
-				{
-					"frame": 120,
-					"elements": {
-						"Linen_0": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
-						"Linen_1": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
-						"Linen_2": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
-						"Linen_3": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
-						"Flask_origin_inner": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": -90.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Plug": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Ramdrod_origin": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": -21.0 },
-						"Ramrod": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 170.0, "rotationY": 0.0, "rotationZ": 0.0 }
-					}
-				},
-				{
-					"frame": 125,
-					"elements": {
-						"Patch": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": -1.09 },
-						"Linen_0": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": -15.0, "rotationY": 10.0, "rotationZ": 0.0 },
-						"Linen_1": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": -15.0, "rotationY": -10.0, "rotationZ": 0.0 },
-						"Linen_2": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 15.0, "rotationY": 10.0, "rotationZ": 0.0 },
-						"Linen_3": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 15.0, "rotationY": -10.0, "rotationZ": 0.0 },
-						"Flask_origin_inner": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": -90.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Plug": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Ramdrod_origin": { "offsetX": 0.0, "offsetY": 0.55, "offsetZ": -17.0 },
-						"Ramrod": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 180.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Bullet": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": -1.28 }
-					}
-				},
-				{
-					"frame": 130,
-					"elements": {
-						"Bullet": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
-						"Patch": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
-						"Linen_0": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": -45.0, "rotationY": 45.0, "rotationZ": 0.0 },
-						"Linen_1": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": -45.0, "rotationY": -45.0, "rotationZ": 0.0 },
-						"Linen_2": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 45.0, "rotationY": 45.0, "rotationZ": 0.0 },
-						"Linen_3": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 45.0, "rotationY": -45.0, "rotationZ": 0.0 },
-						"Flask_origin_inner": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": -90.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Plug": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Ramdrod_origin": { "offsetX": 0.0, "offsetY": 0.55, "offsetZ": -15.7 },
-						"Ramrod": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 180.0, "rotationY": 0.0, "rotationZ": 0.0 }
-					}
-				},
-				{
-					"frame": 140,
-					"elements": {
-						"Bullet": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
-						"Patch": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
-						"Linen_0": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Linen_1": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Linen_2": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Linen_3": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Flask_origin_inner": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": -90.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Plug": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Ramdrod_origin": { "offsetX": 0.0, "offsetY": 0.55, "offsetZ": 1.3 },
-						"Ramrod": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 180.0, "rotationY": 0.0, "rotationZ": 0.0 }
-					}
-				},
-				{
-					"frame": 145,
-					"elements": {
-						"Bullet": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
-						"Patch": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
-						"Linen_0": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
-						"Linen_1": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
-						"Linen_2": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
-						"Linen_3": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
-						"Flask_origin_inner": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": -90.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Plug": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Ramdrod_origin": { "offsetX": 0.0, "offsetY": 0.55, "offsetZ": -4.7 },
-						"Ramrod": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 180.0, "rotationY": 0.0, "rotationZ": 0.0 }
-					}
-				},
-				{
-					"frame": 150,
-					"elements": {
-						"Bullet": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
-						"Patch": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
-						"Linen_0": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
-						"Linen_1": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
-						"Linen_2": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
-						"Linen_3": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
-						"Flask_origin_inner": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": -90.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Plug": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Ramdrod_origin": { "offsetX": 0.0, "offsetY": 0.55, "offsetZ": 1.3 },
-						"Ramrod": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 180.0, "rotationY": 0.0, "rotationZ": 0.0 }
-					}
-				},
-				{
-					"frame": 155,
-					"elements": {
-						"Bullet": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
-						"Patch": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
-						"Linen_0": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
-						"Linen_1": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
-						"Linen_2": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
-						"Linen_3": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
-						"Flask_origin_inner": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": -90.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Plug": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Ramdrod_origin": { "offsetX": 0.0, "offsetY": 0.55, "offsetZ": -4.7 },
-						"Ramrod": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 180.0, "rotationY": 0.0, "rotationZ": 0.0 }
-					}
-				},
-				{
-					"frame": 160,
-					"elements": {
-						"Bullet": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
-						"Patch": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
-						"Linen_0": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
-						"Linen_1": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
-						"Linen_2": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
-						"Linen_3": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
-						"Flask_origin_inner": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": -90.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Plug": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Ramdrod_origin": { "offsetX": 0.0, "offsetY": 0.55, "offsetZ": 1.3 },
-						"Ramrod": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 180.0, "rotationY": 0.0, "rotationZ": 0.0 }
-					}
-				},
-				{
-					"frame": 170,
-					"elements": {
-						"Bullet": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
-						"Patch": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
-						"Linen_0": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
-						"Linen_1": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
-						"Linen_2": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
-						"Linen_3": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
-						"Flask_origin_inner": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": -90.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Plug": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Ramdrod_origin": { "offsetX": 0.0, "offsetY": 0.55, "offsetZ": -17.7 },
-						"Ramrod": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 180.0, "rotationY": 0.0, "rotationZ": 0.0 }
-					}
-				},
-				{
-					"frame": 180,
-					"elements": {
-						"Bullet": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
-						"Patch": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
-						"Linen_0": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
-						"Linen_1": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
-						"Linen_2": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
-						"Linen_3": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
-						"Flask_origin_inner": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": -90.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Plug": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Ramdrod_origin": { "offsetX": 0.0, "offsetY": -2.45, "offsetZ": -17.7 },
-						"Ramrod": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": -10.0, "rotationY": 0.0, "rotationZ": 0.0 }
-					}
-				},
-				{
-					"frame": 190,
-					"elements": {
-						"Bullet": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
-						"Patch": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
-						"Linen_0": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
-						"Linen_1": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
-						"Linen_2": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
-						"Linen_3": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
-						"Flask_origin_inner": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": -90.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Plug": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Ramdrod_origin": { "offsetX": 0.0, "offsetY": -0.3, "offsetZ": -11.3 },
-						"Ramrod": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": -2.0, "rotationY": 0.0, "rotationZ": 0.0 }
-					}
-				},
-				{
-					"frame": 199,
-					"elements": {
-						"Ramdrod_origin": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
-						"Ramrod": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Bullet": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
-						"Patch": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
-						"Linen_0": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Linen_1": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Linen_2": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Linen_3": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Flask_origin": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Flask_origin_inner": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": -90.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Plug": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Match_origin": { "offsetX": 0.0, "offsetY": 60.0, "offsetZ": 0.0 }
-					}
-				}
-			]
-		},
-
-		{
-			"name": "Prime",
-			"code": "prime",
-			"quantityframes": 60,
-			"onActivityStopped": "Stop",
-			"onAnimationEnd": "Hold",
-			"keyframes": [
-				{
-					"frame": 0,
-					"elements": {
-						"Lock_lever": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Match_origin": { "offsetX": 0.0, "offsetY": 60.0, "offsetZ": 100.0 },
-						"Pan_cover": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Flask_origin": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
-						"Flask_origin_inner": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Plug": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Lever": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
-					}
-				},
-				{
-					"frame": 1,
-					"elements": {
-						"Lever": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Pan_cover": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Lock_lever": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Flask_origin": { "offsetX": -52.0, "offsetY": -61.0, "offsetZ": -74.0 },
-						"Plug": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
-					}
-				},
-				{
-					"frame": 9,
-					"elements": {
-						"Lever": { "rotationX": 20.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Pan_cover": { "rotationX": 0.0, "rotationY": -5.0, "rotationZ": 0.0 },
-						"Lock_lever": { "rotationX": -70.0, "rotationY": 0.0, "rotationZ": 0.0 }
-					}
-				},
-				{
-					"frame": 14,
-					"elements": {
-						"Lever": { "rotationX": 20.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Pan_cover": { "rotationX": 0.0, "rotationY": -45.0, "rotationZ": 0.0 },
-						"Lock_lever": { "rotationX": -70.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Flask_origin": { "offsetX": -52.0, "offsetY": -61.0, "offsetZ": -74.0 }
-					}
-				},
-				{
-					"frame": 20,
-					"elements": {
-						"Lever": { "rotationX": 20.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Pan_cover": { "rotationX": 0.0, "rotationY": -45.0, "rotationZ": 0.0 },
-						"Lock_lever": { "rotationX": -70.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Flask_origin": { "offsetX": -61.5, "offsetY": -56.4, "offsetZ": -89.6 },
-						"Flask_origin_inner": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Plug": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
-					}
-				},
-				{
-					"frame": 25,
-					"elements": {
-						"Lever": { "rotationX": 20.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Pan_cover": { "rotationX": 0.0, "rotationY": -45.0, "rotationZ": 0.0 },
-						"Lock_lever": { "rotationX": -70.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Flask_origin": { "offsetX": -62.2, "offsetY": -56.0, "offsetZ": -89.6 },
-						"Flask_origin_inner": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 30.0 },
-						"Plug": { "rotationX": -28.0, "rotationY": 0.0, "rotationZ": 0.0 }
-					}
-				},
-				{
-					"frame": 30,
-					"elements": {
-						"Lever": { "rotationX": 20.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Pan_cover": { "rotationX": 0.0, "rotationY": -45.0, "rotationZ": 0.0 },
-						"Lock_lever": { "rotationX": -70.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Flask_origin": { "offsetX": -62.6, "offsetY": -54.5, "offsetZ": -89.6 },
-						"Flask_origin_inner": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 76.0 },
-						"Plug": { "rotationX": -28.0, "rotationY": 0.0, "rotationZ": 0.0 }
-					}
-				},
-				{
-					"frame": 35,
-					"elements": {
-						"Lever": { "rotationX": 20.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Pan_cover": { "rotationX": 0.0, "rotationY": -45.0, "rotationZ": 0.0 },
-						"Lock_lever": { "rotationX": -70.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Flask_origin": { "offsetX": -62.0, "offsetY": -56.0, "offsetZ": -89.6 },
-						"Flask_origin_inner": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 30.0 },
-						"Plug": { "rotationX": -28.0, "rotationY": 0.0, "rotationZ": 0.0 }
-					}
-				},
-				{
-					"frame": 40,
-					"elements": {
-						"Lever": { "rotationX": 20.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Pan_cover": { "rotationX": 0.0, "rotationY": -45.0, "rotationZ": 0.0 },
-						"Lock_lever": { "rotationX": -70.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Flask_origin": { "offsetX": -62.0, "offsetY": -56.0, "offsetZ": -89.6 },
-						"Flask_origin_inner": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Plug": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
-					}
-				},
-				{
-					"frame": 50,
-					"elements": {
-						"Lever": { "rotationX": 20.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Pan_cover": { "rotationX": 0.0, "rotationY": -45.0, "rotationZ": 0.0 },
-						"Lock_lever": { "rotationX": -70.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Flask_origin": { "offsetX": -51.0, "offsetY": -60.0, "offsetZ": -74.0 },
-						"Flask_origin_inner": { "rotationX": 0.0, "rotationY": -67.5, "rotationZ": 0.0 },
-						"Plug": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
-					}
-				},
-				{
-					"frame": 55,
-					"elements": {
-						"Lever": { "rotationX": 20.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Pan_cover": { "rotationX": 0.0, "rotationY": 135.0, "rotationZ": 0.0 },
-						"Lock_lever": { "rotationX": -70.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Flask_origin": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
-						"Flask_origin_inner": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Plug": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
-					}
-				},
-				{
-					"frame": 59,
-					"elements": {
-						"Lever": { "rotationX": 10.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Pan_cover": { "rotationX": 0.0, "rotationY": 135.0, "rotationZ": 0.0 },
-						"Lock_lever": { "rotationX": -35.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Match_origin": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 100.0 },
-						"Flask_origin": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
-						"Flask_origin_inner": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Plug": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
-					}
-				}
-			]
-		},
-
-		{
 			"name": "Match",
 			"code": "match",
-			"quantityframes": 30,
+			"quantityframes": 35,
 			"onActivityStopped": "Stop",
 			"onAnimationEnd": "Hold",
 			"keyframes": [
@@ -1866,6 +1298,19 @@
 				},
 				{
 					"frame": 29,
+					"elements": {
+						"Lever": { "rotationX": 10.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Pan_cover": { "rotationX": 0.0, "rotationY": 135.0, "rotationZ": 0.0 },
+						"Lock_lever": { "rotationX": -35.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Match_origin": { "offsetX": -60.0, "offsetY": -60.0, "offsetZ": -98.0 },
+						"Match": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Match_1": { "rotationX": 1.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Match_2": { "rotationX": -9.0, "rotationY": -6.0, "rotationZ": 0.0 },
+						"Match_3": { "rotationX": 12.0, "rotationY": -7.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 34,
 					"elements": {
 						"Lever": { "rotationX": 10.0, "rotationY": 0.0, "rotationZ": 0.0 },
 						"Pan_cover": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
@@ -1950,6 +1395,485 @@
 						"Match_1": { "rotationX": 3.0, "rotationY": 0.0, "rotationZ": 0.0 },
 						"Match_2": { "rotationX": -35.0, "rotationY": 0.0, "rotationZ": 0.0 },
 						"Match_3": { "rotationX": 22.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				}
+			]
+		},
+
+		{
+			"name": "load",
+			"code": "load",
+			"quantityframes": 166,
+			"onActivityStopped": "Rewind",
+			"onAnimationEnd": "Repeat",
+			"keyframes": [
+				{
+					"frame": 0,
+					"elements": {
+						"Flask_origin": { "offsetX": -66.0, "offsetY": -66.0, "offsetZ": -78.0 },
+						"Flask_origin_inner": { "rotationX": -90.0, "rotationY": 90.0, "rotationZ": 0.0 },
+						"Patch": { "offsetX": 0.0, "offsetY": -7.0, "offsetZ": 31.0 },
+						"Linen_0": { "offsetX": 0.2, "offsetY": 0.2, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Linen_1": { "offsetX": -0.2, "offsetY": 0.2, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Linen_2": { "offsetX": -0.3, "offsetY": -0.2, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Linen_3": { "offsetX": 0.3, "offsetY": -0.2, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Bullet": { "offsetX": 0.0, "offsetY": -7.0, "offsetZ": 30.8 },
+						"Ramdrod_origin": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+						"Ramrod": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 10,
+					"elements": {
+						"Bullet": { "offsetX": 0.0, "offsetY": -7.0, "offsetZ": 30.8 },
+						"Patch": { "offsetX": 0.0, "offsetY": -7.0, "offsetZ": 31.0 },
+						"Linen_0": { "offsetX": 0.2, "offsetY": 0.2, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Linen_1": { "offsetX": -0.2, "offsetY": 0.2, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Linen_2": { "offsetX": -0.3, "offsetY": -0.2, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Linen_3": { "offsetX": 0.3, "offsetY": -0.2, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Flask_origin": { "offsetX": -66.0, "offsetY": -61.0, "offsetZ": -109.0 },
+						"Flask_origin_inner": { "rotationX": -90.0, "rotationY": 90.0, "rotationZ": 0.0 },
+						"Ramdrod_origin": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+						"Ramrod": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 15,
+					"elements": {
+						"Bullet": { "offsetX": 0.0, "offsetY": -7.0, "offsetZ": 30.8 },
+						"Patch": { "offsetX": 0.0, "offsetY": -7.0, "offsetZ": 31.0 },
+						"Linen_0": { "offsetX": 0.2, "offsetY": 0.2, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Linen_1": { "offsetX": -0.2, "offsetY": 0.2, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Linen_2": { "offsetX": -0.3, "offsetY": -0.2, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Linen_3": { "offsetX": 0.3, "offsetY": -0.2, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Flask_origin": { "offsetX": -66.0, "offsetY": -58.2, "offsetZ": -110.0 },
+						"Flask_origin_inner": { "rotationX": -90.0, "rotationY": 90.0, "rotationZ": 90.0 },
+						"Ramdrod_origin": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+						"Ramrod": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 20,
+					"elements": {
+						"Bullet": { "offsetX": 0.0, "offsetY": -7.0, "offsetZ": 30.8 },
+						"Patch": { "offsetX": 0.0, "offsetY": -7.0, "offsetZ": 31.0 },
+						"Linen_0": { "offsetX": 0.2, "offsetY": 0.2, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Linen_1": { "offsetX": -0.2, "offsetY": 0.2, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Linen_2": { "offsetX": -0.3, "offsetY": -0.2, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Linen_3": { "offsetX": 0.3, "offsetY": -0.2, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Flask_origin": { "offsetX": -66.0, "offsetY": -61.0, "offsetZ": -109.0 },
+						"Flask_origin_inner": { "rotationX": -90.0, "rotationY": 90.0, "rotationZ": 0.0 },
+						"Ramdrod_origin": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+						"Ramrod": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 30,
+					"elements": {
+						"Bullet": { "offsetX": 0.0, "offsetY": -7.0, "offsetZ": 30.8 },
+						"Patch": { "offsetX": 0.0, "offsetY": -7.0, "offsetZ": 31.0 },
+						"Linen_0": { "offsetX": 0.2, "offsetY": 0.2, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Linen_1": { "offsetX": -0.2, "offsetY": 0.2, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Linen_2": { "offsetX": -0.3, "offsetY": -0.2, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Linen_3": { "offsetX": 0.3, "offsetY": -0.2, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Flask_origin": { "offsetX": -66.0, "offsetY": -66.0, "offsetZ": -78.0 },
+						"Flask_origin_inner": { "rotationX": -90.0, "rotationY": 90.0, "rotationZ": 0.0 },
+						"Ramdrod_origin": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+						"Ramrod": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 40,
+					"elements": {
+						"Bullet": { "offsetX": 0.0, "offsetY": -7.0, "offsetZ": 30.8 },
+						"Patch": { "offsetX": 0.0, "offsetY": -5.0, "offsetZ": -2.3 },
+						"Linen_0": { "offsetX": 0.2, "offsetY": 0.2, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Linen_1": { "offsetX": -0.2, "offsetY": 0.2, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Linen_2": { "offsetX": -0.3, "offsetY": -0.2, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Linen_3": { "offsetX": 0.3, "offsetY": -0.2, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Flask_origin": { "offsetX": -66.0, "offsetY": -66.0, "offsetZ": -78.0 },
+						"Flask_origin_inner": { "rotationX": -90.0, "rotationY": 90.0, "rotationZ": 0.0 },
+						"Ramdrod_origin": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+						"Ramrod": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 45,
+					"elements": {
+						"Bullet": { "offsetX": 0.0, "offsetY": -7.0, "offsetZ": 30.8 },
+						"Patch": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": -1.3 },
+						"Linen_0": { "offsetX": 0.2, "offsetY": 0.2, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Linen_1": { "offsetX": -0.2, "offsetY": 0.2, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Linen_2": { "offsetX": -0.3, "offsetY": -0.2, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Linen_3": { "offsetX": 0.3, "offsetY": -0.2, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Flask_origin": { "offsetX": -66.0, "offsetY": -66.0, "offsetZ": -78.0 },
+						"Flask_origin_inner": { "rotationX": -90.0, "rotationY": 90.0, "rotationZ": 0.0 },
+						"Ramdrod_origin": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+						"Ramrod": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 50,
+					"elements": {
+						"Bullet": { "offsetX": 0.0, "offsetY": -7.0, "offsetZ": 30.8 },
+						"Patch": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": -1.3 },
+						"Linen_0": { "offsetX": 0.2, "offsetY": 0.2, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Linen_1": { "offsetX": -0.2, "offsetY": 0.2, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Linen_2": { "offsetX": -0.3, "offsetY": -0.2, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Linen_3": { "offsetX": 0.3, "offsetY": -0.2, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Flask_origin": { "offsetX": -66.0, "offsetY": -66.0, "offsetZ": -78.0 },
+						"Flask_origin_inner": { "rotationX": -90.0, "rotationY": 90.0, "rotationZ": 0.0 },
+						"Ramdrod_origin": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+						"Ramrod": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 60,
+					"elements": {
+						"Bullet": { "offsetX": 0.0, "offsetY": -4.0, "offsetZ": -2.2 },
+						"Patch": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": -1.3 },
+						"Linen_0": { "offsetX": 0.2, "offsetY": 0.2, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Linen_1": { "offsetX": -0.2, "offsetY": 0.2, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Linen_2": { "offsetX": -0.3, "offsetY": -0.2, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Linen_3": { "offsetX": 0.3, "offsetY": -0.2, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Flask_origin": { "offsetX": -66.0, "offsetY": -66.0, "offsetZ": -78.0 },
+						"Flask_origin_inner": { "rotationX": -90.0, "rotationY": 90.0, "rotationZ": 0.0 },
+						"Ramdrod_origin": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+						"Ramrod": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 65,
+					"elements": {
+						"Bullet": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": -1.5 },
+						"Patch": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": -1.3 },
+						"Linen_0": { "offsetX": 0.2, "offsetY": 0.2, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Linen_1": { "offsetX": -0.2, "offsetY": 0.2, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Linen_2": { "offsetX": -0.3, "offsetY": -0.2, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Linen_3": { "offsetX": 0.3, "offsetY": -0.2, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Flask_origin": { "offsetX": -66.0, "offsetY": -66.0, "offsetZ": -78.0 },
+						"Flask_origin_inner": { "rotationX": -90.0, "rotationY": 90.0, "rotationZ": 0.0 },
+						"Ramdrod_origin": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+						"Ramrod": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 70,
+					"elements": {
+						"Bullet": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": -1.2 },
+						"Patch": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": -1.0 },
+						"Linen_0": { "offsetX": 0.1, "offsetY": 0.1, "offsetZ": 0.0, "rotationX": -20.0, "rotationY": 13.0, "rotationZ": 0.0 },
+						"Linen_1": { "offsetX": -0.1, "offsetY": 0.1, "offsetZ": 0.0, "rotationX": -20.0, "rotationY": -15.0, "rotationZ": 0.0 },
+						"Linen_2": { "offsetX": -0.2, "offsetY": -0.1, "offsetZ": -0.1, "rotationX": 20.0, "rotationY": -20.0, "rotationZ": 0.0 },
+						"Linen_3": { "offsetX": 0.2, "offsetY": -0.1, "offsetZ": -0.1, "rotationX": 20.0, "rotationY": 20.0, "rotationZ": 0.0 },
+						"Flask_origin": { "offsetX": -66.0, "offsetY": -66.0, "offsetZ": -78.0 },
+						"Flask_origin_inner": { "rotationX": -90.0, "rotationY": 90.0, "rotationZ": 0.0 },
+						"Ramdrod_origin": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+						"Ramrod": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 75,
+					"elements": {
+						"Bullet": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": -1.2 },
+						"Patch": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": -1.0 },
+						"Linen_0": { "offsetX": 0.1, "offsetY": 0.1, "offsetZ": 0.0, "rotationX": -20.0, "rotationY": 13.0, "rotationZ": 0.0 },
+						"Linen_1": { "offsetX": -0.1, "offsetY": 0.1, "offsetZ": 0.0, "rotationX": -20.0, "rotationY": -15.0, "rotationZ": 0.0 },
+						"Linen_2": { "offsetX": -0.2, "offsetY": -0.1, "offsetZ": -0.1, "rotationX": 20.0, "rotationY": -20.0, "rotationZ": 0.0 },
+						"Linen_3": { "offsetX": 0.2, "offsetY": -0.1, "offsetZ": -0.1, "rotationX": 20.0, "rotationY": 20.0, "rotationZ": 0.0 },
+						"Flask_origin": { "offsetX": -66.0, "offsetY": -66.0, "offsetZ": -78.0 },
+						"Flask_origin_inner": { "rotationX": -90.0, "rotationY": 90.0, "rotationZ": 0.0 },
+						"Ramdrod_origin": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+						"Ramrod": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 85,
+					"elements": {
+						"Bullet": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": -1.2 },
+						"Patch": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": -1.0 },
+						"Linen_0": { "offsetX": 0.1, "offsetY": 0.1, "offsetZ": 0.0, "rotationX": -20.0, "rotationY": 13.0, "rotationZ": 0.0 },
+						"Linen_1": { "offsetX": -0.1, "offsetY": 0.1, "offsetZ": 0.0, "rotationX": -20.0, "rotationY": -15.0, "rotationZ": 0.0 },
+						"Linen_2": { "offsetX": -0.2, "offsetY": -0.1, "offsetZ": -0.1, "rotationX": 20.0, "rotationY": -20.0, "rotationZ": 0.0 },
+						"Linen_3": { "offsetX": 0.2, "offsetY": -0.1, "offsetZ": -0.1, "rotationX": 20.0, "rotationY": 20.0, "rotationZ": 0.0 },
+						"Flask_origin": { "offsetX": -66.0, "offsetY": -66.0, "offsetZ": -78.0 },
+						"Flask_origin_inner": { "rotationX": -90.0, "rotationY": 90.0, "rotationZ": 0.0 },
+						"Ramdrod_origin": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": -16.0 },
+						"Ramrod": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 95,
+					"elements": {
+						"Bullet": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": -1.2 },
+						"Patch": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": -1.0 },
+						"Linen_0": { "offsetX": 0.1, "offsetY": 0.1, "offsetZ": 0.0, "rotationX": -20.0, "rotationY": 13.0, "rotationZ": 0.0 },
+						"Linen_1": { "offsetX": -0.1, "offsetY": 0.1, "offsetZ": 0.0, "rotationX": -20.0, "rotationY": -15.0, "rotationZ": 0.0 },
+						"Linen_2": { "offsetX": -0.2, "offsetY": -0.1, "offsetZ": -0.1, "rotationX": 20.0, "rotationY": -20.0, "rotationZ": 0.0 },
+						"Linen_3": { "offsetX": 0.2, "offsetY": -0.1, "offsetZ": -0.1, "rotationX": 20.0, "rotationY": 20.0, "rotationZ": 0.0 },
+						"Flask_origin": { "offsetX": -66.0, "offsetY": -66.0, "offsetZ": -78.0 },
+						"Flask_origin_inner": { "rotationX": -90.0, "rotationY": 90.0, "rotationZ": 0.0 },
+						"Ramdrod_origin": { "offsetX": 0.0, "offsetY": 0.55, "offsetZ": -17.0 },
+						"Ramrod": { "rotationX": 180.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 96,
+					"elements": {
+						"Linen_0": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+						"Linen_1": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+						"Linen_2": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+						"Linen_3": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 }
+					}
+				},
+				{
+					"frame": 105,
+					"elements": {
+						"Bullet": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 7.8 },
+						"Patch": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 8.0 },
+						"Linen_0": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": -20.0, "rotationY": 13.0, "rotationZ": 0.0 },
+						"Linen_1": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": -20.0, "rotationY": -15.0, "rotationZ": 0.0 },
+						"Linen_2": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 20.0, "rotationY": -20.0, "rotationZ": 0.0 },
+						"Linen_3": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 20.0, "rotationY": 20.0, "rotationZ": 0.0 },
+						"Flask_origin": { "offsetX": -66.0, "offsetY": -66.0, "offsetZ": -78.0 },
+						"Flask_origin_inner": { "rotationX": -90.0, "rotationY": 90.0, "rotationZ": 0.0 },
+						"Ramdrod_origin": { "offsetX": 0.0, "offsetY": 0.55, "offsetZ": -8.0 },
+						"Ramrod": { "rotationX": 180.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 110,
+					"elements": {
+						"Bullet": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 7.8 },
+						"Patch": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 8.0 },
+						"Linen_0": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": -20.0, "rotationY": 13.0, "rotationZ": 0.0 },
+						"Linen_1": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": -20.0, "rotationY": -15.0, "rotationZ": 0.0 },
+						"Linen_2": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 20.0, "rotationY": -20.0, "rotationZ": 0.0 },
+						"Linen_3": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 20.0, "rotationY": 20.0, "rotationZ": 0.0 },
+						"Flask_origin": { "offsetX": -66.0, "offsetY": -66.0, "offsetZ": -78.0 },
+						"Flask_origin_inner": { "rotationX": -90.0, "rotationY": 90.0, "rotationZ": 0.0 },
+						"Ramdrod_origin": { "offsetX": 0.0, "offsetY": 0.55, "offsetZ": -8.0 },
+						"Ramrod": { "rotationX": 180.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 120,
+					"elements": {
+						"Bullet": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 7.8 },
+						"Patch": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 8.0 },
+						"Linen_0": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": -20.0, "rotationY": 13.0, "rotationZ": 0.0 },
+						"Linen_1": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": -20.0, "rotationY": -15.0, "rotationZ": 0.0 },
+						"Linen_2": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 20.0, "rotationY": -20.0, "rotationZ": 0.0 },
+						"Linen_3": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 20.0, "rotationY": 20.0, "rotationZ": 0.0 },
+						"Flask_origin": { "offsetX": -66.0, "offsetY": -66.0, "offsetZ": -78.0 },
+						"Flask_origin_inner": { "rotationX": -90.0, "rotationY": 90.0, "rotationZ": 0.0 },
+						"Ramdrod_origin": { "offsetX": 0.0, "offsetY": 0.55, "offsetZ": 1.0 },
+						"Ramrod": { "rotationX": 180.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 125,
+					"elements": {
+						"Bullet": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 7.8 },
+						"Patch": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 8.0 },
+						"Linen_0": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": -20.0, "rotationY": 13.0, "rotationZ": 0.0 },
+						"Linen_1": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": -20.0, "rotationY": -15.0, "rotationZ": 0.0 },
+						"Linen_2": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 20.0, "rotationY": -20.0, "rotationZ": 0.0 },
+						"Linen_3": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 20.0, "rotationY": 20.0, "rotationZ": 0.0 },
+						"Flask_origin": { "offsetX": -66.0, "offsetY": -66.0, "offsetZ": -78.0 },
+						"Flask_origin_inner": { "rotationX": -90.0, "rotationY": 90.0, "rotationZ": 0.0 },
+						"Ramdrod_origin": { "offsetX": 0.0, "offsetY": 0.55, "offsetZ": -2.0 },
+						"Ramrod": { "rotationX": 180.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 130,
+					"elements": {
+						"Bullet": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 7.8 },
+						"Patch": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 8.0 },
+						"Linen_0": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": -20.0, "rotationY": 13.0, "rotationZ": 0.0 },
+						"Linen_1": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": -20.0, "rotationY": -15.0, "rotationZ": 0.0 },
+						"Linen_2": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 20.0, "rotationY": -20.0, "rotationZ": 0.0 },
+						"Linen_3": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 20.0, "rotationY": 20.0, "rotationZ": 0.0 },
+						"Flask_origin": { "offsetX": -66.0, "offsetY": -66.0, "offsetZ": -78.0 },
+						"Flask_origin_inner": { "rotationX": -90.0, "rotationY": 90.0, "rotationZ": 0.0 },
+						"Ramdrod_origin": { "offsetX": 0.0, "offsetY": 0.55, "offsetZ": 1.0 },
+						"Ramrod": { "rotationX": 180.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 135,
+					"elements": {
+						"Bullet": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 7.8 },
+						"Patch": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 8.0 },
+						"Linen_0": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": -20.0, "rotationY": 13.0, "rotationZ": 0.0 },
+						"Linen_1": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": -20.0, "rotationY": -15.0, "rotationZ": 0.0 },
+						"Linen_2": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 20.0, "rotationY": -20.0, "rotationZ": 0.0 },
+						"Linen_3": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 20.0, "rotationY": 20.0, "rotationZ": 0.0 },
+						"Flask_origin": { "offsetX": -66.0, "offsetY": -66.0, "offsetZ": -78.0 },
+						"Flask_origin_inner": { "rotationX": -90.0, "rotationY": 90.0, "rotationZ": 0.0 },
+						"Ramdrod_origin": { "offsetX": 0.0, "offsetY": 0.55, "offsetZ": -9.0 },
+						"Ramrod": { "rotationX": 180.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 140,
+					"elements": {
+						"Bullet": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 7.8 },
+						"Patch": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 8.0 },
+						"Linen_0": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": -20.0, "rotationY": 13.0, "rotationZ": 0.0 },
+						"Linen_1": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": -20.0, "rotationY": -15.0, "rotationZ": 0.0 },
+						"Linen_2": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 20.0, "rotationY": -20.0, "rotationZ": 0.0 },
+						"Linen_3": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 20.0, "rotationY": 20.0, "rotationZ": 0.0 },
+						"Flask_origin": { "offsetX": -66.0, "offsetY": -66.0, "offsetZ": -78.0 },
+						"Flask_origin_inner": { "rotationX": -90.0, "rotationY": 90.0, "rotationZ": 0.0 },
+						"Ramdrod_origin": { "offsetX": 0.0, "offsetY": 0.55, "offsetZ": -9.0 },
+						"Ramrod": { "rotationX": 180.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 145,
+					"elements": {
+						"Bullet": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 7.8 },
+						"Patch": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 8.0 },
+						"Linen_0": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": -20.0, "rotationY": 13.0, "rotationZ": 0.0 },
+						"Linen_1": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": -20.0, "rotationY": -15.0, "rotationZ": 0.0 },
+						"Linen_2": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 20.0, "rotationY": -20.0, "rotationZ": 0.0 },
+						"Linen_3": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 20.0, "rotationY": 20.0, "rotationZ": 0.0 },
+						"Flask_origin": { "offsetX": -66.0, "offsetY": -66.0, "offsetZ": -78.0 },
+						"Flask_origin_inner": { "rotationX": -90.0, "rotationY": 90.0, "rotationZ": 0.0 },
+						"Ramdrod_origin": { "offsetX": 0.0, "offsetY": 0.55, "offsetZ": -17.0 },
+						"Ramrod": { "rotationX": 180.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 155,
+					"elements": {
+						"Bullet": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 7.8 },
+						"Patch": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 8.0 },
+						"Linen_0": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": -20.0, "rotationY": 13.0, "rotationZ": 0.0 },
+						"Linen_1": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": -20.0, "rotationY": -15.0, "rotationZ": 0.0 },
+						"Linen_2": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 20.0, "rotationY": -20.0, "rotationZ": 0.0 },
+						"Linen_3": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 20.0, "rotationY": 20.0, "rotationZ": 0.0 },
+						"Flask_origin": { "offsetX": -66.0, "offsetY": -66.0, "offsetZ": -78.0 },
+						"Flask_origin_inner": { "rotationX": -90.0, "rotationY": 90.0, "rotationZ": 0.0 },
+						"Ramdrod_origin": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": -17.0 },
+						"Ramrod": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 165,
+					"elements": {
+						"Bullet": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 7.8 },
+						"Patch": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 8.0 },
+						"Linen_0": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": -20.0, "rotationY": 13.0, "rotationZ": 0.0 },
+						"Linen_1": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": -20.0, "rotationY": -15.0, "rotationZ": 0.0 },
+						"Linen_2": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 20.0, "rotationY": -20.0, "rotationZ": 0.0 },
+						"Linen_3": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 20.0, "rotationY": 20.0, "rotationZ": 0.0 },
+						"Flask_origin": { "offsetX": -66.0, "offsetY": -66.0, "offsetZ": -78.0 },
+						"Flask_origin_inner": { "rotationX": -90.0, "rotationY": 90.0, "rotationZ": 0.0 },
+						"Ramdrod_origin": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+						"Ramrod": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				}
+			]
+		},
+
+		{
+			"name": "prime",
+			"code": "prime",
+			"quantityframes": 60,
+			"onActivityStopped": "Rewind",
+			"onAnimationEnd": "Repeat",
+			"keyframes": [
+				{
+					"frame": 0,
+					"elements": {
+						"Lock_lever": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Pan_cover": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Lever": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Flask_origin": { "offsetX": -48.0, "offsetY": -78.0, "offsetZ": -89.0 },
+						"Flask_origin_inner": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 10,
+					"elements": {
+						"Lever": { "rotationX": 10.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Pan_cover": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Lock_lever": { "rotationX": -35.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Flask_origin": { "offsetX": -48.0, "offsetY": -78.0, "offsetZ": -89.0 },
+						"Flask_origin_inner": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 15,
+					"elements": {
+						"Lever": { "rotationX": 10.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Pan_cover": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Lock_lever": { "rotationX": -35.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Flask_origin": { "offsetX": -48.0, "offsetY": -78.0, "offsetZ": -89.0 },
+						"Flask_origin_inner": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 25,
+					"elements": {
+						"Lever": { "rotationX": 10.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Pan_cover": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Lock_lever": { "rotationX": -35.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Flask_origin": { "offsetX": -60.0, "offsetY": -55.0, "offsetZ": -89.4 },
+						"Flask_origin_inner": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 30,
+					"elements": {
+						"Lever": { "rotationX": 10.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Pan_cover": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Lock_lever": { "rotationX": -35.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Flask_origin": { "offsetX": -63.0, "offsetY": -54.0, "offsetZ": -89.4 },
+						"Flask_origin_inner": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 90.0 }
+					}
+				},
+				{
+					"frame": 35,
+					"elements": {
+						"Lever": { "rotationX": 10.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Pan_cover": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Lock_lever": { "rotationX": -35.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Flask_origin": { "offsetX": -60.0, "offsetY": -55.0, "offsetZ": -89.4 },
+						"Flask_origin_inner": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 45,
+					"elements": {
+						"Lever": { "rotationX": 10.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Pan_cover": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Lock_lever": { "rotationX": -35.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Flask_origin": { "offsetX": -48.0, "offsetY": -78.0, "offsetZ": -89.0 },
+						"Flask_origin_inner": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 50,
+					"elements": {
+						"Lever": { "rotationX": 10.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Pan_cover": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Lock_lever": { "rotationX": -35.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Flask_origin": { "offsetX": -48.0, "offsetY": -78.0, "offsetZ": -89.0 },
+						"Flask_origin_inner": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 59,
+					"elements": {
+						"Lever": { "rotationX": 10.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Pan_cover": { "rotationX": 0.0, "rotationY": 135.0, "rotationZ": 0.0 },
+						"Lock_lever": { "rotationX": -35.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Flask_origin": { "offsetX": -48.0, "offsetY": -78.0, "offsetZ": -89.0 },
+						"Flask_origin_inner": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
 					}
 				}
 			]
