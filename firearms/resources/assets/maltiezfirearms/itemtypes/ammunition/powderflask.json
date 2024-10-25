@@ -7,7 +7,7 @@
   "variantgroups": [{"code": "metal", "loadFromProperties": "block/toolmetal"}],
   "allowedVariants": ["*-brass", "*-tinbronze"],
   "textures": {"metal": {"base": "game:block/metal/plate/{metal}"}},
-  "creativeinventory": {"maltiezfirearms": ["*"]},
+  "creativeinventoryStacks": [{"tabs": ["maltiezfirearms"], "stacks": [{"type": "item", "code": "powderflask-{metal}", "attributes": {"durability": 0}}]}],
   "behaviors": [
     {
       "name": "GroundStorable",
@@ -16,6 +16,7 @@
   ],
   "attributes": {
     "groundStorageTransform": {"rotation": {"x": 0, "y": -28, "z": 0}, "origin": {"x": 0.5, "y": 0, "z": 0.5}, "scale": 0.5},
+    "handbook": {"groupBy": ["powderflask-*"]},
     "attachableShape": "maltiezfirearms:shapes/powder/powderflask-opened"
   },
   "guiTransform": {"translation": {"x": 0, "y": 0, "z": 0}, "rotation": {"x": 163, "y": 56, "z": 0}, "origin": {"x": -0.1, "y": 0.1, "z": 0.8}, "scale": 2.19},

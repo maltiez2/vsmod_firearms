@@ -1390,6 +1390,13 @@
 						}
 					]
 				}
+			],
+			"attachmentpoints": [
+				{
+					"code": "bayonet",
+					"posX": "0","posY": "0.8","posZ": "-33.2",
+					"rotationX": "0.0","rotationY": "0.0","rotationZ": "0.0"
+				}
 			]
 		}
 	],

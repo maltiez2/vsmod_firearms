@@ -8,15 +8,5 @@
     "width": 2,
     "height": 1,
     "output": {"type": "item", "code": "maltiezfirearms:powderflask-{metal}", "attributes": {"durability": 0}}
-  },
-  {
-    "ingredientPattern": "A",
-    "ingredients": {
-      "A": {"type": "item", "code": "maltiezfirearms:powderflask", "quantity": 1}
-    },
-    "width": 1,
-    "height": 1,
-    "copyAttributesFrom": "A",
-    "output": {"type": "item", "code": "maltiezfirearms:powderflask-brass"}
   }
 ]

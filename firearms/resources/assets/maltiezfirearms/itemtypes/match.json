@@ -6,55 +6,11 @@
     "groundStorageTransform": {"translation": {"x": 0.3, "y": 0, "z": 0.6}, "rotation": {"x": 0, "y": -10, "z": 90}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 1.22}
   },
   "behaviorsbyType": {
-    "*-lit": [
-      {
-        "name": "FiniteStateMachine",
-        "properties": {
-          "initialState": "lit",
-          "systems": {"extinguish": {"class": "ChangeGroup"}, "sounds": {"class": "Sounds", "domain": "maltiezfirearms"}},
-          "operations": {
-            "extinguish": {
-              "class": "Instant",
-              "inputs": ["status-swimming", "status-submerged"],
-              "states": {"initial": "lit", "final": "unlit"},
-              "systems": [{"code": "sounds", "action": "play", "sound": "extinguish"}, {"code": "extinguish", "group": "state", "value": "extinct"}]
-            }
-          },
-          "inputs": {
-            "status-swimming": {"class": "Status", "status": "Swimming", "slot": "Inventory"},
-            "status-submerged": {"class": "Status", "status": "EyesSubmerged", "slot": "Inventory"}
-          }
-        }
-      }
-    ],
+    "*-lit": [],
     "*": [
       {
         "name": "GroundStorable",
         "properties": {"layout": "Quadrants", "placeRemoveSound": "game:sounds/player/build", "collisionBox": {"x1": 0, "y1": 0, "z1": 0, "x2": 1, "y2": 0.1, "z2": 1}}
-      },
-      {
-        "name": "FiniteStateMachine",
-        "properties": {
-          "initialState": "unlit",
-          "systems": {
-            "lit": {"class": "ChangeGroup"},
-            "sounds": {"class": "Sounds", "domain": "maltiezfirearms"},
-            "selection": {"class": "SelectionMatch", "something-burning": ["torch-*-lit-*", "torchholder-*-filled-*", "firepit-lit", "*-oillamp-*", "candle"]}
-          },
-          "operations": {
-            "extinguish": {
-              "class": "Instant",
-              "inputs": "action-on",
-              "states": {"initial": "unlit", "final": "lit"},
-              "systems": [
-                {"code": "selection", "match": "something-burning"},
-                {"code": "sounds", "action": "play", "sound": "lit"},
-                {"code": "lit", "group": "state", "value": "lit"}
-              ]
-            }
-          },
-          "inputs": {"action-on": {"class": "ActionInput", "actions": ["RightMouseDown", "ShiftKey"], "name": "maltiezfirearms:lit-match"}}
-        }
       }
     ]
   },

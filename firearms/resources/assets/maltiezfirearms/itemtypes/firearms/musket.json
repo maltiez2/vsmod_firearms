@@ -1,6 +1,6 @@
 ﻿{
   "code": "musket",
-  "class": "Firearms:Muzzleloader",
+  "class": "Firearms:Musket",
   "creativeinventory": {"maltiezfirearms": ["*"]},
   "maxstacksize": 1,
   "durability": 1250,
@@ -17,15 +17,26 @@
         "collisionBox": {"x1": 0, "y1": 0, "z1": 0, "x2": 0, "y2": 0, "z2": 0}
       }
     },
-    {"name": "CombatOverhaul:AnimatableAttachable", "properties": {"animated-shape": "maltiezfirearms:firearms/musket"}}
+    {
+      "name": "CombatOverhaul:AnimatableAttachable",
+      "properties": {
+        "animated-shape": "maltiezfirearms:firearms/musket",
+        "animated-shape-alternates": [
+          "maltiezfirearms:firearms/musket/musket-01-plug-plain",
+          "maltiezfirearms:firearms/musket/musket-02-plug-decorated",
+          "maltiezfirearms:firearms/musket/musket-03-socket-plain",
+          "maltiezfirearms:firearms/musket/musket-04-socket-decorated"
+        ]
+      }
+    }
   ],
   "attributes": {
     "toolrackTransform": {"translation": {"x": 1.4, "y": 0.52, "z": 0.5}, "rotation": {"x": 1, "y": 95, "z": -90}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 1.34},
     "groundStorageTransform": {"translation": {"x": 0.55, "y": 0.44, "z": 0.75}, "rotation": {"x": 98, "y": 4, "z": -101}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 0.81},
     "inWallmountTransform": {"translation": {"x": -0.6, "y": -0.06, "z": -0.04}, "rotation": {"x": 90, "y": -83, "z": 90}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 0.81},
     "inWeaponrackTransform": {"translation": {"x": 0, "y": 0.02, "z": 0.08}, "rotation": {"x": 82, "y": 0, "z": 0}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 0.81},
-    "BulletDamageMultiplier": 1,
-    "BulletDamageStrength": 1,
+    "BulletDamageMultiplier": 1.63,
+    "BulletDamageStrength": 5,
     "BulletVelocity": 4,
     "BulletTransform": {"translation": {"x": -2.2, "y": 0.2, "z": -2.2}, "rotation": {"x": 0, "y": 0, "z": 0}, "scale": 0.3},
     "FlaskTransform": {"Translation": {"X": 0, "Y": 0, "Z": 0}, "Rotation": {"X": 0, "Y": 0, "Z": 0}, "Origin": {"X": 0, "Y": 0, "Z": 0}, "Scale": 1},
@@ -43,7 +54,7 @@
     "MagazineSize": 1,
     "BulletLoadedPerReload": 1,
     "WaddingUsedPerReload": 1,
-    "LoadPowderConsumption": 3,
+    "LoadPowderConsumption": 15,
     "PrimePowderConsumption": 1,
     "LoadingRequirementWildcard": "",
     "PrimingRequirementWildcard": "",
@@ -51,7 +62,7 @@
     "BulletWildcard": "*slug-*",
     "Aiming": {
       "AimDifficulty": 1,
-      "CursorType": "Fixed",
+      "CursorType": "None",
       "AccuracyOvertimeSec": 0,
       "ZeroingAngle": 0,
       "AllowSprint": false,
@@ -64,7 +75,15 @@
       "VerticalOffset": -0.05
     }
   },
-  "shape": {"base": "maltiezfirearms:firearms/musket"},
+  "shape": {
+    "base": "maltiezfirearms:firearms/musket",
+    "alternates": [
+      {"base": "maltiezfirearms:firearms/musket/musket-01-plug-plain"},
+      {"base": "maltiezfirearms:firearms/musket/musket-02-plug-decorated"},
+      {"base": "maltiezfirearms:firearms/musket/musket-03-socket-plain"},
+      {"base": "maltiezfirearms:firearms/musket/musket-04-socket-decorated"}
+    ]
+  },
   "heldTpHitAnimation": "firearmsempty",
   "heldLeftTpIdleAnimation": "firearmsempty",
   "heldLeftReadyAnimation": "firearmsempty",

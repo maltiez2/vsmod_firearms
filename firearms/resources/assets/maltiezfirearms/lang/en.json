@@ -146,5 +146,7 @@
   "itemdesc-schematic-flintlock": "Ancient schematic that describes intricate production of a leaf spring and a ignition mechanism that utilizes it.<br>",
   
   "prefixandcreature-slug": "Slug",
-  "prefixandcreature-bullet": "Bullet"
+  "prefixandcreature-bullet": "Bullet",
+  "item-creature-slug-*": "Slug",
+  "item-creature-bullet-*": "Bullet"
 }
