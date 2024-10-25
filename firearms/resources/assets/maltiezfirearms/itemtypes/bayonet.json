@@ -6,12 +6,13 @@
   "miningspeedByType": {"*-plug-*": {"plant": 2.4}, "*-socket-*": {"plant": 1.6}},
   "durabilityByType": {"*-plug-*": 2250, "*-socket-*": 1200},
   "shape": {"base": "maltiezfirearms:bayonet/bayonet-{type}-{visuals}"},
-  "variantgroups": [{"code": "type", "states": ["plug", "socket"]}, {"code": "visuals", "states": ["plain", "decorated"]}],
+  "variantgroups": [{"code": "type", "states": ["socket"]}, {"code": "visuals", "states": ["plain", "decorated"]}],
   "storageFlags": 257,
   "attributes": {
     "groundStorageTransform": {"translation": {"x": 0.3, "y": 0.04, "z": 0.4}, "rotation": {"x": 1, "y": -110, "z": 169}, "origin": {"x": 0, "y": 0, "z": 0}},
     "knifeHitBlockAnimation": "knifecut",
-    "knifeHitEntityAnimation": "knifestab"
+    "knifeHitEntityAnimation": "knifestab",
+    "musketRenderVariantByType": {"*-plug-plain": 2, "*-plug-decorated": 3, "*-socket-plain": 4, "*-socket-decorated": 5}
   },
   "behaviors": [
     {

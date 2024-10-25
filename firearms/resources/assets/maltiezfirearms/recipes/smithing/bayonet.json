@@ -19,26 +19,5 @@
     ],
     "name": "Bayonet (socket)",
     "output": {"type": "item", "code": "maltiezfirearms:bayonet-blade-socket"}
-  },
-  {
-    "ingredient": {"type": "item", "code": "game:ingot-steel"},
-    "pattern": [
-      [
-        "________________",
-        "_#########______",
-        "################",
-        "_#########______",
-        "________________"
-      ],
-      [
-        "________________",
-        "________________",
-        "__########______",
-        "________________",
-        "________________"
-      ]
-    ],
-    "name": "Bayonet (plug)",
-    "output": {"type": "item", "code": "maltiezfirearms:bayonet-blade-plug"}
   }
 ]

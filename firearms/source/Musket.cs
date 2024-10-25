@@ -1,13 +1,31 @@
 ﻿using CombatOverhaul.Animations;
-using CombatOverhaul.Armor;
+using CombatOverhaul.Implementations;
 using CombatOverhaul.Inputs;
+using CombatOverhaul.MeleeSystems;
 using CombatOverhaul.RangedSystems;
 using Vintagestory.API.Client;
 using Vintagestory.API.Common;
+using Vintagestory.API.MathTools;
 using Vintagestory.API.Server;
 using Vintagestory.API.Util;
 
 namespace Firearms;
+
+public enum MusketState
+{
+    Unloaded,
+    Loading,
+    Loaded,
+    Priming,
+    Primed,
+    Cocking,
+    Cocked,
+    Aim,
+    Shoot,
+    AttackWindup,
+    Attack,
+    Cooldown
+}
 
 public enum MusketLoadingStage
 {
@@ -15,37 +33,163 @@ public enum MusketLoadingStage
     Loading,
     Priming,
     AttachBayonet,
+    DamageBayonet,
     DetachBayonet
 }
 
 public class MusketStats
 {
     public string BayonetWildcard { get; set; } = "*bayonet-*";
+
+    public MeleeAttackStats BayonetAttack { get; set; } = new();
+    public string BayonetAttackAnimation { get; set; } = "";
+    public string BayonetAttackTpAnimation { get; set; } = "";
+    public float AnimationStaggerOnHitDurationMs { get; set; } = 100;
 }
 
-public class MusketClient : MuzzleloaderClient
+public class MusketClient : MuzzleloaderClient, IOnGameTick
 {
     public MusketClient(ICoreClientAPI api, Item item) : base(api, item)
     {
         StatsMusket = item.Attributes.AsObject<MusketStats>();
+        api.Input.RegisterHotKey("attach-bayonet", "Attach/detach bayonet", GlKeys.B);
+        api.Input.SetHotKeyHandler("attach-bayonet", BayonetHotkey);
+
+        BayonetAttack = new(api, StatsMusket.BayonetAttack);
+        RegisterCollider(item.Code.ToString(), "bayonet-", BayonetAttack);
     }
 
-    protected readonly ModelTransform BayonetTransform;
-    protected readonly MusketStats StatsMusket;
-
-    [ActionEventHandler(EnumEntityAction.RightMouseDown, ActionState.Pressed)]
-    protected virtual bool AttachBayonet(ItemSlot slot, EntityPlayer player, ref int state, ActionEventData eventData, bool mainHand, AttackDirection direction)
+    public virtual void RenderDebugCollider(ItemSlot inSlot, IClientPlayer byPlayer)
     {
-        if (eventData.AltPressed || !mainHand || CheckForOtherHandEmpty(mainHand, player)) return false;
-        if (!WildcardUtil.Match(StatsMusket.BayonetWildcard, player.LeftHandItemSlot.Itemstack?.Item?.Code?.ToString() ?? "")) return false;
+        foreach (MeleeDamageType damageType in BayonetAttack.DamageTypes)
+        {
+            damageType.RelativeCollider.Transform(byPlayer.Entity.Pos, byPlayer.Entity, inSlot, Api, right: true)?.Render(Api, byPlayer.Entity);
+        }
+    }
 
-        RangedWeaponSystem.Reload(slot, player.LeftHandItemSlot, 1, mainHand, ServerAttachBayonetCallback, data: SerializeLoadingStage(MusketLoadingStage.AttachBayonet));
+    protected readonly MusketStats StatsMusket;
+    protected readonly ItemInventoryBuffer BayonetInventory = new();
+    protected const string BayonetInventoryId = "bayonet";
+    protected MeleeAttack BayonetAttack;
+
+    protected bool BayonetHotkey(KeyCombination combination)
+    {
+        EntityPlayer player = Api.World.Player.Entity;
+
+        BayonetInventory.Read(player.RightHandItemSlot, BayonetInventoryId);
+        if (!BayonetInventory.Items.Any())
+        {
+            if (!WildcardUtil.Match(StatsMusket.BayonetWildcard, player.LeftHandItemSlot.Itemstack?.Item?.Code?.ToString() ?? "")) return false;
+
+            RangedWeaponSystem.Reload(player.RightHandItemSlot, player.LeftHandItemSlot, 1, true, ServerAttachBayonetCallback, data: SerializeLoadingStage(MusketLoadingStage.AttachBayonet));
+
+            BayonetInventory.Clear();
+        }
+        else
+        {
+            RangedWeaponSystem.Reload(player.RightHandItemSlot, player.LeftHandItemSlot, 1, true, ServerAttachBayonetCallback, data: SerializeLoadingStage(MusketLoadingStage.DetachBayonet));
+        }
 
         return true;
     }
     protected virtual void ServerAttachBayonetCallback(bool result)
     {
-        
+
+    }
+
+    [ActionEventHandler(EnumEntityAction.LeftMouseDown, ActionState.Active)]
+    protected virtual bool Attack(ItemSlot slot, EntityPlayer player, ref int state, ActionEventData eventData, bool mainHand, AttackDirection direction)
+    {
+        if (eventData.AltPressed) return false;
+        if (CheckState(state, MusketState.Loading, MusketState.Aim, MusketState.Priming, MusketState.Shoot)) return false;
+        if (CheckState(state, MusketState.AttackWindup, MusketState.Attack, MusketState.Cooldown)) return false;
+
+        SetState(MeleeWeaponState.WindingUp, mainHand);
+        BayonetAttack.Start(player.Player);
+        AnimationBehavior?.Play(
+            mainHand,
+            StatsMusket.BayonetAttackAnimation,
+            animationSpeed: GetAnimationSpeed(player, Stats.ProficiencyStat),
+            category: AnimationCategory(mainHand),
+            callback: () => AttackAnimationCallback(slot, player, mainHand),
+            callbackHandler: code => AttackAnimationCallbackHandler(slot, player, code, mainHand));
+        AnimationBehavior?.PlayVanillaAnimation(StatsMusket.BayonetAttackTpAnimation, mainHand);
+
+        return true;
+    }
+    protected virtual void TryAttack(MeleeAttack attack, ItemSlot slot, EntityPlayer player, bool mainHand)
+    {
+        attack.Attack(
+            player.Player,
+            slot,
+            mainHand,
+            out IEnumerable<(Block block, System.Numerics.Vector3 point)> terrainCollision,
+            out IEnumerable<(Vintagestory.API.Common.Entities.Entity entity, System.Numerics.Vector3 point)> entitiesCollision);
+
+        if (entitiesCollision.Any() && StatsMusket.AnimationStaggerOnHitDurationMs > 0)
+        {
+            AnimationBehavior?.SetSpeedModifier(AttackImpactFunction);
+            RangedWeaponSystem.Reload(player.RightHandItemSlot, player.LeftHandItemSlot, 1, true, ServerAttachBayonetCallback, data: SerializeLoadingStage(MusketLoadingStage.DamageBayonet));
+        }
+    }
+    protected virtual bool AttackImpactFunction(TimeSpan duration, ref TimeSpan delta)
+    {
+        TimeSpan totalDuration = TimeSpan.FromMilliseconds(StatsMusket.AnimationStaggerOnHitDurationMs);
+
+        delta = TimeSpan.Zero;
+
+        return duration < totalDuration;
+    }
+    protected virtual bool AttackAnimationCallback(ItemSlot slot, EntityPlayer player, bool mainHand)
+    {
+        AnimationBehavior?.PlayReadyAnimation(mainHand);
+
+        int state = PlayerBehavior?.GetState(mainHand) ?? 0;
+        OnSelected(slot, player, mainHand, ref state);
+        PlayerBehavior?.SetState(state, mainHand);
+
+        return true;
+    }
+    protected virtual void AttackAnimationCallbackHandler(ItemSlot slot, EntityPlayer player, string callbackCode, bool mainHand)
+    {
+        switch (callbackCode)
+        {
+            case "start":
+                SetState(MusketState.Attack, mainHand);
+                break;
+            case "stop":
+                SetState(MusketState.Cooldown, mainHand);
+                break;
+            case "ready":
+                int state = PlayerBehavior?.GetState(mainHand) ?? 0;
+                OnSelected(slot, player, mainHand, ref state);
+                PlayerBehavior?.SetState(state, mainHand);
+                break;
+        }
+    }
+    protected static string AnimationCategory(bool mainHand = true) => mainHand ? "main" : "mainOffhand";
+    public void OnGameTick(ItemSlot slot, EntityPlayer player, ref int state, bool mainHand)
+    {
+        switch (GetState<MusketState>(mainHand))
+        {
+            case MusketState.Attack:
+                {
+                    TryAttack(BayonetAttack, slot, player, mainHand);
+                }
+                break;
+            default:
+                break;
+        }
+    }
+    protected static void RegisterCollider(string item, string type, MeleeAttack attack)
+    {
+#if DEBUG
+        int typeIndex = 0;
+        foreach (MeleeDamageType damageType in attack.DamageTypes)
+        {
+            AnimationsManager.RegisterCollider(item, type + typeIndex++, damageType);
+        }
+#endif
     }
 }
 
@@ -63,12 +207,51 @@ public class MusketServer : MuzzleloaderServer
         {
             case MusketLoadingStage.AttachBayonet:
                 {
-                    slot.Itemstack?.Attributes?.SetInt("renderVariant", 2);
+                    if (ammoSlot?.Itemstack == null) return false;
+
+                    ItemStack bayonet = ammoSlot.TakeOut(1);
+
+                    BayonetInventory.Read(slot, BayonetInventoryId);
+                    BayonetInventory.Items.Add(bayonet);
+                    BayonetInventory.Write(slot);
+                    BayonetInventory.Clear();
+
+                    int renderVariant = bayonet.ItemAttributes["musketRenderVariant"].AsInt();
+                    slot.Itemstack?.Attributes?.SetInt("renderVariant", renderVariant);
                     slot.MarkDirty();
+                    ammoSlot.MarkDirty();
+                }
+                return true;
+            case MusketLoadingStage.DamageBayonet:
+                {
+                    BayonetInventory.Read(slot, BayonetInventoryId);
+                    ItemStack bayonet = BayonetInventory.Items[0];
+                    bayonet.ResolveBlockOrItem(Api.World);
+                    DummySlot dummySlot = new(bayonet);
+                    bayonet.Item.DamageItem(Api.World, player.Entity, dummySlot, 1);
+                    if (dummySlot.Empty)
+                    {
+                        BayonetInventory.Items.Clear();
+                    }
+
+                    BayonetInventory.Write(slot);
+                    BayonetInventory.Clear();
                 }
                 return true;
             case MusketLoadingStage.DetachBayonet:
                 {
+                    BayonetInventory.Read(slot, BayonetInventoryId);
+                    ItemStack bayonet = BayonetInventory.Items[0];
+                    bayonet.ResolveBlockOrItem(Api.World);
+                    BayonetInventory.Items.Clear();
+                    BayonetInventory.Write(slot);
+                    BayonetInventory.Clear();
+
+                    if (!player.Entity.TryGiveItemStack(bayonet))
+                    {
+                        Api.World.SpawnItemEntity(bayonet, player.Entity.Pos.AsBlockPos);
+                    }
+
                     slot.Itemstack?.Attributes?.RemoveAttribute("renderVariant");
                     slot.MarkDirty();
                 }
@@ -82,7 +265,7 @@ public class MusketServer : MuzzleloaderServer
     protected const string BayonetInventoryId = "bayonet";
 }
 
-public class MusketItem : Item, IHasWeaponLogic, IHasRangedWeaponLogic, IHasIdleAnimations
+public class MusketItem : Item, IHasWeaponLogic, IHasRangedWeaponLogic, IHasIdleAnimations, IOnGameTick
 {
     public MusketClient? ClientLogic { get; private set; }
     public MusketServer? ServerLogic { get; private set; }
@@ -92,6 +275,8 @@ public class MusketItem : Item, IHasWeaponLogic, IHasRangedWeaponLogic, IHasIdle
 
     IClientWeaponLogic? IHasWeaponLogic.ClientLogic => ClientLogic;
     IServerRangedWeaponLogic? IHasRangedWeaponLogic.ServerWeaponLogic => ServerLogic;
+
+    public void OnGameTick(ItemSlot slot, EntityPlayer player, ref int state, bool mainHand) => ClientLogic?.OnGameTick(slot, player, ref state, mainHand);
 
     public override void OnLoaded(ICoreAPI api)
     {
@@ -109,6 +294,16 @@ public class MusketItem : Item, IHasWeaponLogic, IHasRangedWeaponLogic, IHasIdle
         if (api is ICoreServerAPI serverAPI)
         {
             ServerLogic = new(serverAPI, this);
+        }
+    }
+
+    public override void OnHeldRenderOpaque(ItemSlot inSlot, IClientPlayer byPlayer)
+    {
+        base.OnHeldRenderOpaque(inSlot, byPlayer);
+
+        if (AnimationsManager.RenderDebugColliders)
+        {
+            ClientLogic?.RenderDebugCollider(inSlot, byPlayer);
         }
     }
 }

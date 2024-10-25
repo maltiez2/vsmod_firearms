@@ -73,7 +73,16 @@
       "AnimationFollowY": 5.5,
       "VerticalLimit": 0.25,
       "VerticalOffset": -0.05
-    }
+    },
+    "BayonetAttack": {
+      "StopOnTerrainHit": false,
+      "StopOnEntityHit": false,
+      "CollideWithTerrain": true,
+      "MaxReach": 9,
+      "DamageTypes": [{"Damage": {"DamageType": "PiercingAttack", "Strength": 5, "Damage": 4.5}, "Knockback": 0.5, "DurabilityDamage": 1, "Collider": [0, 0.1, -0.3, 0, 0.1, -3]}]
+    },
+    "BayonetAttackAnimation": "maltiezfirearms:musket-bayonet-thrust",
+    "BayonetAttackTpAnimation": "spearhit"
   },
   "shape": {
     "base": "maltiezfirearms:firearms/musket",
