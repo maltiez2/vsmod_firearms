@@ -4,12 +4,25 @@
     "ingredients": {
       "B": {"type": "item", "code": "maltiezfirearms:barrel-arquebus-iron", "quantity": 1},
       "M": {"type": "item", "code": "game:metalplate-iron", "quantity": 1},
-      "L": {"type": "item", "code": "maltiezfirearms:lock-matchlock", "quantity": 1},
+      "L": {"type": "item", "code": "maltiezfirearms:lock-matchlock-iron", "quantity": 1},
       "W": {"type": "item", "code": "game:plank-*", "quantity": 1},
-      "R": {"type": "item", "code": "maltiezfirearms:ramrod-arquebus", "quantity": 1}
+      "R": {"type": "item", "code": "maltiezfirearms:ramrod-arquebus-iron", "quantity": 1}
     },
     "width": 3,
     "height": 2,
-    "output": {"type": "item", "code": "maltiezfirearms:arquebus-plain"}
+    "output": {"type": "item", "code": "maltiezfirearms:firearm-arquebus-iron"}
+  },
+  {
+    "ingredientPattern": "WLB,MWR",
+    "ingredients": {
+      "B": {"type": "item", "code": "maltiezfirearms:barrel-arquebus-meteoriciron", "quantity": 1},
+      "M": {"type": "item", "code": "game:metalplate-meteoriciron", "quantity": 1},
+      "L": {"type": "item", "code": "maltiezfirearms:lock-matchlock-meteoriciron", "quantity": 1},
+      "W": {"type": "item", "code": "game:plank-*", "quantity": 1},
+      "R": {"type": "item", "code": "maltiezfirearms:ramrod-arquebus-meteoriciron", "quantity": 1}
+    },
+    "width": 3,
+    "height": 2,
+    "output": {"type": "item", "code": "maltiezfirearms:firearm-arquebus-meteoriciron"}
   }
 ]

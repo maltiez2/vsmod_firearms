@@ -2,7 +2,7 @@
   {
     "ingredientPattern": "AC",
     "ingredients": {
-      "A": {"type": "item", "code": "maltiezfirearms:flaskfurniture-*", "quantity": 1, "name": "metal", "allowedVariants": ["brass", "tinbronze"]},
+      "A": {"type": "item", "code": "maltiezfirearms:flaskfurniture-*", "quantity": 1, "name": "metal", "allowedVariants": ["brass", "copper", "tinbronze", "bismuthbronze", "blackbronze","iron", "meteoriciron", "steel"]},
       "C": {"type": "item", "code": "game:plank-*", "quantity": 1}
     },
     "width": 2,

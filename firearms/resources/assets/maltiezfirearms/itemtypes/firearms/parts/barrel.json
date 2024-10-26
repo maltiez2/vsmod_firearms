@@ -2,8 +2,9 @@
   "code": "barrel",
   "class": "Item",
   "variantgroups": [{"code": "weapon", "states": ["pistol", "arquebus", "carbine", "musket"]}, {"code": "material", "loadFromProperties": "block/toolmetal"}],
-  "allowedVariants": ["*-pistol-tinbronze", "*-arquebus-iron", "*-carbine-steel", "*-musket-steel"],
+  "allowedVariants": ["*-pistol-*bronze", "*-arquebus-*iron", "*-carbine-steel", "*-musket-steel"],
   "shape": {"base": "maltiezfirearms:parts/barrel-{weapon}"},
+  "textures": {"metal": {"base": "game:block/metal/plate/{material}"}},
   "attributes": {
     "groundStorageTransformByType": {
       "*-pistol-*": {"translation": {"x": 0.1, "y": 0.09, "z": 0.4}, "rotation": {"x": 1, "y": -114, "z": 169}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 0.8},

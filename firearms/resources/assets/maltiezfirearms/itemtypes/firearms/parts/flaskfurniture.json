@@ -2,8 +2,7 @@
   "code": "flaskfurniture",
   "class": "Item",
   "shape": {"base": "maltiezfirearms:powder/powderflask-furniture"},
-  "variantgroups": [{"code": "metal", "loadFromProperties": "block/toolmetal"}],
-  "allowedVariants": ["*-brass", "*-tinbronze"],
+  "variantgroups": [{"code": "metal", "states": ["brass", "copper", "tinbronze", "bismuthbronze", "blackbronze", "iron", "meteoriciron", "steel"]}],
   "textures": {"metal": {"base": "game:block/metal/plate/{metal}"}},
   "behaviors": [
     {

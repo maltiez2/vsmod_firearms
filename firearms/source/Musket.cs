@@ -88,6 +88,7 @@ public class MusketClient : MuzzleloaderClient, IOnGameTick
         else
         {
             RangedWeaponSystem.Reload(player.RightHandItemSlot, player.LeftHandItemSlot, 1, true, ServerAttachBayonetCallback, data: SerializeLoadingStage(MusketLoadingStage.DetachBayonet));
+            BayonetInventory.Clear();
         }
 
         return true;
@@ -103,6 +104,14 @@ public class MusketClient : MuzzleloaderClient, IOnGameTick
         if (eventData.AltPressed) return false;
         if (CheckState(state, MusketState.Loading, MusketState.Aim, MusketState.Priming, MusketState.Shoot)) return false;
         if (CheckState(state, MusketState.AttackWindup, MusketState.Attack, MusketState.Cooldown)) return false;
+
+        BayonetInventory.Read(player.RightHandItemSlot, BayonetInventoryId);
+        if (!BayonetInventory.Items.Any())
+        {
+            BayonetInventory.Clear();
+            return false;
+        }
+        BayonetInventory.Clear();
 
         SetState(MeleeWeaponState.WindingUp, mainHand);
         BayonetAttack.Start(player.Player);

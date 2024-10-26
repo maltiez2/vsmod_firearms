@@ -10,7 +10,7 @@
 	},
 	"textures": {
 		"brass": "game:block/metal/plate/brass",
-		"tinbronze": "game:block/metal/plate/tinbronze"
+		"metal": "game:block/metal/plate/tinbronze"
 	},
 	"elements": [
 		{
@@ -27,12 +27,12 @@
 					"to": [ 0.3, 0.3, 10.5 ],
 					"rotationOrigin": [ 0.05, 0.3, 4.0 ],
 					"faces": {
-						"north": { "texture": "#tinbronze", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
-						"east": { "texture": "#tinbronze", "uv": [ 0.0, 0.0, 16.0, 0.5 ], "autoUv": false },
-						"south": { "texture": "#tinbronze", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
-						"west": { "texture": "#tinbronze", "uv": [ 0.0, 0.0, 16.0, 0.5 ], "autoUv": false },
-						"up": { "texture": "#tinbronze", "uv": [ 0.0, 0.0, 0.5, 16.0 ], "autoUv": false },
-						"down": { "texture": "#tinbronze", "uv": [ 0.0, 0.0, 0.5, 16.0 ], "autoUv": false }
+						"north": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+						"east": { "texture": "#metal", "uv": [ 0.0, 0.0, 16.0, 0.5 ], "autoUv": false },
+						"south": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+						"west": { "texture": "#metal", "uv": [ 0.0, 0.0, 16.0, 0.5 ], "autoUv": false },
+						"up": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.5, 16.0 ], "autoUv": false },
+						"down": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.5, 16.0 ], "autoUv": false }
 					},
 					"children": [
 						{

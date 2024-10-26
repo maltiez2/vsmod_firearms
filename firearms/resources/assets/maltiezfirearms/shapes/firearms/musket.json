@@ -11,10 +11,12 @@
 	"textures": {
 		"plain": "game:block/cloth/linen/plain",
 		"brass": "game:block/metal/plate/brass",
+		"gold": "game:block/metal/plate/gold",
 		"iron": "game:block/metal/plate/iron",
 		"lead": "game:block/metal/plate/lead",
 		"steel": "game:block/metal/plate/steel",
 		"flint": "game:block/stone/flint",
+		"ebony": "game:block/wood/debarked/ebony",
 		"kapok": "game:block/wood/debarked/oak",
 		"oak": "game:block/wood/debarked/oak"
 	},

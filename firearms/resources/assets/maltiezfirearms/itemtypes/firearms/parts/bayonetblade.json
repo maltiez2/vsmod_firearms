@@ -2,7 +2,7 @@
   "code": "bayonet-blade",
   "class": "Item",
   "shape": {"base": "maltiezfirearms:bayonet/bayonet-blade-{type}"},
-  "variantgroups": [{"code": "type", "states": ["plug", "socket"]}],
+  "variantgroups": [{"code": "type", "states": ["socket"]}],
   "storageFlags": 257,
   "attributes": {"groundStorageTransform": {"translation": {"x": 0.3, "y": 0.04, "z": 0.4}, "rotation": {"x": 1, "y": -110, "z": 169}, "origin": {"x": 0, "y": 0, "z": 0}}},
   "behaviors": [

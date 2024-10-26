@@ -1,46 +1,29 @@
 ﻿{
   "code": "firearm",
   "class": "Firearms:Muzzleloader",
+  "variantgroups": [{"code": "type", "states": ["superimposed"]}, {"code": "material", "states": ["tinbronze", "bismuthbronze", "blackbronze", "tarnished"]}],
   "creativeinventory": {"maltiezfirearms": ["*"]},
-  "variantgroups": [{"code": "type", "states": ["pistol"]}, {"code": "material", "states": ["tinbronze", "bismuthbronze", "blackbronze", "tarnished"]}],
   "maxstacksize": 1,
   "durabilityByType": {"*-tarnished": 60, "*": 600},
-  "rackable": true,
-  "tool": "bow",
-  "behaviors": [
-    {
-      "name": "GroundStorable",
-      "properties": {
-        "layout": "Quadrants",
-        "wallOffY": 1,
-        "sprintKey": true,
-        "selectionBox": {"x1": 0, "y1": 0, "z1": 0, "x2": 1, "y2": 0.1, "z2": 1},
-        "collisionBox": {"x1": 0, "y1": 0, "z1": 0, "x2": 0, "y2": 0, "z2": 0}
-      }
-    },
-    {"name": "CombatOverhaul:AnimatableAttachable", "properties": {"animated-shape": "maltiezfirearms:firearms/pistol"}}
-  ],
+  "behaviors": [{"name": "CombatOverhaul:AnimatableAttachable", "properties": {"animated-shape": "maltiezfirearms:firearms/{type}"}}],
   "attributes": {
-    "toolrackTransform": {"translation": {"x": 1.05, "y": 0.55, "z": 0.5}, "rotation": {"x": -1, "y": 95, "z": -90}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 1.34},
-    "groundStorageTransform": {"translation": {"x": 0.7, "y": 0.04, "z": 0.7}, "rotation": {"x": 0, "y": 57, "z": 90}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 0.8},
-    "inPistolstandTransform": {"translation": {"x": -0.25, "y": -0.05, "z": 0}, "rotation": {"x": 90, "y": -96, "z": 103}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 0.81},
     "BulletDamageMultiplier": 1,
-    "BulletDamageStrength": 2,
+    "BulletDamageStrength": 1,
     "BulletVelocity": 4,
     "BulletTransform": {"translation": {"x": -2.2, "y": 0.2, "z": -2.2}, "rotation": {"x": 0, "y": 0, "z": 0}, "scale": 0.3},
     "FlaskTransform": {"Translation": {"X": 0, "Y": 0, "Z": 0}, "Rotation": {"X": 0, "Y": 0, "Z": 0}, "Origin": {"X": 0, "Y": 0, "Z": 0}, "Scale": 1},
     "WaddingTransform": {"Translation": {"x": 0, "y": 0, "z": 0}, "Rotation": {"x": 0, "y": 0, "z": 0}, "Origin": {"X": 0, "Y": 0, "Z": 0}, "scale": 1},
     "PrimingEquipmentTransform": {"Translation": {"X": 0, "Y": 0, "Z": 0}, "Rotation": {"X": 0, "Y": 0, "Z": 0}, "Origin": {"X": 0, "Y": 0, "Z": 0}, "Scale": 1},
     "ProficiencyStat": "firearmsProficiency",
-    "IdleAnimation": "maltiezfirearms:firearms-pistol-idle",
-    "ReadyAnimation": "maltiezfirearms:firearms-pistol-ready",
-    "LoadAnimation": ["maltiezfirearms:firearms-pistol-load"],
-    "PrimeAnimation": "maltiezfirearms:firearms-pistol-prime",
-    "AimAnimation": "maltiezfirearms:firearms-pistol-aim",
-    "ShootAnimation": ["maltiezfirearms:firearms-pistol-shoot"],
-    "LoadedAnimation": "maltiezfirearms:firearms-pistol-loaded",
-    "PrimedAnimation": "maltiezfirearms:firearms-pistol-primed",
-    "MagazineSize": 1,
+    "IdleAnimation": "maltiezfirearms:firearms-shoulder",
+    "ReadyAnimation": "maltiezfirearms:firearms-ready",
+    "LoadAnimation": ["maltiezfirearms:firearms-{type}-load"],
+    "PrimeAnimation": "maltiezfirearms:firearms-{type}-prime",
+    "AimAnimation": "maltiezfirearms:firearms-{type}-aim",
+    "ShootAnimation": ["maltiezfirearms:firearms-{type}-shoot-1", "maltiezfirearms:firearms-{type}-shoot-2"],
+    "LoadedAnimation": "maltiezfirearms:firearms-{type}-loaded",
+    "PrimedAnimation": "maltiezfirearms:firearms-{type}-primed",
+    "MagazineSize": 2,
     "BulletLoadedPerReload": 1,
     "WaddingUsedPerReload": 1,
     "LoadPowderConsumption": 3,
@@ -53,7 +36,7 @@
       "AimDifficulty": 1,
       "CursorType": "None",
       "AccuracyOvertimeSec": 0,
-      "ZeroingAngle": -0.5,
+      "ZeroingAngle": -1,
       "AllowSprint": false,
       "MoveSpeedPenalty": 0.1,
       "AimDrift": 90,
@@ -64,7 +47,7 @@
       "VerticalOffset": -0.05
     }
   },
-  "shape": {"base": "maltiezfirearms:firearms/pistol"},
+  "shape": {"base": "maltiezfirearms:firearms/{type}"},
   "texturesByType": {
     "*-tarnished": {
       "metal": {"base": "game:block/metal/tarnished/tinbronze"},
@@ -75,8 +58,8 @@
   },
   "guiTransform": {
     "translation": {"x": 0, "y": 0, "z": 0},
-    "rotation": {"x": -27, "y": 30, "z": -180},
-    "origin": {"x": -0.38, "y": -0.34, "z": -0.9},
+    "rotation": {"x": -19, "y": 22, "z": -180},
+    "origin": {"x": -0.38, "y": -0.34, "z": -1.3},
     "scaleXyz": {"x": -2.22, "y": 2.22, "z": 2.22}
   },
   "tpHandTransform": {"translation": {"x": 0, "y": 0, "z": 0}, "rotation": {"x": 0, "y": -90, "z": 0}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 0.8},

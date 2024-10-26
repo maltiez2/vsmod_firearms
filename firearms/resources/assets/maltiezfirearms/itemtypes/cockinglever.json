@@ -1,7 +1,9 @@
 ﻿{
   "code": "cockinglever",
   "class": "Item",
+  "variantgroups": [{"code": "metal", "states": ["brass", "copper", "tinbronze", "bismuthbronze", "blackbronze", "iron", "meteoriciron", "steel"]}],
   "shape": {"base": "maltiezfirearms:cocking-lever"},
+  "textures": {"metal": {"base": "game:block/metal/plate/{metal}"}},
   "attributes": {
     "groundStorageTransform": {"translation": {"x": 0.6, "y": 0, "z": 0.5}, "rotation": {"x": 1, "y": -64, "z": 90}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 1.22}
   },

@@ -1866,303 +1866,91 @@
     "ItemAnimationEnd": -1
   },
   "musket-bayonet-thrust": {
-  "Hold": false,
-  "PlayerKeyFrames": [
-    {
-      "EasingTime": 200.0,
-      "EasingFunction": "Sin",
-      "DetachedAnchor": false,
-      "SwitchArms": false,
-      "PitchFollow": true,
-      "PitchDontFollow": false,
-      "FOVMultiplier": 1.0,
-      "BobbingAmplitude": 0.801,
-      "Elements": {
-        "ItemAnchor": [
-          0.0,
-          0.0,
-          0.0,
-          -83.0,
-          -12.0,
-          117.6
-        ],
-        "LowerArmR": [
-          0.0,
-          0.0,
-          0.0,
-          1.0,
-          -80.0,
-          -113.0
-        ],
-        "UpperArmR": [
-          0.6,
-          0.0,
-          0.0,
-          47.0,
-          10.3,
-          -36.9
-        ],
-        "ItemAnchorL": [
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0
-        ],
-        "LowerArmL": [
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          12.0,
-          -28.0
-        ],
-        "UpperArmL": [
-          1.0,
-          -1.4,
-          -0.4,
-          0.0,
-          -50.0,
-          -112.0
-        ],
-        "UpperTorso": [
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0
-        ]
+    "Hold": false,
+    "PlayerKeyFrames": [
+      {
+        "EasingTime": 200,
+        "EasingFunction": "Sin",
+        "DetachedAnchor": false,
+        "SwitchArms": false,
+        "PitchFollow": true,
+        "PitchDontFollow": false,
+        "FOVMultiplier": 1,
+        "BobbingAmplitude": 0.801,
+        "Elements": {
+          "ItemAnchor": [0, 0, 0, -83, -12, 117.6],
+          "LowerArmR": [0, 0, 0, 1, -80, -113],
+          "UpperArmR": [0.6, 0, 0, 47, 10.3, -36.9],
+          "ItemAnchorL": [0, 0, 0, 0, 0, 0],
+          "LowerArmL": [0, 0, 0, 0, 12, -28],
+          "UpperArmL": [1, -1.4, -0.4, 0, -50, -112],
+          "UpperTorso": [0, 0, 0, 0, 0, 0]
+        }
+      },
+      {
+        "EasingTime": 400,
+        "EasingFunction": "Quadratic",
+        "DetachedAnchor": false,
+        "SwitchArms": false,
+        "PitchFollow": true,
+        "PitchDontFollow": false,
+        "FOVMultiplier": 1,
+        "BobbingAmplitude": 0.801,
+        "Elements": {
+          "ItemAnchor": [0, 0, 0, -56, 0, 139.6],
+          "LowerArmR": [0, 0, 0, 1, -80, -69],
+          "UpperArmR": [0.6, 0, 0, 65, 5.3, -69.9],
+          "ItemAnchorL": [0, 0, 0, 0, 0, 0],
+          "LowerArmL": [0, 0, 0, 0, 12, -21],
+          "UpperArmL": [1, -1.4, -0.4, 0, -36, -116],
+          "UpperTorso": [0, 0, 0, 0, 0, 0]
+        }
+      },
+      {
+        "EasingTime": 600,
+        "EasingFunction": "Linear",
+        "DetachedAnchor": false,
+        "SwitchArms": false,
+        "PitchFollow": true,
+        "PitchDontFollow": false,
+        "FOVMultiplier": 1,
+        "BobbingAmplitude": 0.801,
+        "Elements": {
+          "ItemAnchor": [0, 0, 0, -62, 0, 143.6],
+          "LowerArmR": [0, 0, 0, 1, -80, -76],
+          "UpperArmR": [0.6, 0, 0, 64.6, 5.7, -70],
+          "ItemAnchorL": [0, 0, 0, 0, 0, 0],
+          "LowerArmL": [0, 0, 0, 0, 13, -29],
+          "UpperArmL": [1, -1.4, -0.4, 0, -36, -113],
+          "UpperTorso": [0, 0, 0, 0, 0, 0]
+        }
+      },
+      {
+        "EasingTime": 900,
+        "EasingFunction": "Linear",
+        "DetachedAnchor": false,
+        "SwitchArms": false,
+        "PitchFollow": true,
+        "PitchDontFollow": false,
+        "FOVMultiplier": 1,
+        "BobbingAmplitude": 0.8,
+        "Elements": {
+          "ItemAnchor": [0, 0, 0, -56, 0, 66.6],
+          "LowerArmR": [0, 0, 0, 0, -44, -116],
+          "UpperArmR": [0, 0, 0, 64.6, -11.3, 28],
+          "ItemAnchorL": [0, 0, 0, 0, 0, 0],
+          "LowerArmL": [0, 0, 0, 0, 0, -60],
+          "UpperArmL": [0.8, -2, 0, 0, -51, -96]
+        }
       }
-    },
-    {
-      "EasingTime": 400.0,
-      "EasingFunction": "Quadratic",
-      "DetachedAnchor": false,
-      "SwitchArms": false,
-      "PitchFollow": true,
-      "PitchDontFollow": false,
-      "FOVMultiplier": 1.0,
-      "BobbingAmplitude": 0.801,
-      "Elements": {
-        "ItemAnchor": [
-          0.0,
-          0.0,
-          0.0,
-          -56.0,
-          0.0,
-          139.6
-        ],
-        "LowerArmR": [
-          0.0,
-          0.0,
-          0.0,
-          1.0,
-          -80.0,
-          -69.0
-        ],
-        "UpperArmR": [
-          0.6,
-          0.0,
-          0.0,
-          65.0,
-          5.3,
-          -69.9
-        ],
-        "ItemAnchorL": [
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0
-        ],
-        "LowerArmL": [
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          12.0,
-          -21.0
-        ],
-        "UpperArmL": [
-          1.0,
-          -1.4,
-          -0.4,
-          0.0,
-          -36.0,
-          -116.0
-        ],
-        "UpperTorso": [
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0
-        ]
-      }
-    },
-    {
-      "EasingTime": 600.0,
-      "EasingFunction": "Linear",
-      "DetachedAnchor": false,
-      "SwitchArms": false,
-      "PitchFollow": true,
-      "PitchDontFollow": false,
-      "FOVMultiplier": 1.0,
-      "BobbingAmplitude": 0.801,
-      "Elements": {
-        "ItemAnchor": [
-          0.0,
-          0.0,
-          0.0,
-          -62.0,
-          0.0,
-          143.6
-        ],
-        "LowerArmR": [
-          0.0,
-          0.0,
-          0.0,
-          1.0,
-          -80.0,
-          -76.0
-        ],
-        "UpperArmR": [
-          0.6,
-          0.0,
-          0.0,
-          64.6,
-          5.7,
-          -70.0
-        ],
-        "ItemAnchorL": [
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0
-        ],
-        "LowerArmL": [
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          13.0,
-          -29.0
-        ],
-        "UpperArmL": [
-          1.0,
-          -1.4,
-          -0.4,
-          0.0,
-          -36.0,
-          -113.0
-        ],
-        "UpperTorso": [
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0
-        ]
-      }
-    },
-    {
-      "EasingTime": 900.0,
-      "EasingFunction": "Linear",
-      "DetachedAnchor": false,
-      "SwitchArms": false,
-      "PitchFollow": true,
-      "PitchDontFollow": false,
-      "FOVMultiplier": 1.0,
-      "BobbingAmplitude": 0.8,
-      "Elements": {
-        "ItemAnchor": [
-          0.0,
-          0.0,
-          0.0,
-          -56.0,
-          0.0,
-          66.6
-        ],
-        "LowerArmR": [
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          -44.0,
-          -116.0
-        ],
-        "UpperArmR": [
-          0.0,
-          0.0,
-          0.0,
-          64.6,
-          -11.3,
-          28.0
-        ],
-        "ItemAnchorL": [
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0
-        ],
-        "LowerArmL": [
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          -60.0
-        ],
-        "UpperArmL": [
-          0.8,
-          -2.0,
-          0.0,
-          0.0,
-          -51.0,
-          -96.0
-        ]
-      }
-    }
-  ],
-  "ItemKeyFrames": [],
-  "SoundFrames": [
-    {
-      "Code": [
-        "game:sounds/player/strike1",
-        "game:sounds/player/strike2"
-      ],
-      "DurationFraction": 0.0,
-      "RandomizePitch": true,
-      "Range": 16.0,
-      "Volume": 0.5,
-      "Synchronize": true
-    }
-  ],
-  "ParticlesFrames": [],
-  "CallbackFrames": [
-    {
-      "Code": "start",
-      "DurationFraction": 0.083333336
-    },
-    {
-      "Code": "stop",
-      "DurationFraction": 0.5555556
-    },
-    {
-      "Code": "ready",
-      "DurationFraction": 0.8333333
-    }
-  ],
-  "ItemAnimationStart": 0,
-  "ItemAnimationEnd": 0
-}
+    ],
+    "ItemKeyFrames": [],
+    "SoundFrames": [
+      {"Code": ["game:sounds/player/strike1", "game:sounds/player/strike2"], "DurationFraction": 0, "RandomizePitch": true, "Range": 16, "Volume": 0.5, "Synchronize": true}
+    ],
+    "ParticlesFrames": [],
+    "CallbackFrames": [{"Code": "start", "DurationFraction": 0.083333336}, {"Code": "stop", "DurationFraction": 0.5555556}, {"Code": "ready", "DurationFraction": 0.8333333}],
+    "ItemAnimationStart": 0,
+    "ItemAnimationEnd": 0
+  }
 }

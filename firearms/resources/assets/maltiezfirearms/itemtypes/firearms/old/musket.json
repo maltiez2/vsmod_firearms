@@ -1,8 +1,7 @@
 ﻿{
-  "code": "firearm",
+  "code": "musket",
   "class": "Firearms:Musket",
-  "variantgroups": [{"code": "type", "states": ["musket"]}, {"code": "material", "states": ["steel"]}],
-  "creativeinventory": {"maltiezfirearms": ["*"]},
+  "creativeinventory": {},
   "maxstacksize": 1,
   "durability": 1250,
   "rackable": true,

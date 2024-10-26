@@ -1,10 +1,10 @@
 ﻿{
-  "code": "arquebus",
+  "code": "firearm",
   "class": "Firearms:Matchlock",
+  "variantgroups": [{"code": "type", "states": ["arquebus"]}, {"code": "material", "states": ["iron", "meteoriciron", "rusted"]}],
   "creativeinventory": {"maltiezfirearms": ["*"]},
-  "variantgroups": [{"code": "type", "states": ["plain", "rusted"]}],
   "maxstacksize": 1,
-  "durabilityByType": {"*-plain": 400, "*-rusted": 10},
+  "durabilityByType": {"*-rusted": 10, "*": 400},
   "rackable": true,
   "tool": "bow",
   "behaviors": [
@@ -73,7 +73,7 @@
   "shape": {"base": "maltiezfirearms:firearms/arquebus-tp"},
   "texturesByType": {
     "*-rusted": {"metal": {"base": "game:block/metal/corroded/normal1"}, "brass": {"base": "game:block/metal/tarnished/brass"}, "wood": {"base": "game:block/wood/charred"}},
-    "*-plain": {"metal": {"base": "game:block/metal/plate/iron"}, "brass": {"base": "game:block/metal/plate/brass"}, "wood": {"base": "game:block/wood/debarked/oak"}}
+    "*": {"metal": {"base": "game:block/metal/plate/{material}"}, "brass": {"base": "game:block/metal/plate/brass"}, "wood": {"base": "game:block/wood/debarked/oak"}}
   },
   "heldTpHitAnimation": "firearmsempty",
   "heldLeftTpIdleAnimation": "firearmsempty",
@@ -84,7 +84,7 @@
   "guiTransform": {
     "translation": {"x": 0, "y": 0, "z": 0},
     "rotation": {"x": -19, "y": 24, "z": -180},
-    "origin": {"x": -0.55, "y": -0.4, "z": -1.4},
+    "origin": {"x": -0.48, "y": -0.4, "z": -1.4},
     "scaleXyz": {"x": -1.95, "y": 1.95, "z": 1.95}
   },
   "tpHandTransform": {"translation": {"x": 0, "y": 0, "z": 0}, "rotation": {"x": 0, "y": -90, "z": 0}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 0.8},

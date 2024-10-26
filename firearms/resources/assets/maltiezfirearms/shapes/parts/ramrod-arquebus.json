@@ -11,7 +11,7 @@
 	"textures": {
 		"ember": "game:block/coal/ember",
 		"brass": "game:block/metal/plate/brass",
-		"iron": "game:block/metal/plate/iron"
+		"metal": "game:block/metal/plate/iron"
 	},
 	"elements": [
 		{
@@ -34,12 +34,12 @@
 					"to": [ 0.3, 0.3, 14.5 ],
 					"rotationOrigin": [ 0.05, 0.3, 3.05 ],
 					"faces": {
-						"north": { "texture": "#iron", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
-						"east": { "texture": "#iron", "uv": [ 0.0, 0.0, 16.0, 0.5 ], "autoUv": false },
-						"south": { "texture": "#iron", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
-						"west": { "texture": "#iron", "uv": [ 0.0, 0.0, 16.0, 0.5 ], "autoUv": false },
-						"up": { "texture": "#iron", "uv": [ 0.0, 0.0, 0.5, 16.0 ], "autoUv": false },
-						"down": { "texture": "#iron", "uv": [ 0.0, 0.0, 0.5, 16.0 ], "autoUv": false }
+						"north": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+						"east": { "texture": "#metal", "uv": [ 0.0, 0.0, 16.0, 0.5 ], "autoUv": false },
+						"south": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+						"west": { "texture": "#metal", "uv": [ 0.0, 0.0, 16.0, 0.5 ], "autoUv": false },
+						"up": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.5, 16.0 ], "autoUv": false },
+						"down": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.5, 16.0 ], "autoUv": false }
 					},
 					"children": [
 						{

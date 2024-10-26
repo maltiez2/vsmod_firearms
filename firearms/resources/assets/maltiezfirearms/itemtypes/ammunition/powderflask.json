@@ -4,8 +4,7 @@
   "maxstacksize": 1,
   "shape": {"base": "powder/powderflask"},
   "durability": 256,
-  "variantgroups": [{"code": "metal", "loadFromProperties": "block/toolmetal"}],
-  "allowedVariants": ["*-brass", "*-tinbronze"],
+  "variantgroups": [{"code": "metal", "states": ["brass", "copper", "tinbronze", "bismuthbronze", "blackbronze", "iron", "meteoriciron", "steel"]}],
   "textures": {"metal": {"base": "game:block/metal/plate/{metal}"}},
   "creativeinventoryStacks": [{"tabs": ["maltiezfirearms"], "stacks": [{"type": "item", "code": "powderflask-{metal}", "attributes": {"durability": 0}}]}],
   "behaviors": [
