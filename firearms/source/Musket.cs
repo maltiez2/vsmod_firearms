@@ -76,6 +76,8 @@ public class MusketClient : MuzzleloaderClient, IOnGameTick
     {
         EntityPlayer player = Api.World.Player.Entity;
 
+        if (player.RightHandItemSlot?.Itemstack?.Item is not MusketItem) return false;
+
         BayonetInventory.Read(player.RightHandItemSlot, BayonetInventoryId);
         if (!BayonetInventory.Items.Any())
         {
