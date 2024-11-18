@@ -61,7 +61,7 @@
     "output": {"type": "item", "code": "maltiezfirearms:lock-matchlock-meteoriciron"}
   },
   {
-    "ingredientPattern": "ISF,CBI",
+    "ingredientPattern": "ISF,CB_",
     "ingredients": {
       "I": {"type": "item", "code": "game:metalplate-iron", "quantity": 1},
       "S": {"type": "item", "code": "game:metalnailsandstrips-steel", "quantity": 2},
@@ -74,7 +74,7 @@
     "output": {"type": "item", "code": "maltiezfirearms:lock-flintlock-steel"}
   },
   {
-    "ingredientPattern": "ISF,_BI",
+    "ingredientPattern": "ISF,_B_",
     "ingredients": {
       "I": {"type": "item", "code": "game:metalplate-steel", "quantity": 1},
       "S": {"type": "item", "code": "game:metalnailsandstrips-steel", "quantity": 2},

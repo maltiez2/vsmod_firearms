@@ -64,6 +64,7 @@ public class MuzzleloaderStats : WeaponStats
     public float Zeroing { get; set; } = 0;
 
     public int MagazineSize { get; set; } = 1;
+    public int BulletsFiredPerShot { get; set; } = 1;
     public int BulletLoadedPerReload { get; set; } = 1;
     public int WaddingUsedPerReload { get; set; } = 1;
     public int LoadPowderConsumption { get; set; } = 1;
@@ -484,7 +485,11 @@ public class MuzzleloaderClient : RangeWeaponClient
 
                 targetDirection = ClientAimingSystem.Zeroing(targetDirection, Stats.Zeroing);
 
-                RangedWeaponSystem.Shoot(slot, 1, new((float)position.X, (float)position.Y, (float)position.Z), new(targetDirection.X, targetDirection.Y, targetDirection.Z), mainHand, ShootServerCallback);
+                for (int count = 0; count < Stats.BulletsFiredPerShot; count++)
+                {
+                    RangedWeaponSystem.Shoot(slot, 1, new((float)position.X, (float)position.Y, (float)position.Z), new(targetDirection.X, targetDirection.Y, targetDirection.Z), mainHand, ShootServerCallback);
+                }
+
                 break;
         }
     }

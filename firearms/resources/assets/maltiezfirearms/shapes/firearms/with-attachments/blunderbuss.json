@@ -1,6 +1,6 @@
 {
 	"editor": {
-		"collapsedPaths": "Root/Blunderbuss/Matchlock/Pan,Root/Band_second,Root/Carbine/Band_third,Root/Stock,Root/Blunderbuss/Matchlock,Root/Carbine/Flintlock,Root/Arquebus_origin/Stock,Root/Musket/Band_second,Root/Carbine/Trigger_assembly/Guard,Root/Carbine,Root/Arquebus_origin/Matchlock/Lock_lever/Match_origin,Root/Arquebus_origin/Flask_origin,Root/Musket/Flintlock,Root/Musket/Stock,Root/origin/Bottom_plate,Root/Musket/Stock/Buttstock/Buttstock_bottom/Buttstock_butt/Buttstock_butt_plate,Root/Musket/Band_third,Root/Carbine/Flintlock/Hammer/Hammer_arm,Root/Carbine/Ramrod_origin,Root/Carbine/Barrel,Root/Carbine/Stock,Root/Trigger_assembly,Root/Carbine/Flintlock/Frizzen,Root/Musket/Stock/Buttstock/Buttstock_butt,Root/Ramrod,Root/Carbine/Trigger_assembly,Root/Musket/Band_first,Root/Band_first,Root/Blunderbuss/Barrel,Root/Blunderbuss/Flask_origin/Flask_origin_inner,Root/Flintlock,Root/Carbine/Trigger_assembly/Trigger_assemly_base,Root/Barrel,Root/Blunderbuss/Lever,Root/Band_third,Root/Musket/Trigger_assembly,Root/Arquebus_origin/Barrel,Root/Arquebus_origin,Root/Musket/Flintlock/Plate,Root/Carbine/Ramrod_origin/Ramrod,Root/Musket,Root/Carbine/Flask_origin/Flask_origin_inner,Root/Arquebus_origin/Patch,Root/Arquebus_origin/Matchlock/Lock_lever/Lever_arm,Root/Carbine/Flintlock/Hammer,Root/Carbine/Flintlock/Pan,Root/Blunderbuss/Stock,Root/Arquebus_origin/Lever,Root/Arquebus_origin/Ramdrod_origin,Root/Blunderbuss/Matchlock/Lock_lever/Match_origin/Match,Root/Carbine/Band_second,Root/Musket/Barrel",
+		"collapsedPaths": "Root/Blunderbuss/Stock/Underbarrel,Root/Band_second,Root/Carbine/Band_third,Root/Stock,Root/Blunderbuss/Ramdrod_origin,Root/Blunderbuss/Stock/Receiver,Root/Carbine/Flintlock,Root/Arquebus_origin/Stock,Root/Musket/Band_second,Root/Carbine/Trigger_assembly/Guard,Root/Carbine,Root/Arquebus_origin/Matchlock/Lock_lever/Match_origin,Root/Arquebus_origin/Flask_origin,Root/Blunderbuss/Stock/Buttstock,Root/Musket/Flintlock,Root/Musket/Stock,Root/origin/Bottom_plate,Root/Musket/Stock/Buttstock/Buttstock_bottom/Buttstock_butt/Buttstock_butt_plate,Root/Musket/Band_third,Root/Carbine/Flintlock/Hammer/Hammer_arm,Root/Carbine/Ramrod_origin,Root/Carbine/Barrel,Root/Carbine/Stock,Root/Trigger_assembly,Root/Carbine/Flintlock/Frizzen,Root/Musket/Stock/Buttstock/Buttstock_butt,Root/Ramrod,Root/Blunderbuss/Matchlock/Lock_lever/Lever_arm,Root/Carbine/Trigger_assembly,Root/Musket/Band_first,Root/Band_first,Root/Blunderbuss/Barrel,Root/Blunderbuss/Flask_origin/Flask_origin_inner,Root/Flintlock,Root/Carbine/Trigger_assembly/Trigger_assemly_base,Root/Barrel,Root/Band_third,Root/Musket/Trigger_assembly,Root/Arquebus_origin/Barrel,Root/Arquebus_origin,Root/Musket/Flintlock/Plate,Root/Carbine/Ramrod_origin/Ramrod,Root/Musket,Root/Carbine/Flask_origin/Flask_origin_inner,Root/Arquebus_origin/Patch,Root/Arquebus_origin/Matchlock/Lock_lever/Lever_arm,Root/Carbine/Flintlock/Hammer,Root/Carbine/Flintlock/Pan,Root/Arquebus_origin/Lever,Root/Arquebus_origin/Ramdrod_origin,Root/Carbine/Band_second,Root/Musket/Barrel",
 		"allAngles": false,
 		"entityTextureMode": false
 	},
@@ -25,7 +25,6 @@
 			"from": [ 0.1, -1.2, -2.3 ],
 			"to": [ 0.1, -1.2, -2.3 ],
 			"rotationOrigin": [ 0.1, -1.2, -2.3 ],
-			"rotationX": 90.0,
 			"faces": {
 				"north": { "texture": "#kapok", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
 				"east": { "texture": "#kapok", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
@@ -1931,6 +1930,218 @@
 						"Linen_3": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
 						"Flask_origin": { "offsetX": -52.0, "offsetY": -70.0, "offsetZ": -60.0, "rotationX": -90.0, "rotationY": 90.0, "rotationZ": 0.0 },
 						"Flask_origin_inner": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				}
+			]
+		},
+
+		{
+			"name": "prime",
+			"code": "prime",
+			"quantityframes": 51,
+			"onActivityStopped": "Rewind",
+			"onAnimationEnd": "Repeat",
+			"keyframes": [
+				{
+					"frame": 0,
+					"elements": {
+						"Flask_origin": { "offsetX": -54.0, "offsetY": -78.0, "offsetZ": -60.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Flask_origin_inner": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Lock_lever": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Pan_cover": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Lever": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 5,
+					"elements": {
+						"Pan_cover": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Lock_lever": { "rotationX": 28.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Flask_origin": { "offsetX": -54.0, "offsetY": -78.0, "offsetZ": -60.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Flask_origin_inner": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Lever": { "rotationX": 12.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 10,
+					"elements": {
+						"Lever": { "rotationX": 12.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Pan_cover": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Lock_lever": { "rotationX": 28.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Flask_origin": { "offsetX": -54.0, "offsetY": -78.0, "offsetZ": -60.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Flask_origin_inner": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 20,
+					"elements": {
+						"Lever": { "rotationX": 12.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Pan_cover": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Lock_lever": { "rotationX": 28.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Flask_origin": { "offsetX": -54.0, "offsetY": -57.0, "offsetZ": -61.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Flask_origin_inner": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 25,
+					"elements": {
+						"Lever": { "rotationX": 12.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Pan_cover": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Lock_lever": { "rotationX": 28.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Flask_origin": { "offsetX": -57.0, "offsetY": -55.8, "offsetZ": -61.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Flask_origin_inner": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 90.0 }
+					}
+				},
+				{
+					"frame": 30,
+					"elements": {
+						"Lever": { "rotationX": 12.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Pan_cover": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Lock_lever": { "rotationX": 28.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Flask_origin": { "offsetX": -54.0, "offsetY": -57.0, "offsetZ": -61.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Flask_origin_inner": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 40,
+					"elements": {
+						"Lever": { "rotationX": 12.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Pan_cover": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Lock_lever": { "rotationX": 28.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Flask_origin": { "offsetX": -54.0, "offsetY": -78.0, "offsetZ": -60.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Flask_origin_inner": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 45,
+					"elements": {
+						"Lever": { "rotationX": 12.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Pan_cover": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Lock_lever": { "rotationX": 28.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Flask_origin": { "offsetX": -54.0, "offsetY": -78.0, "offsetZ": -60.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Flask_origin_inner": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 50,
+					"elements": {
+						"Lever": { "rotationX": 12.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Pan_cover": { "rotationX": 0.0, "rotationY": -135.0, "rotationZ": 0.0 },
+						"Lock_lever": { "rotationX": 28.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Flask_origin": { "offsetX": -54.0, "offsetY": -78.0, "offsetZ": -60.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Flask_origin_inner": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				}
+			]
+		},
+
+		{
+			"name": "cock",
+			"code": "cock",
+			"quantityframes": 31,
+			"onActivityStopped": "Rewind",
+			"onAnimationEnd": "Repeat",
+			"keyframes": [
+				{
+					"frame": 0,
+					"elements": {
+						"Lock_lever": { "rotationX": 28.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Lever": { "rotationX": 12.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Pan_cover": { "rotationX": 0.0, "rotationY": -135.0, "rotationZ": 0.0 },
+						"Match_origin": { "offsetX": 5.0, "offsetY": -30.0, "offsetZ": -56.0 },
+						"Match_1": { "rotationX": -22.5, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Match_2": { "rotationX": 45.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Match_3": { "rotationX": 22.5, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 10,
+					"elements": {
+						"Lever": { "rotationX": 12.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Pan_cover": { "rotationX": 0.0, "rotationY": -135.0, "rotationZ": 0.0 },
+						"Lock_lever": { "rotationX": 28.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Match_origin": { "offsetX": 2.0, "offsetY": 0.0, "offsetZ": -58.0 },
+						"Match_1": { "rotationX": -22.5, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Match_2": { "rotationX": 45.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Match_3": { "rotationX": 22.5, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 15,
+					"elements": {
+						"Lever": { "rotationX": 12.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Pan_cover": { "rotationX": 0.0, "rotationY": -135.0, "rotationZ": 0.0 },
+						"Lock_lever": { "rotationX": 28.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Match_origin": { "offsetX": 0.0, "offsetY": 0.3, "offsetZ": -59.6 },
+						"Match_1": { "rotationX": -22.5, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Match_2": { "rotationX": 45.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Match_3": { "rotationX": 22.5, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 20,
+					"elements": {
+						"Lever": { "rotationX": 12.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Pan_cover": { "rotationX": 0.0, "rotationY": -135.0, "rotationZ": 0.0 },
+						"Lock_lever": { "rotationX": 28.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Match_origin": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": -60.0 },
+						"Match_1": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Match_2": { "rotationX": 27.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Match_3": { "rotationX": 14.5, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 25,
+					"elements": {
+						"Lever": { "rotationX": 12.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Pan_cover": { "rotationX": 0.0, "rotationY": -135.0, "rotationZ": 0.0 },
+						"Lock_lever": { "rotationX": 28.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Match_origin": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": -60.0 },
+						"Match_1": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Match_2": { "rotationX": 27.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Match_3": { "rotationX": 14.5, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 30,
+					"elements": {
+						"Lever": { "rotationX": 12.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Pan_cover": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Lock_lever": { "rotationX": 28.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Match_origin": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": -60.0 },
+						"Match_1": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Match_2": { "rotationX": 27.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Match_3": { "rotationX": 14.5, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				}
+			]
+		},
+
+		{
+			"name": "fire",
+			"code": "fire",
+			"quantityframes": 11,
+			"onActivityStopped": "Rewind",
+			"onAnimationEnd": "Repeat",
+			"keyframes": [
+				{
+					"frame": 0,
+					"elements": {
+						"Lever": { "rotationX": 12.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Lock_lever": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 28.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Match_origin": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": -60.0 },
+						"Match_2": { "rotationX": 28.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Match_3": { "rotationX": 5.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 10,
+					"elements": {
+						"Lever": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Lock_lever": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Match_origin": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": -60.0 },
+						"Match_2": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Match_3": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
 					}
 				}
 			]

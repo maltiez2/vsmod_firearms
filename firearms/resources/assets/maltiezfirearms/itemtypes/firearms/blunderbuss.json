@@ -46,6 +46,7 @@
     "CockedAnimation": "maltiezfirearms:firearms-blunderbuss-cocked",
     "MagazineSize": 1,
     "BulletLoadedPerReload": 8,
+    "BulletsFiredPerShot": 8,
     "WaddingUsedPerReload": 2,
     "LoadPowderConsumption": 7,
     "PrimePowderConsumption": 1,
@@ -69,7 +70,7 @@
       "VerticalOffset": -0.05
     },
     "BulletVelocity": 6,
-    "DispersionMOA": [30, 30],
+    "DispersionMOA": [120, 120],
     "Zeroing": -1
   },
   "shape": {"base": "maltiezfirearms:firearms/blunderbuss-tp"},
