@@ -8,10 +8,13 @@
   "item-firearm-superimposed-*": "Bossi carbine",
   "item-slug-copper": "Slug (copper)",
   "item-bullet-copper": "Bullet (copper)",
+  "item-pellet-copper": "Pellet (copper)",
   "item-slug-lead": "Slug (lead)",
   "item-bullet-lead": "Bullet (lead)",
+  "item-pellet-lead": "Pellet (lead)",
   "item-slug-steel": "Slug (steel)",
   "item-bullet-steel": "Bullet (steel)",
+  "item-pellet-steel": "Pellet (steel)",
   "item-gunpowder": "Gunpowder (old)",
   "item-gunpowder-wet": "Blasting powder (wet)",
   "item-gunpowder-coarse": "Gunpowder (coarse)",
@@ -58,6 +61,7 @@
   "block-pistolstand-aged-*": "Stand (aged)",
   "block-pistolstand-*": "Stand",
 
+  "block-ammomold-pellet-*": "Pellets mold",
   "block-ammomold-bullet-*": "Bullets mold",
   "block-ammomold-slug-*": "Slugs mold",
   "block-barrelmold-*": "Pistol barrel mold",
@@ -78,20 +82,8 @@
   "requirement-powderflask": "Powder flask with gunpowder",
 
   "setting-damage-multiplier": "Damage multiplier",
-  "setting-dispersion-multiplier": "Dispersion multiplier",
-  "setting-powder-to-flask-ratio": "Powder to flask ratio",
-  "setting-bayonet-damage-when-attached": "Bayonet damage (attached)",
-  "setting-bayonet-damage-tier-when-attached": "Bayonet damage tier (attached)",
-  "setting-schematic-spawn-chance": "Schematic spawn chance",
-  "setting-smoke-density": "Smoke density",
-  "setting-fireblast-density": "Fireblast density",
-  "setting-steel-bullet-tier": "Steel bullet damage tier",
-  "setting-steel-slug-tier": "Steel slug damage tier",
-  "setting-steel-ammunition": "Steel ammunition",
-  "setting-recipes-locked-to-tinkerer": "Tinkerer trait required",
-  "setting-match-put-out-by-water": "Match put put by swimming",
-  "setting-powder-wet-out-by-water": "Powder get wet from swimming",
-  "setting-schematic-copy-recipe": "Schematics copying recipes",
+  "setting-trait": "Tinkerer trait required",
+  "setting-cursortype": "Aiming cursor type",
 
   "attach-bayonet": "Attach/detach bayonet",
   "lit-match": "Lit",
@@ -140,6 +132,8 @@
   
   "prefixandcreature-slug": "Slug",
   "prefixandcreature-bullet": "Bullet",
+  "prefixandcreature-pellet": "Pellet",
   "item-creature-slug-*": "Slug",
-  "item-creature-bullet-*": "Bullet"
+  "item-creature-bullet-*": "Bullet",
+  "item-creature-pellet-*": "Pellet"
 }

@@ -27,7 +27,6 @@
     "inWeaponrackTransform": {"translation": {"x": 0, "y": 0.02, "z": 0.08}, "rotation": {"x": 82, "y": 0, "z": 0}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 0.81},
     "BulletDamageMultiplier": 1,
     "BulletDamageStrength": 4,
-    "BulletVelocity": 4,
     "BulletTransform": {"translation": {"x": -2.2, "y": 0.2, "z": -2.2}, "rotation": {"x": 0, "y": 0, "z": 0}, "scale": 0.3},
     "FlaskTransform": {"Translation": {"X": 0, "Y": 0, "Z": 0}, "Rotation": {"X": 0, "Y": 0, "Z": 0}, "Origin": {"X": 0, "Y": 0, "Z": 0}, "Scale": 1},
     "WaddingTransform": {"Translation": {"x": 0, "y": 0, "z": 0}, "Rotation": {"x": 0, "y": 0, "z": 0}, "Origin": {"X": 0, "Y": 0, "Z": 0}, "scale": 1},
@@ -63,7 +62,10 @@
       "AnimationFollowY": 5.5,
       "VerticalLimit": 0.25,
       "VerticalOffset": -0.05
-    }
+    },
+    "BulletVelocity": 6,
+    "DispersionMOA": [0, 0],
+    "Zeroing": -1.5
   },
   "shape": {"base": "maltiezfirearms:firearms/carbine", "alternates": []},
   "heldTpHitAnimation": "firearmsempty",

@@ -11,7 +11,7 @@
 	},
 	"elements": [
 		{
-			"name": "Bullet",
+			"name": "Slug",
 			"from": [ 7.25, -0.75, 7.25 ],
 			"to": [ 8.75, 0.75, 8.75 ],
 			"rotationOrigin": [ 8.0, 0.0, 8.0 ],

@@ -3,8 +3,10 @@ using CombatOverhaul.Implementations;
 using CombatOverhaul.Inputs;
 using CombatOverhaul.MeleeSystems;
 using CombatOverhaul.RangedSystems;
+using System.Text;
 using Vintagestory.API.Client;
 using Vintagestory.API.Common;
+using Vintagestory.API.Config;
 using Vintagestory.API.MathTools;
 using Vintagestory.API.Server;
 using Vintagestory.API.Util;
@@ -284,10 +286,22 @@ public class MusketItem : Item, IHasWeaponLogic, IHasRangedWeaponLogic, IHasIdle
     public AnimationRequestByCode IdleAnimation { get; private set; }
     public AnimationRequestByCode ReadyAnimation { get; private set; }
 
+    public MuzzleloaderStats? Stats { get; private set; }
+
     IClientWeaponLogic? IHasWeaponLogic.ClientLogic => ClientLogic;
     IServerRangedWeaponLogic? IHasRangedWeaponLogic.ServerWeaponLogic => ServerLogic;
 
     public void OnGameTick(ItemSlot slot, EntityPlayer player, ref int state, bool mainHand) => ClientLogic?.OnGameTick(slot, player, ref state, mainHand);
+
+    public override void GetHeldItemInfo(ItemSlot inSlot, StringBuilder dsc, IWorldAccessor world, bool withDebugInfo)
+    {
+        if (Stats != null)
+        {
+            dsc.AppendLine(Lang.Get("combatoverhaul:iteminfo-range-weapon-damage", Stats.BulletDamageMultiplier, Stats.BulletDamageStrength));
+            dsc.AppendLine("");
+        }
+        base.GetHeldItemInfo(inSlot, dsc, world, withDebugInfo);
+    }
 
     public override void OnLoaded(ICoreAPI api)
     {
@@ -297,9 +311,9 @@ public class MusketItem : Item, IHasWeaponLogic, IHasRangedWeaponLogic, IHasIdle
         {
             ClientLogic = new(clientAPI, this);
 
-            MuzzleloaderStats stats = Attributes.AsObject<MuzzleloaderStats>();
-            IdleAnimation = new(stats.IdleAnimation, 1, 1, "main", TimeSpan.FromSeconds(0.2), TimeSpan.FromSeconds(0.2), false);
-            ReadyAnimation = new(stats.ReadyAnimation, 1, 1, "main", TimeSpan.FromSeconds(0.2), TimeSpan.FromSeconds(0.2), false);
+            Stats = Attributes.AsObject<MuzzleloaderStats>();
+            IdleAnimation = new(Stats.IdleAnimation, 1, 1, "main", TimeSpan.FromSeconds(0.2), TimeSpan.FromSeconds(0.2), false);
+            ReadyAnimation = new(Stats.ReadyAnimation, 1, 1, "main", TimeSpan.FromSeconds(0.2), TimeSpan.FromSeconds(0.2), false);
         }
 
         if (api is ICoreServerAPI serverAPI)

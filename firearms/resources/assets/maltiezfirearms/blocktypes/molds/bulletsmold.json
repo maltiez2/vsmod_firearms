@@ -1,6 +1,6 @@
 ﻿{
   "code": "ammomold",
-  "variantgroups": [{"code": "itemtype", "states": ["slug", "bullet"]}, {"code": "type", "states": ["raw", "burned"]}],
+  "variantgroups": [{"code": "itemtype", "states": ["slug", "bullet", "pellet"]}, {"code": "type", "states": ["raw", "burned"]}],
   "classByType": {"*-raw": "Block", "*-burned": "BlockToolMold"},
   "behaviorsByType": {
     "*-raw": [
@@ -11,14 +11,14 @@
     "*": [{"name": "UnstableFalling"}]
   },
   "attributes": {},
-  "shapeByType": {"*-slug-*": {"base": "maltiezfirearms:shapes/casting/slugsmold"}, "*-bullet-*": {"base": "maltiezfirearms:shapes/casting/bulletsmold"}},
+  "shape": {"base": "maltiezfirearms:shapes/casting/{itemtype}smold"},
   "attributesByType": {
     "ammomold-*-burned": {
       "requiredUnits": 100,
       "fillHeight": 1,
       "moldrackable": true,
       "onmoldrackTransform": {"rotation": {"z": 90}},
-      "drop": {"type": "item", "code": "maltiezfirearms:{itemtype}-{metal}", "quantityByType": {"*-slug-*": 8, "*-bullet-*": 16}}
+      "drop": {"type": "item", "code": "maltiezfirearms:{itemtype}-{metal}", "quantityByType": {"*-slug-*": 8, "*-bullet-*": 16, "*-pellet-*": 64}}
     }
   },
   "entityClassByType": {"ammomold-*-burned": "ToolMold"},

@@ -1,7 +1,7 @@
 ﻿{
   "code": "slug",
   "class": "CombatOverhaul:Projectile",
-  "variantgroups": [{"code": "material", "states": ["lead", "copper", "steel"]}],
+  "variantgroups": [{"code": "material", "states": ["lead", "copper"]}],
   "hitboxSize": {"x": 0.2, "y": 0.2},
   "client": {
     "size": 0.5,

@@ -1,0 +1,27 @@
+{
+	"editor": {
+		"allAngles": false,
+		"entityTextureMode": false
+	},
+	"textureWidth": 16,
+	"textureHeight": 16,
+	"textureSizes": {
+	},
+	"textures": {
+	},
+	"elements": [
+		{
+			"name": "Pellet",
+			"from": [ 7.7, -0.3, 7.7 ],
+			"to": [ 8.3, 0.3, 8.3 ],
+			"rotationOrigin": [ 8.2, 0.2, 8.2 ],
+			"faces": {
+				"north": { "texture": "#metal", "uv": [ 6.5, 7.0, 7.0, 7.5 ] },
+				"east": { "texture": "#metal", "uv": [ 6.5, 6.5, 7.0, 7.0 ] },
+				"south": { "texture": "#metal", "uv": [ 6.5, 6.0, 7.0, 6.5 ] },
+				"west": { "texture": "#metal", "uv": [ 4.0, 8.0, 4.5, 8.5 ] },
+				"up": { "texture": "#metal", "uv": [ 7.0, 6.5, 7.5, 7.0 ] },
+				"down": { "texture": "#metal", "uv": [ 9.0, 4.5, 9.5, 5.0 ] }
+			}
+		}
+	]}

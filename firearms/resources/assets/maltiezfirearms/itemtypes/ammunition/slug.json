@@ -3,7 +3,7 @@
   "class": "Item",
   "maxstacksize": 16,
   "storageFlags": 513,
-  "variantgroups": [{"code": "material", "states": ["lead", "copper", "steel"]}],
+  "variantgroups": [{"code": "material", "states": ["lead", "copper"]}],
   "shape": {"base": "ammo/slug"},
   "textures": {"metal": {"base": "game:block/metal/plate/{material}"}},
   "creativeinventory": {"maltiezfirearms": ["*"]},
@@ -33,11 +33,7 @@
         "stats": {
           "AdditionalDurabilityCost": 0,
           "CollisionRadius": 0.05,
-          "DamageStatsByType": {
-            "*-lead": {"DamageType": "BluntAttack", "Damage": 38},
-            "*-copper": {"DamageType": "BluntAttack", "Damage": 26},
-            "*-steel": {"DamageType": "BluntAttack", "Damage": 19}
-          },
+          "DamageStatsByType": {"*-lead": {"DamageType": "BluntAttack", "Damage": 38}, "*-copper": {"DamageType": "BluntAttack", "Damage": 26}},
           "SpeedThreshold": 0.3,
           "Knockback": 0.1,
           "EntityCode": "maltiezfirearms:slug-{material}",

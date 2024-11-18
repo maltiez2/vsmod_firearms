@@ -1,0 +1,134 @@
+{
+	"editor": {
+		"allAngles": false,
+		"entityTextureMode": false
+	},
+	"textureWidth": 16,
+	"textureHeight": 16,
+	"textureSizes": {
+	},
+	"textures": {
+	},
+	"elements": [
+		{
+			"name": "Pellet",
+			"from": [ 7.7, -0.3, 7.7 ],
+			"to": [ 8.3, 0.3, 8.3 ],
+			"rotationOrigin": [ 8.2, 0.2, 8.2 ],
+			"faces": {
+				"north": { "texture": "#metal", "uv": [ 6.5, 7.0, 7.0, 7.5 ] },
+				"east": { "texture": "#metal", "uv": [ 6.5, 6.5, 7.0, 7.0 ] },
+				"south": { "texture": "#metal", "uv": [ 6.5, 6.0, 7.0, 6.5 ] },
+				"west": { "texture": "#metal", "uv": [ 4.0, 8.0, 4.5, 8.5 ] },
+				"up": { "texture": "#metal", "uv": [ 7.0, 6.5, 7.5, 7.0 ] },
+				"down": { "texture": "#metal", "uv": [ 9.0, 4.5, 9.5, 5.0 ] }
+			}
+		},
+		{
+			"name": "Pellet2",
+			"from": [ 8.5, -0.3, 7.4 ],
+			"to": [ 9.1, 0.3, 8.0 ],
+			"rotationOrigin": [ 9.0, 0.2, 7.9 ],
+			"rotationY": 22.5,
+			"faces": {
+				"north": { "texture": "#metal", "uv": [ 6.5, 7.0, 7.0, 7.5 ] },
+				"east": { "texture": "#metal", "uv": [ 6.5, 6.5, 7.0, 7.0 ] },
+				"south": { "texture": "#metal", "uv": [ 6.5, 6.0, 7.0, 6.5 ] },
+				"west": { "texture": "#metal", "uv": [ 4.0, 8.0, 4.5, 8.5 ] },
+				"up": { "texture": "#metal", "uv": [ 7.0, 6.5, 7.5, 7.0 ] },
+				"down": { "texture": "#metal", "uv": [ 9.0, 4.5, 9.5, 5.0 ] }
+			}
+		},
+		{
+			"name": "Pellet3",
+			"from": [ 8.1, -0.3, 7.0 ],
+			"to": [ 8.7, 0.3, 7.6 ],
+			"rotationOrigin": [ 8.6, 0.2, 7.5 ],
+			"rotationX": 22.5,
+			"rotationY": -22.5,
+			"faces": {
+				"north": { "texture": "#metal", "uv": [ 6.5, 7.0, 7.0, 7.5 ] },
+				"east": { "texture": "#metal", "uv": [ 6.5, 6.5, 7.0, 7.0 ] },
+				"south": { "texture": "#metal", "uv": [ 6.5, 6.0, 7.0, 6.5 ] },
+				"west": { "texture": "#metal", "uv": [ 4.0, 8.0, 4.5, 8.5 ] },
+				"up": { "texture": "#metal", "uv": [ 7.0, 6.5, 7.5, 7.0 ] },
+				"down": { "texture": "#metal", "uv": [ 9.0, 4.5, 9.5, 5.0 ] }
+			}
+		},
+		{
+			"name": "Pellet4",
+			"from": [ 7.7, -0.3, 7.0 ],
+			"to": [ 8.3, 0.3, 7.6 ],
+			"rotationOrigin": [ 8.2, 0.2, 7.5 ],
+			"rotationX": 22.5,
+			"rotationZ": -22.5,
+			"faces": {
+				"north": { "texture": "#metal", "uv": [ 6.5, 7.0, 7.0, 7.5 ] },
+				"east": { "texture": "#metal", "uv": [ 6.5, 6.5, 7.0, 7.0 ] },
+				"south": { "texture": "#metal", "uv": [ 6.5, 6.0, 7.0, 6.5 ] },
+				"west": { "texture": "#metal", "uv": [ 4.0, 8.0, 4.5, 8.5 ] },
+				"up": { "texture": "#metal", "uv": [ 7.0, 6.5, 7.5, 7.0 ] },
+				"down": { "texture": "#metal", "uv": [ 9.0, 4.5, 9.5, 5.0 ] }
+			}
+		},
+		{
+			"name": "Pellet5",
+			"from": [ 7.7, 0.4, 7.4 ],
+			"to": [ 8.3, 1.0, 8.0 ],
+			"rotationOrigin": [ 8.2, 0.9, 7.9 ],
+			"rotationX": -22.5,
+			"faces": {
+				"north": { "texture": "#metal", "uv": [ 6.5, 7.0, 7.0, 7.5 ] },
+				"east": { "texture": "#metal", "uv": [ 6.5, 6.5, 7.0, 7.0 ] },
+				"south": { "texture": "#metal", "uv": [ 6.5, 6.0, 7.0, 6.5 ] },
+				"west": { "texture": "#metal", "uv": [ 4.0, 8.0, 4.5, 8.5 ] },
+				"up": { "texture": "#metal", "uv": [ 7.0, 6.5, 7.5, 7.0 ] },
+				"down": { "texture": "#metal", "uv": [ 9.0, 4.5, 9.5, 5.0 ] }
+			}
+		},
+		{
+			"name": "Pellet6",
+			"from": [ 8.4, 0.4, 7.4 ],
+			"to": [ 9.0, 1.0, 8.0 ],
+			"rotationOrigin": [ 8.9, 0.9, 7.9 ],
+			"faces": {
+				"north": { "texture": "#metal", "uv": [ 6.5, 7.0, 7.0, 7.5 ] },
+				"east": { "texture": "#metal", "uv": [ 6.5, 6.5, 7.0, 7.0 ] },
+				"south": { "texture": "#metal", "uv": [ 6.5, 6.0, 7.0, 6.5 ] },
+				"west": { "texture": "#metal", "uv": [ 4.0, 8.0, 4.5, 8.5 ] },
+				"up": { "texture": "#metal", "uv": [ 7.0, 6.5, 7.5, 7.0 ] },
+				"down": { "texture": "#metal", "uv": [ 9.0, 4.5, 9.5, 5.0 ] }
+			}
+		},
+		{
+			"name": "Pellet7",
+			"from": [ 8.3, 0.4, 6.9 ],
+			"to": [ 8.9, 1.0, 7.5 ],
+			"rotationOrigin": [ 8.8, 0.9, 7.4 ],
+			"rotationX": 22.5,
+			"faces": {
+				"north": { "texture": "#metal", "uv": [ 6.5, 7.0, 7.0, 7.5 ] },
+				"east": { "texture": "#metal", "uv": [ 6.5, 6.5, 7.0, 7.0 ] },
+				"south": { "texture": "#metal", "uv": [ 6.5, 6.0, 7.0, 6.5 ] },
+				"west": { "texture": "#metal", "uv": [ 4.0, 8.0, 4.5, 8.5 ] },
+				"up": { "texture": "#metal", "uv": [ 7.0, 6.5, 7.5, 7.0 ] },
+				"down": { "texture": "#metal", "uv": [ 9.0, 4.5, 9.5, 5.0 ] }
+			}
+		},
+		{
+			"name": "Pellet8",
+			"from": [ 7.5, 0.6, 6.6 ],
+			"to": [ 8.1, 1.2, 7.2 ],
+			"rotationOrigin": [ 8.0, 1.1, 7.1 ],
+			"rotationX": -22.5,
+			"rotationZ": 22.5,
+			"faces": {
+				"north": { "texture": "#metal", "uv": [ 6.5, 7.0, 7.0, 7.5 ] },
+				"east": { "texture": "#metal", "uv": [ 6.5, 6.5, 7.0, 7.0 ] },
+				"south": { "texture": "#metal", "uv": [ 6.5, 6.0, 7.0, 6.5 ] },
+				"west": { "texture": "#metal", "uv": [ 4.0, 8.0, 4.5, 8.5 ] },
+				"up": { "texture": "#metal", "uv": [ 7.0, 6.5, 7.5, 7.0 ] },
+				"down": { "texture": "#metal", "uv": [ 9.0, 4.5, 9.5, 5.0 ] }
+			}
+		}
+	]}

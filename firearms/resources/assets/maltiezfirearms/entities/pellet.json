@@ -1,12 +1,12 @@
 ﻿{
-  "code": "bullet",
+  "code": "pellet",
   "class": "CombatOverhaul:Projectile",
   "variantgroups": [{"code": "material", "states": ["lead", "copper"]}],
   "hitboxSize": {"x": 0.125, "y": 0.125},
   "client": {
     "size": 0.5,
     "renderer": "Shape",
-    "shape": {"base": "maltiezfirearms:bullet"},
+    "shape": {"base": "maltiezfirearms:ammo/pellet"},
     "textures": {"metal": {"base": "game:block/metal/plate/{material}"}},
     "behaviors": [{"code": "passivephysics", "groundDragFactor": 1, "airDragFactor": 0.1, "gravityFactor": 0.75}, {"code": "interpolateposition"}]
   },

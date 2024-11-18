@@ -1,4 +1,5 @@
-﻿using CombatOverhaul;
+﻿using Cairo;
+using CombatOverhaul;
 using CombatOverhaul.Animations;
 using CombatOverhaul.Implementations;
 using CombatOverhaul.Inputs;
@@ -6,11 +7,14 @@ using CombatOverhaul.RangedSystems;
 using CombatOverhaul.RangedSystems.Aiming;
 using System.Diagnostics;
 using System.Numerics;
+using System.Text;
 using Vintagestory.API.Client;
 using Vintagestory.API.Common;
 using Vintagestory.API.Common.Entities;
+using Vintagestory.API.Config;
 using Vintagestory.API.Server;
 using Vintagestory.API.Util;
+using VSImGui.Debug;
 
 namespace Firearms;
 
@@ -57,6 +61,7 @@ public class MuzzleloaderStats : WeaponStats
     public float BulletDamageStrength { get; set; } = 1;
     public float BulletVelocity { get; set; } = 1;
     public string BulletWildcard { get; set; } = "*bullet-*";
+    public float Zeroing { get; set; } = 0;
 
     public int MagazineSize { get; set; } = 1;
     public int BulletLoadedPerReload { get; set; } = 1;
@@ -93,6 +98,7 @@ public class MuzzleloaderClient : RangeWeaponClient
     public override void OnSelected(ItemSlot slot, EntityPlayer player, bool mainHand, ref int state)
     {
         Attachable.ClearAttachments(player.EntityId);
+        AimingSystem.AimingState = WeaponAimingState.None;
 
         MuzzleloaderLoadingStage stage = GetLoadingStage<MuzzleloaderLoadingStage>(slot);
         state = stage switch
@@ -120,6 +126,7 @@ public class MuzzleloaderClient : RangeWeaponClient
     {
         Attachable.ClearAttachments(player.EntityId);
         AimingAnimationController?.Stop(mainHand);
+        AimingSystem.AimingState = WeaponAimingState.None;
         AimingSystem.StopAiming();
     }
     public override void OnRegistered(ActionsManagerPlayerBehavior behavior, ICoreClientAPI api)
@@ -475,7 +482,7 @@ public class MuzzleloaderClient : RangeWeaponClient
                 Vintagestory.API.MathTools.Vec3d position = player.LocalEyePos + player.Pos.XYZ;
                 Vector3 targetDirection = AimingSystem.TargetVec;
 
-                targetDirection = ClientAimingSystem.Zeroing(targetDirection, 0);
+                targetDirection = ClientAimingSystem.Zeroing(targetDirection, Stats.Zeroing);
 
                 RangedWeaponSystem.Shoot(slot, 1, new((float)position.X, (float)position.Y, (float)position.Z), new(targetDirection.X, targetDirection.Y, targetDirection.Z), mainHand, ShootServerCallback);
                 break;
@@ -882,11 +889,23 @@ public class MuzzleloaderItem : Item, IHasWeaponLogic, IHasRangedWeaponLogic, IH
     public AnimationRequestByCode IdleAnimationOffhand { get; private set; }
     public AnimationRequestByCode ReadyAnimationOffhand { get; private set; }
 
+    public MuzzleloaderStats? Stats { get; private set; }
+
     IClientWeaponLogic? IHasWeaponLogic.ClientLogic => ClientLogic;
     IServerRangedWeaponLogic? IHasRangedWeaponLogic.ServerWeaponLogic => ServerLogic;
 
     public AnimationRequestByCode? GetIdleAnimation(bool mainHand) => mainHand ? IdleAnimation : IdleAnimationOffhand;
     public AnimationRequestByCode? GetReadyAnimation(bool mainHand) => mainHand ? ReadyAnimation : ReadyAnimationOffhand;
+
+    public override void GetHeldItemInfo(ItemSlot inSlot, StringBuilder dsc, IWorldAccessor world, bool withDebugInfo)
+    {
+        if (Stats != null)
+        {
+            dsc.AppendLine(Lang.Get("combatoverhaul:iteminfo-range-weapon-damage", Stats.BulletDamageMultiplier, Stats.BulletDamageStrength));
+            dsc.AppendLine("");
+        }
+        base.GetHeldItemInfo(inSlot, dsc, world, withDebugInfo);
+    }
 
     public override void OnLoaded(ICoreAPI api)
     {
@@ -896,11 +915,11 @@ public class MuzzleloaderItem : Item, IHasWeaponLogic, IHasRangedWeaponLogic, IH
         {
             ClientLogic = new(clientAPI, this);
 
-            MuzzleloaderStats stats = Attributes.AsObject<MuzzleloaderStats>();
-            IdleAnimation = new(stats.IdleAnimation, 1, 1, "main", TimeSpan.FromSeconds(0.2), TimeSpan.FromSeconds(0.2), false);
-            ReadyAnimation = new(stats.ReadyAnimation, 1, 1, "main", TimeSpan.FromSeconds(0.2), TimeSpan.FromSeconds(0.2), false);
-            IdleAnimationOffhand = new(stats.IdleAnimationOffhand, 1, 1, "mainOffhand", TimeSpan.FromSeconds(0.2), TimeSpan.FromSeconds(0.2), false);
-            ReadyAnimationOffhand = new(stats.ReadyAnimationOffhand, 1, 1, "mainOffhand", TimeSpan.FromSeconds(0.2), TimeSpan.FromSeconds(0.2), false);
+            Stats = Attributes.AsObject<MuzzleloaderStats>();
+            IdleAnimation = new(Stats.IdleAnimation, 1, 1, "main", TimeSpan.FromSeconds(0.2), TimeSpan.FromSeconds(0.2), false);
+            ReadyAnimation = new(Stats.ReadyAnimation, 1, 1, "main", TimeSpan.FromSeconds(0.2), TimeSpan.FromSeconds(0.2), false);
+            IdleAnimationOffhand = new(Stats.IdleAnimationOffhand, 1, 1, "mainOffhand", TimeSpan.FromSeconds(0.2), TimeSpan.FromSeconds(0.2), false);
+            ReadyAnimationOffhand = new(Stats.ReadyAnimationOffhand, 1, 1, "mainOffhand", TimeSpan.FromSeconds(0.2), TimeSpan.FromSeconds(0.2), false);
         }
 
         if (api is ICoreServerAPI serverAPI)

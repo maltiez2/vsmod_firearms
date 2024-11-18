@@ -1,43 +1,29 @@
 ﻿{
-  "code": "bullet",
+  "code": "pellet",
   "class": "Item",
-  "maxstacksize": 32,
+  "maxstacksize": 128,
   "storageFlags": 513,
   "variantgroups": [{"code": "material", "states": ["lead", "copper"]}],
-  "shape": {"base": "ammo/bullet"},
+  "shape": {"base": "ammo/pellet"},
   "textures": {"metal": {"base": "game:block/metal/plate/{material}"}},
   "behaviors": [
-    {
-      "name": "GroundStorable",
-      "properties": {
-        "layout": "Stacking",
-        "placeRemoveSound": "game:sounds/block/ceramicplace",
-        "stackingModel": "maltiezfirearms:piles/bullets",
-        "modelItemsToStackSizeRatio": 1.125,
-        "stackingCapacity": 128,
-        "upSolid": false,
-        "transferQuantity": 8,
-        "bulkTransferQuantity": 32,
-        "collisionBox": {"x1": 0.2, "y1": 0, "z1": 0.2, "x2": 0.8, "y2": 0.0125, "z2": 0.8},
-        "cbScaleYByLayer": 0.1
-      }
-    },
     {
       "name": "CombatOverhaul:Projectile",
       "properties": {
         "stats": {
           "AdditionalDurabilityCost": 0,
           "CollisionRadius": 0.05,
-          "DamageStatsByType": {"*-lead": {"DamageType": "BluntAttack", "Damage": 16}, "*-copper": {"DamageType": "BluntAttack", "Damage": 12}},
+          "DamageStatsByType": {"*-lead": {"DamageType": "BluntAttack", "Damage": 4}, "*-copper": {"DamageType": "BluntAttack", "Damage": 3}},
           "SpeedThreshold": 0.3,
           "Knockback": 0.1,
-          "EntityCode": "maltiezfirearms:bullet-{material}",
+          "EntityCode": "maltiezfirearms:pellet-{material}",
           "DurabilityDamage": 0,
           "DropChance": 0
         }
       }
     }
   ],
+  "attributes": {"attachableShape": "maltiezfirearms:ammo/pellets-shot"},
   "creativeinventory": {"maltiezfirearms": ["*"]},
   "guiTransform": {"translation": {"x": 0, "y": 0, "z": 0}, "rotation": {"x": 66, "y": 0, "z": 44}, "origin": {"x": 0, "y": -0.5, "z": 0.2}, "scale": 4},
   "tpHandTransform": {"translation": {"x": -1.7, "y": -1.15, "z": -1.4}},

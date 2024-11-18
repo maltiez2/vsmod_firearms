@@ -1,0 +1,81 @@
+{
+  "version": 3,
+  "patches": {
+    "float": {
+      "maltiezfirearms:itemtypes/firearms/pistol.json": {
+        "attributes/BulletDamageMultiplier": "value * damage_multiplier"
+      },
+      "maltiezfirearms:itemtypes/firearms/arquebus.json": {
+        "attributes/BulletDamageMultiplier": "value * damage_multiplier"
+      },
+      "maltiezfirearms:itemtypes/firearms/carbine.json": {
+        "attributes/BulletDamageMultiplier": "value * damage_multiplier"
+      },
+      "maltiezfirearms:itemtypes/firearms/musket.json": {
+        "attributes/BulletDamageMultiplier": "value * damage_multiplier"
+      },
+      "maltiezfirearms:itemtypes/firearms/superimposed.json": {
+        "attributes/BulletDamageMultiplier": "value * damage_multiplier"
+      }
+    },
+    "string": {
+      "maltiezfirearms:itemtypes/firearms/pistol.json": {
+        "attributes/Aiming/CursorType": "aiming_cursor_type"
+      },
+      "maltiezfirearms:itemtypes/firearms/arquebus.json": {
+        "attributes/Aiming/CursorType": "aiming_cursor_type"
+      },
+      "maltiezfirearms:itemtypes/firearms/carbine.json": {
+        "attributes/Aiming/CursorType": "aiming_cursor_type"
+      },
+      "maltiezfirearms:itemtypes/firearms/musket.json": {
+        "attributes/Aiming/CursorType": "aiming_cursor_type"
+      },
+      "maltiezfirearms:itemtypes/firearms/superimposed.json": {
+        "attributes/Aiming/CursorType": "aiming_cursor_type"
+      }
+    },
+    "other": {
+      "maltiezfirearms:recipes/grid/firearms/locks.json": {
+        "0/requiresTrait": "trait_requirement",
+        "1/requiresTrait": "trait_requirement",
+        "2/requiresTrait": "trait_requirement",
+        "6/requiresTrait": "trait_requirement"
+      }
+    }
+  },
+  "settings": [
+    {
+      "code": "damage_multiplier",
+      "type": "float",
+      "ingui": "maltiezfirearms:setting-damage-multiplier",
+      "default": 1.0,
+      "range": {
+        "min": 0.1,
+        "max": 5.0
+      }
+    },
+    {
+      "code": "trait_requirement",
+      "type": "other",
+      "ingui": "maltiezfirearms:setting-trait",
+      "default": "Required",
+      "mapping": {
+        "Required": "tinkerer",
+        "Not Required": null
+      }
+    },
+    {
+      "code": "aiming_cursor_type",
+      "type": "string",
+      "ingui": "maltiezfirearms:setting-cursortype",
+      "default": "None",
+      "values": [
+        "None",
+        "Vanilla",
+        "Fixed",
+        "Moving"
+      ]
+    }
+  ]
+}
