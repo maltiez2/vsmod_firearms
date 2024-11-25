@@ -12,7 +12,7 @@
         "FOVMultiplier": 0.88,
         "BobbingAmplitude": 0.655,
         "Elements": {
-          "ItemAnchor": [-1.8, 1.11, 1.49, 15, 22, 153],
+          "ItemAnchor": [-1.5, 0.71, 1.49, 15, 22, 153],
           "LowerArmR": [0, 0, 0, 0, 0, -120],
           "UpperArmR": [0, 0, 0, 0, 22.2, -38],
           "ItemAnchorL": [0, 0, 0, 0, 0, 0],
@@ -27,14 +27,13 @@
         "DurationFraction": 1,
         "EasingFunction": "Linear",
         "Elements": {
-          "Lock_lever": [0, 0, 0, -35, 0, 0],
-          "Match_3": [0, 0, 0, 22, 0, 0],
-          "Match_1": [0, 0, 0, 1, 0, 0],
-          "Match": [0, 0, 0, 0, 0, 0],
-          "Lever": [0, 0, 0, 10, 0, 0],
-          "Match_origin": [-60, -60, -98, 0, 0, 0],
-          "Match_2": [0, 0, 0, -1, 0, 0],
-          "Pan_cover": [0, 0, 0, 0, 0, 0]
+          "Lock_lever": [0, 0, 0, 28, 0, 0],
+          "Lever": [0, 0, 0, 12, 0, 0],
+          "Pan_cover": [0, 0, 0, 0, 0, 0],
+          "Match_origin": [0, 0, -60, 0, 0, 0],
+          "Match_1": [0, 0, 0, 0, 0, 0],
+          "Match_2": [0, 0, 0, 27, 0, 0],
+          "Match_3": [0, 0, 0, 14.5, 0, 0]
         }
       }
     ],
@@ -84,7 +83,7 @@
         }
       },
       {
-        "EasingTime": 924,
+        "EasingTime": 841,
         "EasingFunction": "Linear",
         "DetachedAnchor": false,
         "SwitchArms": true,
@@ -94,15 +93,15 @@
         "BobbingAmplitude": 1,
         "Elements": {
           "ItemAnchor": [9.9, 0.8, 0.9, 113, -13, 11],
-          "LowerArmR": [0, 0, 0, 0, 0, -47],
-          "UpperArmR": [0, 0, 0, 13, 0, -74],
+          "LowerArmR": [0, 0, 0, 0, 0, -55],
+          "UpperArmR": [0, 0, 0, 17, 7, -58],
           "ItemAnchorL": [10.1, -1.6, -0.3, 74, 0, -2],
           "LowerArmL": [0, 0, 0, 0, 0, -48],
           "UpperArmL": [0, 0, 0, 0, 0, -42]
         }
       },
       {
-        "EasingTime": 1136,
+        "EasingTime": 1012,
         "EasingFunction": "Linear",
         "DetachedAnchor": false,
         "SwitchArms": true,
@@ -112,15 +111,15 @@
         "BobbingAmplitude": 1,
         "Elements": {
           "ItemAnchor": [9.9, 0.8, 0.9, 113, -13, 11],
-          "LowerArmR": [0, 0, 0, 0, 0, -46],
-          "UpperArmR": [0.5, 0, 0, 64, -4, -92],
+          "LowerArmR": [0, 0, 0, 0, 0, -54],
+          "UpperArmR": [0, 0, 0.6, 75, 1, -80],
           "ItemAnchorL": [10.1, -1.6, -0.3, 74, 0, -2],
           "LowerArmL": [0, 0, 0, 0, 0, -48],
           "UpperArmL": [0, 0, 0, 0, 0, -42]
         }
       },
       {
-        "EasingTime": 1348,
+        "EasingTime": 1183,
         "EasingFunction": "Linear",
         "DetachedAnchor": false,
         "SwitchArms": true,
@@ -130,69 +129,15 @@
         "BobbingAmplitude": 1,
         "Elements": {
           "ItemAnchor": [9.9, 0.8, 0.9, 113, -13, 11],
-          "LowerArmR": [0, 0, 0, 0, 0, -47],
-          "UpperArmR": [0, 0, 0, 13, 0, -74],
+          "LowerArmR": [0, 0, 0, 0, 0, -55],
+          "UpperArmR": [0, 0, 0, 17, 7, -58],
           "ItemAnchorL": [10.1, -1.6, -0.3, 74, 0, -2],
           "LowerArmL": [0, 0, 0, 0, 0, -48],
           "UpperArmL": [0, 0, 0, 0, 0, -42]
         }
       },
       {
-        "EasingTime": 1773,
-        "EasingFunction": "Linear",
-        "DetachedAnchor": false,
-        "SwitchArms": true,
-        "PitchFollow": false,
-        "PitchDontFollow": false,
-        "FOVMultiplier": 1,
-        "BobbingAmplitude": 1,
-        "Elements": {
-          "ItemAnchor": [9.9, 0.8, 0.9, 113, -13, 11],
-          "LowerArmR": [0, 0, 0, 0, 0, 3],
-          "UpperArmR": [0, 0, 0, 0, 14, -10],
-          "ItemAnchorL": [10.1, -1.6, -0.3, 74, 0, -2],
-          "LowerArmL": [0, 0, 0, 0, 0, -48],
-          "UpperArmL": [0, 0, 0, 0, 0, -42]
-        }
-      },
-      {
-        "EasingTime": 2197,
-        "EasingFunction": "Linear",
-        "DetachedAnchor": false,
-        "SwitchArms": true,
-        "PitchFollow": false,
-        "PitchDontFollow": false,
-        "FOVMultiplier": 1,
-        "BobbingAmplitude": 1,
-        "Elements": {
-          "ItemAnchor": [9.9, 0.8, 0.9, 113, -13, 11],
-          "LowerArmR": [0, 0, 0, 0, 0, -50],
-          "UpperArmR": [0, 0, 0, 4, 1, -67],
-          "ItemAnchorL": [10.1, -1.6, -0.3, 74, 0, -2],
-          "LowerArmL": [0, 0, 0, 0, 0, -48],
-          "UpperArmL": [0, 0, 0, 0, 0, -42]
-        }
-      },
-      {
-        "EasingTime": 2409,
-        "EasingFunction": "Linear",
-        "DetachedAnchor": false,
-        "SwitchArms": true,
-        "PitchFollow": false,
-        "PitchDontFollow": false,
-        "FOVMultiplier": 1,
-        "BobbingAmplitude": 1,
-        "Elements": {
-          "ItemAnchor": [9.9, 0.8, 0.9, 113, -13, 11],
-          "LowerArmR": [0, 0, 0, 0, 0, -45],
-          "UpperArmR": [0, 0, 0, 10, 20, -73],
-          "ItemAnchorL": [10.1, -1.6, -0.3, 74, 0, -2],
-          "LowerArmL": [0, 0, 0, 0, 0, -48],
-          "UpperArmL": [0, 0, 0, 0, 0, -42]
-        }
-      },
-      {
-        "EasingTime": 2621,
+        "EasingTime": 1524,
         "EasingFunction": "Linear",
         "DetachedAnchor": false,
         "SwitchArms": true,
@@ -210,7 +155,7 @@
         }
       },
       {
-        "EasingTime": 3045,
+        "EasingTime": 1866,
         "EasingFunction": "Linear",
         "DetachedAnchor": false,
         "SwitchArms": true,
@@ -220,15 +165,15 @@
         "BobbingAmplitude": 1,
         "Elements": {
           "ItemAnchor": [9.9, 0.8, 0.9, 113, -13, 11],
-          "LowerArmR": [0, 0, 0, 0, 0, -45],
-          "UpperArmR": [0, 0, 0, 0, 5, -69],
+          "LowerArmR": [0, 0, 0, 0, 0, -42],
+          "UpperArmR": [0, 0, 0, 0, 11, -60],
           "ItemAnchorL": [10.1, -1.6, -0.3, 74, 0, -2],
           "LowerArmL": [0, 0, 0, 0, 0, -48],
           "UpperArmL": [0, 0, 0, 0, 0, -42]
         }
       },
       {
-        "EasingTime": 3257,
+        "EasingTime": 2036,
         "EasingFunction": "Linear",
         "DetachedAnchor": false,
         "SwitchArms": true,
@@ -238,15 +183,15 @@
         "BobbingAmplitude": 1,
         "Elements": {
           "ItemAnchor": [9.9, 0.8, 0.9, 113, -13, 11],
-          "LowerArmR": [0, 0, 0, 0, 0, -45],
-          "UpperArmR": [0, 0, 0, 7, 20, -72],
+          "LowerArmR": [0, 0, 0, 0, 0, -30],
+          "UpperArmR": [0, 0, 0, 4, 22, -69],
           "ItemAnchorL": [10.1, -1.6, -0.3, 74, 0, -2],
           "LowerArmL": [0, 0, 0, 0, 0, -48],
           "UpperArmL": [0, 0, 0, 0, 0, -42]
         }
       },
       {
-        "EasingTime": 3469,
+        "EasingTime": 2207,
         "EasingFunction": "Linear",
         "DetachedAnchor": false,
         "SwitchArms": true,
@@ -256,15 +201,15 @@
         "BobbingAmplitude": 1,
         "Elements": {
           "ItemAnchor": [9.9, 0.8, 0.9, 113, -13, 11],
-          "LowerArmR": [0, 0, 0, 0, 0, -45],
-          "UpperArmR": [0, 0, 0, 35, 14.3, -81.3],
+          "LowerArmR": [0, 0, 0, 0, 0, -34],
+          "UpperArmR": [0, 0, 0.4, 18, 23, -73],
           "ItemAnchorL": [10.1, -1.6, -0.3, 74, 0, -2],
           "LowerArmL": [0, 0, 0, 0, 0, -48],
           "UpperArmL": [0, 0, 0, 0, 0, -42]
         }
       },
       {
-        "EasingTime": 3681,
+        "EasingTime": 2378,
         "EasingFunction": "Linear",
         "DetachedAnchor": false,
         "SwitchArms": true,
@@ -274,15 +219,15 @@
         "BobbingAmplitude": 1,
         "Elements": {
           "ItemAnchor": [9.9, 0.8, 0.9, 113, -13, 11],
-          "LowerArmR": [0, 0, 0, 0, 0, -9],
-          "UpperArmR": [0, 0, 0, 10, 26.3, -66.3],
+          "LowerArmR": [0, 0, 0, 0, 0, 3],
+          "UpperArmR": [0, 0, 0, 0, 14, -10],
           "ItemAnchorL": [10.1, -1.6, -0.3, 74, 0, -2],
           "LowerArmL": [0, 0, 0, 0, 0, -48],
           "UpperArmL": [0, 0, 0, 0, 0, -42]
         }
       },
       {
-        "EasingTime": 4106,
+        "EasingTime": 2719,
         "EasingFunction": "Linear",
         "DetachedAnchor": false,
         "SwitchArms": true,
@@ -292,15 +237,15 @@
         "BobbingAmplitude": 1,
         "Elements": {
           "ItemAnchor": [9.9, 0.8, 0.9, 113, -13, 11],
-          "LowerArmR": [0, 0, 0, 0, 0, -6],
-          "UpperArmR": [0, 0, 0, 10, 6.3, -121.3],
+          "LowerArmR": [0, 0, 0, 0, 0, -37],
+          "UpperArmR": [0, 0, 0, 0, 10, -61],
           "ItemAnchorL": [10.1, -1.6, -0.3, 74, 0, -2],
           "LowerArmL": [0, 0, 0, 0, 0, -48],
           "UpperArmL": [0, 0, 0, 0, 0, -42]
         }
       },
       {
-        "EasingTime": 4530,
+        "EasingTime": 2890,
         "EasingFunction": "Linear",
         "DetachedAnchor": false,
         "SwitchArms": true,
@@ -310,15 +255,15 @@
         "BobbingAmplitude": 1,
         "Elements": {
           "ItemAnchor": [9.9, 0.8, 0.9, 113, -13, 11],
-          "LowerArmR": [0, 0, 0, 0, 0, -1],
-          "UpperArmR": [1.2, 0, 0, 37, -10.7, -130.3],
+          "LowerArmR": [0, 0, 0, 0, 0, -41],
+          "UpperArmR": [0, 0, 0, 0, 22, -61],
           "ItemAnchorL": [10.1, -1.6, -0.3, 74, 0, -2],
           "LowerArmL": [0, 0, 0, 0, 0, -48],
           "UpperArmL": [0, 0, 0, 0, 0, -42]
         }
       },
       {
-        "EasingTime": 4954,
+        "EasingTime": 3060,
         "EasingFunction": "Linear",
         "DetachedAnchor": false,
         "SwitchArms": true,
@@ -328,15 +273,15 @@
         "BobbingAmplitude": 1,
         "Elements": {
           "ItemAnchor": [9.9, 0.8, 0.9, 113, -13, 11],
-          "LowerArmR": [0, 0, 0, 0, 0, -28],
-          "UpperArmR": [1.2, 0, 0, 37, 13.3, -99.3],
+          "LowerArmR": [0, 0, 0, 0, 0, -41],
+          "UpperArmR": [0, 0, 0, 27, 25, -73],
           "ItemAnchorL": [10.1, -1.6, -0.3, 74, 0, -2],
           "LowerArmL": [0, 0, 0, 0, 0, -48],
           "UpperArmL": [0, 0, 0, 0, 0, -42]
         }
       },
       {
-        "EasingTime": 5166,
+        "EasingTime": 3231,
         "EasingFunction": "Linear",
         "DetachedAnchor": false,
         "SwitchArms": true,
@@ -346,15 +291,15 @@
         "BobbingAmplitude": 1,
         "Elements": {
           "ItemAnchor": [9.9, 0.8, 0.9, 113, -13, 11],
-          "LowerArmR": [0, 0, 0, 0, 0, 0],
-          "UpperArmR": [1.2, 0, 0, 37, -12.7, -132.3],
+          "LowerArmR": [0, 0, 0, 0, 0, 3],
+          "UpperArmR": [0, 0, 0, 0, 14, -10],
           "ItemAnchorL": [10.1, -1.6, -0.3, 74, 0, -2],
           "LowerArmL": [0, 0, 0, 0, 0, -48],
           "UpperArmL": [0, 0, 0, 0, 0, -42]
         }
       },
       {
-        "EasingTime": 5590,
+        "EasingTime": 3573,
         "EasingFunction": "Linear",
         "DetachedAnchor": false,
         "SwitchArms": true,
@@ -364,15 +309,69 @@
         "BobbingAmplitude": 1,
         "Elements": {
           "ItemAnchor": [9.9, 0.8, 0.9, 113, -13, 11],
-          "LowerArmR": [0, 0, 0, 0, 0, -25],
-          "UpperArmR": [1.2, 0, 0, 37, 14.3, -100.3],
+          "LowerArmR": [0, 0, 0, 0, 0, -42],
+          "UpperArmR": [0, 0, 0, 0, 11, -60],
           "ItemAnchorL": [10.1, -1.6, -0.3, 74, 0, -2],
           "LowerArmL": [0, 0, 0, 0, 0, -48],
           "UpperArmL": [0, 0, 0, 0, 0, -42]
         }
       },
       {
-        "EasingTime": 5803,
+        "EasingTime": 3744,
+        "EasingFunction": "Linear",
+        "DetachedAnchor": false,
+        "SwitchArms": true,
+        "PitchFollow": false,
+        "PitchDontFollow": false,
+        "FOVMultiplier": 1,
+        "BobbingAmplitude": 1,
+        "Elements": {
+          "ItemAnchor": [9.9, 0.8, 0.9, 113, -13, 11],
+          "LowerArmR": [0, 0, 0, 0, 0, -30],
+          "UpperArmR": [0, 0, 0, 4, 22, -69],
+          "ItemAnchorL": [10.1, -1.6, -0.3, 74, 0, -2],
+          "LowerArmL": [0, 0, 0, 0, 0, -48],
+          "UpperArmL": [0, 0, 0, 0, 0, -42]
+        }
+      },
+      {
+        "EasingTime": 3914,
+        "EasingFunction": "Linear",
+        "DetachedAnchor": false,
+        "SwitchArms": true,
+        "PitchFollow": false,
+        "PitchDontFollow": false,
+        "FOVMultiplier": 1,
+        "BobbingAmplitude": 1,
+        "Elements": {
+          "ItemAnchor": [9.9, 0.8, 0.9, 113, -13, 11],
+          "LowerArmR": [0, 0, 0, 0, 0, -34],
+          "UpperArmR": [0, 0, 0.4, 18, 23, -73],
+          "ItemAnchorL": [10.1, -1.6, -0.3, 74, 0, -2],
+          "LowerArmL": [0, 0, 0, 0, 0, -48],
+          "UpperArmL": [0, 0, 0, 0, 0, -42]
+        }
+      },
+      {
+        "EasingTime": 4085,
+        "EasingFunction": "Linear",
+        "DetachedAnchor": false,
+        "SwitchArms": true,
+        "PitchFollow": false,
+        "PitchDontFollow": false,
+        "FOVMultiplier": 1,
+        "BobbingAmplitude": 1,
+        "Elements": {
+          "ItemAnchor": [9.9, 0.8, 0.9, 113, -13, 11],
+          "LowerArmR": [0, 0, 0, 0, 0, -3],
+          "UpperArmR": [0, 0, 0.4, 0, 23, -56],
+          "ItemAnchorL": [10.1, -1.6, -0.3, 74, 0, -2],
+          "LowerArmL": [0, 0, 0, 0, 0, -48],
+          "UpperArmL": [0, 0, 0, 0, 0, -42]
+        }
+      },
+      {
+        "EasingTime": 4426,
         "EasingFunction": "Linear",
         "DetachedAnchor": false,
         "SwitchArms": true,
@@ -383,14 +382,14 @@
         "Elements": {
           "ItemAnchor": [9.9, 0.8, 0.9, 113, -13, 11],
           "LowerArmR": [0, 0, 0, 0, 0, -22],
-          "UpperArmR": [1.2, 0, 0, 37, 3.3, -110.3],
+          "UpperArmR": [0, 0, 0.4, 0, 9, -103],
           "ItemAnchorL": [10.1, -1.6, -0.3, 74, 0, -2],
           "LowerArmL": [0, 0, 0, 0, 0, -48],
           "UpperArmL": [0, 0, 0, 0, 0, -42]
         }
       },
       {
-        "EasingTime": 6015,
+        "EasingTime": 4768,
         "EasingFunction": "Linear",
         "DetachedAnchor": false,
         "SwitchArms": true,
@@ -400,15 +399,15 @@
         "BobbingAmplitude": 1,
         "Elements": {
           "ItemAnchor": [9.9, 0.8, 0.9, 113, -13, 11],
-          "LowerArmR": [0, 0, 0, 0, 0, -25],
-          "UpperArmR": [1.2, 0, 0, 37, 14.3, -100.3],
+          "LowerArmR": [0, 0, 0, 0, 0, -3],
+          "UpperArmR": [0, 0, 0.4, 0, 13, -115],
           "ItemAnchorL": [10.1, -1.6, -0.3, 74, 0, -2],
           "LowerArmL": [0, 0, 0, 0, 0, -48],
           "UpperArmL": [0, 0, 0, 0, 0, -42]
         }
       },
       {
-        "EasingTime": 6227,
+        "EasingTime": 5109,
         "EasingFunction": "Linear",
         "DetachedAnchor": false,
         "SwitchArms": true,
@@ -418,15 +417,15 @@
         "BobbingAmplitude": 1,
         "Elements": {
           "ItemAnchor": [9.9, 0.8, 0.9, 113, -13, 11],
-          "LowerArmR": [0, 0, 0, 0, 0, -1],
-          "UpperArmR": [1.2, 0, 0, 37, -10.7, -130.3],
+          "LowerArmR": [0, 0, 0, 0, 0, -30],
+          "UpperArmR": [0, 0, 0.4, 0, 21, -69],
           "ItemAnchorL": [10.1, -1.6, -0.3, 74, 0, -2],
           "LowerArmL": [0, 0, 0, 0, 0, -48],
           "UpperArmL": [0, 0, 0, 0, 0, -42]
         }
       },
       {
-        "EasingTime": 6439,
+        "EasingTime": 5280,
         "EasingFunction": "Linear",
         "DetachedAnchor": false,
         "SwitchArms": true,
@@ -436,15 +435,15 @@
         "BobbingAmplitude": 1,
         "Elements": {
           "ItemAnchor": [9.9, 0.8, 0.9, 113, -13, 11],
-          "LowerArmR": [0, 0, 0, 0, 0, -28],
-          "UpperArmR": [1.2, 0, 0, 37, 13.3, -99.3],
+          "LowerArmR": [0, 0, 0, 0, 0, -30],
+          "UpperArmR": [0, 0, 0.4, 0, 16, -93],
           "ItemAnchorL": [10.1, -1.6, -0.3, 74, 0, -2],
           "LowerArmL": [0, 0, 0, 0, 0, -48],
           "UpperArmL": [0, 0, 0, 0, 0, -42]
         }
       },
       {
-        "EasingTime": 6651,
+        "EasingTime": 5622,
         "EasingFunction": "Linear",
         "DetachedAnchor": false,
         "SwitchArms": true,
@@ -454,15 +453,15 @@
         "BobbingAmplitude": 1,
         "Elements": {
           "ItemAnchor": [9.9, 0.8, 0.9, 113, -13, 11],
-          "LowerArmR": [0, 0, 0, 0, 0, -1],
-          "UpperArmR": [1.2, 0, 0, 37, -10.7, -130.3],
+          "LowerArmR": [0, 0, 0, 0, 0, -30],
+          "UpperArmR": [0, 0, 0.4, 0, 21, -68],
           "ItemAnchorL": [10.1, -1.6, -0.3, 74, 0, -2],
           "LowerArmL": [0, 0, 0, 0, 0, -48],
           "UpperArmL": [0, 0, 0, 0, 0, -42]
         }
       },
       {
-        "EasingTime": 7075,
+        "EasingTime": 5792,
         "EasingFunction": "Linear",
         "DetachedAnchor": false,
         "SwitchArms": true,
@@ -472,8 +471,98 @@
         "BobbingAmplitude": 1,
         "Elements": {
           "ItemAnchor": [9.9, 0.8, 0.9, 113, -13, 11],
-          "LowerArmR": [0, 0, 0, 0, 0, -6],
-          "UpperArmR": [0, 0, 0, 10, 6.3, -121.3],
+          "LowerArmR": [0, 0, 0, 0, 0, -30],
+          "UpperArmR": [0, 0, 0.4, 0, 19, -76],
+          "ItemAnchorL": [10.1, -1.6, -0.3, 74, 0, -2],
+          "LowerArmL": [0, 0, 0, 0, 0, -48],
+          "UpperArmL": [0, 0, 0, 0, 0, -42]
+        }
+      },
+      {
+        "EasingTime": 5963,
+        "EasingFunction": "Linear",
+        "DetachedAnchor": false,
+        "SwitchArms": true,
+        "PitchFollow": false,
+        "PitchDontFollow": false,
+        "FOVMultiplier": 1,
+        "BobbingAmplitude": 1,
+        "Elements": {
+          "ItemAnchor": [9.9, 0.8, 0.9, 113, -13, 11],
+          "LowerArmR": [0, 0, 0, 0, 0, -30],
+          "UpperArmR": [0, 0, 0.4, 0, 21, -68],
+          "ItemAnchorL": [10.1, -1.6, -0.3, 74, 0, -2],
+          "LowerArmL": [0, 0, 0, 0, 0, -48],
+          "UpperArmL": [0, 0, 0, 0, 0, -42]
+        }
+      },
+      {
+        "EasingTime": 6304,
+        "EasingFunction": "Linear",
+        "DetachedAnchor": false,
+        "SwitchArms": true,
+        "PitchFollow": false,
+        "PitchDontFollow": false,
+        "FOVMultiplier": 1,
+        "BobbingAmplitude": 1,
+        "Elements": {
+          "ItemAnchor": [9.9, 0.8, 0.9, 113, -13, 11],
+          "LowerArmR": [0, 0, 0, 0, 0, -30],
+          "UpperArmR": [0, 0, 0.4, 0, 16, -93],
+          "ItemAnchorL": [10.1, -1.6, -0.3, 74, 0, -2],
+          "LowerArmL": [0, 0, 0, 0, 0, -48],
+          "UpperArmL": [0, 0, 0, 0, 0, -42]
+        }
+      },
+      {
+        "EasingTime": 6475,
+        "EasingFunction": "Linear",
+        "DetachedAnchor": false,
+        "SwitchArms": true,
+        "PitchFollow": false,
+        "PitchDontFollow": false,
+        "FOVMultiplier": 1,
+        "BobbingAmplitude": 1,
+        "Elements": {
+          "ItemAnchor": [9.9, 0.8, 0.9, 113, -13, 11],
+          "LowerArmR": [0, 0, 0, 0, 0, -30],
+          "UpperArmR": [0, 0, 0.4, 0, 21, -69],
+          "ItemAnchorL": [10.1, -1.6, -0.3, 74, 0, -2],
+          "LowerArmL": [0, 0, 0, 0, 0, -48],
+          "UpperArmL": [0, 0, 0, 0, 0, -42]
+        }
+      },
+      {
+        "EasingTime": 6817,
+        "EasingFunction": "Linear",
+        "DetachedAnchor": false,
+        "SwitchArms": true,
+        "PitchFollow": false,
+        "PitchDontFollow": false,
+        "FOVMultiplier": 1,
+        "BobbingAmplitude": 1,
+        "Elements": {
+          "ItemAnchor": [9.9, 0.8, 0.9, 113, -13, 11],
+          "LowerArmR": [0, 0, 0, 0, 0, -3],
+          "UpperArmR": [0, 0, 0.4, 0, 13, -115],
+          "ItemAnchorL": [10.1, -1.6, -0.3, 74, 0, -2],
+          "LowerArmL": [0, 0, 0, 0, 0, -48],
+          "UpperArmL": [0, 0, 0, 0, 0, -42]
+        }
+      },
+      {
+        "EasingTime": 7158,
+        "EasingFunction": "Linear",
+        "DetachedAnchor": false,
+        "SwitchArms": true,
+        "PitchFollow": false,
+        "PitchDontFollow": false,
+        "FOVMultiplier": 1,
+        "BobbingAmplitude": 1,
+        "Elements": {
+          "ItemAnchor": [9.9, 0.8, 0.9, 113, -13, 11],
+          "LowerArmR": [0, 0, 0, 0, 0, -22],
+          "UpperArmR": [0, 0, 0.4, 0, 9, -103],
           "ItemAnchorL": [10.1, -1.6, -0.3, 74, 0, -2],
           "LowerArmL": [0, 0, 0, 0, 0, -48],
           "UpperArmL": [0, 0, 0, 0, 0, -42]
@@ -490,8 +579,8 @@
         "BobbingAmplitude": 1,
         "Elements": {
           "ItemAnchor": [9.9, 0.8, 0.9, 113, -13, 11],
-          "LowerArmR": [0, 0, 0, 0, 0, -9],
-          "UpperArmR": [0, 0, 0, 10, 26.3, -66.3],
+          "LowerArmR": [0, 0, 0, 0, 0, -3],
+          "UpperArmR": [0, 0, 0.4, 0, 23, -56],
           "ItemAnchorL": [10.1, -1.6, -0.3, 74, 0, -2],
           "LowerArmL": [0, 0, 0, 0, 0, -48],
           "UpperArmL": [0, 0, 0, 0, 0, -42]
@@ -521,400 +610,464 @@
         "DurationFraction": 0,
         "EasingFunction": "Linear",
         "Elements": {
-          "Linen_3": [0.3, -0.2, 0, 0, 0, 0],
-          "Flask_origin_inner": [0, 0, 0, -90, 90, 0],
-          "Linen_0": [0.2, 0.2, 0, 0, 0, 0],
-          "Linen_1": [-0.2, 0.2, 0, 0, 0, 0],
-          "Patch": [0, -7, 31, 0, 0, 0],
-          "Ramrod": [0, 0, 0, 0, 0, 0],
-          "Linen_2": [-0.3, -0.2, 0, 0, 0, 0],
-          "Bullet": [0, -7, 30.8, 0, 0, 0],
-          "Flask_origin": [-66, -66, -78, 0, 0, 0],
-          "Ramdrod_origin": [0, 0, 0, 0, 0, 0]
-        }
-      },
-      {
-        "DurationFraction": 0.060606062,
-        "EasingFunction": "Linear",
-        "Elements": {
-          "Linen_3": [0.3, -0.2, 0, 0, 0, 0],
-          "Flask_origin_inner": [0, 0, 0, -90, 90, 0],
-          "Linen_0": [0.2, 0.2, 0, 0, 0, 0],
-          "Linen_1": [-0.2, 0.2, 0, 0, 0, 0],
-          "Patch": [0, -7, 31, 0, 0, 0],
-          "Ramrod": [0, 0, 0, 0, 0, 0],
-          "Linen_2": [-0.3, -0.2, 0, 0, 0, 0],
-          "Bullet": [0, -7, 30.8, 0, 0, 0],
-          "Flask_origin": [-66, -61, -109, 0, 0, 0],
-          "Ramdrod_origin": [0, 0, 0, 0, 0, 0]
-        }
-      },
-      {
-        "DurationFraction": 0.09090909,
-        "EasingFunction": "Linear",
-        "Elements": {
-          "Linen_3": [0.3, -0.2, 0, 0, 0, 0],
-          "Flask_origin_inner": [0, 0, 0, -90, 90, 90],
-          "Linen_0": [0.2, 0.2, 0, 0, 0, 0],
-          "Linen_1": [-0.2, 0.2, 0, 0, 0, 0],
-          "Patch": [0, -7, 31, 0, 0, 0],
-          "Ramrod": [0, 0, 0, 0, 0, 0],
-          "Linen_2": [-0.3, -0.2, 0, 0, 0, 0],
-          "Bullet": [0, -7, 30.8, 0, 0, 0],
-          "Flask_origin": [-66, -58.2, -110, 0, 0, 0],
-          "Ramdrod_origin": [0, 0, 0, 0, 0, 0]
-        }
-      },
-      {
-        "DurationFraction": 0.121212125,
-        "EasingFunction": "Linear",
-        "Elements": {
-          "Linen_3": [0.3, -0.2, 0, 0, 0, 0],
-          "Flask_origin_inner": [0, 0, 0, -90, 90, 0],
-          "Linen_0": [0.2, 0.2, 0, 0, 0, 0],
-          "Linen_1": [-0.2, 0.2, 0, 0, 0, 0],
-          "Patch": [0, -7, 31, 0, 0, 0],
-          "Ramrod": [0, 0, 0, 0, 0, 0],
-          "Linen_2": [-0.3, -0.2, 0, 0, 0, 0],
-          "Bullet": [0, -7, 30.8, 0, 0, 0],
-          "Flask_origin": [-66, -61, -109, 0, 0, 0],
-          "Ramdrod_origin": [0, 0, 0, 0, 0, 0]
-        }
-      },
-      {
-        "DurationFraction": 0.18181819,
-        "EasingFunction": "Linear",
-        "Elements": {
-          "Linen_3": [0.3, -0.2, 0, 0, 0, 0],
-          "Flask_origin_inner": [0, 0, 0, -90, 90, 0],
-          "Linen_0": [0.2, 0.2, 0, 0, 0, 0],
-          "Linen_1": [-0.2, 0.2, 0, 0, 0, 0],
-          "Patch": [0, -7, 31, 0, 0, 0],
-          "Ramrod": [0, 0, 0, 0, 0, 0],
-          "Linen_2": [-0.3, -0.2, 0, 0, 0, 0],
-          "Bullet": [0, -7, 30.8, 0, 0, 0],
-          "Flask_origin": [-66, -66, -78, 0, 0, 0],
-          "Ramdrod_origin": [0, 0, 0, 0, 0, 0]
-        }
-      },
-      {
-        "DurationFraction": 0.24242425,
-        "EasingFunction": "Linear",
-        "Elements": {
-          "Linen_3": [0.3, -0.2, 0, 0, 0, 0],
-          "Flask_origin_inner": [0, 0, 0, -90, 90, 0],
-          "Linen_0": [0.2, 0.2, 0, 0, 0, 0],
-          "Linen_1": [-0.2, 0.2, 0, 0, 0, 0],
-          "Patch": [0, -5, -2.3, 0, 0, 0],
-          "Ramrod": [0, 0, 0, 0, 0, 0],
-          "Linen_2": [-0.3, -0.2, 0, 0, 0, 0],
-          "Bullet": [0, -7, 30.8, 0, 0, 0],
-          "Flask_origin": [-66, -66, -78, 0, 0, 0],
-          "Ramdrod_origin": [0, 0, 0, 0, 0, 0]
-        }
-      },
-      {
-        "DurationFraction": 0.27272725,
-        "EasingFunction": "Linear",
-        "Elements": {
-          "Linen_3": [0.3, -0.2, 0, 0, 0, 0],
-          "Flask_origin_inner": [0, 0, 0, -90, 90, 0],
-          "Linen_0": [0.2, 0.2, 0, 0, 0, 0],
-          "Linen_1": [-0.2, 0.2, 0, 0, 0, 0],
-          "Patch": [0, 0, -1.3, 0, 0, 0],
-          "Ramrod": [0, 0, 0, 0, 0, 0],
-          "Linen_2": [-0.3, -0.2, 0, 0, 0, 0],
-          "Bullet": [0, -7, 30.8, 0, 0, 0],
-          "Flask_origin": [-66, -66, -78, 0, 0, 0],
-          "Ramdrod_origin": [0, 0, 0, 0, 0, 0]
-        }
-      },
-      {
-        "DurationFraction": 0.3030303,
-        "EasingFunction": "Linear",
-        "Elements": {
-          "Linen_3": [0.3, -0.2, 0, 0, 0, 0],
-          "Flask_origin_inner": [0, 0, 0, -90, 90, 0],
-          "Linen_0": [0.2, 0.2, 0, 0, 0, 0],
-          "Linen_1": [-0.2, 0.2, 0, 0, 0, 0],
-          "Patch": [0, 0, -1.3, 0, 0, 0],
-          "Ramrod": [0, 0, 0, 0, 0, 0],
-          "Linen_2": [-0.3, -0.2, 0, 0, 0, 0],
-          "Bullet": [0, -7, 30.8, 0, 0, 0],
-          "Flask_origin": [-66, -66, -78, 0, 0, 0],
-          "Ramdrod_origin": [0, 0, 0, 0, 0, 0]
-        }
-      },
-      {
-        "DurationFraction": 0.36363637,
-        "EasingFunction": "Linear",
-        "Elements": {
-          "Linen_3": [0.3, -0.2, 0, 0, 0, 0],
-          "Flask_origin_inner": [0, 0, 0, -90, 90, 0],
-          "Linen_0": [0.2, 0.2, 0, 0, 0, 0],
-          "Linen_1": [-0.2, 0.2, 0, 0, 0, 0],
-          "Patch": [0, 0, -1.3, 0, 0, 0],
-          "Ramrod": [0, 0, 0, 0, 0, 0],
-          "Linen_2": [-0.3, -0.2, 0, 0, 0, 0],
-          "Bullet": [0, -4, -2.2, 0, 0, 0],
-          "Flask_origin": [-66, -66, -78, 0, 0, 0],
-          "Ramdrod_origin": [0, 0, 0, 0, 0, 0]
-        }
-      },
-      {
-        "DurationFraction": 0.3939394,
-        "EasingFunction": "Linear",
-        "Elements": {
-          "Linen_3": [0.3, -0.2, 0, 0, 0, 0],
-          "Flask_origin_inner": [0, 0, 0, -90, 90, 0],
-          "Linen_0": [0.2, 0.2, 0, 0, 0, 0],
-          "Linen_1": [-0.2, 0.2, 0, 0, 0, 0],
-          "Patch": [0, 0, -1.3, 0, 0, 0],
-          "Ramrod": [0, 0, 0, 0, 0, 0],
-          "Linen_2": [-0.3, -0.2, 0, 0, 0, 0],
-          "Bullet": [0, 0, -1.5, 0, 0, 0],
-          "Flask_origin": [-66, -66, -78, 0, 0, 0],
-          "Ramdrod_origin": [0, 0, 0, 0, 0, 0]
-        }
-      },
-      {
-        "DurationFraction": 0.42424244,
-        "EasingFunction": "Linear",
-        "Elements": {
-          "Linen_3": [0.2, -0.1, -0.1, 20, 20, 0],
-          "Flask_origin_inner": [0, 0, 0, -90, 90, 0],
-          "Linen_0": [0.1, 0.1, 0, -20, 13, 0],
-          "Linen_1": [-0.1, 0.1, 0, -20, -15, 0],
-          "Patch": [0, 0, -1, 0, 0, 0],
-          "Ramrod": [0, 0, 0, 0, 0, 0],
-          "Linen_2": [-0.2, -0.1, -0.1, 20, -20, 0],
-          "Bullet": [0, 0, -1.2, 0, 0, 0],
-          "Flask_origin": [-66, -66, -78, 0, 0, 0],
-          "Ramdrod_origin": [0, 0, 0, 0, 0, 0]
-        }
-      },
-      {
-        "DurationFraction": 0.45454547,
-        "EasingFunction": "Linear",
-        "Elements": {
-          "Linen_3": [0.2, -0.1, -0.1, 20, 20, 0],
-          "Flask_origin_inner": [0, 0, 0, -90, 90, 0],
-          "Linen_0": [0.1, 0.1, 0, -20, 13, 0],
-          "Linen_1": [-0.1, 0.1, 0, -20, -15, 0],
-          "Patch": [0, 0, -1, 0, 0, 0],
-          "Ramrod": [0, 0, 0, 0, 0, 0],
-          "Linen_2": [-0.2, -0.1, -0.1, 20, -20, 0],
-          "Bullet": [0, 0, -1.2, 0, 0, 0],
-          "Flask_origin": [-66, -66, -78, 0, 0, 0],
-          "Ramdrod_origin": [0, 0, 0, 0, 0, 0]
-        }
-      },
-      {
-        "DurationFraction": 0.5151515,
-        "EasingFunction": "Linear",
-        "Elements": {
-          "Linen_3": [0.2, -0.1, -0.1, 20, 20, 0],
-          "Flask_origin_inner": [0, 0, 0, -90, 90, 0],
-          "Linen_0": [0.1, 0.1, 0, -20, 13, 0],
-          "Linen_1": [-0.1, 0.1, 0, -20, -15, 0],
-          "Patch": [0, 0, -1, 0, 0, 0],
-          "Ramrod": [0, 0, 0, 0, 0, 0],
-          "Linen_2": [-0.2, -0.1, -0.1, 20, -20, 0],
-          "Bullet": [0, 0, -1.2, 0, 0, 0],
-          "Flask_origin": [-66, -66, -78, 0, 0, 0],
-          "Ramdrod_origin": [0, 0, -16, 0, 0, 0]
-        }
-      },
-      {
-        "DurationFraction": 0.57575756,
-        "EasingFunction": "Linear",
-        "Elements": {
-          "Linen_3": [0.2, -0.1, -0.1, 20, 20, 0],
-          "Flask_origin_inner": [0, 0, 0, -90, 90, 0],
-          "Linen_0": [0.1, 0.1, 0, -20, 13, 0],
-          "Linen_1": [-0.1, 0.1, 0, -20, -15, 0],
-          "Patch": [0, 0, -1, 0, 0, 0],
-          "Ramrod": [0, 0, 0, 180, 0, 0],
-          "Linen_2": [-0.2, -0.1, -0.1, 20, -20, 0],
-          "Bullet": [0, 0, -1.2, 0, 0, 0],
-          "Flask_origin": [-66, -66, -78, 0, 0, 0],
-          "Ramdrod_origin": [0, 0.55, -17, 0, 0, 0]
-        }
-      },
-      {
-        "DurationFraction": 0.58181816,
-        "EasingFunction": "Linear",
-        "Elements": {
-          "Linen_3": [0, 0, 0, 0, 0, 0],
-          "Flask_origin_inner": [0, 0, 0, -90, 90, 0],
+          "Flask_origin": [-53, -70, -60, -90, 90, 0],
+          "Flask_origin_inner": [0, 0, 0, 0, 0, 0],
+          "Patch": [0, -6, 26, 0, 0, 0],
           "Linen_0": [0, 0, 0, 0, 0, 0],
           "Linen_1": [0, 0, 0, 0, 0, 0],
-          "Patch": [0, 0, -0.099999964, 0, 0, 0],
-          "Ramrod": [0, 0, 0, 180, 0, 0],
           "Linen_2": [0, 0, 0, 0, 0, 0],
-          "Bullet": [0, 0, -0.3, 0, 0, 0],
-          "Flask_origin": [-66, -66, -78, 0, 0, 0],
-          "Ramdrod_origin": [0, 0.55, -16.1, 0, 0, 0]
+          "Linen_3": [0, 0, 0, 0, 0, 0],
+          "Bullet": [0, -6, 26, 0, 0, 0],
+          "Ramdrod_origin": [0, 0, 0, 0, 0, 0],
+          "Ramrod": [0, 0, 0, 0, 0, 0]
         }
       },
       {
-        "DurationFraction": 0.6363636,
+        "DurationFraction": 0.048780482,
         "EasingFunction": "Linear",
         "Elements": {
-          "Linen_3": [0, 0, 0, 20, 20, 0],
-          "Flask_origin_inner": [0, 0, 0, -90, 90, 0],
-          "Linen_0": [0, 0, 0, -20, 13, 0],
-          "Linen_1": [0, 0, 0, -20, -15, 0],
-          "Patch": [0, 0, 8, 0, 0, 0],
-          "Ramrod": [0, 0, 0, 180, 0, 0],
-          "Linen_2": [0, 0, 0, 20, -20, 0],
-          "Bullet": [0, 0, 7.8, 0, 0, 0],
-          "Flask_origin": [-66, -66, -78, 0, 0, 0],
-          "Ramdrod_origin": [0, 0.55, -8, 0, 0, 0]
+          "Flask_origin": [-57, -44, -60, -90, 90, 0],
+          "Flask_origin_inner": [0, 0, 0, 0, 0, 0],
+          "Patch": [0, -6, 26, 0, 0, 0],
+          "Linen_0": [0, 0, 0, 0, 0, 0],
+          "Linen_1": [0, 0, 0, 0, 0, 0],
+          "Linen_2": [0, 0, 0, 0, 0, 0],
+          "Linen_3": [0, 0, 0, 0, 0, 0],
+          "Bullet": [0, -6, 26, 0, 0, 0],
+          "Ramdrod_origin": [0, 0, 0, 0, 0, 0],
+          "Ramrod": [0, 0, 0, 0, 0, 0]
         }
       },
       {
-        "DurationFraction": 0.6666667,
+        "DurationFraction": 0.07317074,
         "EasingFunction": "Linear",
         "Elements": {
-          "Linen_3": [0, 0, 0, 20, 20, 0],
-          "Flask_origin_inner": [0, 0, 0, -90, 90, 0],
-          "Linen_0": [0, 0, 0, -20, 13, 0],
-          "Linen_1": [0, 0, 0, -20, -15, 0],
-          "Patch": [0, 0, 8, 0, 0, 0],
-          "Ramrod": [0, 0, 0, 180, 0, 0],
-          "Linen_2": [0, 0, 0, 20, -20, 0],
-          "Bullet": [0, 0, 7.8, 0, 0, 0],
-          "Flask_origin": [-66, -66, -78, 0, 0, 0],
-          "Ramdrod_origin": [0, 0.55, -8, 0, 0, 0]
+          "Flask_origin": [-59.8, -43, -60, -90, 90, 0],
+          "Flask_origin_inner": [0, 0, 0, 0, 0, 90],
+          "Patch": [0, -6, 26, 0, 0, 0],
+          "Linen_0": [0, 0, 0, 0, 0, 0],
+          "Linen_1": [0, 0, 0, 0, 0, 0],
+          "Linen_2": [0, 0, 0, 0, 0, 0],
+          "Linen_3": [0, 0, 0, 0, 0, 0],
+          "Bullet": [0, -6, 26, 0, 0, 0],
+          "Ramdrod_origin": [0, 0, 0, 0, 0, 0],
+          "Ramrod": [0, 0, 0, 0, 0, 0]
         }
       },
       {
-        "DurationFraction": 0.72727275,
+        "DurationFraction": 0.097560965,
         "EasingFunction": "Linear",
         "Elements": {
-          "Linen_3": [0, 0, 0, 20, 20, 0],
-          "Flask_origin_inner": [0, 0, 0, -90, 90, 0],
-          "Linen_0": [0, 0, 0, -20, 13, 0],
-          "Linen_1": [0, 0, 0, -20, -15, 0],
-          "Patch": [0, 0, 8, 0, 0, 0],
-          "Ramrod": [0, 0, 0, 180, 0, 0],
-          "Linen_2": [0, 0, 0, 20, -20, 0],
-          "Bullet": [0, 0, 7.8, 0, 0, 0],
-          "Flask_origin": [-66, -66, -78, 0, 0, 0],
-          "Ramdrod_origin": [0, 0.55, 1, 0, 0, 0]
+          "Flask_origin": [-57, -44, -60, -90, 90, 0],
+          "Flask_origin_inner": [0, 0, 0, 0, 0, 0],
+          "Patch": [0, -6, 26, 0, 0, 0],
+          "Linen_0": [0, 0, 0, 0, 0, 0],
+          "Linen_1": [0, 0, 0, 0, 0, 0],
+          "Linen_2": [0, 0, 0, 0, 0, 0],
+          "Linen_3": [0, 0, 0, 0, 0, 0],
+          "Bullet": [0, -6, 26, 0, 0, 0],
+          "Ramdrod_origin": [0, 0, 0, 0, 0, 0],
+          "Ramrod": [0, 0, 0, 0, 0, 0]
         }
       },
       {
-        "DurationFraction": 0.75757575,
+        "DurationFraction": 0.14634147,
         "EasingFunction": "Linear",
         "Elements": {
-          "Linen_3": [0, 0, 0, 20, 20, 0],
-          "Flask_origin_inner": [0, 0, 0, -90, 90, 0],
-          "Linen_0": [0, 0, 0, -20, 13, 0],
-          "Linen_1": [0, 0, 0, -20, -15, 0],
-          "Patch": [0, 0, 8, 0, 0, 0],
-          "Ramrod": [0, 0, 0, 180, 0, 0],
-          "Linen_2": [0, 0, 0, 20, -20, 0],
-          "Bullet": [0, 0, 7.8, 0, 0, 0],
-          "Flask_origin": [-66, -66, -78, 0, 0, 0],
-          "Ramdrod_origin": [0, 0.55, -2, 0, 0, 0]
+          "Flask_origin": [-53, -70, -60, -90, 90, 0],
+          "Flask_origin_inner": [0, 0, 0, 0, 0, 0],
+          "Patch": [0, -6, 26, 0, 0, 0],
+          "Linen_0": [0.2, 0.2, 0, 0, 0, 0],
+          "Linen_1": [-0.2, 0.2, 0, 0, 0, 0],
+          "Linen_2": [0.2, -0.2, 0, 0, 0, 0],
+          "Linen_3": [-0.2, -0.2, 0, 0, 0, 0],
+          "Bullet": [0, -6, 26, 0, 0, 0],
+          "Ramdrod_origin": [0, 0, 0, 0, 0, 0],
+          "Ramrod": [0, 0, 0, 0, 0, 0]
         }
       },
       {
-        "DurationFraction": 0.7878788,
+        "DurationFraction": 0.19512194,
         "EasingFunction": "Linear",
         "Elements": {
-          "Linen_3": [0, 0, 0, 20, 20, 0],
-          "Flask_origin_inner": [0, 0, 0, -90, 90, 0],
-          "Linen_0": [0, 0, 0, -20, 13, 0],
-          "Linen_1": [0, 0, 0, -20, -15, 0],
-          "Patch": [0, 0, 8, 0, 0, 0],
-          "Ramrod": [0, 0, 0, 180, 0, 0],
-          "Linen_2": [0, 0, 0, 20, -20, 0],
-          "Bullet": [0, 0, 7.8, 0, 0, 0],
-          "Flask_origin": [-66, -66, -78, 0, 0, 0],
-          "Ramdrod_origin": [0, 0.55, 1, 0, 0, 0]
+          "Flask_origin": [-53, -70, -60, -90, 90, 0],
+          "Flask_origin_inner": [0, 0, 0, 0, 0, 0],
+          "Patch": [0, -3, -3, 0, 0, 0],
+          "Linen_0": [0.2, 0.2, 0, 0, 0, 0],
+          "Linen_1": [-0.2, 0.2, 0, 0, 0, 0],
+          "Linen_2": [0.2, -0.2, 0, 0, 0, 0],
+          "Linen_3": [-0.2, -0.2, 0, 0, 0, 0],
+          "Bullet": [0, -6, 26, 0, 0, 0],
+          "Ramdrod_origin": [0, 0, 0, 0, 0, 0],
+          "Ramrod": [0, 0, 0, 0, 0, 0]
         }
       },
       {
-        "DurationFraction": 0.81818175,
+        "DurationFraction": 0.2195122,
         "EasingFunction": "Linear",
         "Elements": {
-          "Linen_3": [0, 0, 0, 20, 20, 0],
-          "Flask_origin_inner": [0, 0, 0, -90, 90, 0],
-          "Linen_0": [0, 0, 0, -20, 13, 0],
-          "Linen_1": [0, 0, 0, -20, -15, 0],
-          "Patch": [0, 0, 8, 0, 0, 0],
-          "Ramrod": [0, 0, 0, 180, 0, 0],
-          "Linen_2": [0, 0, 0, 20, -20, 0],
-          "Bullet": [0, 0, 7.8, 0, 0, 0],
-          "Flask_origin": [-66, -66, -78, 0, 0, 0],
-          "Ramdrod_origin": [0, 0.55, -9, 0, 0, 0]
+          "Flask_origin": [-53, -70, -60, -90, 90, 0],
+          "Flask_origin_inner": [0, 0, 0, 0, 0, 0],
+          "Patch": [0, 0, -2.5, 0, 0, 0],
+          "Linen_0": [0.2, 0.2, 0, 0, 0, 0],
+          "Linen_1": [-0.2, 0.2, 0, 0, 0, 0],
+          "Linen_2": [0.2, -0.2, 0, 0, 0, 0],
+          "Linen_3": [-0.2, -0.2, 0, 0, 0, 0],
+          "Bullet": [0, -6, 26, 0, 0, 0],
+          "Ramdrod_origin": [0, 0, 0, 0, 0, 0],
+          "Ramrod": [0, 0, 0, 0, 0, 0]
         }
       },
       {
-        "DurationFraction": 0.8484849,
+        "DurationFraction": 0.24390244,
         "EasingFunction": "Linear",
         "Elements": {
-          "Linen_3": [0, 0, 0, 20, 20, 0],
-          "Flask_origin_inner": [0, 0, 0, -90, 90, 0],
-          "Linen_0": [0, 0, 0, -20, 13, 0],
-          "Linen_1": [0, 0, 0, -20, -15, 0],
-          "Patch": [0, 0, 8, 0, 0, 0],
-          "Ramrod": [0, 0, 0, 180, 0, 0],
-          "Linen_2": [0, 0, 0, 20, -20, 0],
-          "Bullet": [0, 0, 7.8, 0, 0, 0],
-          "Flask_origin": [-66, -66, -78, 0, 0, 0],
-          "Ramdrod_origin": [0, 0.55, -9, 0, 0, 0]
+          "Flask_origin": [-53, -70, -60, -90, 90, 0],
+          "Flask_origin_inner": [0, 0, 0, 0, 0, 0],
+          "Patch": [0, 0, -1.7, 0, 0, 0],
+          "Linen_0": [0, 0, 0, 0, 0, 0],
+          "Linen_1": [0, 0, 0, 0, 0, 0],
+          "Linen_2": [0, 0, 0, 0, 0, 0],
+          "Linen_3": [0, 0, 0, 0, 0, 0],
+          "Bullet": [0, -6, 26, 0, 0, 0],
+          "Ramdrod_origin": [0, 0, 0, 0, 0, 0],
+          "Ramrod": [0, 0, 0, 0, 0, 0]
         }
       },
       {
-        "DurationFraction": 0.8787879,
+        "DurationFraction": 0.2682927,
         "EasingFunction": "Linear",
         "Elements": {
-          "Linen_3": [0, 0, 0, 20, 20, 0],
-          "Flask_origin_inner": [0, 0, 0, -90, 90, 0],
-          "Linen_0": [0, 0, 0, -20, 13, 0],
-          "Linen_1": [0, 0, 0, -20, -15, 0],
-          "Patch": [0, 0, 8, 0, 0, 0],
-          "Ramrod": [0, 0, 0, 180, 0, 0],
-          "Linen_2": [0, 0, 0, 20, -20, 0],
-          "Bullet": [0, 0, 7.8, 0, 0, 0],
-          "Flask_origin": [-66, -66, -78, 0, 0, 0],
-          "Ramdrod_origin": [0, 0.55, -17, 0, 0, 0]
+          "Flask_origin": [-53, -70, -60, -90, 90, 0],
+          "Flask_origin_inner": [0, 0, 0, 0, 0, 0],
+          "Patch": [0, 0, 25.3, 0, 0, 0],
+          "Linen_0": [0, 0, 0, 0, 0, 0],
+          "Linen_1": [0, 0, 0, 0, 0, 0],
+          "Linen_2": [0, 0, 0, 0, 0, 0],
+          "Linen_3": [0, 0, 0, 0, 0, 0],
+          "Bullet": [0, -6, 26, 0, 0, 0],
+          "Ramdrod_origin": [0, 0, 0, 0, 0, 0],
+          "Ramrod": [0, 0, 0, 0, 0, 0]
         }
       },
       {
-        "DurationFraction": 0.9393939,
+        "DurationFraction": 0.31707317,
         "EasingFunction": "Linear",
         "Elements": {
-          "Linen_3": [0, 0, 0, 20, 20, 0],
-          "Flask_origin_inner": [0, 0, 0, -90, 90, 0],
-          "Linen_0": [0, 0, 0, -20, 13, 0],
-          "Linen_1": [0, 0, 0, -20, -15, 0],
-          "Patch": [0, 0, 8, 0, 0, 0],
-          "Ramrod": [0, 0, 0, 0, 0, 0],
-          "Linen_2": [0, 0, 0, 20, -20, 0],
-          "Bullet": [0, 0, 7.8, 0, 0, 0],
-          "Flask_origin": [-66, -66, -78, 0, 0, 0],
-          "Ramdrod_origin": [0, 0, -17, 0, 0, 0]
+          "Flask_origin": [-52, -70, -60, -90, 90, 0],
+          "Flask_origin_inner": [0, 0, 0, 0, 0, 0],
+          "Patch": [0, -6, 26, 0, 0, 0],
+          "Linen_0": [0, 0, 0, 0, 0, 0],
+          "Linen_1": [0, 0, 0, 0, 0, 0],
+          "Linen_2": [0, 0, 0, 0, 0, 0],
+          "Linen_3": [0, 0, 0, 0, 0, 0],
+          "Bullet": [0, -3, -3, 0, 0, 0],
+          "Ramdrod_origin": [0, 0, 0, 0, 0, 0],
+          "Ramrod": [0, 0, 0, 0, 0, 0]
+        }
+      },
+      {
+        "DurationFraction": 0.34146342,
+        "EasingFunction": "Linear",
+        "Elements": {
+          "Flask_origin": [-52, -70, -60, -90, 90, 0],
+          "Flask_origin_inner": [0, 0, 0, 0, 0, 0],
+          "Patch": [0, -6, 26, 0, 0, 0],
+          "Linen_0": [0, 0, 0, 0, 0, 0],
+          "Linen_1": [0, 0, 0, 0, 0, 0],
+          "Linen_2": [0, 0, 0, 0, 0, 0],
+          "Linen_3": [0, 0, 0, 0, 0, 0],
+          "Bullet": [0, 0, -2.6, 0, 0, 0],
+          "Ramdrod_origin": [0, 0, 0, 0, 0, 0],
+          "Ramrod": [0, 0, 0, 0, 0, 0]
+        }
+      },
+      {
+        "DurationFraction": 0.36585367,
+        "EasingFunction": "Linear",
+        "Elements": {
+          "Flask_origin": [-52, -70, -60, -90, 90, 0],
+          "Flask_origin_inner": [0, 0, 0, 0, 0, 0],
+          "Patch": [0, -6, 26, 0, 0, 0],
+          "Linen_0": [0, 0, 0, 0, 0, 0],
+          "Linen_1": [0, 0, 0, 0, 0, 0],
+          "Linen_2": [0, 0, 0, 0, 0, 0],
+          "Linen_3": [0, 0, 0, 0, 0, 0],
+          "Bullet": [0, 0, 0, 0, 0, 0],
+          "Ramdrod_origin": [0, 0, 0, 0, 0, 0],
+          "Ramrod": [0, 0, 0, 0, 0, 0]
+        }
+      },
+      {
+        "DurationFraction": 0.3902439,
+        "EasingFunction": "Linear",
+        "Elements": {
+          "Flask_origin": [-52, -70, -60, -90, 90, 0],
+          "Flask_origin_inner": [0, 0, 0, 0, 0, 0],
+          "Patch": [0, -6, 26, 0, 0, 0],
+          "Linen_0": [0.2, 0.2, 0, 0, 0, 0],
+          "Linen_1": [-0.2, 0.2, 0, 0, 0, 0],
+          "Linen_2": [0.2, -0.2, 0, 0, 0, 0],
+          "Linen_3": [-0.2, -0.2, 0, 0, 0, 0],
+          "Bullet": [0, 0, 0, 0, 0, 0],
+          "Ramdrod_origin": [0, 0, 0, 0, 0, 0],
+          "Ramrod": [0, 0, 0, 0, 0, 0]
+        }
+      },
+      {
+        "DurationFraction": 0.4390244,
+        "EasingFunction": "Linear",
+        "Elements": {
+          "Flask_origin": [-52, -70, -60, -90, 90, 0],
+          "Flask_origin_inner": [0, 0, 0, 0, 0, 0],
+          "Patch": [0, -3, -3, 0, 0, 0],
+          "Linen_0": [0.2, 0.2, 0, 0, 0, 0],
+          "Linen_1": [-0.2, 0.2, 0, 0, 0, 0],
+          "Linen_2": [0.2, -0.2, 0, 0, 0, 0],
+          "Linen_3": [-0.2, -0.2, 0, 0, 0, 0],
+          "Bullet": [0, 0, 0, 0, 0, 0],
+          "Ramdrod_origin": [0, 0, 0, 0, 0, 0],
+          "Ramrod": [0, 0, 0, 0, 0, 0]
+        }
+      },
+      {
+        "DurationFraction": 0.46341467,
+        "EasingFunction": "Linear",
+        "Elements": {
+          "Flask_origin": [-52, -70, -60, -90, 90, 0],
+          "Flask_origin_inner": [0, 0, 0, 0, 0, 0],
+          "Patch": [0, 0, -2.5, 0, 0, 0],
+          "Linen_0": [0.2, 0.2, 0, 0, 0, 0],
+          "Linen_1": [-0.2, 0.2, 0, 0, 0, 0],
+          "Linen_2": [0.2, -0.2, 0, 0, 0, 0],
+          "Linen_3": [-0.2, -0.2, 0, 0, 0, 0],
+          "Bullet": [0, 0, 0, 0, 0, 0],
+          "Ramdrod_origin": [0, 0, 0, 0, 0, 0],
+          "Ramrod": [0, 0, 0, 0, 0, 0]
+        }
+      },
+      {
+        "DurationFraction": 0.4878049,
+        "EasingFunction": "Linear",
+        "Elements": {
+          "Flask_origin": [-52, -70, -60, -90, 90, 0],
+          "Flask_origin_inner": [0, 0, 0, 0, 0, 0],
+          "Patch": [0, 0, -1.7, 0, 0, 0],
+          "Linen_0": [0, 0, 0, 0, 0, 0],
+          "Linen_1": [0, 0, 0, 0, 0, 0],
+          "Linen_2": [0, 0, 0, 0, 0, 0],
+          "Linen_3": [0, 0, 0, 0, 0, 0],
+          "Bullet": [0, 0, 0, 0, 0, 0],
+          "Ramdrod_origin": [0, 0, 0, 0, 0, 0],
+          "Ramrod": [0, 0, 0, 0, 0, 0]
+        }
+      },
+      {
+        "DurationFraction": 0.5121951,
+        "EasingFunction": "Linear",
+        "Elements": {
+          "Flask_origin": [-52, -70, -60, -90, 90, 0],
+          "Flask_origin_inner": [0, 0, 0, 0, 0, 0],
+          "Patch": [0, 0, -1.7, 0, 0, 0],
+          "Linen_0": [0, 0, 0, 0, 0, 0],
+          "Linen_1": [0, 0, 0, 0, 0, 0],
+          "Linen_2": [0, 0, 0, 0, 0, 0],
+          "Linen_3": [0, 0, 0, 0, 0, 0],
+          "Bullet": [0, 0, 0, 0, 0, 0],
+          "Ramdrod_origin": [0, 0, 0, 0, 0, 0],
+          "Ramrod": [0, 0, 0, 0, 0, 0]
+        }
+      },
+      {
+        "DurationFraction": 0.5609756,
+        "EasingFunction": "Linear",
+        "Elements": {
+          "Flask_origin": [-52, -70, -60, -90, 90, 0],
+          "Flask_origin_inner": [0, 0, 0, 0, 0, 0],
+          "Patch": [0, 0, -1.7, 0, 0, 0],
+          "Linen_0": [0, 0, 0, 0, 0, 0],
+          "Linen_1": [0, 0, 0, 0, 0, 0],
+          "Linen_2": [0, 0, 0, 0, 0, 0],
+          "Linen_3": [0, 0, 0, 0, 0, 0],
+          "Bullet": [0, 0, 0, 0, 0, 0],
+          "Ramdrod_origin": [0, -0.5, -17, 0, 0, 0],
+          "Ramrod": [0, 0, 0, -4, 0, 0]
+        }
+      },
+      {
+        "DurationFraction": 0.6097561,
+        "EasingFunction": "Linear",
+        "Elements": {
+          "Flask_origin": [-52, -70, -60, -90, 90, 0],
+          "Flask_origin_inner": [0, 0, 0, 0, 0, 0],
+          "Patch": [0, 0, -1.7, 0, 0, 0],
+          "Linen_0": [0, 0, 0, 0, 0, 0],
+          "Linen_1": [0, 0, 0, 0, 0, 0],
+          "Linen_2": [0, 0, 0, 0, 0, 0],
+          "Linen_3": [0, 0, 0, 0, 0, 0],
+          "Bullet": [0, 0, 0, 0, 0, 0],
+          "Ramdrod_origin": [0, 0.6, -17.5, 0, 0, 0],
+          "Ramrod": [0, 0, 0, 180, 0, 0]
+        }
+      },
+      {
+        "DurationFraction": 0.6585366,
+        "EasingFunction": "Linear",
+        "Elements": {
+          "Flask_origin": [-52, -70, -60, -90, 90, 0],
+          "Flask_origin_inner": [0, 0, 0, 0, 0, 0],
+          "Patch": [0, 0, -1.7, 0, 0, 0],
+          "Linen_0": [0, 0, 0, 0, 0, 0],
+          "Linen_1": [0, 0, 0, 0, 0, 0],
+          "Linen_2": [0, 0, 0, 0, 0, 0],
+          "Linen_3": [0, 0, 0, 0, 0, 0],
+          "Bullet": [0, 0, 0, 0, 0, 0],
+          "Ramdrod_origin": [0, 0.6, -9.5, 0, 0, 0],
+          "Ramrod": [0, 0, 0, 180, 0, 0]
+        }
+      },
+      {
+        "DurationFraction": 0.68292683,
+        "EasingFunction": "Linear",
+        "Elements": {
+          "Flask_origin": [-52, -70, -60, -90, 90, 0],
+          "Flask_origin_inner": [0, 0, 0, 0, 0, 0],
+          "Patch": [0, 0, -1.7, 0, 0, 0],
+          "Linen_0": [0, 0, 0, 0, 0, 0],
+          "Linen_1": [0, 0, 0, 0, 0, 0],
+          "Linen_2": [0, 0, 0, 0, 0, 0],
+          "Linen_3": [0, 0, 0, 0, 0, 0],
+          "Bullet": [0, 0, 0, 0, 0, 0],
+          "Ramdrod_origin": [0, 0.6, -9.5, 0, 0, 0],
+          "Ramrod": [0, 0, 0, 180, 0, 0]
+        }
+      },
+      {
+        "DurationFraction": 0.73170733,
+        "EasingFunction": "Linear",
+        "Elements": {
+          "Flask_origin": [-52, -70, -60, -90, 90, 0],
+          "Flask_origin_inner": [0, 0, 0, 0, 0, 0],
+          "Patch": [0, 0, -1.7, 0, 0, 0],
+          "Linen_0": [0, 0, 0, 0, 0, 0],
+          "Linen_1": [0, 0, 0, 0, 0, 0],
+          "Linen_2": [0, 0, 0, 0, 0, 0],
+          "Linen_3": [0, 0, 0, 0, 0, 0],
+          "Bullet": [0, 0, 0, 0, 0, 0],
+          "Ramdrod_origin": [0, 0.6, -3, 0, 0, 0],
+          "Ramrod": [0, 0, 0, 180, 0, 0]
+        }
+      },
+      {
+        "DurationFraction": 0.7560976,
+        "EasingFunction": "Linear",
+        "Elements": {
+          "Flask_origin": [-52, -70, -60, -90, 90, 0],
+          "Flask_origin_inner": [0, 0, 0, 0, 0, 0],
+          "Patch": [0, 0, -1.7, 0, 0, 0],
+          "Linen_0": [0, 0, 0, 0, 0, 0],
+          "Linen_1": [0, 0, 0, 0, 0, 0],
+          "Linen_2": [0, 0, 0, 0, 0, 0],
+          "Linen_3": [0, 0, 0, 0, 0, 0],
+          "Bullet": [0, 0, 0, 0, 0, 0],
+          "Ramdrod_origin": [0, 0.6, -5, 0, 0, 0],
+          "Ramrod": [0, 0, 0, 180, 0, 0]
+        }
+      },
+      {
+        "DurationFraction": 0.7804878,
+        "EasingFunction": "Linear",
+        "Elements": {
+          "Flask_origin": [-52, -70, -60, -90, 90, 0],
+          "Flask_origin_inner": [0, 0, 0, 0, 0, 0],
+          "Patch": [0, 0, -1.7, 0, 0, 0],
+          "Linen_0": [0, 0, 0, 0, 0, 0],
+          "Linen_1": [0, 0, 0, 0, 0, 0],
+          "Linen_2": [0, 0, 0, 0, 0, 0],
+          "Linen_3": [0, 0, 0, 0, 0, 0],
+          "Bullet": [0, 0, 0, 0, 0, 0],
+          "Ramdrod_origin": [0, 0.6, -3, 0, 0, 0],
+          "Ramrod": [0, 0, 0, 180, 0, 0]
+        }
+      },
+      {
+        "DurationFraction": 0.8292683,
+        "EasingFunction": "Linear",
+        "Elements": {
+          "Flask_origin": [-52, -70, -60, -90, 90, 0],
+          "Flask_origin_inner": [0, 0, 0, 0, 0, 0],
+          "Patch": [0, 0, -1.7, 0, 0, 0],
+          "Linen_0": [0, 0, 0, 0, 0, 0],
+          "Linen_1": [0, 0, 0, 0, 0, 0],
+          "Linen_2": [0, 0, 0, 0, 0, 0],
+          "Linen_3": [0, 0, 0, 0, 0, 0],
+          "Bullet": [0, 0, 0, 0, 0, 0],
+          "Ramdrod_origin": [0, 0.6, -9.5, 0, 0, 0],
+          "Ramrod": [0, 0, 0, 180, 0, 0]
+        }
+      },
+      {
+        "DurationFraction": 0.85365856,
+        "EasingFunction": "Linear",
+        "Elements": {
+          "Flask_origin": [-52, -70, -60, -90, 90, 0],
+          "Flask_origin_inner": [0, 0, 0, 0, 0, 0],
+          "Patch": [0, 0, -1.7, 0, 0, 0],
+          "Linen_0": [0, 0, 0, 0, 0, 0],
+          "Linen_1": [0, 0, 0, 0, 0, 0],
+          "Linen_2": [0, 0, 0, 0, 0, 0],
+          "Linen_3": [0, 0, 0, 0, 0, 0],
+          "Bullet": [0, 0, 0, 0, 0, 0],
+          "Ramdrod_origin": [0, 0.6, -9.5, 0, 0, 0],
+          "Ramrod": [0, 0, 0, 180, 0, 0]
+        }
+      },
+      {
+        "DurationFraction": 0.90243894,
+        "EasingFunction": "Linear",
+        "Elements": {
+          "Flask_origin": [-52, -70, -60, -90, 90, 0],
+          "Flask_origin_inner": [0, 0, 0, 0, 0, 0],
+          "Patch": [0, 0, -1.7, 0, 0, 0],
+          "Linen_0": [0, 0, 0, 0, 0, 0],
+          "Linen_1": [0, 0, 0, 0, 0, 0],
+          "Linen_2": [0, 0, 0, 0, 0, 0],
+          "Linen_3": [0, 0, 0, 0, 0, 0],
+          "Bullet": [0, 0, 0, 0, 0, 0],
+          "Ramdrod_origin": [0, 0.6, -17.5, 0, 0, 0],
+          "Ramrod": [0, 0, 0, 180, 0, 0]
+        }
+      },
+      {
+        "DurationFraction": 0.9512195,
+        "EasingFunction": "Linear",
+        "Elements": {
+          "Flask_origin": [-52, -70, -60, -90, 90, 0],
+          "Flask_origin_inner": [0, 0, 0, 0, 0, 0],
+          "Patch": [0, 0, -1.7, 0, 0, 0],
+          "Linen_0": [0, 0, 0, 0, 0, 0],
+          "Linen_1": [0, 0, 0, 0, 0, 0],
+          "Linen_2": [0, 0, 0, 0, 0, 0],
+          "Linen_3": [0, 0, 0, 0, 0, 0],
+          "Bullet": [0, 0, 0, 0, 0, 0],
+          "Ramdrod_origin": [0, -0.5, -17, 0, 0, 0],
+          "Ramrod": [0, 0, 0, -4, 0, 0]
         }
       },
       {
         "DurationFraction": 1,
         "EasingFunction": "Linear",
         "Elements": {
-          "Linen_3": [0, 0, 0, 20, 20, 0],
-          "Flask_origin_inner": [0, 0, 0, -90, 90, 0],
-          "Linen_0": [0, 0, 0, -20, 13, 0],
-          "Linen_1": [0, 0, 0, -20, -15, 0],
-          "Patch": [0, 0, 8, 0, 0, 0],
-          "Ramrod": [0, 0, 0, 0, 0, 0],
-          "Linen_2": [0, 0, 0, 20, -20, 0],
-          "Bullet": [0, 0, 7.8, 0, 0, 0],
-          "Flask_origin": [-66, -66, -78, 0, 0, 0],
-          "Ramdrod_origin": [0, 0, 0, 0, 0, 0]
+          "Flask_origin": [-52, -70, -60, -90, 90, 0],
+          "Flask_origin_inner": [0, 0, 0, 0, 0, 0],
+          "Patch": [0, 0, -1.7, 0, 0, 0],
+          "Linen_0": [0, 0, 0, 0, 0, 0],
+          "Linen_1": [0, 0, 0, 0, 0, 0],
+          "Linen_2": [0, 0, 0, 0, 0, 0],
+          "Linen_3": [0, 0, 0, 0, 0, 0],
+          "Bullet": [0, 0, 0, 0, 0, 0],
+          "Ramdrod_origin": [0, 0, 0, 0, 0, 0],
+          "Ramrod": [0, 0, 0, 0, 0, 0]
         }
       }
     ],
@@ -956,15 +1109,15 @@
         "BobbingAmplitude": 1,
         "Elements": {
           "ItemAnchor": [1, 1.5, 0.4, 33, 12, 117],
-          "LowerArmR": [0, 0, 0, 0, 0, -67],
-          "UpperArmR": [0, 0, 0, 0, 18, -58],
+          "LowerArmR": [0, 0, 0, 0, 0, -78],
+          "UpperArmR": [0, 0, 0, 19, 14, -61],
           "ItemAnchorL": [3, 0.6, -1.2, -9, 0, 107],
           "LowerArmL": [0, 0, 0, 0, 0, -40],
           "UpperArmL": [0, 0, 0, 0, 0, -67]
         }
       },
       {
-        "EasingTime": 1008,
+        "EasingTime": 800,
         "EasingFunction": "Linear",
         "DetachedAnchor": false,
         "SwitchArms": true,
@@ -974,15 +1127,15 @@
         "BobbingAmplitude": 1,
         "Elements": {
           "ItemAnchor": [1, 1.5, 0.4, 33, 12, 117],
-          "LowerArmR": [0, 0, 0, 0, 0, -57],
-          "UpperArmR": [0, 0, 0, 0, 15, -68],
+          "LowerArmR": [0, 0, 0, 0, 0, -84],
+          "UpperArmR": [0, 0, 0, 37, 12, -60],
           "ItemAnchorL": [3, 0.6, -1.2, -9, 0, 107],
           "LowerArmL": [0, 0, 0, 0, 0, -40],
           "UpperArmL": [0, 0, 0, 0, 0, -67]
         }
       },
       {
-        "EasingTime": 1262,
+        "EasingTime": 1100,
         "EasingFunction": "Linear",
         "DetachedAnchor": false,
         "SwitchArms": true,
@@ -992,15 +1145,15 @@
         "BobbingAmplitude": 1,
         "Elements": {
           "ItemAnchor": [1, 1.5, 0.4, 33, 12, 117],
-          "LowerArmR": [0, 0, 0, 0, 0, -14],
-          "UpperArmR": [0, 0, 0, 0, 2, -15],
+          "LowerArmR": [0, 0, 0, 0, 0, 0],
+          "UpperArmR": [0, 0, 0, 0, 0, 0],
           "ItemAnchorL": [3, 0.6, -1.2, -9, 0, 107],
           "LowerArmL": [0, 0, 0, 0, 0, -40],
           "UpperArmL": [0, 0, 0, 0, 0, -67]
         }
       },
       {
-        "EasingTime": 1771,
+        "EasingTime": 1700,
         "EasingFunction": "Linear",
         "DetachedAnchor": false,
         "SwitchArms": true,
@@ -1010,15 +1163,15 @@
         "BobbingAmplitude": 1,
         "Elements": {
           "ItemAnchor": [1, 1.5, 0.4, 33, 12, 117],
-          "LowerArmR": [0, 0, 0, 0, 0, -80],
-          "UpperArmR": [0, 0, 0, 26, -9, -54],
+          "LowerArmR": [0, 0, 0, 0, 0, -69],
+          "UpperArmR": [0, 0, 0, 0, -5, -61],
           "ItemAnchorL": [3, 0.6, -1.2, -9, 0, 107],
           "LowerArmL": [0, 0, 0, 0, 0, -40],
           "UpperArmL": [0, 0, 0, 0, 0, -67]
         }
       },
       {
-        "EasingTime": 2025,
+        "EasingTime": 2000,
         "EasingFunction": "Linear",
         "DetachedAnchor": false,
         "SwitchArms": true,
@@ -1028,15 +1181,15 @@
         "BobbingAmplitude": 1,
         "Elements": {
           "ItemAnchor": [1, 1.5, 0.4, 33, 12, 117],
-          "LowerArmR": [0, 0, 0, 0, 0, -80],
-          "UpperArmR": [0, 0, 0, 74, -8, -65],
+          "LowerArmR": [0, 0, 0, 0, 0, -65],
+          "UpperArmR": [0, 0, 0, 53, -4, -72],
           "ItemAnchorL": [3, 0.6, -1.2, -9, 0, 107],
           "LowerArmL": [0, 0, 0, 0, 0, -40],
           "UpperArmL": [0, 0, 0, 0, 0, -67]
         }
       },
       {
-        "EasingTime": 2279,
+        "EasingTime": 2300,
         "EasingFunction": "Linear",
         "DetachedAnchor": false,
         "SwitchArms": true,
@@ -1046,15 +1199,15 @@
         "BobbingAmplitude": 1,
         "Elements": {
           "ItemAnchor": [1, 1.5, 0.4, 33, 12, 117],
-          "LowerArmR": [0, 0, 0, 0, 0, -80],
-          "UpperArmR": [0, 0, 0, 26, -9, -54],
+          "LowerArmR": [0, 0, 0, 0, 0, -69],
+          "UpperArmR": [0, 0, 0, 0, -5, -61],
           "ItemAnchorL": [3, 0.6, -1.2, -9, 0, 107],
           "LowerArmL": [0, 0, 0, 0, 0, -40],
           "UpperArmL": [0, 0, 0, 0, 0, -67]
         }
       },
       {
-        "EasingTime": 2788,
+        "EasingTime": 2900,
         "EasingFunction": "Linear",
         "DetachedAnchor": false,
         "SwitchArms": true,
@@ -1064,15 +1217,15 @@
         "BobbingAmplitude": 1,
         "Elements": {
           "ItemAnchor": [1, 1.5, 0.4, 33, 12, 117],
-          "LowerArmR": [0, 0, 0, 0, 0, -14],
-          "UpperArmR": [0, 0, 0, 0, 2, -15],
+          "LowerArmR": [0, 0, 0, 0, 0, 0],
+          "UpperArmR": [0, 0, 0, 0, 0, 0],
           "ItemAnchorL": [3, 0.6, -1.2, -9, 0, 107],
           "LowerArmL": [0, 0, 0, 0, 0, -40],
           "UpperArmL": [0, 0, 0, 0, 0, -67]
         }
       },
       {
-        "EasingTime": 3042,
+        "EasingTime": 3200,
         "EasingFunction": "Linear",
         "DetachedAnchor": false,
         "SwitchArms": true,
@@ -1082,26 +1235,8 @@
         "BobbingAmplitude": 1,
         "Elements": {
           "ItemAnchor": [1, 1.5, 0.4, 33, 12, 117],
-          "LowerArmR": [0, 0, 0, 0, 0, -86],
-          "UpperArmR": [0, 0, 0, 37, 12, -57],
-          "ItemAnchorL": [3, 0.6, -1.2, -9, 0, 107],
-          "LowerArmL": [0, 0, 0, 0, 0, -40],
-          "UpperArmL": [0, 0, 0, 0, 0, -67]
-        }
-      },
-      {
-        "EasingTime": 3250,
-        "EasingFunction": "Linear",
-        "DetachedAnchor": false,
-        "SwitchArms": true,
-        "PitchFollow": false,
-        "PitchDontFollow": false,
-        "FOVMultiplier": 1,
-        "BobbingAmplitude": 1,
-        "Elements": {
-          "ItemAnchor": [1, 1.5, 0.4, 33, 12, 117],
-          "LowerArmR": [0, 0, 0, 0, 0, -79],
-          "UpperArmR": [0, 0, 0, 37, 10, -59],
+          "LowerArmR": [0, 0, 0, 0, 0, -61],
+          "UpperArmR": [0, 0, 0, 0, 13, -61],
           "ItemAnchorL": [3, 0.6, -1.2, -9, 0, 107],
           "LowerArmL": [0, 0, 0, 0, 0, -40],
           "UpperArmL": [0, 0, 0, 0, 0, -67]
@@ -1118,8 +1253,8 @@
         "BobbingAmplitude": 1,
         "Elements": {
           "ItemAnchor": [1, 1.5, 0.4, 33, 12, 117],
-          "LowerArmR": [0, 0, 0, 0, 0, -78],
-          "UpperArmR": [0, 0, 0, 37, 12, -62],
+          "LowerArmR": [0, 0, 0, 0, 0, -68],
+          "UpperArmR": [0, 0, 0, 14, 15, -60],
           "ItemAnchorL": [3, 0.6, -1.2, -9, 0, 107],
           "LowerArmL": [0, 0, 0, 0, 0, -40],
           "UpperArmL": [0, 0, 0, 0, 0, -67]
@@ -1149,99 +1284,99 @@
         "DurationFraction": 0,
         "EasingFunction": "Linear",
         "Elements": {
-          "Pan_cover": [0, 0, 0, 0, 0, 0],
-          "Lever": [0, 0, 0, 0, 0, 0],
+          "Flask_origin": [-54, -78, -60, 0, 0, 0],
           "Flask_origin_inner": [0, 0, 0, 0, 0, 0],
-          "Flask_origin": [-48, -78, -89, 0, 0, 0],
-          "Lock_lever": [0, 0, 0, 0, 0, 0]
+          "Lock_lever": [0, 0, 0, 0, 0, 0],
+          "Pan_cover": [0, 0, 0, 0, 0, 0],
+          "Lever": [0, 0, 0, 0, 0, 0]
         }
       },
       {
-        "DurationFraction": 0.16949153,
+        "DurationFraction": 0.1,
         "EasingFunction": "Linear",
         "Elements": {
-          "Pan_cover": [0, 0, 0, 0, 0, 0],
-          "Lever": [0, 0, 0, 10, 0, 0],
+          "Flask_origin": [-54, -78, -60, 0, 0, 0],
           "Flask_origin_inner": [0, 0, 0, 0, 0, 0],
-          "Flask_origin": [-48, -78, -89, 0, 0, 0],
-          "Lock_lever": [0, 0, 0, -35, 0, 0]
+          "Lock_lever": [0, 0, 0, 28, 0, 0],
+          "Pan_cover": [0, 0, 0, 0, 0, 0],
+          "Lever": [0, 0, 0, 12, 0, 0]
         }
       },
       {
-        "DurationFraction": 0.2542373,
+        "DurationFraction": 0.2,
         "EasingFunction": "Linear",
         "Elements": {
-          "Pan_cover": [0, 0, 0, 0, 0, 0],
-          "Lever": [0, 0, 0, 10, 0, 0],
+          "Flask_origin": [-54, -78, -60, 0, 0, 0],
           "Flask_origin_inner": [0, 0, 0, 0, 0, 0],
-          "Flask_origin": [-48, -78, -89, 0, 0, 0],
-          "Lock_lever": [0, 0, 0, -35, 0, 0]
+          "Lock_lever": [0, 0, 0, 28, 0, 0],
+          "Pan_cover": [0, 0, 0, 0, 0, 0],
+          "Lever": [0, 0, 0, 12, 0, 0]
         }
       },
       {
-        "DurationFraction": 0.42372885,
+        "DurationFraction": 0.4,
         "EasingFunction": "Linear",
         "Elements": {
-          "Pan_cover": [0, 0, 0, 0, 0, 0],
-          "Lever": [0, 0, 0, 10, 0, 0],
+          "Flask_origin": [-54, -57, -61, 0, 0, 0],
           "Flask_origin_inner": [0, 0, 0, 0, 0, 0],
-          "Flask_origin": [-60, -55, -89.4, 0, 0, 0],
-          "Lock_lever": [0, 0, 0, -35, 0, 0]
+          "Lock_lever": [0, 0, 0, 28, 0, 0],
+          "Pan_cover": [0, 0, 0, 0, 0, 0],
+          "Lever": [0, 0, 0, 12, 0, 0]
         }
       },
       {
-        "DurationFraction": 0.5084746,
+        "DurationFraction": 0.5,
         "EasingFunction": "Linear",
         "Elements": {
-          "Pan_cover": [0, 0, 0, 0, 0, 0],
-          "Lever": [0, 0, 0, 10, 0, 0],
+          "Flask_origin": [-57, -55.8, -61, 0, 0, 0],
           "Flask_origin_inner": [0, 0, 0, 0, 0, 90],
-          "Flask_origin": [-63, -54, -89.4, 0, 0, 0],
-          "Lock_lever": [0, 0, 0, -35, 0, 0]
+          "Lock_lever": [0, 0, 0, 28, 0, 0],
+          "Pan_cover": [0, 0, 0, 0, 0, 0],
+          "Lever": [0, 0, 0, 12, 0, 0]
         }
       },
       {
-        "DurationFraction": 0.59322035,
+        "DurationFraction": 0.6,
         "EasingFunction": "Linear",
         "Elements": {
-          "Pan_cover": [0, 0, 0, 0, 0, 0],
-          "Lever": [0, 0, 0, 10, 0, 0],
+          "Flask_origin": [-54, -57, -61, 0, 0, 0],
           "Flask_origin_inner": [0, 0, 0, 0, 0, 0],
-          "Flask_origin": [-60, -55, -89.4, 0, 0, 0],
-          "Lock_lever": [0, 0, 0, -35, 0, 0]
+          "Lock_lever": [0, 0, 0, 28, 0, 0],
+          "Pan_cover": [0, 0, 0, 0, 0, 0],
+          "Lever": [0, 0, 0, 12, 0, 0]
         }
       },
       {
-        "DurationFraction": 0.76271194,
+        "DurationFraction": 0.8,
         "EasingFunction": "Linear",
         "Elements": {
-          "Pan_cover": [0, 0, 0, 0, 0, 0],
-          "Lever": [0, 0, 0, 10, 0, 0],
+          "Flask_origin": [-54, -78, -60, 0, 0, 0],
           "Flask_origin_inner": [0, 0, 0, 0, 0, 0],
-          "Flask_origin": [-48, -78, -89, 0, 0, 0],
-          "Lock_lever": [0, 0, 0, -35, 0, 0]
+          "Lock_lever": [0, 0, 0, 28, 0, 0],
+          "Pan_cover": [0, 0, 0, 0, 0, 0],
+          "Lever": [0, 0, 0, 12, 0, 0]
         }
       },
       {
-        "DurationFraction": 0.8474577,
+        "DurationFraction": 0.9,
         "EasingFunction": "Linear",
         "Elements": {
-          "Pan_cover": [0, 0, 0, 0, 0, 0],
-          "Lever": [0, 0, 0, 10, 0, 0],
+          "Flask_origin": [-54, -78, -60, 0, 0, 0],
           "Flask_origin_inner": [0, 0, 0, 0, 0, 0],
-          "Flask_origin": [-48, -78, -89, 0, 0, 0],
-          "Lock_lever": [0, 0, 0, -35, 0, 0]
+          "Lock_lever": [0, 0, 0, 28, 0, 0],
+          "Pan_cover": [0, 0, 0, 0, 0, 0],
+          "Lever": [0, 0, 0, 12, 0, 0]
         }
       },
       {
         "DurationFraction": 1,
         "EasingFunction": "Linear",
         "Elements": {
-          "Pan_cover": [0, 0, 0, 0, 135, 0],
-          "Lever": [0, 0, 0, 10, 0, 0],
+          "Flask_origin": [-54, -78, -60, 0, 0, 0],
           "Flask_origin_inner": [0, 0, 0, 0, 0, 0],
-          "Flask_origin": [-48, -78, -89, 0, 0, 0],
-          "Lock_lever": [0, 0, 0, -35, 0, 0]
+          "Lock_lever": [0, 0, 0, 28, 0, 0],
+          "Pan_cover": [0, 0, 0, 0, -135, 0],
+          "Lever": [0, 0, 0, 12, 0, 0]
         }
       }
     ],
@@ -1273,7 +1408,7 @@
         }
       },
       {
-        "EasingTime": 341,
+        "EasingTime": 300,
         "EasingFunction": "Linear",
         "DetachedAnchor": false,
         "SwitchArms": true,
@@ -1283,15 +1418,15 @@
         "BobbingAmplitude": 1,
         "Elements": {
           "ItemAnchor": [1.1, 1.8, 1.1, 33, 7, 116],
-          "LowerArmR": [0, 0, 0, 0, 0, -1],
-          "UpperArmR": [0, 0, 0, 0, 25, -15],
+          "LowerArmR": [0, 0, 0, 0, 0, -35],
+          "UpperArmR": [0, 0, 0, 0, 25, 10],
           "ItemAnchorL": [3.1, 0.3, -1.4, -5, 2, 104],
           "LowerArmL": [0, 0, 0, 0, 0, -27],
           "UpperArmL": [0, 0, 0, 0, 0, -74]
         }
       },
       {
-        "EasingTime": 918,
+        "EasingTime": 767,
         "EasingFunction": "Linear",
         "DetachedAnchor": false,
         "SwitchArms": true,
@@ -1301,15 +1436,15 @@
         "BobbingAmplitude": 1,
         "Elements": {
           "ItemAnchor": [1.1, 1.8, 1.1, 33, 7, 116],
-          "LowerArmR": [0, 0, 0, 0, 0, -29],
-          "UpperArmR": [0, 0, 0, 32, -3, -85],
+          "LowerArmR": [0, 0, 0, 0, 0, -105],
+          "UpperArmR": [0, 0, 0, 24, 13, -42],
           "ItemAnchorL": [3.1, 0.3, -1.4, -5, 2, 104],
           "LowerArmL": [0, 0, 0, 0, 0, -27],
           "UpperArmL": [0, 0, 0, 0, 0, -74]
         }
       },
       {
-        "EasingTime": 1082,
+        "EasingTime": 1000,
         "EasingFunction": "Linear",
         "DetachedAnchor": false,
         "SwitchArms": true,
@@ -1319,15 +1454,15 @@
         "BobbingAmplitude": 1,
         "Elements": {
           "ItemAnchor": [1.1, 1.8, 1.1, 33, 7, 116],
-          "LowerArmR": [0, 0, 0, 0, 0, -32],
-          "UpperArmR": [0, 0, 0, 32, 2, -89],
+          "LowerArmR": [0, 0, 0, 0, 0, -85],
+          "UpperArmR": [0, 0, 0, 24, 15, -59],
           "ItemAnchorL": [3.1, 0.3, -1.4, -5, 2, 104],
           "LowerArmL": [0, 0, 0, 0, 0, -27],
           "UpperArmL": [0, 0, 0, 0, 0, -74]
         }
       },
       {
-        "EasingTime": 1288,
+        "EasingTime": 1233,
         "EasingFunction": "Linear",
         "DetachedAnchor": false,
         "SwitchArms": true,
@@ -1337,15 +1472,15 @@
         "BobbingAmplitude": 1,
         "Elements": {
           "ItemAnchor": [1.1, 1.8, 1.1, 33, 7, 116],
-          "LowerArmR": [0, 0, 0, 0, 0, -48],
-          "UpperArmR": [0, 0, 0, 32, 6, -79],
+          "LowerArmR": [0, 0, 0, 0, 0, -80],
+          "UpperArmR": [0, 0, 0, 30, 14, -61],
           "ItemAnchorL": [3.1, 0.3, -1.4, -5, 2, 104],
           "LowerArmL": [0, 0, 0, 0, 0, -27],
           "UpperArmL": [0, 0, 0, 0, 0, -74]
         }
       },
       {
-        "EasingTime": 1494,
+        "EasingTime": 1466,
         "EasingFunction": "Linear",
         "DetachedAnchor": false,
         "SwitchArms": true,
@@ -1355,8 +1490,8 @@
         "BobbingAmplitude": 1,
         "Elements": {
           "ItemAnchor": [1.1, 1.8, 1.1, 33, 7, 116],
-          "LowerArmR": [0, 0, 0, 0, 0, -71],
-          "UpperArmR": [0, 0, 0, 32, 12, -63],
+          "LowerArmR": [0, 0, 0, 0, 0, -61],
+          "UpperArmR": [0, 0, 0, 30, 10, -66],
           "ItemAnchorL": [3.1, 0.3, -1.4, -5, 2, 104],
           "LowerArmL": [0, 0, 0, 0, 0, -27],
           "UpperArmL": [0, 0, 0, 0, 0, -74]
@@ -1373,8 +1508,8 @@
         "BobbingAmplitude": 1,
         "Elements": {
           "ItemAnchor": [1.1, 1.8, 1.1, 33, 7, 116],
-          "LowerArmR": [0, 0, 0, 0, 0, -81],
-          "UpperArmR": [0, 0, 0, 32, 12, -56],
+          "LowerArmR": [0, 0, 0, 0, 0, -51],
+          "UpperArmR": [0, 0, 0, 0, 11, -64],
           "ItemAnchorL": [3.1, 0.3, -1.4, -5, 2, 104],
           "LowerArmL": [0, 0, 0, 0, 0, -27],
           "UpperArmL": [0, 0, 0, 0, 0, -74]
@@ -1404,98 +1539,78 @@
         "DurationFraction": 0,
         "EasingFunction": "Linear",
         "Elements": {
-          "Match": [0, 0, 0, 0, 0, 0],
-          "Pan_cover": [0, 0, 0, 0, 135, 0],
-          "Lever": [0, 0, 0, 10, 0, 0],
-          "Match_3": [0, 0, 0, 0, 0, 0],
+          "Lock_lever": [0, 0, 0, 28, 0, 0],
+          "Lever": [0, 0, 0, 12, 0, 0],
+          "Pan_cover": [0, 0, 0, 0, -135, 0],
+          "Match_origin": [5, -30, -56, 0, 0, 0],
+          "Match_1": [0, 0, 0, -22.5, 0, 0],
+          "Match_2": [0, 0, 0, 45, 0, 0],
+          "Match_3": [0, 0, 0, 22.5, 0, 0]
+        }
+      },
+      {
+        "DurationFraction": 0.33333334,
+        "EasingFunction": "Linear",
+        "Elements": {
+          "Lock_lever": [0, 0, 0, 28, 0, 0],
+          "Lever": [0, 0, 0, 12, 0, 0],
+          "Pan_cover": [0, 0, 0, 0, -135, 0],
+          "Match_origin": [2, 0, -58, 0, 0, 0],
+          "Match_1": [0, 0, 0, -22.5, 0, 0],
+          "Match_2": [0, 0, 0, 45, 0, 0],
+          "Match_3": [0, 0, 0, 22.5, 0, 0]
+        }
+      },
+      {
+        "DurationFraction": 0.5,
+        "EasingFunction": "Linear",
+        "Elements": {
+          "Lock_lever": [0, 0, 0, 28, 0, 0],
+          "Lever": [0, 0, 0, 12, 0, 0],
+          "Pan_cover": [0, 0, 0, 0, -135, 0],
+          "Match_origin": [0, 0.3, -59.6, 0, 0, 0],
+          "Match_1": [0, 0, 0, -22.5, 0, 0],
+          "Match_2": [0, 0, 0, 45, 0, 0],
+          "Match_3": [0, 0, 0, 22.5, 0, 0]
+        }
+      },
+      {
+        "DurationFraction": 0.6666667,
+        "EasingFunction": "Linear",
+        "Elements": {
+          "Lock_lever": [0, 0, 0, 28, 0, 0],
+          "Lever": [0, 0, 0, 12, 0, 0],
+          "Pan_cover": [0, 0, 0, 0, -135, 0],
+          "Match_origin": [0, 0, -60, 0, 0, 0],
           "Match_1": [0, 0, 0, 0, 0, 0],
-          "Match_2": [0, 0, 0, 0, 0, 0],
-          "Match_origin": [0, 0, 0, 0, 0, 0],
-          "Lock_lever": [0, 0, 0, -35, 0, 0]
+          "Match_2": [0, 0, 0, 27, 0, 0],
+          "Match_3": [0, 0, 0, 14.5, 0, 0]
         }
       },
       {
-        "DurationFraction": 0.029411752,
+        "DurationFraction": 0.8333333,
         "EasingFunction": "Linear",
         "Elements": {
-          "Match": [0, 0, 0, 0, 0, 0],
-          "Pan_cover": [0, 0, 0, 0, 135, 0],
-          "Lever": [0, 0, 0, 10, 0, 0],
-          "Match_3": [0, 0, 0, 0, 0, 0],
+          "Lock_lever": [0, 0, 0, 28, 0, 0],
+          "Lever": [0, 0, 0, 12, 0, 0],
+          "Pan_cover": [0, 0, 0, 0, -135, 0],
+          "Match_origin": [0, 0, -60, 0, 0, 0],
           "Match_1": [0, 0, 0, 0, 0, 0],
-          "Match_2": [0, 0, 0, 0, 0, 0],
-          "Match_origin": [-53, -74, -89, 0, 0, 0],
-          "Lock_lever": [0, 0, 0, -35, 0, 0]
-        }
-      },
-      {
-        "DurationFraction": 0.44117644,
-        "EasingFunction": "Linear",
-        "Elements": {
-          "Match": [0, 0, 0, -10, 0, 0],
-          "Pan_cover": [0, 0, 0, 0, 135, 0],
-          "Lever": [0, 0, 0, 10, 0, 0],
-          "Match_3": [0, 0, 0, -14, 0, 0],
-          "Match_1": [0, 0, 0, -15, 0, 0],
-          "Match_2": [0, 0, 0, -9, 0, 0],
-          "Match_origin": [-58, -59, -100, 0, 0, 0],
-          "Lock_lever": [0, 0, 0, -35, 0, 0]
-        }
-      },
-      {
-        "DurationFraction": 0.5588236,
-        "EasingFunction": "Linear",
-        "Elements": {
-          "Match": [0, 0, 0, -5, 0, 0],
-          "Pan_cover": [0, 0, 0, 0, 135, 0],
-          "Lever": [0, 0, 0, 10, 0, 0],
-          "Match_3": [0, 0, 0, 32, 10, 0],
-          "Match_1": [0, 0, 0, 8, 4, 0],
-          "Match_2": [0, 0, 0, 7, 10, 0],
-          "Match_origin": [-60, -59, -99, 0, 0, 0],
-          "Lock_lever": [0, 0, 0, -35, 0, 0]
-        }
-      },
-      {
-        "DurationFraction": 0.7058824,
-        "EasingFunction": "Linear",
-        "Elements": {
-          "Match": [0, 0, 0, 0, 0, 0],
-          "Pan_cover": [0, 0, 0, 0, 135, 0],
-          "Lever": [0, 0, 0, 10, 0, 0],
-          "Match_3": [0, 0, 0, 12, -7, 0],
-          "Match_1": [0, 0, 0, 1, 0, 0],
-          "Match_2": [0, 0, 0, -9, -6, 0],
-          "Match_origin": [-60, -60, -98, 0, 0, 0],
-          "Lock_lever": [0, 0, 0, -35, 0, 0]
-        }
-      },
-      {
-        "DurationFraction": 0.8529411,
-        "EasingFunction": "Linear",
-        "Elements": {
-          "Match": [0, 0, 0, 0, 0, 0],
-          "Pan_cover": [0, 0, 0, 0, 135, 0],
-          "Lever": [0, 0, 0, 10, 0, 0],
-          "Match_3": [0, 0, 0, 22, 0, 0],
-          "Match_1": [0, 0, 0, 1, 0, 0],
-          "Match_2": [0, 0, 0, -1, 0, 0],
-          "Match_origin": [-60, -60, -98, 0, 0, 0],
-          "Lock_lever": [0, 0, 0, -35, 0, 0]
+          "Match_2": [0, 0, 0, 27, 0, 0],
+          "Match_3": [0, 0, 0, 14.5, 0, 0]
         }
       },
       {
         "DurationFraction": 1,
         "EasingFunction": "Linear",
         "Elements": {
-          "Match": [0, 0, 0, 0, 0, 0],
+          "Lock_lever": [0, 0, 0, 28, 0, 0],
+          "Lever": [0, 0, 0, 12, 0, 0],
           "Pan_cover": [0, 0, 0, 0, 0, 0],
-          "Lever": [0, 0, 0, 10, 0, 0],
-          "Match_3": [0, 0, 0, 22, 0, 0],
-          "Match_1": [0, 0, 0, 1, 0, 0],
-          "Match_2": [0, 0, 0, -1, 0, 0],
-          "Match_origin": [-60, -60, -98, 0, 0, 0],
-          "Lock_lever": [0, 0, 0, -35, 0, 0]
+          "Match_origin": [0, 0, -60, 0, 0, 0],
+          "Match_1": [0, 0, 0, 0, 0, 0],
+          "Match_2": [0, 0, 0, 27, 0, 0],
+          "Match_3": [0, 0, 0, 14.5, 0, 0]
         }
       }
     ],
@@ -1518,7 +1633,7 @@
         "FOVMultiplier": 0.88,
         "BobbingAmplitude": 0.655,
         "Elements": {
-          "ItemAnchor": [-1.8, 1.11, 1.49, 15, 22, 153],
+          "ItemAnchor": [-1.5, 0.71, 1.49, 15, 22, 153],
           "LowerArmR": [0, 0, 0, 0, 0, -120],
           "UpperArmR": [0, 0, 0, 0, 22.2, -38],
           "ItemAnchorL": [0, 0, 0, 0, 0, 0],
@@ -1537,7 +1652,7 @@
         "FOVMultiplier": 0.88,
         "BobbingAmplitude": 0.655,
         "Elements": {
-          "ItemAnchor": [-1.8, 1.11, 1.49, 15, 22, 153],
+          "ItemAnchor": [-1.5, 0.71, 1.49, 15, 22, 153],
           "LowerArmR": [0, 0, 0, 0, 0, -120],
           "UpperArmR": [0, 0, 0, 0, 22.2, -38],
           "ItemAnchorL": [0, 0, 0, 0, 0, 0],
@@ -1556,7 +1671,7 @@
         "FOVMultiplier": 0.88,
         "BobbingAmplitude": 0.655,
         "Elements": {
-          "ItemAnchor": [-1.1, 1.11, 1.49, 15, 22, 153],
+          "ItemAnchor": [-1.5, 0.71, 1.49, 15, 22, 150],
           "LowerArmR": [0, 0, 0, 0, 0, -121],
           "UpperArmR": [0, 0, 0, 0, 22.2, -38],
           "ItemAnchorL": [0, 0, 0, 0, 0, 0],
@@ -1575,7 +1690,7 @@
         "FOVMultiplier": 0.88,
         "BobbingAmplitude": 0.655,
         "Elements": {
-          "ItemAnchor": [-1.8, 1.11, 1.49, 15, 22, 153],
+          "ItemAnchor": [-1.5, 0.71, 1.49, 15, 22, 153],
           "LowerArmR": [0, 0, 0, 0, 0, -120],
           "UpperArmR": [0, 0, 0, 0, 22.2, -38],
           "ItemAnchorL": [0, 0, 0, 0, 0, 0],
@@ -1590,70 +1705,22 @@
         "DurationFraction": 0,
         "EasingFunction": "Linear",
         "Elements": {
-          "Pan_cover": [0, 0, 0, 0, 0, 0],
-          "Match": [0, 0, 0, 0, 0, 0],
-          "Lever": [0, 0, 0, 10, 0, 0],
-          "Match_origin": [-60, -60, -98, 0, 0, 0],
-          "Lock_lever": [0, 0, 0, -35, 0, 0],
-          "Match_2": [0, 0, 0, -1, 0, 0],
-          "Match_1": [0, 0, 0, 1, 0, 0],
-          "Match_3": [0, 0, 0, 22, 0, 0]
-        }
-      },
-      {
-        "DurationFraction": 0.2631579,
-        "EasingFunction": "Linear",
-        "Elements": {
-          "Pan_cover": [0, 0, 0, 0, 0, 0],
-          "Match": [0, 0, 0, 0, 0, 0],
-          "Lever": [0, 0, 0, 5, 0, 0],
-          "Match_origin": [-60, -60, -98, 0, 0, 0],
-          "Lock_lever": [0, 0, 0, -20, 0, 0],
-          "Match_2": [0, 0, 0, -10, 0, 0],
-          "Match_1": [0, 0, 0, 1, 0, 0],
-          "Match_3": [0, 0, 0, 16, 0, 0]
-        }
-      },
-      {
-        "DurationFraction": 0.5263158,
-        "EasingFunction": "Linear",
-        "Elements": {
-          "Pan_cover": [0, 0, 0, 0, 0, 0],
-          "Match": [0, 0, 0, -3, 0, 0],
-          "Lever": [0, 0, 0, 0, 0, 0],
-          "Match_origin": [-60, -60, -98, 0, 0, 0],
-          "Lock_lever": [0, 0, 0, 0, 0, 0],
-          "Match_2": [0, 0, 0, -29, 0, 0],
-          "Match_1": [0, 0, 0, 3, 0, 0],
-          "Match_3": [0, 0, 0, 13, 0, 0]
-        }
-      },
-      {
-        "DurationFraction": 0.7894737,
-        "EasingFunction": "Linear",
-        "Elements": {
-          "Pan_cover": [0, 0, 0, 0, 0, 0],
-          "Match": [0, 0, 0, -3, 0, 0],
-          "Lever": [0, 0, 0, 0, 0, 0],
-          "Match_origin": [-60, -60, -98, 0, 0, 0],
-          "Lock_lever": [0, 0, 0, 0, 0, 0],
-          "Match_2": [0, 0, 0, -33, 0, 0],
-          "Match_1": [0, 0, 0, 3, 0, 0],
-          "Match_3": [0, 0, 0, 20, 0, 0]
+          "Lever": [0, 0, 0, 12, 0, 0],
+          "Lock_lever": [0, 0, 0, 28, 0, 0],
+          "Match_origin": [0, 0, -60, 0, 0, 0],
+          "Match_2": [0, 0, 0, 28, 0, 0],
+          "Match_3": [0, 0, 0, 5, 0, 0]
         }
       },
       {
         "DurationFraction": 1,
         "EasingFunction": "Linear",
         "Elements": {
-          "Pan_cover": [0, 0, 0, 0, 0, 0],
-          "Match": [0, 0, 0, -3, 0, 0],
           "Lever": [0, 0, 0, 0, 0, 0],
-          "Match_origin": [-60, -60, -98, 0, 0, 0],
           "Lock_lever": [0, 0, 0, 0, 0, 0],
-          "Match_2": [0, 0, 0, -35, 0, 0],
-          "Match_1": [0, 0, 0, 3, 0, 0],
-          "Match_3": [0, 0, 0, 22, 0, 0]
+          "Match_origin": [0, 0, -60, 0, 0, 0],
+          "Match_2": [0, 0, 0, 0, 0, 0],
+          "Match_3": [0, 0, 0, 0, 0, 0]
         }
       }
     ],
@@ -1687,14 +1754,13 @@
         "DurationFraction": 1,
         "EasingFunction": "Linear",
         "Elements": {
-          "Pan_cover": [0, 0, 0, 0, 135, 0],
-          "Lever": [0, 0, 0, 10, 0, 0],
-          "Lock_lever": [0, 0, 0, -35, 0, 0],
-          "Match": [0, 0, 0, 0, 0, 0],
-          "Match_3": [0, 0, 0, 0, 0, 0],
+          "Lock_lever": [0, 0, 0, 0, 0, 0],
+          "Lever": [0, 0, 0, 0, 0, 0],
+          "Pan_cover": [0, 0, 0, 0, 0, 0],
+          "Match_origin": [0, 0, 0, 0, 0, 0],
           "Match_1": [0, 0, 0, 0, 0, 0],
           "Match_2": [0, 0, 0, 0, 0, 0],
-          "Match_origin": [0, 0, 0, 0, 0, 0]
+          "Match_3": [0, 0, 0, 0, 0, 0]
         }
       }
     ],
@@ -1714,14 +1780,13 @@
         "DurationFraction": 1,
         "EasingFunction": "Linear",
         "Elements": {
-          "Pan_cover": [0, 0, 0, 0, 0, 0],
-          "Lever": [0, 0, 0, 0, 0, 0],
-          "Lock_lever": [0, 0, 0, 0, 0, 0],
-          "Match": [0, 0, 0, 0, 0, 0],
-          "Match_3": [0, 0, 0, 0, 0, 0],
+          "Lock_lever": [0, 0, 0, 28, 0, 0],
+          "Pan_cover": [0, 0, 0, 0, -135, 0],
+          "Lever": [0, 0, 0, 12, 0, 0],
+          "Match_origin": [0, 0, 0, 0, 0, 0],
           "Match_1": [0, 0, 0, 0, 0, 0],
           "Match_2": [0, 0, 0, 0, 0, 0],
-          "Match_origin": [0, 0, 0, 0, 0, 0]
+          "Match_3": [0, 0, 0, 0, 0, 0]
         }
       }
     ],
@@ -1741,14 +1806,13 @@
         "DurationFraction": 1,
         "EasingFunction": "Linear",
         "Elements": {
-          "Match": [0, 0, 0, 0, 0, 0],
+          "Lock_lever": [0, 0, 0, 28, 0, 0],
+          "Lever": [0, 0, 0, 12, 0, 0],
           "Pan_cover": [0, 0, 0, 0, 0, 0],
-          "Lever": [0, 0, 0, 10, 0, 0],
-          "Match_3": [0, 0, 0, 22, 0, 0],
-          "Match_1": [0, 0, 0, 1, 0, 0],
-          "Match_2": [0, 0, 0, -1, 0, 0],
-          "Match_origin": [-60, -60, -98, 0, 0, 0],
-          "Lock_lever": [0, 0, 0, -35, 0, 0]
+          "Match_origin": [0, 0, -60, 0, 0, 0],
+          "Match_1": [0, 0, 0, 0, 0, 0],
+          "Match_2": [0, 0, 0, 27, 0, 0],
+          "Match_3": [0, 0, 0, 14.5, 0, 0]
         }
       }
     ],

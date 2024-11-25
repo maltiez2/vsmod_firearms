@@ -54,5 +54,61 @@
     ],
     "name": "Barrel (arquebus)",
     "output": {"type": "item", "code": "maltiezfirearms:barrel-arquebus-meteoriciron"}
+  },
+  {
+    "ingredient": {"type": "item", "code": "game:ingot-iron"},
+    "pattern": [
+      [
+        "______________",
+        "_#############",
+        "_#############",
+        "_#############",
+        "______________"
+      ],
+      [
+        "______________",
+        "_#############",
+        "##____________",
+        "_#############",
+        "______________"
+      ],
+      [
+        "______________",
+        "_#############",
+        "_#############",
+        "_#############",
+        "______________"
+      ]
+    ],
+    "name": "Barrel (blunderbuss)",
+    "output": {"type": "item", "code": "maltiezfirearms:barrel-blunderbuss-iron"}
+  },
+  {
+    "ingredient": {"type": "item", "code": "game:ingot-meteoriciron"},
+    "pattern": [
+      [
+        "______________",
+        "_#############",
+        "_#############",
+        "_#############",
+        "______________"
+      ],
+      [
+        "______________",
+        "_#############",
+        "##____________",
+        "_#############",
+        "______________"
+      ],
+      [
+        "______________",
+        "_#############",
+        "_#############",
+        "_#############",
+        "______________"
+      ]
+    ],
+    "name": "Barrel (blunderbuss)",
+    "output": {"type": "item", "code": "maltiezfirearms:barrel-blunderbuss-meteoriciron"}
   }
 ]

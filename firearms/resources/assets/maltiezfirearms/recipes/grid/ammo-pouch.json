@@ -1,0 +1,14 @@
+[
+  {
+		"ingredientPattern": "LNL,LLL,L_L",
+		"recipeGroup": 1,
+		"ingredients": {
+			"N": {"type": "item", "code": "game:metalnailsandstrips-*"},
+			"L": { "type": "item", "code": "game:leather-normal-plain" }
+		},
+		"width": 3,
+		"height": 3,
+		"name": "quiver",
+		"output": { "type": "item", "code": "quiver-waist-plain"  }
+	}
+]

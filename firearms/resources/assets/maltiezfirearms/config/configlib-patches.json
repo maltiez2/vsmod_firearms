@@ -3,19 +3,30 @@
   "patches": {
     "float": {
       "maltiezfirearms:itemtypes/firearms/pistol.json": {
-        "attributes/BulletDamageMultiplier": "value * damage_multiplier"
+        "attributes/BulletDamageMultiplier": "value * damage_multiplier",
+        "attributes/Aiming/AimDifficulty": "aiming_difficulty"
       },
       "maltiezfirearms:itemtypes/firearms/arquebus.json": {
-        "attributes/BulletDamageMultiplier": "value * damage_multiplier"
+        "attributes/BulletDamageMultiplier": "value * damage_multiplier",
+        "attributes/Aiming/AimDifficulty": "aiming_difficulty"
       },
       "maltiezfirearms:itemtypes/firearms/carbine.json": {
-        "attributes/BulletDamageMultiplier": "value * damage_multiplier"
+        "attributes/BulletDamageMultiplier": "value * damage_multiplier",
+        "attributes/Aiming/AimDifficulty": "aiming_difficulty"
       },
       "maltiezfirearms:itemtypes/firearms/musket.json": {
-        "attributes/BulletDamageMultiplier": "value * damage_multiplier"
+        "attributes/BulletDamageMultiplier": "value * damage_multiplier",
+        "attributes/Aiming/AimDifficulty": "aiming_difficulty"
       },
       "maltiezfirearms:itemtypes/firearms/superimposed.json": {
-        "attributes/BulletDamageMultiplier": "value * damage_multiplier"
+        "attributes/BulletDamageMultiplier": "value * damage_multiplier",
+        "attributes/Aiming/AimDifficulty": "aiming_difficulty"
+      },
+      "maltiezfirearms:itemtypes/firearms/blunderbuss.json": {
+        "attributes/BulletDamageMultiplier": "value * damage_multiplier",
+        "attributes/Aiming/AimDifficulty": "aiming_difficulty",
+        "attributes/DispersionMOA/0": "blunderbuss_spread",
+        "attributes/DispersionMOA/1": "blunderbuss_spread"
       }
     },
     "string": {
@@ -76,6 +87,26 @@
         "Fixed",
         "Moving"
       ]
+    },
+    {
+      "code": "aiming_difficulty",
+      "type": "float",
+      "ingui": "maltiezfirearms:setting-aiming_difficulty",
+      "default": 1.0,
+      "range": {
+        "min": 0.0,
+        "max": 2.0
+      }
+    },
+    {
+      "code": "blunderbuss_spread",
+      "type": "float",
+      "ingui": "maltiezfirearms:setting-blunderbuss_spread",
+      "default": 120,
+      "range": {
+        "min": 0,
+        "max": 300
+      }
     }
   ]
 }

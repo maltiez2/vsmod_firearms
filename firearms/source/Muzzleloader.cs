@@ -55,6 +55,9 @@ public class MuzzleloaderStats : WeaponStats
     public string PrimedAnimation { get; set; } = "";
     public string CockedAnimation { get; set; } = "";
 
+    public float LoadSpeedPenalty { get; set; } = -1.0f;
+    public float PrimeSpeedPenalty { get; set; } = -0.3f;
+
     public AimingStatsJson Aiming { get; set; } = new();
     public float[] DispersionMOA { get; set; } = new float[] { 0, 0 };
     public float BulletDamageMultiplier { get; set; } = 1;
@@ -129,6 +132,7 @@ public class MuzzleloaderClient : RangeWeaponClient
         AimingAnimationController?.Stop(mainHand);
         AimingSystem.AimingState = WeaponAimingState.None;
         AimingSystem.StopAiming();
+        PlayerBehavior?.SetStat("walkspeed", mainHand ? PlayerStatsMainHandCategory : PlayerStatsOffHandCategory);
     }
     public override void OnRegistered(ActionsManagerPlayerBehavior behavior, ICoreClientAPI api)
     {
@@ -149,6 +153,9 @@ public class MuzzleloaderClient : RangeWeaponClient
     protected const string InventoryId = "magazine";
     protected const string LoadingStageAttribute = "CombatOverhaul:loading-stage";
     protected ItemSlot? BulletSlot;
+
+    protected const string PlayerStatsMainHandCategory = "CombatOverhaul:held-item-mainhand";
+    protected const string PlayerStatsOffHandCategory = "CombatOverhaul:held-item-offhand";
 
     [ActionEventHandler(EnumEntityAction.RightMouseDown, ActionState.Active)]
     protected virtual bool Load(ItemSlot slot, EntityPlayer player, ref int state, ActionEventData eventData, bool mainHand, AttackDirection direction)
@@ -194,6 +201,8 @@ public class MuzzleloaderClient : RangeWeaponClient
             callbackHandler: callback => LoadAnimationCallback(callback, ammoSlot, player));
 
         Attachable.SetAttachment(player.EntityId, "bullet", ammoSlot.Itemstack, BulletTransform);
+
+        PlayerBehavior?.SetStat("walkspeed", mainHand ? PlayerStatsMainHandCategory : PlayerStatsOffHandCategory, Stats.LoadSpeedPenalty);
 
         return true;
     }
@@ -269,6 +278,7 @@ public class MuzzleloaderClient : RangeWeaponClient
         Attachable.ClearAttachments(player.EntityId);
         AnimationBehavior?.Play(mainHand, Stats.LoadedAnimation, category: ItemAnimationCategory(mainHand), weight: 0.001f);
         AnimationBehavior?.PlayReadyAnimation(mainHand);
+        PlayerBehavior?.SetStat("walkspeed", mainHand ? PlayerStatsMainHandCategory : PlayerStatsOffHandCategory);
         return true;
     }
     protected virtual void LoadServerCallback(bool success)
@@ -287,6 +297,8 @@ public class MuzzleloaderClient : RangeWeaponClient
         SetState(MuzzleloaderState.Priming, mainHand);
         AnimationBehavior?.Stop(ItemAnimationCategory(mainHand));
         AnimationBehavior?.Play(mainHand, Stats.PrimeAnimation, category: AnimationCategory(mainHand), animationSpeed: GetAnimationSpeed(player, Stats.ProficiencyStat), callback: () => PrimeCallback(mainHand, slot), callbackHandler: callback => PrimeAnimationCallback(callback, player));
+
+        PlayerBehavior?.SetStat("walkspeed", mainHand ? PlayerStatsMainHandCategory : PlayerStatsOffHandCategory, Stats.PrimeSpeedPenalty);
 
         return true;
     }
@@ -342,6 +354,7 @@ public class MuzzleloaderClient : RangeWeaponClient
         }
         AnimationBehavior?.PlayReadyAnimation(mainHand);
         AnimationBehavior?.Play(mainHand, Stats.PrimedAnimation, category: ItemAnimationCategory(mainHand), weight: 0.001f);
+        PlayerBehavior?.SetStat("walkspeed", mainHand ? PlayerStatsMainHandCategory : PlayerStatsOffHandCategory);
         return true;
     }
     protected virtual void PrimeServerCallback(bool success, bool mainHand)
@@ -397,6 +410,8 @@ public class MuzzleloaderClient : RangeWeaponClient
     [ActionEventHandler(EnumEntityAction.RightMouseDown, ActionState.Released)]
     protected virtual bool Ease(ItemSlot slot, EntityPlayer player, ref int state, ActionEventData eventData, bool mainHand, AttackDirection direction)
     {
+        PlayerBehavior?.SetStat("walkspeed", mainHand ? PlayerStatsMainHandCategory : PlayerStatsOffHandCategory);
+
         switch ((MuzzleloaderState)state)
         {
             case MuzzleloaderState.Loading:
@@ -485,10 +500,7 @@ public class MuzzleloaderClient : RangeWeaponClient
 
                 targetDirection = ClientAimingSystem.Zeroing(targetDirection, Stats.Zeroing);
 
-                for (int count = 0; count < Stats.BulletsFiredPerShot; count++)
-                {
-                    RangedWeaponSystem.Shoot(slot, 1, new((float)position.X, (float)position.Y, (float)position.Z), new(targetDirection.X, targetDirection.Y, targetDirection.Z), mainHand, ShootServerCallback);
-                }
+                RangedWeaponSystem.Shoot(slot, Stats.BulletsFiredPerShot, new((float)position.X, (float)position.Y, (float)position.Z), new(targetDirection.X, targetDirection.Y, targetDirection.Z), mainHand, ShootServerCallback);
 
                 break;
         }
@@ -785,33 +797,43 @@ public class MuzzleloaderServer : RangeWeaponServer
 
         if (Inventory.Items.Count == 0) return false;
 
-        ItemStack ammo = Inventory.Items[0];
-        ammo.ResolveBlockOrItem(Api.World);
-        Inventory.Items.RemoveAt(0);
+        int count = 0;
+        int additionalDurabilityCost = 0;
+        while (Inventory.Items.Count > 0 && count < packet.Amount)
+        {
+            ItemStack ammo = Inventory.Items[0];
+            ammo.ResolveBlockOrItem(Api.World);
+            Inventory.Items.RemoveAt(0); 
+
+            ProjectileStats? stats = ammo.Item?.GetCollectibleBehavior<ProjectileBehavior>(true)?.Stats;
+
+            if (stats == null)
+            {
+                continue;
+            }
+
+            additionalDurabilityCost = Math.Max(additionalDurabilityCost, stats.AdditionalDurabilityCost);
+
+            ProjectileSpawnStats spawnStats = new()
+            {
+                ProducerEntityId = player.Entity.EntityId,
+                DamageMultiplier = Stats.BulletDamageMultiplier,
+                DamageStrength = Stats.BulletDamageStrength,
+                Position = new Vector3(packet.Position[0], packet.Position[1], packet.Position[2]),
+                Velocity = GetDirectionWithDispersion(packet.Velocity, Stats.DispersionMOA) * Stats.BulletVelocity
+            };
+
+            ProjectileSystem.Spawn(packet.ProjectileId[count], stats, spawnStats, ammo, shooter);
+
+            count++;
+        } 
+
+        slot.Itemstack.Item.DamageItem(player.Entity.World, player.Entity, slot, 1 + additionalDurabilityCost);
+        slot.MarkDirty();
+
         Inventory.Write(slot);
         int ammoLeft = Inventory.Items.Count;
         Inventory.Clear();
-
-        ProjectileStats? stats = ammo.Item?.GetCollectibleBehavior<ProjectileBehavior>(true)?.Stats;
-
-        if (stats == null)
-        {
-            return false;
-        }
-
-        ProjectileSpawnStats spawnStats = new()
-        {
-            ProducerEntityId = player.Entity.EntityId,
-            DamageMultiplier = Stats.BulletDamageMultiplier,
-            DamageStrength = Stats.BulletDamageStrength,
-            Position = new Vector3(packet.Position[0], packet.Position[1], packet.Position[2]),
-            Velocity = GetDirectionWithDispersion(packet.Velocity, Stats.DispersionMOA) * Stats.BulletVelocity
-        };
-
-        ProjectileSystem.Spawn(packet.ProjectileId, stats, spawnStats, ammo, shooter);
-
-        slot.Itemstack.Item.DamageItem(player.Entity.World, player.Entity, slot, 1 + stats.AdditionalDurabilityCost);
-        slot.MarkDirty();
 
         if (ammoLeft == 0) SetLoadingStage(slot, MuzzleloaderLoadingStage.Unloaded);
 

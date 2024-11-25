@@ -1,14 +1,15 @@
 ﻿{
   "code": "barrel",
   "class": "Item",
-  "variantgroups": [{"code": "weapon", "states": ["pistol", "arquebus", "carbine", "musket"]}, {"code": "material", "loadFromProperties": "block/toolmetal"}],
-  "allowedVariants": ["*-pistol-*bronze", "*-arquebus-*iron", "*-carbine-steel", "*-musket-steel"],
+  "variantgroups": [{"code": "weapon", "states": ["pistol", "arquebus", "blunderbuss", "carbine", "musket"]}, {"code": "material", "loadFromProperties": "block/toolmetal"}],
+  "allowedVariants": ["*-pistol-*bronze", "*-arquebus-*iron", "*-blunderbuss-*iron", "*-carbine-steel", "*-musket-steel"],
   "shape": {"base": "maltiezfirearms:parts/barrel-{weapon}"},
   "textures": {"metal": {"base": "game:block/metal/plate/{material}"}},
   "attributes": {
     "groundStorageTransformByType": {
       "*-pistol-*": {"translation": {"x": 0.1, "y": 0.09, "z": 0.4}, "rotation": {"x": 1, "y": -114, "z": 169}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 0.8},
       "*-arquebus-*": {"translation": {"x": 0.5, "y": 0.1, "z": 0.74}, "rotation": {"x": 99, "y": 0, "z": 0}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 0.8},
+      "*-blunderbuss-*": {"translation": {"x": 0.5, "y": -0.1, "z": 0.78}, "rotation": {"x": 99, "y": 0, "z": 0}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 0.8},
       "*-carbine-*": {"translation": {"x": 0.5, "y": -0.12, "z": 0.76}, "rotation": {"x": 98, "y": 0, "z": 0}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 0.8},
       "*-musket-*": {"translation": {"x": 0.5, "y": -0.19, "z": 0.66}, "rotation": {"x": 99, "y": 0, "z": 0}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 0.8}
     }
@@ -28,6 +29,7 @@
   "creativeinventory": {"maltiezfirearms": ["*"]},
   "guiTransformByType": {
     "*-arquebus-*": {"translation": {"x": 0, "y": 0, "z": 0}, "rotation": {"x": -17, "y": -18, "z": 0}, "origin": {"x": -0.35, "y": 0.4, "z": -1.5}, "scale": 3.16},
+    "*-blunderbuss-*": {"translation": {"x": 0, "y": 0, "z": 0}, "rotation": {"x": -17, "y": -18, "z": 0}, "origin": {"x": -0.35, "y": 0.35, "z": -1.6}, "scale": 3.16},
     "*-carbine-*": {"translation": {"x": 0, "y": 0, "z": 0}, "rotation": {"x": -13, "y": -13, "z": -180}, "origin": {"x": 0.26, "y": -0.19, "z": -2}, "scale": 3.71},
     "*-musket-*": {"translation": {"x": 0, "y": 0, "z": 0}, "rotation": {"x": -8, "y": -8, "z": 0}, "origin": {"x": -0.29, "y": 0.325, "z": -3.2}, "scale": 4.43},
     "*-pistol-*": {"translation": {"x": 0, "y": 0, "z": 0}, "rotation": {"x": -23, "y": -25, "z": 0}, "origin": {"x": -0.3, "y": 0.3, "z": -1.1}, "scale": 3.71}
