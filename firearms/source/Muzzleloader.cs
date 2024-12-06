@@ -55,6 +55,10 @@ public class MuzzleloaderStats : WeaponStats
     public string PrimedAnimation { get; set; } = "";
     public string CockedAnimation { get; set; } = "";
 
+    public string LoadTpAnimation { get; set; } = "";
+    public string PrimeTpAnimation { get; set; } = "";
+    public string AimTpAnimation { get; set; } = "";
+
     public float LoadSpeedPenalty { get; set; } = -1.0f;
     public float PrimeSpeedPenalty { get; set; } = -0.3f;
 
@@ -132,6 +136,7 @@ public class MuzzleloaderClient : RangeWeaponClient
         AimingAnimationController?.Stop(mainHand);
         AimingSystem.AimingState = WeaponAimingState.None;
         AimingSystem.StopAiming();
+        AnimationBehavior?.StopAllVanillaAnimations(mainHand);
         PlayerBehavior?.SetStat("walkspeed", mainHand ? PlayerStatsMainHandCategory : PlayerStatsOffHandCategory);
     }
     public override void OnRegistered(ActionsManagerPlayerBehavior behavior, ICoreClientAPI api)
@@ -197,8 +202,9 @@ public class MuzzleloaderClient : RangeWeaponClient
             GetLoadingAnimation(slot),
             category: AnimationCategory(mainHand),
             animationSpeed: GetAnimationSpeed(player, Stats.ProficiencyStat),
-            callback: () => LoadCallback(slot, ammoSlot, player, mainHand, lastAmmoToLoad),
+            callback: () => LoadCallback(slot, player, mainHand, lastAmmoToLoad),
             callbackHandler: callback => LoadAnimationCallback(callback, ammoSlot, player));
+        AnimationBehavior?.PlayVanillaAnimation(Stats.LoadTpAnimation, mainHand);
 
         Attachable.SetAttachment(player.EntityId, "bullet", ammoSlot.Itemstack, BulletTransform);
 
@@ -267,13 +273,34 @@ public class MuzzleloaderClient : RangeWeaponClient
                 break;
         }
     }
-    protected virtual bool LoadCallback(ItemSlot slot, ItemSlot ammoSlot, EntityPlayer player, bool mainHand, bool lastAmmoToLoad)
+    protected virtual bool LoadCallback(ItemSlot slot, EntityPlayer player, bool mainHand, bool lastAmmoToLoad)
     {
         if (CheckState(mainHand, MuzzleloaderState.Loading))
         {
-            SetState(lastAmmoToLoad ? MuzzleloaderState.Loaded : MuzzleloaderState.Unloaded, mainHand);
+            ItemSlot? ammoSlot = null;
+
+            player.WalkInventory(slot =>
+            {
+                if (slot?.Itemstack?.Item == null) return true;
+
+                if (
+                    slot.Itemstack?.Item != null &&
+                    slot.Itemstack.Item.HasBehavior<ProjectileBehavior>() &&
+                    WildcardUtil.Match(Stats.BulletWildcard, slot.Itemstack.Item.Code.ToString()) &&
+                    slot.Itemstack.StackSize >= Stats.BulletLoadedPerReload)
+                {
+                    ammoSlot = slot;
+                    return false;
+                }
+
+                return true;
+            });
+
+            if (ammoSlot == null) return true;
+
             PutIntoMagazine(slot, ammoSlot);
-            RangedWeaponSystem.Reload(slot, ammoSlot, Stats.BulletLoadedPerReload, mainHand, LoadServerCallback, data: SerializeLoadingStage(MuzzleloaderLoadingStage.Loading));
+            RangedWeaponSystem.Reload(slot, ammoSlot, Stats.BulletLoadedPerReload, mainHand, success => LoadServerCallback(success, lastAmmoToLoad, mainHand), data: SerializeLoadingStage(MuzzleloaderLoadingStage.Loading));
+            SetState(lastAmmoToLoad ? MuzzleloaderState.Loaded : MuzzleloaderState.Unloaded, mainHand);
         }
         Attachable.ClearAttachments(player.EntityId);
         AnimationBehavior?.Play(mainHand, Stats.LoadedAnimation, category: ItemAnimationCategory(mainHand), weight: 0.001f);
@@ -281,9 +308,9 @@ public class MuzzleloaderClient : RangeWeaponClient
         PlayerBehavior?.SetStat("walkspeed", mainHand ? PlayerStatsMainHandCategory : PlayerStatsOffHandCategory);
         return true;
     }
-    protected virtual void LoadServerCallback(bool success)
+    protected virtual void LoadServerCallback(bool success, bool lastAmmoToLoad, bool mainHand)
     {
-
+        
     }
 
     [ActionEventHandler(EnumEntityAction.RightMouseDown, ActionState.Active)]
@@ -297,6 +324,7 @@ public class MuzzleloaderClient : RangeWeaponClient
         SetState(MuzzleloaderState.Priming, mainHand);
         AnimationBehavior?.Stop(ItemAnimationCategory(mainHand));
         AnimationBehavior?.Play(mainHand, Stats.PrimeAnimation, category: AnimationCategory(mainHand), animationSpeed: GetAnimationSpeed(player, Stats.ProficiencyStat), callback: () => PrimeCallback(mainHand, slot), callbackHandler: callback => PrimeAnimationCallback(callback, player));
+        AnimationBehavior?.PlayVanillaAnimation(Stats.PrimeTpAnimation, mainHand);
 
         PlayerBehavior?.SetStat("walkspeed", mainHand ? PlayerStatsMainHandCategory : PlayerStatsOffHandCategory, Stats.PrimeSpeedPenalty);
 
@@ -401,6 +429,7 @@ public class MuzzleloaderClient : RangeWeaponClient
 
         SetState(MuzzleloaderState.Aim, mainHand);
         AnimationBehavior?.Play(mainHand, mainHand ? Stats.AimAnimation : Stats.AimAnimationOffhand, category: AnimationCategory(mainHand));
+        AnimationBehavior?.PlayVanillaAnimation(Stats.AimTpAnimation, mainHand);
         AimingSystem.AimingState = WeaponAimingState.FullCharge;
         AimingSystem.StartAiming(AimingStats);
         AimingAnimationController?.Play(mainHand);
@@ -455,6 +484,7 @@ public class MuzzleloaderClient : RangeWeaponClient
         AnimationBehavior?.PlayReadyAnimation(mainHand);
         AimingSystem.StopAiming();
         AimingAnimationController?.Stop(mainHand);
+        AnimationBehavior?.StopAllVanillaAnimations(mainHand);
         return false;
     }
 
@@ -508,6 +538,31 @@ public class MuzzleloaderClient : RangeWeaponClient
     protected virtual void ShootServerCallback(bool success)
     {
 
+    }
+
+    [ActionEventHandler(EnumEntityAction.RightMouseDown, ActionState.Active)]
+    protected virtual bool Cancel(ItemSlot slot, EntityPlayer player, ref int state, ActionEventData eventData, bool mainHand, AttackDirection direction)
+    {
+        if (player.OnGround) return false;
+        
+        switch ((MuzzleloaderState)state)
+        {
+            case MuzzleloaderState.Loading:
+                {
+                    PlayerBehavior?.SetStat("walkspeed", mainHand ? PlayerStatsMainHandCategory : PlayerStatsOffHandCategory);
+                    SetState(MuzzleloaderState.Unloaded, mainHand);
+                    Attachable.ClearAttachments(player.EntityId);
+
+                    AnimationBehavior?.PlayReadyAnimation(mainHand);
+                    AimingSystem.StopAiming();
+                    AimingAnimationController?.Stop(mainHand);
+                }
+                break;
+            default:
+                break;
+        }
+        
+        return false;
     }
 
     protected void PutIntoMagazine(ItemSlot slot, ItemSlot ammoSlot)

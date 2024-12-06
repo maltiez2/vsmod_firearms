@@ -9,6 +9,6 @@
 		"width": 3,
 		"height": 3,
 		"name": "quiver",
-		"output": { "type": "item", "code": "quiver-waist-plain"  }
+		"output": { "type": "item", "code": "pouch-waist-plain"  }
 	}
 ]

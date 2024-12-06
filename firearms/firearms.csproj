@@ -3,7 +3,7 @@
   <PropertyGroup>
     <ModName>Firearms</ModName>
     <ModType>code</ModType>
-    <ModVersion>0.9.0</ModVersion>
+    <ModVersion>0.9.3</ModVersion>
     <ModId>maltiezfirearms</ModId>
     <Description>Black powder firearms</Description>
     <Side>Universal</Side>
