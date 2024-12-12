@@ -62,18 +62,16 @@
     "LoadedAnimation": "maltiezfirearms:firearms-arquebus-loaded",
     "PrimedAnimation": "maltiezfirearms:firearms-arquebus-primed",
     "CockedAnimation": "maltiezfirearms:firearms-arquebus-cocked",
-    "LoadTpAnimation": "firearm-reload-1",
-    "PrimeTpAnimation": "firearm-reload-0",
-    "AimTpAnimation": "firearm-aim",
+    "LoadTpAnimation": "",
+    "PrimeTpAnimation": "",
+    "AimTpAnimation": "",
     "MagazineSize": 1,
     "BulletLoadedPerReload": 1,
     "WaddingUsedPerReload": 1,
     "LoadPowderConsumption": 7,
     "PrimePowderConsumption": 1,
-    "LoadingRequirementWildcard": "",
-    "PrimingRequirementWildcard": "",
-    "CockingRequirementWildcard": "",
-    "AimingRequirementWildcard": "",
+    "CockingRequirementWildcard": "*match-lit",
+    "CockingRequirementMessage": "maltiezfirearms:requirement-missing-match",
     "BulletWildcard": "*bullet-*",
     "Aiming": {
       "AimDifficulty": 1,
@@ -91,7 +89,8 @@
     },
     "BulletVelocity": 8,
     "DispersionMOA": [0, 0],
-    "Zeroing": -1
+    "Zeroing": -1,
+    "CancelReloadOnInAir": true
   },
   "shape": {"base": "maltiezfirearms:firearms/arquebus-tp"},
   "texturesByType": {

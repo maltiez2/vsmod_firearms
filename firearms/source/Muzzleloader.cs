@@ -1,11 +1,9 @@
-﻿using Cairo;
-using CombatOverhaul;
+﻿using CombatOverhaul;
 using CombatOverhaul.Animations;
 using CombatOverhaul.Implementations;
 using CombatOverhaul.Inputs;
 using CombatOverhaul.RangedSystems;
 using CombatOverhaul.RangedSystems.Aiming;
-using System.Diagnostics;
 using System.Numerics;
 using System.Text;
 using Vintagestory.API.Client;
@@ -14,7 +12,6 @@ using Vintagestory.API.Common.Entities;
 using Vintagestory.API.Config;
 using Vintagestory.API.Server;
 using Vintagestory.API.Util;
-using VSImGui.Debug;
 
 namespace Firearms;
 
@@ -81,7 +78,10 @@ public class MuzzleloaderStats : WeaponStats
     public string LoadingRequirementWildcard { get; set; } = "";
     public string PrimingRequirementWildcard { get; set; } = "";
     public string CockingRequirementWildcard { get; set; } = "";
-    public string AimingRequirementWildcard { get; set; } = "";
+    public string LoadingRequirementMessage { get; set; } = "maltiezfirearms:requirement-missing-loading-equipment";
+    public string PrimingRequirementMessage { get; set; } = "maltiezfirearms:requirement-missing-priming-equipment";
+    public string CockingRequirementMessage { get; set; } = "maltiezfirearms:requirement-missing-cocking-equipment";
+    public bool CancelReloadOnInAir { get; set; } = true;
 }
 
 public class MuzzleloaderClient : RangeWeaponClient
@@ -167,7 +167,11 @@ public class MuzzleloaderClient : RangeWeaponClient
     {
         if (!CheckState(state, MuzzleloaderState.Unloaded)) return false;
         if (eventData.AltPressed || !mainHand || !CheckForOtherHandEmpty(mainHand, player)) return false;
-        if (Stats.LoadingRequirementWildcard != "" && !CheckRequirement(Stats.LoadingRequirementWildcard, player)) return false;
+        if (Stats.LoadingRequirementWildcard != "" && !CheckRequirement(Stats.LoadingRequirementWildcard, player))
+        {
+            Api.TriggerIngameError(this, "missingRequirement", Lang.Get(Stats.LoadingRequirementMessage));
+            return false;
+        }
         if (!CheckWadding(player) || !CheckFlask(player, Stats.LoadPowderConsumption)) return false;
 
         ItemSlot? ammoSlot = null;
@@ -190,6 +194,7 @@ public class MuzzleloaderClient : RangeWeaponClient
 
         if (ammoSlot == null)
         {
+            Api.TriggerIngameError(this, "missingAmmo", Lang.Get("maltiezfirearms:requirement-missing-ammo"));
             return false;
         }
 
@@ -310,7 +315,7 @@ public class MuzzleloaderClient : RangeWeaponClient
     }
     protected virtual void LoadServerCallback(bool success, bool lastAmmoToLoad, bool mainHand)
     {
-        
+
     }
 
     [ActionEventHandler(EnumEntityAction.RightMouseDown, ActionState.Active)]
@@ -318,7 +323,11 @@ public class MuzzleloaderClient : RangeWeaponClient
     {
         if (!CheckState(state, MuzzleloaderState.Loaded)) return false;
         if (eventData.AltPressed || !mainHand || !CheckForOtherHandEmpty(mainHand, player)) return false;
-        if (Stats.PrimingRequirementWildcard != "" && !CheckRequirement(Stats.PrimingRequirementWildcard, player)) return false;
+        if (Stats.PrimingRequirementWildcard != "" && !CheckRequirement(Stats.PrimingRequirementWildcard, player))
+        {
+            Api.TriggerIngameError(this, "missingRequirement", Lang.Get(Stats.PrimingRequirementMessage));
+            return false;
+        }
         if (!CheckFlask(player, Stats.PrimePowderConsumption)) return false;
 
         SetState(MuzzleloaderState.Priming, mainHand);
@@ -402,7 +411,11 @@ public class MuzzleloaderClient : RangeWeaponClient
     {
         if (!CheckState(state, MuzzleloaderState.Primed)) return false;
         if (eventData.AltPressed) return false;
-        if (Stats.CockingRequirementWildcard != "" && !CheckRequirement(Stats.CockingRequirementWildcard, player)) return false;
+        if (Stats.CockingRequirementWildcard != "" && !CheckRequirement(Stats.CockingRequirementWildcard, player))
+        {
+            Api.TriggerIngameError(this, "missingRequirement", Lang.Get(Stats.CockingRequirementMessage));
+            return false;
+        }
         if (Stats.CockingAnimation == "")
         {
             SetState(MuzzleloaderState.Cocked, mainHand);
@@ -543,8 +556,8 @@ public class MuzzleloaderClient : RangeWeaponClient
     [ActionEventHandler(EnumEntityAction.RightMouseDown, ActionState.Active)]
     protected virtual bool Cancel(ItemSlot slot, EntityPlayer player, ref int state, ActionEventData eventData, bool mainHand, AttackDirection direction)
     {
-        if (player.OnGround) return false;
-        
+        if (player.OnGround || !Stats.CancelReloadOnInAir) return false;
+
         switch ((MuzzleloaderState)state)
         {
             case MuzzleloaderState.Loading:
@@ -561,7 +574,7 @@ public class MuzzleloaderClient : RangeWeaponClient
             default:
                 break;
         }
-        
+
         return false;
     }
 
@@ -636,7 +649,13 @@ public class MuzzleloaderClient : RangeWeaponClient
 
             return true;
         });
-        return waddingSlot != null;
+        
+        bool found = waddingSlot != null;
+        if (!found)
+        {
+            Api.TriggerIngameError(this, "missingWadding", Lang.Get("maltiezfirearms:requirement-missing-wadding"));
+        }
+        return found;
     }
     protected bool CheckFlask(EntityPlayer player, int powderNeeded)
     {
@@ -655,7 +674,13 @@ public class MuzzleloaderClient : RangeWeaponClient
 
             return true;
         });
-        return flaskSlot != null;
+
+        bool found = flaskSlot != null;
+        if (!found)
+        {
+            Api.TriggerIngameError(this, "missingPowderflask", Lang.Get("maltiezfirearms:requirement-missing-powderflask"));
+        }
+        return found;
     }
 
     protected static byte[] SerializeLoadingStage<TStage>(TStage stage)
@@ -858,7 +883,7 @@ public class MuzzleloaderServer : RangeWeaponServer
         {
             ItemStack ammo = Inventory.Items[0];
             ammo.ResolveBlockOrItem(Api.World);
-            Inventory.Items.RemoveAt(0); 
+            Inventory.Items.RemoveAt(0);
 
             ProjectileStats? stats = ammo.Item?.GetCollectibleBehavior<ProjectileBehavior>(true)?.Stats;
 
@@ -881,7 +906,7 @@ public class MuzzleloaderServer : RangeWeaponServer
             ProjectileSystem.Spawn(packet.ProjectileId[count], stats, spawnStats, ammo, shooter);
 
             count++;
-        } 
+        }
 
         slot.Itemstack.Item.DamageItem(player.Entity.World, player.Entity, slot, 1 + additionalDurabilityCost);
         slot.MarkDirty();

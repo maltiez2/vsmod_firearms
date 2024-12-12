@@ -65,9 +65,8 @@
     "WaddingUsedPerReload": 1,
     "LoadPowderConsumption": 3,
     "PrimePowderConsumption": 1,
-    "LoadingRequirementWildcard": "",
     "PrimingRequirementWildcard": "*cockinglever-*",
-    "AimingRequirementWildcard": "",
+    "PrimingRequirementMessage": "maltiezfirearms:requirement-missing-cocking-lever",
     "BulletWildcard": "*bullet-*",
     "Aiming": {
       "AimDifficulty": 1,
@@ -85,7 +84,8 @@
     },
     "BulletVelocity": 5,
     "DispersionMOA": [0, 0],
-    "Zeroing": -1.5
+    "Zeroing": -1.5,
+    "CancelReloadOnInAir": true
   },
   "shape": {"base": "maltiezfirearms:firearms/{type}"},
   "texturesByType": {

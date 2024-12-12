@@ -1,20 +1,20 @@
 ﻿[
   {
     "op": "add",
-    "path": "/attributes/tradeProps/selling/list/-",
+    "path": "/selling/list/-",
     "value": {"code": "maltiezfirearms:lock-wheellock-tinbronze", "type": "item", "stacksize": 1, "stock": {"avg": 0.6, "var": 0.5}, "price": {"avg": 30, "var": 5}},
-    "file": "game:entities/humanoid/trader-treasurehunter.json"
+    "file": "game:config/tradelists/trader-treasurehunter.json"
   },
   {
     "op": "add",
-    "path": "/attributes/tradeProps/selling/list/-",
+    "path": "/selling/list/-",
     "value": {"code": "maltiezfirearms:lock-wheellock-bismuthbronze", "type": "item", "stacksize": 1, "stock": {"avg": 0.6, "var": 0.5}, "price": {"avg": 30, "var": 5}},
-    "file": "game:entities/humanoid/trader-treasurehunter.json"
+    "file": "game:config/tradelists/trader-treasurehunter.json"
   },
   {
     "op": "add",
-    "path": "/attributes/tradeProps/selling/list/-",
+    "path": "/selling/list/-",
     "value": {"code": "maltiezfirearms:bayonet-socket-decorated", "type": "item", "stacksize": 1, "stock": {"avg": 1, "var": 0.5}, "price": {"avg": 40, "var": 5}},
-    "file": "game:entities/humanoid/trader-luxuries.json"
+    "file": "game:config/tradelists/trader-luxuries.json"
   }
 ]

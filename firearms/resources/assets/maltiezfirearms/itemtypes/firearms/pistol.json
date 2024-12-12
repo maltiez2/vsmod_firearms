@@ -49,9 +49,8 @@
     "WaddingUsedPerReload": 1,
     "LoadPowderConsumption": 3,
     "PrimePowderConsumption": 1,
-    "LoadingRequirementWildcard": "",
     "PrimingRequirementWildcard": "*cockinglever-*",
-    "AimingRequirementWildcard": "",
+    "PrimingRequirementMessage": "maltiezfirearms:requirement-missing-cocking-lever",
     "BulletWildcard": "*bullet-*",
     "Aiming": {
       "AimDifficulty": 1,
@@ -69,7 +68,8 @@
     "LoadSpeedPenalty": -0.3,
     "BulletVelocity": 4,
     "DispersionMOA": [0, 0],
-    "Zeroing": -1.5
+    "Zeroing": -1.5,
+    "CancelReloadOnInAir": false
   },
   "shape": {"base": "maltiezfirearms:firearms/pistol"},
   "texturesByType": {
@@ -88,5 +88,5 @@
   },
   "tpHandTransform": {"translation": {"x": 0, "y": 0, "z": 0}, "rotation": {"x": 0, "y": -90, "z": 0}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 0.8},
   "groundTransform": {"translation": {"x": 0, "y": 0.05, "z": 0}, "rotation": {"x": 0, "y": 0, "z": 90}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 4.8},
-  "tpOffHandTransform": {"translation": {"x": -0.17, "y": -0.1, "z": -0.05}, "rotation": {"x": 90, "y": 0, "z": -90}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 0.8}
+  "tpOffHandTransform": {"translation": {"x": -0.12, "y": -0.05, "z": 0}, "rotation": {"x": 90, "y": 0, "z": -90}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 0.8}
 }

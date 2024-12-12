@@ -29,6 +29,26 @@
         "attributes/DispersionMOA/1": "blunderbuss_spread"
       }
     },
+    "boolean": {
+      "maltiezfirearms:itemtypes/firearms/pistol.json": {
+        "attributes/CancelReloadOnInAir": "cancel_reload_on_inair"
+      },
+      "maltiezfirearms:itemtypes/firearms/arquebus.json": {
+        "attributes/CancelReloadOnInAir": "cancel_reload_on_inair"
+      },
+      "maltiezfirearms:itemtypes/firearms/carbine.json": {
+        "attributes/CancelReloadOnInAir": "cancel_reload_on_inair"
+      },
+      "maltiezfirearms:itemtypes/firearms/musket.json": {
+        "attributes/CancelReloadOnInAir": "cancel_reload_on_inair"
+      },
+      "maltiezfirearms:itemtypes/firearms/superimposed.json": {
+        "attributes/CancelReloadOnInAir": "cancel_reload_on_inair"
+      },
+      "maltiezfirearms:itemtypes/firearms/blunderbuss.json": {
+        "attributes/CancelReloadOnInAir": "cancel_reload_on_inair"
+      }
+    },
     "string": {
       "maltiezfirearms:itemtypes/firearms/pistol.json": {
         "attributes/Aiming/CursorType": "aiming_cursor_type"
@@ -43,6 +63,9 @@
         "attributes/Aiming/CursorType": "aiming_cursor_type"
       },
       "maltiezfirearms:itemtypes/firearms/superimposed.json": {
+        "attributes/Aiming/CursorType": "aiming_cursor_type"
+      },
+      "maltiezfirearms:itemtypes/firearms/blunderbuss.json": {
         "attributes/Aiming/CursorType": "aiming_cursor_type"
       }
     },
@@ -107,6 +130,12 @@
         "min": 0,
         "max": 300
       }
+    },
+    {
+      "code": "cancel_reload_on_inair",
+      "type": "boolean",
+      "ingui": "maltiezfirearms:setting-cancel_reload_on_inair",
+      "default": true
     }
   ]
 }

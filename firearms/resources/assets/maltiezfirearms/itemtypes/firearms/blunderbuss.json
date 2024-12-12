@@ -68,10 +68,8 @@
     "WaddingUsedPerReload": 2,
     "LoadPowderConsumption": 7,
     "PrimePowderConsumption": 1,
-    "LoadingRequirementWildcard": "",
-    "PrimingRequirementWildcard": "",
-    "CockingRequirementWildcard": "",
-    "AimingRequirementWildcard": "",
+    "CockingRequirementWildcard": "*match-lit",
+    "CockingRequirementMessage": "maltiezfirearms:requirement-missing-match",
     "BulletWildcard": "*pellet-*",
     "Aiming": {
       "AimDifficulty": 1,
@@ -89,7 +87,8 @@
     },
     "BulletVelocity": 6,
     "DispersionMOA": [120, 120],
-    "Zeroing": -1
+    "Zeroing": -1,
+    "CancelReloadOnInAir": true
   },
   "shape": {"base": "maltiezfirearms:firearms/blunderbuss-tp"},
   "texturesByType": {

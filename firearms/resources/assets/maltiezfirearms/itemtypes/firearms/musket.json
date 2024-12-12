@@ -84,7 +84,8 @@
       "DamageTypes": [{"Damage": {"DamageType": "PiercingAttack", "Strength": 6, "Damage": 4.5}, "Knockback": 0.5, "DurabilityDamage": 0, "Collider": [0, 0.1, -0.3, 0, 0.1, -3]}]
     },
     "BayonetAttackAnimation": "maltiezfirearms:musket-bayonet-thrust",
-    "BayonetAttackTpAnimation": "spearhit"
+    "BayonetAttackTpAnimation": "spearhit",
+    "CancelReloadOnInAir": true
   },
   "shape": {
     "base": "maltiezfirearms:firearms/musket",
