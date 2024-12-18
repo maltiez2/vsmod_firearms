@@ -36,6 +36,11 @@ public class PowderFlask : Item
     {
         base.OnHeldInteractStep(secondsPassed, slot, byEntity, blockSelection, entitySel);
 
+        if (GetRemainingDurability(slot.Itemstack) >= GetMaxDurability(slot.Itemstack))
+        {
+            return false;
+        }
+
         ItemSlot? powderSlot = null;
         byEntity.WalkInventory(slot =>
         {
