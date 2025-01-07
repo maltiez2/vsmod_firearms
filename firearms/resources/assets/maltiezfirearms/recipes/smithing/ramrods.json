@@ -16,12 +16,12 @@
     "output": {"type": "item", "code": "maltiezfirearms:ramrod-pistol-bismuthbronze"}
   },
   {
-    "ingredient": {"type": "item", "code": "game:ingot-bismuthbronze"},
+    "ingredient": {"type": "item", "code": "game:ingot-blackbronze"},
     "pattern": [
       ["######"]
     ],
     "name": "Ramrod (pistol)",
-    "output": {"type": "item", "code": "maltiezfirearms:ramrod-pistol-bismuthbronze"}
+    "output": {"type": "item", "code": "maltiezfirearms:ramrod-pistol-blackbronze"}
   },
   {
     "ingredient": {"type": "item", "code": "game:ingot-iron"},

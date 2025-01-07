@@ -3,6 +3,7 @@ using CombatOverhaul.Implementations;
 using CombatOverhaul.Inputs;
 using CombatOverhaul.MeleeSystems;
 using CombatOverhaul.RangedSystems;
+using CombatOverhaul.Utils;
 using System.Text;
 using Vintagestory.API.Client;
 using Vintagestory.API.Common;
@@ -126,7 +127,13 @@ public class MusketClient : MuzzleloaderClient, IOnGameTick
             category: AnimationCategory(mainHand),
             callback: () => AttackAnimationCallback(slot, player, mainHand),
             callbackHandler: code => AttackAnimationCallbackHandler(slot, player, code, mainHand));
-        AnimationBehavior?.PlayVanillaAnimation(StatsMusket.BayonetAttackTpAnimation, mainHand);
+        TpAnimationBehavior?.Play(
+            mainHand,
+            StatsMusket.BayonetAttackAnimation,
+            animationSpeed: GetAnimationSpeed(player, Stats.ProficiencyStat),
+            category: AnimationCategory(mainHand));
+        AnimationBehavior?.StopAllVanillaAnimations(mainHand);
+        if (TpAnimationBehavior == null) AnimationBehavior?.PlayVanillaAnimation(StatsMusket.BayonetAttackTpAnimation, mainHand);
 
         return true;
     }
@@ -156,6 +163,7 @@ public class MusketClient : MuzzleloaderClient, IOnGameTick
     protected virtual bool AttackAnimationCallback(ItemSlot slot, EntityPlayer player, bool mainHand)
     {
         AnimationBehavior?.PlayReadyAnimation(mainHand);
+        TpAnimationBehavior?.PlayReadyAnimation(mainHand);
 
         int state = PlayerBehavior?.GetState(mainHand) ?? 0;
         OnSelected(slot, player, mainHand, ref state);

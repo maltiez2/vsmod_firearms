@@ -18,7 +18,10 @@
         "collisionBox": {"x1": 0, "y1": 0, "z1": 0, "x2": 0, "y2": 0, "z2": 0}
       }
     },
-    {"name": "CombatOverhaul:AnimatableAttachable", "properties": {"animated-shape": "maltiezfirearms:firearms/blunderbuss"}}
+    {
+      "name": "CombatOverhaul:AnimatableAttachable",
+      "properties": {"animated-shape": "maltiezfirearms:firearms/blunderbuss", "animated-shape-fp": "maltiezfirearms:firearms/blunderbuss-tp"}
+    }
   ],
   "attributes": {
     "toolrackTransform": {"translation": {"x": 0.9, "y": 0.55, "z": 0.5}, "rotation": {"x": 0, "y": 95, "z": -90}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 1.34},
@@ -62,6 +65,9 @@
     "LoadedAnimation": "maltiezfirearms:firearms-blunderbuss-loaded",
     "PrimedAnimation": "maltiezfirearms:firearms-blunderbuss-primed",
     "CockedAnimation": "maltiezfirearms:firearms-blunderbuss-cocked",
+    "LoadTpAnimation": "arquebus-load",
+    "PrimeTpAnimation": "arquebus-prime",
+    "AimTpAnimation": "arquebus-aim",
     "MagazineSize": 1,
     "BulletLoadedPerReload": 8,
     "BulletsFiredPerShot": 8,

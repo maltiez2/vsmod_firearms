@@ -18,7 +18,10 @@
         "collisionBox": {"x1": 0, "y1": 0, "z1": 0, "x2": 0, "y2": 0, "z2": 0}
       }
     },
-    {"name": "CombatOverhaul:AnimatableAttachable", "properties": {"animated-shape": "maltiezfirearms:firearms/arquebus"}}
+    {
+      "name": "CombatOverhaul:AnimatableAttachable",
+      "properties": {"animated-shape": "maltiezfirearms:firearms/arquebus-tp", "animated-shape-fp": "maltiezfirearms:firearms/arquebus"}
+    }
   ],
   "attributes": {
     "toolrackTransform": {"translation": {"x": 0.9, "y": 0.55, "z": 0.5}, "rotation": {"x": 0, "y": 95, "z": -90}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 1.34},
@@ -62,9 +65,9 @@
     "LoadedAnimation": "maltiezfirearms:firearms-arquebus-loaded",
     "PrimedAnimation": "maltiezfirearms:firearms-arquebus-primed",
     "CockedAnimation": "maltiezfirearms:firearms-arquebus-cocked",
-    "LoadTpAnimation": "",
-    "PrimeTpAnimation": "",
-    "AimTpAnimation": "",
+    "LoadTpAnimation": "arquebus-load",
+    "PrimeTpAnimation": "arquebus-prime",
+    "AimTpAnimation": "arquebus-aim",
     "MagazineSize": 1,
     "BulletLoadedPerReload": 1,
     "WaddingUsedPerReload": 1,
@@ -100,7 +103,7 @@
   "heldTpHitAnimation": "firearmsempty",
   "heldLeftTpIdleAnimation": "firearmsempty",
   "heldLeftReadyAnimation": "firearmsempty",
-  "heldRightReadyAnimation": "firearm-idle",
+  "heldRightReadyAnimation": "firearmsempty",
   "heldOldTpIdleAnimation": "firearmsempty",
   "heldTpUseAnimation": "firearmsempty",
   "guiTransform": {
