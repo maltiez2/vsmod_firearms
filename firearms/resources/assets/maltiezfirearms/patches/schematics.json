@@ -2,14 +2,14 @@
   {
     "op": "add",
     "path": "/attributesByType/*-jonasparts/stacks/-",
-    "value": {"type": "item", "code": "maltiezfirearms:schematic-flintlock", "quantity": {"avg": 1, "var": 0}, "chance": 2},
+    "value": {"type": "item", "code": "maltiezfirearms:schematic-flintlock", "quantity": {"avg": 1, "var": 0}, "chance": 10},
     "file": "game:itemtypes/meta/stackrandomizer.json",
     "side": "Server"
   },
   {
     "op": "add",
     "path": "/attributesByType/*-alljonas/stacks/-",
-    "value": {"type": "item", "code": "maltiezfirearms:schematic-flintlock", "quantity": {"avg": 1, "var": 0}, "chance": 2},
+    "value": {"type": "item", "code": "maltiezfirearms:schematic-flintlock", "quantity": {"avg": 1, "var": 0}, "chance": 10},
     "file": "game:itemtypes/meta/stackrandomizer.json",
     "side": "Server"
   }

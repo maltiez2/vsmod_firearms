@@ -132,7 +132,9 @@ public class MuzzleloaderClient : RangeWeaponClient
         }
 
         // DEBUG
-        //DebugAttach(player);
+#if DEBUG
+        DebugAttach(player);
+#endif
     }
     public override void OnDeselected(EntityPlayer player, bool mainHand, ref int state)
     {
@@ -570,7 +572,7 @@ public class MuzzleloaderClient : RangeWeaponClient
     [ActionEventHandler(EnumEntityAction.RightMouseDown, ActionState.Active)]
     protected virtual bool Cancel(ItemSlot slot, EntityPlayer player, ref int state, ActionEventData eventData, bool mainHand, AttackDirection direction)
     {
-        if (player.OnGround || !Stats.CancelReloadOnInAir) return false;
+        if (player.MountedOn?.Entity != null || player.OnGround || !Stats.CancelReloadOnInAir) return false;
 
         switch ((MuzzleloaderState)state)
         {

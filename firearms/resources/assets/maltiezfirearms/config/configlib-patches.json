@@ -27,6 +27,10 @@
         "attributes/Aiming/AimDifficulty": "aiming_difficulty",
         "attributes/DispersionMOA/0": "blunderbuss_spread",
         "attributes/DispersionMOA/1": "blunderbuss_spread"
+      },
+      "maltiezfirearms:patches/schematics.json": {
+        "0/value/chance": "value * schematic_drop_chance",
+        "1/value/chance": "value * schematic_drop_chance"
       }
     },
     "boolean": {
@@ -136,6 +140,16 @@
       "type": "boolean",
       "ingui": "maltiezfirearms:setting-cancel_reload_on_inair",
       "default": true
+    },
+    {
+      "code": "schematic_drop_chance",
+      "type": "float",
+      "ingui": "maltiezfirearms:setting-schematic_drop_chance",
+      "default": 1.0,
+      "range": {
+        "min": 0.0,
+        "max": 10.0
+      }
     }
   ]
 }

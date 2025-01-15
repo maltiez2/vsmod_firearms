@@ -20,7 +20,7 @@
     },
     {
       "name": "CombatOverhaul:AnimatableAttachable",
-      "properties": {"animated-shape": "maltiezfirearms:firearms/blunderbuss", "animated-shape-fp": "maltiezfirearms:firearms/blunderbuss-tp"}
+      "properties": {"animated-shape": "maltiezfirearms:firearms/blunderbuss-tp", "animated-shape-fp": "maltiezfirearms:firearms/blunderbuss"}
     }
   ],
   "attributes": {
