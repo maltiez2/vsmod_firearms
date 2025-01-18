@@ -71,7 +71,7 @@
     "LoadSpeedPenalty": -0.3,
     "BulletVelocity": 4,
     "DispersionMOA": [0, 0],
-    "Zeroing": -1.5,
+    "Zeroing": -1.25,
     "CancelReloadOnInAir": false
   },
   "shape": {"base": "maltiezfirearms:firearms/pistol"},

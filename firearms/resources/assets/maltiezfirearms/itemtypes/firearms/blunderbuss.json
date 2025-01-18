@@ -93,7 +93,7 @@
     },
     "BulletVelocity": 6,
     "DispersionMOA": [120, 120],
-    "Zeroing": -1,
+    "Zeroing": 0.25,
     "CancelReloadOnInAir": true
   },
   "shape": {"base": "maltiezfirearms:firearms/blunderbuss-tp"},

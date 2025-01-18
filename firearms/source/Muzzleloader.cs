@@ -4,13 +4,12 @@ using CombatOverhaul.Implementations;
 using CombatOverhaul.Inputs;
 using CombatOverhaul.RangedSystems;
 using CombatOverhaul.RangedSystems.Aiming;
-using System.Numerics;
+using OpenTK.Mathematics;
 using System.Text;
 using Vintagestory.API.Client;
 using Vintagestory.API.Common;
 using Vintagestory.API.Common.Entities;
 using Vintagestory.API.Config;
-using Vintagestory.API.MathTools;
 using Vintagestory.API.Server;
 using Vintagestory.API.Util;
 
@@ -97,7 +96,6 @@ public class MuzzleloaderClient : RangeWeaponClient
         LoadingEquipmentTransform = new(item.Attributes["LoadingEquipmentTransform"].AsObject<ModelTransformNoDefaults>() ?? new ModelTransformNoDefaults(), ModelTransform.BlockDefaultTp());
         Stats = item.Attributes.AsObject<MuzzleloaderStats>();
         AimingStats = Stats.Aiming.ToStats();
-
 
         AnimationsManager.RegisterTransformByCode(BulletTransform, $"Bullet - {item.Code}");
         AnimationsManager.RegisterTransformByCode(FlaskTransform, $"Flask - {item.Code}");
@@ -916,11 +914,11 @@ public class MuzzleloaderServer : RangeWeaponServer
                 ProducerEntityId = player.Entity.EntityId,
                 DamageMultiplier = Stats.BulletDamageMultiplier,
                 DamageStrength = Stats.BulletDamageStrength,
-                Position = new Vector3(packet.Position[0], packet.Position[1], packet.Position[2]),
+                Position = new Vector3d(packet.Position[0], packet.Position[1], packet.Position[2]),
                 Velocity = GetDirectionWithDispersion(packet.Velocity, Stats.DispersionMOA) * Stats.BulletVelocity
             };
 
-            ProjectileSystem.Spawn(packet.ProjectileId[count], stats, spawnStats, ammo, shooter);
+            ProjectileSystem.Spawn(packet.ProjectileId[count], stats, spawnStats, ammo, slot.Itemstack, shooter);
 
             count++;
         }

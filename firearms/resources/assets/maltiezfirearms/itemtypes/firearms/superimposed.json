@@ -87,7 +87,7 @@
     },
     "BulletVelocity": 5,
     "DispersionMOA": [0, 0],
-    "Zeroing": -1.5,
+    "Zeroing": -1,
     "CancelReloadOnInAir": true
   },
   "shape": {"base": "maltiezfirearms:firearms/{type}"},

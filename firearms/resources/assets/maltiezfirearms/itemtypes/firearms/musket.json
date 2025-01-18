@@ -78,7 +78,7 @@
     },
     "BulletVelocity": 8,
     "DispersionMOA": [0, 0],
-    "Zeroing": -1.5,
+    "Zeroing": -1,
     "BayonetAttack": {
       "StopOnTerrainHit": false,
       "StopOnEntityHit": false,

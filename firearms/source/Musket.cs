@@ -3,12 +3,11 @@ using CombatOverhaul.Implementations;
 using CombatOverhaul.Inputs;
 using CombatOverhaul.MeleeSystems;
 using CombatOverhaul.RangedSystems;
-using CombatOverhaul.Utils;
+using OpenTK.Mathematics;
 using System.Text;
 using Vintagestory.API.Client;
 using Vintagestory.API.Common;
 using Vintagestory.API.Config;
-using Vintagestory.API.MathTools;
 using Vintagestory.API.Server;
 using Vintagestory.API.Util;
 
@@ -143,8 +142,8 @@ public class MusketClient : MuzzleloaderClient, IOnGameTick
             player.Player,
             slot,
             mainHand,
-            out IEnumerable<(Block block, System.Numerics.Vector3 point)> terrainCollision,
-            out IEnumerable<(Vintagestory.API.Common.Entities.Entity entity, System.Numerics.Vector3 point)> entitiesCollision);
+            out IEnumerable<(Block block, Vector3d point)> terrainCollision,
+            out IEnumerable<(Vintagestory.API.Common.Entities.Entity entity, Vector3d point)> entitiesCollision);
 
         if (entitiesCollision.Any() && StatsMusket.AnimationStaggerOnHitDurationMs > 0)
         {
