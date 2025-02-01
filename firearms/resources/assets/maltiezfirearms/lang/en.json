@@ -122,25 +122,32 @@
   "itemdesc-bayonet-blade-*": "Smithed from steel",
 
   "itemdesc-powderflask-*": "Stores gunpowder for use in firearms and protectes it from water. Flask durability represents amount of powder in the flask.<br><br><i>Take gunpowder in offhand and press right mouse button with flask in main hand to fill it.</i><br>",
-  "itemdesc-cockinglever-*": "Used to windup spring in wheel-lock pistol<br>",
-  "itemdesc-bayonet-plug-*": "Attack power (attached): -4.8 hp<br>Attack tier (attached): 5<br>Attack range (attached): 4 m<br><br>Can be attached to a musket to turn it into a spear. On melee attack bayonet's durability is consumed instead of musket's<br><br><font color=\"#99c9f9\"><i>Plug style bayonet that is inserted in musket's barrels and fits firmly. Removal requires quite a bit of force and a hammer.</i></font><br><br><i>To attach/dettach use hotkey ('B' by default). Dettachment requires a hammer in offhand.</i><br>",
+  "itemdesc-cockinglever-*": "Used to windup spring in wheel-lock pistol and bossi carbine<br>",
   "itemdesc-bayonet-socket-*": "Attack power (attached): -4.8 hp<br>Attack tier (attached): 5<br>Attack range (attached): 4 m<br><br>Can be attached to a musket to turn it into a spear. On melee attack bayonet's durability is consumed instead of musket's<br><br><font color=\"#99c9f9\"><i>Socket style bayonet that uses bayonet lug on a barrel. Allows to operate a gun while attached.</i></font><br><br><i>To attach/dettach use hotkey ('B' by default).</i><br>",
 
-  "itemdesc-slug-*": "High caliber bullet used by musket and carbine. Is cut from slug casting.<br>",
-  "itemdesc-bullet-*": "Small caliber bullet used by pistol and arquebus. Is cut from bullet casting.<br>",
+  "itemdesc-slug-*": "High caliber bullet used by musket and carbine.<br>",
+  "itemdesc-bullet-*": "Small caliber bullet used by pistol and arquebus.<br>",
+  "itemdesc-pellet-*": "Small caliber bullet used by blunderbuss.<br>",
   "itemdesc-linenpatch": "Used as wadding in firearms.<br>",
+
+  "blockdesc-ammomold-pellet-burned": "Produces 64 pellets",
+  "blockdesc-ammomold-bullet-burned": "Produces 16 bullets",
+  "blockdesc-ammomold-slug-burned": "Produces 8 slugs",
+
+  "blockdesc-weaponrack-*": "For storing long firearms (musket, carbine, blunderbuss, arquebus).",
+  "blockdesc-pistolstand-*": "For storing short firearms (arquebus, pistol).",
+  "blockdesc-wallmount-*": "For storing long firearms (musket, carbine, blunderbuss, arquebus).",
+  "blockdesc-wallmountdouble-*": "For storing long firearms (musket, carbine, blunderbuss, arquebus).",
   
   "itemdesc-gunpowder-wet": "Intermediate step in gunpowder production.<br><br><font color=\"#99c9f9\"><i>Wet blasting powder formed into small granules. Blasting powder is too fine for using in firearms. It burns inconsistently.</i><br>",
   "itemdesc-gunpowder-coarse": "Intermediate step in gunpowder production.<br><br><font color=\"#99c9f9\"><i>Dried up granules of powder. Still not usable in firearms: they are too big and will burn slowly.</i><br>",
   "itemdesc-gunpowder-fine": "Powder suitable for using in firearms. Can become wet swimming with it in inventory.<br><br><font color=\"#99c9f9\"><i>Fine granules of powder of consistent size suitable for using in fierams. Such powder burns consistently and fast.</i><br",
-  "itemdesc-match-*": "Required to be lit for firing arquebus.<br>",
-  "itemdesc-ammocasting-*": "Put in offhand and cut with shears.<br>",
+  "itemdesc-match-*": "Required to be lit for firing arquebus. Will be extinguished when swimming.<br>",
 
   "itemdesc-lock-wheellock-*": "Complex lock that produces sparks by rotating iron wheel against flint.<br>",
   "itemdesc-lock-matchlock-*": "Simple lock that just connects a trigger lever to the liver that holds a smoldering match.<br>",
   "itemdesc-lock-flintlock-*": "Advanced lock that requires steel and knowlege of producing good quality springs.<br>",
   "itemdesc-ramrod-*": "Is used to ram bullet and wadding down the barrel and to compact powder.<br>",
-  "itemdesc-schematic-bayonet": "Ancient schematic that contains description of a method of attaching bayonet to a barrel via lug and socket.<br>",
   "itemdesc-schematic-flintlock": "Ancient schematic that describes intricate production of a leaf spring and a ignition mechanism that utilizes it.<br>",
   
   "itemdesc-pouch-waist-plain": "Can hold ammunition, powder flask, linen patches, match, cocking lever.",
@@ -150,5 +157,26 @@
   "prefixandcreature-pellet": "Pellet",
   "item-creature-slug-*": "Slug",
   "item-creature-bullet-*": "Bullet",
-  "item-creature-pellet-*": "Pellet"
+  "item-creature-pellet-*": "Pellet",
+
+
+
+  "achtabname": "Firearms",
+  "achievement-craftarquebus": "Arquebus",
+  "achievement-craftarquebus-desc": "Craft an arquebus.",
+
+  "achievement-craftblunderbuss": "Blunderbuss",
+  "achievement-craftblunderbuss-desc": "Craft a blunderbuss.",
+
+  "achievement-craftcarbine": "Carbine",
+  "achievement-craftcarbine-desc": "Craft a carbine.",
+
+  "achievement-craftmusket": "Musket",
+  "achievement-craftmusket-desc": "Craft a musket.",
+
+  "achievement-craftpistol": "Pistol",
+  "achievement-craftpistol-desc": "Craft a pistol.",
+
+  "achievement-craftsuperimposed": "Bossi Carbine",
+  "achievement-craftsuperimposed-desc": "Craft a bossi carbine."
 }

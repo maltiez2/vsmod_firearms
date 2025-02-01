@@ -93,7 +93,8 @@
     "BulletVelocity": 8,
     "DispersionMOA": [0, 0],
     "Zeroing": -1,
-    "CancelReloadOnInAir": true
+    "CancelReloadOnInAir": true,
+    "LoadSpeedPenalty": -2
   },
   "shape": {"base": "maltiezfirearms:firearms/arquebus-tp"},
   "texturesByType": {

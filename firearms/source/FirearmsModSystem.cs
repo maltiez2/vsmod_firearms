@@ -10,5 +10,8 @@ internal class FirearmsModSystem : ModSystem
         api.RegisterItemClass("Firearms:Matchlock", typeof(MatchlockItem));
         api.RegisterItemClass("Firearms:Musket", typeof(MusketItem));
         api.RegisterItemClass("Firearms:PowderFlask", typeof(PowderFlask));
+
+        api.RegisterCollectibleBehaviorClass("Firearms:Wettable", typeof(Wettable));
+        api.RegisterCollectibleBehaviorClass("Firearms:Igniteable", typeof(Igniteable));
     }
 }

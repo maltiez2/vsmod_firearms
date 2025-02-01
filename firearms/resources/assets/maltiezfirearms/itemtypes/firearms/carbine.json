@@ -69,7 +69,8 @@
     "BulletVelocity": 6,
     "DispersionMOA": [0, 0],
     "Zeroing": -1.125,
-    "CancelReloadOnInAir": true
+    "CancelReloadOnInAir": true,
+    "LoadSpeedPenalty": -2
   },
   "shape": {"base": "maltiezfirearms:firearms/carbine", "alternates": []},
   "heldTpHitAnimation": "firearmsempty",

@@ -11,7 +11,11 @@
     "shelvable": true,
     "onDisplayTransform": {"translation": {"x": 0.05, "y": 0, "z": 0}, "origin": {"x": 0.5, "y": 0, "z": 0.5}, "scale": 0.65}
   },
-  "behaviors": [],
+  "behaviorsByType": {
+    "*-fine": [{"name": "Firearms:Wettable", "properties": {"TransitionStack": {"type": "item", "code": "maltiezfirearms:gunpowder-wet"}}}],
+    "*-coarse": [{"name": "Firearms:Wettable", "properties": {"TransitionStack": {"type": "item", "code": "maltiezfirearms:gunpowder-wet"}}}],
+    "*-wet": []
+  },
   "storageFlags": 257,
   "maxstacksize": 64,
   "materialDensity": 500,

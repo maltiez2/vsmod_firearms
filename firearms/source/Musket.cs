@@ -122,14 +122,14 @@ public class MusketClient : MuzzleloaderClient, IOnGameTick
         AnimationBehavior?.Play(
             mainHand,
             StatsMusket.BayonetAttackAnimation,
-            animationSpeed: GetAnimationSpeed(player, Stats.ProficiencyStat),
+            animationSpeed: GetAnimationSpeed(player, "spearsProficiency"),
             category: AnimationCategory(mainHand),
             callback: () => AttackAnimationCallback(slot, player, mainHand),
             callbackHandler: code => AttackAnimationCallbackHandler(slot, player, code, mainHand));
         TpAnimationBehavior?.Play(
             mainHand,
             StatsMusket.BayonetAttackAnimation,
-            animationSpeed: GetAnimationSpeed(player, Stats.ProficiencyStat),
+            animationSpeed: GetAnimationSpeed(player, "spearsProficiency"),
             category: AnimationCategory(mainHand));
         AnimationBehavior?.StopAllVanillaAnimations(mainHand);
         if (TpAnimationBehavior == null) AnimationBehavior?.PlayVanillaAnimation(StatsMusket.BayonetAttackTpAnimation, mainHand);

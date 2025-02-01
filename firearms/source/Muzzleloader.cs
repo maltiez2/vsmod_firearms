@@ -449,8 +449,8 @@ public class MuzzleloaderClient : RangeWeaponClient
         TpAnimationBehavior?.Play(mainHand, mainHand ? Stats.AimAnimation : Stats.AimAnimationOffhand, category: AnimationCategory(mainHand));
         AnimationBehavior?.StopAllVanillaAnimations(mainHand);
         if (TpAnimationBehavior == null) AnimationBehavior?.PlayVanillaAnimation(Stats.AimTpAnimation, mainHand);
-        AimingSystem.AimingState = WeaponAimingState.FullCharge;
         AimingSystem.StartAiming(AimingStats);
+        AimingSystem.AimingState = WeaponAimingState.FullCharge;
         AimingAnimationController?.Play(mainHand);
 
         return true;

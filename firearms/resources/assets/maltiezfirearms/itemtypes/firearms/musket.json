@@ -88,7 +88,8 @@
     },
     "BayonetAttackAnimation": "maltiezfirearms:musket-bayonet-thrust",
     "BayonetAttackTpAnimation": "spearhit",
-    "CancelReloadOnInAir": true
+    "CancelReloadOnInAir": true,
+    "LoadSpeedPenalty": -2
   },
   "shape": {
     "base": "maltiezfirearms:firearms/musket",

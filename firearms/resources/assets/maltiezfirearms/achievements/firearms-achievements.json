@@ -1,0 +1,56 @@
+[
+  {
+    "enabled": "true",
+    "id": "craftarquebus",
+    "graphicCode": "maltiezfirearms:firearm-arquebus-iron",
+    "criteriaType": "CreateAnyFromGridRecipe",
+    "criteriaData": [
+      "maltiezfirearms:firearm-arquebus-*"
+    ]
+  },
+  {
+    "enabled": "true",
+    "id": "craftblunderbuss",
+    "graphicCode": "maltiezfirearms:firearm-blunderbuss-iron",
+    "criteriaType": "CreateAnyFromGridRecipe",
+    "criteriaData": [
+      "maltiezfirearms:firearm-blunderbuss-*"
+    ]
+  },
+  {
+    "enabled": "true",
+    "id": "craftcarbine",
+    "graphicCode": "maltiezfirearms:firearm-carbine-steel",
+    "criteriaType": "CreateAnyFromGridRecipe",
+    "criteriaData": [
+      "maltiezfirearms:firearm-carbine-*"
+    ]
+  },
+  {
+    "enabled": "true",
+    "id": "craftmusket",
+    "graphicCode": "maltiezfirearms:firearm-musket-steel",
+    "criteriaType": "CreateAnyFromGridRecipe",
+    "criteriaData": [
+      "maltiezfirearms:firearm-musket-*"
+    ]
+  },
+  {
+    "enabled": "true",
+    "id": "craftpistol",
+    "graphicCode": "maltiezfirearms:firearm-pistol-blackbronze",
+    "criteriaType": "CreateAnyFromGridRecipe",
+    "criteriaData": [
+      "maltiezfirearms:firearm-pistol-*"
+    ]
+  },
+  {
+    "enabled": "true",
+    "id": "craftsuperimposed",
+    "graphicCode": "maltiezfirearms:firearm-superimposed-blackbronze",
+    "criteriaType": "CreateAnyFromGridRecipe",
+    "criteriaData": [
+      "maltiezfirearms:firearm-superimposed-*"
+    ]
+  }
+]

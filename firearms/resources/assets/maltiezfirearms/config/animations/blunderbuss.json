@@ -1624,25 +1624,6 @@
     "Hold": true,
     "PlayerKeyFrames": [
       {
-        "EasingTime": 0,
-        "EasingFunction": "Linear",
-        "DetachedAnchor": false,
-        "SwitchArms": false,
-        "PitchFollow": true,
-        "PitchDontFollow": false,
-        "FOVMultiplier": 0.88,
-        "BobbingAmplitude": 0.655,
-        "Elements": {
-          "ItemAnchor": [-1.5, 0.71, 1.49, 15, 22, 153],
-          "LowerArmR": [0, 0, 0, 0, 0, -120],
-          "UpperArmR": [0, 0, 0, 0, 22.2, -38],
-          "ItemAnchorL": [0, 0, 0, 0, 0, 0],
-          "LowerArmL": [0, 0, 0, 0, 0, -15],
-          "UpperArmL": [0, 0, 0, 0, -9, -87],
-          "UpperTorso": [0, 0, 0, 0, 0, 0]
-        }
-      },
-      {
         "EasingTime": 200,
         "EasingFunction": "Linear",
         "DetachedAnchor": false,
