@@ -141,7 +141,7 @@
   
   "itemdesc-gunpowder-wet": "Intermediate step in gunpowder production.<br><br><font color=\"#99c9f9\"><i>Wet blasting powder formed into small granules. Blasting powder is too fine for using in firearms. It burns inconsistently.</i><br>",
   "itemdesc-gunpowder-coarse": "Intermediate step in gunpowder production.<br><br><font color=\"#99c9f9\"><i>Dried up granules of powder. Still not usable in firearms: they are too big and will burn slowly.</i><br>",
-  "itemdesc-gunpowder-fine": "Powder suitable for using in firearms. Can become wet swimming with it in inventory.<br><br><font color=\"#99c9f9\"><i>Fine granules of powder of consistent size suitable for using in fierams. Such powder burns consistently and fast.</i><br",
+  "itemdesc-gunpowder-fine": "Powder suitable for using in firearms. Can become wet swimming with it in inventory.<br><br><font color=\"#99c9f9\"><i>Fine granules of powder of consistent size suitable for using in firearms. Such powder burns consistently and fast.</i><br",
   "itemdesc-match-*": "Required to be lit for firing arquebus. Will be extinguished when swimming.<br>",
 
   "itemdesc-lock-wheellock-*": "Complex lock that produces sparks by rotating iron wheel against flint.<br>",
