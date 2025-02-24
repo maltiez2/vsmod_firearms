@@ -82,7 +82,7 @@
   <!-- Startup settings -->
   <PropertyGroup>
     <DataFolderName>VintagestoryDataDev</DataFolderName>
-    <AppDataDir>C:\Users\user\AppData\Roaming</AppDataDir>
+    <AppDataDir>$(AppData)</AppDataDir>
     <DataFolder>$(AppDataDir)\$(DataFolderName)</DataFolder>
     <AditionalModsFolder>$(AppDataDir)\$(DataFolderName)\Mods</AditionalModsFolder>
     <WorldName>test_$(ModId)</WorldName>
