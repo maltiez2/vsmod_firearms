@@ -4,7 +4,7 @@
   "shapeByType": {"*-wet": {"base": "powder/wetpowder"}, "*-coarse": {"base": "powder/coarsepowder"}, "*-fine": {"base": "powder/gunpowder"}},
   "textureByType": {"*-wet": {"base": "wetpowder"}, "*-coarse": {"base": "coarsepowder"}, "*-fine": {"base": "gunpowder"}},
   "heldTpIdleAnimation": "holdbothhands",
-  "creativeinventory": {"maltiezfirearms": ["*"]},
+  "creativeinventory": {"general": ["*"], "maltiezfirearms": ["*"]},
   "attributes": {
     "dissolveInWater": true,
     "displaycaseable": true,

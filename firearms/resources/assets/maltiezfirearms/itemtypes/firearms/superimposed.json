@@ -2,7 +2,7 @@
   "code": "firearm",
   "class": "Firearms:Muzzleloader",
   "variantgroups": [{"code": "type", "states": ["superimposed"]}, {"code": "material", "states": ["tinbronze", "bismuthbronze", "blackbronze", "tarnished"]}],
-  "creativeinventory": {"maltiezfirearms": ["*"]},
+  "creativeinventory": {"general": ["*"], "maltiezfirearms": ["*"]},
   "maxstacksize": 1,
   "durabilityByType": {"*-tarnished": 60, "*": 600},
   "rackable": true,

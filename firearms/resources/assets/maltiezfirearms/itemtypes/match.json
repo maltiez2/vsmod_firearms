@@ -1,7 +1,7 @@
 ﻿{
   "code": "match",
   "class": "Item",
-  "creativeinventory": {"maltiezfirearms": ["*"]},
+  "creativeinventory": {"general": ["*"], "maltiezfirearms": ["*"]},
   "attributes": {
     "groundStorageTransform": {"translation": {"x": 0.3, "y": 0, "z": 0.6}, "rotation": {"x": 0, "y": -10, "z": 90}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 1.22}
   },

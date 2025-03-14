@@ -6,7 +6,7 @@
   "attributes": {"noConsumeOnCrafting": true, "groundStorageTransform": {"rotation": {"x": 0, "y": 7, "z": 0}, "origin": {"x": 0.5, "y": 0, "z": 0.5}}},
   "shape": {"base": "game:item/utility/schematic-glider"},
   "textures": {"schematic-glider": {"base": "schematic-{type}"}},
-  "creativeinventory": {"maltiezfirearms": ["*"]},
+  "creativeinventory": {"general": ["*"], "maltiezfirearms": ["*"]},
   "guiTransform": {
     "translation": {"x": 0, "y": 0, "z": 0},
     "rotation": {"x": -54, "y": -24, "z": -180},

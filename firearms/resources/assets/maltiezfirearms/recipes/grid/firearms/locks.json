@@ -1,6 +1,6 @@
 [
   {
-    "ingredientPattern": "PGF,NP_",
+    "ingredientPattern": "_F_,NGP",
     "ingredients": {
       "P": {"type": "item", "code": "game:metalplate-tinbronze", "quantity": 1},
       "N": {"type": "item", "code": "game:metalplate-brass", "quantity": 1},
@@ -13,7 +13,7 @@
     "output": {"type": "item", "code": "maltiezfirearms:lock-wheellock-tinbronze"}
   },
   {
-    "ingredientPattern": "PGF,NP_",
+    "ingredientPattern": "_F_,NGP",
     "ingredients": {
       "P": {"type": "item", "code": "game:metalplate-bismuthbronze", "quantity": 1},
       "N": {"type": "item", "code": "game:metalplate-brass", "quantity": 1},
@@ -26,7 +26,7 @@
     "output": {"type": "item", "code": "maltiezfirearms:lock-wheellock-bismuthbronze"}
   },
   {
-    "ingredientPattern": "PGF,NP_",
+    "ingredientPattern": "_F_,NGP",
     "ingredients": {
       "P": {"type": "item", "code": "game:metalplate-blackbronze", "quantity": 1},
       "N": {"type": "item", "code": "game:metalplate-brass", "quantity": 1},
@@ -39,32 +39,32 @@
     "output": {"type": "item", "code": "maltiezfirearms:lock-wheellock-blackbronze"}
   },
   {
-    "ingredientPattern": "INI,_B_",
+    "ingredientPattern": "INB",
     "ingredients": {
       "I": {"type": "item", "code": "game:metalplate-iron", "quantity": 1},
       "N": {"type": "item", "code": "game:metalnailsandstrips-iron", "quantity": 1},
       "B": {"type": "item", "code": "game:metalplate-brass", "quantity": 1}
     },
     "width": 3,
-    "height": 2,
+    "height": 1,
     "output": {"type": "item", "code": "maltiezfirearms:lock-matchlock-iron"}
   },
   {
-    "ingredientPattern": "INI,_B_",
+    "ingredientPattern": "INB",
     "ingredients": {
       "I": {"type": "item", "code": "game:metalplate-meteoriciron", "quantity": 1},
       "N": {"type": "item", "code": "game:metalnailsandstrips-meteoriciron", "quantity": 1},
       "B": {"type": "item", "code": "game:metalplate-brass", "quantity": 1}
     },
     "width": 3,
-    "height": 2,
+    "height": 1,
     "output": {"type": "item", "code": "maltiezfirearms:lock-matchlock-meteoriciron"}
   },
   {
     "ingredientPattern": "ISF,CB_",
     "ingredients": {
       "I": {"type": "item", "code": "game:metalplate-iron", "quantity": 1},
-      "S": {"type": "item", "code": "game:metalnailsandstrips-steel", "quantity": 2},
+      "S": {"type": "item", "code": "game:metalnailsandstrips-steel", "quantity": 1},
       "B": {"type": "item", "code": "game:metalplate-brass", "quantity": 1},
       "F": {"type": "item", "code": "game:flint", "quantity": 1},
       "C": {"type": "item", "code": "maltiezfirearms:schematic-flintlock"}
@@ -77,7 +77,7 @@
     "ingredientPattern": "ISF,_B_",
     "ingredients": {
       "I": {"type": "item", "code": "game:metalplate-steel", "quantity": 1},
-      "S": {"type": "item", "code": "game:metalnailsandstrips-steel", "quantity": 2},
+      "S": {"type": "item", "code": "game:metalnailsandstrips-steel", "quantity": 1},
       "B": {"type": "item", "code": "game:metalplate-brass", "quantity": 1},
       "F": {"type": "item", "code": "game:flint", "quantity": 1}
     },

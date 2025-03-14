@@ -69,6 +69,20 @@ public class MusketClient : MuzzleloaderClient, IOnGameTick
         }
     }
 
+    public void OnGameTick(ItemSlot slot, EntityPlayer player, ref int state, bool mainHand)
+    {
+        switch (GetState<MusketState>(mainHand))
+        {
+            case MusketState.Attack:
+                {
+                    TryAttack(BayonetAttack, slot, player, mainHand);
+                }
+                break;
+            default:
+                break;
+        }
+    }
+
     protected readonly MusketStats StatsMusket;
     protected readonly ItemInventoryBuffer BayonetInventory = new();
     protected const string BayonetInventoryId = "bayonet";
@@ -188,19 +202,6 @@ public class MusketClient : MuzzleloaderClient, IOnGameTick
         }
     }
     protected static string AnimationCategory(bool mainHand = true) => mainHand ? "main" : "mainOffhand";
-    public void OnGameTick(ItemSlot slot, EntityPlayer player, ref int state, bool mainHand)
-    {
-        switch (GetState<MusketState>(mainHand))
-        {
-            case MusketState.Attack:
-                {
-                    TryAttack(BayonetAttack, slot, player, mainHand);
-                }
-                break;
-            default:
-                break;
-        }
-    }
     protected static void RegisterCollider(string item, string type, MeleeAttack attack)
     {
 #if DEBUG
@@ -333,7 +334,7 @@ public class MusketItem : Item, IHasWeaponLogic, IHasRangedWeaponLogic, IHasIdle
     {
         base.OnHeldRenderOpaque(inSlot, byPlayer);
 
-        if (AnimationsManager.RenderDebugColliders)
+        if (DebugWindowManager.RenderDebugColliders)
         {
             ClientLogic?.RenderDebugCollider(inSlot, byPlayer);
         }

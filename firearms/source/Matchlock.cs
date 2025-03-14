@@ -18,7 +18,6 @@ public class MatchlockClient : MuzzleloaderClient
 
     protected override bool ShootCallback(ItemSlot slot, EntityPlayer player, bool mainHand)
     {
-        //AnimationBehavior?.Play(mainHand, mainHand ? Stats.AimAnimation : Stats.AimAnimationOffhand);
         SetState(MuzzleloaderState.Aim);
 
         return true;

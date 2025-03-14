@@ -4,7 +4,7 @@
   "maxstacksize": 64,
   "textures": {"linen": {"base": "game:block/linen"}},
   "shape": {"base": "maltiezfirearms:linenpatch"},
-  "creativeinventory": {"maltiezfirearms": ["*"]},
+  "creativeinventory": {"general": ["*"], "maltiezfirearms": ["*"]},
   "guiTransform": {"translation": {"x": 0, "y": 0, "z": 0}, "rotation": {"x": -37, "y": 29, "z": 0}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 6},
   "fpHandTransform": {"translation": {"x": 0.4, "y": 0.5, "z": 0.7}, "rotation": {"x": 12, "y": -57, "z": 1}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 3.77},
   "groundTransform": {"translation": {"x": 0, "y": 0, "z": 0}, "rotation": {"x": 0, "y": 0, "z": 0}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 3.99},

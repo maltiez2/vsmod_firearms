@@ -1,7 +1,7 @@
 ﻿{
   "code": "firearm",
   "class": "Firearms:Muzzleloader",
-  "creativeinventory": {"maltiezfirearms": ["*"]},
+  "creativeinventory": {"general": ["*"], "maltiezfirearms": ["*"]},
   "variantgroups": [{"code": "type", "states": ["pistol"]}, {"code": "material", "states": ["tinbronze", "bismuthbronze", "blackbronze", "tarnished"]}],
   "maxstacksize": 1,
   "storageFlags": 257,

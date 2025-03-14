@@ -631,7 +631,7 @@ public class MuzzleloaderClient : RangeWeaponClient
 
         return Stats.LoadAnimation[index];
     }
-    protected string GetShootingAnimation(bool mainhand, ItemSlot slot)
+    protected virtual string GetShootingAnimation(bool mainhand, ItemSlot slot)
     {
         string[] animations = mainhand ? Stats.ShootAnimation : Stats.ShootAnimationOffhand;
 

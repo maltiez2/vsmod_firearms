@@ -2,7 +2,7 @@
   "code": "firearm",
   "class": "Firearms:Matchlock",
   "variantgroups": [{"code": "type", "states": ["arquebus"]}, {"code": "material", "states": ["iron", "meteoriciron", "rusted"]}],
-  "creativeinventory": {"maltiezfirearms": ["*"]},
+  "creativeinventory": {"general": ["*"], "maltiezfirearms": ["*"]},
   "maxstacksize": 1,
   "durabilityByType": {"*-rusted": 10, "*": 400},
   "rackable": true,

@@ -2,7 +2,7 @@
   "code": "firearm",
   "class": "Firearms:Muzzleloader",
   "variantgroups": [{"code": "type", "states": ["carbine"]}, {"code": "material", "states": ["steel"]}],
-  "creativeinventory": {"maltiezfirearms": ["*"]},
+  "creativeinventory": {"general": ["*"], "maltiezfirearms": ["*"]},
   "maxstacksize": 1,
   "durability": 1250,
   "rackable": true,

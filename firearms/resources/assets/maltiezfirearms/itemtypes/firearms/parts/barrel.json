@@ -26,7 +26,7 @@
       }
     }
   ],
-  "creativeinventory": {"maltiezfirearms": ["*"]},
+  "creativeinventory": {"general": ["*"], "maltiezfirearms": ["*"]},
   "guiTransformByType": {
     "*-arquebus-*": {"translation": {"x": 0, "y": 0, "z": 0}, "rotation": {"x": -17, "y": -18, "z": 0}, "origin": {"x": -0.35, "y": 0.4, "z": -1.5}, "scale": 3.16},
     "*-blunderbuss-*": {"translation": {"x": 0, "y": 0, "z": 0}, "rotation": {"x": -17, "y": -18, "z": 0}, "origin": {"x": -0.35, "y": 0.35, "z": -1.6}, "scale": 3.16},
