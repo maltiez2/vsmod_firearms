@@ -9,14 +9,14 @@
 	"textureSizes": {
 	},
 	"textures": {
-		"plain": "game:block/cloth/linen/plain",
-		"brass": "game:block/metal/plate/brass",
-		"iron": "game:block/metal/plate/iron",
-		"lead": "game:block/metal/plate/lead",
-		"steel": "game:block/metal/plate/steel",
-		"flint": "game:block/stone/flint",
-		"kapok": "game:block/wood/debarked/oak",
-		"oak": "game:block/wood/debarked/oak"
+		"plain": "block/cloth/linen/plain",
+		"brass": "block/metal/plate/brass",
+		"iron": "block/metal/plate/iron",
+		"lead": "block/metal/plate/lead",
+		"steel": "block/metal/plate/steel",
+		"flint": "block/stone/flint",
+		"kapok": "block/wood/debarked/oak",
+		"oak": "block/wood/debarked/oak"
 	},
 	"elements": [
 		{

@@ -28,6 +28,13 @@ public class Igniteable : CollectibleBehavior
 
     public override void OnHeldInteractStart(ItemSlot slot, EntityAgent byEntity, BlockSelection blockSel, EntitySelection entitySel, bool firstEvent, ref EnumHandHandling handHandling, ref EnumHandling handling)
     {
+        byEntity.Api.Logger.Notification($"{byEntity.Api.Side} - blockSel: {blockSel?.Block != null}");
+
+        if (byEntity.Api.Side == EnumAppSide.Server)
+        {
+            //byEntity.Api.Logger.Notification($"{byEntity.Api.Side}");
+        }
+
         if (blockSel?.Block == null) return;
         string code = blockSel.Block.Code.ToShortString();
 
@@ -47,6 +54,9 @@ public class Igniteable : CollectibleBehavior
         {
             RepalceStack(slot, player);
             handling = EnumHandling.Handled;
+            handHandling = EnumHandHandling.Handled;
+
+            byEntity.Api.Logger.Notification($"{byEntity.Api.Side}");
         }
     }
 
