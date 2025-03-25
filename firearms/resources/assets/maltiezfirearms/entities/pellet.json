@@ -8,8 +8,8 @@
     "renderer": "Shape",
     "shape": {"base": "maltiezfirearms:ammo/pellet"},
     "textures": {"metal": {"base": "game:block/metal/plate/{material}"}},
-    "behaviors": [{"code": "passivephysics", "groundDragFactor": 1, "airDragFactor": 0.1, "gravityFactor": 0.5}, {"code": "interpolateposition"}]
+    "behaviors": [{"code": "passivephysics", "groundDragFactor": 1, "airDragFactor": 0.1, "gravityFactor": 0.2}, {"code": "interpolateposition"}]
   },
-  "server": {"behaviors": [{"code": "passivephysics", "groundDragFactor": 1, "airDragFactor": 0.1, "gravityFactor": 0.5}, {"code": "despawn", "minSeconds": 600}]},
+  "server": {"behaviors": [{"code": "passivephysics", "groundDragFactor": 1, "airDragFactor": 0.1, "gravityFactor": 0.2}, {"code": "despawn", "minSeconds": 600}]},
   "sounds": {}
 }

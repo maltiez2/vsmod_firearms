@@ -12,6 +12,7 @@ using Vintagestory.API.Common.Entities;
 using Vintagestory.API.Config;
 using Vintagestory.API.Server;
 using Vintagestory.API.Util;
+using VSImGui.Debug;
 
 namespace Firearms;
 
@@ -101,6 +102,9 @@ public class MuzzleloaderClient : RangeWeaponClient
         AnimationsManager.RegisterTransformByCode(FlaskTransform, $"Flask - {item.Code}");
         AnimationsManager.RegisterTransformByCode(LoadingEquipmentTransform, $"Loading - {item.Code}");
         AnimationsManager.RegisterTransformByCode(PrimingEquipmentTransform, $"Priming - {item.Code}");
+
+        //DebugWidgets.FloatDrag("test", "test", $"{item.Code}-followX", () => AimingStats.AnimationFollowX, (value) => AimingStats.AnimationFollowX = value);
+        //DebugWidgets.FloatDrag("test", "test", $"{item.Code}-followY", () => AimingStats.AnimationFollowY, (value) => AimingStats.AnimationFollowY = value);
     }
 
     public override void OnSelected(ItemSlot slot, EntityPlayer player, bool mainHand, ref int state)
@@ -919,6 +923,20 @@ public class MuzzleloaderServer : RangeWeaponServer
             };
 
             ProjectileSystem.Spawn(packet.ProjectileId[count], stats, spawnStats, ammo, slot.Itemstack, shooter);
+
+            /*for (int index = 0; index < 50; index++)
+            {
+                ProjectileSpawnStats spawnStats2 = new()
+                {
+                    ProducerEntityId = player.Entity.EntityId,
+                    DamageMultiplier = Stats.BulletDamageMultiplier,
+                    DamageStrength = Stats.BulletDamageStrength,
+                    Position = new Vector3d(packet.Position[0], packet.Position[1], packet.Position[2]),
+                    Velocity = GetDirectionWithDispersion(packet.Velocity, Stats.DispersionMOA) * Stats.BulletVelocity
+                };
+
+                ProjectileSystem.Spawn(Guid.NewGuid(), stats, spawnStats2, ammo, slot.Itemstack, shooter);
+            }*/
 
             count++;
         }

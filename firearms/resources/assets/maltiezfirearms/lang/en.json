@@ -6,7 +6,8 @@
   "item-firearm-arquebus-*": "Arquebus",
   "item-firearm-pistol-*": "Pistol",
   "item-firearm-superimposed-*": "Bossi carbine",
-  "item-firearm-blunderbuss-*": "Blunderbuss",
+  "item-firearm-blunderbuss-steel": "Blunderbuss (flintlock)",
+  "item-firearm-blunderbuss-*iron": "Blunderbuss (matchlock)",
   "item-firearm-jezail-*": "Jezail",
   "item-slug-copper": "Slug (copper)",
   "item-bullet-copper": "Bullet (copper)",
@@ -108,14 +109,15 @@
   
   "itemdesc-firearm-pistol-*": "Ammo: Bullet<br><br>Requires cocking lever for priming. Reload requires empty offhand.<br><br>Relatively weak but fast to reload. Can be shot from offhand. Carry a loaded pair for your wolf-problems.<br><br><font color=\"#99c9f9\"><i>Bronze wheel-lock pistol. Wheel creates sparks when rotates against a flint. Wheel is powered with clock spring. Copper alloys cannot produce sparks, so rusty gear is used for the wheel.</i></font><br><br><i>Hold 'Alt' to interact instead of aim/reload.</i><br>",
   "itemdesc-firearm-arquebus-*": "Ammo: Bullet<br><br>Requires lit match for shooting. Reload and aiming requires empty offhand.<br><br>Strong enough to one-shot a Ram, which makes hunting them much more convinient. Higher powder consumption, longer reload and need to have a lit match makes it less suitable for self-defence role than a pair of pistols.<br><br><font color=\"#99c9f9\"><i>Match-lock firearm of relatively simple construction. Smoldering match is used for igniting priming powder.</i></font><br><br><i>Hold 'Alt' to interact instead of aim/reload.</i><br>",
-  "itemdesc-firearm-blunderbuss-*": "Ammo: Pellet<br><br>Requires lit match for shooting. Reload and aiming requires empty offhand.<br><br>Shoots 8 pellets in a narrow cone. Requires two waddings instead of one. Stronger than arquebus if all pellets hit the target.<br><br><font color=\"#99c9f9\"><i>Match-lock firearm of relatively simple construction. Smoldering match is used for igniting priming powder.</i></font><br><br><i>Hold 'Alt' to interact instead of aim/reload.</i><br>",
+  "itemdesc-firearm-blunderbuss-steel": "Ammo: Pellet<br><br>Reload and aiming requires empty offhand.<br><br>Shoots 12 pellets in a narrow cone. Requires two waddings instead of one. Stronger than carbine if all pellets hit the target.<i>Hold 'Alt' to interact instead of aim/reload.</i><br>",
+  "itemdesc-firearm-blunderbuss-*iron": "Ammo: Pellet<br><br>Requires lit match for shooting. Reload and aiming requires empty offhand.<br><br>Shoots 8 pellets in a narrow cone. Requires two waddings instead of one. Stronger than arquebus if all pellets hit the target.<br><br><font color=\"#99c9f9\"><i>Match-lock firearm of relatively simple construction. Smoldering match is used for igniting priming powder.</i></font><br><br><i>Hold 'Alt' to interact instead of aim/reload.</i><br>",
   "itemdesc-firearm-musket-*": "Ammo: Slug<br><br>Reload and aiming requires empty offhand.<br><br>The strongest of firearms capable of one-shoting most of the enemies. Can be equiped with a bayonet (plug bayonet requires hammer in offhand to remove it). High powder consumption, very long reload and high cost makes it less economically viable for general use.<br><br><font color=\"#99c9f9\"><i>Smooth-bore flint-lock firearm with long barrel cappable of using a bayonet. Long barrel makes it longer to ram a bullet.</i></font><br><br><i>Hold 'Alt' to interact instead of aim/reload.</i><br>",
   "itemdesc-firearm-carbine-*": "Ammo: Slug<br><br>Reload and aiming requires empty offhand.<br><br>Not as strong as musket, but has faster reload and cheaper maintenance costs. Faster to aim and hinders movement less than a musket.<br><br><font color=\"#99c9f9\"><i>Smooth-bore flint-lock firearm with shortened barrel when compared to musket which makes it lighter and faster to reload.</i></font><br><br><i>Hold 'Alt' to interact instead of aim/reload.</i><br>",
   "itemdesc-firearm-superimposed-*": "Ammo: Bullet<br><br>Requires cocking lever for priming. Reload requires empty offhand.<br><br>Relatively weak but has two bullets ready to shoot. You need to load both shots to be able to shoot. And you need to shoot both shots to be able to reload.<br><br><font color=\"#99c9f9\"><i>Two-shot superimposed load wheel-lock carbine.</i></font><br><br><i>Hold 'Alt' to interact instead of aim/reload.</i><br>",
   
   "itemdesc-barrel-pistol-*": "Cast from bronze",
   "itemdesc-barrel-arquebus-*": "Smithed from iron",
-  "itemdesc-barrel-blunderbuss-*": "Smithed from iron",
+  "itemdesc-barrel-blunderbuss-*iron": "Smithed from iron",
   "itemdesc-ramrod-pistol-*": "Smithed from bronze",
   "itemdesc-ramrod-arquebus-*": "Smithed from iron",
   "itemdesc-ramrod-carbine-*": "Smithed from steel",
@@ -159,8 +161,6 @@
   "item-creature-slug-*": "Slug",
   "item-creature-bullet-*": "Bullet",
   "item-creature-pellet-*": "Pellet",
-
-
 
   "achtabname": "Firearms",
   "achievement-craftarquebus": "Arquebus",

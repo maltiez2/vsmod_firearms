@@ -61,8 +61,8 @@
       "AccuracyOvertimeSec": 0,
       "AllowSprint": false,
       "MoveSpeedPenalty": 0.1,
-      "AimDrift": 90,
-      "AimTwitch": 20,
+      "AimDrift": 5,
+      "AimTwitch": 2,
       "AnimationFollowX": 5.5,
       "AnimationFollowY": 5.5,
       "VerticalLimit": 0.25,
@@ -70,9 +70,9 @@
     },
     "LoadSpeedPenalty": -0.3,
     "BulletVelocity": 4,
-    "DispersionMOA": [0, 0],
+    "DispersionMOA": [90, 90],
     "Zeroing": -1.25,
-    "CancelReloadOnInAir": false
+    "CancelReloadOnInAir": true
   },
   "shape": {"base": "maltiezfirearms:firearms/pistol"},
   "texturesByType": {

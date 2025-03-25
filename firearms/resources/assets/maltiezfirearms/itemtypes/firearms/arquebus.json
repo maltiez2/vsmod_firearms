@@ -83,15 +83,15 @@
       "ZeroingAngle": 0,
       "AllowSprint": false,
       "MoveSpeedPenalty": 0.1,
-      "AimDrift": 90,
-      "AimTwitch": 20,
+      "AimDrift": 20,
+      "AimTwitch": 5,
       "AnimationFollowX": 5.5,
       "AnimationFollowY": 5.5,
       "VerticalLimit": 0.25,
       "VerticalOffset": -0.05
     },
     "BulletVelocity": 8,
-    "DispersionMOA": [0, 0],
+    "DispersionMOA": [60, 60],
     "Zeroing": -1,
     "CancelReloadOnInAir": true,
     "LoadSpeedPenalty": -2

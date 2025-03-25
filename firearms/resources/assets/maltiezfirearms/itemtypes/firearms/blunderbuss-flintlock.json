@@ -1,7 +1,7 @@
 ﻿{
   "code": "firearm",
-  "class": "Firearms:Matchlock",
-  "variantgroups": [{"code": "type", "states": ["blunderbuss"]}, {"code": "material", "states": ["iron", "meteoriciron", "rusted"]}],
+  "class": "Firearms:Muzzleloader",
+  "variantgroups": [{"code": "type", "states": ["blunderbuss"]}, {"code": "material", "states": ["steel"]}],
   "creativeinventory": {"general": ["*"], "maltiezfirearms": ["*"]},
   "maxstacksize": 1,
   "durabilityByType": {"*-rusted": 10, "*": 400},
@@ -18,10 +18,7 @@
         "collisionBox": {"x1": 0, "y1": 0, "z1": 0, "x2": 0, "y2": 0, "z2": 0}
       }
     },
-    {
-      "name": "CombatOverhaul:AnimatableAttachable",
-      "properties": {"animated-shape": "maltiezfirearms:firearms/blunderbuss-tp", "animated-shape-fp": "maltiezfirearms:firearms/blunderbuss"}
-    }
+    {"name": "CombatOverhaul:AnimatableAttachable", "properties": {"animated-shape": "maltiezfirearms:firearms/blunderbuss-flintlock"}}
   ],
   "attributes": {
     "toolrackTransform": {"translation": {"x": 0.9, "y": 0.55, "z": 0.5}, "rotation": {"x": 0, "y": 95, "z": -90}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 1.34},
@@ -49,7 +46,7 @@
       "ScaleXYZ": {"X": 0.81, "Y": 0.81, "Z": 0.81}
     },
     "BulletDamageMultiplier": 1,
-    "BulletDamageStrength": 4,
+    "BulletDamageStrength": 5,
     "BulletTransform": {"translation": {"x": -2.2, "y": 0.2, "z": -2.2}, "rotation": {"x": 0, "y": 0, "z": 0}, "scale": 0.3},
     "FlaskTransform": {"Translation": {"X": 0, "Y": 0, "Z": 0}, "Rotation": {"X": 0, "Y": 0, "Z": 0}, "Origin": {"X": 0, "Y": 0, "Z": 0}, "Scale": 1},
     "WaddingTransform": {"Translation": {"x": 0, "y": 0, "z": 0}, "Rotation": {"x": 0, "y": 0, "z": 0}, "Origin": {"X": 0, "Y": 0, "Z": 0}, "scale": 1},
@@ -57,25 +54,22 @@
     "ProficiencyStat": "firearmsProficiency",
     "IdleAnimation": "maltiezfirearms:firearms-shoulder",
     "ReadyAnimation": "maltiezfirearms:firearms-ready",
-    "LoadAnimation": ["maltiezfirearms:firearms-blunderbuss-load"],
-    "PrimeAnimation": "maltiezfirearms:firearms-blunderbuss-prime",
-    "CockingAnimation": "maltiezfirearms:firearms-blunderbuss-cocking",
-    "AimAnimation": "maltiezfirearms:firearms-blunderbuss-aim",
-    "ShootAnimation": ["maltiezfirearms:firearms-blunderbuss-shoot"],
-    "LoadedAnimation": "maltiezfirearms:firearms-blunderbuss-loaded",
-    "PrimedAnimation": "maltiezfirearms:firearms-blunderbuss-primed",
-    "CockedAnimation": "maltiezfirearms:firearms-blunderbuss-cocked",
+    "LoadAnimation": ["maltiezfirearms:firearms-blunderbuss-flintlock-load"],
+    "PrimeAnimation": "maltiezfirearms:firearms-blunderbuss-flintlock-prime",
+    "AimAnimation": "maltiezfirearms:firearms-blunderbuss-flintlock-aim",
+    "ShootAnimation": ["maltiezfirearms:firearms-blunderbuss-flintlock-shoot"],
+    "LoadedAnimation": "maltiezfirearms:firearms-blunderbuss-flintlock-loaded",
+    "PrimedAnimation": "maltiezfirearms:firearms-blunderbuss-flintlock-primed",
+    "CockedAnimation": "maltiezfirearms:firearms-blunderbuss-flintlock-cocked",
     "LoadTpAnimation": "arquebus-load",
     "PrimeTpAnimation": "arquebus-prime",
     "AimTpAnimation": "arquebus-aim",
     "MagazineSize": 1,
-    "BulletLoadedPerReload": 8,
-    "BulletsFiredPerShot": 8,
+    "BulletLoadedPerReload": 12,
+    "BulletsFiredPerShot": 12,
     "WaddingUsedPerReload": 2,
     "LoadPowderConsumption": 7,
     "PrimePowderConsumption": 1,
-    "CockingRequirementWildcard": "*match-lit",
-    "CockingRequirementMessage": "maltiezfirearms:requirement-missing-match",
     "BulletWildcard": "*pellet-*",
     "Aiming": {
       "AimDifficulty": 1,
@@ -97,11 +91,7 @@
     "CancelReloadOnInAir": true,
     "LoadSpeedPenalty": -2
   },
-  "shape": {"base": "maltiezfirearms:firearms/blunderbuss-tp"},
-  "texturesByType": {
-    "*-rusted": {"metal": {"base": "game:block/metal/corroded/normal1"}, "brass": {"base": "game:block/metal/tarnished/brass"}, "wood": {"base": "game:block/wood/charred"}},
-    "*": {"metal": {"base": "game:block/metal/plate/{material}"}, "brass": {"base": "game:block/metal/plate/brass"}, "wood": {"base": "game:block/wood/debarked/oak"}}
-  },
+  "shape": {"base": "maltiezfirearms:firearms/blunderbuss-flintlock"},
   "heldTpHitAnimation": "firearmsempty",
   "heldLeftTpIdleAnimation": "firearmsempty",
   "heldLeftReadyAnimation": "firearmsempty",

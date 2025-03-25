@@ -2,7 +2,7 @@
   "code": "barrel",
   "class": "Item",
   "variantgroups": [{"code": "weapon", "states": ["pistol", "arquebus", "blunderbuss", "carbine", "musket"]}, {"code": "material", "loadFromProperties": "block/toolmetal"}],
-  "allowedVariants": ["*-pistol-*bronze", "*-arquebus-*iron", "*-blunderbuss-*iron", "*-carbine-steel", "*-musket-steel"],
+  "allowedVariants": ["*-pistol-*bronze", "*-arquebus-*iron", "*-blunderbuss-*iron", "*-blunderbuss-steel", "*-carbine-steel", "*-musket-steel"],
   "shape": {"base": "maltiezfirearms:parts/barrel-{weapon}"},
   "textures": {"metal": {"base": "game:block/metal/plate/{material}"}},
   "attributes": {
