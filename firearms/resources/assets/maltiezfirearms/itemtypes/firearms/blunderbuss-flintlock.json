@@ -68,7 +68,7 @@
     "BulletLoadedPerReload": 12,
     "BulletsFiredPerShot": 12,
     "WaddingUsedPerReload": 2,
-    "LoadPowderConsumption": 7,
+    "LoadPowderConsumption": 11,
     "PrimePowderConsumption": 1,
     "BulletWildcard": "*pellet-*",
     "Aiming": {
@@ -85,7 +85,7 @@
       "VerticalLimit": 0.25,
       "VerticalOffset": -0.05
     },
-    "BulletVelocity": 6,
+    "BulletVelocity": 8,
     "DispersionMOA": [120, 120],
     "Zeroing": 0.25,
     "CancelReloadOnInAir": true,

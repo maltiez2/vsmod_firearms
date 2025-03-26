@@ -98,10 +98,12 @@ public class MuzzleloaderClient : RangeWeaponClient
         Stats = item.Attributes.AsObject<MuzzleloaderStats>();
         AimingStats = Stats.Aiming.ToStats();
 
-        AnimationsManager.RegisterTransformByCode(BulletTransform, $"Bullet - {item.Code}");
-        AnimationsManager.RegisterTransformByCode(FlaskTransform, $"Flask - {item.Code}");
-        AnimationsManager.RegisterTransformByCode(LoadingEquipmentTransform, $"Loading - {item.Code}");
-        AnimationsManager.RegisterTransformByCode(PrimingEquipmentTransform, $"Priming - {item.Code}");
+#if DEBUG
+        DebugWindowManager.RegisterTransformByCode(BulletTransform, $"Bullet - {item.Code}");
+        DebugWindowManager.RegisterTransformByCode(FlaskTransform, $"Flask - {item.Code}");
+        DebugWindowManager.RegisterTransformByCode(LoadingEquipmentTransform, $"Loading - {item.Code}");
+        DebugWindowManager.RegisterTransformByCode(PrimingEquipmentTransform, $"Priming - {item.Code}");
+#endif
 
         //DebugWidgets.FloatDrag("test", "test", $"{item.Code}-followX", () => AimingStats.AnimationFollowX, (value) => AimingStats.AnimationFollowX = value);
         //DebugWidgets.FloatDrag("test", "test", $"{item.Code}-followY", () => AimingStats.AnimationFollowY, (value) => AimingStats.AnimationFollowY = value);

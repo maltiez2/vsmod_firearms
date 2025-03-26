@@ -1,4 +1,5 @@
 ﻿using Vintagestory.API.Common;
+using Vintagestory.API.Config;
 using Vintagestory.API.MathTools;
 using Vintagestory.API.Util;
 
@@ -42,16 +43,28 @@ public class PowderFlask : Item
         }
 
         ItemSlot? powderSlot = null;
-        byEntity.WalkInventory(slot =>
-        {
-            if (slot?.Itemstack?.Item?.Code != null && WildcardUtil.Match(Stats.PowderWildcard, slot.Itemstack.Item.Code.ToString()))
-            {
-                powderSlot = slot;
-                return false;
-            }
 
-            return true;
-        });
+        EntityPlayer? player = byEntity as EntityPlayer;
+        foreach (ItemSlot hotbarSlot in player.Player.InventoryManager.GetOwnInventory(GlobalConstants.hotBarInvClassName))
+        {
+            if (hotbarSlot?.Itemstack?.Item?.Code != null && WildcardUtil.Match(Stats.PowderWildcard, hotbarSlot.Itemstack.Item.Code.ToString()))
+            {
+                powderSlot = hotbarSlot;
+                break;
+            }
+        }
+
+        if (powderSlot == null)
+        {
+            foreach (ItemSlot backpackSlot in player.Player.InventoryManager.GetOwnInventory(GlobalConstants.backpackInvClassName))
+            {
+                if (backpackSlot?.Itemstack?.Item?.Code != null && WildcardUtil.Match(Stats.PowderWildcard, backpackSlot.Itemstack.Item.Code.ToString()))
+                {
+                    powderSlot = backpackSlot;
+                    break;
+                }
+            }
+        }
 
         if (powderSlot?.Itemstack?.Item == null) return false;
 

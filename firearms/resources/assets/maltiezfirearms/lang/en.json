@@ -124,7 +124,7 @@
   "itemdesc-ramrod-musket-*": "Smithed from steel",
   "itemdesc-bayonet-blade-*": "Smithed from steel",
 
-  "itemdesc-powderflask-*": "Stores gunpowder for use in firearms and protectes it from water. Flask durability represents amount of powder in the flask.<br><br><i>Take gunpowder in offhand and press right mouse button with flask in main hand to fill it.</i><br>",
+  "itemdesc-powderflask-*": "Stores gunpowder for use in firearms and protectes it from water. Flask durability represents amount of powder in the flask.<br><br><i>Take gunpowder into inventory and press right mouse button with flask to fill it.</i><br>",
   "itemdesc-cockinglever-*": "Used to windup spring in wheel-lock pistol and bossi carbine<br>",
   "itemdesc-bayonet-socket-*": "Attack power (attached): -4.8 hp<br>Attack tier (attached): 5<br>Attack range (attached): 4 m<br><br>Can be attached to a musket to turn it into a spear. On melee attack bayonet's durability is consumed instead of musket's<br><br><font color=\"#99c9f9\"><i>Socket style bayonet that uses bayonet lug on a barrel. Allows to operate a gun while attached.</i></font><br><br><i>To attach/dettach use hotkey ('B' by default).</i><br>",
 
