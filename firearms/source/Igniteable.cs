@@ -28,35 +28,35 @@ public class Igniteable : CollectibleBehavior
 
     public override void OnHeldInteractStart(ItemSlot slot, EntityAgent byEntity, BlockSelection blockSel, EntitySelection entitySel, bool firstEvent, ref EnumHandHandling handHandling, ref EnumHandling handling)
     {
-        byEntity.Api.Logger.Notification($"{byEntity.Api.Side} - blockSel: {blockSel?.Block != null}");
-
         if (byEntity.Api.Side == EnumAppSide.Server)
         {
-            //byEntity.Api.Logger.Notification($"{byEntity.Api.Side}");
-        }
-
-        if (blockSel?.Block == null) return;
-        string code = blockSel.Block.Code.ToShortString();
-
-        bool satisfy = false;
-        foreach (string wildcard in Stats.IgniteFrom)
-        {
-            if (WildcardUtil.Match(wildcard, code))
+            if (byEntity is EntityPlayer player)
             {
-                satisfy = true;
-                break;
+                RepalceStack(slot, player);
             }
-        }
 
-        if (!satisfy) return;
-
-        if (byEntity is EntityPlayer player)
-        {
-            RepalceStack(slot, player);
             handling = EnumHandling.Handled;
             handHandling = EnumHandHandling.Handled;
+        }
+        else
+        {
+            if (blockSel?.Block == null) return;
+            string code = blockSel.Block.Code.ToShortString();
 
-            byEntity.Api.Logger.Notification($"{byEntity.Api.Side}");
+            bool satisfy = false;
+            foreach (string wildcard in Stats.IgniteFrom)
+            {
+                if (WildcardUtil.Match(wildcard, code))
+                {
+                    satisfy = true;
+                    break;
+                }
+            }
+
+            if (!satisfy) return;
+
+            handling = EnumHandling.Handled;
+            handHandling = EnumHandHandling.Handled;
         }
     }
 

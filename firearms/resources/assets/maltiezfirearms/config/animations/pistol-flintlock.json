@@ -1,0 +1,2833 @@
+﻿{
+  "firearms-pistol-flintlock-idle": {
+    "Hold": true,
+    "PlayerKeyFrames": [
+      {
+        "EasingTime": 300,
+        "EasingFunction": "Sin",
+        "DetachedAnchor": false,
+        "SwitchArms": false,
+        "PitchFollow": false,
+        "PitchDontFollow": false,
+        "FOVMultiplier": 1,
+        "BobbingAmplitude": 1,
+        "Elements": {"ItemAnchor": [-1.3, 1, 0, 0, 0, 69], "LowerArmR": [0, 0, 0, 0, 0, -5], "UpperArmR": [0, 0, 0, 0, -26, -59]}
+      }
+    ],
+    "ItemKeyFrames": [],
+    "SoundFrames": [],
+    "ParticlesFrames": [],
+    "CallbackFrames": [],
+    "ItemAnimationStart": 0,
+    "ItemAnimationEnd": 0
+  },
+  "firearms-pistol-flintlock-ready": {
+    "Hold": true,
+    "PlayerKeyFrames": [
+      {
+        "EasingTime": 300,
+        "EasingFunction": "Sin",
+        "DetachedAnchor": false,
+        "SwitchArms": false,
+        "PitchFollow": false,
+        "PitchDontFollow": false,
+        "FOVMultiplier": 1,
+        "BobbingAmplitude": 1,
+        "Elements": {"ItemAnchor": [-1.3, 1.3, 0, 0, 0, 65], "LowerArmR": [0, 0, 0, 0, 0, -92], "UpperArmR": [0, 0, 0, 0, -17, -40]}
+      }
+    ],
+    "ItemKeyFrames": [],
+    "SoundFrames": [],
+    "ParticlesFrames": [],
+    "CallbackFrames": [],
+    "ItemAnimationStart": 0,
+    "ItemAnimationEnd": 0
+  },
+  "firearms-pistol-flintlock-idle-offhand": {
+    "Hold": true,
+    "PlayerKeyFrames": [
+      {
+        "EasingTime": 300,
+        "EasingFunction": "Sin",
+        "DetachedAnchor": false,
+        "SwitchArms": false,
+        "PitchFollow": false,
+        "PitchDontFollow": false,
+        "FOVMultiplier": 1,
+        "BobbingAmplitude": 1,
+        "Elements": {"ItemAnchorL": [0, 0, 0, 0, 0, 0], "LowerArmL": [0, 0, 0, 0, 0, -31], "UpperArmL": [0, 0, 0, 0, 28, -45]}
+      }
+    ],
+    "ItemKeyFrames": [],
+    "SoundFrames": [],
+    "ParticlesFrames": [],
+    "CallbackFrames": [],
+    "ItemAnimationStart": 0,
+    "ItemAnimationEnd": 0
+  },
+  "firearms-pistol-flintlock-ready-offhand": {
+    "Hold": true,
+    "PlayerKeyFrames": [
+      {
+        "EasingTime": 300,
+        "EasingFunction": "Sin",
+        "DetachedAnchor": false,
+        "SwitchArms": false,
+        "PitchFollow": false,
+        "PitchDontFollow": false,
+        "FOVMultiplier": 1,
+        "BobbingAmplitude": 1,
+        "Elements": {"ItemAnchorL": [0, 0, 0, 0, 0, -15], "LowerArmL": [0, 0, 0, 0, 0, -90], "UpperArmL": [0.5, -0.5, 0, 0, 28, -38]}
+      }
+    ],
+    "ItemKeyFrames": [],
+    "SoundFrames": [],
+    "ParticlesFrames": [],
+    "CallbackFrames": [],
+    "ItemAnimationStart": 0,
+    "ItemAnimationEnd": 0
+  },
+  "firearms-pistol-flintlock-aim": {
+    "Hold": true,
+    "PlayerKeyFrames": [
+      {
+        "EasingTime": 300,
+        "EasingFunction": "Sin",
+        "DetachedAnchor": false,
+        "SwitchArms": false,
+        "PitchFollow": true,
+        "PitchDontFollow": false,
+        "FOVMultiplier": 0.907,
+        "BobbingAmplitude": 0.655,
+        "Elements": {"ItemAnchor": [-1.3, 1.2, 0.15, 6, -2, 95.3], "LowerArmR": [0, 0, 0, 13.1, 0, 2], "UpperArmR": [0, 0, 1, -7, 11.2, -96.9]}
+      }
+    ],
+    "ItemKeyFrames": [],
+    "SoundFrames": [],
+    "ParticlesFrames": [],
+    "CallbackFrames": [],
+    "ItemAnimationStart": 0,
+    "ItemAnimationEnd": 0
+  },
+  "firearms-pistol-flintlock-aim-offhand": {
+    "Hold": true,
+    "PlayerKeyFrames": [
+      {
+        "EasingTime": 300,
+        "EasingFunction": "Sin",
+        "DetachedAnchor": false,
+        "SwitchArms": false,
+        "PitchFollow": true,
+        "PitchDontFollow": false,
+        "FOVMultiplier": 0.907,
+        "BobbingAmplitude": 0.655,
+        "Elements": {"ItemAnchorL": [0.2, -0.5, -0.3, -9, 3, 11], "LowerArmL": [0, 0, 0, -15, 5, -2], "UpperArmL": [0.5, 0, -0.5, 0, -15, -99]}
+      }
+    ],
+    "ItemKeyFrames": [],
+    "SoundFrames": [],
+    "ParticlesFrames": [],
+    "CallbackFrames": [],
+    "ItemAnimationStart": 0,
+    "ItemAnimationEnd": 0
+  },
+  "firearms-pistol-flintlock-load": {
+    "Hold": true,
+    "PlayerKeyFrames": [
+      {
+        "EasingTime": 300,
+        "EasingFunction": "Linear",
+        "DetachedAnchor": false,
+        "SwitchArms": false,
+        "PitchFollow": false,
+        "PitchDontFollow": false,
+        "FOVMultiplier": 1,
+        "BobbingAmplitude": 0.8,
+        "Elements": {
+          "ItemAnchor": [3.69, -0.29000002, 0.4, 54, 0, 0],
+          "LowerArmR": [0, 0, 0, 0, 0, -63],
+          "UpperArmR": [0, 0, 0, 0, 21, -37],
+          "ItemAnchorL": [5.7, 0.2, 0.06, 0, 7, 13],
+          "LowerArmL": [0, 0, 0, 0, 0, -70],
+          "UpperArmL": [0, 0, 0, -7, -20, -47]
+        }
+      },
+      {
+        "EasingTime": 500,
+        "EasingFunction": "Linear",
+        "DetachedAnchor": false,
+        "SwitchArms": true,
+        "PitchFollow": false,
+        "PitchDontFollow": false,
+        "FOVMultiplier": 1,
+        "BobbingAmplitude": 0.8,
+        "Elements": {
+          "ItemAnchor": [3.69, -0.29000002, 0.4, 54, 0, 0],
+          "LowerArmR": [0, 0, 0, 0, 0, -105],
+          "UpperArmR": [0, 0, 0, -10, 14, 44],
+          "ItemAnchorL": [5.7, 0.2, 0.06, 0, 7, 13],
+          "LowerArmL": [0, 0, 0, 0, 0, -70],
+          "UpperArmL": [0, 0, 0, -7, -20, -47]
+        }
+      },
+      {
+        "EasingTime": 1005,
+        "EasingFunction": "Linear",
+        "DetachedAnchor": false,
+        "SwitchArms": true,
+        "PitchFollow": false,
+        "PitchDontFollow": false,
+        "FOVMultiplier": 1,
+        "BobbingAmplitude": 0.8,
+        "Elements": {
+          "ItemAnchor": [3.69, -0.29000002, 0.4, 54, 0, 0],
+          "LowerArmR": [0, 0, 0, 0, 0, -106],
+          "UpperArmR": [0, 0, 0, 21, -36, -42],
+          "ItemAnchorL": [5.7, 0.2, 0.06, 0, 7, 13],
+          "LowerArmL": [0, 0, 0, 0, 0, -70],
+          "UpperArmL": [0, 0, 0, -7, -20, -47]
+        }
+      },
+      {
+        "EasingTime": 1156,
+        "EasingFunction": "Linear",
+        "DetachedAnchor": false,
+        "SwitchArms": true,
+        "PitchFollow": false,
+        "PitchDontFollow": false,
+        "FOVMultiplier": 1,
+        "BobbingAmplitude": 0.8,
+        "Elements": {
+          "ItemAnchor": [3.69, -0.29000002, 0.4, 54, 0, 0],
+          "LowerArmR": [0, 0, 0, 0, 0, -88],
+          "UpperArmR": [0, 0, 0, 37, -13, -67],
+          "ItemAnchorL": [5.7, 0.2, 0.06, 0, 7, 13],
+          "LowerArmL": [0, 0, 0, 0, 0, -70],
+          "UpperArmL": [0, 0, 0, -7, -20, -47]
+        }
+      },
+      {
+        "EasingTime": 1308,
+        "EasingFunction": "Linear",
+        "DetachedAnchor": false,
+        "SwitchArms": true,
+        "PitchFollow": false,
+        "PitchDontFollow": false,
+        "FOVMultiplier": 1,
+        "BobbingAmplitude": 0.8,
+        "Elements": {
+          "ItemAnchor": [3.69, -0.29000002, 0.4, 54, 0, 0],
+          "LowerArmR": [0, 0, 0, 0, 0, -88],
+          "UpperArmR": [0, 0, 0, 61, -17, -58],
+          "ItemAnchorL": [5.7, 0.2, 0.06, 0, 7, 13],
+          "LowerArmL": [0, 0, 0, 0, 0, -70],
+          "UpperArmL": [0, 0, 0, -7, -20, -47]
+        }
+      },
+      {
+        "EasingTime": 1459,
+        "EasingFunction": "Linear",
+        "DetachedAnchor": false,
+        "SwitchArms": true,
+        "PitchFollow": false,
+        "PitchDontFollow": false,
+        "FOVMultiplier": 1,
+        "BobbingAmplitude": 0.8,
+        "Elements": {
+          "ItemAnchor": [3.69, -0.29000002, 0.4, 54, 0, 0],
+          "LowerArmR": [0, 0, 0, 0, 0, -88],
+          "UpperArmR": [0, 0, 0, 37, -13, -67],
+          "ItemAnchorL": [5.7, 0.2, 0.06, 0, 7, 13],
+          "LowerArmL": [0, 0, 0, 0, 0, -70],
+          "UpperArmL": [0, 0, 0, -7, -20, -47]
+        }
+      },
+      {
+        "EasingTime": 1611,
+        "EasingFunction": "Linear",
+        "DetachedAnchor": false,
+        "SwitchArms": true,
+        "PitchFollow": false,
+        "PitchDontFollow": false,
+        "FOVMultiplier": 1,
+        "BobbingAmplitude": 0.8,
+        "Elements": {
+          "ItemAnchor": [3.69, -0.29000002, 0.4, 54, 0, 0],
+          "LowerArmR": [0, 0, 0, 0, 0, -95],
+          "UpperArmR": [0, 0, 0, 12, -13, -64],
+          "ItemAnchorL": [5.7, 0.2, 0.06, 0, 7, 13],
+          "LowerArmL": [0, 0, 0, 0, 0, -70],
+          "UpperArmL": [0, 0, 0, -7, -20, -47]
+        }
+      },
+      {
+        "EasingTime": 2015,
+        "EasingFunction": "Linear",
+        "DetachedAnchor": false,
+        "SwitchArms": true,
+        "PitchFollow": false,
+        "PitchDontFollow": false,
+        "FOVMultiplier": 1,
+        "BobbingAmplitude": 0.8,
+        "Elements": {
+          "ItemAnchor": [3.69, -0.29000002, 0.4, 54, 0, 0],
+          "LowerArmR": [0, 0, 0, 0, 0, -105],
+          "UpperArmR": [0, 0, 0, 0, -6, 44],
+          "ItemAnchorL": [5.7, 0.2, 0.06, 0, 7, 13],
+          "LowerArmL": [0, 0, 0, 0, 0, -70],
+          "UpperArmL": [0, 0, 0, -7, -20, -47]
+        }
+      },
+      {
+        "EasingTime": 2200,
+        "EasingFunction": "Linear",
+        "DetachedAnchor": false,
+        "SwitchArms": true,
+        "PitchFollow": false,
+        "PitchDontFollow": false,
+        "FOVMultiplier": 1,
+        "BobbingAmplitude": 0.8,
+        "Elements": {
+          "ItemAnchor": [3.69, -0.29000002, 0.4, 54, 0, 0],
+          "LowerArmR": [0, 0, 0, 0, 0, -71],
+          "UpperArmR": [0, 0, 0, 24, 23, -14],
+          "ItemAnchorL": [5.7, 0.2, 0.06, 0, 7, 13],
+          "LowerArmL": [0, 0, 0, 0, 0, -70],
+          "UpperArmL": [0, 0, 0, -7, -20, -47]
+        }
+      },
+      {
+        "EasingTime": 2419,
+        "EasingFunction": "Linear",
+        "DetachedAnchor": false,
+        "SwitchArms": true,
+        "PitchFollow": false,
+        "PitchDontFollow": false,
+        "FOVMultiplier": 1,
+        "BobbingAmplitude": 0.8,
+        "Elements": {
+          "ItemAnchor": [3.69, -0.29000002, 0.4, 54, 0, 0],
+          "LowerArmR": [0, 0, 0, 0, 0, -71],
+          "UpperArmR": [0, 0, 0, 24, -5, -81],
+          "ItemAnchorL": [5.7, 0.2, 0.06, 0, 7, 13],
+          "LowerArmL": [0, 0, 0, 0, 0, -70],
+          "UpperArmL": [0, 0, 0, -7, -20, -47]
+        }
+      },
+      {
+        "EasingTime": 2621,
+        "EasingFunction": "Linear",
+        "DetachedAnchor": false,
+        "SwitchArms": true,
+        "PitchFollow": false,
+        "PitchDontFollow": false,
+        "FOVMultiplier": 1,
+        "BobbingAmplitude": 0.8,
+        "Elements": {
+          "ItemAnchor": [3.69, -0.29000002, 0.4, 54, 0, 0],
+          "LowerArmR": [0, 0, 0, 0, 0, -77],
+          "UpperArmR": [0, 0, 0, 24, 2, -67],
+          "ItemAnchorL": [5.7, 0.2, 0.06, 0, 7, 13],
+          "LowerArmL": [0, 0, 0, 0, 0, -70],
+          "UpperArmL": [0, 0, 0, -7, -20, -47]
+        }
+      },
+      {
+        "EasingTime": 2823,
+        "EasingFunction": "Linear",
+        "DetachedAnchor": false,
+        "SwitchArms": true,
+        "PitchFollow": false,
+        "PitchDontFollow": false,
+        "FOVMultiplier": 1,
+        "BobbingAmplitude": 0.8,
+        "Elements": {
+          "ItemAnchor": [3.69, -0.29000002, 0.4, 54, 0, 0],
+          "LowerArmR": [0, 0, 0, 0, 0, -79.2],
+          "UpperArmR": [0, 0, 0, 45, -4.3, -63],
+          "ItemAnchorL": [5.7, 0.2, 0.06, 0, 7, 13],
+          "LowerArmL": [0, 0, 0, 0, 0, -67],
+          "UpperArmL": [0, 0, 0, -7, -20, -47]
+        }
+      },
+      {
+        "EasingTime": 3025,
+        "EasingFunction": "Linear",
+        "DetachedAnchor": false,
+        "SwitchArms": true,
+        "PitchFollow": false,
+        "PitchDontFollow": false,
+        "FOVMultiplier": 1,
+        "BobbingAmplitude": 0.8,
+        "Elements": {
+          "ItemAnchor": [3.69, -0.29000002, 0.4, 54, 0, 0],
+          "LowerArmR": [0, 0, 0, 0, 0, -72.2],
+          "UpperArmR": [0, 0, 0, 12, 11, -55],
+          "ItemAnchorL": [5.7, 0.2, 0.06, 0, 7, 13],
+          "LowerArmL": [0, 0, 0, 0, 0, -70],
+          "UpperArmL": [0, 0, 0, -7, -20, -47]
+        }
+      },
+      {
+        "EasingTime": 3277,
+        "EasingFunction": "Linear",
+        "DetachedAnchor": false,
+        "SwitchArms": true,
+        "PitchFollow": false,
+        "PitchDontFollow": false,
+        "FOVMultiplier": 1,
+        "BobbingAmplitude": 0.8,
+        "Elements": {
+          "ItemAnchor": [3.69, -0.29000002, 0.4, 54, 0, 0],
+          "LowerArmR": [0, 0, 0, 0, 0, -51.2],
+          "UpperArmR": [0, 0, 0, 12, -8, -104],
+          "ItemAnchorL": [5.7, 0.2, 0.06, 0, 7, 13],
+          "LowerArmL": [0, 0, 0, 0, 0, -70],
+          "UpperArmL": [0, 0, 0, -7, -20, -47]
+        }
+      },
+      {
+        "EasingTime": 3530,
+        "EasingFunction": "Linear",
+        "DetachedAnchor": false,
+        "SwitchArms": true,
+        "PitchFollow": false,
+        "PitchDontFollow": false,
+        "FOVMultiplier": 1,
+        "BobbingAmplitude": 0.8,
+        "Elements": {
+          "ItemAnchor": [3.69, -0.29000002, 0.4, 54, 0, 0],
+          "LowerArmR": [0, 0, 0, 0, 0, -51.2],
+          "UpperArmR": [0, 0, 0, 25, -18, -102],
+          "ItemAnchorL": [5.7, 0.2, 0.06, 0, 7, 13],
+          "LowerArmL": [0, 0, 0, 0, 0, -70],
+          "UpperArmL": [0, 0, 0, -7, -20, -47]
+        }
+      },
+      {
+        "EasingTime": 3631,
+        "EasingFunction": "Linear",
+        "DetachedAnchor": false,
+        "SwitchArms": true,
+        "PitchFollow": false,
+        "PitchDontFollow": false,
+        "FOVMultiplier": 1,
+        "BobbingAmplitude": 0.8,
+        "Elements": {
+          "ItemAnchor": [3.69, -0.29000002, 0.4, 54, 0, 0],
+          "LowerArmR": [0, 0, 0, 0, 0, -31.2],
+          "UpperArmR": [0, 0, 0, 25, -27, -120],
+          "ItemAnchorL": [5.7, 0.2, 0.06, 0, 7, 13],
+          "LowerArmL": [0, 0, 0, 0, 0, -70],
+          "UpperArmL": [0, 0, 0, -7, -20, -47]
+        }
+      },
+      {
+        "EasingTime": 3800,
+        "EasingFunction": "Linear",
+        "DetachedAnchor": false,
+        "SwitchArms": true,
+        "PitchFollow": false,
+        "PitchDontFollow": false,
+        "FOVMultiplier": 1,
+        "BobbingAmplitude": 0.8,
+        "Elements": {
+          "ItemAnchor": [3.69, -0.29000002, 0.4, 54, 0, 0],
+          "LowerArmR": [0, 0, 0, 0, 0, -50.2],
+          "UpperArmR": [0, 0, 0, 23, -14, -104],
+          "ItemAnchorL": [5.7, 0.2, 0.06, 0, 7, 13],
+          "LowerArmL": [0, 0, 0, 0, 0, -68],
+          "UpperArmL": [0, 0, 0, -7, -20, -47]
+        }
+      },
+      {
+        "EasingTime": 4035,
+        "EasingFunction": "Linear",
+        "DetachedAnchor": false,
+        "SwitchArms": true,
+        "PitchFollow": false,
+        "PitchDontFollow": false,
+        "FOVMultiplier": 1,
+        "BobbingAmplitude": 0.8,
+        "Elements": {
+          "ItemAnchor": [3.69, -0.29000002, 0.4, 54, 0, 0],
+          "LowerArmR": [0, 0, 0, 0, 0, -76.2],
+          "UpperArmR": [0, 0, 0, 25, 6, -70],
+          "ItemAnchorL": [5.7, 0.2, 0.06, 0, 7, 13],
+          "LowerArmL": [0, 0, 0, 0, 0, -68],
+          "UpperArmL": [0, 0, 0, -7, -20, -47]
+        }
+      },
+      {
+        "EasingTime": 4186,
+        "EasingFunction": "Linear",
+        "DetachedAnchor": false,
+        "SwitchArms": true,
+        "PitchFollow": false,
+        "PitchDontFollow": false,
+        "FOVMultiplier": 1,
+        "BobbingAmplitude": 0.8,
+        "Elements": {
+          "ItemAnchor": [3.69, -0.29000002, 0.4, 54, 0, 0],
+          "LowerArmR": [0, 0, 0, 0, 0, -72.2],
+          "UpperArmR": [0, 0, 0, 25, -1, -79],
+          "ItemAnchorL": [5.7, 0.2, 0.06, 0, 7, 13],
+          "LowerArmL": [0, 0, 0, 0, 0, -70],
+          "UpperArmL": [0, 0, 0, -7, -20, -47]
+        }
+      },
+      {
+        "EasingTime": 4338,
+        "EasingFunction": "Linear",
+        "DetachedAnchor": false,
+        "SwitchArms": true,
+        "PitchFollow": false,
+        "PitchDontFollow": false,
+        "FOVMultiplier": 1,
+        "BobbingAmplitude": 0.8,
+        "Elements": {
+          "ItemAnchor": [3.69, -0.29000002, 0.4, 54, 0, 0],
+          "LowerArmR": [0, 0, 0, 0, 0, -76.2],
+          "UpperArmR": [0, 0, 0, 25, 6, -69],
+          "ItemAnchorL": [5.7, 0.2, 0.06, 0, 7, 13],
+          "LowerArmL": [0, 0, 0, 0, 0, -68],
+          "UpperArmL": [0, 0, 0, -7, -20, -47]
+        }
+      },
+      {
+        "EasingTime": 4641,
+        "EasingFunction": "Linear",
+        "DetachedAnchor": false,
+        "SwitchArms": true,
+        "PitchFollow": false,
+        "PitchDontFollow": false,
+        "FOVMultiplier": 1,
+        "BobbingAmplitude": 0.8,
+        "Elements": {
+          "ItemAnchor": [3.69, -0.29000002, 0.4, 54, 0, 0],
+          "LowerArmR": [0, 0, 0, 0, 0, -51.2],
+          "UpperArmR": [0, 0, 0, 16, -9, -105],
+          "ItemAnchorL": [5.7, 0.2, 0.06, 0, 7, 13],
+          "LowerArmL": [0, 0, 0, 0, 0, -70],
+          "UpperArmL": [0, 0, 0, -7, -20, -47]
+        }
+      },
+      {
+        "EasingTime": 4994,
+        "EasingFunction": "Linear",
+        "DetachedAnchor": false,
+        "SwitchArms": true,
+        "PitchFollow": false,
+        "PitchDontFollow": false,
+        "FOVMultiplier": 1,
+        "BobbingAmplitude": 0.8,
+        "Elements": {
+          "ItemAnchor": [3.69, -0.29000002, 0.4, 54, 0, 0],
+          "LowerArmR": [0, 0, 0, 0, 0, -51.2],
+          "UpperArmR": [0, 0, 0, 8, -2, -105],
+          "ItemAnchorL": [5.7, 0.2, 0.06, 0, 7, 13],
+          "LowerArmL": [0, 0, 0, 0, 0, -70],
+          "UpperArmL": [0, 0, 0, -7, -20, -47]
+        }
+      },
+      {
+        "EasingTime": 5247,
+        "EasingFunction": "Linear",
+        "DetachedAnchor": false,
+        "SwitchArms": true,
+        "PitchFollow": false,
+        "PitchDontFollow": false,
+        "FOVMultiplier": 1,
+        "BobbingAmplitude": 0.8,
+        "Elements": {
+          "ItemAnchor": [3.69, -0.29000002, 0.4, 54, 0, 0],
+          "LowerArmR": [0, 0, 0, 0, 0, -51.2],
+          "UpperArmR": [0, 0, 0, 8, 0, -99],
+          "ItemAnchorL": [5.7, 0.2, 0.06, 0, 7, 13],
+          "LowerArmL": [0, 0, 0, 0, 0, -70],
+          "UpperArmL": [0, 0, 0, -7, -20, -47]
+        }
+      },
+      {
+        "EasingTime": 5500,
+        "EasingFunction": "Linear",
+        "DetachedAnchor": false,
+        "SwitchArms": true,
+        "PitchFollow": false,
+        "PitchDontFollow": false,
+        "FOVMultiplier": 1,
+        "BobbingAmplitude": 0.8,
+        "Elements": {
+          "ItemAnchor": [3.69, -0.29000002, 0.4, 54, 0, 0],
+          "LowerArmR": [0, 0, 0, 0, 0, -73.2],
+          "UpperArmR": [0, 0, 0, 8, 10, -59],
+          "ItemAnchorL": [5.7, 0.2, 0.06, 0, 7, 13],
+          "LowerArmL": [0, 0, 0, 0, 0, -70],
+          "UpperArmL": [0, 0, 0, -7, -20, -47]
+        }
+      },
+      {
+        "EasingTime": 6000,
+        "EasingFunction": "Linear",
+        "DetachedAnchor": false,
+        "SwitchArms": true,
+        "PitchFollow": false,
+        "PitchDontFollow": false,
+        "FOVMultiplier": 1,
+        "BobbingAmplitude": 0.8,
+        "Elements": {
+          "ItemAnchor": [3.69, -0.29000002, 0.4, 54, 0, 0],
+          "LowerArmR": [0, 0, 0, 0, 0, -63],
+          "UpperArmR": [0, 0, 0, 0, 21, -37],
+          "ItemAnchorL": [5.7, 0.2, 0.06, 0, 7, 13],
+          "LowerArmL": [0, 0, 0, 0, 0, -70],
+          "UpperArmL": [0, 0, 0, -7, -20, -47]
+        }
+      }
+    ],
+    "ItemKeyFrames": [
+      {
+        "DurationFraction": 0,
+        "EasingFunction": "Linear",
+        "Elements": {
+          "Ramrod_shaft": [0, 0, 0, 0, 0, 0],
+          "Flask": [0, 0, 0, 0, 0, 0],
+          "Bullet": [8, 0, 23, 0, 0, 0],
+          "Ramrod": [0, 0, 0, 0, 0, 0],
+          "Linen_3": [-0.15, -0.15, 0, 0, 0, 0],
+          "Flask_origin_inner": [0, 0, 0, 0, 0, 0],
+          "Plug": [0, 0, 0, 0, 0, 0],
+          "Flask_origin": [-56, 0, -48, 0, 0, 0],
+          "Linen_1": [-0.15, 0.15, 0, 0, 0, 0],
+          "Linen_0": [0.15, 0.15, 0, 0, 0, 0],
+          "Linen_2": [0.15, -0.15, 0, 0, 0, 0],
+          "Patch": [8, 0, 23, 0, 0, 0]
+        }
+      },
+      {
+        "DurationFraction": 0.10101011,
+        "EasingFunction": "Linear",
+        "Elements": {
+          "Ramrod_shaft": [0, 0, 0, 0, 0, 0],
+          "Flask": [0, 0, 0, 0, 0, 0],
+          "Bullet": [8, 0, 23, 0, 0, 0],
+          "Ramrod": [0, 0, 0, 0, 0, 0],
+          "Linen_3": [-0.15, -0.15, 0, 0, 0, 0],
+          "Flask_origin_inner": [0, 0, 0, 0, 0, 0],
+          "Plug": [0, 0, 0, 0, 0, 0],
+          "Flask_origin": [-56, 0.9, -79, 0, 0, 0],
+          "Linen_1": [-0.15, 0.15, 0, 0, 0, 0],
+          "Linen_0": [0.15, 0.15, 0, 0, 0, 0],
+          "Linen_2": [0.15, -0.15, 0, 0, 0, 0],
+          "Patch": [8, 0, 23, 0, 0, 0]
+        }
+      },
+      {
+        "DurationFraction": 0.13131313,
+        "EasingFunction": "Linear",
+        "Elements": {
+          "Ramrod_shaft": [0, 0, 0, 0, 0, 0],
+          "Flask": [0, 0, 0, 0, 0, 0],
+          "Bullet": [8, 0, 23, 0, 0, 0],
+          "Ramrod": [0, 0, 0, 0, 0, 0],
+          "Linen_3": [-0.15, -0.15, 0, 0, 0, 0],
+          "Flask_origin_inner": [0, 0, 0, 0, 42, 0],
+          "Plug": [0, 0, 0, -29, 0, 0],
+          "Flask_origin": [-61.5, 0.9, -78.5, 0, 0, 0],
+          "Linen_1": [-0.15, 0.15, 0, 0, 0, 0],
+          "Linen_0": [0.15, 0.15, 0, 0, 0, 0],
+          "Linen_2": [0.15, -0.15, 0, 0, 0, 0],
+          "Patch": [8, 0, 23, 0, 0, 0]
+        }
+      },
+      {
+        "DurationFraction": 0.16161616,
+        "EasingFunction": "Linear",
+        "Elements": {
+          "Ramrod_shaft": [0, 0, 0, 0, 0, 0],
+          "Flask": [0, 0, 0, 0, 0, 0],
+          "Bullet": [8, 0, 23, 0, 0, 0],
+          "Ramrod": [0, 0, 0, 0, 0, 0],
+          "Linen_3": [-0.15, -0.15, 0, 0, 0, 0],
+          "Flask_origin_inner": [0, 0, 0, 0, 80, 0],
+          "Plug": [0, 0, 0, -29, 0, 0],
+          "Flask_origin": [-61.7, 0.9, -77.5, 0, 0, 0],
+          "Linen_1": [-0.15, 0.15, 0, 0, 0, 0],
+          "Linen_0": [0.15, 0.15, 0, 0, 0, 0],
+          "Linen_2": [0.15, -0.15, 0, 0, 0, 0],
+          "Patch": [8, 0, 23, 0, 0, 0]
+        }
+      },
+      {
+        "DurationFraction": 0.1919192,
+        "EasingFunction": "Linear",
+        "Elements": {
+          "Ramrod_shaft": [0, 0, 0, 0, 0, 0],
+          "Flask": [0, 0, 0, 0, 0, 0],
+          "Bullet": [8, 0, 23, 0, 0, 0],
+          "Ramrod": [0, 0, 0, 0, 0, 0],
+          "Linen_3": [-0.15, -0.15, 0, 0, 0, 0],
+          "Flask_origin_inner": [0, 0, 0, 0, 42, 0],
+          "Plug": [0, 0, 0, -29, 0, 0],
+          "Flask_origin": [-61.5, 0.9, -78.5, 0, 0, 0],
+          "Linen_1": [-0.15, 0.15, 0, 0, 0, 0],
+          "Linen_0": [0.15, 0.15, 0, 0, 0, 0],
+          "Linen_2": [0.15, -0.15, 0, 0, 0, 0],
+          "Patch": [8, 0, 23, 0, 0, 0]
+        }
+      },
+      {
+        "DurationFraction": 0.22222222,
+        "EasingFunction": "Linear",
+        "Elements": {
+          "Ramrod_shaft": [0, 0, 0, 0, 0, 0],
+          "Flask": [0, 0, 0, 0, 0, 0],
+          "Bullet": [8, 0, 23, 0, 0, 0],
+          "Ramrod": [0, 0, 0, 0, 0, 0],
+          "Linen_3": [-0.15, -0.15, 0, 0, 0, 0],
+          "Flask_origin_inner": [0, 0, 0, 0, 0, 0],
+          "Plug": [0, 0, 0, 0, 0, 0],
+          "Flask_origin": [-60, 0.9, -79, 0, 0, 0],
+          "Linen_1": [-0.15, 0.15, 0, 0, 0, 0],
+          "Linen_0": [0.15, 0.15, 0, 0, 0, 0],
+          "Linen_2": [0.15, -0.15, 0, 0, 0, 0],
+          "Patch": [8, 0, 23, 0, 0, 0]
+        }
+      },
+      {
+        "DurationFraction": 0.3030303,
+        "EasingFunction": "Linear",
+        "Elements": {
+          "Ramrod_shaft": [0, 0, 0, 0, 0, 0],
+          "Flask": [0, 0, 0, 0, 0, 0],
+          "Bullet": [8, 0, 23, 0, 0, 0],
+          "Ramrod": [0, 0, 0, 0, 0, 0],
+          "Linen_3": [-0.15, -0.15, 0, 0, 0, 0],
+          "Flask_origin_inner": [0, 0, 0, 0, 0, 0],
+          "Plug": [0, 0, 0, 0, 0, 0],
+          "Flask_origin": [-56, 0, -48, 0, 0, 0],
+          "Linen_1": [-0.15, 0.15, 0, 0, 0, 0],
+          "Linen_0": [0.15, 0.15, 0, 0, 0, 0],
+          "Linen_2": [0.15, -0.15, 0, 0, 0, 0],
+          "Patch": [8, 0, 23, 0, 0, 0]
+        }
+      },
+      {
+        "DurationFraction": 0.3838384,
+        "EasingFunction": "Linear",
+        "Elements": {
+          "Ramrod_shaft": [0, 0, 0, 0, 0, 0],
+          "Flask": [0, 0, 0, 0, 0, 0],
+          "Bullet": [0, 0, -4.1, 0, 0, 0],
+          "Ramrod": [0, 0, 0, 0, 0, 0],
+          "Linen_3": [-0.15, -0.15, 0, 0, 0, 0],
+          "Flask_origin_inner": [0, 0, 0, 0, 0, 0],
+          "Plug": [0, 0, 0, 0, 0, 0],
+          "Flask_origin": [-56, 0, -48, 0, 0, 0],
+          "Linen_1": [-0.15, 0.15, 0, 0, 0, 0],
+          "Linen_0": [0.15, 0.15, 0, 0, 0, 0],
+          "Linen_2": [0.15, -0.15, 0, 0, 0, 0],
+          "Patch": [0, 0, -4, 0, 0, 0]
+        }
+      },
+      {
+        "DurationFraction": 0.42424244,
+        "EasingFunction": "Linear",
+        "Elements": {
+          "Ramrod_shaft": [0, 0, 0, 0, 0, 0],
+          "Flask": [0, 0, 0, 0, 0, 0],
+          "Bullet": [0, 0, -1.1, 0, 0, 0],
+          "Ramrod": [0, 0, 0, 0, 0, 0],
+          "Linen_3": [-0.15, -0.15, 0, 0, 0, 0],
+          "Flask_origin_inner": [0, 0, 0, 0, 0, 0],
+          "Plug": [0, 0, 0, 0, 0, 0],
+          "Flask_origin": [-56, 0, -48, 0, 0, 0],
+          "Linen_1": [-0.15, 0.15, 0, 0, 0, 0],
+          "Linen_0": [0.15, 0.15, 0, 0, 0, 0],
+          "Linen_2": [0.15, -0.15, 0, 0, 0, 0],
+          "Patch": [0, 0, -1, 0, 0, 0]
+        }
+      },
+      {
+        "DurationFraction": 0.46464643,
+        "EasingFunction": "Linear",
+        "Elements": {
+          "Ramrod_shaft": [0, 0, 0, 0, 0, 0],
+          "Flask": [0, 0, 0, 0, 0, 0],
+          "Bullet": [0, 0, -0.8, 0, 0, 0],
+          "Ramrod": [0, 0, 0, 0, 0, 0],
+          "Linen_3": [0, 0, 0, 0, 0, 0],
+          "Flask_origin_inner": [0, 0, 0, 0, 0, 0],
+          "Plug": [0, 0, 0, 0, 0, 0],
+          "Flask_origin": [-56, 0, -48, 0, 0, 0],
+          "Linen_1": [0, 0, 0, 0, 0, 0],
+          "Linen_0": [0, 0, 0, 0, 0, 0],
+          "Linen_2": [0, 0, 0, 0, 0, 0],
+          "Patch": [0, 0, -0.95, 0, 0, 0]
+        }
+      },
+      {
+        "DurationFraction": 0.5050505,
+        "EasingFunction": "Linear",
+        "Elements": {
+          "Ramrod_shaft": [0, 0, 0, 0, 0, 0],
+          "Flask": [0, 0, 0, 0, 0, 0],
+          "Bullet": [0, 0, -0.8, 0, 0, 0],
+          "Ramrod": [0, 0, 0, 0, 0, 0],
+          "Linen_3": [0, 0, 0, 0, 0, 0],
+          "Flask_origin_inner": [0, 0, 0, 0, 0, 0],
+          "Plug": [0, 0, 0, 0, 0, 0],
+          "Flask_origin": [-56, 0, -48, 0, 0, 0],
+          "Linen_1": [0, 0, 0, 0, 0, 0],
+          "Linen_0": [0, 0, 0, 0, 0, 0],
+          "Linen_2": [0, 0, 0, 0, 0, 0],
+          "Patch": [0, 0, -0.95, 0, 0, 0]
+        }
+      },
+      {
+        "DurationFraction": 0.5555556,
+        "EasingFunction": "Linear",
+        "Elements": {
+          "Ramrod_shaft": [0, 0, 0, 0, 0, 0],
+          "Flask": [0, 0, 0, 0, 0, 0],
+          "Bullet": [0, 0, -0.8, 0, 0, 0],
+          "Ramrod": [0, 0, -11, 0, 0, 0],
+          "Linen_3": [0, 0, 0, 0, 0, 0],
+          "Flask_origin_inner": [0, 0, 0, 0, 0, 0],
+          "Plug": [0, 0, 0, 0, 0, 0],
+          "Flask_origin": [-56, 0, -48, 0, 0, 0],
+          "Linen_1": [0, 0, 0, 0, 0, 0],
+          "Linen_0": [0, 0, 0, 0, 0, 0],
+          "Linen_2": [0, 0, 0, 0, 0, 0],
+          "Patch": [0, 0, -0.95, 0, 0, 0]
+        }
+      },
+      {
+        "DurationFraction": 0.6060606,
+        "EasingFunction": "Linear",
+        "Elements": {
+          "Ramrod_shaft": [0, 0, 0, 174, 0, 0],
+          "Flask": [0, 0, 0, 0, 0, 0],
+          "Bullet": [0, 0, -0.8, 0, 0, 0],
+          "Ramrod": [0, 0, -11, 0, 0, 0],
+          "Linen_3": [0, 0, 0, 0, 0, 0],
+          "Flask_origin_inner": [0, 0, 0, 0, 0, 0],
+          "Plug": [0, 0, 0, 0, 0, 0],
+          "Flask_origin": [-56, 0, -48, 0, 0, 0],
+          "Linen_1": [0, 0, 0, 0, 0, 0],
+          "Linen_0": [0, 0, 0, 0, 0, 0],
+          "Linen_2": [0, 0, 0, 0, 0, 0],
+          "Patch": [0, 0, -0.95, 0, 0, 0]
+        }
+      },
+      {
+        "DurationFraction": 0.6262626,
+        "EasingFunction": "Linear",
+        "Elements": {
+          "Ramrod_shaft": [0, 0, 0, 180, 0, 0],
+          "Flask": [0, 0, 0, 0, 0, 0],
+          "Bullet": [0, 0, -0.8, 0, 0, 0],
+          "Ramrod": [0, 0.45, -9, 0, 0, 0],
+          "Linen_3": [0, 0, 0, 0, 0, 0],
+          "Flask_origin_inner": [0, 0, 0, 0, 0, 0],
+          "Plug": [0, 0, 0, 0, 0, 0],
+          "Flask_origin": [-56, 0, -48, 0, 0, 0],
+          "Linen_1": [0, 0, 0, 0, 0, 0],
+          "Linen_0": [0, 0, 0, 0, 0, 0],
+          "Linen_2": [0, 0, 0, 0, 0, 0],
+          "Patch": [0, 0, -0.95, 0, 0, 0]
+        }
+      },
+      {
+        "DurationFraction": 0.6363636,
+        "EasingFunction": "Linear",
+        "Elements": {
+          "Ramrod_shaft": [0, 0, 0, 180, 0, 0],
+          "Flask": [0, 0, 0, 0, 0, 0],
+          "Bullet": [0, 0, 0, 0, 0, 0],
+          "Ramrod": [0, 0.45, -8.2, 0, 0, 0],
+          "Linen_3": [0, 0, 0, 0, 0, 0],
+          "Flask_origin_inner": [0, 0, 0, 0, 0, 0],
+          "Plug": [0, 0, 0, 0, 0, 0],
+          "Flask_origin": [-56, 0, -48, 0, 0, 0],
+          "Linen_1": [0, 0, 0, 0, 0, 0],
+          "Linen_0": [0, 0, 0, 0, 0, 0],
+          "Linen_2": [0, 0, 0, 0, 0, 0],
+          "Patch": [0, 0, 0, 0, 0, 0]
+        }
+      },
+      {
+        "DurationFraction": 0.7070707,
+        "EasingFunction": "Linear",
+        "Elements": {
+          "Ramrod_shaft": [0, 0, 0, 180, 0, 0],
+          "Flask": [0, 0, 0, 0, 0, 0],
+          "Bullet": [0, 0, 0, 0, 0, 0],
+          "Ramrod": [0, 0.45, 0.8, 0, 0, 0],
+          "Linen_3": [0, 0, 0, 0, 0, 0],
+          "Flask_origin_inner": [0, 0, 0, 0, 0, 0],
+          "Plug": [0, 0, 0, 0, 0, 0],
+          "Flask_origin": [-56, 0, -48, 0, 0, 0],
+          "Linen_1": [0, 0, 0, 0, 0, 0],
+          "Linen_0": [0, 0, 0, 0, 0, 0],
+          "Linen_2": [0, 0, 0, 0, 0, 0],
+          "Patch": [0, 0, 0, 0, 0, 0]
+        }
+      },
+      {
+        "DurationFraction": 0.7373737,
+        "EasingFunction": "Linear",
+        "Elements": {
+          "Ramrod_shaft": [0, 0, 0, 180, 0, 0],
+          "Flask": [0, 0, 0, 0, 0, 0],
+          "Bullet": [0, 0, 0, 0, 0, 0],
+          "Ramrod": [0, 0.45, -1.2, 0, 0, 0],
+          "Linen_3": [0, 0, 0, 0, 0, 0],
+          "Flask_origin_inner": [0, 0, 0, 0, 0, 0],
+          "Plug": [0, 0, 0, 0, 0, 0],
+          "Flask_origin": [-56, 0, -48, 0, 0, 0],
+          "Linen_1": [0, 0, 0, 0, 0, 0],
+          "Linen_0": [0, 0, 0, 0, 0, 0],
+          "Linen_2": [0, 0, 0, 0, 0, 0],
+          "Patch": [0, 0, 0, 0, 0, 0]
+        }
+      },
+      {
+        "DurationFraction": 0.7676768,
+        "EasingFunction": "Linear",
+        "Elements": {
+          "Ramrod_shaft": [0, 0, 0, 180, 0, 0],
+          "Flask": [0, 0, 0, 0, 0, 0],
+          "Bullet": [0, 0, 0, 0, 0, 0],
+          "Ramrod": [0, 0.45, 1.4, 0, 0, 0],
+          "Linen_3": [0, 0, 0, 0, 0, 0],
+          "Flask_origin_inner": [0, 0, 0, 0, 0, 0],
+          "Plug": [0, 0, 0, 0, 0, 0],
+          "Flask_origin": [-56, 0, -48, 0, 0, 0],
+          "Linen_1": [0, 0, 0, 0, 0, 0],
+          "Linen_0": [0, 0, 0, 0, 0, 0],
+          "Linen_2": [0, 0, 0, 0, 0, 0],
+          "Patch": [0, 0, 0, 0, 0, 0]
+        }
+      },
+      {
+        "DurationFraction": 0.82828283,
+        "EasingFunction": "Linear",
+        "Elements": {
+          "Ramrod_shaft": [0, 0, 0, 180, 0, 0],
+          "Flask": [0, 0, 0, 0, 0, 0],
+          "Bullet": [0, 0, 0, 0, 0, 0],
+          "Ramrod": [0, 0.45, -9.6, 0, 0, 0],
+          "Linen_3": [0, 0, 0, 0, 0, 0],
+          "Flask_origin_inner": [0, 0, 0, 0, 0, 0],
+          "Plug": [0, 0, 0, 0, 0, 0],
+          "Flask_origin": [-56, 0, -48, 0, 0, 0],
+          "Linen_1": [0, 0, 0, 0, 0, 0],
+          "Linen_0": [0, 0, 0, 0, 0, 0],
+          "Linen_2": [0, 0, 0, 0, 0, 0],
+          "Patch": [0, 0, 0, 0, 0, 0]
+        }
+      },
+      {
+        "DurationFraction": 0.8989899,
+        "EasingFunction": "Linear",
+        "Elements": {
+          "Ramrod_shaft": [0, 0, 0, 6, 0, 0],
+          "Flask": [0, 0, 0, 0, 0, 0],
+          "Bullet": [0, 0, 0, 0, 0, 0],
+          "Ramrod": [0, 0.45, -10.6, 0, 0, 0],
+          "Linen_3": [0, 0, 0, 0, 0, 0],
+          "Flask_origin_inner": [0, 0, 0, 0, 0, 0],
+          "Plug": [0, 0, 0, 0, 0, 0],
+          "Flask_origin": [-56, 0, -48, 0, 0, 0],
+          "Linen_1": [0, 0, 0, 0, 0, 0],
+          "Linen_0": [0, 0, 0, 0, 0, 0],
+          "Linen_2": [0, 0, 0, 0, 0, 0],
+          "Patch": [0, 0, 0, 0, 0, 0]
+        }
+      },
+      {
+        "DurationFraction": 0.9494949,
+        "EasingFunction": "Linear",
+        "Elements": {
+          "Ramrod_shaft": [0, 0, 0, 0, 0, 0],
+          "Flask": [0, 0, 0, 0, 0, 0],
+          "Bullet": [0, 0, 0, 0, 0, 0],
+          "Ramrod": [0, -0.05, -9.6, 0, 0, 0],
+          "Linen_3": [0, 0, 0, 0, 0, 0],
+          "Flask_origin_inner": [0, 0, 0, 0, 0, 0],
+          "Plug": [0, 0, 0, 0, 0, 0],
+          "Flask_origin": [-56, 0, -48, 0, 0, 0],
+          "Linen_1": [0, 0, 0, 0, 0, 0],
+          "Linen_0": [0, 0, 0, 0, 0, 0],
+          "Linen_2": [0, 0, 0, 0, 0, 0],
+          "Patch": [0, 0, 0, 0, 0, 0]
+        }
+      },
+      {
+        "DurationFraction": 1,
+        "EasingFunction": "Linear",
+        "Elements": {
+          "Ramrod_shaft": [0, 0, 0, 0, 0, 0],
+          "Flask": [0, 0, 0, 0, 0, 0],
+          "Bullet": [0, 0, 0, 0, 0, 0],
+          "Ramrod": [0, 0, 0, 0, 0, 0],
+          "Linen_3": [0, 0, 0, 0, 0, 0],
+          "Flask_origin_inner": [0, 0, 0, 0, 0, 0],
+          "Plug": [0, 0, 0, 0, 0, 0],
+          "Flask_origin": [-56, 0, -48, 0, 0, 0],
+          "Linen_1": [0, 0, 0, 0, 0, 0],
+          "Linen_0": [0, 0, 0, 0, 0, 0],
+          "Linen_2": [0, 0, 0, 0, 0, 0],
+          "Patch": [0, 0, 0, 0, 0, 0]
+        }
+      }
+    ],
+    "SoundFrames": [],
+    "ParticlesFrames": [],
+    "CallbackFrames": [{"Code": "attach", "DurationFraction": 0.083333336}, {"Code": "detach", "DurationFraction": 0.9166667}],
+    "ItemAnimationStart": 500,
+    "ItemAnimationEnd": 5500
+  },
+  "firearms-pistol-flintlock-prime": {
+    "Hold": false,
+    "PlayerKeyFrames": [
+      {
+        "EasingTime": 300,
+        "EasingFunction": "Linear",
+        "DetachedAnchor": false,
+        "SwitchArms": false,
+        "PitchFollow": false,
+        "PitchDontFollow": false,
+        "FOVMultiplier": 1,
+        "BobbingAmplitude": 1,
+        "Elements": {
+          "ItemAnchor": [2, 2.1, 0.9, 39, 16, 111],
+          "LowerArmR": [0, 0, 0, 0, 0, -85],
+          "UpperArmR": [0, -0.2, 0, 0, 36, -39],
+          "ItemAnchorL": [5.2, 1.7, -0.5, -6, 3, 109],
+          "LowerArmL": [0, 0, 0, 0, 0, -55],
+          "UpperArmL": [0, 0, 0, 0, 0, -53]
+        }
+      },
+      {
+        "EasingTime": 500,
+        "EasingFunction": "Linear",
+        "DetachedAnchor": false,
+        "SwitchArms": true,
+        "PitchFollow": false,
+        "PitchDontFollow": false,
+        "FOVMultiplier": 1,
+        "BobbingAmplitude": 1,
+        "Elements": {
+          "ItemAnchor": [2.5, 2.1, 0.9, 39, 16, 111],
+          "LowerArmR": [0, 0, 0, 0, 0, -86],
+          "UpperArmR": [0, -0.2, 0, 25, 21, -56],
+          "ItemAnchorL": [5.2, 1.7, -0.5, -6, 3, 109],
+          "LowerArmL": [0, 0, 0, 0, 0, -55],
+          "UpperArmL": [0, 0, 0, 0, 0, -53]
+        }
+      },
+      {
+        "EasingTime": 790,
+        "EasingFunction": "Linear",
+        "DetachedAnchor": false,
+        "SwitchArms": true,
+        "PitchFollow": false,
+        "PitchDontFollow": false,
+        "FOVMultiplier": 1,
+        "BobbingAmplitude": 1,
+        "Elements": {
+          "ItemAnchor": [2.5, 2.1, 0.9, 39, 16, 111],
+          "LowerArmR": [0, 0, 0, 0, 0, -93],
+          "UpperArmR": [0, -0.2, 0, 26, 21, -56],
+          "ItemAnchorL": [5.2, 1.7, -0.5, -6, 3, 109],
+          "LowerArmL": [0, 0, 0, 0, 0, -55],
+          "UpperArmL": [0, 0, 0, 0, 0, -53]
+        }
+      },
+      {
+        "EasingTime": 934,
+        "EasingFunction": "Linear",
+        "DetachedAnchor": false,
+        "SwitchArms": true,
+        "PitchFollow": false,
+        "PitchDontFollow": false,
+        "FOVMultiplier": 1,
+        "BobbingAmplitude": 1,
+        "Elements": {
+          "ItemAnchor": [2.5, 2.1, 0.9, 39, 16, 111],
+          "LowerArmR": [0, 0, 0, 0, 0, 0],
+          "UpperArmR": [0, -0.2, 0, 32, 0, 0],
+          "ItemAnchorL": [5.2, 1.7, -0.5, -6, 3, 109],
+          "LowerArmL": [0, 0, 0, 0, 0, -55],
+          "UpperArmL": [0, 0, 0, 0, 0, -53]
+        }
+      },
+      {
+        "EasingTime": 1225,
+        "EasingFunction": "Linear",
+        "DetachedAnchor": false,
+        "SwitchArms": true,
+        "PitchFollow": false,
+        "PitchDontFollow": false,
+        "FOVMultiplier": 1,
+        "BobbingAmplitude": 1,
+        "Elements": {
+          "ItemAnchor": [2.5, 2.1, 0.9, 39, 16, 111],
+          "LowerArmR": [0, 0, 0, 0, 0, -99],
+          "UpperArmR": [0, -0.2, 0, 32, 5, -40],
+          "ItemAnchorL": [5.2, 1.7, -0.5, -6, 3, 109],
+          "LowerArmL": [0, 0, 0, 0, 0, -55],
+          "UpperArmL": [0, 0, 0, 0, 0, -53]
+        }
+      },
+      {
+        "EasingTime": 1369,
+        "EasingFunction": "Linear",
+        "DetachedAnchor": false,
+        "SwitchArms": true,
+        "PitchFollow": false,
+        "PitchDontFollow": false,
+        "FOVMultiplier": 1,
+        "BobbingAmplitude": 1,
+        "Elements": {
+          "ItemAnchor": [2.5, 2.1, 0.9, 39, 16, 111],
+          "LowerArmR": [0, 0, 0, 0, 0, -88],
+          "UpperArmR": [0, -0.2, 0, 73, -2, -61],
+          "ItemAnchorL": [5.2, 1.7, -0.5, -6, 3, 109],
+          "LowerArmL": [0, 0, 0, 0, 0, -55],
+          "UpperArmL": [0, 0, 0, 0, 0, -53]
+        }
+      },
+      {
+        "EasingTime": 1514,
+        "EasingFunction": "Linear",
+        "DetachedAnchor": false,
+        "SwitchArms": true,
+        "PitchFollow": false,
+        "PitchDontFollow": false,
+        "FOVMultiplier": 1,
+        "BobbingAmplitude": 1,
+        "Elements": {
+          "ItemAnchor": [2.5, 2.1, 0.9, 39, 16, 111],
+          "LowerArmR": [0, 0, 0, 0, 0, -99],
+          "UpperArmR": [0, -0.2, 0, 32, 5, -40],
+          "ItemAnchorL": [5.2, 1.7, -0.5, -6, 3, 109],
+          "LowerArmL": [0, 0, 0, 0, 0, -55],
+          "UpperArmL": [0, 0, 0, 0, 0, -53]
+        }
+      },
+      {
+        "EasingTime": 1804,
+        "EasingFunction": "Linear",
+        "DetachedAnchor": false,
+        "SwitchArms": true,
+        "PitchFollow": false,
+        "PitchDontFollow": false,
+        "FOVMultiplier": 1,
+        "BobbingAmplitude": 1,
+        "Elements": {
+          "ItemAnchor": [2.5, 2.1, 0.9, 39, 16, 111],
+          "LowerArmR": [0, 0, 0, 0, 0, 0],
+          "UpperArmR": [0, -0.2, 0, 32, 5, 0],
+          "ItemAnchorL": [5.2, 1.7, -0.5, -6, 3, 109],
+          "LowerArmL": [0, 0, 0, 0, 0, -55],
+          "UpperArmL": [0, 0, 0, 0, 0, -53]
+        }
+      },
+      {
+        "EasingTime": 1949,
+        "EasingFunction": "Linear",
+        "DetachedAnchor": false,
+        "SwitchArms": true,
+        "PitchFollow": false,
+        "PitchDontFollow": false,
+        "FOVMultiplier": 1,
+        "BobbingAmplitude": 1,
+        "Elements": {
+          "ItemAnchor": [2.5, 2.1, 0.9, 39, 16, 111],
+          "LowerArmR": [0, 0, 0, 0, 0, -69],
+          "UpperArmR": [0, -0.2, 0, 32, 13, -69],
+          "ItemAnchorL": [5.2, 1.7, -0.5, -6, 3, 109],
+          "LowerArmL": [0, 0, 0, 0, 0, -55],
+          "UpperArmL": [0, 0, 0, 0, 0, -53]
+        }
+      },
+      {
+        "EasingTime": 2239,
+        "EasingFunction": "Linear",
+        "DetachedAnchor": false,
+        "SwitchArms": true,
+        "PitchFollow": false,
+        "PitchDontFollow": false,
+        "FOVMultiplier": 1,
+        "BobbingAmplitude": 1,
+        "Elements": {
+          "ItemAnchor": [2.5, 2.1, 0.9, 39, 16, 111],
+          "LowerArmR": [0, 0, 0, 0, 0, -85],
+          "UpperArmR": [0, -0.2, 0, 32, 18, -62],
+          "ItemAnchorL": [5.2, 1.7, -0.5, -6, 3, 109],
+          "LowerArmL": [0, 0, 0, 0, 0, -55],
+          "UpperArmL": [0, 0, 0, 0, 0, -53]
+        }
+      },
+      {
+        "EasingTime": 2500,
+        "EasingFunction": "Linear",
+        "DetachedAnchor": false,
+        "SwitchArms": true,
+        "PitchFollow": false,
+        "PitchDontFollow": false,
+        "FOVMultiplier": 1,
+        "BobbingAmplitude": 1,
+        "Elements": {
+          "ItemAnchor": [2.5, 2.1, 0.9, 39, 16, 111],
+          "LowerArmR": [0, 0, 0, 0, 0, -99],
+          "UpperArmR": [0, -0.2, 0, 32, 22, -59],
+          "ItemAnchorL": [5.2, 1.7, -0.5, -6, 3, 109],
+          "LowerArmL": [0, 0, 0, 0, 0, -55],
+          "UpperArmL": [0, 0, 0, 0, 0, -53]
+        }
+      },
+      {
+        "EasingTime": 3000,
+        "EasingFunction": "Linear",
+        "DetachedAnchor": false,
+        "SwitchArms": true,
+        "PitchFollow": false,
+        "PitchDontFollow": false,
+        "FOVMultiplier": 1,
+        "BobbingAmplitude": 1,
+        "Elements": {
+          "ItemAnchor": [2.5, 2.1, 0.9, 39, 16, 111],
+          "LowerArmR": [0, 0, 0, 0, 0, -85],
+          "UpperArmR": [0, -0.2, 0, 0, 36, -39],
+          "ItemAnchorL": [5.2, 1.7, -0.5, -6, 3, 109],
+          "LowerArmL": [0, 0, 0, 0, 0, -55],
+          "UpperArmL": [0, 0, 0, 0, 0, -53]
+        }
+      }
+    ],
+    "ItemKeyFrames": [
+      {
+        "DurationFraction": 0,
+        "EasingFunction": "Linear",
+        "Elements": {"Flask_origin": [-55, -20, -52.7, 0, 0, 0], "Flask_origin_inner": [0, 0, 0, 90, 0, 0], "Hammer": [0, 0, 0, 0, 0, 0], "Frizzen": [0, 0, 0, 0, 0, 0]}
+      },
+      {
+        "DurationFraction": 0.14492753,
+        "EasingFunction": "Linear",
+        "Elements": {"Flask_origin": [-55, -20, -52.7, 0, 0, 0], "Flask_origin_inner": [0, 0, 0, 90, 0, 0], "Hammer": [0, 0, 0, 25, 0, 0], "Frizzen": [0, 0, 0, 0, 0, 0]}
+      },
+      {
+        "DurationFraction": 0.2173913,
+        "EasingFunction": "Linear",
+        "Elements": {"Flask_origin": [-55, -20, -52.7, 0, 0, 0], "Flask_origin_inner": [0, 0, 0, 90, 0, 0], "Hammer": [0, 0, 0, 25, 0, 0], "Frizzen": [0, 0, 0, 0, 0, 0]}
+      },
+      {
+        "DurationFraction": 0.36231884,
+        "EasingFunction": "Linear",
+        "Elements": {"Flask_origin": [-60, 2, -66.2, 0, 0, 0], "Flask_origin_inner": [0, 0, 0, 90, 0, 0], "Hammer": [0, 0, 0, 25, 0, 0], "Frizzen": [0, 0, 0, 0, 0, 0]}
+      },
+      {
+        "DurationFraction": 0.4347826,
+        "EasingFunction": "Linear",
+        "Elements": {"Flask_origin": [-60.9, 1.9, -66.2, 0, 0, 0], "Flask_origin_inner": [0, 0, 0, 90, 90, 0], "Hammer": [0, 0, 0, 25, 0, 0], "Frizzen": [0, 0, 0, 0, 0, 0]}
+      },
+      {
+        "DurationFraction": 0.5072464,
+        "EasingFunction": "Linear",
+        "Elements": {"Flask_origin": [-60, 2, -66.2, 0, 0, 0], "Flask_origin_inner": [0, 0, 0, 90, 0, 0], "Hammer": [0, 0, 0, 25, 0, 0], "Frizzen": [0, 0, 0, 0, 0, 0]}
+      },
+      {
+        "DurationFraction": 0.65217394,
+        "EasingFunction": "Linear",
+        "Elements": {"Flask_origin": [-55, -20, -52.7, 0, 0, 0], "Flask_origin_inner": [0, 0, 0, 90, 0, 0], "Hammer": [0, 0, 0, 25, 0, 0], "Frizzen": [0, 0, 0, 0, 0, 0]}
+      },
+      {
+        "DurationFraction": 0.7246377,
+        "EasingFunction": "Linear",
+        "Elements": {"Flask_origin": [-55, -20, -52.7, 0, 0, 0], "Flask_origin_inner": [0, 0, 0, 90, 0, 0], "Hammer": [0, 0, 0, 25, 0, 0], "Frizzen": [0, 0, 0, 0, 0, 0]}
+      },
+      {
+        "DurationFraction": 0.8695652,
+        "EasingFunction": "Linear",
+        "Elements": {"Flask_origin": [-55, -20, -52.7, 0, 0, 0], "Flask_origin_inner": [0, 0, 0, 90, 0, 0], "Hammer": [0, 0, 0, 25, 0, 0], "Frizzen": [0, 0, 0, 90, 0, 0]}
+      },
+      {
+        "DurationFraction": 1,
+        "EasingFunction": "Linear",
+        "Elements": {"Flask_origin": [-55, -20, -52.7, 0, 0, 0], "Flask_origin_inner": [0, 0, 0, 90, 0, 0], "Hammer": [0, 0, 0, 70, 0, 0], "Frizzen": [0, 0, 0, 90, 0, 0]}
+      }
+    ],
+    "SoundFrames": [],
+    "ParticlesFrames": [],
+    "CallbackFrames": [{"Code": "attach", "DurationFraction": 0.16666667}, {"Code": "detach", "DurationFraction": 0.8333333}],
+    "ItemAnimationStart": 500,
+    "ItemAnimationEnd": 2500
+  },
+  "firearms-pistol-flintlock-primed": {
+    "Hold": true,
+    "PlayerKeyFrames": [
+      {"EasingTime": 200, "EasingFunction": "Linear", "DetachedAnchor": false, "SwitchArms": false, "PitchFollow": false, "FOVMultiplier": 1, "BobbingAmplitude": 1, "Elements": {}}
+    ],
+    "ItemKeyFrames": [
+      {"DurationFraction": 0, "EasingFunction": "Linear", "Elements": {"Trigger": [0, 0, 0, 0, 0, 0], "Frizzen": [0, 0, 0, 90, 0, 0], "Hammer": [0, 0, 0, 70, 0, 0]}},
+      {"DurationFraction": 1, "EasingFunction": "Linear", "Elements": {"Trigger": [0, 0, 0, 0, 0, 0], "Frizzen": [0, 0, 0, 90, 0, 0], "Hammer": [0, 0, 0, 70, 0, 0]}}
+    ],
+    "SoundFrames": [],
+    "ParticlesFrames": [],
+    "CallbackFrames": [],
+    "ItemAnimationStart": 0,
+    "ItemAnimationEnd": 200
+  },
+  "firearms-pistol-flintlock-shoot": {
+    "Hold": true,
+    "PlayerKeyFrames": [
+      {
+        "EasingTime": 75,
+        "EasingFunction": "Sin",
+        "DetachedAnchor": false,
+        "SwitchArms": false,
+        "PitchFollow": false,
+        "PitchDontFollow": false,
+        "FOVMultiplier": 0.907,
+        "BobbingAmplitude": 0.655,
+        "Elements": {"ItemAnchor": [-1.3, 1.2, 0.15, 6, -2, 95.3], "LowerArmR": [0, 0, 0, 13.1, 0, 2], "UpperArmR": [0, 0, 1, -7, 11.2, -96.9]}
+      },
+      {
+        "EasingTime": 200,
+        "EasingFunction": "Sin",
+        "DetachedAnchor": false,
+        "SwitchArms": false,
+        "PitchFollow": false,
+        "PitchDontFollow": false,
+        "FOVMultiplier": 0.907,
+        "BobbingAmplitude": 0.655,
+        "Elements": {"ItemAnchor": [-1.3, 1.2, 0.15, 6, -2, 95.3], "LowerArmR": [0, 0, 0, 13.1, 0, 0], "UpperArmR": [0, 0.3, 1, -7, 11.2, -96.9]}
+      }
+    ],
+    "ItemKeyFrames": [
+      {"DurationFraction": 0, "EasingFunction": "Linear", "Elements": {"Hammer": [0, 0, 0, 70, 0, 0], "Frizzen": [0, 0, 0, 90, 0, 0], "Trigger": [0, 0, 0, 0, 0, 0]}},
+      {"DurationFraction": 0.03448276, "EasingFunction": "Linear", "Elements": {"Hammer": [0, 0, 0, 70, 0, 0], "Frizzen": [0, 0, 0, 90, 0, 0], "Trigger": [0, 0, 0, 0, 0, 0]}},
+      {"DurationFraction": 0.51724136, "EasingFunction": "Linear", "Elements": {"Hammer": [0, 0, 0, 70, 0, 0], "Frizzen": [0, 0, 0, 90, 0, 0], "Trigger": [0, 0, 0, -25, 0, 0]}},
+      {"DurationFraction": 0.62068963, "EasingFunction": "Linear", "Elements": {"Hammer": [0, 0, 0, 28, 0, 0], "Frizzen": [0, 0, 0, 90, 0, 0], "Trigger": [0, 0, 0, -25, 0, 0]}},
+      {"DurationFraction": 0.7241379, "EasingFunction": "Linear", "Elements": {"Hammer": [0, 0, 0, 21, 0, 0], "Frizzen": [0, 0, 0, 76, 0, 0], "Trigger": [0, 0, 0, -25, 0, 0]}},
+      {"DurationFraction": 0.79310346, "EasingFunction": "Linear", "Elements": {"Hammer": [0, 0, 0, 14, 0, 0], "Frizzen": [0, 0, 0, 45, 0, 0], "Trigger": [0, 0, 0, -14, 0, 0]}},
+      {"DurationFraction": 0.9310345, "EasingFunction": "Linear", "Elements": {"Hammer": [0, 0, 0, -5, 0, 0], "Frizzen": [0, 0, 0, -5, 0, 0], "Trigger": [0, 0, 0, -8, 0, 0]}},
+      {"DurationFraction": 1, "EasingFunction": "Linear", "Elements": {"Hammer": [0, 0, 0, 0, 0, 0], "Frizzen": [0, 0, 0, 0, 0, 0], "Trigger": [0, 0, 0, 0, 0, 0]}}
+    ],
+    "SoundFrames": [
+      {
+        "Code": [
+          "maltiezfirearms:sounds/pistol/pistol-fire-1",
+          "maltiezfirearms:sounds/pistol/pistol-fire-2",
+          "maltiezfirearms:sounds/pistol/pistol-fire-3",
+          "maltiezfirearms:sounds/pistol/pistol-fire-4"
+        ],
+        "DurationFraction": 0.25,
+        "RandomizePitch": false,
+        "Range": 256,
+        "Volume": 0.8,
+        "Synchronize": true
+      }
+    ],
+    "ParticlesFrames": [
+      {"Code": "combatoverhaul:smoke-1", "DurationFraction": 0.5, "Position": [0, 0, 3], "Velocity": [0, 0, 1], "Intensity": 0.5},
+      {"Code": "combatoverhaul:smoke-2", "DurationFraction": 0.5, "Position": [0, 0, 2], "Velocity": [0, 0, 3], "Intensity": 0.3},
+      {"Code": "combatoverhaul:smoke-3", "DurationFraction": 0.5, "Position": [0, 0, 1], "Velocity": [0, 0, 6], "Intensity": 0.3},
+      {"Code": "combatoverhaul:fireblast-1", "DurationFraction": 0.5, "Position": [0, 0, 1], "Velocity": [0, 5, 40], "Intensity": 0.3}
+    ],
+    "CallbackFrames": [{"Code": "shoot", "DurationFraction": 0.5}],
+    "ItemAnimationStart": 0,
+    "ItemAnimationEnd": 50
+  },
+  "firearms-pistol-flintlock-shoot-offhand": {
+    "Hold": true,
+    "PlayerKeyFrames": [
+      {
+        "EasingTime": 75,
+        "EasingFunction": "Sin",
+        "DetachedAnchor": false,
+        "SwitchArms": false,
+        "PitchFollow": false,
+        "PitchDontFollow": false,
+        "FOVMultiplier": 0.907,
+        "BobbingAmplitude": 0.655,
+        "Elements": {"ItemAnchorL": [0.2, -0.5, -0.3, -9, 3, 11], "LowerArmL": [0, 0, 0, -15, 5, -2], "UpperArmL": [0.5, 0, -0.5, 0, -15, -99]}
+      },
+      {
+        "EasingTime": 200,
+        "EasingFunction": "Sin",
+        "DetachedAnchor": false,
+        "SwitchArms": false,
+        "PitchFollow": false,
+        "PitchDontFollow": false,
+        "FOVMultiplier": 0.907,
+        "BobbingAmplitude": 0.655,
+        "Elements": {"ItemAnchorL": [0.2, -0.5, -0.3, -9, 3, 9], "LowerArmL": [0, 0, 0, -15, 5, -6], "UpperArmL": [0.5, 0, -0.5, 0, -15, -98]}
+      }
+    ],
+    "ItemKeyFrames": [
+      {"DurationFraction": 0, "EasingFunction": "Linear", "Elements": {"Hammer": [0, 0, 0, 70, 0, 0], "Frizzen": [0, 0, 0, 90, 0, 0], "Trigger": [0, 0, 0, 0, 0, 0]}},
+      {"DurationFraction": 0.03448276, "EasingFunction": "Linear", "Elements": {"Hammer": [0, 0, 0, 70, 0, 0], "Frizzen": [0, 0, 0, 90, 0, 0], "Trigger": [0, 0, 0, 0, 0, 0]}},
+      {"DurationFraction": 0.51724136, "EasingFunction": "Linear", "Elements": {"Hammer": [0, 0, 0, 70, 0, 0], "Frizzen": [0, 0, 0, 90, 0, 0], "Trigger": [0, 0, 0, -25, 0, 0]}},
+      {"DurationFraction": 0.62068963, "EasingFunction": "Linear", "Elements": {"Hammer": [0, 0, 0, 28, 0, 0], "Frizzen": [0, 0, 0, 90, 0, 0], "Trigger": [0, 0, 0, -25, 0, 0]}},
+      {"DurationFraction": 0.7241379, "EasingFunction": "Linear", "Elements": {"Hammer": [0, 0, 0, 21, 0, 0], "Frizzen": [0, 0, 0, 76, 0, 0], "Trigger": [0, 0, 0, -25, 0, 0]}},
+      {"DurationFraction": 0.79310346, "EasingFunction": "Linear", "Elements": {"Hammer": [0, 0, 0, 14, 0, 0], "Frizzen": [0, 0, 0, 45, 0, 0], "Trigger": [0, 0, 0, -14, 0, 0]}},
+      {"DurationFraction": 0.9310345, "EasingFunction": "Linear", "Elements": {"Hammer": [0, 0, 0, -5, 0, 0], "Frizzen": [0, 0, 0, -5, 0, 0], "Trigger": [0, 0, 0, -8, 0, 0]}},
+      {"DurationFraction": 1, "EasingFunction": "Linear", "Elements": {"Hammer": [0, 0, 0, 0, 0, 0], "Frizzen": [0, 0, 0, 0, 0, 0], "Trigger": [0, 0, 0, 0, 0, 0]}}
+    ],
+    "SoundFrames": [
+      {
+        "Code": [
+          "maltiezfirearms:sounds/pistol/pistol-fire-1",
+          "maltiezfirearms:sounds/pistol/pistol-fire-2",
+          "maltiezfirearms:sounds/pistol/pistol-fire-3",
+          "maltiezfirearms:sounds/pistol/pistol-fire-4"
+        ],
+        "DurationFraction": 0.25,
+        "RandomizePitch": false,
+        "Range": 256,
+        "Volume": 0.8,
+        "Synchronize": true
+      }
+    ],
+    "ParticlesFrames": [
+      {"Code": "combatoverhaul:smoke-1", "DurationFraction": 0.5, "Position": [0, 0, 3], "Velocity": [0, 0, 1], "Intensity": 0.5},
+      {"Code": "combatoverhaul:smoke-2", "DurationFraction": 0.5, "Position": [0, 0, 2], "Velocity": [0, 0, 3], "Intensity": 0.3},
+      {"Code": "combatoverhaul:smoke-3", "DurationFraction": 0.5, "Position": [0, 0, 1], "Velocity": [0, 0, 6], "Intensity": 0.3},
+      {"Code": "combatoverhaul:fireblast-1", "DurationFraction": 0.5, "Position": [0, 0, 1], "Velocity": [0, 5, 40], "Intensity": 0.3}
+    ],
+    "CallbackFrames": [{"Code": "shoot", "DurationFraction": 0.5}],
+    "ItemAnimationStart": 0,
+    "ItemAnimationEnd": 50
+  },
+  "firearms-pistol-flintlock-loaded": {
+    "Hold": true,
+    "PlayerKeyFrames": [
+      {"EasingTime": 200, "EasingFunction": "Linear", "DetachedAnchor": false, "SwitchArms": false, "PitchFollow": false, "FOVMultiplier": 1, "BobbingAmplitude": 1, "Elements": {}}
+    ],
+    "ItemKeyFrames": [{"DurationFraction": 1, "EasingFunction": "Linear", "Elements": {"Pan_cover": [0, 0, 0, 0, 0, 0], "Flint_arm": [0, 0, 0, 0, 0, 0]}}],
+    "SoundFrames": [],
+    "ParticlesFrames": [],
+    "CallbackFrames": [],
+    "ItemAnimationStart": 0,
+    "ItemAnimationEnd": 200
+  },
+  "firearms-pistol-flintlock-idle-tp": {
+    "Hold": true,
+    "PlayerKeyFrames": [
+      {
+        "EasingTime": 300,
+        "EasingFunction": "Sin",
+        "DetachedAnchor": false,
+        "SwitchArms": false,
+        "PitchFollow": false,
+        "PitchDontFollow": false,
+        "FOVMultiplier": 1,
+        "BobbingAmplitude": 1,
+        "Elements": {"ItemAnchor": [-1.3, 1, 0, 0, 0, 69], "LowerArmR": [0, 0, 0, 0, 0, -25], "UpperArmR": [0, 0, 0, 0, 0, -7]}
+      }
+    ],
+    "ItemKeyFrames": [],
+    "SoundFrames": [],
+    "ParticlesFrames": [],
+    "CallbackFrames": [],
+    "ItemAnimationStart": 0,
+    "ItemAnimationEnd": 0
+  },
+  "firearms-pistol-flintlock-ready-tp": {
+    "Hold": true,
+    "PlayerKeyFrames": [
+      {
+        "EasingTime": 300,
+        "EasingFunction": "Sin",
+        "DetachedAnchor": false,
+        "SwitchArms": false,
+        "PitchFollow": false,
+        "PitchDontFollow": false,
+        "FOVMultiplier": 1,
+        "BobbingAmplitude": 1,
+        "Elements": {"ItemAnchor": [-1.3, 1.3, 0, 0, 0, 65], "LowerArmR": [0, 0, 0, 0, 0, -92], "UpperArmR": [0, 0, 0, 0, -17, -40]}
+      }
+    ],
+    "ItemKeyFrames": [],
+    "SoundFrames": [],
+    "ParticlesFrames": [],
+    "CallbackFrames": [],
+    "ItemAnimationStart": 0,
+    "ItemAnimationEnd": 0
+  },
+  "firearms-pistol-flintlock-idle-offhand-tp": {
+    "Hold": true,
+    "PlayerKeyFrames": [
+      {
+        "EasingTime": 300,
+        "EasingFunction": "Sin",
+        "DetachedAnchor": false,
+        "SwitchArms": false,
+        "PitchFollow": false,
+        "PitchDontFollow": false,
+        "FOVMultiplier": 1,
+        "BobbingAmplitude": 1,
+        "Elements": {"ItemAnchorL": [0, 0, 0, 0, 0, 0], "LowerArmL": [0, 0, 0, 0, 0, -30], "UpperArmL": [0, 0, 0, 0, -2, -14]}
+      }
+    ],
+    "ItemKeyFrames": [],
+    "SoundFrames": [],
+    "ParticlesFrames": [],
+    "CallbackFrames": [],
+    "ItemAnimationStart": 0,
+    "ItemAnimationEnd": 0
+  },
+  "firearms-pistol-flintlock-ready-offhand-tp": {
+    "Hold": true,
+    "PlayerKeyFrames": [
+      {
+        "EasingTime": 300,
+        "EasingFunction": "Sin",
+        "DetachedAnchor": false,
+        "SwitchArms": false,
+        "PitchFollow": false,
+        "PitchDontFollow": false,
+        "FOVMultiplier": 1,
+        "BobbingAmplitude": 1,
+        "Elements": {"ItemAnchorL": [0, 0, 0, 0, 0, -15], "LowerArmL": [0, 0, 0, 0, 0, -90], "UpperArmL": [0.5, -0.5, 0, 0, 28, -38]}
+      }
+    ],
+    "ItemKeyFrames": [],
+    "SoundFrames": [],
+    "ParticlesFrames": [],
+    "CallbackFrames": [],
+    "ItemAnimationStart": 0,
+    "ItemAnimationEnd": 0
+  },
+  "firearms-pistol-flintlock-aim-tp": {
+    "Hold": true,
+    "PlayerKeyFrames": [
+      {
+        "EasingTime": 300,
+        "EasingFunction": "Sin",
+        "DetachedAnchor": false,
+        "SwitchArms": false,
+        "PitchFollow": true,
+        "PitchDontFollow": false,
+        "FOVMultiplier": 0.907,
+        "BobbingAmplitude": 0.655,
+        "Elements": {"ItemAnchor": [-1.3, 1.2, 0.15, 6, -2, 95.3], "LowerArmR": [0, 0, 0, 13.1, 0, 2], "UpperArmR": [0, 0, 1, -7, 11.2, -96.9]}
+      }
+    ],
+    "ItemKeyFrames": [],
+    "SoundFrames": [],
+    "ParticlesFrames": [],
+    "CallbackFrames": [],
+    "ItemAnimationStart": 0,
+    "ItemAnimationEnd": 0
+  },
+  "firearms-pistol-flintlock-aim-offhand-tp": {
+    "Hold": true,
+    "PlayerKeyFrames": [
+      {
+        "EasingTime": 300,
+        "EasingFunction": "Sin",
+        "DetachedAnchor": false,
+        "SwitchArms": false,
+        "PitchFollow": true,
+        "PitchDontFollow": false,
+        "FOVMultiplier": 0.907,
+        "BobbingAmplitude": 0.655,
+        "Elements": {"ItemAnchorL": [0.2, -0.5, -0.3, -9, 3, 11], "LowerArmL": [0, 0, 0, -15, 5, -2], "UpperArmL": [0.5, 0, -0.5, 0, -15, -99]}
+      }
+    ],
+    "ItemKeyFrames": [],
+    "SoundFrames": [],
+    "ParticlesFrames": [],
+    "CallbackFrames": [],
+    "ItemAnimationStart": 0,
+    "ItemAnimationEnd": 0
+  },
+  "firearms-pistol-flintlock-load-tp": {
+    "Hold": true,
+    "PlayerKeyFrames": [
+      {
+        "EasingTime": 300,
+        "EasingFunction": "Linear",
+        "DetachedAnchor": false,
+        "SwitchArms": false,
+        "PitchFollow": false,
+        "PitchDontFollow": false,
+        "FOVMultiplier": 1,
+        "BobbingAmplitude": 0.8,
+        "Elements": {
+          "ItemAnchor": [3.69, -0.29000002, 0.4, 54, 0, 0],
+          "LowerArmR": [0, 0, 0, 0, 0, -63],
+          "UpperArmR": [0, 0, 0, 0, 21, -37],
+          "ItemAnchorL": [5.7, 0.2, 0.059999995, 0, 7, 13],
+          "LowerArmL": [0, 0, 0, 0, 0, -70],
+          "UpperArmL": [0, 0, 0, -7, -20, -47]
+        }
+      },
+      {
+        "EasingTime": 500,
+        "EasingFunction": "Linear",
+        "DetachedAnchor": false,
+        "SwitchArms": true,
+        "PitchFollow": false,
+        "PitchDontFollow": false,
+        "FOVMultiplier": 1,
+        "BobbingAmplitude": 0.8,
+        "Elements": {
+          "ItemAnchor": [3.69, -0.29000002, 0.4, 54, 0, 0],
+          "LowerArmR": [0, 0, 0, 0, 0, -101],
+          "UpperArmR": [0, 0, 0, -10, 14, 85],
+          "ItemAnchorL": [5.7, 0.2, 0.059999995, 0, 7, 13],
+          "LowerArmL": [0, 0, 0, 0, 0, -70],
+          "UpperArmL": [0, 0, 0, -7, -20, -47]
+        }
+      },
+      {
+        "EasingTime": 1005,
+        "EasingFunction": "Linear",
+        "DetachedAnchor": false,
+        "SwitchArms": true,
+        "PitchFollow": false,
+        "PitchDontFollow": false,
+        "FOVMultiplier": 1,
+        "BobbingAmplitude": 0.8,
+        "Elements": {
+          "ItemAnchor": [3.69, -0.29000002, 0.4, 54, 0, 0],
+          "LowerArmR": [0, 0, 0, 0, 0, -106],
+          "UpperArmR": [0, 0, 0, 21, -36, -42],
+          "ItemAnchorL": [5.7, 0.2, 0.059999995, 0, 7, 13],
+          "LowerArmL": [0, 0, 0, 0, 0, -70],
+          "UpperArmL": [0, 0, 0, -7, -20, -47]
+        }
+      },
+      {
+        "EasingTime": 1156,
+        "EasingFunction": "Linear",
+        "DetachedAnchor": false,
+        "SwitchArms": true,
+        "PitchFollow": false,
+        "PitchDontFollow": false,
+        "FOVMultiplier": 1,
+        "BobbingAmplitude": 0.8,
+        "Elements": {
+          "ItemAnchor": [3.69, -0.29000002, 0.4, 54, 0, 0],
+          "LowerArmR": [0, 0, 0, 0, 0, -88],
+          "UpperArmR": [0, 0, 0, 37, -13, -67],
+          "ItemAnchorL": [5.7, 0.2, 0.059999995, 0, 7, 13],
+          "LowerArmL": [0, 0, 0, 0, 0, -70],
+          "UpperArmL": [0, 0, 0, -7, -20, -47]
+        }
+      },
+      {
+        "EasingTime": 1308,
+        "EasingFunction": "Linear",
+        "DetachedAnchor": false,
+        "SwitchArms": true,
+        "PitchFollow": false,
+        "PitchDontFollow": false,
+        "FOVMultiplier": 1,
+        "BobbingAmplitude": 0.8,
+        "Elements": {
+          "ItemAnchor": [3.69, -0.29000002, 0.4, 54, 0, 0],
+          "LowerArmR": [0, 0, 0, 0, 0, -88],
+          "UpperArmR": [0, 0, 0, 61, -17, -58],
+          "ItemAnchorL": [5.7, 0.2, 0.059999995, 0, 7, 13],
+          "LowerArmL": [0, 0, 0, 0, 0, -70],
+          "UpperArmL": [0, 0, 0, -7, -20, -47]
+        }
+      },
+      {
+        "EasingTime": 1459,
+        "EasingFunction": "Linear",
+        "DetachedAnchor": false,
+        "SwitchArms": true,
+        "PitchFollow": false,
+        "PitchDontFollow": false,
+        "FOVMultiplier": 1,
+        "BobbingAmplitude": 0.8,
+        "Elements": {
+          "ItemAnchor": [3.69, -0.29000002, 0.4, 54, 0, 0],
+          "LowerArmR": [0, 0, 0, 0, 0, -88],
+          "UpperArmR": [0, 0, 0, 37, -13, -67],
+          "ItemAnchorL": [5.7, 0.2, 0.059999995, 0, 7, 13],
+          "LowerArmL": [0, 0, 0, 0, 0, -70],
+          "UpperArmL": [0, 0, 0, -7, -20, -47]
+        }
+      },
+      {
+        "EasingTime": 1611,
+        "EasingFunction": "Linear",
+        "DetachedAnchor": false,
+        "SwitchArms": true,
+        "PitchFollow": false,
+        "PitchDontFollow": false,
+        "FOVMultiplier": 1,
+        "BobbingAmplitude": 0.8,
+        "Elements": {
+          "ItemAnchor": [3.69, -0.29000002, 0.4, 54, 0, 0],
+          "LowerArmR": [0, 0, 0, 0, 0, -95],
+          "UpperArmR": [0, 0, 0, 12, -13, -64],
+          "ItemAnchorL": [5.7, 0.2, 0.059999995, 0, 7, 13],
+          "LowerArmL": [0, 0, 0, 0, 0, -70],
+          "UpperArmL": [0, 0, 0, -7, -20, -47]
+        }
+      },
+      {
+        "EasingTime": 2015,
+        "EasingFunction": "Linear",
+        "DetachedAnchor": false,
+        "SwitchArms": true,
+        "PitchFollow": false,
+        "PitchDontFollow": false,
+        "FOVMultiplier": 1,
+        "BobbingAmplitude": 0.8,
+        "Elements": {
+          "ItemAnchor": [3.69, -0.29000002, 0.4, 54, 0, 0],
+          "LowerArmR": [0, 0, 0, 0, 0, -103],
+          "UpperArmR": [0, 0, 0, 0, -6, 83],
+          "ItemAnchorL": [5.7, 0.2, 0.059999995, 0, 7, 13],
+          "LowerArmL": [0, 0, 0, 0, 0, -70],
+          "UpperArmL": [0, 0, 0, -7, -20, -47]
+        }
+      },
+      {
+        "EasingTime": 2200,
+        "EasingFunction": "Linear",
+        "DetachedAnchor": false,
+        "SwitchArms": true,
+        "PitchFollow": false,
+        "PitchDontFollow": false,
+        "FOVMultiplier": 1,
+        "BobbingAmplitude": 0.8,
+        "Elements": {
+          "ItemAnchor": [3.69, -0.29000002, 0.4, 54, 0, 0],
+          "LowerArmR": [0, 0, 0, 0, 0, -71],
+          "UpperArmR": [0, 0, 0, 24, 23, -14],
+          "ItemAnchorL": [5.7, 0.2, 0.059999995, 0, 7, 13],
+          "LowerArmL": [0, 0, 0, 0, 0, -70],
+          "UpperArmL": [0, 0, 0, -7, -20, -47]
+        }
+      },
+      {
+        "EasingTime": 2419,
+        "EasingFunction": "Linear",
+        "DetachedAnchor": false,
+        "SwitchArms": true,
+        "PitchFollow": false,
+        "PitchDontFollow": false,
+        "FOVMultiplier": 1,
+        "BobbingAmplitude": 0.8,
+        "Elements": {
+          "ItemAnchor": [3.69, -0.29000002, 0.4, 54, 0, 0],
+          "LowerArmR": [0, 0, 0, 0, 0, -71],
+          "UpperArmR": [0, 0, 0, 24, -5, -81],
+          "ItemAnchorL": [5.7, 0.2, 0.059999995, 0, 7, 13],
+          "LowerArmL": [0, 0, 0, 0, 0, -70],
+          "UpperArmL": [0, 0, 0, -7, -20, -47]
+        }
+      },
+      {
+        "EasingTime": 2621,
+        "EasingFunction": "Linear",
+        "DetachedAnchor": false,
+        "SwitchArms": true,
+        "PitchFollow": false,
+        "PitchDontFollow": false,
+        "FOVMultiplier": 1,
+        "BobbingAmplitude": 0.8,
+        "Elements": {
+          "ItemAnchor": [3.69, -0.29000002, 0.4, 54, 0, 0],
+          "LowerArmR": [0, 0, 0, 0, 0, -77],
+          "UpperArmR": [0, 0, 0, 24, 2, -67],
+          "ItemAnchorL": [5.7, 0.2, 0.059999995, 0, 7, 13],
+          "LowerArmL": [0, 0, 0, 0, 0, -70],
+          "UpperArmL": [0, 0, 0, -7, -20, -47]
+        }
+      },
+      {
+        "EasingTime": 2823,
+        "EasingFunction": "Linear",
+        "DetachedAnchor": false,
+        "SwitchArms": true,
+        "PitchFollow": false,
+        "PitchDontFollow": false,
+        "FOVMultiplier": 1,
+        "BobbingAmplitude": 0.8,
+        "Elements": {
+          "ItemAnchor": [3.69, -0.29000002, 0.4, 54, 0, 0],
+          "LowerArmR": [0, 0, 0, 0, 0, -79.2],
+          "UpperArmR": [0, 0, 0, 45, -4.3, -63],
+          "ItemAnchorL": [5.7, 0.2, 0.059999995, 0, 7, 13],
+          "LowerArmL": [0, 0, 0, 0, 0, -67],
+          "UpperArmL": [0, 0, 0, -7, -20, -47]
+        }
+      },
+      {
+        "EasingTime": 3025,
+        "EasingFunction": "Linear",
+        "DetachedAnchor": false,
+        "SwitchArms": true,
+        "PitchFollow": false,
+        "PitchDontFollow": false,
+        "FOVMultiplier": 1,
+        "BobbingAmplitude": 0.8,
+        "Elements": {
+          "ItemAnchor": [3.69, -0.29000002, 0.4, 54, 0, 0],
+          "LowerArmR": [0, 0, 0, 0, 0, -72.2],
+          "UpperArmR": [0, 0, 0, 12, 11, -55],
+          "ItemAnchorL": [5.7, 0.2, 0.059999995, 0, 7, 13],
+          "LowerArmL": [0, 0, 0, 0, 0, -70],
+          "UpperArmL": [0, 0, 0, -7, -20, -47]
+        }
+      },
+      {
+        "EasingTime": 3277,
+        "EasingFunction": "Linear",
+        "DetachedAnchor": false,
+        "SwitchArms": true,
+        "PitchFollow": false,
+        "PitchDontFollow": false,
+        "FOVMultiplier": 1,
+        "BobbingAmplitude": 0.8,
+        "Elements": {
+          "ItemAnchor": [3.69, -0.29000002, 0.4, 54, 0, 0],
+          "LowerArmR": [0, 0, 0, 0, 0, -51.2],
+          "UpperArmR": [0, 0, 0, 12, -8, -104],
+          "ItemAnchorL": [5.7, 0.2, 0.059999995, 0, 7, 13],
+          "LowerArmL": [0, 0, 0, 0, 0, -70],
+          "UpperArmL": [0, 0, 0, -7, -20, -47]
+        }
+      },
+      {
+        "EasingTime": 3530,
+        "EasingFunction": "Linear",
+        "DetachedAnchor": false,
+        "SwitchArms": true,
+        "PitchFollow": false,
+        "PitchDontFollow": false,
+        "FOVMultiplier": 1,
+        "BobbingAmplitude": 0.8,
+        "Elements": {
+          "ItemAnchor": [3.69, -0.29000002, 0.4, 54, 0, 0],
+          "LowerArmR": [0, 0, 0, 0, 0, -51.2],
+          "UpperArmR": [0, 0, 0, 25, -18, -102],
+          "ItemAnchorL": [5.7, 0.2, 0.059999995, 0, 7, 13],
+          "LowerArmL": [0, 0, 0, 0, 0, -70],
+          "UpperArmL": [0, 0, 0, -7, -20, -47]
+        }
+      },
+      {
+        "EasingTime": 3631,
+        "EasingFunction": "Linear",
+        "DetachedAnchor": false,
+        "SwitchArms": true,
+        "PitchFollow": false,
+        "PitchDontFollow": false,
+        "FOVMultiplier": 1,
+        "BobbingAmplitude": 0.8,
+        "Elements": {
+          "ItemAnchor": [3.69, -0.29000002, 0.4, 54, 0, 0],
+          "LowerArmR": [0, 0, 0, 0, 0, -31.2],
+          "UpperArmR": [0, 0, 0, 25, -27, -120],
+          "ItemAnchorL": [5.7, 0.2, 0.059999995, 0, 7, 13],
+          "LowerArmL": [0, 0, 0, 0, 0, -70],
+          "UpperArmL": [0, 0, 0, -7, -20, -47]
+        }
+      },
+      {
+        "EasingTime": 3800,
+        "EasingFunction": "Linear",
+        "DetachedAnchor": false,
+        "SwitchArms": true,
+        "PitchFollow": false,
+        "PitchDontFollow": false,
+        "FOVMultiplier": 1,
+        "BobbingAmplitude": 0.8,
+        "Elements": {
+          "ItemAnchor": [3.69, -0.29000002, 0.4, 54, 0, 0],
+          "LowerArmR": [0, 0, 0, 0, 0, -50.2],
+          "UpperArmR": [0, 0, 0, 23, -14, -104],
+          "ItemAnchorL": [5.7, 0.2, 0.059999995, 0, 7, 13],
+          "LowerArmL": [0, 0, 0, 0, 0, -68],
+          "UpperArmL": [0, 0, 0, -7, -20, -47]
+        }
+      },
+      {
+        "EasingTime": 4035,
+        "EasingFunction": "Linear",
+        "DetachedAnchor": false,
+        "SwitchArms": true,
+        "PitchFollow": false,
+        "PitchDontFollow": false,
+        "FOVMultiplier": 1,
+        "BobbingAmplitude": 0.8,
+        "Elements": {
+          "ItemAnchor": [3.69, -0.29000002, 0.4, 54, 0, 0],
+          "LowerArmR": [0, 0, 0, 0, 0, -76.2],
+          "UpperArmR": [0, 0, 0, 25, 6, -70],
+          "ItemAnchorL": [5.7, 0.2, 0.059999995, 0, 7, 13],
+          "LowerArmL": [0, 0, 0, 0, 0, -68],
+          "UpperArmL": [0, 0, 0, -7, -20, -47]
+        }
+      },
+      {
+        "EasingTime": 4186,
+        "EasingFunction": "Linear",
+        "DetachedAnchor": false,
+        "SwitchArms": true,
+        "PitchFollow": false,
+        "PitchDontFollow": false,
+        "FOVMultiplier": 1,
+        "BobbingAmplitude": 0.8,
+        "Elements": {
+          "ItemAnchor": [3.69, -0.29000002, 0.4, 54, 0, 0],
+          "LowerArmR": [0, 0, 0, 0, 0, -72.2],
+          "UpperArmR": [0, 0, 0, 25, -1, -79],
+          "ItemAnchorL": [5.7, 0.2, 0.059999995, 0, 7, 13],
+          "LowerArmL": [0, 0, 0, 0, 0, -70],
+          "UpperArmL": [0, 0, 0, -7, -20, -47]
+        }
+      },
+      {
+        "EasingTime": 4338,
+        "EasingFunction": "Linear",
+        "DetachedAnchor": false,
+        "SwitchArms": true,
+        "PitchFollow": false,
+        "PitchDontFollow": false,
+        "FOVMultiplier": 1,
+        "BobbingAmplitude": 0.8,
+        "Elements": {
+          "ItemAnchor": [3.69, -0.29000002, 0.4, 54, 0, 0],
+          "LowerArmR": [0, 0, 0, 0, 0, -76.2],
+          "UpperArmR": [0, 0, 0, 25, 6, -69],
+          "ItemAnchorL": [5.7, 0.2, 0.059999995, 0, 7, 13],
+          "LowerArmL": [0, 0, 0, 0, 0, -68],
+          "UpperArmL": [0, 0, 0, -7, -20, -47]
+        }
+      },
+      {
+        "EasingTime": 4641,
+        "EasingFunction": "Linear",
+        "DetachedAnchor": false,
+        "SwitchArms": true,
+        "PitchFollow": false,
+        "PitchDontFollow": false,
+        "FOVMultiplier": 1,
+        "BobbingAmplitude": 0.8,
+        "Elements": {
+          "ItemAnchor": [3.69, -0.29000002, 0.4, 54, 0, 0],
+          "LowerArmR": [0, 0, 0, 0, 0, -51.2],
+          "UpperArmR": [0, 0, 0, 16, -9, -105],
+          "ItemAnchorL": [5.7, 0.2, 0.059999995, 0, 7, 13],
+          "LowerArmL": [0, 0, 0, 0, 0, -70],
+          "UpperArmL": [0, 0, 0, -7, -20, -47]
+        }
+      },
+      {
+        "EasingTime": 4994,
+        "EasingFunction": "Linear",
+        "DetachedAnchor": false,
+        "SwitchArms": true,
+        "PitchFollow": false,
+        "PitchDontFollow": false,
+        "FOVMultiplier": 1,
+        "BobbingAmplitude": 0.8,
+        "Elements": {
+          "ItemAnchor": [3.69, -0.29000002, 0.4, 54, 0, 0],
+          "LowerArmR": [0, 0, 0, 0, 0, -51.2],
+          "UpperArmR": [0, 0, 0, 8, -2, -105],
+          "ItemAnchorL": [5.7, 0.2, 0.059999995, 0, 7, 13],
+          "LowerArmL": [0, 0, 0, 0, 0, -70],
+          "UpperArmL": [0, 0, 0, -7, -20, -47]
+        }
+      },
+      {
+        "EasingTime": 5247,
+        "EasingFunction": "Linear",
+        "DetachedAnchor": false,
+        "SwitchArms": true,
+        "PitchFollow": false,
+        "PitchDontFollow": false,
+        "FOVMultiplier": 1,
+        "BobbingAmplitude": 0.8,
+        "Elements": {
+          "ItemAnchor": [3.69, -0.29000002, 0.4, 54, 0, 0],
+          "LowerArmR": [0, 0, 0, 0, 0, -51.2],
+          "UpperArmR": [0, 0, 0, 8, 0, -99],
+          "ItemAnchorL": [5.7, 0.2, 0.059999995, 0, 7, 13],
+          "LowerArmL": [0, 0, 0, 0, 0, -70],
+          "UpperArmL": [0, 0, 0, -7, -20, -47]
+        }
+      },
+      {
+        "EasingTime": 5500,
+        "EasingFunction": "Linear",
+        "DetachedAnchor": false,
+        "SwitchArms": true,
+        "PitchFollow": false,
+        "PitchDontFollow": false,
+        "FOVMultiplier": 1,
+        "BobbingAmplitude": 0.8,
+        "Elements": {
+          "ItemAnchor": [3.69, -0.29000002, 0.4, 54, 0, 0],
+          "LowerArmR": [0, 0, 0, 0, 0, -73.2],
+          "UpperArmR": [0, 0, 0, 8, 10, -59],
+          "ItemAnchorL": [5.7, 0.2, 0.059999995, 0, 7, 13],
+          "LowerArmL": [0, 0, 0, 0, 0, -70],
+          "UpperArmL": [0, 0, 0, -7, -20, -47]
+        }
+      },
+      {
+        "EasingTime": 6000,
+        "EasingFunction": "Linear",
+        "DetachedAnchor": false,
+        "SwitchArms": true,
+        "PitchFollow": false,
+        "PitchDontFollow": false,
+        "FOVMultiplier": 1,
+        "BobbingAmplitude": 0.8,
+        "Elements": {
+          "ItemAnchor": [3.69, -0.29000002, 0.4, 54, 0, 0],
+          "LowerArmR": [0, 0, 0, 0, 0, -63],
+          "UpperArmR": [0, 0, 0, 0, 21, -37],
+          "ItemAnchorL": [5.7, 0.2, 0.059999995, 0, 7, 13],
+          "LowerArmL": [0, 0, 0, 0, 0, -70],
+          "UpperArmL": [0, 0, 0, -7, -20, -47]
+        }
+      }
+    ],
+    "ItemKeyFrames": [
+      {
+        "DurationFraction": 0,
+        "EasingFunction": "Linear",
+        "Elements": {
+          "Ramrod_shaft": [0, 0, 0, 0, 0, 0],
+          "Flask": [12, 19, -4, 0, 0, 0],
+          "Bullet": [12, 14, 12, 0, 0, 0],
+          "Ramrod": [0, 0, 0, 0, 0, 0],
+          "Linen_3": [-0.15, -0.15, 0, 0, 0, 0],
+          "Flask_origin_inner": [0, 0, 0, 0, 0, 0],
+          "Plug": [0, 0, 0, 0, 0, 0],
+          "Flask_origin": [-56, 0, -48, 0, 0, 0],
+          "Linen_1": [-0.15, 0.15, 0, 0, 0, 0],
+          "Linen_0": [0.15, 0.15, 0, 0, 0, 0],
+          "Linen_2": [0.15, -0.15, 0, 0, 0, 0],
+          "Patch": [11, 15, 11, 0, 0, 0]
+        }
+      },
+      {
+        "DurationFraction": 0.10101011,
+        "EasingFunction": "Linear",
+        "Elements": {
+          "Ramrod_shaft": [0, 0, 0, 0, 0, 0],
+          "Flask": [0, 0, 0, 0, 0, 0],
+          "Bullet": [12, 14, 12, 0, 0, 0],
+          "Ramrod": [0, 0, 0, 0, 0, 0],
+          "Linen_3": [-0.15, -0.15, 0, 0, 0, 0],
+          "Flask_origin_inner": [0, 0, 0, 0, 0, 0],
+          "Plug": [0, 0, 0, 0, 0, 0],
+          "Flask_origin": [-56, 0.9, -79, 0, 0, 0],
+          "Linen_1": [-0.15, 0.15, 0, 0, 0, 0],
+          "Linen_0": [0.15, 0.15, 0, 0, 0, 0],
+          "Linen_2": [0.15, -0.15, 0, 0, 0, 0],
+          "Patch": [11, 15, 11, 0, 0, 0]
+        }
+      },
+      {
+        "DurationFraction": 0.13131313,
+        "EasingFunction": "Linear",
+        "Elements": {
+          "Ramrod_shaft": [0, 0, 0, 0, 0, 0],
+          "Flask": [0, 0, 0, 0, 0, 0],
+          "Bullet": [12, 14, 12, 0, 0, 0],
+          "Ramrod": [0, 0, 0, 0, 0, 0],
+          "Linen_3": [-0.15, -0.15, 0, 0, 0, 0],
+          "Flask_origin_inner": [0, 0, 0, 0, 42, 0],
+          "Plug": [0, 0, 0, -29, 0, 0],
+          "Flask_origin": [-61.5, 0.9, -78.5, 0, 0, 0],
+          "Linen_1": [-0.15, 0.15, 0, 0, 0, 0],
+          "Linen_0": [0.15, 0.15, 0, 0, 0, 0],
+          "Linen_2": [0.15, -0.15, 0, 0, 0, 0],
+          "Patch": [11, 15, 11, 0, 0, 0]
+        }
+      },
+      {
+        "DurationFraction": 0.16161616,
+        "EasingFunction": "Linear",
+        "Elements": {
+          "Ramrod_shaft": [0, 0, 0, 0, 0, 0],
+          "Flask": [0, 0, 0, 0, 0, 0],
+          "Bullet": [12, 14, 12, 0, 0, 0],
+          "Ramrod": [0, 0, 0, 0, 0, 0],
+          "Linen_3": [-0.15, -0.15, 0, 0, 0, 0],
+          "Flask_origin_inner": [0, 0, 0, 0, 80, 0],
+          "Plug": [0, 0, 0, -29, 0, 0],
+          "Flask_origin": [-61.7, 0.9, -77.5, 0, 0, 0],
+          "Linen_1": [-0.15, 0.15, 0, 0, 0, 0],
+          "Linen_0": [0.15, 0.15, 0, 0, 0, 0],
+          "Linen_2": [0.15, -0.15, 0, 0, 0, 0],
+          "Patch": [11, 15, 11, 0, 0, 0]
+        }
+      },
+      {
+        "DurationFraction": 0.1919192,
+        "EasingFunction": "Linear",
+        "Elements": {
+          "Ramrod_shaft": [0, 0, 0, 0, 0, 0],
+          "Flask": [0, 0, 0, 0, 0, 0],
+          "Bullet": [12, 14, 12, 0, 0, 0],
+          "Ramrod": [0, 0, 0, 0, 0, 0],
+          "Linen_3": [-0.15, -0.15, 0, 0, 0, 0],
+          "Flask_origin_inner": [0, 0, 0, 0, 42, 0],
+          "Plug": [0, 0, 0, -29, 0, 0],
+          "Flask_origin": [-61.5, 0.9, -78.5, 0, 0, 0],
+          "Linen_1": [-0.15, 0.15, 0, 0, 0, 0],
+          "Linen_0": [0.15, 0.15, 0, 0, 0, 0],
+          "Linen_2": [0.15, -0.15, 0, 0, 0, 0],
+          "Patch": [11, 15, 11, 0, 0, 0]
+        }
+      },
+      {
+        "DurationFraction": 0.22222222,
+        "EasingFunction": "Linear",
+        "Elements": {
+          "Ramrod_shaft": [0, 0, 0, 0, 0, 0],
+          "Flask": [0, 0, 0, 0, 0, 0],
+          "Bullet": [12, 14, 12, 0, 0, 0],
+          "Ramrod": [0, 0, 0, 0, 0, 0],
+          "Linen_3": [-0.15, -0.15, 0, 0, 0, 0],
+          "Flask_origin_inner": [0, 0, 0, 0, 0, 0],
+          "Plug": [0, 0, 0, 0, 0, 0],
+          "Flask_origin": [-60, 0.9, -79, 0, 0, 0],
+          "Linen_1": [-0.15, 0.15, 0, 0, 0, 0],
+          "Linen_0": [0.15, 0.15, 0, 0, 0, 0],
+          "Linen_2": [0.15, -0.15, 0, 0, 0, 0],
+          "Patch": [11, 15, 11, 0, 0, 0]
+        }
+      },
+      {
+        "DurationFraction": 0.3030303,
+        "EasingFunction": "Linear",
+        "Elements": {
+          "Ramrod_shaft": [0, 0, 0, 0, 0, 0],
+          "Flask": [12, 19, -4, 0, 0, 0],
+          "Bullet": [12, 14, 12, 0, 0, 0],
+          "Ramrod": [0, 0, 0, 0, 0, 0],
+          "Linen_3": [-0.15, -0.15, 0, 0, 0, 0],
+          "Flask_origin_inner": [0, 0, 0, 0, 0, 0],
+          "Plug": [0, 0, 0, 0, 0, 0],
+          "Flask_origin": [-56, 0, -48, 0, 0, 0],
+          "Linen_1": [-0.15, 0.15, 0, 0, 0, 0],
+          "Linen_0": [0.15, 0.15, 0, 0, 0, 0],
+          "Linen_2": [0.15, -0.15, 0, 0, 0, 0],
+          "Patch": [11, 15, 11, 0, 0, 0]
+        }
+      },
+      {
+        "DurationFraction": 0.3838384,
+        "EasingFunction": "Linear",
+        "Elements": {
+          "Ramrod_shaft": [0, 0, 0, 0, 0, 0],
+          "Flask": [12, 19, -4, 0, 0, 0],
+          "Bullet": [0, 0, -4.1, 0, 0, 0],
+          "Ramrod": [0, 0, 0, 0, 0, 0],
+          "Linen_3": [-0.15, -0.15, 0, 0, 0, 0],
+          "Flask_origin_inner": [0, 0, 0, 0, 0, 0],
+          "Plug": [0, 0, 0, 0, 0, 0],
+          "Flask_origin": [-56, 0, -48, 0, 0, 0],
+          "Linen_1": [-0.15, 0.15, 0, 0, 0, 0],
+          "Linen_0": [0.15, 0.15, 0, 0, 0, 0],
+          "Linen_2": [0.15, -0.15, 0, 0, 0, 0],
+          "Patch": [0, 0, -4, 0, 0, 0]
+        }
+      },
+      {
+        "DurationFraction": 0.42424244,
+        "EasingFunction": "Linear",
+        "Elements": {
+          "Ramrod_shaft": [0, 0, 0, 0, 0, 0],
+          "Flask": [12, 19, -4, 0, 0, 0],
+          "Bullet": [0, 0, -1.1, 0, 0, 0],
+          "Ramrod": [0, 0, 0, 0, 0, 0],
+          "Linen_3": [-0.15, -0.15, 0, 0, 0, 0],
+          "Flask_origin_inner": [0, 0, 0, 0, 0, 0],
+          "Plug": [0, 0, 0, 0, 0, 0],
+          "Flask_origin": [-56, 0, -48, 0, 0, 0],
+          "Linen_1": [-0.15, 0.15, 0, 0, 0, 0],
+          "Linen_0": [0.15, 0.15, 0, 0, 0, 0],
+          "Linen_2": [0.15, -0.15, 0, 0, 0, 0],
+          "Patch": [0, 0, -1, 0, 0, 0]
+        }
+      },
+      {
+        "DurationFraction": 0.46464643,
+        "EasingFunction": "Linear",
+        "Elements": {
+          "Ramrod_shaft": [0, 0, 0, 0, 0, 0],
+          "Flask": [12, 19, -4, 0, 0, 0],
+          "Bullet": [0, 0, -0.8, 0, 0, 0],
+          "Ramrod": [0, 0, 0, 0, 0, 0],
+          "Linen_3": [0, 0, 0, 0, 0, 0],
+          "Flask_origin_inner": [0, 0, 0, 0, 0, 0],
+          "Plug": [0, 0, 0, 0, 0, 0],
+          "Flask_origin": [-56, 0, -48, 0, 0, 0],
+          "Linen_1": [0, 0, 0, 0, 0, 0],
+          "Linen_0": [0, 0, 0, 0, 0, 0],
+          "Linen_2": [0, 0, 0, 0, 0, 0],
+          "Patch": [0, 0, -0.95, 0, 0, 0]
+        }
+      },
+      {
+        "DurationFraction": 0.5050505,
+        "EasingFunction": "Linear",
+        "Elements": {
+          "Ramrod_shaft": [0, 0, 0, 0, 0, 0],
+          "Flask": [12, 19, -4, 0, 0, 0],
+          "Bullet": [0, 0, -0.8, 0, 0, 0],
+          "Ramrod": [0, 0, 0, 0, 0, 0],
+          "Linen_3": [0, 0, 0, 0, 0, 0],
+          "Flask_origin_inner": [0, 0, 0, 0, 0, 0],
+          "Plug": [0, 0, 0, 0, 0, 0],
+          "Flask_origin": [-56, 0, -48, 0, 0, 0],
+          "Linen_1": [0, 0, 0, 0, 0, 0],
+          "Linen_0": [0, 0, 0, 0, 0, 0],
+          "Linen_2": [0, 0, 0, 0, 0, 0],
+          "Patch": [0, 0, -0.95, 0, 0, 0]
+        }
+      },
+      {
+        "DurationFraction": 0.5555556,
+        "EasingFunction": "Linear",
+        "Elements": {
+          "Ramrod_shaft": [0, 0, 0, 0, 0, 0],
+          "Flask": [12, 19, -4, 0, 0, 0],
+          "Bullet": [0, 0, -0.8, 0, 0, 0],
+          "Ramrod": [0, 0, -11, 0, 0, 0],
+          "Linen_3": [0, 0, 0, 0, 0, 0],
+          "Flask_origin_inner": [0, 0, 0, 0, 0, 0],
+          "Plug": [0, 0, 0, 0, 0, 0],
+          "Flask_origin": [-56, 0, -48, 0, 0, 0],
+          "Linen_1": [0, 0, 0, 0, 0, 0],
+          "Linen_0": [0, 0, 0, 0, 0, 0],
+          "Linen_2": [0, 0, 0, 0, 0, 0],
+          "Patch": [0, 0, -0.95, 0, 0, 0]
+        }
+      },
+      {
+        "DurationFraction": 0.6060606,
+        "EasingFunction": "Linear",
+        "Elements": {
+          "Ramrod_shaft": [0, 0, 0, 174, 0, 0],
+          "Flask": [12, 19, -4, 0, 0, 0],
+          "Bullet": [0, 0, -0.8, 0, 0, 0],
+          "Ramrod": [0, 0, -11, 0, 0, 0],
+          "Linen_3": [0, 0, 0, 0, 0, 0],
+          "Flask_origin_inner": [0, 0, 0, 0, 0, 0],
+          "Plug": [0, 0, 0, 0, 0, 0],
+          "Flask_origin": [-56, 0, -48, 0, 0, 0],
+          "Linen_1": [0, 0, 0, 0, 0, 0],
+          "Linen_0": [0, 0, 0, 0, 0, 0],
+          "Linen_2": [0, 0, 0, 0, 0, 0],
+          "Patch": [0, 0, -0.95, 0, 0, 0]
+        }
+      },
+      {
+        "DurationFraction": 0.6262626,
+        "EasingFunction": "Linear",
+        "Elements": {
+          "Ramrod_shaft": [0, 0, 0, 180, 0, 0],
+          "Flask": [12, 19, -4, 0, 0, 0],
+          "Bullet": [0, 0, -0.8, 0, 0, 0],
+          "Ramrod": [0, 0.45, -9, 0, 0, 0],
+          "Linen_3": [0, 0, 0, 0, 0, 0],
+          "Flask_origin_inner": [0, 0, 0, 0, 0, 0],
+          "Plug": [0, 0, 0, 0, 0, 0],
+          "Flask_origin": [-56, 0, -48, 0, 0, 0],
+          "Linen_1": [0, 0, 0, 0, 0, 0],
+          "Linen_0": [0, 0, 0, 0, 0, 0],
+          "Linen_2": [0, 0, 0, 0, 0, 0],
+          "Patch": [0, 0, -0.95, 0, 0, 0]
+        }
+      },
+      {
+        "DurationFraction": 0.6363636,
+        "EasingFunction": "Linear",
+        "Elements": {
+          "Ramrod_shaft": [0, 0, 0, 180, 0, 0],
+          "Flask": [12, 19, -4, 0, 0, 0],
+          "Bullet": [0, 0, 0, 0, 0, 0],
+          "Ramrod": [0, 0.45, -8.2, 0, 0, 0],
+          "Linen_3": [0, 0, 0, 0, 0, 0],
+          "Flask_origin_inner": [0, 0, 0, 0, 0, 0],
+          "Plug": [0, 0, 0, 0, 0, 0],
+          "Flask_origin": [-56, 0, -48, 0, 0, 0],
+          "Linen_1": [0, 0, 0, 0, 0, 0],
+          "Linen_0": [0, 0, 0, 0, 0, 0],
+          "Linen_2": [0, 0, 0, 0, 0, 0],
+          "Patch": [0, 0, 0, 0, 0, 0]
+        }
+      },
+      {
+        "DurationFraction": 0.7070707,
+        "EasingFunction": "Linear",
+        "Elements": {
+          "Ramrod_shaft": [0, 0, 0, 180, 0, 0],
+          "Flask": [12, 19, -4, 0, 0, 0],
+          "Bullet": [0, 0, 0, 0, 0, 0],
+          "Ramrod": [0, 0.45, 0.8, 0, 0, 0],
+          "Linen_3": [0, 0, 0, 0, 0, 0],
+          "Flask_origin_inner": [0, 0, 0, 0, 0, 0],
+          "Plug": [0, 0, 0, 0, 0, 0],
+          "Flask_origin": [-56, 0, -48, 0, 0, 0],
+          "Linen_1": [0, 0, 0, 0, 0, 0],
+          "Linen_0": [0, 0, 0, 0, 0, 0],
+          "Linen_2": [0, 0, 0, 0, 0, 0],
+          "Patch": [0, 0, 0, 0, 0, 0]
+        }
+      },
+      {
+        "DurationFraction": 0.7373737,
+        "EasingFunction": "Linear",
+        "Elements": {
+          "Ramrod_shaft": [0, 0, 0, 180, 0, 0],
+          "Flask": [12, 19, -4, 0, 0, 0],
+          "Bullet": [0, 0, 0, 0, 0, 0],
+          "Ramrod": [0, 0.45, -1.2, 0, 0, 0],
+          "Linen_3": [0, 0, 0, 0, 0, 0],
+          "Flask_origin_inner": [0, 0, 0, 0, 0, 0],
+          "Plug": [0, 0, 0, 0, 0, 0],
+          "Flask_origin": [-56, 0, -48, 0, 0, 0],
+          "Linen_1": [0, 0, 0, 0, 0, 0],
+          "Linen_0": [0, 0, 0, 0, 0, 0],
+          "Linen_2": [0, 0, 0, 0, 0, 0],
+          "Patch": [0, 0, 0, 0, 0, 0]
+        }
+      },
+      {
+        "DurationFraction": 0.7676768,
+        "EasingFunction": "Linear",
+        "Elements": {
+          "Ramrod_shaft": [0, 0, 0, 180, 0, 0],
+          "Flask": [12, 19, -4, 0, 0, 0],
+          "Bullet": [0, 0, 0, 0, 0, 0],
+          "Ramrod": [0, 0.45, 1.4, 0, 0, 0],
+          "Linen_3": [0, 0, 0, 0, 0, 0],
+          "Flask_origin_inner": [0, 0, 0, 0, 0, 0],
+          "Plug": [0, 0, 0, 0, 0, 0],
+          "Flask_origin": [-56, 0, -48, 0, 0, 0],
+          "Linen_1": [0, 0, 0, 0, 0, 0],
+          "Linen_0": [0, 0, 0, 0, 0, 0],
+          "Linen_2": [0, 0, 0, 0, 0, 0],
+          "Patch": [0, 0, 0, 0, 0, 0]
+        }
+      },
+      {
+        "DurationFraction": 0.82828283,
+        "EasingFunction": "Linear",
+        "Elements": {
+          "Ramrod_shaft": [0, 0, 0, 180, 0, 0],
+          "Flask": [12, 19, -4, 0, 0, 0],
+          "Bullet": [0, 0, 0, 0, 0, 0],
+          "Ramrod": [0, 0.45, -9.6, 0, 0, 0],
+          "Linen_3": [0, 0, 0, 0, 0, 0],
+          "Flask_origin_inner": [0, 0, 0, 0, 0, 0],
+          "Plug": [0, 0, 0, 0, 0, 0],
+          "Flask_origin": [-56, 0, -48, 0, 0, 0],
+          "Linen_1": [0, 0, 0, 0, 0, 0],
+          "Linen_0": [0, 0, 0, 0, 0, 0],
+          "Linen_2": [0, 0, 0, 0, 0, 0],
+          "Patch": [0, 0, 0, 0, 0, 0]
+        }
+      },
+      {
+        "DurationFraction": 0.8989899,
+        "EasingFunction": "Linear",
+        "Elements": {
+          "Ramrod_shaft": [0, 0, 0, 6, 0, 0],
+          "Flask": [12, 19, -4, 0, 0, 0],
+          "Bullet": [0, 0, 0, 0, 0, 0],
+          "Ramrod": [0, 0.45, -10.6, 0, 0, 0],
+          "Linen_3": [0, 0, 0, 0, 0, 0],
+          "Flask_origin_inner": [0, 0, 0, 0, 0, 0],
+          "Plug": [0, 0, 0, 0, 0, 0],
+          "Flask_origin": [-56, 0, -48, 0, 0, 0],
+          "Linen_1": [0, 0, 0, 0, 0, 0],
+          "Linen_0": [0, 0, 0, 0, 0, 0],
+          "Linen_2": [0, 0, 0, 0, 0, 0],
+          "Patch": [0, 0, 0, 0, 0, 0]
+        }
+      },
+      {
+        "DurationFraction": 0.9494949,
+        "EasingFunction": "Linear",
+        "Elements": {
+          "Ramrod_shaft": [0, 0, 0, 0, 0, 0],
+          "Flask": [12, 19, -4, 0, 0, 0],
+          "Bullet": [0, 0, 0, 0, 0, 0],
+          "Ramrod": [0, -0.05, -9.6, 0, 0, 0],
+          "Linen_3": [0, 0, 0, 0, 0, 0],
+          "Flask_origin_inner": [0, 0, 0, 0, 0, 0],
+          "Plug": [0, 0, 0, 0, 0, 0],
+          "Flask_origin": [-56, 0, -48, 0, 0, 0],
+          "Linen_1": [0, 0, 0, 0, 0, 0],
+          "Linen_0": [0, 0, 0, 0, 0, 0],
+          "Linen_2": [0, 0, 0, 0, 0, 0],
+          "Patch": [0, 0, 0, 0, 0, 0]
+        }
+      },
+      {
+        "DurationFraction": 1,
+        "EasingFunction": "Linear",
+        "Elements": {
+          "Ramrod_shaft": [0, 0, 0, 0, 0, 0],
+          "Flask": [12, 19, -4, 0, 0, 0],
+          "Bullet": [0, 0, 0, 0, 0, 0],
+          "Ramrod": [0, 0, 0, 0, 0, 0],
+          "Linen_3": [0, 0, 0, 0, 0, 0],
+          "Flask_origin_inner": [0, 0, 0, 0, 0, 0],
+          "Plug": [0, 0, 0, 0, 0, 0],
+          "Flask_origin": [-56, 0, -48, 0, 0, 0],
+          "Linen_1": [0, 0, 0, 0, 0, 0],
+          "Linen_0": [0, 0, 0, 0, 0, 0],
+          "Linen_2": [0, 0, 0, 0, 0, 0],
+          "Patch": [0, 0, 0, 0, 0, 0]
+        }
+      }
+    ],
+    "SoundFrames": [],
+    "ParticlesFrames": [],
+    "CallbackFrames": [{"Code": "attach", "DurationFraction": 0.083333336}, {"Code": "detach", "DurationFraction": 0.9166667}],
+    "ItemAnimationStart": 500,
+    "ItemAnimationEnd": 5500
+  },
+  "firearms-pistol-flintlock-prime-tp": {
+    "Hold": false,
+    "PlayerKeyFrames": [
+      {
+        "EasingTime": 300,
+        "EasingFunction": "Linear",
+        "DetachedAnchor": false,
+        "SwitchArms": false,
+        "PitchFollow": false,
+        "PitchDontFollow": false,
+        "FOVMultiplier": 1,
+        "BobbingAmplitude": 1,
+        "Elements": {
+          "ItemAnchor": [2.5, 2.1, 0.9, 39, 16, 111],
+          "LowerArmR": [0, 0, 0, 0, 0, -85],
+          "UpperArmR": [0, -0.2, 0, 0, 36, -39],
+          "ItemAnchorL": [5.6, 1.7, -0.5, -6, 3, 109],
+          "LowerArmL": [0, 0, 0, 0, 0, -55],
+          "UpperArmL": [0, 0, 0, 0, 0, -53]
+        }
+      },
+      {
+        "EasingTime": 500,
+        "EasingFunction": "Linear",
+        "DetachedAnchor": false,
+        "SwitchArms": true,
+        "PitchFollow": false,
+        "PitchDontFollow": false,
+        "FOVMultiplier": 1,
+        "BobbingAmplitude": 1,
+        "Elements": {
+          "ItemAnchor": [2.5, 2.1, 0.9, 39, 16, 111],
+          "LowerArmR": [0, 0, 0, 0, 0, -86],
+          "UpperArmR": [0, -0.2, 0, 25, 21, -56],
+          "ItemAnchorL": [5.6, 1.7, -0.5, -6, 3, 109],
+          "LowerArmL": [0, 0, 0, 0, 0, -55],
+          "UpperArmL": [0, 0, 0, 0, 0, -53]
+        }
+      },
+      {
+        "EasingTime": 790,
+        "EasingFunction": "Linear",
+        "DetachedAnchor": false,
+        "SwitchArms": true,
+        "PitchFollow": false,
+        "PitchDontFollow": false,
+        "FOVMultiplier": 1,
+        "BobbingAmplitude": 1,
+        "Elements": {
+          "ItemAnchor": [2.5, 2.1, 0.9, 39, 16, 111],
+          "LowerArmR": [0, 0, 0, 0, 0, -93],
+          "UpperArmR": [0, -0.2, 0, 26, 21, -56],
+          "ItemAnchorL": [5.6, 1.7, -0.5, -6, 3, 109],
+          "LowerArmL": [0, 0, 0, 0, 0, -55],
+          "UpperArmL": [0, 0, 0, 0, 0, -53]
+        }
+      },
+      {
+        "EasingTime": 934,
+        "EasingFunction": "Linear",
+        "DetachedAnchor": false,
+        "SwitchArms": true,
+        "PitchFollow": false,
+        "PitchDontFollow": false,
+        "FOVMultiplier": 1,
+        "BobbingAmplitude": 1,
+        "Elements": {
+          "ItemAnchor": [2.5, 2.1, 0.9, 39, 16, 111],
+          "LowerArmR": [0, 0, 0, 0, 0, -102],
+          "UpperArmR": [0, 0, 0, 4, 0, 71],
+          "ItemAnchorL": [5.6, 1.7, -0.5, -6, 3, 109],
+          "LowerArmL": [0, 0, 0, 0, 0, -55],
+          "UpperArmL": [0, 0, 0, 0, 0, -53]
+        }
+      },
+      {
+        "EasingTime": 1225,
+        "EasingFunction": "Linear",
+        "DetachedAnchor": false,
+        "SwitchArms": true,
+        "PitchFollow": false,
+        "PitchDontFollow": false,
+        "FOVMultiplier": 1,
+        "BobbingAmplitude": 1,
+        "Elements": {
+          "ItemAnchor": [2.5, 2.1, 0.9, 39, 16, 111],
+          "LowerArmR": [0, 0, 0, 0, 0, -99],
+          "UpperArmR": [0, -0.2, 0, 32, 5, -40],
+          "ItemAnchorL": [5.6, 1.7, -0.5, -6, 3, 109],
+          "LowerArmL": [0, 0, 0, 0, 0, -55],
+          "UpperArmL": [0, 0, 0, 0, 0, -53]
+        }
+      },
+      {
+        "EasingTime": 1369,
+        "EasingFunction": "Linear",
+        "DetachedAnchor": false,
+        "SwitchArms": true,
+        "PitchFollow": false,
+        "PitchDontFollow": false,
+        "FOVMultiplier": 1,
+        "BobbingAmplitude": 1,
+        "Elements": {
+          "ItemAnchor": [2.5, 2.1, 0.9, 39, 16, 111],
+          "LowerArmR": [0, 0, 0, 0, 0, -88],
+          "UpperArmR": [0, -0.2, 0, 73, -2, -61],
+          "ItemAnchorL": [5.6, 1.7, -0.5, -6, 3, 109],
+          "LowerArmL": [0, 0, 0, 0, 0, -55],
+          "UpperArmL": [0, 0, 0, 0, 0, -53]
+        }
+      },
+      {
+        "EasingTime": 1514,
+        "EasingFunction": "Linear",
+        "DetachedAnchor": false,
+        "SwitchArms": true,
+        "PitchFollow": false,
+        "PitchDontFollow": false,
+        "FOVMultiplier": 1,
+        "BobbingAmplitude": 1,
+        "Elements": {
+          "ItemAnchor": [2.5, 2.1, 0.9, 39, 16, 111],
+          "LowerArmR": [0, 0, 0, 0, 0, -99],
+          "UpperArmR": [0, -0.2, 0, 32, 5, -40],
+          "ItemAnchorL": [5.6, 1.7, -0.5, -6, 3, 109],
+          "LowerArmL": [0, 0, 0, 0, 0, -55],
+          "UpperArmL": [0, 0, 0, 0, 0, -53]
+        }
+      },
+      {
+        "EasingTime": 1804,
+        "EasingFunction": "Linear",
+        "DetachedAnchor": false,
+        "SwitchArms": true,
+        "PitchFollow": false,
+        "PitchDontFollow": false,
+        "FOVMultiplier": 1,
+        "BobbingAmplitude": 1,
+        "Elements": {
+          "ItemAnchor": [2.5, 2.1, 0.9, 39, 16, 111],
+          "LowerArmR": [0, 0, 0, 0, 0, -104],
+          "UpperArmR": [0, 0, 0, 0, 5, 78],
+          "ItemAnchorL": [5.6, 1.7, -0.5, -6, 3, 109],
+          "LowerArmL": [0, 0, 0, 0, 0, -55],
+          "UpperArmL": [0, 0, 0, 0, 0, -53]
+        }
+      },
+      {
+        "EasingTime": 1949,
+        "EasingFunction": "Linear",
+        "DetachedAnchor": false,
+        "SwitchArms": true,
+        "PitchFollow": false,
+        "PitchDontFollow": false,
+        "FOVMultiplier": 1,
+        "BobbingAmplitude": 1,
+        "Elements": {
+          "ItemAnchor": [2.5, 2.1, 0.9, 39, 16, 111],
+          "LowerArmR": [0, 0, 0, 0, 0, -69],
+          "UpperArmR": [0, -0.2, 0, 32, 13, -69],
+          "ItemAnchorL": [5.6, 1.7, -0.5, -6, 3, 109],
+          "LowerArmL": [0, 0, 0, 0, 0, -55],
+          "UpperArmL": [0, 0, 0, 0, 0, -53]
+        }
+      },
+      {
+        "EasingTime": 2239,
+        "EasingFunction": "Linear",
+        "DetachedAnchor": false,
+        "SwitchArms": true,
+        "PitchFollow": false,
+        "PitchDontFollow": false,
+        "FOVMultiplier": 1,
+        "BobbingAmplitude": 1,
+        "Elements": {
+          "ItemAnchor": [2.5, 2.1, 0.9, 39, 16, 111],
+          "LowerArmR": [0, 0, 0, 0, 0, -85],
+          "UpperArmR": [0, -0.2, 0, 32, 18, -62],
+          "ItemAnchorL": [5.6, 1.7, -0.5, -6, 3, 109],
+          "LowerArmL": [0, 0, 0, 0, 0, -55],
+          "UpperArmL": [0, 0, 0, 0, 0, -53]
+        }
+      },
+      {
+        "EasingTime": 2500,
+        "EasingFunction": "Linear",
+        "DetachedAnchor": false,
+        "SwitchArms": true,
+        "PitchFollow": false,
+        "PitchDontFollow": false,
+        "FOVMultiplier": 1,
+        "BobbingAmplitude": 1,
+        "Elements": {
+          "ItemAnchor": [2.5, 2.1, 0.9, 39, 16, 111],
+          "LowerArmR": [0, 0, 0, 0, 0, -99],
+          "UpperArmR": [0, -0.2, 0, 32, 22, -59],
+          "ItemAnchorL": [5.6, 1.7, -0.5, -6, 3, 109],
+          "LowerArmL": [0, 0, 0, 0, 0, -55],
+          "UpperArmL": [0, 0, 0, 0, 0, -53]
+        }
+      },
+      {
+        "EasingTime": 3000,
+        "EasingFunction": "Linear",
+        "DetachedAnchor": false,
+        "SwitchArms": true,
+        "PitchFollow": false,
+        "PitchDontFollow": false,
+        "FOVMultiplier": 1,
+        "BobbingAmplitude": 1,
+        "Elements": {
+          "ItemAnchor": [2.5, 2.1, 0.9, 39, 16, 111],
+          "LowerArmR": [0, 0, 0, 0, 0, -85],
+          "UpperArmR": [0, -0.2, 0, 0, 36, -39],
+          "ItemAnchorL": [5.6, 1.7, -0.5, -6, 3, 109],
+          "LowerArmL": [0, 0, 0, 0, 0, -55],
+          "UpperArmL": [0, 0, 0, 0, 0, -53]
+        }
+      }
+    ],
+    "ItemKeyFrames": [
+      {
+        "DurationFraction": 0,
+        "EasingFunction": "Linear",
+        "Elements": {"Flask_origin": [-55, -20, -52.7, 0, 0, 0], "Flask_origin_inner": [0, 0, 0, 90, 0, 0], "Hammer": [0, 0, 0, 0, 0, 0], "Frizzen": [0, 0, 0, 0, 0, 0]}
+      },
+      {
+        "DurationFraction": 0.14492753,
+        "EasingFunction": "Linear",
+        "Elements": {"Flask_origin": [-55, -20, -52.7, 0, 0, 0], "Flask_origin_inner": [0, 0, 0, 90, 0, 0], "Hammer": [0, 0, 0, 25, 0, 0], "Frizzen": [0, 0, 0, 0, 0, 0]}
+      },
+      {
+        "DurationFraction": 0.2173913,
+        "EasingFunction": "Linear",
+        "Elements": {"Flask_origin": [-55, -20, -52.7, 0, 0, 0], "Flask_origin_inner": [0, 0, 0, 90, 0, 0], "Hammer": [0, 0, 0, 25, 0, 0], "Frizzen": [0, 0, 0, 0, 0, 0]}
+      },
+      {
+        "DurationFraction": 0.36231884,
+        "EasingFunction": "Linear",
+        "Elements": {"Flask_origin": [-60, 2, -66.2, 0, 0, 0], "Flask_origin_inner": [0, 0, 0, 90, 0, 0], "Hammer": [0, 0, 0, 25, 0, 0], "Frizzen": [0, 0, 0, 0, 0, 0]}
+      },
+      {
+        "DurationFraction": 0.4347826,
+        "EasingFunction": "Linear",
+        "Elements": {"Flask_origin": [-60.9, 1.9, -66.2, 0, 0, 0], "Flask_origin_inner": [0, 0, 0, 90, 90, 0], "Hammer": [0, 0, 0, 25, 0, 0], "Frizzen": [0, 0, 0, 0, 0, 0]}
+      },
+      {
+        "DurationFraction": 0.5072464,
+        "EasingFunction": "Linear",
+        "Elements": {"Flask_origin": [-60, 2, -66.2, 0, 0, 0], "Flask_origin_inner": [0, 0, 0, 90, 0, 0], "Hammer": [0, 0, 0, 25, 0, 0], "Frizzen": [0, 0, 0, 0, 0, 0]}
+      },
+      {
+        "DurationFraction": 0.65217394,
+        "EasingFunction": "Linear",
+        "Elements": {"Flask_origin": [-55, -20, -52.7, 0, 0, 0], "Flask_origin_inner": [0, 0, 0, 90, 0, 0], "Hammer": [0, 0, 0, 25, 0, 0], "Frizzen": [0, 0, 0, 0, 0, 0]}
+      },
+      {
+        "DurationFraction": 0.7246377,
+        "EasingFunction": "Linear",
+        "Elements": {"Flask_origin": [-55, -20, -52.7, 0, 0, 0], "Flask_origin_inner": [0, 0, 0, 90, 0, 0], "Hammer": [0, 0, 0, 25, 0, 0], "Frizzen": [0, 0, 0, 0, 0, 0]}
+      },
+      {
+        "DurationFraction": 0.8695652,
+        "EasingFunction": "Linear",
+        "Elements": {"Flask_origin": [-55, -20, -52.7, 0, 0, 0], "Flask_origin_inner": [0, 0, 0, 90, 0, 0], "Hammer": [0, 0, 0, 25, 0, 0], "Frizzen": [0, 0, 0, 90, 0, 0]}
+      },
+      {
+        "DurationFraction": 1,
+        "EasingFunction": "Linear",
+        "Elements": {"Flask_origin": [-55, -20, -52.7, 0, 0, 0], "Flask_origin_inner": [0, 0, 0, 90, 0, 0], "Hammer": [0, 0, 0, 70, 0, 0], "Frizzen": [0, 0, 0, 90, 0, 0]}
+      }
+    ],
+    "SoundFrames": [],
+    "ParticlesFrames": [],
+    "CallbackFrames": [{"Code": "attach", "DurationFraction": 0.16666667}, {"Code": "detach", "DurationFraction": 0.8333333}],
+    "ItemAnimationStart": 500,
+    "ItemAnimationEnd": 2500
+  },
+  "firearms-pistol-flintlock-shoot-tp": {
+    "Hold": true,
+    "PlayerKeyFrames": [
+      {
+        "EasingTime": 75,
+        "EasingFunction": "Sin",
+        "DetachedAnchor": false,
+        "SwitchArms": false,
+        "PitchFollow": false,
+        "PitchDontFollow": false,
+        "FOVMultiplier": 0.907,
+        "BobbingAmplitude": 0.655,
+        "Elements": {"ItemAnchor": [-1.3, 1.2, 0.15, 6, -2, 95.3], "LowerArmR": [0, 0, 0, 13.1, 0, 2], "UpperArmR": [0, 0, 1, -7, 11.2, -96.9]}
+      },
+      {
+        "EasingTime": 200,
+        "EasingFunction": "Sin",
+        "DetachedAnchor": false,
+        "SwitchArms": false,
+        "PitchFollow": false,
+        "PitchDontFollow": false,
+        "FOVMultiplier": 0.907,
+        "BobbingAmplitude": 0.655,
+        "Elements": {"ItemAnchor": [-1.3, 1.2, 0.15, 6, -2, 95.3], "LowerArmR": [0, 0, 0, 13.1, 0, 0], "UpperArmR": [0, 0.3, 1, -7, 11.2, -96.9]}
+      }
+    ],
+    "ItemKeyFrames": [
+      {"DurationFraction": 0, "EasingFunction": "Linear", "Elements": {"Hammer": [0, 0, 0, 70, 0, 0], "Frizzen": [0, 0, 0, 90, 0, 0], "Trigger": [0, 0, 0, 0, 0, 0]}},
+      {"DurationFraction": 0.03448276, "EasingFunction": "Linear", "Elements": {"Hammer": [0, 0, 0, 70, 0, 0], "Frizzen": [0, 0, 0, 90, 0, 0], "Trigger": [0, 0, 0, 0, 0, 0]}},
+      {"DurationFraction": 0.51724136, "EasingFunction": "Linear", "Elements": {"Hammer": [0, 0, 0, 70, 0, 0], "Frizzen": [0, 0, 0, 90, 0, 0], "Trigger": [0, 0, 0, -25, 0, 0]}},
+      {"DurationFraction": 0.62068963, "EasingFunction": "Linear", "Elements": {"Hammer": [0, 0, 0, 28, 0, 0], "Frizzen": [0, 0, 0, 90, 0, 0], "Trigger": [0, 0, 0, -25, 0, 0]}},
+      {"DurationFraction": 0.7241379, "EasingFunction": "Linear", "Elements": {"Hammer": [0, 0, 0, 21, 0, 0], "Frizzen": [0, 0, 0, 76, 0, 0], "Trigger": [0, 0, 0, -25, 0, 0]}},
+      {"DurationFraction": 0.79310346, "EasingFunction": "Linear", "Elements": {"Hammer": [0, 0, 0, 14, 0, 0], "Frizzen": [0, 0, 0, 45, 0, 0], "Trigger": [0, 0, 0, -14, 0, 0]}},
+      {"DurationFraction": 0.9310345, "EasingFunction": "Linear", "Elements": {"Hammer": [0, 0, 0, -5, 0, 0], "Frizzen": [0, 0, 0, -5, 0, 0], "Trigger": [0, 0, 0, -8, 0, 0]}},
+      {"DurationFraction": 1, "EasingFunction": "Linear", "Elements": {"Hammer": [0, 0, 0, 0, 0, 0], "Frizzen": [0, 0, 0, 0, 0, 0], "Trigger": [0, 0, 0, 0, 0, 0]}}
+    ],
+    "SoundFrames": [
+      {
+        "Code": [
+          "maltiezfirearms:sounds/pistol/pistol-fire-1",
+          "maltiezfirearms:sounds/pistol/pistol-fire-2",
+          "maltiezfirearms:sounds/pistol/pistol-fire-3",
+          "maltiezfirearms:sounds/pistol/pistol-fire-4"
+        ],
+        "DurationFraction": 0.25,
+        "RandomizePitch": false,
+        "Range": 256,
+        "Volume": 0.8,
+        "Synchronize": true
+      }
+    ],
+    "ParticlesFrames": [
+      {"Code": "combatoverhaul:smoke-1", "DurationFraction": 0.5, "Position": [0, 0, 3], "Velocity": [0, 0, 1], "Intensity": 0.5},
+      {"Code": "combatoverhaul:smoke-2", "DurationFraction": 0.5, "Position": [0, 0, 2], "Velocity": [0, 0, 3], "Intensity": 0.3},
+      {"Code": "combatoverhaul:smoke-3", "DurationFraction": 0.5, "Position": [0, 0, 1], "Velocity": [0, 0, 6], "Intensity": 0.3},
+      {"Code": "combatoverhaul:fireblast-1", "DurationFraction": 0.5, "Position": [0, 0, 1], "Velocity": [0, 5, 40], "Intensity": 0.3}
+    ],
+    "CallbackFrames": [{"Code": "shoot", "DurationFraction": 0.5}],
+    "ItemAnimationStart": 0,
+    "ItemAnimationEnd": 50
+  },
+  "firearms-pistol-flintlock-shoot-offhand-tp": {
+    "Hold": true,
+    "PlayerKeyFrames": [
+      {
+        "EasingTime": 75,
+        "EasingFunction": "Sin",
+        "DetachedAnchor": false,
+        "SwitchArms": false,
+        "PitchFollow": false,
+        "PitchDontFollow": false,
+        "FOVMultiplier": 0.907,
+        "BobbingAmplitude": 0.655,
+        "Elements": {"ItemAnchorL": [0.2, -0.5, -0.3, -9, 3, 11], "LowerArmL": [0, 0, 0, -15, 5, -2], "UpperArmL": [0.5, 0, -0.5, 0, -15, -99]}
+      },
+      {
+        "EasingTime": 200,
+        "EasingFunction": "Sin",
+        "DetachedAnchor": false,
+        "SwitchArms": false,
+        "PitchFollow": false,
+        "PitchDontFollow": false,
+        "FOVMultiplier": 0.907,
+        "BobbingAmplitude": 0.655,
+        "Elements": {"ItemAnchorL": [0.2, -0.5, -0.3, -9, 3, 9], "LowerArmL": [0, 0, 0, -15, 5, -6], "UpperArmL": [0.5, 0, -0.5, 0, -15, -98]}
+      }
+    ],
+    "ItemKeyFrames": [
+      {"DurationFraction": 0, "EasingFunction": "Linear", "Elements": {"Hammer": [0, 0, 0, 70, 0, 0], "Frizzen": [0, 0, 0, 90, 0, 0], "Trigger": [0, 0, 0, 0, 0, 0]}},
+      {"DurationFraction": 0.03448276, "EasingFunction": "Linear", "Elements": {"Hammer": [0, 0, 0, 70, 0, 0], "Frizzen": [0, 0, 0, 90, 0, 0], "Trigger": [0, 0, 0, 0, 0, 0]}},
+      {"DurationFraction": 0.51724136, "EasingFunction": "Linear", "Elements": {"Hammer": [0, 0, 0, 70, 0, 0], "Frizzen": [0, 0, 0, 90, 0, 0], "Trigger": [0, 0, 0, -25, 0, 0]}},
+      {"DurationFraction": 0.62068963, "EasingFunction": "Linear", "Elements": {"Hammer": [0, 0, 0, 28, 0, 0], "Frizzen": [0, 0, 0, 90, 0, 0], "Trigger": [0, 0, 0, -25, 0, 0]}},
+      {"DurationFraction": 0.7241379, "EasingFunction": "Linear", "Elements": {"Hammer": [0, 0, 0, 21, 0, 0], "Frizzen": [0, 0, 0, 76, 0, 0], "Trigger": [0, 0, 0, -25, 0, 0]}},
+      {"DurationFraction": 0.79310346, "EasingFunction": "Linear", "Elements": {"Hammer": [0, 0, 0, 14, 0, 0], "Frizzen": [0, 0, 0, 45, 0, 0], "Trigger": [0, 0, 0, -14, 0, 0]}},
+      {"DurationFraction": 0.9310345, "EasingFunction": "Linear", "Elements": {"Hammer": [0, 0, 0, -5, 0, 0], "Frizzen": [0, 0, 0, -5, 0, 0], "Trigger": [0, 0, 0, -8, 0, 0]}},
+      {"DurationFraction": 1, "EasingFunction": "Linear", "Elements": {"Hammer": [0, 0, 0, 0, 0, 0], "Frizzen": [0, 0, 0, 0, 0, 0], "Trigger": [0, 0, 0, 0, 0, 0]}}
+    ],
+    "SoundFrames": [
+      {
+        "Code": [
+          "maltiezfirearms:sounds/pistol/pistol-fire-1",
+          "maltiezfirearms:sounds/pistol/pistol-fire-2",
+          "maltiezfirearms:sounds/pistol/pistol-fire-3",
+          "maltiezfirearms:sounds/pistol/pistol-fire-4"
+        ],
+        "DurationFraction": 0.25,
+        "RandomizePitch": false,
+        "Range": 256,
+        "Volume": 0.8,
+        "Synchronize": true
+      }
+    ],
+    "ParticlesFrames": [
+      {"Code": "combatoverhaul:smoke-1", "DurationFraction": 0.5, "Position": [0, 0, 3], "Velocity": [0, 0, 1], "Intensity": 0.5},
+      {"Code": "combatoverhaul:smoke-2", "DurationFraction": 0.5, "Position": [0, 0, 2], "Velocity": [0, 0, 3], "Intensity": 0.3},
+      {"Code": "combatoverhaul:smoke-3", "DurationFraction": 0.5, "Position": [0, 0, 1], "Velocity": [0, 0, 6], "Intensity": 0.3},
+      {"Code": "combatoverhaul:fireblast-1", "DurationFraction": 0.5, "Position": [0, 0, 1], "Velocity": [0, 5, 40], "Intensity": 0.3}
+    ],
+    "CallbackFrames": [{"Code": "shoot", "DurationFraction": 0.5}],
+    "ItemAnimationStart": 0,
+    "ItemAnimationEnd": 50
+  },
+  "firearms-pistol-flintlock-primed-tp": {
+    "Hold": true,
+    "PlayerKeyFrames": [
+      {"EasingTime": 200, "EasingFunction": "Linear", "DetachedAnchor": false, "SwitchArms": false, "PitchFollow": false, "FOVMultiplier": 1, "BobbingAmplitude": 1, "Elements": {}}
+    ],
+    "ItemKeyFrames": [{"DurationFraction": 1, "EasingFunction": "Linear", "Elements": {"Pan_cover": [0, 0, -0.6, 0, 0, 0], "Flint_arm": [0, 0, 0, -11, 0, 0]}}],
+    "SoundFrames": [],
+    "ParticlesFrames": [],
+    "CallbackFrames": [],
+    "ItemAnimationStart": 0,
+    "ItemAnimationEnd": 200
+  },
+  "firearms-pistol-flintlock-loaded-tp": {
+    "Hold": true,
+    "PlayerKeyFrames": [
+      {"EasingTime": 200, "EasingFunction": "Linear", "DetachedAnchor": false, "SwitchArms": false, "PitchFollow": false, "FOVMultiplier": 1, "BobbingAmplitude": 1, "Elements": {}}
+    ],
+    "ItemKeyFrames": [{"DurationFraction": 1, "EasingFunction": "Linear", "Elements": {"Pan_cover": [0, 0, 0, 0, 0, 0], "Flint_arm": [0, 0, 0, 0, 0, 0]}}],
+    "SoundFrames": [],
+    "ParticlesFrames": [],
+    "CallbackFrames": [],
+    "ItemAnimationStart": 0,
+    "ItemAnimationEnd": 200
+  }
+}

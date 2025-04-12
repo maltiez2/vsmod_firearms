@@ -70,7 +70,7 @@ public class ScopedClient : MuzzleloaderClient
         return true;
     }
 
-    protected override string GetShootingAnimation(bool mainhand, ItemSlot slot)
+    /*protected override string GetShootingAnimation(bool mainhand, ItemSlot slot)
     {
         string[] animations = Scoped ? ScopedShootAnimation : Stats.ShootAnimation;
 
@@ -85,7 +85,7 @@ public class ScopedClient : MuzzleloaderClient
         Inventory.Clear();
 
         return animations[index];
-    }
+    }*/
 }
 
 public class ScopedItem : Item, IHasWeaponLogic, IHasRangedWeaponLogic, IHasDynamicIdleAnimations

@@ -40,7 +40,7 @@
     "ScopedAimAnimation": "maltiezfirearms:firearms-jezail-aim-scoped",
     "ShootAnimation": ["maltiezfirearms:firearms-jezail-shoot"],
     "ScopedShootAnimation": ["maltiezfirearms:firearms-jezail-shoot-scoped"],
-    "LoadedAnimation": "maltiezfirearms:firearms-jezail-loaded",
+    "LoadedAnimation": ["maltiezfirearms:firearms-jezail-loaded"],
     "PrimedAnimation": "maltiezfirearms:firearms-jezail-primed",
     "MagazineSize": 1,
     "BulletLoadedPerReload": 1,

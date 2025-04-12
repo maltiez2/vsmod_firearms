@@ -51,7 +51,7 @@
   "creativeinventoryStacksByType": {
     "*-east": [
       {
-        "tabs": ["maltiezfirearms", "clutter"],
+        "tabs": ["general", "maltiezfirearms", "clutter"],
         "stacks": [
           {"type": "block", "code": "clutterstorage-east", "attributes": {"type": "supplies0"}},
           {"type": "block", "code": "clutterstorage-east", "attributes": {"type": "supplies1"}},

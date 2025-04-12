@@ -9,7 +9,7 @@
   },
   "class": "CombatOverhaul:GenericDisplayBlock",
   "entityClass": "CombatOverhaul:GenericDisplayBlockEntity",
-  "creativeinventory": {"maltiezfirearms": ["*-east"]},
+  "creativeinventory": {"general": ["*-east"], "maltiezfirearms": ["*-east"]},
   "shapeByType": {
     "*-north": {"base": "blocks/vice", "rotateY": 0},
     "*-east": {"base": "blocks/vice", "rotateY": 270},

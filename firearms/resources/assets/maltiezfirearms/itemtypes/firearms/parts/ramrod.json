@@ -5,7 +5,7 @@
     {"code": "weapon", "states": ["pistol", "arquebus", "carbine", "musket"]},
     {"code": "metal", "states": ["tinbronze", "bismuthbronze", "blackbronze", "iron", "meteoriciron", "steel"]}
   ],
-  "allowedVariants": ["*-pistol-*bronze", "*-arquebus-*iron", "*-carbine-steel", "*-musket-steel"],
+  "allowedVariants": ["*-pistol-*bronze", "*-arquebus-*iron", "*-carbine-steel", "*-musket-steel", "*-pistol-steel"],
   "shape": {"base": "maltiezfirearms:parts/ramrod-{weapon}"},
   "textures": {"metal": {"base": "game:block/metal/plate/{metal}"}},
   "attributes": {

@@ -37,5 +37,29 @@
     "width": 3,
     "height": 2,
     "output": {"type": "item", "code": "maltiezfirearms:firearm-pistol-blackbronze"}
+  },
+  {
+    "ingredientPattern": "_P,NF,__",
+    "ingredients": {
+      "P": {"type": "item", "code": "game:metalplate-steel", "quantity": 1},
+      "N": {"type": "item", "code": "game:metalnailsandstrips-steel", "quantity": 1},
+      "F": {"type": "item", "code": "game:powder-borax", "quantity": 2}
+    },
+    "width": 2,
+    "height": 3,
+    "output": {"type": "item", "code": "maltiezfirearms:barrel-pistol-steel"}
+  },
+  {
+    "ingredientPattern": "WLB,MWR",
+    "ingredients": {
+      "B": {"type": "item", "code": "maltiezfirearms:barrel-pistol-steel", "quantity": 1},
+      "M": {"type": "item", "code": "game:metalplate-iron", "quantity": 1},
+      "L": {"type": "item", "code": "maltiezfirearms:lock-flintlock-steel", "quantity": 1},
+      "W": {"type": "item", "code": "game:plank-*", "quantity": 1},
+      "R": {"type": "item", "code": "maltiezfirearms:ramrod-pistol-steel", "quantity": 1}
+    },
+    "width": 3,
+    "height": 2,
+    "output": {"type": "item", "code": "maltiezfirearms:firearm-pistol-steel"}
   }
 ]

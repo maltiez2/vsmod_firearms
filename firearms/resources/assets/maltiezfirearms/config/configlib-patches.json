@@ -4,23 +4,39 @@
     "float": {
       "maltiezfirearms:itemtypes/firearms/pistol.json": {
         "attributes/BulletDamageMultiplier": "value * damage_multiplier",
-        "attributes/Aiming/AimDifficulty": "aiming_difficulty"
+        "attributes/Aiming/AimDifficulty": "aiming_difficulty",
+        "attributes/DispersionMOA/0": "value * firearms_spread",
+        "attributes/DispersionMOA/1": "value * firearms_spread"
+      },
+      "maltiezfirearms:itemtypes/firearms/pistol-flintlock.json": {
+        "attributes/BulletDamageMultiplier": "value * damage_multiplier",
+        "attributes/Aiming/AimDifficulty": "aiming_difficulty",
+        "attributes/DispersionMOA/0": "value * firearms_spread",
+        "attributes/DispersionMOA/1": "value * firearms_spread"
       },
       "maltiezfirearms:itemtypes/firearms/arquebus.json": {
         "attributes/BulletDamageMultiplier": "value * damage_multiplier",
-        "attributes/Aiming/AimDifficulty": "aiming_difficulty"
+        "attributes/Aiming/AimDifficulty": "aiming_difficulty",
+        "attributes/DispersionMOA/0": "value * firearms_spread",
+        "attributes/DispersionMOA/1": "value * firearms_spread"
       },
       "maltiezfirearms:itemtypes/firearms/carbine.json": {
         "attributes/BulletDamageMultiplier": "value * damage_multiplier",
-        "attributes/Aiming/AimDifficulty": "aiming_difficulty"
+        "attributes/Aiming/AimDifficulty": "aiming_difficulty",
+        "attributes/DispersionMOA/0": "value * firearms_spread",
+        "attributes/DispersionMOA/1": "value * firearms_spread"
       },
       "maltiezfirearms:itemtypes/firearms/musket.json": {
         "attributes/BulletDamageMultiplier": "value * damage_multiplier",
-        "attributes/Aiming/AimDifficulty": "aiming_difficulty"
+        "attributes/Aiming/AimDifficulty": "aiming_difficulty",
+        "attributes/DispersionMOA/0": "value * firearms_spread",
+        "attributes/DispersionMOA/1": "value * firearms_spread"
       },
       "maltiezfirearms:itemtypes/firearms/superimposed.json": {
         "attributes/BulletDamageMultiplier": "value * damage_multiplier",
-        "attributes/Aiming/AimDifficulty": "aiming_difficulty"
+        "attributes/Aiming/AimDifficulty": "aiming_difficulty",
+        "attributes/DispersionMOA/0": "value * firearms_spread",
+        "attributes/DispersionMOA/1": "value * firearms_spread"
       },
       "maltiezfirearms:itemtypes/firearms/blunderbuss.json": {
         "attributes/BulletDamageMultiplier": "value * damage_multiplier",
@@ -61,6 +77,9 @@
     },
     "string": {
       "maltiezfirearms:itemtypes/firearms/pistol.json": {
+        "attributes/Aiming/CursorType": "aiming_cursor_type"
+      },
+      "maltiezfirearms:itemtypes/firearms/pistol-flintlock.json": {
         "attributes/Aiming/CursorType": "aiming_cursor_type"
       },
       "maltiezfirearms:itemtypes/firearms/arquebus.json": {
@@ -142,6 +161,17 @@
       "range": {
         "min": 0,
         "max": 300
+      }
+    },
+    {
+      "code": "firearms_spread",
+      "type": "float",
+      "ingui": "maltiezfirearms:setting-firearms_spread",
+      "default": 1.0,
+      "logarithmic": true,
+      "range": {
+        "min": 0.0,
+        "max": 5.0
       }
     },
     {

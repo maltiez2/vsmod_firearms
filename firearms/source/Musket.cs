@@ -152,12 +152,26 @@ public class MusketClient : MuzzleloaderClient, IOnGameTick
     }
     protected virtual void TryAttack(MeleeAttack attack, ItemSlot slot, EntityPlayer player, bool mainHand)
     {
+        ItemStackMeleeWeaponStats stackStats;
+        BayonetInventory.Read(slot, BayonetInventoryId);
+        if (!BayonetInventory.Items.Any())
+        {
+            stackStats = new();
+        }
+        else
+        {
+            ItemStack bayonetStack = BayonetInventory.Items[0];
+            stackStats = ItemStackMeleeWeaponStats.FromItemStack(bayonetStack);
+        }
+        BayonetInventory.Clear();
+
         attack.Attack(
             player.Player,
             slot,
             mainHand,
             out IEnumerable<(Block block, Vector3d point)> terrainCollision,
-            out IEnumerable<(Vintagestory.API.Common.Entities.Entity entity, Vector3d point)> entitiesCollision);
+            out IEnumerable<(Vintagestory.API.Common.Entities.Entity entity, Vector3d point)> entitiesCollision,
+            stackStats);
 
         if (entitiesCollision.Any() && StatsMusket.AnimationStaggerOnHitDurationMs > 0)
         {

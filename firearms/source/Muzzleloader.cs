@@ -12,7 +12,6 @@ using Vintagestory.API.Common.Entities;
 using Vintagestory.API.Config;
 using Vintagestory.API.Server;
 using Vintagestory.API.Util;
-using VSImGui.Debug;
 
 namespace Firearms;
 
@@ -43,15 +42,15 @@ public class MuzzleloaderStats : WeaponStats
 
     public string[] LoadAnimation { get; set; } = Array.Empty<string>();
     public string PrimeAnimation { get; set; } = "";
-    public string CockingAnimation { get; set; } = "";
-    public string CockingAnimationOffhand { get; set; } = "";
+    public string[] CockingAnimation { get; set; } = Array.Empty<string>();
+    public string[] CockingAnimationOffhand { get; set; } = Array.Empty<string>();
     public string AimAnimation { get; set; } = "";
     public string[] ShootAnimation { get; set; } = Array.Empty<string>();
     public string AimAnimationOffhand { get; set; } = "";
     public string[] ShootAnimationOffhand { get; set; } = Array.Empty<string>();
-    public string LoadedAnimation { get; set; } = "";
+    public string[] LoadedAnimation { get; set; } = Array.Empty<string>();
     public string PrimedAnimation { get; set; } = "";
-    public string CockedAnimation { get; set; } = "";
+    public string[] CockedAnimation { get; set; } = Array.Empty<string>();
 
     public string LoadTpAnimation { get; set; } = "";
     public string PrimeTpAnimation { get; set; } = "";
@@ -126,8 +125,8 @@ public class MuzzleloaderClient : RangeWeaponClient
         switch (stage)
         {
             case MuzzleloaderLoadingStage.Loading:
-                AnimationBehavior?.Play(mainHand, Stats.LoadedAnimation, category: ItemAnimationCategory(mainHand), weight: 0.001f);
-                TpAnimationBehavior?.Play(mainHand, Stats.LoadedAnimation, category: ItemAnimationCategory(mainHand), weight: 0.001f);
+                AnimationBehavior?.Play(mainHand, GetLoadingAnimation(slot, Stats.LoadedAnimation), category: ItemAnimationCategory(mainHand), weight: 0.001f);
+                TpAnimationBehavior?.Play(mainHand, GetLoadingAnimation(slot, Stats.LoadedAnimation), category: ItemAnimationCategory(mainHand), weight: 0.001f);
                 break;
             case MuzzleloaderLoadingStage.Priming:
                 AnimationBehavior?.Play(mainHand, Stats.PrimedAnimation, category: ItemAnimationCategory(mainHand), weight: 0.001f);
@@ -208,23 +207,25 @@ public class MuzzleloaderClient : RangeWeaponClient
             return false;
         }
 
-        bool lastAmmoToLoad = SpaceLeftInMagazine(slot) == 1;
+        bool lastAmmoToLoad = SpaceLeftInMagazine(slot) <= Stats.BulletLoadedPerReload;
+
+        ItemStackRangedStats stackStats = ItemStackRangedStats.FromItemStack(slot.Itemstack);
 
         SetState(MuzzleloaderState.Loading, mainHand);
         AnimationBehavior?.Stop(ItemAnimationCategory(mainHand));
         TpAnimationBehavior?.Stop(ItemAnimationCategory(mainHand));
         AnimationBehavior?.Play(
             mainHand,
-            GetLoadingAnimation(slot),
+            GetLoadingAnimation(slot, Stats.LoadAnimation),
             category: AnimationCategory(mainHand),
-            animationSpeed: GetAnimationSpeed(player, Stats.ProficiencyStat),
+            animationSpeed: GetAnimationSpeed(player, Stats.ProficiencyStat) * stackStats.ReloadSpeed,
             callback: () => LoadCallback(slot, player, mainHand, lastAmmoToLoad),
             callbackHandler: callback => LoadAnimationCallback(callback, ammoSlot, player));
         TpAnimationBehavior?.Play(
             mainHand,
-            GetLoadingAnimation(slot),
+            GetLoadingAnimation(slot, Stats.LoadAnimation),
             category: AnimationCategory(mainHand),
-            animationSpeed: GetAnimationSpeed(player, Stats.ProficiencyStat));
+            animationSpeed: GetAnimationSpeed(player, Stats.ProficiencyStat) * stackStats.ReloadSpeed);
         AnimationBehavior?.StopAllVanillaAnimations(mainHand);
         if (TpAnimationBehavior == null) AnimationBehavior?.PlayVanillaAnimation(Stats.LoadTpAnimation, mainHand);
 
@@ -307,19 +308,21 @@ public class MuzzleloaderClient : RangeWeaponClient
 
             PutIntoMagazine(slot, ammoSlot);
             RangedWeaponSystem.Reload(slot, ammoSlot, Stats.BulletLoadedPerReload, mainHand, success => LoadServerCallback(success, lastAmmoToLoad, mainHand), data: SerializeLoadingStage(MuzzleloaderLoadingStage.Loading));
-            SetState(lastAmmoToLoad ? MuzzleloaderState.Loaded : MuzzleloaderState.Unloaded, mainHand);
         }
         Attachable.ClearAttachments(player.EntityId);
-        AnimationBehavior?.Play(mainHand, Stats.LoadedAnimation, category: ItemAnimationCategory(mainHand), weight: 0.001f);
+        AnimationBehavior?.Play(mainHand, GetLoadingAnimation(slot, Stats.LoadedAnimation), category: ItemAnimationCategory(mainHand), weight: 0.001f);
         AnimationBehavior?.PlayReadyAnimation(mainHand);
-        TpAnimationBehavior?.Play(mainHand, Stats.LoadedAnimation, category: ItemAnimationCategory(mainHand), weight: 0.001f);
+        TpAnimationBehavior?.Play(mainHand, GetLoadingAnimation(slot, Stats.LoadedAnimation), category: ItemAnimationCategory(mainHand), weight: 0.001f);
         TpAnimationBehavior?.PlayReadyAnimation(mainHand);
         PlayerBehavior?.SetStat("walkspeed", mainHand ? PlayerStatsMainHandCategory : PlayerStatsOffHandCategory);
         return true;
     }
     protected virtual void LoadServerCallback(bool success, bool lastAmmoToLoad, bool mainHand)
     {
-
+        if (CheckState(mainHand, MuzzleloaderState.Loading))
+        {
+            SetState(lastAmmoToLoad ? MuzzleloaderState.Loaded : MuzzleloaderState.Unloaded, mainHand);
+        }
     }
 
     [ActionEventHandler(EnumEntityAction.RightMouseDown, ActionState.Active)]
@@ -334,11 +337,13 @@ public class MuzzleloaderClient : RangeWeaponClient
         }
         if (!CheckFlask(player, Stats.PrimePowderConsumption)) return false;
 
+        ItemStackRangedStats stackStats = ItemStackRangedStats.FromItemStack(slot.Itemstack);
+
         SetState(MuzzleloaderState.Priming, mainHand);
         AnimationBehavior?.Stop(ItemAnimationCategory(mainHand));
-        AnimationBehavior?.Play(mainHand, Stats.PrimeAnimation, category: AnimationCategory(mainHand), animationSpeed: GetAnimationSpeed(player, Stats.ProficiencyStat), callback: () => PrimeCallback(mainHand, slot), callbackHandler: callback => PrimeAnimationCallback(callback, player));
+        AnimationBehavior?.Play(mainHand, Stats.PrimeAnimation, category: AnimationCategory(mainHand), animationSpeed: GetAnimationSpeed(player, Stats.ProficiencyStat) * stackStats.ReloadSpeed, callback: () => PrimeCallback(mainHand, slot), callbackHandler: callback => PrimeAnimationCallback(callback, player));
         TpAnimationBehavior?.Stop(ItemAnimationCategory(mainHand));
-        TpAnimationBehavior?.Play(mainHand, Stats.PrimeAnimation, category: AnimationCategory(mainHand), animationSpeed: GetAnimationSpeed(player, Stats.ProficiencyStat));
+        TpAnimationBehavior?.Play(mainHand, Stats.PrimeAnimation, category: AnimationCategory(mainHand), animationSpeed: GetAnimationSpeed(player, Stats.ProficiencyStat) * stackStats.ReloadSpeed);
         AnimationBehavior?.StopAllVanillaAnimations(mainHand);
         if (TpAnimationBehavior == null) AnimationBehavior?.PlayVanillaAnimation(Stats.PrimeTpAnimation, mainHand);
 
@@ -355,7 +360,7 @@ public class MuzzleloaderClient : RangeWeaponClient
                     ItemSlot? flaskSlot = null;
                     player.WalkInventory(slot =>
                     {
-                        if (slot?.Itemstack?.Item == null) return true;
+                        if (slot?.Itemstack?.Item?.Code == null) return true;
 
                         if (WildcardUtil.Match(Stats.FlaskWildcard, slot.Itemstack.Item.Code.ToString()))
                         {
@@ -370,7 +375,7 @@ public class MuzzleloaderClient : RangeWeaponClient
                     ItemSlot? primingSlot = null;
                     player.WalkInventory(slot =>
                     {
-                        if (slot?.Itemstack?.Item == null) return true;
+                        if (slot?.Itemstack?.Item?.Code == null) return true;
 
                         if (WildcardUtil.Match(Stats.PrimingRequirementWildcard, slot.Itemstack.Item.Code.ToString()))
                         {
@@ -425,14 +430,24 @@ public class MuzzleloaderClient : RangeWeaponClient
             Api.TriggerIngameError(this, "missingRequirement", Lang.Get(Stats.CockingRequirementMessage));
             return false;
         }
-        if (Stats.CockingAnimation == "")
+        if (Stats.CockingAnimation.Length == 0)
         {
             SetState(MuzzleloaderState.Cocked, mainHand);
+
+            if (Stats.CockedAnimation.Length != 0)
+            {
+                string cockedAnimation = GetShootingAnimation(slot, Stats.CockedAnimation);
+                AnimationBehavior?.Play(mainHand, Stats.CockedAnimation.Length != 0 ? cockedAnimation : Stats.PrimedAnimation, category: ItemAnimationCategory(mainHand), weight: 0.001f);
+                TpAnimationBehavior?.Play(mainHand, Stats.CockedAnimation.Length != 0 ? cockedAnimation : Stats.PrimedAnimation, category: ItemAnimationCategory(mainHand), weight: 0.001f);
+            }
+
             return false;
         }
 
-        AnimationBehavior?.Play(mainHand, mainHand ? Stats.CockingAnimation : Stats.CockingAnimationOffhand, category: AnimationCategory(mainHand), animationSpeed: GetAnimationSpeed(player, Stats.ProficiencyStat), callback: () => CockingCallback(mainHand));
-        TpAnimationBehavior?.Play(mainHand, mainHand ? Stats.CockingAnimation : Stats.CockingAnimationOffhand, category: AnimationCategory(mainHand), animationSpeed: GetAnimationSpeed(player, Stats.ProficiencyStat));
+        ItemStackRangedStats stackStats = ItemStackRangedStats.FromItemStack(slot.Itemstack);
+
+        AnimationBehavior?.Play(mainHand, GetShootingAnimation(slot, mainHand ? Stats.CockingAnimation : Stats.CockingAnimationOffhand), category: AnimationCategory(mainHand), animationSpeed: GetAnimationSpeed(player, Stats.ProficiencyStat) * stackStats.ReloadSpeed, callback: () => CockingCallback(mainHand));
+        TpAnimationBehavior?.Play(mainHand, GetShootingAnimation(slot, mainHand ? Stats.CockingAnimation : Stats.CockingAnimationOffhand), category: AnimationCategory(mainHand), animationSpeed: GetAnimationSpeed(player, Stats.ProficiencyStat) * stackStats.ReloadSpeed);
         SetState(MuzzleloaderState.Cocking, mainHand);
 
         return true;
@@ -450,12 +465,16 @@ public class MuzzleloaderClient : RangeWeaponClient
         if (!mainHand && !CanUseOffhand(player)) return false;
         if (eventData.AltPressed) return false;
 
+        ItemStackRangedStats stackStats = ItemStackRangedStats.FromItemStack(slot.Itemstack);
+        AimingStats aimingStats = AimingStats.Clone();
+        aimingStats.AimDifficulty *= stackStats.AimingDifficulty;
+
         SetState(MuzzleloaderState.Aim, mainHand);
         AnimationBehavior?.Play(mainHand, mainHand ? Stats.AimAnimation : Stats.AimAnimationOffhand, category: AnimationCategory(mainHand));
         TpAnimationBehavior?.Play(mainHand, mainHand ? Stats.AimAnimation : Stats.AimAnimationOffhand, category: AnimationCategory(mainHand));
         AnimationBehavior?.StopAllVanillaAnimations(mainHand);
         if (TpAnimationBehavior == null) AnimationBehavior?.PlayVanillaAnimation(Stats.AimTpAnimation, mainHand);
-        AimingSystem.StartAiming(AimingStats);
+        AimingSystem.StartAiming(aimingStats);
         AimingSystem.AimingState = WeaponAimingState.FullCharge;
         AimingAnimationController?.Play(mainHand);
 
@@ -477,7 +496,7 @@ public class MuzzleloaderClient : RangeWeaponClient
             case MuzzleloaderState.Priming:
                 {
                     SetState(MuzzleloaderState.Loaded, mainHand);
-                    AnimationBehavior?.Play(mainHand, Stats.LoadedAnimation, category: ItemAnimationCategory(mainHand), weight: 0.001f);
+                    AnimationBehavior?.Play(mainHand, GetLoadingAnimation(slot, Stats.LoadedAnimation), category: ItemAnimationCategory(mainHand), weight: 0.001f);
                     Attachable.ClearAttachments(player.EntityId);
                 }
                 break;
@@ -497,8 +516,12 @@ public class MuzzleloaderClient : RangeWeaponClient
                     else
                     {
                         SetState(MuzzleloaderState.Cocked, mainHand);
-                        AnimationBehavior?.Play(mainHand, Stats.CockedAnimation != "" ? Stats.CockedAnimation : Stats.PrimedAnimation, category: ItemAnimationCategory(mainHand), weight: 0.001f);
-                        TpAnimationBehavior?.Play(mainHand, Stats.CockedAnimation != "" ? Stats.CockedAnimation : Stats.PrimedAnimation, category: ItemAnimationCategory(mainHand), weight: 0.001f);
+                        if (Stats.CockedAnimation.Length > 0)
+                        {
+                            string cockedAnimation = GetShootingAnimation(slot, Stats.CockedAnimation);
+                            AnimationBehavior?.Play(mainHand, Stats.CockedAnimation.Length != 0 ? cockedAnimation : Stats.PrimedAnimation, category: ItemAnimationCategory(mainHand), weight: 0.001f);
+                            TpAnimationBehavior?.Play(mainHand, Stats.CockedAnimation.Length != 0 ? cockedAnimation : Stats.PrimedAnimation, category: ItemAnimationCategory(mainHand), weight: 0.001f);
+                        }
                     }
                     Inventory.Clear();
                 }
@@ -533,22 +556,22 @@ public class MuzzleloaderClient : RangeWeaponClient
         AnimationBehavior?.Stop(ItemAnimationCategory(mainHand));
         AnimationBehavior?.Play(
             mainHand,
-            GetShootingAnimation(mainHand, slot),
+            GetShootingAnimation(slot, mainHand ? Stats.ShootAnimation : Stats.ShootAnimationOffhand),
             category: AnimationCategory(mainHand),
             callback: () => ShootCallback(slot, player, mainHand),
             callbackHandler: callback => ShootAnimationCallback(callback, slot, player, mainHand));
         TpAnimationBehavior?.Stop(ItemAnimationCategory(mainHand));
         TpAnimationBehavior?.Play(
             mainHand,
-            GetShootingAnimation(mainHand, slot),
+            GetShootingAnimation(slot, mainHand ? Stats.ShootAnimation : Stats.ShootAnimationOffhand),
             category: AnimationCategory(mainHand));
 
         return true;
     }
     protected virtual bool ShootCallback(ItemSlot slot, EntityPlayer player, bool mainHand)
     {
-        AnimationBehavior?.Play(mainHand, mainHand ? Stats.AimAnimation : Stats.AimAnimationOffhand, category: AnimationCategory(mainHand));
-        TpAnimationBehavior?.Play(mainHand, mainHand ? Stats.AimAnimation : Stats.AimAnimationOffhand, category: AnimationCategory(mainHand));
+        //AnimationBehavior?.Play(mainHand, mainHand ? Stats.AimAnimation : Stats.AimAnimationOffhand, category: AnimationCategory(mainHand));
+        //TpAnimationBehavior?.Play(mainHand, mainHand ? Stats.AimAnimation : Stats.AimAnimationOffhand, category: AnimationCategory(mainHand));
         SetState(MuzzleloaderState.Aim, mainHand);
 
         return true;
@@ -623,31 +646,31 @@ public class MuzzleloaderClient : RangeWeaponClient
 
         return size;
     }
-    protected string GetLoadingAnimation(ItemSlot slot)
+    protected string GetLoadingAnimation(ItemSlot slot, string[] animations)
     {
-        if (Stats.MagazineSize == 1) return Stats.LoadAnimation[0];
-
-        Inventory.Read(slot, InventoryId);
-
-        int ammoCount = Inventory.Items.Count;
-        int animationsCount = Stats.LoadAnimation.Length;
-        int index = ammoCount % animationsCount;
-
-        Inventory.Clear();
-
-        return Stats.LoadAnimation[index];
-    }
-    protected virtual string GetShootingAnimation(bool mainhand, ItemSlot slot)
-    {
-        string[] animations = mainhand ? Stats.ShootAnimation : Stats.ShootAnimationOffhand;
-
         if (Stats.MagazineSize == 1) return animations[0];
 
         Inventory.Read(slot, InventoryId);
 
         int ammoCount = Inventory.Items.Count;
+        int ammoPerLoad = Stats.BulletLoadedPerReload;
         int animationsCount = animations.Length;
-        int index = ammoCount % animationsCount;
+        int index = (ammoCount / ammoPerLoad) % animationsCount;
+
+        Inventory.Clear();
+
+        return animations[index];
+    }
+    protected virtual string GetShootingAnimation(ItemSlot slot, string[] animations)
+    {
+        if (Stats.MagazineSize == 1) return animations[0];
+
+        Inventory.Read(slot, InventoryId);
+
+        int ammoCount = Inventory.Items.Count;
+        int ammoPerShot = Stats.BulletsFiredPerShot;
+        int animationsCount = animations.Length;
+        int index = (ammoCount / ammoPerShot) % animationsCount;
 
         Inventory.Clear();
 
@@ -658,7 +681,7 @@ public class MuzzleloaderClient : RangeWeaponClient
         ItemSlot? waddingSlot = null;
         player.WalkInventory(slot =>
         {
-            if (slot?.Itemstack?.Item == null) return true;
+            if (slot?.Itemstack?.Item?.Code == null) return true;
 
             if (
                 WildcardUtil.Match(Stats.WaddingWildcard, slot.Itemstack.Item.Code.ToString()) &&
@@ -683,7 +706,7 @@ public class MuzzleloaderClient : RangeWeaponClient
         ItemSlot? flaskSlot = null;
         player.WalkInventory(slot =>
         {
-            if (slot?.Itemstack?.Item == null) return true;
+            if (slot?.Itemstack?.Item?.Code == null) return true;
 
             if (
                 WildcardUtil.Match(Stats.FlaskWildcard, slot.Itemstack.Item.Code.ToString()) &&
@@ -741,7 +764,7 @@ public class MuzzleloaderClient : RangeWeaponClient
         ItemSlot? ammoSlot1 = null;
         player.WalkInventory(slot =>
         {
-            if (slot?.Itemstack?.Item == null) return true;
+            if (slot?.Itemstack?.Item?.Code == null) return true;
 
             if (WildcardUtil.Match(Stats.BulletWildcard, slot.Itemstack.Item.Code.ToString()))
             {
@@ -756,7 +779,7 @@ public class MuzzleloaderClient : RangeWeaponClient
         ItemSlot? ammoSlot2 = null;
         player.WalkInventory(slot =>
         {
-            if (slot?.Itemstack?.Item == null) return true;
+            if (slot?.Itemstack?.Item?.Code == null) return true;
 
             if (WildcardUtil.Match(Stats.FlaskWildcard, slot.Itemstack.Item.Code.ToString()))
             {
@@ -786,7 +809,7 @@ public class MuzzleloaderClient : RangeWeaponClient
         ItemSlot? ammoSlot4 = null;
         player.WalkInventory(slot =>
         {
-            if (slot?.Itemstack?.Item == null) return true;
+            if (slot?.Itemstack?.Item?.Code == null) return true;
 
             if (WildcardUtil.Match(Stats.PrimingRequirementWildcard, slot.Itemstack.Item.Code.ToString()))
             {
@@ -854,7 +877,7 @@ public class MuzzleloaderServer : RangeWeaponServer
             if (Inventory.Items.Count >= Stats.MagazineSize) return false;
 
             if (
-                ammoSlot.Itemstack?.Item != null &&
+                ammoSlot.Itemstack?.Item?.Code != null &&
                 ammoSlot.Itemstack.Item.HasBehavior<ProjectileBehavior>() &&
                 WildcardUtil.Match(Stats.BulletWildcard, ammoSlot.Itemstack.Item.Code.ToString()) &&
                 ammoSlot.Itemstack.StackSize >= Stats.BulletLoadedPerReload)
@@ -906,22 +929,24 @@ public class MuzzleloaderServer : RangeWeaponServer
             ammo.ResolveBlockOrItem(Api.World);
             Inventory.Items.RemoveAt(0);
 
-            ProjectileStats? stats = ammo.Item?.GetCollectibleBehavior<ProjectileBehavior>(true)?.Stats;
+            ProjectileStats? stats = ammo.Item?.GetCollectibleBehavior<ProjectileBehavior>(true)?.GetStats(ammo);
 
             if (stats == null)
             {
                 continue;
             }
 
+            ItemStackRangedStats stackStats = ItemStackRangedStats.FromItemStack(slot.Itemstack);
+
             additionalDurabilityCost = Math.Max(additionalDurabilityCost, stats.AdditionalDurabilityCost);
 
             ProjectileSpawnStats spawnStats = new()
             {
                 ProducerEntityId = player.Entity.EntityId,
-                DamageMultiplier = Stats.BulletDamageMultiplier,
-                DamageStrength = Stats.BulletDamageStrength,
+                DamageMultiplier = Stats.BulletDamageMultiplier * stackStats.DamageMultiplier,
+                DamageStrength = Stats.BulletDamageStrength + stackStats.DamageTierBonus,
                 Position = new Vector3d(packet.Position[0], packet.Position[1], packet.Position[2]),
-                Velocity = GetDirectionWithDispersion(packet.Velocity, Stats.DispersionMOA) * Stats.BulletVelocity
+                Velocity = GetDirectionWithDispersion(packet.Velocity, new float[2] { Stats.DispersionMOA[0] * stackStats.DispersionMultiplier, Stats.DispersionMOA[1] * stackStats.DispersionMultiplier }) * Stats.BulletVelocity * stackStats.ProjectileSpeed,
             };
 
             ProjectileSystem.Spawn(packet.ProjectileId[count], stats, spawnStats, ammo, slot.Itemstack, shooter);
@@ -986,7 +1011,7 @@ public class MuzzleloaderServer : RangeWeaponServer
         ItemSlot? flaskSlot = null;
         player.Entity.WalkInventory(slot =>
         {
-            if (slot?.Itemstack?.Item == null) return true;
+            if (slot?.Itemstack?.Item?.Code == null) return true;
 
             if (
                 WildcardUtil.Match(Stats.FlaskWildcard, slot.Itemstack.Item.Code.ToString()) &&
@@ -1005,7 +1030,7 @@ public class MuzzleloaderServer : RangeWeaponServer
         ItemSlot? waddingSlot = null;
         player.Entity.WalkInventory(slot =>
         {
-            if (slot?.Itemstack?.Item == null) return true;
+            if (slot?.Itemstack?.Item?.Code == null) return true;
 
             if (
                 WildcardUtil.Match(Stats.WaddingWildcard, slot.Itemstack.Item.Code.ToString()) &&
