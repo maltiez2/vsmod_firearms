@@ -54,8 +54,6 @@ public class MusketClient : MuzzleloaderClient, IOnGameTick
     public MusketClient(ICoreClientAPI api, Item item) : base(api, item)
     {
         StatsMusket = item.Attributes.AsObject<MusketStats>();
-        api.Input.RegisterHotKey("attach-bayonet", "Attach/detach bayonet", GlKeys.B);
-        api.Input.SetHotKeyHandler("attach-bayonet", BayonetHotkey);
 
         BayonetAttack = new(api, StatsMusket.BayonetAttack);
         RegisterCollider(item.Code.ToString(), "bayonet-", BayonetAttack);
@@ -88,14 +86,14 @@ public class MusketClient : MuzzleloaderClient, IOnGameTick
     protected const string BayonetInventoryId = "bayonet";
     protected MeleeAttack BayonetAttack;
 
-    protected bool BayonetHotkey(KeyCombination combination)
-    {
-        EntityPlayer player = Api.World.Player.Entity;
 
+    [HotkeyEventHandler("attach-bayonet", "maltiezfirearms:attach-bayonet", GlKeys.B)]
+    protected virtual bool Bayonet(ItemSlot slot, EntityPlayer player, ref int state, KeyCombination keyCombination, bool mainHand, AttackDirection direction)
+    {
         if (player.RightHandItemSlot?.Itemstack?.Item is not MusketItem) return false;
 
         BayonetInventory.Read(player.RightHandItemSlot, BayonetInventoryId);
-        if (!BayonetInventory.Items.Any())
+        if (BayonetInventory.Items.Count == 0)
         {
             if (!WildcardUtil.Match(StatsMusket.BayonetWildcard, player.LeftHandItemSlot.Itemstack?.Item?.Code?.ToString() ?? "")) return false;
 

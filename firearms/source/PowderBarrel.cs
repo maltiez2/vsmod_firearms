@@ -207,6 +207,7 @@ public class BlockCrate : BlockContainer, ITexPositionSource, IAttachableToEntit
     public string Subtype => Props.VariantByGroup == null ? "" : Variant[Props.VariantByGroup];
     public string SubtypeInventory => Props?.VariantByGroupInventory == null ? "" : Variant[Props.VariantByGroupInventory];
 
+    public int RequiresBehindSlots { get; set; }
 
     private Vec3f origin = new(0.5f, 0.5f, 0.5f);
 
