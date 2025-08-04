@@ -18,7 +18,8 @@
       "fillHeight": 1,
       "moldrackable": true,
       "onmoldrackTransform": {"rotation": {"z": 90}},
-      "drop": {"type": "item", "code": "maltiezfirearms:{itemtype}-{metal}", "quantityByType": {"*-slug-*": 8, "*-bullet-*": 16, "*-pellet-*": 64}}
+      "drop": {"type": "item", "code": "maltiezfirearms:{itemtype}-{metal}", "quantityByType": {"*-slug-*": 8, "*-bullet-*": 16, "*-pellet-*": 64}},
+      "onTongTransform": {"translation": {"x": -0.81, "y": -1.12, "z": -0.8}, "rotation": {"x": 31, "y": -11, "z": 7}, "scale": 0.8}
     }
   },
   "entityClassByType": {"ammomold-*-burned": "ToolMold"},

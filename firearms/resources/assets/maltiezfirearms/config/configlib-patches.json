@@ -135,7 +135,9 @@
       "code": "aiming_cursor_type",
       "type": "string",
       "ingui": "maltiezfirearms:setting-cursortype",
+      "comment": "maltiezfirearms:setting-comment-cursortype",
       "default": "None",
+      "clientSide": true,
       "values": [
         "None",
         "Vanilla",

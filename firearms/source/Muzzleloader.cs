@@ -104,6 +104,12 @@ public class MuzzleloaderClient : RangeWeaponClient
         DebugWindowManager.RegisterTransformByCode(PrimingEquipmentTransform, $"Priming - {item.Code}");
 #endif
 
+        FirearmsModSystem system = api.ModLoader.GetModSystem<FirearmsModSystem>();
+        system.SettingsChanged += settings =>
+        {
+            AimingStats.CursorType = Enum.Parse<AimingCursorType>(settings.AimingCursorType);
+        };
+
         //DebugWidgets.FloatDrag("test", "test", $"{item.Code}-followX", () => AimingStats.AnimationFollowX, (value) => AimingStats.AnimationFollowX = value);
         //DebugWidgets.FloatDrag("test", "test", $"{item.Code}-followY", () => AimingStats.AnimationFollowY, (value) => AimingStats.AnimationFollowY = value);
     }

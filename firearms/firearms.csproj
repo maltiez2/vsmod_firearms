@@ -3,7 +3,7 @@
   <PropertyGroup>
     <ModName>Firearms</ModName>
     <ModType>code</ModType>
-    <ModVersion>1.0.0</ModVersion>
+    <ModVersion>1.0.3</ModVersion>
     <ModId>maltiezfirearms</ModId>
     <Description>Black powder firearms</Description>
     <Side>Universal</Side>
@@ -50,13 +50,14 @@
     <ReleasesDir>$(ProjectDir)\Releases</ReleasesDir>
     <ReleaseFile>$(ModId)_$(ModVersion).zip</ReleaseFile>
     <ReleasePath>$(ReleasesDir)\$(ReleaseFile)</ReleasePath>
-    <CombatOverhaulDir></CombatOverhaulDir>
+    <ExternalLibs>$(ProjectDir)\external</ExternalLibs>
   </PropertyGroup>
 
   <!-- References to libraries that are being used in project -->
   <ItemGroup>
     <PackageReference Include="VSImGui" Version="0.0.6" />
     <Reference Include="$(GameDirectory)/**/*.dll" Private="false" />
+    <Reference Include="$(ExternalLibs)/**/*.dll" Private="false" />
     <Reference Include="$(ProjectDir)/../../Overhaullib/bin/Release/Mods/overhaullib/Overhaullib.dll" Private="false" />
   </ItemGroup>
 

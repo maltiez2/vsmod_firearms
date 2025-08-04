@@ -100,6 +100,8 @@
   "setting-cancel_reload_on_inair": "Cancel reload when in air",
   "setting-schematic_drop_chance": "Schematic drop chance multiplier",
 
+  "setting-comment-cursortype": "Applied instantly, do not need world reload",
+
   "attach-bayonet": "Attach/detach bayonet",
   "lit-match": "Lit",
   

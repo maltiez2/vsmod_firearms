@@ -47,7 +47,7 @@
     "MagazineSize": 1,
     "BulletLoadedPerReload": 1,
     "WaddingUsedPerReload": 1,
-    "LoadPowderConsumption": 7,
+    "LoadPowderConsumption": 5,
     "PrimePowderConsumption": 1,
     "PrimingRequirementWildcard": "",
     "PrimingRequirementMessage": "maltiezfirearms:requirement-missing-cocking-lever",
