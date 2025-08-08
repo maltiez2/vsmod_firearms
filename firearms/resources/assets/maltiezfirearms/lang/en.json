@@ -140,9 +140,9 @@
   "itemdesc-pellet-*": "Small caliber bullet used by blunderbuss.<br>",
   "itemdesc-linenpatch": "Used as wadding in firearms.<br>",
 
-  "blockdesc-ammomold-pellet-burned": "Produces 64 pellets",
-  "blockdesc-ammomold-bullet-burned": "Produces 16 bullets",
-  "blockdesc-ammomold-slug-burned": "Produces 8 slugs",
+  "blockdesc-ammomold-pellet-fired": "Produces 64 pellets",
+  "blockdesc-ammomold-bullet-fired": "Produces 16 bullets",
+  "blockdesc-ammomold-slug-fired": "Produces 8 slugs",
 
   "blockdesc-weaponrack-*": "For storing long firearms (musket, carbine, blunderbuss, arquebus).",
   "blockdesc-pistolstand-*": "For storing short firearms (arquebus, pistol).",

@@ -1,7 +1,7 @@
 ﻿{
   "code": "ammomold",
-  "variantgroups": [{"code": "itemtype", "states": ["slug", "bullet", "pellet"]}, {"code": "type", "states": ["raw", "burned"]}],
-  "classByType": {"*-raw": "Block", "*-burned": "BlockToolMold"},
+  "variantgroups": [{"code": "tooltype", "states": ["slug", "bullet", "pellet"]}, {"code": "materialtype", "states": ["raw", "fired"]}],
+  "classByType": {"*-raw": "Block", "*-fired": "BlockToolMold"},
   "behaviorsByType": {
     "*-raw": [
       {"name": "GroundStorable", "properties": {"layout": "SingleCenter"}},
@@ -10,19 +10,20 @@
     ],
     "*": [{"name": "UnstableFalling"}]
   },
-  "attributes": {},
-  "shape": {"base": "maltiezfirearms:shapes/casting/{itemtype}smold"},
+  "entityBehaviors": [{"name": "TemperatureSensitive"}],
+  "attributes": {"shatteredShape": {"base": "game:block/clay/mold/shattered-ingot"}},
+  "shape": {"base": "maltiezfirearms:shapes/casting/{tooltype}smold"},
   "attributesByType": {
-    "ammomold-*-burned": {
+    "ammomold-*-fired": {
       "requiredUnits": 100,
       "fillHeight": 1,
       "moldrackable": true,
       "onmoldrackTransform": {"rotation": {"z": 90}},
-      "drop": {"type": "item", "code": "maltiezfirearms:{itemtype}-{metal}", "quantityByType": {"*-slug-*": 8, "*-bullet-*": 16, "*-pellet-*": 64}},
+      "drop": {"type": "item", "code": "maltiezfirearms:{tooltype}-{metal}", "quantityByType": {"*-slug-*": 8, "*-bullet-*": 16, "*-pellet-*": 64}},
       "onTongTransform": {"translation": {"x": -0.81, "y": -1.12, "z": -0.8}, "rotation": {"x": 31, "y": -11, "z": 7}, "scale": 0.8}
     }
   },
-  "entityClassByType": {"ammomold-*-burned": "ToolMold"},
+  "entityClassByType": {"ammomold-*-fired": "ToolMold"},
   "blockmaterial": "Ceramic",
   "creativeinventory": {"maltiezfirearms": ["*"]},
   "replaceable": 700,
@@ -31,7 +32,7 @@
   "lightAbsorption": 0,
   "texturesByType": {
     "*-raw": {"all": {"base": "game:block/clay/blueclay"}},
-    "*-burned": {"floor": {"base": "game:block/clay/ceramic-dark"}, "other": {"base": "game:block/clay/ceramic"}}
+    "*-fired": {"floor": {"base": "game:block/clay/ceramic-dark"}, "other": {"base": "game:block/clay/ceramic"}}
   },
   "sounds": {"walk": "walk/stone"},
   "collisionbox": {"x1": 0.094, "y1": 0, "z1": 0.094, "x2": 0.906, "y2": 0.12, "z2": 0.906},
@@ -44,7 +45,7 @@
       "meltingDuration": 45,
       "smeltedRatio": 1,
       "smeltingType": "fire",
-      "smeltedStack": {"type": "block", "code": "maltiezfirearms:ammomold-{itemtype}-burned"},
+      "smeltedStack": {"type": "block", "code": "maltiezfirearms:ammomold-{itemtype}-fired"},
       "requiresContainer": false
     }
   },

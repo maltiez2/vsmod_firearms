@@ -32,7 +32,7 @@
       "properties": {
         "stats": {
           "AdditionalDurabilityCost": 0,
-          "CollisionRadius": 0.05,
+          "CollisionRadius": 0.04,
           "PenetrationDistance": 2,
           "DamageStatsByType": {"*-lead": {"DamageType": "BluntAttack", "Damage": 38}, "*-copper": {"DamageType": "BluntAttack", "Damage": 26}},
           "SpeedThreshold": 0.3,

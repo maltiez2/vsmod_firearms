@@ -133,9 +133,9 @@
   "itemdesc-pellet-*": "Pocisk małego kalibru używany przez garłacz.<br>",
   "itemdesc-linenpatch": "Używana jako przybitka w broni palnej.<br>",
   
-  "blockdesc-ammomold-pellet-burned": "Produkuje 64 śruty",
-  "blockdesc-ammomold-bullet-burned": "Produkuje 16 kul",
-  "blockdesc-ammomold-slug-burned": "Produkuje 8 pocisków",
+  "blockdesc-ammomold-pellet-fired": "Produkuje 64 śruty",
+  "blockdesc-ammomold-bullet-fired": "Produkuje 16 kul",
+  "blockdesc-ammomold-slug-fired": "Produkuje 8 pocisków",
   
   "blockdesc-weaponrack-*": "Do przechowywania długiej broni palnej (muszkiet, karabin, garłacz, arkebuz).",
   "blockdesc-pistolstand-*": "Do przechowywania krótkiej broni palnej (arkebuz, pistolet).",

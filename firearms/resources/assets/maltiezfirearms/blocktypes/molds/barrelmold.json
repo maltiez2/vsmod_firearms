@@ -1,7 +1,7 @@
 ﻿{
   "code": "barrelmold",
-  "variantgroups": [{"code": "type", "states": ["raw", "burned"]}],
-  "classByType": {"*-raw": "Block", "*-burned": "BlockToolMold"},
+  "variantgroups": [{"code": "materialtype", "states": ["raw", "fired"]}],
+  "classByType": {"*-raw": "Block", "*-fired": "BlockToolMold"},
   "behaviorsByType": {
     "*-raw": [
       {"name": "GroundStorable", "properties": {"layout": "SingleCenter"}},
@@ -10,10 +10,11 @@
     ],
     "*": [{"name": "UnstableFalling"}]
   },
-  "attributes": {},
+  "entityBehaviors": [{"name": "TemperatureSensitive"}],
+  "attributes": {"shatteredShape": {"base": "game:block/clay/mold/shattered-ingot"}},
   "shape": {"base": "maltiezfirearms:shapes/casting/barrelmold"},
   "attributesByType": {
-    "barrelmold-burned": {
+    "barrelmold-fired": {
       "requiredUnits": 300,
       "fillHeight": 15,
       "fillQuadsByLevel": [
@@ -37,7 +38,7 @@
       "drop": {"type": "item", "code": "maltiezfirearms:barrel-pistol-{metal}", "quantity": 1}
     }
   },
-  "entityClassByType": {"barrelmold-burned": "ToolMold"},
+  "entityClassByType": {"barrelmold-fired": "ToolMold"},
   "blockmaterial": "Ceramic",
   "creativeinventory": {"maltiezfirearms": ["*"]},
   "replaceable": 700,
@@ -46,7 +47,7 @@
   "lightAbsorption": 0,
   "texturesByType": {
     "*-raw": {"all": {"base": "game:block/clay/blueclay"}},
-    "*-burned": {"floor": {"base": "game:block/clay/ceramic-dark"}, "other": {"base": "game:block/clay/ceramic"}}
+    "*-fired": {"floor": {"base": "game:block/clay/ceramic-dark"}, "other": {"base": "game:block/clay/ceramic"}}
   },
   "sounds": {"walk": "walk/stone"},
   "collisionbox": {"x1": 0.3, "y1": 0, "z1": 0.3, "x2": 0.7, "y2": 1, "z2": 0.7},
@@ -59,7 +60,7 @@
       "meltingDuration": 45,
       "smeltedRatio": 1,
       "smeltingType": "fire",
-      "smeltedStack": {"type": "block", "code": "maltiezfirearms:barrelmold-burned"},
+      "smeltedStack": {"type": "block", "code": "maltiezfirearms:barrelmold-fired"},
       "requiresContainer": false
     }
   },
