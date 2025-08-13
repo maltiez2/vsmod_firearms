@@ -2,17 +2,15 @@
   "code": "bullet",
   "class": "CombatOverhaul:Projectile",
   "variantgroups": [{"code": "material", "states": ["lead", "copper"]}],
-  "SelectionBoxSize": {"x": 0.2, "y": 0.2},
+  "SelectionBoxSize": {"x": 0.1, "y": 0.1},
   "CollisionBoxSize": {"x": 0.01, "y": 0.01},
   "client": {
     "size": 0.5,
     "renderer": "Shape",
     "shape": {"base": "maltiezfirearms:ammo/bullet"},
     "textures": {"metal": {"base": "game:block/metal/plate/{material}"}},
-    "behaviors": [{"code": "CombatOverhaul:ProjectilePhysics", "groundDragFactor": 1, "airDragFactor": 0.1, "gravityFactor": 0.2}, {"code": "interpolateposition"}]
+    "behaviors": [{"code": "CombatOverhaul:ProjectilePhysics", "groundDragFactor": 1, "airDragFactor": 1, "gravityFactor": 2}, {"code": "interpolateposition"}]
   },
-  "server": {
-    "behaviors": [{"code": "CombatOverhaul:ProjectilePhysics", "groundDragFactor": 1, "airDragFactor": 0.1, "gravityFactor": 0.2}, {"code": "despawn", "minSeconds": 600}]
-  },
+  "server": {"behaviors": [{"code": "CombatOverhaul:ProjectilePhysics", "groundDragFactor": 1, "airDragFactor": 1, "gravityFactor": 2}, {"code": "despawn", "minSeconds": 600}]},
   "sounds": {}
 }

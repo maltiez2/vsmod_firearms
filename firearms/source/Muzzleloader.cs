@@ -82,6 +82,8 @@ public class MuzzleloaderStats : WeaponStats
     public string PrimingRequirementMessage { get; set; } = "maltiezfirearms:requirement-missing-priming-equipment";
     public string CockingRequirementMessage { get; set; } = "maltiezfirearms:requirement-missing-cocking-equipment";
     public bool CancelReloadOnInAir { get; set; } = true;
+
+    public float ReloadAnimationSpeed { get; set; } = 1;
 }
 
 public class MuzzleloaderClient : RangeWeaponClient
@@ -224,15 +226,14 @@ public class MuzzleloaderClient : RangeWeaponClient
             mainHand,
             GetLoadingAnimation(slot, Stats.LoadAnimation),
             category: AnimationCategory(mainHand),
-            animationSpeed: GetAnimationSpeed(player, Stats.ProficiencyStat) * stackStats.ReloadSpeed,
+            animationSpeed: GetAnimationSpeed(player, Stats.ProficiencyStat) * stackStats.ReloadSpeed * Stats.ReloadAnimationSpeed,
             callback: () => LoadCallback(slot, player, mainHand, lastAmmoToLoad),
             callbackHandler: callback => LoadAnimationCallback(callback, ammoSlot, player));
         TpAnimationBehavior?.Play(
             mainHand,
             GetLoadingAnimation(slot, Stats.LoadAnimation),
             category: AnimationCategory(mainHand),
-            animationSpeed: GetAnimationSpeed(player, Stats.ProficiencyStat) * stackStats.ReloadSpeed);
-        AnimationBehavior?.StopAllVanillaAnimations(mainHand);
+            animationSpeed: GetAnimationSpeed(player, Stats.ProficiencyStat) * stackStats.ReloadSpeed * Stats.ReloadAnimationSpeed);
         if (TpAnimationBehavior == null) AnimationBehavior?.PlayVanillaAnimation(Stats.LoadTpAnimation, mainHand);
 
         Attachable.SetAttachment(player.EntityId, "bullet", ammoSlot.Itemstack, BulletTransform);
@@ -347,9 +348,9 @@ public class MuzzleloaderClient : RangeWeaponClient
 
         SetState(MuzzleloaderState.Priming, mainHand);
         AnimationBehavior?.Stop(ItemAnimationCategory(mainHand));
-        AnimationBehavior?.Play(mainHand, Stats.PrimeAnimation, category: AnimationCategory(mainHand), animationSpeed: GetAnimationSpeed(player, Stats.ProficiencyStat) * stackStats.ReloadSpeed, callback: () => PrimeCallback(mainHand, slot), callbackHandler: callback => PrimeAnimationCallback(callback, player));
+        AnimationBehavior?.Play(mainHand, Stats.PrimeAnimation, category: AnimationCategory(mainHand), animationSpeed: GetAnimationSpeed(player, Stats.ProficiencyStat) * stackStats.ReloadSpeed * Stats.ReloadAnimationSpeed, callback: () => PrimeCallback(mainHand, slot), callbackHandler: callback => PrimeAnimationCallback(callback, player));
         TpAnimationBehavior?.Stop(ItemAnimationCategory(mainHand));
-        TpAnimationBehavior?.Play(mainHand, Stats.PrimeAnimation, category: AnimationCategory(mainHand), animationSpeed: GetAnimationSpeed(player, Stats.ProficiencyStat) * stackStats.ReloadSpeed);
+        TpAnimationBehavior?.Play(mainHand, Stats.PrimeAnimation, category: AnimationCategory(mainHand), animationSpeed: GetAnimationSpeed(player, Stats.ProficiencyStat) * stackStats.ReloadSpeed * Stats.ReloadAnimationSpeed);
         AnimationBehavior?.StopAllVanillaAnimations(mainHand);
         if (TpAnimationBehavior == null) AnimationBehavior?.PlayVanillaAnimation(Stats.PrimeTpAnimation, mainHand);
 
@@ -452,8 +453,8 @@ public class MuzzleloaderClient : RangeWeaponClient
 
         ItemStackRangedStats stackStats = ItemStackRangedStats.FromItemStack(slot.Itemstack);
 
-        AnimationBehavior?.Play(mainHand, GetShootingAnimation(slot, mainHand ? Stats.CockingAnimation : Stats.CockingAnimationOffhand), category: AnimationCategory(mainHand), animationSpeed: GetAnimationSpeed(player, Stats.ProficiencyStat) * stackStats.ReloadSpeed, callback: () => CockingCallback(mainHand));
-        TpAnimationBehavior?.Play(mainHand, GetShootingAnimation(slot, mainHand ? Stats.CockingAnimation : Stats.CockingAnimationOffhand), category: AnimationCategory(mainHand), animationSpeed: GetAnimationSpeed(player, Stats.ProficiencyStat) * stackStats.ReloadSpeed);
+        AnimationBehavior?.Play(mainHand, GetShootingAnimation(slot, mainHand ? Stats.CockingAnimation : Stats.CockingAnimationOffhand), category: AnimationCategory(mainHand), animationSpeed: GetAnimationSpeed(player, Stats.ProficiencyStat) * stackStats.ReloadSpeed * Stats.ReloadAnimationSpeed, callback: () => CockingCallback(mainHand));
+        TpAnimationBehavior?.Play(mainHand, GetShootingAnimation(slot, mainHand ? Stats.CockingAnimation : Stats.CockingAnimationOffhand), category: AnimationCategory(mainHand), animationSpeed: GetAnimationSpeed(player, Stats.ProficiencyStat) * stackStats.ReloadSpeed * Stats.ReloadAnimationSpeed);
         SetState(MuzzleloaderState.Cocking, mainHand);
 
         return true;

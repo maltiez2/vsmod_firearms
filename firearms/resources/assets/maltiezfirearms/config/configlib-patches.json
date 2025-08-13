@@ -6,49 +6,57 @@
         "attributes/BulletDamageMultiplier": "value * damage_multiplier",
         "attributes/Aiming/AimDifficulty": "aiming_difficulty",
         "attributes/DispersionMOA/0": "value * firearms_spread",
-        "attributes/DispersionMOA/1": "value * firearms_spread"
+        "attributes/DispersionMOA/1": "value * firearms_spread",
+        "attributes/ReloadAnimationSpeed": "value * firearms_reload_speed"
       },
       "maltiezfirearms:itemtypes/firearms/pistol-flintlock.json": {
         "attributes/BulletDamageMultiplier": "value * damage_multiplier",
         "attributes/Aiming/AimDifficulty": "aiming_difficulty",
         "attributes/DispersionMOA/0": "value * firearms_spread",
-        "attributes/DispersionMOA/1": "value * firearms_spread"
+        "attributes/DispersionMOA/1": "value * firearms_spread",
+        "attributes/ReloadAnimationSpeed": "value * firearms_reload_speed"
       },
       "maltiezfirearms:itemtypes/firearms/arquebus.json": {
         "attributes/BulletDamageMultiplier": "value * damage_multiplier",
         "attributes/Aiming/AimDifficulty": "aiming_difficulty",
         "attributes/DispersionMOA/0": "value * firearms_spread",
-        "attributes/DispersionMOA/1": "value * firearms_spread"
+        "attributes/DispersionMOA/1": "value * firearms_spread",
+        "attributes/ReloadAnimationSpeed": "value * firearms_reload_speed"
       },
       "maltiezfirearms:itemtypes/firearms/carbine.json": {
         "attributes/BulletDamageMultiplier": "value * damage_multiplier",
         "attributes/Aiming/AimDifficulty": "aiming_difficulty",
         "attributes/DispersionMOA/0": "value * firearms_spread",
-        "attributes/DispersionMOA/1": "value * firearms_spread"
+        "attributes/DispersionMOA/1": "value * firearms_spread",
+        "attributes/ReloadAnimationSpeed": "value * firearms_reload_speed"
       },
       "maltiezfirearms:itemtypes/firearms/musket.json": {
         "attributes/BulletDamageMultiplier": "value * damage_multiplier",
         "attributes/Aiming/AimDifficulty": "aiming_difficulty",
         "attributes/DispersionMOA/0": "value * firearms_spread",
-        "attributes/DispersionMOA/1": "value * firearms_spread"
+        "attributes/DispersionMOA/1": "value * firearms_spread",
+        "attributes/ReloadAnimationSpeed": "value * firearms_reload_speed"
       },
       "maltiezfirearms:itemtypes/firearms/superimposed.json": {
         "attributes/BulletDamageMultiplier": "value * damage_multiplier",
         "attributes/Aiming/AimDifficulty": "aiming_difficulty",
         "attributes/DispersionMOA/0": "value * firearms_spread",
-        "attributes/DispersionMOA/1": "value * firearms_spread"
+        "attributes/DispersionMOA/1": "value * firearms_spread",
+        "attributes/ReloadAnimationSpeed": "value * firearms_reload_speed"
       },
       "maltiezfirearms:itemtypes/firearms/blunderbuss.json": {
         "attributes/BulletDamageMultiplier": "value * damage_multiplier",
         "attributes/Aiming/AimDifficulty": "aiming_difficulty",
         "attributes/DispersionMOA/0": "blunderbuss_spread",
-        "attributes/DispersionMOA/1": "blunderbuss_spread"
+        "attributes/DispersionMOA/1": "blunderbuss_spread",
+        "attributes/ReloadAnimationSpeed": "value * firearms_reload_speed"
       },
       "maltiezfirearms:itemtypes/firearms/blunderbuss-flintlock.json": {
         "attributes/BulletDamageMultiplier": "value * damage_multiplier",
         "attributes/Aiming/AimDifficulty": "aiming_difficulty",
         "attributes/DispersionMOA/0": "blunderbuss_spread",
-        "attributes/DispersionMOA/1": "blunderbuss_spread"
+        "attributes/DispersionMOA/1": "blunderbuss_spread",
+        "attributes/ReloadAnimationSpeed": "value * firearms_reload_speed"
       },
       "maltiezfirearms:patches/schematics.json": {
         "0/value/chance": "value * schematic_drop_chance",
@@ -190,6 +198,16 @@
       "range": {
         "min": 0.0,
         "max": 10.0
+      }
+    },
+    {
+      "code": "firearms_reload_speed",
+      "type": "float",
+      "ingui": "maltiezfirearms:setting-firearms_reload_speed",
+      "default": 1,
+      "range": {
+        "min": 0.3,
+        "max": 3
       }
     }
   ]

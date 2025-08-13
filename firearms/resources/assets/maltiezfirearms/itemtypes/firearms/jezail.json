@@ -42,6 +42,7 @@
     "ScopedShootAnimation": ["maltiezfirearms:firearms-jezail-shoot-scoped"],
     "LoadedAnimation": ["maltiezfirearms:firearms-jezail-loaded"],
     "PrimedAnimation": "maltiezfirearms:firearms-jezail-primed",
+    "ReloadAnimationSpeed": 1,
     "MagazineSize": 1,
     "BulletLoadedPerReload": 1,
     "WaddingUsedPerReload": 1,
@@ -79,7 +80,7 @@
     },
     "BulletVelocity": 8,
     "DispersionMOA": [30, 30],
-    "Zeroing": -1,
+    "Zeroing": 0,
     "CancelReloadOnInAir": true,
     "LoadSpeedPenalty": -2
   },

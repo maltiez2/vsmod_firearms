@@ -65,7 +65,9 @@
     "LoadedAnimation": ["maltiezfirearms:firearms-arquebus-loaded"],
     "PrimedAnimation": "maltiezfirearms:firearms-arquebus-primed",
     "CockedAnimation": ["maltiezfirearms:firearms-arquebus-cocked"],
+    "ReloadAnimationSpeed": 1,
     "MagazineSize": 1,
+    "BulletsFiredPerShot": 1,
     "BulletLoadedPerReload": 1,
     "WaddingUsedPerReload": 1,
     "LoadPowderConsumption": 7,
@@ -87,9 +89,9 @@
       "VerticalLimit": 0.25,
       "VerticalOffset": -0.05
     },
-    "BulletVelocity": 8,
+    "BulletVelocity": 12,
     "DispersionMOA": [60, 60],
-    "Zeroing": -1,
+    "Zeroing": 0,
     "CancelReloadOnInAir": true,
     "LoadSpeedPenalty": -2
   },

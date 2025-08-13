@@ -45,7 +45,7 @@
       "meltingDuration": 45,
       "smeltedRatio": 1,
       "smeltingType": "fire",
-      "smeltedStack": {"type": "block", "code": "maltiezfirearms:ammomold-{itemtype}-fired"},
+      "smeltedStack": {"type": "block", "code": "maltiezfirearms:ammomold-{tooltype}-fired"},
       "requiresContainer": false
     }
   },

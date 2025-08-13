@@ -9,10 +9,8 @@
     "renderer": "Shape",
     "shape": {"base": "maltiezfirearms:ammo/pellet"},
     "textures": {"metal": {"base": "game:block/metal/plate/{material}"}},
-    "behaviors": [{"code": "CombatOverhaul:ProjectilePhysics", "groundDragFactor": 1, "airDragFactor": 0.1, "gravityFactor": 0.2}, {"code": "interpolateposition"}]
+    "behaviors": [{"code": "CombatOverhaul:ProjectilePhysics", "groundDragFactor": 1, "airDragFactor": 1, "gravityFactor": 2}, {"code": "interpolateposition"}]
   },
-  "server": {
-    "behaviors": [{"code": "CombatOverhaul:ProjectilePhysics", "groundDragFactor": 1, "airDragFactor": 0.1, "gravityFactor": 0.2}, {"code": "despawn", "minSeconds": 600}]
-  },
+  "server": {"behaviors": [{"code": "CombatOverhaul:ProjectilePhysics", "groundDragFactor": 1, "airDragFactor": 1, "gravityFactor": 2}, {"code": "despawn", "minSeconds": 600}]},
   "sounds": {}
 }

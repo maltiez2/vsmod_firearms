@@ -44,6 +44,7 @@
     "ShootAnimationOffhand": ["maltiezfirearms:firearms-pistol-flintlock-shoot-offhand"],
     "LoadedAnimation": ["maltiezfirearms:firearms-pistol-flintlock-loaded"],
     "PrimedAnimation": "maltiezfirearms:firearms-pistol-flintlock-primed",
+    "ReloadAnimationSpeed": 1,
     "MagazineSize": 1,
     "BulletLoadedPerReload": 1,
     "WaddingUsedPerReload": 1,
@@ -66,9 +67,9 @@
       "VerticalOffset": -0.05
     },
     "LoadSpeedPenalty": -0.3,
-    "BulletVelocity": 6,
+    "BulletVelocity": 9,
     "DispersionMOA": [90, 90],
-    "Zeroing": -1.25,
+    "Zeroing": 0,
     "CancelReloadOnInAir": false
   },
   "shape": {"base": "maltiezfirearms:firearms/pistol-flintlock"},

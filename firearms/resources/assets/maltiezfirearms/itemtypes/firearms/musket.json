@@ -51,6 +51,7 @@
     "ShootAnimation": ["maltiezfirearms:firearms-musket-shoot"],
     "LoadedAnimation": ["maltiezfirearms:firearms-musket-loaded"],
     "PrimedAnimation": "maltiezfirearms:firearms-musket-primed",
+    "ReloadAnimationSpeed": 1,
     "MagazineSize": 1,
     "BulletLoadedPerReload": 1,
     "WaddingUsedPerReload": 1,
@@ -73,9 +74,9 @@
       "VerticalLimit": 0.25,
       "VerticalOffset": -0.05
     },
-    "BulletVelocity": 8,
+    "BulletVelocity": 12,
     "DispersionMOA": [60, 60],
-    "Zeroing": -1,
+    "Zeroing": 0,
     "BayonetAttack": {
       "StopOnTerrainHit": false,
       "StopOnEntityHit": false,

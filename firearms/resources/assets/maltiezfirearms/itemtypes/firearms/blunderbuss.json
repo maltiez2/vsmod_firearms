@@ -65,6 +65,7 @@
     "LoadedAnimation": ["maltiezfirearms:firearms-blunderbuss-loaded"],
     "PrimedAnimation": "maltiezfirearms:firearms-blunderbuss-primed",
     "CockedAnimation": ["maltiezfirearms:firearms-blunderbuss-cocked"],
+    "ReloadAnimationSpeed": 1,
     "MagazineSize": 1,
     "BulletLoadedPerReload": 8,
     "BulletsFiredPerShot": 8,
@@ -88,9 +89,9 @@
       "VerticalLimit": 0.25,
       "VerticalOffset": -0.05
     },
-    "BulletVelocity": 6,
+    "BulletVelocity": 9,
     "DispersionMOA": [120, 120],
-    "Zeroing": 0.25,
+    "Zeroing": 0,
     "CancelReloadOnInAir": true,
     "LoadSpeedPenalty": -2
   },

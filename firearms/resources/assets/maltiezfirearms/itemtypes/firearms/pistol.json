@@ -44,6 +44,7 @@
     "ShootAnimationOffhand": ["maltiezfirearms:firearms-pistol-shoot-offhand"],
     "LoadedAnimation": ["maltiezfirearms:firearms-pistol-loaded"],
     "PrimedAnimation": "maltiezfirearms:firearms-pistol-primed",
+    "ReloadAnimationSpeed": 1,
     "MagazineSize": 1,
     "BulletLoadedPerReload": 1,
     "WaddingUsedPerReload": 1,
@@ -66,9 +67,9 @@
       "VerticalOffset": -0.05
     },
     "LoadSpeedPenalty": -0.3,
-    "BulletVelocity": 4,
+    "BulletVelocity": 6,
     "DispersionMOA": [90, 90],
-    "Zeroing": -1.25,
+    "Zeroing": 0,
     "CancelReloadOnInAir": false
   },
   "shape": {"base": "maltiezfirearms:firearms/pistol"},

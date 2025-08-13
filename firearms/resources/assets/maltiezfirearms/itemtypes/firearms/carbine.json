@@ -40,6 +40,7 @@
     "ShootAnimation": ["maltiezfirearms:firearms-carbine-shoot"],
     "LoadedAnimation": ["maltiezfirearms:firearms-carbine-loaded"],
     "PrimedAnimation": "maltiezfirearms:firearms-carbine-primed",
+    "ReloadAnimationSpeed": 1,
     "MagazineSize": 1,
     "BulletLoadedPerReload": 1,
     "WaddingUsedPerReload": 1,
@@ -63,9 +64,9 @@
       "VerticalLimit": 0.25,
       "VerticalOffset": -0.05
     },
-    "BulletVelocity": 6,
+    "BulletVelocity": 9,
     "DispersionMOA": [60, 60],
-    "Zeroing": -1.125,
+    "Zeroing": 0,
     "CancelReloadOnInAir": true,
     "LoadSpeedPenalty": -2
   },
