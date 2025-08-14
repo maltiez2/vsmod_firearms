@@ -32,7 +32,7 @@ public class Igniteable : CollectibleBehavior
         {
             if (byEntity is EntityPlayer player)
             {
-                RepalceStack(slot, player);
+                ReplaceStack(slot, player);
             }
 
             handling = EnumHandling.Handled;
@@ -60,7 +60,7 @@ public class Igniteable : CollectibleBehavior
         }
     }
 
-    private void RepalceStack(ItemSlot slot, EntityPlayer player)
+    private void ReplaceStack(ItemSlot slot, EntityPlayer player)
     {
         JsonItemStack stack = Stats.TransitionStack.Clone();
 
