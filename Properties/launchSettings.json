@@ -3,14 +3,14 @@
     "Client": {
       "commandName": "Executable",
       "executablePath": "dotnet",
-      "commandLineArgs": "\"$(VINTAGE_STORY)/Vintagestory.dll\" --tracelog --dataPath \"$(DataFolder)\" --addModPath \"$(AditionalModsFolder)\" \"$(ModDir)\" \"-o\" \"$(WorldName)\"",
-      "workingDirectory": "$(VINTAGE_STORY)"
+      "commandLineArgs": "\"$(GameDirectory)/Vintagestory.dll\" --tracelog --dataPath \"$(DataFolder)\" --addModPath \"$(AditionalModsFolder)\" \"$(ModDir)\" \"-o\" \"$(WorldName)\"",
+      "workingDirectory": "$(GameDirectory)"
     },
     "Server": {
       "commandName": "Executable",
       "executablePath": "dotnet",
-      "commandLineArgs": "\"$(VINTAGE_STORY)/VintagestoryServer.dll\" --tracelog --dataPath \"$(DataFolder)\" --addModPath \"$(AditionalModsFolder)\" \"$(ModDir)\" \"-o\" \"$(WorldName)\"",
-      "workingDirectory": "$(VINTAGE_STORY)"
+      "commandLineArgs": "\"$(GameDirectory)/VintagestoryServer.dll\" --tracelog --dataPath \"$(DataFolder)\" --addModPath \"$(AditionalModsFolder)\" \"$(ModDir)\" \"-o\" \"$(WorldName)\"",
+      "workingDirectory": "$(GameDirectory)"
     }
   }
 }
