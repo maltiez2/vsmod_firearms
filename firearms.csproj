@@ -23,7 +23,7 @@
     <ModInfoTranslators Include="Nikolashka - Russian" />
     <ModInfoTranslators Include="DeanBro - Ukrainian" />
     <ModInfoTranslators Include="Ouk - Czech" />
-	<ModInfoTranslators Include="Faenorian - Spanish (LATAM)" />
+    <ModInfoTranslators Include="Faenorian - Spanish (LATAM)" />
   </ItemGroup>
 
   <!-- Dependencies -->
