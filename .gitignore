@@ -5,6 +5,7 @@
 
 # Custom
 *.ogg
+Properties/localSettings.props
 
 # User-specific files
 *.rsuser

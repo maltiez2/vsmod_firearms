@@ -14,6 +14,7 @@
   <!-- Authors -->
   <ItemGroup>
     <ModInfoAuthors Include="Maltiez" />
+    <ModInfoAuthors Include="Orangutanion" />
   </ItemGroup>
 
   <!-- Translators -->
@@ -26,9 +27,7 @@
 
   <!-- Dependencies -->
   <ItemGroup>
-    <Dependencies Include="overhaullib">
-      <Version>*</Version>
-    </Dependencies>
+    <Dependencies Include="overhaullib" Version="*"/>
   </ItemGroup>
 
   <!-- Project settings -->
@@ -38,19 +37,38 @@
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
+  
+  <!-- Local settings -->
+  <Target Name="EnsureSettingsJson" BeforeTargets="ModInfo" Condition="!Exists('Properties\localSettings.props')">
+    <MakeDir Directories="Properties" />
+    <WriteLinesToFile
+      File="Properties\localSettings.props"
+      Overwrite="true"
+      Lines="&lt;Project&gt;
+  &lt;PropertyGroup&gt;
+    &lt;RunFormatter&gt;false&lt;/RunFormatter&gt;
+    &lt;DataFolderName&gt;VintagestoryData&lt;/DataFolderName&gt;
+    &lt;GameDirectory&gt;&lt;/GameDirectory&gt;
+  &lt;/PropertyGroup&gt;
+&lt;/Project&gt;"
+       />
+    <Error Text="Local settings file was missing, generated a new one. Run build again."/>
+  </Target>
+  <Import Project="Properties\localSettings.props"  Condition="Exists('Properties\localSettings.props')"/>
+  
 
   <!-- Paths -->
   <PropertyGroup>
     <ProjectDir>$(MSBuildProjectDirectory)</ProjectDir>
     <OutputDir>bin\$(Configuration)\Mods</OutputDir>
     <OutputPath>$(OutputDir)\$(ModId)</OutputPath>
-    <GameDirectory>$(VINTAGE_STORY)</GameDirectory>
     <AssetsDir>$(ProjectDir)\resources\assets</AssetsDir>
     <ModIconFile>$(ProjectDir)\resources\modicon.png</ModIconFile>
     <ReleasesDir>$(ProjectDir)\Releases</ReleasesDir>
     <ReleaseFile>$(ModId)_$(ModVersion).zip</ReleaseFile>
     <ReleasePath>$(ReleasesDir)\$(ReleaseFile)</ReleasePath>
     <ExternalLibs>$(ProjectDir)\external</ExternalLibs>
+    <GameDirectory  Condition="'$(GameDirectory)' == ''">$(VINTAGE_STORY)</GameDirectory>
   </PropertyGroup>
 
   <!-- References to libraries that are being used in project -->
@@ -58,17 +76,16 @@
     <PackageReference Include="VSImGui" Version="0.0.6" />
     <Reference Include="$(GameDirectory)/**/*.dll" Private="false" />
     <Reference Include="$(ExternalLibs)/**/*.dll" Private="false" />
-    <Reference Include="$(ProjectDir)/../../Overhaullib/bin/Release/Mods/overhaullib/Overhaullib.dll" Private="false" />
   </ItemGroup>
 
   <!-- Forces rebuild -->
-  <Target Name="ForceRebuild" BeforeTargets="BeforeBuild">
+  <Target Name="ForceRebuild" BeforeTargets="ModInfo">
     <Touch Files="@(Compile)" AlwaysCreate="true" />
   </Target>
  
   <!-- Formatting JSON files -->
   <PropertyGroup>
-    <Scripts>$(ProjectDir)\..\scripts</Scripts>
+    <Scripts>$(ProjectDir)\scripts</Scripts>
     <Formatter>$(Scripts)\formatter.py</Formatter>
   </PropertyGroup>
   <ItemGroup>
@@ -82,7 +99,6 @@
 
   <!-- Startup settings -->
   <PropertyGroup>
-    <DataFolderName>VintagestoryDataDev</DataFolderName>
     <AppDataDir>$(AppData)</AppDataDir>
     <DataFolder>$(AppDataDir)\$(DataFolderName)</DataFolder>
     <AditionalModsFolder>$(AppDataDir)\$(DataFolderName)\Mods</AditionalModsFolder>
@@ -91,7 +107,7 @@
   </PropertyGroup>
 
   <!-- Creates/updates modinfo.json file in build directory -->
-  <Target Name="ModInfo" BeforeTargets="CopyFilesToOutput">
+  <Target Name="ModInfo" AfterTargets="EnsureSettingsJson" BeforeTargets="CopyFilesToOutput">
     <PropertyGroup>
       <ModInfo>
 {
@@ -119,7 +135,7 @@
 
   <!-- Formats asssets files -->
   <Target Name="Format" AfterTargets="ModInfo" BeforeTargets="CopyFilesToOutput">
-    <Exec Command="python $(Formatter) -a -d %(AssetsToFormat.Identity)" />
+    <Exec Command="python $(Formatter) -a -d %(AssetsToFormat.Identity)" Condition="$(RunFormatter)"/>
   </Target>
 
   <!-- Copies modicon and assets if it exists into output directory -->
