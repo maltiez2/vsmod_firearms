@@ -3,7 +3,7 @@
   <PropertyGroup>
     <ModName>Firearms</ModName>
     <ModType>code</ModType>
-    <ModVersion>1.2.0</ModVersion>
+    <ModVersion>1.2.1</ModVersion>
     <ModId>maltiezfirearms</ModId>
     <Description>Black powder firearms</Description>
     <Side>Universal</Side>
@@ -28,7 +28,7 @@
 
   <!-- Dependencies -->
   <ItemGroup>
-    <Dependencies Include="overhaullib" Version="*"/>
+    <Dependencies Include="overhaullib" Version="1.6.2"/>
   </ItemGroup>
 
   <!-- Project settings -->

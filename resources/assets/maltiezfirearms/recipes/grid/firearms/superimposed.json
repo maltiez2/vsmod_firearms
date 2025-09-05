@@ -2,40 +2,19 @@
   {
     "ingredientPattern": "LLB,MWR",
     "ingredients": {
-      "B": {"type": "item", "code": "maltiezfirearms:barrel-pistol-tinbronze", "quantity": 1},
+      "B": {"type": "item", "code": "maltiezfirearms:barrel-pistol-{metal1}", "quantity": 1},
       "M": {"type": "item", "code": "game:metalplate-brass", "quantity": 2},
-      "L": {"type": "item", "code": "maltiezfirearms:lock-wheellock-tinbronze", "quantity": 1},
+      "L": {"type": "item", "code": "maltiezfirearms:lock-wheellock-{metal2}", "quantity": 1},
       "W": {"type": "item", "code": "game:plank-*", "quantity": 2},
-      "R": {"type": "item", "code": "maltiezfirearms:ramrod-pistol-tinbronze", "quantity": 1}
+      "R": {"type": "item", "code": "maltiezfirearms:ramrod-pistol-{metal3}", "quantity": 1}
+    },
+    "allowedVariants": {
+      "metal1": ["tinbronze", "bismuthbronze", "blackbronze"],
+      "metal2": ["tinbronze", "bismuthbronze", "blackbronze"],
+      "metal3": ["tinbronze", "bismuthbronze", "blackbronze"]
     },
     "width": 3,
     "height": 2,
-    "output": {"type": "item", "code": "maltiezfirearms:firearm-superimposed-tinbronze"}
-  },
-  {
-    "ingredientPattern": "LLB,MWR",
-    "ingredients": {
-      "B": {"type": "item", "code": "maltiezfirearms:barrel-pistol-bismuthbronze", "quantity": 1},
-      "M": {"type": "item", "code": "game:metalplate-brass", "quantity": 2},
-      "L": {"type": "item", "code": "maltiezfirearms:lock-wheellock-bismuthbronze", "quantity": 1},
-      "W": {"type": "item", "code": "game:plank-*", "quantity": 1},
-      "R": {"type": "item", "code": "maltiezfirearms:ramrod-pistol-bismuthbronze", "quantity": 1}
-    },
-    "width": 3,
-    "height": 2,
-    "output": {"type": "item", "code": "maltiezfirearms:firearm-superimposed-bismuthbronze"}
-  },
-  {
-    "ingredientPattern": "LLB,MWR",
-    "ingredients": {
-      "B": {"type": "item", "code": "maltiezfirearms:barrel-pistol-blackbronze", "quantity": 1},
-      "M": {"type": "item", "code": "game:metalplate-brass", "quantity": 2},
-      "L": {"type": "item", "code": "maltiezfirearms:lock-wheellock-blackbronze", "quantity": 1},
-      "W": {"type": "item", "code": "game:plank-*", "quantity": 1},
-      "R": {"type": "item", "code": "maltiezfirearms:ramrod-pistol-blackbronze", "quantity": 1}
-    },
-    "width": 3,
-    "height": 2,
-    "output": {"type": "item", "code": "maltiezfirearms:firearm-superimposed-blackbronze"}
+    "output": {"type": "item", "code": "maltiezfirearms:firearm-superimposed-{metal1}"}
   }
 ]

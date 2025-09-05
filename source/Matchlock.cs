@@ -39,6 +39,12 @@ public class MatchlockItem : Item, IHasWeaponLogic, IHasRangedWeaponLogic, IHasI
 
     public override void GetHeldItemInfo(ItemSlot inSlot, StringBuilder dsc, IWorldAccessor world, bool withDebugInfo)
     {
+        if (Stats != null && Stats.ProficiencyStat != "")
+        {
+            string description = Lang.Get("combatoverhaul:iteminfo-proficiency", Lang.Get($"combatoverhaul:proficiency-{Stats.ProficiencyStat}"));
+            dsc.AppendLine(description);
+        }
+
         if (Stats != null)
         {
             dsc.AppendLine(Lang.Get("combatoverhaul:iteminfo-range-weapon-damage", Stats.BulletDamageMultiplier, Stats.BulletDamageStrength));

@@ -8,8 +8,8 @@
 	"textureSizes": {
 	},
 	"textures": {
-		"brass": "block/metal/plate/brass",
-		"oak": "block/wood/debarked/oak"
+		"brass": "game:block/metal/plate/brass",
+		"oak": "game:block/wood/debarked/oak"
 	},
 	"elements": [
 		{

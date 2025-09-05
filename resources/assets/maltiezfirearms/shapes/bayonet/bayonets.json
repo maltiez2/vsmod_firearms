@@ -9,10 +9,10 @@
 	"textureSizes": {
 	},
 	"textures": {
-		"gold": "block/metal/plate/gold",
-		"steel": "block/metal/plate/steel",
-		"ebony": "block/wood/debarked/ebony",
-		"kapok": "block/wood/debarked/oak"
+		"gold": "game:block/metal/plate/gold",
+		"steel": "game:block/metal/plate/steel",
+		"ebony": "game:block/wood/debarked/ebony",
+		"kapok": "game:block/wood/debarked/oak"
 	},
 	"elements": [
 		{
