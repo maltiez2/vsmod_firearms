@@ -1069,8 +1069,8 @@ public class MuzzleloaderItem : Item, IHasWeaponLogic, IHasRangedWeaponLogic, IH
     IClientWeaponLogic? IHasWeaponLogic.ClientLogic => ClientLogic;
     IServerRangedWeaponLogic? IHasRangedWeaponLogic.ServerWeaponLogic => ServerLogic;
 
-    public AnimationRequestByCode? GetIdleAnimation(bool mainHand) => mainHand ? IdleAnimation : IdleAnimationOffhand;
-    public AnimationRequestByCode? GetReadyAnimation(bool mainHand) => mainHand ? ReadyAnimation : ReadyAnimationOffhand;
+    public AnimationRequestByCode? GetIdleAnimation(EntityPlayer player, ItemSlot slot, bool mainHand) => mainHand ? IdleAnimation : IdleAnimationOffhand;
+    public AnimationRequestByCode? GetReadyAnimation(EntityPlayer player, ItemSlot slot, bool mainHand) => mainHand ? ReadyAnimation : ReadyAnimationOffhand;
 
     public override void GetHeldItemInfo(ItemSlot inSlot, StringBuilder dsc, IWorldAccessor world, bool withDebugInfo)
     {
