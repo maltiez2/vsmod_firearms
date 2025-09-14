@@ -28,7 +28,24 @@
         "SwitchArms": false,
         "PitchFollow": true,
         "FOVMultiplier": 1,
-        "BobbingAmplitude": 0.8,
+        "BobbingAmplitude": 1,
+        "Elements": {
+          "ItemAnchor": [-1.2, 1.6, -0.4, -36, -10, 110],
+          "LowerArmR": [0, 0, 0, 0, 0, -109],
+          "UpperArmR": [0, 0, 0, 0, 27, 0],
+          "ItemAnchorL": [0, 0, 0, 0, 0, 0],
+          "LowerArmL": [0, 0, 0, 0, 0, -35],
+          "UpperArmL": [0, 0, 0, 0, 12, -45]
+        }
+      },
+      {
+        "EasingTime": 3000,
+        "EasingFunction": "Sin",
+        "DetachedAnchor": false,
+        "SwitchArms": false,
+        "PitchFollow": true,
+        "FOVMultiplier": 1,
+        "BobbingAmplitude": 1,
         "Elements": {
           "ItemAnchor": [-1.2, 1.6, -0.4, -36, -10, 110],
           "LowerArmR": [0, 0, 0, 0, 0, -109],
