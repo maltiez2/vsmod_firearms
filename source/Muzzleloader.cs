@@ -184,7 +184,8 @@ public class MuzzleloaderClient : RangeWeaponClient
     protected virtual bool Load(ItemSlot slot, EntityPlayer player, ref int state, ActionEventData eventData, bool mainHand, AttackDirection direction)
     {
         if (!CheckState(state, MuzzleloaderState.Unloaded)) return false;
-        if (eventData.AltPressed || !mainHand || !CheckForOtherHandEmpty(mainHand, player)) return false;
+        if (InteractionsTester.PlayerTriesToInteract(player, mainHand, eventData)) return false;
+        if (eventData.AltPressed || !CheckForOtherHandEmpty(mainHand, player)) return false;
         if (Stats.LoadingRequirementWildcard != "" && !CheckRequirement(Stats.LoadingRequirementWildcard, player))
         {
             Api.TriggerIngameError(this, "missingRequirement", Lang.Get(Stats.LoadingRequirementMessage));
@@ -337,7 +338,8 @@ public class MuzzleloaderClient : RangeWeaponClient
     protected virtual bool Prime(ItemSlot slot, EntityPlayer player, ref int state, ActionEventData eventData, bool mainHand, AttackDirection direction)
     {
         if (!CheckState(state, MuzzleloaderState.Loaded)) return false;
-        if (eventData.AltPressed || !mainHand || !CheckForOtherHandEmpty(mainHand, player)) return false;
+        if (InteractionsTester.PlayerTriesToInteract(player, mainHand, eventData)) return false;
+        if (eventData.AltPressed || !CheckForOtherHandEmpty(mainHand, player)) return false;
         if (Stats.PrimingRequirementWildcard != "" && !CheckRequirement(Stats.PrimingRequirementWildcard, player))
         {
             Api.TriggerIngameError(this, "missingRequirement", Lang.Get(Stats.PrimingRequirementMessage));
@@ -432,7 +434,7 @@ public class MuzzleloaderClient : RangeWeaponClient
     protected virtual bool Cocking(ItemSlot slot, EntityPlayer player, ref int state, ActionEventData eventData, bool mainHand, AttackDirection direction)
     {
         if (!CheckState(state, MuzzleloaderState.Primed)) return false;
-        if (eventData.AltPressed) return false;
+        if (InteractionsTester.PlayerTriesToInteract(player, mainHand, eventData)) return false;
         if (Stats.CockingRequirementWildcard != "" && !CheckRequirement(Stats.CockingRequirementWildcard, player))
         {
             Api.TriggerIngameError(this, "missingRequirement", Lang.Get(Stats.CockingRequirementMessage));
@@ -471,7 +473,7 @@ public class MuzzleloaderClient : RangeWeaponClient
     {
         if (!CheckState(state, MuzzleloaderState.Cocked)) return false;
         if (!mainHand && !CanUseOffhand(player)) return false;
-        if (eventData.AltPressed) return false;
+        if (InteractionsTester.PlayerTriesToInteract(player, mainHand, eventData)) return false;
 
         ItemStackRangedStats stackStats = ItemStackRangedStats.FromItemStack(slot.Itemstack);
         AimingStats aimingStats = AimingStats.Clone();
@@ -550,7 +552,7 @@ public class MuzzleloaderClient : RangeWeaponClient
     protected virtual bool Shoot(ItemSlot slot, EntityPlayer player, ref int state, ActionEventData eventData, bool mainHand, AttackDirection direction)
     {
         if (!CheckState(state, MuzzleloaderState.Aim)) return false;
-        if (eventData.AltPressed) return false;
+        if (InteractionsTester.PlayerTriesToInteract(player, mainHand, eventData)) return false;
 
         Inventory.Read(slot, InventoryId);
         if (Inventory.Items.Count == 0)

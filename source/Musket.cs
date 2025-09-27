@@ -117,7 +117,7 @@ public class MusketClient : MuzzleloaderClient, IOnGameTick
     [ActionEventHandler(EnumEntityAction.LeftMouseDown, ActionState.Active)]
     protected virtual bool Attack(ItemSlot slot, EntityPlayer player, ref int state, ActionEventData eventData, bool mainHand, AttackDirection direction)
     {
-        if (eventData.AltPressed) return false;
+        if (InteractionsTester.PlayerTriesToInteract(player, mainHand, eventData)) return false;
         if (CheckState(state, MusketState.Loading, MusketState.Aim, MusketState.Priming, MusketState.Shoot)) return false;
         if (CheckState(state, MusketState.AttackWindup, MusketState.Attack, MusketState.Cooldown)) return false;
 
