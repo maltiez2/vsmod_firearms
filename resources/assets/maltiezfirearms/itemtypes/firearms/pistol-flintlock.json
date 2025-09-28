@@ -5,7 +5,7 @@
   "variantgroups": [{"code": "type", "states": ["pistol"]}, {"code": "material", "states": ["steel"]}],
   "maxstacksize": 1,
   "storageFlags": 257,
-  "durabilityByType": {"*-tarnished": 60, "*": 600},
+  "durabilityByType": {"*-tarnished": 60, "*": 900},
   "rackable": true,
   "tool": "bow",
   "behaviors": [

@@ -109,6 +109,32 @@
         "attributes/Aiming/CursorType": "aiming_cursor_type"
       }
     },
+    "integer": {
+      "maltiezfirearms:itemtypes/firearms/pistol.json": {
+        "durabilityByType/*": "value * durability_wheellock_pistol / 600"
+      },
+      "maltiezfirearms:itemtypes/firearms/pistol-flintlock.json": {
+        "durabilityByType/*": "value * durability_flintlock_pistol / 900"
+      },
+      "maltiezfirearms:itemtypes/firearms/arquebus.json": {
+        "durabilityByType/*": "value * durability_matchlock_arquebus / 500"
+      },
+      "maltiezfirearms:itemtypes/firearms/carbine.json": {
+        "durability": "value * durability_flintlock_carbine / 750"
+      },
+      "maltiezfirearms:itemtypes/firearms/musket.json": {
+        "durability": "value * durability_flintlock_musket / 600"
+      },
+      "maltiezfirearms:itemtypes/firearms/superimposed.json": {
+        "durabilityByType/*": "value * durability_wheellock_bossi / 750"
+      },
+      "maltiezfirearms:itemtypes/firearms/blunderbuss.json": {
+        "durabilityByType/*": "value * durability_matchlock_blunderbuss / 400"
+      },
+      "maltiezfirearms:itemtypes/firearms/blunderbuss-flintlock.json": {
+        "durabilityByType/*": "value * durability_flintlock_blunderbuss / 600"
+      }
+    },
     "other": {
       "maltiezfirearms:recipes/grid/firearms/locks.json": {
         "0/requiresTrait": "trait_requirement",
@@ -208,6 +234,83 @@
       "range": {
         "min": 0.3,
         "max": 3
+      }
+    },
+    {
+      "type": "separator",
+      "title": "maltiezfirearms:setting-title-durabilities",
+      "collapsible": true
+    },
+    {
+      "code": "durability_wheellock_pistol",
+      "type": "integer",
+      "ingui": "maltiezfirearms:setting-durability_wheellock_pistol",
+      "default": 600,
+      "range": {
+        "min": 1
+      }
+    },
+    {
+      "code": "durability_wheellock_bossi",
+      "type": "integer",
+      "ingui": "maltiezfirearms:setting-durability_wheellock_bossi",
+      "default": 750,
+      "range": {
+        "min": 1
+      }
+    },
+    {
+      "code": "durability_matchlock_arquebus",
+      "type": "integer",
+      "ingui": "maltiezfirearms:setting-durability_matchlock_arquebus",
+      "default": 500,
+      "range": {
+        "min": 1
+      }
+    },
+    {
+      "code": "durability_matchlock_blunderbuss",
+      "type": "integer",
+      "ingui": "maltiezfirearms:setting-durability_matchlock_blunderbuss",
+      "default": 400,
+      "range": {
+        "min": 1
+      }
+    },
+    {
+      "code": "durability_flintlock_pistol",
+      "type": "integer",
+      "ingui": "maltiezfirearms:setting-durability_flintlock_pistol",
+      "default": 900,
+      "range": {
+        "min": 1
+      }
+    },
+    {
+      "code": "durability_flintlock_blunderbuss",
+      "type": "integer",
+      "ingui": "maltiezfirearms:setting-durability_flintlock_blunderbuss",
+      "default": 600,
+      "range": {
+        "min": 1
+      }
+    },
+    {
+      "code": "durability_flintlock_carbine",
+      "type": "integer",
+      "ingui": "maltiezfirearms:setting-durability_flintlock_carbine",
+      "default": 750,
+      "range": {
+        "min": 1
+      }
+    },
+    {
+      "code": "durability_flintlock_musket",
+      "type": "integer",
+      "ingui": "maltiezfirearms:setting-durability_flintlock_musket",
+      "default": 600,
+      "range": {
+        "min": 1
       }
     }
   ]

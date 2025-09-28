@@ -4,7 +4,7 @@
   "variantgroups": [{"code": "type", "states": ["arquebus"]}, {"code": "material", "states": ["iron", "meteoriciron", "rusted"]}],
   "creativeinventory": {"general": ["*"], "maltiezfirearms": ["*"]},
   "maxstacksize": 1,
-  "durabilityByType": {"*-rusted": 10, "*": 400},
+  "durabilityByType": {"*-rusted": 10, "*": 500},
   "rackable": true,
   "tool": "bow",
   "behaviors": [

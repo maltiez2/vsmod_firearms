@@ -4,7 +4,7 @@
   "variantgroups": [{"code": "type", "states": ["carbine"]}, {"code": "material", "states": ["steel"]}],
   "creativeinventory": {"general": ["*"], "maltiezfirearms": ["*"]},
   "maxstacksize": 1,
-  "durability": 1250,
+  "durability": 750,
   "rackable": true,
   "tool": "bow",
   "behaviors": [

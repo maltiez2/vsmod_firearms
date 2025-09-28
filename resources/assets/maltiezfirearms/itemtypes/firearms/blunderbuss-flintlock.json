@@ -4,7 +4,7 @@
   "variantgroups": [{"code": "type", "states": ["blunderbuss"]}, {"code": "material", "states": ["steel"]}],
   "creativeinventory": {"general": ["*"], "maltiezfirearms": ["*"]},
   "maxstacksize": 1,
-  "durabilityByType": {"*-rusted": 10, "*": 400},
+  "durabilityByType": {"*-rusted": 10, "*": 600},
   "rackable": true,
   "tool": "bow",
   "behaviors": [

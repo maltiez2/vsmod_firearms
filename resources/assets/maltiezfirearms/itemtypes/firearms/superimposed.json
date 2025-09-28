@@ -4,7 +4,7 @@
   "variantgroups": [{"code": "type", "states": ["superimposed"]}, {"code": "material", "states": ["tinbronze", "bismuthbronze", "blackbronze", "tarnished"]}],
   "creativeinventory": {"general": ["*"], "maltiezfirearms": ["*"]},
   "maxstacksize": 1,
-  "durabilityByType": {"*-tarnished": 60, "*": 600},
+  "durabilityByType": {"*-tarnished": 60, "*": 750},
   "rackable": true,
   "tool": "bow",
   "behaviors": [

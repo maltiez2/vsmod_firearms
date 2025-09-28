@@ -1090,6 +1090,17 @@ public class MuzzleloaderItem : Item, IHasWeaponLogic, IHasRangedWeaponLogic, IH
         base.GetHeldItemInfo(inSlot, dsc, world, withDebugInfo);
     }
 
+    public override int GetRemainingDurability(ItemStack itemstack)
+    {
+        int durability = base.GetRemainingDurability(itemstack);
+        int maxDurability = GetMaxDurability(itemstack);
+        if (durability > maxDurability)
+        {
+            SetDurability(itemstack, maxDurability);
+        }
+        return maxDurability;
+    }
+
     public override void OnLoaded(ICoreAPI api)
     {
         base.OnLoaded(api);

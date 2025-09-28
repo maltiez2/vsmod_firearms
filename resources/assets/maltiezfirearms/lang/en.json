@@ -91,6 +91,7 @@
   "requirement-missing-match": "Missing lit match",
   "requirement-missing-cocking-lever": "Missing cocking lever",
 
+  "setting-title-durabilities": "Firearms durabilities",
   "setting-damage-multiplier": "Damage multiplier",
   "setting-trait": "Tinkerer trait required",
   "setting-cursortype": "Aiming cursor type",
@@ -100,6 +101,14 @@
   "setting-cancel_reload_on_inair": "Cancel reload when in air",
   "setting-schematic_drop_chance": "Schematic drop chance multiplier",
   "setting-firearms_reload_speed": "Firearms reload speed",
+  "setting-durability_wheellock_pistol": "Wheellock pistol",
+  "setting-durability_wheellock_bossi": "Bossi carbine",
+  "setting-durability_matchlock_arquebus": "Arquebus",
+  "setting-durability_matchlock_blunderbuss": "Matchlock blunderbuss",
+  "setting-durability_flintlock_pistol": "Flintlock pistol",
+  "setting-durability_flintlock_blunderbuss": "Flintlock blunderbuss",
+  "setting-durability_flintlock_carbine": "Flintlock carbine",
+  "setting-durability_flintlock_musket": "Musket",
 
   "setting-comment-cursortype": "Applied instantly, do not need world reload",
 
