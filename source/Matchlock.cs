@@ -52,6 +52,19 @@ public class MatchlockItem : Item, IHasWeaponLogic, IHasRangedWeaponLogic, IHasI
         }
         base.GetHeldItemInfo(inSlot, dsc, world, withDebugInfo);
     }
+
+    public override int GetRemainingDurability(ItemStack itemstack)
+    {
+        int durability = base.GetRemainingDurability(itemstack);
+        int maxDurability = GetMaxDurability(itemstack);
+        if (durability > maxDurability)
+        {
+            itemstack.Attributes.RemoveAttribute("durability");
+            return maxDurability;
+        }
+        return durability;
+    }
+
     public override void OnLoaded(ICoreAPI api)
     {
         base.OnLoaded(api);

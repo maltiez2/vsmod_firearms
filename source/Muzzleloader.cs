@@ -1096,9 +1096,10 @@ public class MuzzleloaderItem : Item, IHasWeaponLogic, IHasRangedWeaponLogic, IH
         int maxDurability = GetMaxDurability(itemstack);
         if (durability > maxDurability)
         {
-            SetDurability(itemstack, maxDurability);
+            itemstack.Attributes.RemoveAttribute("durability");
+            return maxDurability;
         }
-        return maxDurability;
+        return durability;
     }
 
     public override void OnLoaded(ICoreAPI api)

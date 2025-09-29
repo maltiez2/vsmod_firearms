@@ -351,4 +351,16 @@ public class MusketItem : Item, IHasWeaponLogic, IHasRangedWeaponLogic, IHasIdle
             ClientLogic?.RenderDebugCollider(inSlot, byPlayer);
         }
     }
+
+    public override int GetRemainingDurability(ItemStack itemstack)
+    {
+        int durability = base.GetRemainingDurability(itemstack);
+        int maxDurability = GetMaxDurability(itemstack);
+        if (durability > maxDurability)
+        {
+            itemstack.Attributes.RemoveAttribute("durability");
+            return maxDurability;
+        }
+        return durability;
+    }
 }
