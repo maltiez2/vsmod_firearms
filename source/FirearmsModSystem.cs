@@ -1,4 +1,5 @@
 ﻿using ConfigLib;
+using Vintagestory.API.Client;
 using Vintagestory.API.Common;
 
 namespace Firearms;
@@ -31,6 +32,14 @@ public class FirearmsModSystem : ModSystem
         }
     }
 
+    public override void AssetsFinalize(ICoreAPI api)
+    {
+        if (api is ICoreClientAPI clientApi)
+        {
+            CheckStatusClientSide(clientApi);
+        }
+    }
+
     private void SubscribeToConfigChange(ICoreAPI api)
     {
         ConfigLibModSystem system = api.ModLoader.GetModSystem<ConfigLibModSystem>();
@@ -48,5 +57,23 @@ public class FirearmsModSystem : ModSystem
         {
             system.GetConfig("maltiezfirearms")?.AssignSettingsValues(Settings);
         };
+    }
+
+    private void CheckStatusClientSide(ICoreClientAPI api)
+    {
+        bool immersiveFirstPersonMode = api.Settings.Bool["immersiveFpMode"];
+        if (immersiveFirstPersonMode)
+        {
+            CombatOverhaul.Utils.LoggerUtil.Error(api, this, $"Immersive first person mode is enabled. It is not supported. Turn this setting off.");
+            AnnoyPlayer(api, "(Firearms) Immersive first person mode is enabled. It is not supported. Turn this setting off to prevent this message.", () => api.Settings.Bool["immersiveFpMode"]);
+        }
+    }
+    private void AnnoyPlayer(ICoreClientAPI api, string message, System.Func<bool> continueDelegate)
+    {
+        api.World.RegisterCallback(_ =>
+        {
+            api.TriggerIngameError(this, "error", message);
+            if (continueDelegate()) AnnoyPlayer(api, message, continueDelegate);
+        }, 5000);
     }
 }
