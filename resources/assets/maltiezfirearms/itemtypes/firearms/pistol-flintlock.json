@@ -25,6 +25,9 @@
     "toolrackTransform": {"translation": {"x": 1.05, "y": 0.55, "z": 0.5}, "rotation": {"x": -1, "y": 95, "z": -90}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 1.34},
     "groundStorageTransform": {"translation": {"x": 0.7, "y": 0.04, "z": 0.7}, "rotation": {"x": 0, "y": 57, "z": 90}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 0.8},
     "inPistolstandTransform": {"translation": {"x": -0.25, "y": -0.05, "z": 0}, "rotation": {"x": 90, "y": -96, "z": 103}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 0.81},
+    "handbook": {
+      "groupBy": ["firearm-pistol-steel"]
+    },
     "BulletDamageMultiplier": 1,
     "BulletDamageStrength": 5,
     "BulletTransform": {"translation": {"x": -2.2, "y": 0.2, "z": -2.2}, "rotation": {"x": 0, "y": 0, "z": 0}, "scale": 0.3},
