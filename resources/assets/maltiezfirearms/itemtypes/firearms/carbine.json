@@ -44,7 +44,7 @@
     "MagazineSize": 1,
     "BulletLoadedPerReload": 1,
     "WaddingUsedPerReload": 1,
-    "LoadPowderConsumption": 11,
+    "LoadPowderConsumption": 15,
     "PrimePowderConsumption": 1,
     "LoadingRequirementWildcard": "",
     "PrimingRequirementWildcard": "",

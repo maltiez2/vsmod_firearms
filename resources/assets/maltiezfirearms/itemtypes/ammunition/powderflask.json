@@ -3,7 +3,7 @@
   "class": "Firearms:PowderFlask",
   "maxstacksize": 1,
   "shape": {"base": "powder/powderflask"},
-  "durability": 256,
+  "durability": 512,
   "variantgroups": [{"code": "metal", "states": ["brass", "copper", "tinbronze", "bismuthbronze", "blackbronze", "iron", "meteoriciron", "steel"]}],
   "textures": {"metal": {"base": "game:block/metal/plate/{metal}"}},
   "creativeinventoryStacks": [{"tabs": ["general", "maltiezfirearms"], "stacks": [{"type": "item", "code": "powderflask-{metal}", "attributes": {"durability": 0}}]}],
@@ -16,7 +16,10 @@
   "attributes": {
     "groundStorageTransform": {"rotation": {"x": 0, "y": -28, "z": 0}, "origin": {"x": 0.5, "y": 0, "z": 0.5}, "scale": 0.5},
     "handbook": {"groupBy": ["powderflask-*"]},
-    "attachableShape": "maltiezfirearms:shapes/powder/powderflask-opened"
+    "attachableShape": "maltiezfirearms:shapes/powder/powderflask-opened",
+    "durabilityPerPowderItem": 4,
+    "powderWildcard": "*gunpowder-fine",
+    "refillSound": "maltiezfirearms:sounds/powder/powder-prime"
   },
   "guiTransform": {"translation": {"x": 0, "y": 0, "z": 0}, "rotation": {"x": 163, "y": 56, "z": 0}, "origin": {"x": -0.1, "y": 0.1, "z": 0.8}, "scale": 2.19},
   "fpHandTransform": {"translation": {"x": 0, "y": 0, "z": 0}, "rotation": {"x": 0, "y": 0, "z": 0}, "origin": {"x": 0.3, "y": 0.9, "z": 0.8}, "scale": 1.8},

@@ -1,6 +1,6 @@
 {
 	"editor": {
-		"collapsedPaths": "Root/Musket/Scope/Scope_band_0,Root/Band_second,Root/Musket/Band_first,Root/Band_first,Root/Carbine/Band_third,Root/Stock,Root/Carbine/Flask_origin,Root/Flintlock,Root/Barrel,Root/Musket/Patch,Root/Band_third,Root/Carbine/Flintlock,Root/Musket/Trigger_assembly,Root/Musket/Band_second,Root/Musket/Scope/Scope_band_10,Root/Musket/Ramrod_origin,Root/Musket/Flask_origin/Flask_origin_inner/Flask/Bottom_plate/Wooden_body_1/Wooden_body_2/Wooden_body_3/Wooden_body_4/Wooden_body_5/Wooden_body_6/Top_plate/Tube/Plug,Root/Musket/Flintlock,Root/Musket/Flask_origin,Root/Musket/Stock,Root/Musket/Ramrod,Root/Carbine/Band_first,Root/Musket/Flintlock/Frizzen,Root/Musket/Band_third,Root/Carbine/Ramrod_origin,Root/Trigger_assembly,Root/Carbine/Patch,Root/Ramrod,Root/Musket/Scope/Scope_band_4,Root/Carbine/Band_second,Root/Carbine/Trigger_assembly,Root/Musket/Barrel",
+		"collapsedPaths": "Root/Musket/Scope/Scope_band_0,Root/Band_second,Root/Musket/Band_first,Root/Band_first,Root/Carbine/Band_third,Root/Stock,Root/Carbine/Flask_origin,Root/Flintlock,Root/Barrel,Root/Musket/Patch,Root/Band_third,Root/Carbine/Flintlock,Root/Musket/Trigger_assembly,Root/Musket/Band_second,Root/Musket/Scope/Scope_band_10,Root/Musket/Ramrod_origin,Root/Musket/Flask_origin/Flask_origin_inner/Flask/Bottom_plate/Wooden_body_1/Wooden_body_2/Wooden_body_3/Wooden_body_4/Wooden_body_5/Wooden_body_6/Top_plate/Tube/Plug,Root/Musket/Flintlock,Root/Musket/Flask_origin,Root/Musket/Stock,Root/Musket/Ramrod,Root/Carbine/Band_first,Root/Musket/Flintlock/Frizzen,Root/Musket/Band_third,Root/Carbine/Ramrod_origin,Root/Trigger_assembly,Root/Carbine/Patch,Root/Ramrod,Root/Musket/Scope/Scope_band_4,Root/Carbine/Band_second,Root/Carbine/Trigger_assembly",
 		"allAngles": false,
 		"entityTextureMode": false
 	},
@@ -9,15 +9,15 @@
 	"textureSizes": {
 	},
 	"textures": {
-		"plain": "game:block/cloth/linen/plain",
-		"brass": "game:block/metal/plate/brass",
-		"iron": "game:block/metal/plate/iron",
-		"lead": "game:block/metal/plate/lead",
-		"steel": "game:block/metal/plate/steel",
-		"flint": "game:block/stone/flint",
-		"kapok": "game:block/wood/debarked/oak",
-		"oak": "game:block/wood/debarked/oak",
-		"temporalgear": "game:item/resource/temporalgear"
+		"plain": "block/cloth/linen/plain",
+		"brass": "block/metal/plate/brass",
+		"iron": "block/metal/plate/iron",
+		"lead": "block/metal/plate/lead",
+		"steel": "block/metal/plate/steel",
+		"flint": "block/stone/flint",
+		"kapok": "block/wood/debarked/oak",
+		"oak": "block/wood/debarked/oak",
+		"temporalgear": "item/resource/temporalgear"
 	},
 	"elements": [
 		{
@@ -1482,7 +1482,7 @@
 								"east": { "texture": "#brass", "uv": [ 0.0, 0.0, 16.0, 0.5 ], "autoUv": false },
 								"south": { "texture": "#brass", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
 								"west": { "texture": "#brass", "uv": [ 0.0, 0.0, 16.0, 0.5 ], "autoUv": false },
-								"up": { "texture": "#brass", "uv": [ 10.0, 0.0, 10.5, 16.0 ], "autoUv": false },
+								"up": { "texture": "#brass", "uv": [ 10.0, 0.0, 10.5, 16.0 ], "autoUv": false, "windMode": [-1,-1,-1,-1] },
 								"down": { "texture": "#brass", "uv": [ 0.0, 0.0, 0.5, 16.0 ], "autoUv": false }
 							},
 							"children": [
@@ -1551,7 +1551,6 @@
 									"name": "reticle_1",
 									"from": [ 0.01, 0.01, 0.0 ],
 									"to": [ 0.02, 0.02, 0.01 ],
-									"rotationOrigin": [ 0.0, 0.0, 0.0 ],
 									"faces": {
 										"north": { "texture": "#temporalgear", "uv": [ 0.0, 0.0, 0.5, 0.5 ], "glow": 128, "windMode": [-1,-1,-1,-1] },
 										"east": { "texture": "#temporalgear", "uv": [ 0.0, 0.0, 0.5, 0.5 ], "glow": 128, "windMode": [-1,-1,-1,-1] },
@@ -1579,7 +1578,6 @@
 									"name": "reticle_3",
 									"from": [ -0.3, 0.0, 0.0 ],
 									"to": [ 0.3, 0.01, 0.0 ],
-									"rotationOrigin": [ 0.0, 0.0, 0.0 ],
 									"faces": {
 										"north": { "texture": "#iron", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
 										"east": { "texture": "#iron", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },

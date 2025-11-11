@@ -65,7 +65,7 @@
     "BulletLoadedPerReload": 1,
     "WaddingUsedPerReload": 1,
     "LoadPowderConsumption": 3,
-    "PrimePowderConsumption": 1,
+    "PrimePowderConsumption": 2,
     "PrimingRequirementWildcard": "*cockinglever-*",
     "PrimingRequirementMessage": "maltiezfirearms:requirement-missing-cocking-lever",
     "BulletWildcard": "*bullet-*",

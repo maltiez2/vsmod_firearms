@@ -70,7 +70,7 @@
     "BulletsFiredPerShot": 1,
     "BulletLoadedPerReload": 1,
     "WaddingUsedPerReload": 1,
-    "LoadPowderConsumption": 7,
+    "LoadPowderConsumption": 11,
     "PrimePowderConsumption": 1,
     "CockingRequirementWildcard": "*match-lit",
     "CockingRequirementMessage": "maltiezfirearms:requirement-missing-match",
@@ -98,7 +98,7 @@
   "shape": {"base": "maltiezfirearms:firearms/arquebus-tp"},
   "texturesByType": {
     "*-rusted": {"metal": {"base": "game:block/metal/corroded/normal1"}, "brass": {"base": "game:block/metal/tarnished/brass"}, "wood": {"base": "game:block/wood/charred"}},
-    "*": {"metal": {"base": "game:block/metal/plate/{material}"}, "brass": {"base": "game:block/metal/plate/brass"}, "wood": {"base": "game:block/wood/debarked/oak"}}
+    "*": {"metal": {"base": "game:block/metal/ingot/{material}"}, "brass": {"base": "game:block/metal/plate/brass"}, "wood": {"base": "game:block/wood/debarked/oak"}}
   },
   "heldTpHitAnimation": "firearmsempty",
   "heldLeftTpIdleAnimation": "firearmsempty",

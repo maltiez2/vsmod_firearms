@@ -70,7 +70,7 @@
     "BulletLoadedPerReload": 8,
     "BulletsFiredPerShot": 8,
     "WaddingUsedPerReload": 2,
-    "LoadPowderConsumption": 7,
+    "LoadPowderConsumption": 11,
     "PrimePowderConsumption": 1,
     "CockingRequirementWildcard": "*match-lit",
     "CockingRequirementMessage": "maltiezfirearms:requirement-missing-match",

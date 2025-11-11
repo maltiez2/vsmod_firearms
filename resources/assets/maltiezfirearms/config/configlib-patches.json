@@ -114,7 +114,7 @@
         "durabilityByType/*": "value * durability_wheellock_pistol / 600"
       },
       "maltiezfirearms:itemtypes/firearms/pistol-flintlock.json": {
-        "durabilityByType/*": "value * durability_flintlock_pistol / 900"
+        "durabilityByType/*": "value * durability_flintlock_pistol / 750"
       },
       "maltiezfirearms:itemtypes/firearms/arquebus.json": {
         "durabilityByType/*": "value * durability_matchlock_arquebus / 500"
@@ -133,6 +133,9 @@
       },
       "maltiezfirearms:itemtypes/firearms/blunderbuss-flintlock.json": {
         "durabilityByType/*": "value * durability_flintlock_blunderbuss / 600"
+      },
+      "maltiezfirearms:itemtypes/ammunition/powderflask.json": {
+        "attributes/durabilityPerPowderItem": "powder_to_flask_ratio"
       }
     },
     "other": {
@@ -153,6 +156,17 @@
       "range": {
         "min": 0.1,
         "max": 5.0
+      }
+    },
+    {
+      "code": "powder_to_flask_ratio",
+      "type": "integer",
+      "ingui": "maltiezfirearms:setting-powder_to_flask_ratio",
+      "default": 4,
+      "logarithmic": true,
+      "range": {
+        "min": 1,
+        "max": 512
       }
     },
     {
@@ -281,7 +295,7 @@
       "code": "durability_flintlock_pistol",
       "type": "integer",
       "ingui": "maltiezfirearms:setting-durability_flintlock_pistol",
-      "default": 900,
+      "default": 750,
       "range": {
         "min": 1
       }

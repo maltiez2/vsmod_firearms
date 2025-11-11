@@ -93,6 +93,7 @@
 
   "setting-title-durabilities": "Firearms durabilities",
   "setting-damage-multiplier": "Damage multiplier",
+  "setting-powder_to_flask_ratio": "Flask durability from powder item",
   "setting-trait": "Tinkerer trait required",
   "setting-cursortype": "Aiming cursor type",
   "setting-aiming_difficulty": "Aiming difficulty",
