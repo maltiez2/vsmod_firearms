@@ -14,6 +14,9 @@
       "*-arquebus-*": {"translation": {"x": 0.5, "y": 0.1, "z": 0.8}, "rotation": {"x": 99, "y": 0, "z": 0}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 0.8},
       "*-carbine-*": {"translation": {"x": 0.5, "y": -0.1, "z": 0.82}, "rotation": {"x": 98, "y": 0, "z": 0}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 0.8},
       "*-musket-*": {"translation": {"x": 0.5, "y": -0.2, "z": 0.72}, "rotation": {"x": 99, "y": 0, "z": 0}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 0.8}
+    },
+    "handbook": {
+      "groupBy": ["ramrod-{weapon}-*"]
     }
   },
   "behaviors": [

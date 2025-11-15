@@ -12,7 +12,10 @@
     "groundStorageTransform": {"translation": {"x": 0.3, "y": 0.04, "z": 0.4}, "rotation": {"x": 1, "y": -110, "z": 169}, "origin": {"x": 0, "y": 0, "z": 0}},
     "knifeHitBlockAnimation": "knifecut",
     "knifeHitEntityAnimation": "knifestab",
-    "musketRenderVariantByType": {"*-plug-plain": 2, "*-plug-decorated": 3, "*-socket-plain": 4, "*-socket-decorated": 5}
+    "musketRenderVariantByType": {"*-plug-plain": 2, "*-plug-decorated": 3, "*-socket-plain": 4, "*-socket-decorated": 5},
+    "handbook": {
+      "groupBy": ["bayonet-*"]
+    }
   },
   "behaviors": [
     {

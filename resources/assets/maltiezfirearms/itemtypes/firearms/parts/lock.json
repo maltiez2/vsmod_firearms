@@ -13,6 +13,9 @@
       "*-wheellock-*": {"translation": {"x": 0.4, "y": 0.04, "z": 0.4}, "rotation": {"x": 1, "y": -110, "z": 89}, "origin": {"x": 0, "y": 0, "z": 0}},
       "*-matchlock-*": {"translation": {"x": 0.4, "y": 0.11, "z": 0.5}, "rotation": {"x": 0, "y": -139, "z": 158}, "origin": {"x": 0, "y": 0, "z": 0}},
       "*-flintlock-*": {"translation": {"x": 0.3, "y": 0.02, "z": 0.45}, "rotation": {"x": -2, "y": -110, "z": 88}, "origin": {"x": 0, "y": 0, "z": 0}}
+    },
+    "handbook": {
+      "groupBy": ["lock-{type}-*"]
     }
   },
   "behaviors": [
