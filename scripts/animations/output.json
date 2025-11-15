@@ -1,0 +1,200 @@
+{
+    "Hold": true,
+    "PlayerKeyFrames": [
+      {
+        "EasingTime": 0,
+        "EasingFunction": "Linear",
+        "DetachedAnchor": false,
+        "SwitchArms": false,
+        "PitchFollow": true,
+        "PitchDontFollow": false,
+        "FOVMultiplier": 0.85,
+        "BobbingAmplitude": 0.65,
+        "Elements": {
+          "ItemAnchor": [0, 1.97, 0.93999994, 18.6, 19, 139.6],
+          "LowerArmR": [0, 0, 0, 0, 0, -111],
+          "UpperArmR": [0, 0, 0, 0, 23, -34],
+          "ItemAnchorL": [0, 0, 0, 0, 0, 0],
+          "LowerArmL": [0, 0, 0, 0, 0, -11],
+          "UpperArmL": [0, 0, 0, 0, -10, -92]
+        }
+      },
+      {
+        "EasingTime": 300,
+        "EasingFunction": "EaseOutSine",
+        "DetachedAnchor": false,
+        "SwitchArms": false,
+        "PitchFollow": true,
+        "PitchDontFollow": false,
+        "FOVMultiplier": 0.85,
+        "BobbingAmplitude": 0.65,
+        "Elements": {
+          "ItemAnchor": [0, 1.97, 0.93999994, 18.6, 19, 139.6],
+          "LowerArmR": [0, 0, 0, 0, 0, -111],
+          "UpperArmR": [0, 0, 0, 0, 23, -34],
+          "ItemAnchorL": [0, 0, 0, 0, 0, 0],
+          "LowerArmL": [0, 0, 0, 0, 0, -11],
+          "UpperArmL": [0, 0, 0, 0, -10, -92]
+        }
+      },
+      {
+        "EasingTime": 350,
+        "EasingFunction": "EaseOutQuad",
+        "DetachedAnchor": false,
+        "SwitchArms": false,
+        "PitchFollow": true,
+        "PitchDontFollow": false,
+        "FOVMultiplier": 0.85,
+        "BobbingAmplitude": 0.65,
+        "Elements": {
+          "ItemAnchor": [0.26, 1.97, 0.93999994, 18.6, 19, 138.1],
+          "LowerArmR": [0, 0, 0, 0, 0, -111],
+          "UpperArmR": [0, 0, 0, 0, 23, -34],
+          "ItemAnchorL": [0, 0, 0, 0, 0, 0],
+          "LowerArmL": [0, 0, 0, 0, 0, -11],
+          "UpperArmL": [0, 0, 0, 0, -10, -92]
+        }
+      },
+      {
+        "EasingTime": 600,
+        "EasingFunction": "EaseOutSine",
+        "DetachedAnchor": false,
+        "SwitchArms": false,
+        "PitchFollow": true,
+        "PitchDontFollow": false,
+        "FOVMultiplier": 0.85,
+        "BobbingAmplitude": 0.65,
+        "Elements": {
+          "ItemAnchor": [0, 1.97, 0.93999994, 18.6, 19, 139.6],
+          "LowerArmR": [0, 0, 0, 0, 0, -111],
+          "UpperArmR": [0, 0, 0, 0, 23, -34],
+          "ItemAnchorL": [0, 0, 0, 0, 0, 0],
+          "LowerArmL": [0, 0, 0, 0, 0, -11],
+          "UpperArmL": [0, 0, 0, 0, -10, -92]
+        }
+      }
+    ],
+    "ItemKeyFrames": [
+      {
+        "DurationFraction": 0,
+        "EasingFunction": "Linear",
+        "Elements": {
+          "Cock": [0, 0, 0, 0, 0, 0],
+          "cylinder_cover_0_50": [0, 0, 0.9, 0, 0, 0],
+          "cylinder_cover_0_52": [0, 0, 0, -6, 0, 0],
+          "frizzen_rod": [0, 0, 0, 0, 0, 0],
+          "Trigger": [0, 0, 0, 0, 0, 0],
+          "Cylinder": [0, 0, 0, 0, 0, -45]
+        }
+      },
+      {
+        "DurationFraction": 0.2,
+        "EasingFunction": "Linear",
+        "Elements": {
+          "Cock": [0, 0, 0, 0, 0, 0],
+          "cylinder_cover_0_50": [0, 0, 0.9, 0, 0, 0],
+          "cylinder_cover_0_52": [0, 0, 0, -6, 0, 0],
+          "frizzen_rod": [0, 0, 0, 0, 0, 0],
+          "Trigger": [0, 0, 0, -9, 0, 0],
+          "Cylinder": [0, 0, 0, 0, 0, -45]
+        }
+      },
+      {
+        "DurationFraction": 0.4,
+        "EasingFunction": "Linear",
+        "Elements": {
+          "Cock": [0, 0, 0, -6, 0, 0],
+          "cylinder_cover_0_50": [0, 0, 0.9, 0, 0, 0],
+          "cylinder_cover_0_52": [0, 0, 0, -6, 0, 0],
+          "frizzen_rod": [0, 0, 0, 0, 0, 0],
+          "Trigger": [0, 0, 0, -11, 0, 0],
+          "Cylinder": [0, 0, 0, 0, 0, -45]
+        }
+      },
+      {
+        "DurationFraction": 0.43999994,
+        "EasingFunction": "Linear",
+        "Elements": {
+          "Cock": [0, 0, 0, -11, 0, 0],
+          "cylinder_cover_0_50": [0, 0, 0.9, 0, 0, 0],
+          "cylinder_cover_0_52": [0, 0, 0, -6, 0, 0],
+          "frizzen_rod": [0, -0.13, 0, 0, 0, 0],
+          "Trigger": [0, 0, 0, -11, 0, 0],
+          "Cylinder": [0, 0, 0, 0, 0, -45]
+        }
+      },
+      {
+        "DurationFraction": 0.56,
+        "EasingFunction": "Linear",
+        "Elements": {
+          "Cock": [0, 0, 0, -11.3, 0, 0],
+          "cylinder_cover_0_50": [0, 0, 0.88, 0, 0, 0],
+          "cylinder_cover_0_52": [0, 0, 0, 2, 0, 0],
+          "frizzen_rod": [0, -0.15, 0, 0, 0, 0],
+          "Trigger": [0, 0, 0, -11, 0, 0],
+          "Cylinder": [0, 0, 0, 0, 0, -45]
+        }
+      },
+      {
+        "DurationFraction": 0.8,
+        "EasingFunction": "Linear",
+        "Elements": {
+          "Cock": [0, 0, 0, -32, 0, 0],
+          "cylinder_cover_0_50": [0, 0, 0.23, 0, 0, 0],
+          "cylinder_cover_0_52": [0, 0, 0, 2, 0, 0],
+          "frizzen_rod": [0, -0.8, 0, 0, 0, 0],
+          "Trigger": [0, 0, 0, -11, 0, 0],
+          "Cylinder": [0, 0, 0, 0, 0, -45]
+        }
+      },
+      {
+        "DurationFraction": 0.88,
+        "EasingFunction": "Linear",
+        "Elements": {
+          "Cock": [0, 0, 0, -36, 0, 0],
+          "cylinder_cover_0_50": [0, 0, 0.03, 0, 0, 0],
+          "cylinder_cover_0_52": [0, 0, 0, 2, 0, 0],
+          "frizzen_rod": [0, -1, 0, 0, 0, 0],
+          "Trigger": [0, 0, 0, -6, 0, 0],
+          "Cylinder": [0, 0, 0, 0, 0, -45]
+        }
+      },
+      {
+        "DurationFraction": 1,
+        "EasingFunction": "Linear",
+        "Elements": {
+          "Cock": [0, 0, 0, -35, 0, 0],
+          "cylinder_cover_0_50": [0, 0, 0, 0, 0, 0],
+          "cylinder_cover_0_52": [0, 0, 0, 0, 0, 0],
+          "frizzen_rod": [0, -0.9, 0, 0, 0, 0],
+          "Trigger": [0, 0, 0, 0, 0, 0],
+          "Cylinder": [0, 0, 0, 0, 0, -45]
+        }
+      }
+    ],
+    "SoundFrames": [
+      {"Code": ["maltiezfirearms:sounds/musket/flintlock-strike"], "DurationFraction": 0.083333336, "RandomizePitch": false, "Range": 32, "Volume": 1, "Synchronize": true},
+      {
+        "Code": [
+          "maltiezfirearms:sounds/carbine/musket-fire-1",
+          "maltiezfirearms:sounds/carbine/musket-fire-2",
+          "maltiezfirearms:sounds/carbine/musket-fire-3",
+          "maltiezfirearms:sounds/carbine/musket-fire-4"
+        ],
+        "DurationFraction": 0.33333334,
+        "RandomizePitch": true,
+        "Range": 256,
+        "Volume": 0.701,
+        "Synchronize": true
+      }
+    ],
+    "ParticlesFrames": [
+      {"Code": "combatoverhaul:smoke-1", "DurationFraction": 0.5, "Position": [0, 0, 3], "Velocity": [0, 0, 1], "Intensity": 0.5},
+      {"Code": "combatoverhaul:smoke-2", "DurationFraction": 0.5, "Position": [0, 0, 2], "Velocity": [0, 0, 3], "Intensity": 0.5},
+      {"Code": "combatoverhaul:smoke-3", "DurationFraction": 0.5, "Position": [0, 0, 1], "Velocity": [0, 0, 6], "Intensity": 0.5},
+      {"Code": "combatoverhaul:fireblast-1", "DurationFraction": 0.5, "Position": [0, 0, 1], "Velocity": [0, 5, 40], "Intensity": 0.4999999}
+    ],
+    "CallbackFrames": [{"Code": "shoot", "DurationFraction": 0.2}],
+    "ItemAnimationStart": 0,
+    "ItemAnimationEnd": 300
+  }

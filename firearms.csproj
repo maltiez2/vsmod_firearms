@@ -3,7 +3,7 @@
   <PropertyGroup>
     <ModName>Firearms</ModName>
     <ModType>code</ModType>
-    <ModVersion>1.4.0</ModVersion>
+    <ModVersion>1.5.0</ModVersion>
     <ModId>maltiezfirearms</ModId>
     <Description>Black powder firearms</Description>
     <Side>Universal</Side>
@@ -27,7 +27,7 @@
 
   <!-- Dependencies -->
   <ItemGroup>
-    <Dependencies Include="overhaullib" Version="1.12.13"/>
+    <Dependencies Include="overhaullib" Version="1.13.11" />
   </ItemGroup>
 
   <!-- Project settings -->
@@ -41,20 +41,10 @@
   <!-- Local settings -->
   <Target Name="EnsureSettingsJson" BeforeTargets="ModInfo" Condition="!Exists('Properties\localSettings.props')">
     <MakeDir Directories="Properties" />
-    <WriteLinesToFile
-      File="Properties\localSettings.props"
-      Overwrite="true"
-      Lines="&lt;Project&gt;
-  &lt;PropertyGroup&gt;
-    &lt;RunFormatter&gt;false&lt;/RunFormatter&gt;
-    &lt;DataFolderName&gt;VintagestoryData&lt;/DataFolderName&gt;
-    &lt;GameDirectory&gt;&lt;/GameDirectory&gt;
-  &lt;/PropertyGroup&gt;
-&lt;/Project&gt;"
-       />
-    <Error Text="Local settings file was missing, generated a new one. Run build again."/>
+    <WriteLinesToFile File="Properties\localSettings.props" Overwrite="true" Lines="&lt;Project&gt;&#xD;&#xA;  &lt;PropertyGroup&gt;&#xD;&#xA;    &lt;RunFormatter&gt;false&lt;/RunFormatter&gt;&#xD;&#xA;    &lt;DataFolderName&gt;VintagestoryData&lt;/DataFolderName&gt;&#xD;&#xA;    &lt;GameDirectory&gt;&lt;/GameDirectory&gt;&#xD;&#xA;  &lt;/PropertyGroup&gt;&#xD;&#xA;&lt;/Project&gt;" />
+    <Error Text="Local settings file was missing, generated a new one. Run build again." />
   </Target>
-  <Import Project="Properties\localSettings.props"  Condition="Exists('Properties\localSettings.props')"/>
+  <Import Project="Properties\localSettings.props" Condition="Exists('Properties\localSettings.props')" />
   
 
   <!-- Paths -->
@@ -68,7 +58,7 @@
     <ReleaseFile>$(ModId)_$(ModVersion).zip</ReleaseFile>
     <ReleasePath>$(ReleasesDir)\$(ReleaseFile)</ReleasePath>
     <ExternalLibs>$(ProjectDir)\external</ExternalLibs>
-    <GameDirectory  Condition="'$(GameDirectory)' == ''">$(VINTAGE_STORY)</GameDirectory>
+    <GameDirectory Condition="'$(GameDirectory)' == ''">$(VINTAGE_STORY)</GameDirectory>
   </PropertyGroup>
 
   <!-- References to libraries that are being used in project -->
@@ -135,7 +125,7 @@
 
   <!-- Formats asssets files -->
   <Target Name="Format" AfterTargets="ModInfo" BeforeTargets="CopyFilesToOutput">
-    <Exec Command="python $(Formatter) -a -d %(AssetsToFormat.Identity)" Condition="$(RunFormatter)"/>
+    <Exec Command="python $(Formatter) -a -d %(AssetsToFormat.Identity)" Condition="$(RunFormatter)" />
   </Target>
 
   <!-- Copies modicon and assets if it exists into output directory -->

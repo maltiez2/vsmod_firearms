@@ -11,16 +11,5 @@
     "width": 3,
     "height": 2,
     "output": {"type": "item", "code": "maltiezfirearms:firearm-carbine-steel"}
-  },
-  {
-    "ingredientPattern": "_P,NF,_P",
-    "ingredients": {
-      "P": {"type": "item", "code": "game:metalplate-steel", "quantity": 1},
-      "N": {"type": "item", "code": "game:metalnailsandstrips-steel", "quantity": 1},
-      "F": {"type": "item", "code": "game:powder-borax", "quantity": 2}
-    },
-    "width": 2,
-    "height": 3,
-    "output": {"type": "item", "code": "maltiezfirearms:barrel-carbine-steel"}
   }
 ]

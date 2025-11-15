@@ -112,6 +112,7 @@ public class MuzzleloaderClient : RangeWeaponClient
         {
             AimingStats.CursorType = Enum.Parse<AimingCursorType>(settings.AimingCursorType);
         };
+        AimingStats.CursorType = Enum.Parse<AimingCursorType>(system.Settings.AimingCursorType);
 
         //DebugWidgets.FloatDrag("test", "test", $"{item.Code}-followX", () => AimingStats.AnimationFollowX, (value) => AimingStats.AnimationFollowX = value);
         //DebugWidgets.FloatDrag("test", "test", $"{item.Code}-followY", () => AimingStats.AnimationFollowY, (value) => AimingStats.AnimationFollowY = value);

@@ -18,17 +18,6 @@
     "output": {"type": "item", "code": "maltiezfirearms:firearm-pistol-{metal1}"}
   },
   {
-    "ingredientPattern": "_P,NF,__",
-    "ingredients": {
-      "P": {"type": "item", "code": "game:metalplate-steel", "quantity": 1},
-      "N": {"type": "item", "code": "game:metalnailsandstrips-steel", "quantity": 1},
-      "F": {"type": "item", "code": "game:powder-borax", "quantity": 2}
-    },
-    "width": 2,
-    "height": 3,
-    "output": {"type": "item", "code": "maltiezfirearms:barrel-pistol-steel"}
-  },
-  {
     "ingredientPattern": "WLB,MWR",
     "ingredients": {
       "B": {"type": "item", "code": "maltiezfirearms:barrel-pistol-steel", "quantity": 1},
