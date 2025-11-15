@@ -1,0 +1,278 @@
+{
+			"name": "index-cylinder-back-0",
+			"code": "index-cylinder-back-0",
+			"quantityframes": 6,
+			"onActivityStopped": "Rewind",
+			"onAnimationEnd": "Repeat",
+			"keyframes": [
+				{
+					"frame": 0,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 45 },
+						"Cylinder_spring": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 3,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 22.5 },
+						"Cylinder_spring": { "rotationX": -8.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 5,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Cylinder_spring": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				}
+			]
+		},
+
+		{
+			"name": "index-cylinder-back-1",
+			"code": "index-cylinder-back-1",
+			"quantityframes": 6,
+			"onActivityStopped": "Rewind",
+			"onAnimationEnd": "Repeat",
+			"keyframes": [
+				{
+					"frame": 0,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Cylinder_spring": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 3,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -22.5 },
+						"Cylinder_spring": { "rotationX": -8.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 5,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -45.0 },
+						"Cylinder_spring": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				}
+			]
+		},
+
+		{
+			"name": "index-cylinder-back-2",
+			"code": "index-cylinder-back-2",
+			"quantityframes": 6,
+			"onActivityStopped": "Rewind",
+			"onAnimationEnd": "Repeat",
+			"keyframes": [
+				{
+					"frame": 0,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -45.0 },
+						"Cylinder_spring": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 3,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -67.5 },
+						"Cylinder_spring": { "rotationX": -8.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 5,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -90.0 },
+						"Cylinder_spring": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				}
+			]
+		},
+
+		{
+			"name": "index-cylinder-back-3",
+			"code": "index-cylinder-back-3",
+			"quantityframes": 6,
+			"onActivityStopped": "Rewind",
+			"onAnimationEnd": "Repeat",
+			"keyframes": [
+				{
+					"frame": 0,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -90.0 },
+						"Cylinder_spring": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 3,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -112.5 },
+						"Cylinder_spring": { "rotationX": -8.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 5,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -135.0 },
+						"Cylinder_spring": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				}
+			]
+		},
+
+		{
+			"name": "index-cylinder-back-4",
+			"code": "index-cylinder-back-4",
+			"quantityframes": 6,
+			"onActivityStopped": "Rewind",
+			"onAnimationEnd": "Repeat",
+			"keyframes": [
+				{
+					"frame": 0,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -135.0 },
+						"Cylinder_spring": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 3,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -157.5 },
+						"Cylinder_spring": { "rotationX": -8.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 5,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -180.0 },
+						"Cylinder_spring": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				}
+			]
+		},
+
+		{
+			"name": "index-cylinder-back-5",
+			"code": "index-cylinder-back-5",
+			"quantityframes": 6,
+			"onActivityStopped": "Rewind",
+			"onAnimationEnd": "Repeat",
+			"keyframes": [
+				{
+					"frame": 0,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -180.0 },
+						"Cylinder_spring": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 3,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -202.5 },
+						"Cylinder_spring": { "rotationX": -8.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 5,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -225.0 },
+						"Cylinder_spring": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				}
+			]
+		},
+
+		{
+			"name": "index-cylinder-back-6",
+			"code": "index-cylinder-back-6",
+			"quantityframes": 6,
+			"onActivityStopped": "Rewind",
+			"onAnimationEnd": "Repeat",
+			"keyframes": [
+				{
+					"frame": 0,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -225.0 },
+						"Cylinder_spring": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 3,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -247.5 },
+						"Cylinder_spring": { "rotationX": -8.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 5,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -270.0 },
+						"Cylinder_spring": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				}
+			]
+		},
+
+		{
+			"name": "index-cylinder-back-7",
+			"code": "index-cylinder-back-7",
+			"quantityframes": 6,
+			"onActivityStopped": "Rewind",
+			"onAnimationEnd": "Repeat",
+			"keyframes": [
+				{
+					"frame": 0,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -270.0 },
+						"Cylinder_spring": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 3,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -292.5 },
+						"Cylinder_spring": { "rotationX": -8.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 5,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -315.0 },
+						"Cylinder_spring": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				}
+			]
+		},
+
+		{
+			"name": "index-cylinder-back-8",
+			"code": "index-cylinder-back-8",
+			"quantityframes": 6,
+			"onActivityStopped": "Rewind",
+			"onAnimationEnd": "Repeat",
+			"keyframes": [
+				{
+					"frame": 0,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -315.0 },
+						"Cylinder_spring": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 3,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -337.5 },
+						"Cylinder_spring": { "rotationX": -8.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 5,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -360.0 },
+						"Cylinder_spring": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				}
+			]
+		}

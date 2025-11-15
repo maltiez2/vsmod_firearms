@@ -1,0 +1,116 @@
+﻿{
+  "code": "firearm",
+  "class": "Firearms:Revolver",
+  "variantgroups": [{"code": "type", "states": ["arquebusrevolver"]}, {"code": "material", "states": ["steel"]}],
+  "creativeinventory": {"general": ["*"], "maltiezfirearms": ["*"]},
+  "maxstacksize": 1,
+  "durabilityByType": {"*-rusted": 10, "*": 500},
+  "rackable": true,
+  "tool": "bow",
+  "behaviors": [
+    {
+      "name": "GroundStorable",
+      "properties": {
+        "layout": "WallHalves",
+        "wallOffY": 2,
+        "sprintKey": true,
+        "selectionBox": {"x1": 0, "y1": 0, "z1": 0, "x2": 1, "y2": 0.1, "z2": 1},
+        "collisionBox": {"x1": 0, "y1": 0, "z1": 0, "x2": 0, "y2": 0, "z2": 0}
+      }
+    },
+    {
+      "name": "CombatOverhaul:AnimatableAttachable",
+      "properties": {"animated-shape": "maltiezfirearms:firearms/arquebus-revolver", "animated-shape-fp": "maltiezfirearms:firearms/arquebus-revolver"}
+    }
+  ],
+  "attributes": {
+    "toolrackTransform": {"translation": {"x": 0.9, "y": 0.55, "z": 0.5}, "rotation": {"x": 0, "y": 95, "z": -90}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 1.34},
+    "groundStorageTransform": {"translation": {"x": 0.5, "y": 0.47, "z": 0.78}, "rotation": {"x": 105, "y": 1, "z": -121}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 0.81},
+    "inViceTransform": {"translation": {"x": -0.35, "y": -0.08, "z": 0.01}, "rotation": {"x": 0, "y": -90, "z": 0}, "origin": {"x": 0, "y": 0, "z": 0}},
+    "inWallmountTransform": {
+      "Translation": {"X": -0.2, "Y": 0.02, "Z": -0.04},
+      "Rotation": {"X": 90, "Y": -86.3, "Z": 90},
+      "Origin": {"X": 0, "Y": 0, "Z": 0},
+      "Rotate": true,
+      "ScaleXYZ": {"X": 0.81, "Y": 0.81, "Z": 0.81}
+    },
+    "inWeaponrackTransform": {
+      "Translation": {"X": 0, "Y": -0.06, "Z": 0.09},
+      "Rotation": {"X": 76, "Y": 0, "Z": 0},
+      "Origin": {"X": 0, "Y": 0, "Z": 0},
+      "Rotate": true,
+      "ScaleXYZ": {"X": 0.81, "Y": 0.81, "Z": 0.81}
+    },
+    "inPistolstandTransform": {
+      "Translation": {"X": -0.2, "Y": -0.07, "Z": 0.02},
+      "Rotation": {"X": 90, "Y": -93, "Z": 109},
+      "Origin": {"X": 0, "Y": 0, "Z": 0},
+      "Rotate": true,
+      "ScaleXYZ": {"X": 0.81, "Y": 0.81, "Z": 0.81}
+    },
+    "BulletDamageMultiplier": 1.375,
+    "BulletDamageStrength": 6,
+    "BulletTransform": {"translation": {"x": -2.2, "y": 0.2, "z": -2.2}, "rotation": {"x": 0, "y": 0, "z": 0}, "scale": 0.3},
+    "FlaskTransform": {"Translation": {"X": 0, "Y": 0, "Z": 0}, "Rotation": {"X": 0, "Y": 0, "Z": 0}, "Origin": {"X": 0, "Y": 0, "Z": 0}, "Scale": 1},
+    "WaddingTransform": {"Translation": {"x": 0, "y": 0, "z": 0}, "Rotation": {"x": 0, "y": 0, "z": 0}, "Origin": {"X": 0, "Y": 0, "Z": 0}, "scale": 1},
+    "PrimingEquipmentTransform": {"Translation": {"X": 0, "Y": 0, "Z": 0}, "Rotation": {"X": 0, "Y": 0, "Z": 0}, "Origin": {"X": 0, "Y": 0, "Z": 0}, "Scale": 1},
+    "ProficiencyStat": "firearmsProficiency",
+    "IdleAnimation": "maltiezfirearms:firearms-shoulder",
+    "ReadyAnimation": "maltiezfirearms:firearms-ready",
+    "LoadAnimation": ["maltiezfirearms:firearms-arquebus-load"],
+    "PrimeAnimation": "maltiezfirearms:firearms-arquebus-prime",
+    "CockingAnimation": ["maltiezfirearms:firearms-arquebus-cocking"],
+    "AimAnimation": "maltiezfirearms:firearms-arquebus-aim",
+    "ShootAnimation": ["maltiezfirearms:firearms-arquebus-shoot"],
+    "LoadedAnimation": ["maltiezfirearms:firearms-arquebus-loaded"],
+    "PrimedAnimation": "maltiezfirearms:firearms-arquebus-primed",
+    "CockedAnimation": ["maltiezfirearms:firearms-arquebus-cocked"],
+    "ReloadAnimationSpeed": 1,
+    "MagazineSize": 1,
+    "BulletsFiredPerShot": 1,
+    "BulletLoadedPerReload": 1,
+    "WaddingUsedPerReload": 1,
+    "LoadPowderConsumption": 11,
+    "PrimePowderConsumption": 1,
+    "CockingRequirementWildcard": "*match-lit",
+    "CockingRequirementMessage": "maltiezfirearms:requirement-missing-match",
+    "BulletWildcard": "*bullet-*",
+    "Aiming": {
+      "AimDifficulty": 1,
+      "CursorType": "None",
+      "AccuracyOvertimeSec": 0,
+      "ZeroingAngle": 0,
+      "AllowSprint": false,
+      "MoveSpeedPenalty": 0.1,
+      "AimDrift": 20,
+      "AimTwitch": 5,
+      "AnimationFollowX": 5.5,
+      "AnimationFollowY": 5.5,
+      "VerticalLimit": 0.25,
+      "VerticalOffset": -0.05
+    },
+    "BulletVelocity": 12,
+    "DispersionMOA": [60, 60],
+    "Zeroing": 0,
+    "CancelReloadOnInAir": true,
+    "LoadSpeedPenalty": -2
+  },
+  "shape": {"base": "maltiezfirearms:firearms/arquebus-revolver"},
+  "texturesByType": {
+    "*": {"metal": {"base": "game:block/metal/ingot/{material}"}, "brass": {"base": "game:block/metal/plate/brass"}, "wood": {"base": "game:block/wood/debarked/oak"}}
+  },
+  "heldTpHitAnimation": "firearmsempty",
+  "heldLeftTpIdleAnimation": "firearmsempty",
+  "heldLeftReadyAnimation": "firearmsempty",
+  "heldRightReadyAnimation": "firearmsempty",
+  "heldOldTpIdleAnimation": "firearmsempty",
+  "heldTpUseAnimation": "firearmsempty",
+  "guiTransform": {
+    "translation": {"x": 0, "y": 0, "z": 0},
+    "rotation": {"x": -19, "y": 24, "z": -180},
+    "origin": {"x": -0.48, "y": -0.4, "z": -1.4},
+    "scaleXyz": {"x": -1.95, "y": 1.95, "z": 1.95}
+  },
+  "tpHandTransform": {"translation": {"x": 0, "y": 0, "z": 0}, "rotation": {"x": 0, "y": -90, "z": 0}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 0.8},
+  "groundTransform": {"translation": {"x": 0, "y": 0.05, "z": 0}, "rotation": {"x": 0, "y": 0, "z": 90}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 4.8}
+}
