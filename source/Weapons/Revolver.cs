@@ -265,7 +265,7 @@ public class RevolverClient : RangeWeaponClient
         AnimationBehavior?.PlayFpAndTp(
             mainHand,
             currentStage.StartLoadingAnimation,
-            animationSpeed: GetAnimationSpeed(player, Stats.ProficiencyStat),
+            animationSpeed: GetAnimationSpeed(player, Stats.ProficiencyStat, slot.Itemstack),
             category: AnimationCategory(mainHand),
             callback: () => StartLoadCallback(slot, player, mainHand, CurrentLoadStage));
 
@@ -290,7 +290,7 @@ public class RevolverClient : RangeWeaponClient
             AnimationBehavior?.PlayFpAndTp(
                     mainHand,
                     currentStage.CancelLoadingAnimation,
-                    animationSpeed: GetAnimationSpeed(player, Stats.ProficiencyStat),
+                    animationSpeed: GetAnimationSpeed(player, Stats.ProficiencyStat, slot.Itemstack),
                     category: AnimationCategory(mainHand),
                     callback: () => FinishLoadCallback(slot, player, mainHand, CurrentLoadStage));
 
@@ -313,7 +313,7 @@ public class RevolverClient : RangeWeaponClient
         AnimationBehavior?.PlayFpAndTp(
             mainHand,
             nextStage.LoadingAnimation,
-            animationSpeed: GetAnimationSpeed(player, Stats.ProficiencyStat),
+            animationSpeed: GetAnimationSpeed(player, Stats.ProficiencyStat, slot.Itemstack),
             category: AnimationCategory(mainHand),
             callback: () => LoadStageCallback(slot, player, mainHand, nextStageIndex),
             callbackHandler: code => LoadStageCallbackHandler(code, slot, player, mainHand, nextStageIndex));
@@ -333,7 +333,7 @@ public class RevolverClient : RangeWeaponClient
             AnimationBehavior?.PlayFpAndTp(
                 mainHand,
                 previousStage.FinishLoadingAnimation,
-                animationSpeed: GetAnimationSpeed(player, Stats.ProficiencyStat),
+                animationSpeed: GetAnimationSpeed(player, Stats.ProficiencyStat, slot.Itemstack),
                 category: AnimationCategory(mainHand),
                 callback: () => FinishLoadCallback(slot, player, mainHand, stage));
             AnimationBehavior?.PlayFpAndTp(
@@ -370,7 +370,7 @@ public class RevolverClient : RangeWeaponClient
             AnimationBehavior?.PlayFpAndTp(
                 mainHand,
                 currentStage.FinishLoadingAnimation,
-                animationSpeed: GetAnimationSpeed(player, Stats.ProficiencyStat),
+                animationSpeed: GetAnimationSpeed(player, Stats.ProficiencyStat, slot.Itemstack),
                 category: AnimationCategory(mainHand),
                 callback: () => FinishLoadCallback(slot, player, mainHand, stage));
 
@@ -383,7 +383,7 @@ public class RevolverClient : RangeWeaponClient
         AnimationBehavior?.PlayFpAndTp(
             mainHand,
             currentStage.ContinueLoadingAnimation,
-            animationSpeed: GetAnimationSpeed(player, Stats.ProficiencyStat),
+            animationSpeed: GetAnimationSpeed(player, Stats.ProficiencyStat, slot.Itemstack),
             category: AnimationCategory(mainHand),
             callback: () => ContinueLoadCallback(slot, player, mainHand, nextStageIndex));
 
@@ -400,7 +400,7 @@ public class RevolverClient : RangeWeaponClient
         AnimationBehavior?.PlayFpAndTp(
             mainHand,
             currentStage.LoadingAnimation,
-            animationSpeed: GetAnimationSpeed(player, Stats.ProficiencyStat),
+            animationSpeed: GetAnimationSpeed(player, Stats.ProficiencyStat, slot.Itemstack),
             category: AnimationCategory(mainHand),
             callback: () => LoadStageCallback(slot, player, mainHand, stage),
             callbackHandler: code => LoadStageCallbackHandler(code, slot, player, mainHand, stage));
@@ -486,7 +486,6 @@ public class RevolverClient : RangeWeaponClient
         AnimationBehavior?.PlayFpAndTp(
             mainHand,
             currentStage.AimAnimation,
-            animationSpeed: GetAnimationSpeed(player, Stats.ProficiencyStat),
             category: AnimationCategory(mainHand),
             callback: () => AimCallback(slot, player, mainHand, CurrentLoadStage));
 
@@ -522,7 +521,7 @@ public class RevolverClient : RangeWeaponClient
         AnimationBehavior?.PlayFpAndTp(
                 mainHand,
                 currentStage.CancelLoadingAnimation,
-                animationSpeed: GetAnimationSpeed(player, Stats.ProficiencyStat),
+                animationSpeed: GetAnimationSpeed(player, Stats.ProficiencyStat, slot.Itemstack),
                 category: AnimationCategory(mainHand),
                 callback: () => FinishLoadCallback(slot, player, mainHand, CurrentLoadStage));
 
@@ -612,7 +611,7 @@ public class RevolverClient : RangeWeaponClient
         AnimationBehavior?.PlayFpAndTp(
             mainHand,
             currentStage.AimAnimation,
-            animationSpeed: GetAnimationSpeed(player, Stats.ProficiencyStat),
+            animationSpeed: GetAnimationSpeed(player, Stats.ProficiencyStat, slot.Itemstack),
             category: AnimationCategory(mainHand),
             callback: () => AimCallback(slot, player, mainHand, CurrentLoadStage));
 
@@ -649,7 +648,7 @@ public class RevolverClient : RangeWeaponClient
         AnimationBehavior?.PlayFpAndTp(
             mainHand,
             currentStage.CockingAnimation,
-            animationSpeed: GetAnimationSpeed(player, Stats.ProficiencyStat),
+            animationSpeed: GetAnimationSpeed(player, Stats.ProficiencyStat, slot.Itemstack),
             category: AnimationCategory(mainHand),
             callback: () => CockCallback(slot, player, mainHand));
 
@@ -694,7 +693,6 @@ public class RevolverClient : RangeWeaponClient
         AnimationBehavior?.PlayFpAndTp(
             mainHand,
             nextStage.AimAnimation,
-            animationSpeed: GetAnimationSpeed(player, Stats.ProficiencyStat),
             category: AnimationCategory(mainHand),
             callback: () => AimCallback(slot, player, mainHand, CurrentLoadStage));
 
@@ -984,6 +982,11 @@ public class RevolverClient : RangeWeaponClient
             return true;
         });
         if (ammoSlot4 != null) Attachable.SetAttachment(player.EntityId, "priming", ammoSlot4.Itemstack, PrimingEquipmentTransform);*/
+    }
+    protected float GetAnimationSpeed(EntityPlayer player, string stat, ItemStack stack)
+    {
+        ItemStackRangedStats stackStats = ItemStackRangedStats.FromItemStack(stack);
+        return GetAnimationSpeed(player, stat) * stackStats.ReloadSpeed * Stats.ReloadAnimationSpeed;
     }
 }
 
