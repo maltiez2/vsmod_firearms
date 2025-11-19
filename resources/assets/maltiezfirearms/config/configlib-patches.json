@@ -58,6 +58,13 @@
         "attributes/DispersionMOA/1": "blunderbuss_spread",
         "attributes/ReloadAnimationSpeed": "value * firearms_reload_speed"
       },
+      "maltiezfirearms:itemtypes/firearms/arquebus-revolver.json": {
+        "attributes/FiringStats/BulletDamageMultiplier": "value * damage_multiplier",
+        "attributes/Aiming/AimDifficulty": "aiming_difficulty",
+        "attributes/FiringStats/DispersionMOA/0": "value * firearms_spread",
+        "attributes/FiringStats/DispersionMOA/1": "value * firearms_spread",
+        "attributes/ReloadAnimationSpeed": "value * firearms_reload_speed"
+      },
       "maltiezfirearms:patches/schematics.json": {
         "0/value/chance": "value * schematic_drop_chance",
         "1/value/chance": "value * schematic_drop_chance"
@@ -80,6 +87,9 @@
         "attributes/CancelReloadOnInAir": "cancel_reload_on_inair"
       },
       "maltiezfirearms:itemtypes/firearms/blunderbuss-flintlock.json": {
+        "attributes/CancelReloadOnInAir": "cancel_reload_on_inair"
+      },
+      "maltiezfirearms:itemtypes/firearms/arquebus-revolver.json": {
         "attributes/CancelReloadOnInAir": "cancel_reload_on_inair"
       }
     },
@@ -106,6 +116,9 @@
         "attributes/Aiming/CursorType": "aiming_cursor_type"
       },
       "maltiezfirearms:itemtypes/firearms/blunderbuss-flintlock.json": {
+        "attributes/Aiming/CursorType": "aiming_cursor_type"
+      },
+      "maltiezfirearms:itemtypes/firearms/arquebus-revolver.json": {
         "attributes/Aiming/CursorType": "aiming_cursor_type"
       }
     },

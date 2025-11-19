@@ -1201,8 +1201,8 @@ public class RevolverItem : Item, IHasWeaponLogic, IHasRangedWeaponLogic, IHasDy
 
         if (Stats != null)
         {
-            //dsc.AppendLine(Lang.Get("combatoverhaul:iteminfo-range-weapon-damage", Stats.BulletDamageMultiplier, Stats.BulletDamageStrength));
-            //dsc.AppendLine("");
+            dsc.AppendLine(Lang.Get("combatoverhaul:iteminfo-range-weapon-damage", Stats.FiringStats.BulletDamageMultiplier, Stats.FiringStats.BulletDamageTier));
+            dsc.AppendLine("");
         }
         base.GetHeldItemInfo(inSlot, dsc, world, withDebugInfo);
     }
