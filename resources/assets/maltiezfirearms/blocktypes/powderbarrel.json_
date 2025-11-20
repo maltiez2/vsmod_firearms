@@ -24,7 +24,10 @@
       "collapsed3": "sounds/block/largechestclose"
     },
     "variantByGroup": "side",
-    "variantByGroupInventory": null
+    "variantByGroupInventory": null,
+    "handbook": {
+      "groupBy": ["powderbarrel-*"]
+    }
   },
   "behaviors": [{"name": "Lockable"}, {"name": "Container"}],
   "entityBehaviors": [{"name": "Animatable"}],
