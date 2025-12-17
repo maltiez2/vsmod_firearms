@@ -163,7 +163,7 @@ public class MusketClient : MuzzleloaderClient, IOnGameTick
         }
         BayonetInventory.Clear();
 
-        attack.Attack(
+        bool attacked = attack.Attack(
             player.Player,
             slot,
             mainHand,
@@ -171,7 +171,7 @@ public class MusketClient : MuzzleloaderClient, IOnGameTick
             out IEnumerable<(Vintagestory.API.Common.Entities.Entity entity, Vector3d point)> entitiesCollision,
             stackStats);
 
-        if (entitiesCollision.Any() && StatsMusket.AnimationStaggerOnHitDurationMs > 0)
+        if (attacked && StatsMusket.AnimationStaggerOnHitDurationMs > 0)
         {
             AnimationBehavior?.SetSpeedModifier(AttackImpactFunction);
             RangedWeaponSystem.Reload(player.RightHandItemSlot, player.LeftHandItemSlot, 1, true, ServerAttachBayonetCallback, data: SerializeLoadingStage(MusketLoadingStage.DamageBayonet));
