@@ -36,6 +36,9 @@
     "groundStorageTransform": {"translation": {"x": 0.55, "y": 0.44, "z": 0.75}, "rotation": {"x": 98, "y": 4, "z": -101}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 0.81},
     "inWallmountTransform": {"translation": {"x": -0.6, "y": -0.06, "z": -0.04}, "rotation": {"x": 90, "y": -83, "z": 90}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 0.81},
     "inWeaponrackTransform": {"translation": {"x": 0, "y": 0.02, "z": 0.08}, "rotation": {"x": 82, "y": 0, "z": 0}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 0.81},
+    "handbook": {
+      "groupBy": ["firearm-musket-steel"]
+    },
     "BulletDamageMultiplier": 1.63,
     "BulletDamageStrength": 9,
     "BulletTransform": {"translation": {"x": -2.2, "y": 0.2, "z": -2.2}, "rotation": {"x": 0, "y": 0, "z": 0}, "scale": 0.3},
