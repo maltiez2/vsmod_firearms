@@ -1,20 +1,20 @@
 ﻿{
-  "code": "cylinder",
+  "code": "part",
   "class": "Item",
-  "variantgroups": [{"code": "type", "states": ["bullets"]}, {"code": "metal", "states": ["steel"]}],
-  "allowedVariants": ["*-bullets-steel"],
-  "shape": {"base": "maltiezfirearms:parts/cylinder-{type}"},
-  "textures": {"metal": {"base": "game:block/metal/plate/{metal}"}},
-  "attributes": {"groundStorageTransform": {"translation": {"x": 0.4, "y": 0.04, "z": 0.4}, "rotation": {"x": 1, "y": -110, "z": 89}, "origin": {"x": 0, "y": 0, "z": 0}}},
-  "behaviors": [
-    {
-      "name": "GroundStorable",
-      "properties": {"layout": "Quadrants", "placeRemoveSound": "sounds/player/build", "collisionBox": {"x1": 0, "y1": 0, "z1": 0, "x2": 1, "y2": 0.1, "z2": 1}}
-    }
+  "variantgroups": [
+    {"code": "type", "states": ["cylinder"]},
+    {"code": "subtype", "states": ["3", "4", "5", "6", "7", "8"]},
+    {"code": "caliber", "states": ["small", "large"]},
+    {"code": "material", "states": ["copper", "tinbronze", "bismuthbronze", "blackbronze", "iron", "meteoriciron", "steel", "brass"]}
   ],
-  "creativeinventory": {"general": ["*"], "maltiezfirearms": ["*"]},
-  "guiTransform": {"translation": {"x": 0, "y": 0, "z": 0}, "rotation": {"x": 139, "y": 23, "z": 0}, "origin": {"x": -0.01, "y": 0.1, "z": 0}, "scale": 4.95},
-  "fpHandTransform": {"translation": {"x": 0.6, "y": 0.2, "z": 0.3}, "rotation": {"x": 82, "y": -4, "z": 161}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 3.43},
-  "tpHandTransform": {"translation": {"x": -0.1, "y": 0, "z": 0}, "rotation": {"x": 0, "y": -91, "z": 0}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 1},
-  "groundTransform": {"translation": {"x": 0, "y": 0.06, "z": 0}, "rotation": {"x": -2, "y": 0, "z": 3}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 4.8}
+  "allowedVariants": ["*-8-small-steel"],
+  "maxstacksize": 16,
+  "shape": {"base": "maltiezfirearms:parts/{type}/{type}-{subtype}-{caliber}"},
+  "textures": {"metal": {"base": "game:block/metal/plate/{material}"}},
+  "attributes": {"handbook": {"groupBy": ["part-{type}-*"]}},
+  "behaviors": [],
+  "creativeinventory": {"general": ["*"], "maltiezfirearms-parts": ["*"]},
+  "guiTransformByType": {"*": {"translation": {"x": 0, "y": 0, "z": 0}, "rotation": {"x": -25, "y": -25, "z": 180}, "origin": {"x": 0.2, "y": -0.11, "z": -0.4}, "scale": 6}},
+  "tpHandTransform": {"translation": {"x": 0.1, "y": 0, "z": 0}, "rotation": {"x": 0, "y": -90, "z": 0}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 0.8},
+  "groundTransform": {"translation": {"x": 0, "y": 0, "z": 0}, "rotation": {"x": 0, "y": 0, "z": 0}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 4}
 }

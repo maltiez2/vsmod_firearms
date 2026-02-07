@@ -1,0 +1,3496 @@
+{
+	"editor": {
+		"collapsedPaths": "Root/Band_second,Root/Arquebus_origin/Barrel/Barrel_top3,Root/Carbine/Band_third,Root/Arquebus_origin/Barrel/Barrel_top2,Root/Cylinder/cylinder_0/cylinder_1,Root/Arquebus_origin/Barrel/Cylinder_spring,Root/Arquebus_origin/Barrel/Barrel_top4,Root/Arquebus_origin/Trigger_assembly,Root/Stock,Root/double-shot/Stock/Buttstock/Buttstock_bottom6,Root/Carbine/Flintlock,Root/Arquebus_origin/Stock,Root/Musket/Band_second,Root/Carbine/Trigger_assembly/Guard,Root/Arquebus_origin/Firearm/Lock/Cock/lock_cock_0,Root/Arquebus_origin/Lock,Root/Carbine,Root/Arquebus_origin/Flask_origin,Root/Arquebus_origin/Equipment/Flask_origin/Flask_origin_inner/Flask,Root/Arquebus_origin/Firearm/Stock,Root/Arquebus_origin/Equipment/Patch,Root/Arquebus_origin/Equipment/Patch_5,Root/Arquebus_origin/Equipment/Patch_6,Root/Arquebus_origin/Cylinder/cylinder_0/cylinder_1/cylinder_2/cylinder_cover_0_21,Root/Arquebus_origin/Equipment/Patch_3,Root/Musket/Flintlock,Root/Arquebus_origin/Equipment/Patch_4,Root/Arquebus_origin/Equipment/Patch_1,Root/Arquebus_origin/Equipment/Patch_2,Root/Arquebus_origin/Equipment/Ramdrod_origin,Root/Arquebus_origin/Equipment/Patch_0,Root/Musket/Stock,Root/origin/Bottom_plate,Root/Arquebus_origin/Equipment/Patch_7,Root/Musket/Stock/Buttstock/Buttstock_bottom/Buttstock_butt/Buttstock_butt_plate,Root/Arquebus_origin/Firearm/Cylinder,Root/double-shot/Trigger_assembly,Root/Arquebus_origin/Firearm/Barrel/Barrel_top2,Root/Musket/Band_third,Root/Carbine/Flintlock/Hammer/Hammer_arm,Root/Arquebus_origin/Firearm/Barrel/Barrel_top4,Root/Arquebus_origin/Firearm/Barrel/Barrel_top3,Root/Carbine/Ramrod_origin,Root/Carbine/Barrel,Root/Carbine/Stock,Root/Arquebus_origin/Cylinder/cylinder_0/cylinder_1/cylinder_2/cylinder_3/cylinder_4/cylinder_5/cylinder_6/cylinder_0_42,Root/Arquebus_origin/Firearm/Lock/Fizzen,Root/Trigger_assembly,Root/Carbine/Flintlock/Frizzen,Root/double-shot/Stock/Buttstock,Root/Musket/Stock/Buttstock/Buttstock_butt,Root/Arquebus_origin/Cylinder/cylinder_0/cylinder_0_6,Root/Ramrod,Root/Carbine/Trigger_assembly,Root/Musket/Band_first,Root/Band_first,Root/Arquebus_origin/Cylinder/cylinder_0/cylinder_1/cylinder_2/cylinder_3/cylinder_4/cylinder_5/cylinder_0_35,Root/Arquebus_origin/Firearm/Barrel,Root/Flintlock,Root/Carbine/Trigger_assembly/Trigger_assemly_base,Root/Barrel,Root/Arquebus_origin/Cylinder/cylinder_0/cylinder_cover_0_7,Root/Band_third,Root/Arquebus_origin/Cylinder/cylinder_0/cylinder_1/cylinder_2/cylinder_3/cylinder_4/cylinder_5/cylinder_6/cylinder_7/cylinder_0_49,Root/Arquebus_origin/Cylinder/cylinder_0/cylinder_1/cylinder_cover_0_14,Root/Musket/Trigger_assembly,Root/Arquebus_origin/Barrel,Root/Arquebus_origin/Equipment/Ramrod_small_origin,Root/Musket/Flintlock/Plate,Root/Carbine/Ramrod_origin/Ramrod,Root/Arquebus_origin/Firearm/Barrel/Barrel_top,Root/Musket,Root/Carbine/Flask_origin/Flask_origin_inner,Root/Arquebus_origin/Patch,Root/Arquebus_origin/Flask_origin/Flask_origin_inner/Flask,Root/Arquebus_origin/Barrel/Barrel_top,Root/Arquebus_origin/Firearm/Cylinder/cylinder_0/cylinder_1/cylinder_2/mark_3,Root/Carbine/Flintlock/Hammer,Root/Arquebus_origin/Lock/Cock/lock_cock_1,Root/Carbine/Flintlock/Pan,Root/Arquebus_origin/Ramdrod_origin,Root/Carbine/Band_second,Root/Arquebus_origin/Equipment/Flask_origin,Root/Arquebus_origin/Cylinder,Root/Musket/Barrel",
+		"allAngles": false,
+		"entityTextureMode": false
+	},
+	"textureWidth": 16,
+	"textureHeight": 16,
+	"textureSizes": {
+	},
+	"textures": {
+		"lead": "game:block/metal/plate/lead",
+		"metal": "game:block/metal/plate/steel"
+	},
+	"elements": [
+		{
+			"name": "Cylinder",
+			"from": [ 0.0, 2.45, 3.0 ],
+			"to": [ 0.0, 2.45, 3.0 ],
+			"rotationOrigin": [ 0.0, 2.75, 0.0 ],
+			"rotationX": 90.0,
+			"faces": {
+			},
+			"children": [
+				{
+					"name": "cylinder_0",
+					"from": [ -0.825, 0.3, -2.85 ],
+					"to": [ 0.825, 2.25, 0.75 ],
+					"rotationOrigin": [ 0.0, 0.3, -2.85 ],
+					"faces": {
+					},
+					"children": [
+						{
+							"name": "cylinder_0_0",
+							"from": [ 0.0, 0.0, 0.0 ],
+							"to": [ 0.0, 0.0, 0.0 ],
+							"faces": {
+							},
+							"children": [
+								{
+									"name": "cylinder_0_1",
+									"from": [ 0.135, 0.9, 0.0 ],
+									"to": [ 1.515, 1.2, 2.6 ],
+									"rotationOrigin": [ 0.15, 0.9, 0.0 ],
+									"faces": {
+										"north": { "texture": "#metal", "uv": [ 0.0, 0.0, 1.0, 0.5 ], "rotation": 180 },
+										"east": { "texture": "#metal", "uv": [ 0.0, 0.0, 3.0, 0.75 ] },
+										"south": { "texture": "#metal", "uv": [ 0.0, 0.0, 1.0, 0.5 ], "rotation": 180 },
+										"west": { "texture": "#metal", "uv": [ 0.0, 0.0, 3.0, 0.75 ] },
+										"up": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.75, 3.0 ] },
+										"down": { "texture": "#lead", "uv": [ 0.0, 0.0, 0.75, 3.0 ] }
+									}
+								},
+								{
+									"name": "cylinder_0_2",
+									"from": [ 0.525, 0.3, 0.0 ],
+									"to": [ 1.125, 0.45, 2.6 ],
+									"rotationOrigin": [ 0.45, 0.3, 0.0 ],
+									"faces": {
+										"north": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.75, 0.75 ] },
+										"east": { "texture": "#lead", "uv": [ 0.0, 0.0, 3.0, 0.75 ] },
+										"south": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.75, 0.75 ] },
+										"west": { "texture": "#lead", "uv": [ 0.0, 0.0, 3.0, 0.75 ] },
+										"up": { "texture": "#lead", "uv": [ 0.0, 0.0, 0.75, 3.0 ] },
+										"down": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.75, 3.0 ] }
+									}
+								},
+								{
+									"name": "cylinder_0_3",
+									"from": [ 1.05, 0.375, 0.0 ],
+									"to": [ 1.125, 0.9, 2.6 ],
+									"rotationOrigin": [ 1.05, 0.375, 0.0 ],
+									"faces": {
+										"north": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.75, 0.75 ] },
+										"east": { "texture": "#lead", "uv": [ 0.0, 0.0, 3.0, 0.75 ] },
+										"south": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.75, 0.75 ] },
+										"west": { "texture": "#lead", "uv": [ 0.0, 0.0, 3.0, 0.75 ] },
+										"up": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.75, 3.0 ] },
+										"down": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.75, 3.0 ] }
+									}
+								},
+								{
+									"name": "cylinder_0_5",
+									"from": [ 0.6, 0.45, 2.2 ],
+									"to": [ 1.05, 0.9, 2.6 ],
+									"rotationOrigin": [ 0.6, 0.45, 2.2 ],
+									"faces": {
+										"north": { "texture": "#lead", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+										"east": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+										"south": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+										"west": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+										"up": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+										"down": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.5, 0.5 ] }
+									}
+								},
+								{
+									"name": "cylinder_0_10",
+									"from": [ 0.525, 0.375, 0.0 ],
+									"to": [ 0.6, 0.9, 2.6 ],
+									"rotationOrigin": [ 0.45, 0.375, 0.0 ],
+									"faces": {
+										"north": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.75, 0.75 ] },
+										"east": { "texture": "#lead", "uv": [ 0.0, 0.0, 3.0, 0.75 ] },
+										"south": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.75, 0.75 ] },
+										"west": { "texture": "#lead", "uv": [ 0.0, 0.0, 3.0, 0.75 ] },
+										"up": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.75, 3.0 ] },
+										"down": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.75, 3.0 ] }
+									}
+								},
+								{
+									"name": "cylinder_0_12",
+									"from": [ 0.15, 0.675, 0.0 ],
+									"to": [ 0.525, 0.9, 2.6 ],
+									"rotationOrigin": [ 0.15, 0.675, 0.0 ],
+									"faces": {
+										"north": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.75, 0.75 ] },
+										"east": { "texture": "#metal", "uv": [ 0.0, 0.0, 3.0, 0.75 ] },
+										"south": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.75, 0.75 ] },
+										"west": { "texture": "#lead", "uv": [ 0.0, 0.0, 3.0, 0.75 ] },
+										"up": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.75, 3.0 ] },
+										"down": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.75, 3.0 ] }
+									}
+								},
+								{
+									"name": "cylinder_0_13",
+									"from": [ 0.15, 0.675, 0.0 ],
+									"to": [ 0.555, 0.87, 2.6 ],
+									"rotationOrigin": [ 0.15, 0.675, 0.0 ],
+									"rotationZ": -30.0,
+									"faces": {
+										"north": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.75, 0.75 ] },
+										"east": { "texture": "#metal", "uv": [ 0.0, 0.0, 3.0, 0.75 ] },
+										"south": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.75, 0.75 ] },
+										"west": { "texture": "#lead", "uv": [ 0.0, 0.0, 3.0, 0.75 ] },
+										"up": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.75, 3.0 ] },
+										"down": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.75, 3.0 ] }
+									}
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "cylinder_1",
+					"from": [ -0.825, 0.3, -2.85 ],
+					"to": [ 0.825, 2.25, 0.75 ],
+					"rotationOrigin": [ 0.0, 0.3, -2.85 ],
+					"rotationZ": 60.0,
+					"faces": {
+					},
+					"children": [
+						{
+							"name": "cylinder_0_4",
+							"from": [ 0.0, 0.0, 0.0 ],
+							"to": [ 0.0, 0.0, 0.0 ],
+							"faces": {
+							},
+							"children": [
+								{
+									"name": "cylinder_0_6",
+									"from": [ 0.135, 0.9, 0.0 ],
+									"to": [ 1.515, 1.2, 2.6 ],
+									"rotationOrigin": [ 0.15, 0.9, 0.0 ],
+									"faces": {
+										"north": { "texture": "#metal", "uv": [ 0.0, 0.0, 1.0, 0.5 ], "rotation": 180 },
+										"east": { "texture": "#metal", "uv": [ 0.0, 0.0, 3.0, 0.75 ] },
+										"south": { "texture": "#metal", "uv": [ 0.0, 0.0, 1.0, 0.5 ], "rotation": 180 },
+										"west": { "texture": "#metal", "uv": [ 0.0, 0.0, 3.0, 0.75 ] },
+										"up": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.75, 3.0 ] },
+										"down": { "texture": "#lead", "uv": [ 0.0, 0.0, 0.75, 3.0 ] }
+									}
+								},
+								{
+									"name": "cylinder_0_7",
+									"from": [ 0.525, 0.3, 0.0 ],
+									"to": [ 1.125, 0.45, 2.6 ],
+									"rotationOrigin": [ 0.45, 0.3, 0.0 ],
+									"faces": {
+										"north": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.75, 0.75 ] },
+										"east": { "texture": "#lead", "uv": [ 0.0, 0.0, 3.0, 0.75 ] },
+										"south": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.75, 0.75 ] },
+										"west": { "texture": "#lead", "uv": [ 0.0, 0.0, 3.0, 0.75 ] },
+										"up": { "texture": "#lead", "uv": [ 0.0, 0.0, 0.75, 3.0 ] },
+										"down": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.75, 3.0 ] }
+									}
+								},
+								{
+									"name": "cylinder_0_8",
+									"from": [ 1.05, 0.375, 0.0 ],
+									"to": [ 1.125, 0.9, 2.6 ],
+									"rotationOrigin": [ 1.05, 0.375, 0.0 ],
+									"faces": {
+										"north": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.75, 0.75 ] },
+										"east": { "texture": "#lead", "uv": [ 0.0, 0.0, 3.0, 0.75 ] },
+										"south": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.75, 0.75 ] },
+										"west": { "texture": "#lead", "uv": [ 0.0, 0.0, 3.0, 0.75 ] },
+										"up": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.75, 3.0 ] },
+										"down": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.75, 3.0 ] }
+									}
+								},
+								{
+									"name": "cylinder_0_9",
+									"from": [ 0.6, 0.45, 2.2 ],
+									"to": [ 1.05, 0.9, 2.6 ],
+									"rotationOrigin": [ 0.6, 0.45, 2.2 ],
+									"faces": {
+										"north": { "texture": "#lead", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+										"east": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+										"south": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+										"west": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+										"up": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+										"down": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.5, 0.5 ] }
+									}
+								},
+								{
+									"name": "cylinder_0_11",
+									"from": [ 0.525, 0.375, 0.0 ],
+									"to": [ 0.6, 0.9, 2.6 ],
+									"rotationOrigin": [ 0.45, 0.375, 0.0 ],
+									"faces": {
+										"north": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.75, 0.75 ] },
+										"east": { "texture": "#lead", "uv": [ 0.0, 0.0, 3.0, 0.75 ] },
+										"south": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.75, 0.75 ] },
+										"west": { "texture": "#lead", "uv": [ 0.0, 0.0, 3.0, 0.75 ] },
+										"up": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.75, 3.0 ] },
+										"down": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.75, 3.0 ] }
+									}
+								},
+								{
+									"name": "cylinder_0_14",
+									"from": [ 0.15, 0.675, 0.0 ],
+									"to": [ 0.525, 0.9, 2.6 ],
+									"rotationOrigin": [ 0.15, 0.675, 0.0 ],
+									"faces": {
+										"north": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.75, 0.75 ] },
+										"east": { "texture": "#metal", "uv": [ 0.0, 0.0, 3.0, 0.75 ] },
+										"south": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.75, 0.75 ] },
+										"west": { "texture": "#lead", "uv": [ 0.0, 0.0, 3.0, 0.75 ] },
+										"up": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.75, 3.0 ] },
+										"down": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.75, 3.0 ] }
+									}
+								},
+								{
+									"name": "cylinder_0_15",
+									"from": [ 0.15, 0.675, 0.0 ],
+									"to": [ 0.555, 0.87, 2.6 ],
+									"rotationOrigin": [ 0.15, 0.675, 0.0 ],
+									"rotationZ": -30.0,
+									"faces": {
+										"north": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.75, 0.75 ] },
+										"east": { "texture": "#metal", "uv": [ 0.0, 0.0, 3.0, 0.75 ] },
+										"south": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.75, 0.75 ] },
+										"west": { "texture": "#lead", "uv": [ 0.0, 0.0, 3.0, 0.75 ] },
+										"up": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.75, 3.0 ] },
+										"down": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.75, 3.0 ] }
+									}
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "cylinder_2",
+					"from": [ -0.825, 0.3, -2.85 ],
+					"to": [ 0.825, 2.25, 0.75 ],
+					"rotationOrigin": [ 0.0, 0.3, -2.85 ],
+					"rotationZ": 120.0,
+					"faces": {
+					},
+					"children": [
+						{
+							"name": "cylinder_0_16",
+							"from": [ 0.0, 0.0, 0.0 ],
+							"to": [ 0.0, 0.0, 0.0 ],
+							"faces": {
+							},
+							"children": [
+								{
+									"name": "cylinder_0_17",
+									"from": [ 0.135, 0.9, 0.0 ],
+									"to": [ 1.515, 1.2, 2.6 ],
+									"rotationOrigin": [ 0.15, 0.9, 0.0 ],
+									"faces": {
+										"north": { "texture": "#metal", "uv": [ 0.0, 0.0, 1.0, 0.5 ], "rotation": 180 },
+										"east": { "texture": "#metal", "uv": [ 0.0, 0.0, 3.0, 0.75 ] },
+										"south": { "texture": "#metal", "uv": [ 0.0, 0.0, 1.0, 0.5 ], "rotation": 180 },
+										"west": { "texture": "#metal", "uv": [ 0.0, 0.0, 3.0, 0.75 ] },
+										"up": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.75, 3.0 ] },
+										"down": { "texture": "#lead", "uv": [ 0.0, 0.0, 0.75, 3.0 ] }
+									}
+								},
+								{
+									"name": "cylinder_0_18",
+									"from": [ 0.525, 0.3, 0.0 ],
+									"to": [ 1.125, 0.45, 2.6 ],
+									"rotationOrigin": [ 0.45, 0.3, 0.0 ],
+									"faces": {
+										"north": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.75, 0.75 ] },
+										"east": { "texture": "#lead", "uv": [ 0.0, 0.0, 3.0, 0.75 ] },
+										"south": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.75, 0.75 ] },
+										"west": { "texture": "#lead", "uv": [ 0.0, 0.0, 3.0, 0.75 ] },
+										"up": { "texture": "#lead", "uv": [ 0.0, 0.0, 0.75, 3.0 ] },
+										"down": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.75, 3.0 ] }
+									}
+								},
+								{
+									"name": "cylinder_0_19",
+									"from": [ 1.05, 0.375, 0.0 ],
+									"to": [ 1.125, 0.9, 2.6 ],
+									"rotationOrigin": [ 1.05, 0.375, 0.0 ],
+									"faces": {
+										"north": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.75, 0.75 ] },
+										"east": { "texture": "#lead", "uv": [ 0.0, 0.0, 3.0, 0.75 ] },
+										"south": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.75, 0.75 ] },
+										"west": { "texture": "#lead", "uv": [ 0.0, 0.0, 3.0, 0.75 ] },
+										"up": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.75, 3.0 ] },
+										"down": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.75, 3.0 ] }
+									}
+								},
+								{
+									"name": "cylinder_0_20",
+									"from": [ 0.6, 0.45, 2.2 ],
+									"to": [ 1.05, 0.9, 2.6 ],
+									"rotationOrigin": [ 0.6, 0.45, 2.2 ],
+									"faces": {
+										"north": { "texture": "#lead", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+										"east": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+										"south": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+										"west": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+										"up": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+										"down": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.5, 0.5 ] }
+									}
+								},
+								{
+									"name": "cylinder_0_21",
+									"from": [ 0.525, 0.375, 0.0 ],
+									"to": [ 0.6, 0.9, 2.6 ],
+									"rotationOrigin": [ 0.45, 0.375, 0.0 ],
+									"faces": {
+										"north": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.75, 0.75 ] },
+										"east": { "texture": "#lead", "uv": [ 0.0, 0.0, 3.0, 0.75 ] },
+										"south": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.75, 0.75 ] },
+										"west": { "texture": "#lead", "uv": [ 0.0, 0.0, 3.0, 0.75 ] },
+										"up": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.75, 3.0 ] },
+										"down": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.75, 3.0 ] }
+									}
+								},
+								{
+									"name": "cylinder_0_22",
+									"from": [ 0.15, 0.675, 0.0 ],
+									"to": [ 0.525, 0.9, 2.6 ],
+									"rotationOrigin": [ 0.15, 0.675, 0.0 ],
+									"faces": {
+										"north": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.75, 0.75 ] },
+										"east": { "texture": "#metal", "uv": [ 0.0, 0.0, 3.0, 0.75 ] },
+										"south": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.75, 0.75 ] },
+										"west": { "texture": "#lead", "uv": [ 0.0, 0.0, 3.0, 0.75 ] },
+										"up": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.75, 3.0 ] },
+										"down": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.75, 3.0 ] }
+									}
+								},
+								{
+									"name": "cylinder_0_23",
+									"from": [ 0.15, 0.675, 0.0 ],
+									"to": [ 0.555, 0.87, 2.6 ],
+									"rotationOrigin": [ 0.15, 0.675, 0.0 ],
+									"rotationZ": -30.0,
+									"faces": {
+										"north": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.75, 0.75 ] },
+										"east": { "texture": "#metal", "uv": [ 0.0, 0.0, 3.0, 0.75 ] },
+										"south": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.75, 0.75 ] },
+										"west": { "texture": "#lead", "uv": [ 0.0, 0.0, 3.0, 0.75 ] },
+										"up": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.75, 3.0 ] },
+										"down": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.75, 3.0 ] }
+									}
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "cylinder_3",
+					"from": [ -0.825, 0.3, -2.85 ],
+					"to": [ 0.825, 2.25, 0.75 ],
+					"rotationOrigin": [ 0.0, 0.3, -2.85 ],
+					"rotationZ": 180.0,
+					"faces": {
+					},
+					"children": [
+						{
+							"name": "cylinder_0_24",
+							"from": [ 0.0, 0.0, 0.0 ],
+							"to": [ 0.0, 0.0, 0.0 ],
+							"faces": {
+							},
+							"children": [
+								{
+									"name": "cylinder_0_25",
+									"from": [ 0.135, 0.9, 0.0 ],
+									"to": [ 1.515, 1.2, 2.6 ],
+									"rotationOrigin": [ 0.15, 0.9, 0.0 ],
+									"faces": {
+										"north": { "texture": "#metal", "uv": [ 0.0, 0.0, 1.0, 0.5 ], "rotation": 180 },
+										"east": { "texture": "#metal", "uv": [ 0.0, 0.0, 3.0, 0.75 ] },
+										"south": { "texture": "#metal", "uv": [ 0.0, 0.0, 1.0, 0.5 ], "rotation": 180 },
+										"west": { "texture": "#metal", "uv": [ 0.0, 0.0, 3.0, 0.75 ] },
+										"up": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.75, 3.0 ] },
+										"down": { "texture": "#lead", "uv": [ 0.0, 0.0, 0.75, 3.0 ] }
+									}
+								},
+								{
+									"name": "cylinder_0_26",
+									"from": [ 0.525, 0.3, 0.0 ],
+									"to": [ 1.125, 0.45, 2.6 ],
+									"rotationOrigin": [ 0.45, 0.3, 0.0 ],
+									"faces": {
+										"north": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.75, 0.75 ] },
+										"east": { "texture": "#lead", "uv": [ 0.0, 0.0, 3.0, 0.75 ] },
+										"south": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.75, 0.75 ] },
+										"west": { "texture": "#lead", "uv": [ 0.0, 0.0, 3.0, 0.75 ] },
+										"up": { "texture": "#lead", "uv": [ 0.0, 0.0, 0.75, 3.0 ] },
+										"down": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.75, 3.0 ] }
+									}
+								},
+								{
+									"name": "cylinder_0_27",
+									"from": [ 1.05, 0.375, 0.0 ],
+									"to": [ 1.125, 0.9, 2.6 ],
+									"rotationOrigin": [ 1.05, 0.375, 0.0 ],
+									"faces": {
+										"north": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.75, 0.75 ] },
+										"east": { "texture": "#lead", "uv": [ 0.0, 0.0, 3.0, 0.75 ] },
+										"south": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.75, 0.75 ] },
+										"west": { "texture": "#lead", "uv": [ 0.0, 0.0, 3.0, 0.75 ] },
+										"up": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.75, 3.0 ] },
+										"down": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.75, 3.0 ] }
+									}
+								},
+								{
+									"name": "cylinder_0_28",
+									"from": [ 0.6, 0.45, 2.2 ],
+									"to": [ 1.05, 0.9, 2.6 ],
+									"rotationOrigin": [ 0.6, 0.45, 2.2 ],
+									"faces": {
+										"north": { "texture": "#lead", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+										"east": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+										"south": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+										"west": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+										"up": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+										"down": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.5, 0.5 ] }
+									}
+								},
+								{
+									"name": "cylinder_0_29",
+									"from": [ 0.525, 0.375, 0.0 ],
+									"to": [ 0.6, 0.9, 2.6 ],
+									"rotationOrigin": [ 0.45, 0.375, 0.0 ],
+									"faces": {
+										"north": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.75, 0.75 ] },
+										"east": { "texture": "#lead", "uv": [ 0.0, 0.0, 3.0, 0.75 ] },
+										"south": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.75, 0.75 ] },
+										"west": { "texture": "#lead", "uv": [ 0.0, 0.0, 3.0, 0.75 ] },
+										"up": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.75, 3.0 ] },
+										"down": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.75, 3.0 ] }
+									}
+								},
+								{
+									"name": "cylinder_0_30",
+									"from": [ 0.15, 0.675, 0.0 ],
+									"to": [ 0.525, 0.9, 2.6 ],
+									"rotationOrigin": [ 0.15, 0.675, 0.0 ],
+									"faces": {
+										"north": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.75, 0.75 ] },
+										"east": { "texture": "#metal", "uv": [ 0.0, 0.0, 3.0, 0.75 ] },
+										"south": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.75, 0.75 ] },
+										"west": { "texture": "#lead", "uv": [ 0.0, 0.0, 3.0, 0.75 ] },
+										"up": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.75, 3.0 ] },
+										"down": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.75, 3.0 ] }
+									}
+								},
+								{
+									"name": "cylinder_0_31",
+									"from": [ 0.15, 0.675, 0.0 ],
+									"to": [ 0.555, 0.87, 2.6 ],
+									"rotationOrigin": [ 0.15, 0.675, 0.0 ],
+									"rotationZ": -30.0,
+									"faces": {
+										"north": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.75, 0.75 ] },
+										"east": { "texture": "#metal", "uv": [ 0.0, 0.0, 3.0, 0.75 ] },
+										"south": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.75, 0.75 ] },
+										"west": { "texture": "#lead", "uv": [ 0.0, 0.0, 3.0, 0.75 ] },
+										"up": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.75, 3.0 ] },
+										"down": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.75, 3.0 ] }
+									}
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "cylinder_4",
+					"from": [ -0.825, 0.3, -2.85 ],
+					"to": [ 0.825, 2.25, 0.75 ],
+					"rotationOrigin": [ 0.0, 0.3, -2.85 ],
+					"rotationZ": -60.0,
+					"faces": {
+					},
+					"children": [
+						{
+							"name": "cylinder_0_32",
+							"from": [ 0.0, 0.0, 0.0 ],
+							"to": [ 0.0, 0.0, 0.0 ],
+							"faces": {
+							},
+							"children": [
+								{
+									"name": "cylinder_0_33",
+									"from": [ 0.135, 0.9, 0.0 ],
+									"to": [ 1.515, 1.2, 2.6 ],
+									"rotationOrigin": [ 0.15, 0.9, 0.0 ],
+									"faces": {
+										"north": { "texture": "#metal", "uv": [ 0.0, 0.0, 1.0, 0.5 ], "rotation": 180 },
+										"east": { "texture": "#metal", "uv": [ 0.0, 0.0, 3.0, 0.75 ] },
+										"south": { "texture": "#metal", "uv": [ 0.0, 0.0, 1.0, 0.5 ], "rotation": 180 },
+										"west": { "texture": "#metal", "uv": [ 0.0, 0.0, 3.0, 0.75 ] },
+										"up": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.75, 3.0 ] },
+										"down": { "texture": "#lead", "uv": [ 0.0, 0.0, 0.75, 3.0 ] }
+									}
+								},
+								{
+									"name": "cylinder_0_34",
+									"from": [ 0.525, 0.3, 0.0 ],
+									"to": [ 1.125, 0.45, 2.6 ],
+									"rotationOrigin": [ 0.45, 0.3, 0.0 ],
+									"faces": {
+										"north": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.75, 0.75 ] },
+										"east": { "texture": "#lead", "uv": [ 0.0, 0.0, 3.0, 0.75 ] },
+										"south": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.75, 0.75 ] },
+										"west": { "texture": "#lead", "uv": [ 0.0, 0.0, 3.0, 0.75 ] },
+										"up": { "texture": "#lead", "uv": [ 0.0, 0.0, 0.75, 3.0 ] },
+										"down": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.75, 3.0 ] }
+									}
+								},
+								{
+									"name": "cylinder_0_35",
+									"from": [ 1.05, 0.375, 0.0 ],
+									"to": [ 1.125, 0.9, 2.6 ],
+									"rotationOrigin": [ 1.05, 0.375, 0.0 ],
+									"faces": {
+										"north": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.75, 0.75 ] },
+										"east": { "texture": "#lead", "uv": [ 0.0, 0.0, 3.0, 0.75 ] },
+										"south": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.75, 0.75 ] },
+										"west": { "texture": "#lead", "uv": [ 0.0, 0.0, 3.0, 0.75 ] },
+										"up": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.75, 3.0 ] },
+										"down": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.75, 3.0 ] }
+									}
+								},
+								{
+									"name": "cylinder_0_36",
+									"from": [ 0.6, 0.45, 2.2 ],
+									"to": [ 1.05, 0.9, 2.6 ],
+									"rotationOrigin": [ 0.6, 0.45, 2.2 ],
+									"faces": {
+										"north": { "texture": "#lead", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+										"east": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+										"south": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+										"west": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+										"up": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+										"down": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.5, 0.5 ] }
+									}
+								},
+								{
+									"name": "cylinder_0_37",
+									"from": [ 0.525, 0.375, 0.0 ],
+									"to": [ 0.6, 0.9, 2.6 ],
+									"rotationOrigin": [ 0.45, 0.375, 0.0 ],
+									"faces": {
+										"north": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.75, 0.75 ] },
+										"east": { "texture": "#lead", "uv": [ 0.0, 0.0, 3.0, 0.75 ] },
+										"south": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.75, 0.75 ] },
+										"west": { "texture": "#lead", "uv": [ 0.0, 0.0, 3.0, 0.75 ] },
+										"up": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.75, 3.0 ] },
+										"down": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.75, 3.0 ] }
+									}
+								},
+								{
+									"name": "cylinder_0_38",
+									"from": [ 0.15, 0.675, 0.0 ],
+									"to": [ 0.525, 0.9, 2.6 ],
+									"rotationOrigin": [ 0.15, 0.675, 0.0 ],
+									"faces": {
+										"north": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.75, 0.75 ] },
+										"east": { "texture": "#metal", "uv": [ 0.0, 0.0, 3.0, 0.75 ] },
+										"south": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.75, 0.75 ] },
+										"west": { "texture": "#lead", "uv": [ 0.0, 0.0, 3.0, 0.75 ] },
+										"up": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.75, 3.0 ] },
+										"down": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.75, 3.0 ] }
+									}
+								},
+								{
+									"name": "cylinder_0_39",
+									"from": [ 0.15, 0.675, 0.0 ],
+									"to": [ 0.555, 0.87, 2.6 ],
+									"rotationOrigin": [ 0.15, 0.675, 0.0 ],
+									"rotationZ": -30.0,
+									"faces": {
+										"north": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.75, 0.75 ] },
+										"east": { "texture": "#metal", "uv": [ 0.0, 0.0, 3.0, 0.75 ] },
+										"south": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.75, 0.75 ] },
+										"west": { "texture": "#lead", "uv": [ 0.0, 0.0, 3.0, 0.75 ] },
+										"up": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.75, 3.0 ] },
+										"down": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.75, 3.0 ] }
+									}
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "cylinder_5",
+					"from": [ -0.825, 0.3, -2.85 ],
+					"to": [ 0.825, 2.25, 0.75 ],
+					"rotationOrigin": [ 0.0, 0.3, -2.85 ],
+					"rotationZ": -120.0,
+					"faces": {
+					},
+					"children": [
+						{
+							"name": "cylinder_0_40",
+							"from": [ 0.0, 0.0, 0.0 ],
+							"to": [ 0.0, 0.0, 0.0 ],
+							"faces": {
+							},
+							"children": [
+								{
+									"name": "cylinder_0_41",
+									"from": [ 0.135, 0.9, 0.0 ],
+									"to": [ 1.515, 1.2, 2.6 ],
+									"rotationOrigin": [ 0.15, 0.9, 0.0 ],
+									"faces": {
+										"north": { "texture": "#metal", "uv": [ 0.0, 0.0, 1.0, 0.5 ], "rotation": 180 },
+										"east": { "texture": "#metal", "uv": [ 0.0, 0.0, 3.0, 0.75 ] },
+										"south": { "texture": "#metal", "uv": [ 0.0, 0.0, 1.0, 0.5 ], "rotation": 180 },
+										"west": { "texture": "#metal", "uv": [ 0.0, 0.0, 3.0, 0.75 ] },
+										"up": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.75, 3.0 ] },
+										"down": { "texture": "#lead", "uv": [ 0.0, 0.0, 0.75, 3.0 ] }
+									}
+								},
+								{
+									"name": "cylinder_0_42",
+									"from": [ 0.525, 0.3, 0.0 ],
+									"to": [ 1.125, 0.45, 2.6 ],
+									"rotationOrigin": [ 0.45, 0.3, 0.0 ],
+									"faces": {
+										"north": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.75, 0.75 ] },
+										"east": { "texture": "#lead", "uv": [ 0.0, 0.0, 3.0, 0.75 ] },
+										"south": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.75, 0.75 ] },
+										"west": { "texture": "#lead", "uv": [ 0.0, 0.0, 3.0, 0.75 ] },
+										"up": { "texture": "#lead", "uv": [ 0.0, 0.0, 0.75, 3.0 ] },
+										"down": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.75, 3.0 ] }
+									}
+								},
+								{
+									"name": "cylinder_0_43",
+									"from": [ 1.05, 0.375, 0.0 ],
+									"to": [ 1.125, 0.9, 2.6 ],
+									"rotationOrigin": [ 1.05, 0.375, 0.0 ],
+									"faces": {
+										"north": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.75, 0.75 ] },
+										"east": { "texture": "#lead", "uv": [ 0.0, 0.0, 3.0, 0.75 ] },
+										"south": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.75, 0.75 ] },
+										"west": { "texture": "#lead", "uv": [ 0.0, 0.0, 3.0, 0.75 ] },
+										"up": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.75, 3.0 ] },
+										"down": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.75, 3.0 ] }
+									}
+								},
+								{
+									"name": "cylinder_0_44",
+									"from": [ 0.6, 0.45, 2.2 ],
+									"to": [ 1.05, 0.9, 2.6 ],
+									"rotationOrigin": [ 0.6, 0.45, 2.2 ],
+									"faces": {
+										"north": { "texture": "#lead", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+										"east": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+										"south": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+										"west": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+										"up": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+										"down": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.5, 0.5 ] }
+									}
+								},
+								{
+									"name": "cylinder_0_45",
+									"from": [ 0.525, 0.375, 0.0 ],
+									"to": [ 0.6, 0.9, 2.6 ],
+									"rotationOrigin": [ 0.45, 0.375, 0.0 ],
+									"faces": {
+										"north": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.75, 0.75 ] },
+										"east": { "texture": "#lead", "uv": [ 0.0, 0.0, 3.0, 0.75 ] },
+										"south": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.75, 0.75 ] },
+										"west": { "texture": "#lead", "uv": [ 0.0, 0.0, 3.0, 0.75 ] },
+										"up": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.75, 3.0 ] },
+										"down": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.75, 3.0 ] }
+									}
+								},
+								{
+									"name": "cylinder_0_46",
+									"from": [ 0.15, 0.675, 0.0 ],
+									"to": [ 0.525, 0.9, 2.6 ],
+									"rotationOrigin": [ 0.15, 0.675, 0.0 ],
+									"faces": {
+										"north": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.75, 0.75 ] },
+										"east": { "texture": "#metal", "uv": [ 0.0, 0.0, 3.0, 0.75 ] },
+										"south": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.75, 0.75 ] },
+										"west": { "texture": "#lead", "uv": [ 0.0, 0.0, 3.0, 0.75 ] },
+										"up": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.75, 3.0 ] },
+										"down": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.75, 3.0 ] }
+									}
+								},
+								{
+									"name": "cylinder_0_47",
+									"from": [ 0.15, 0.675, 0.0 ],
+									"to": [ 0.555, 0.87, 2.6 ],
+									"rotationOrigin": [ 0.15, 0.675, 0.0 ],
+									"rotationZ": -30.0,
+									"faces": {
+										"north": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.75, 0.75 ] },
+										"east": { "texture": "#metal", "uv": [ 0.0, 0.0, 3.0, 0.75 ] },
+										"south": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.75, 0.75 ] },
+										"west": { "texture": "#lead", "uv": [ 0.0, 0.0, 3.0, 0.75 ] },
+										"up": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.75, 3.0 ] },
+										"down": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.75, 3.0 ] }
+									}
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	],
+	"animations": [
+		{
+			"name": "fire-1",
+			"code": "fire-1",
+			"quantityframes": 26,
+			"onActivityStopped": "Rewind",
+			"onAnimationEnd": "Repeat",
+			"keyframes": [
+				{
+					"frame": 0,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 5,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 10,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 11,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 14,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 20,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 22,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 25,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				}
+			]
+		},
+
+		{
+			"name": "fire-2",
+			"code": "fire-2",
+			"quantityframes": 26,
+			"onActivityStopped": "Rewind",
+			"onAnimationEnd": "Repeat",
+			"keyframes": [
+				{
+					"frame": 0,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -45.0 }
+					}
+				},
+				{
+					"frame": 5,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -45.0 }
+					}
+				},
+				{
+					"frame": 10,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -45.0 }
+					}
+				},
+				{
+					"frame": 11,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -45.0 }
+					}
+				},
+				{
+					"frame": 14,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -45.0 }
+					}
+				},
+				{
+					"frame": 20,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -45.0 }
+					}
+				},
+				{
+					"frame": 22,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -45.0 }
+					}
+				},
+				{
+					"frame": 25,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -45.0 }
+					}
+				}
+			]
+		},
+
+		{
+			"name": "cock-1",
+			"code": "cock-1",
+			"quantityframes": 26,
+			"onActivityStopped": "Rewind",
+			"onAnimationEnd": "Repeat",
+			"keyframes": [
+				{
+					"frame": 0,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 10,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 15,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 20,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 25,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				}
+			]
+		},
+
+		{
+			"name": "cock-2",
+			"code": "cock-2",
+			"quantityframes": 26,
+			"onActivityStopped": "Rewind",
+			"onAnimationEnd": "Repeat",
+			"keyframes": [
+				{
+					"frame": 0,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -45.0 }
+					}
+				},
+				{
+					"frame": 10,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -45.0 }
+					}
+				},
+				{
+					"frame": 15,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -45.0 }
+					}
+				},
+				{
+					"frame": 20,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -22.5 }
+					}
+				},
+				{
+					"frame": 25,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				}
+			]
+		},
+
+		{
+			"name": "load-t",
+			"code": "load-t",
+			"quantityframes": 211,
+			"onActivityStopped": "Rewind",
+			"onAnimationEnd": "Repeat",
+			"keyframes": [
+				{
+					"frame": 0,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 3,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -22.5 }
+					}
+				},
+				{
+					"frame": 5,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -45.0 }
+					}
+				},
+				{
+					"frame": 8,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -67.5 }
+					}
+				},
+				{
+					"frame": 10,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -90.0 }
+					}
+				},
+				{
+					"frame": 15,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -90.0 }
+					}
+				},
+				{
+					"frame": 20,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -90.0 }
+					}
+				},
+				{
+					"frame": 25,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -90.0 }
+					}
+				},
+				{
+					"frame": 30,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -90.0 }
+					}
+				},
+				{
+					"frame": 40,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -90.0 }
+					}
+				},
+				{
+					"frame": 50,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -90.0 }
+					}
+				},
+				{
+					"frame": 55,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -90.0 }
+					}
+				},
+				{
+					"frame": 60,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -90.0 }
+					}
+				},
+				{
+					"frame": 65,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -90.0 }
+					}
+				},
+				{
+					"frame": 70,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -90.0 }
+					}
+				},
+				{
+					"frame": 75,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -90.0 }
+					}
+				},
+				{
+					"frame": 80,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -90.0 }
+					}
+				},
+				{
+					"frame": 85,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -90.0 }
+					}
+				},
+				{
+					"frame": 90,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -90.0 }
+					}
+				},
+				{
+					"frame": 95,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -90.0 }
+					}
+				},
+				{
+					"frame": 105,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -90.0 }
+					}
+				},
+				{
+					"frame": 110,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -90.0 }
+					}
+				},
+				{
+					"frame": 115,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -90.0 }
+					}
+				},
+				{
+					"frame": 120,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -90.0 }
+					}
+				},
+				{
+					"frame": 130,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -90.0 }
+					}
+				},
+				{
+					"frame": 140,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -90.0 }
+					}
+				},
+				{
+					"frame": 145,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -90.0 }
+					}
+				},
+				{
+					"frame": 155,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -90.0 }
+					}
+				},
+				{
+					"frame": 160,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -90.0 }
+					}
+				},
+				{
+					"frame": 165,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -90.0 }
+					}
+				},
+				{
+					"frame": 175,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -90.0 }
+					}
+				},
+				{
+					"frame": 180,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -90.0 }
+					}
+				},
+				{
+					"frame": 185,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -90.0 }
+					}
+				},
+				{
+					"frame": 186,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -90.0 }
+					}
+				},
+				{
+					"frame": 190,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -90.0 }
+					}
+				},
+				{
+					"frame": 193,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -67.5 }
+					}
+				},
+				{
+					"frame": 195,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -45.0 }
+					}
+				},
+				{
+					"frame": 198,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -22.5 }
+					}
+				},
+				{
+					"frame": 200,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 210,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				}
+			]
+		},
+
+		{
+			"name": "load-0",
+			"code": "load-0",
+			"quantityframes": 191,
+			"onActivityStopped": "Rewind",
+			"onAnimationEnd": "Repeat",
+			"keyframes": [
+				{
+					"frame": 0,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -90.0 }
+					}
+				},
+				{
+					"frame": 5,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -90.0 }
+					}
+				},
+				{
+					"frame": 10,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -90.0 }
+					}
+				},
+				{
+					"frame": 15,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -90.0 }
+					}
+				},
+				{
+					"frame": 25,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -90.0 }
+					}
+				},
+				{
+					"frame": 35,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -90.0 }
+					}
+				},
+				{
+					"frame": 40,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -90.0 }
+					}
+				},
+				{
+					"frame": 45,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -90.0 }
+					}
+				},
+				{
+					"frame": 50,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -90.0 }
+					}
+				},
+				{
+					"frame": 55,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -90.0 }
+					}
+				},
+				{
+					"frame": 60,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -90.0 }
+					}
+				},
+				{
+					"frame": 65,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -90.0 }
+					}
+				},
+				{
+					"frame": 70,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -90.0 }
+					}
+				},
+				{
+					"frame": 75,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -90.0 }
+					}
+				},
+				{
+					"frame": 80,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -90.0 }
+					}
+				},
+				{
+					"frame": 90,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -90.0 }
+					}
+				},
+				{
+					"frame": 95,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -90.0 }
+					}
+				},
+				{
+					"frame": 100,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -90.0 }
+					}
+				},
+				{
+					"frame": 105,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -90.0 }
+					}
+				},
+				{
+					"frame": 115,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -90.0 }
+					}
+				},
+				{
+					"frame": 125,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -90.0 }
+					}
+				},
+				{
+					"frame": 130,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -90.0 }
+					}
+				},
+				{
+					"frame": 140,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -90.0 }
+					}
+				},
+				{
+					"frame": 145,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -90.0 }
+					}
+				},
+				{
+					"frame": 150,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -90.0 }
+					}
+				},
+				{
+					"frame": 160,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -90.0 }
+					}
+				},
+				{
+					"frame": 165,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -90.0 }
+					}
+				},
+				{
+					"frame": 169,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -90.0 }
+					}
+				},
+				{
+					"frame": 170,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -90.0 }
+					}
+				},
+				{
+					"frame": 175,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -90.0 }
+					}
+				},
+				{
+					"frame": 185,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -90.0 }
+					}
+				},
+				{
+					"frame": 190,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -90.0 }
+					}
+				}
+			]
+		},
+
+		{
+			"name": "load-1",
+			"code": "load-1",
+			"quantityframes": 191,
+			"onActivityStopped": "Rewind",
+			"onAnimationEnd": "Repeat",
+			"keyframes": [
+				{
+					"frame": 0,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -135.0 }
+					}
+				},
+				{
+					"frame": 5,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -135.0 }
+					}
+				},
+				{
+					"frame": 10,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -135.0 }
+					}
+				},
+				{
+					"frame": 15,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -135.0 }
+					}
+				},
+				{
+					"frame": 25,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -135.0 }
+					}
+				},
+				{
+					"frame": 35,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -135.0 }
+					}
+				},
+				{
+					"frame": 40,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -135.0 }
+					}
+				},
+				{
+					"frame": 45,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -135.0 }
+					}
+				},
+				{
+					"frame": 50,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -135.0 }
+					}
+				},
+				{
+					"frame": 55,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -135.0 }
+					}
+				},
+				{
+					"frame": 60,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -135.0 }
+					}
+				},
+				{
+					"frame": 65,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -135.0 }
+					}
+				},
+				{
+					"frame": 70,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -135.0 }
+					}
+				},
+				{
+					"frame": 75,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -135.0 }
+					}
+				},
+				{
+					"frame": 80,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -135.0 }
+					}
+				},
+				{
+					"frame": 90,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -135.0 }
+					}
+				},
+				{
+					"frame": 95,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -135.0 }
+					}
+				},
+				{
+					"frame": 100,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -135.0 }
+					}
+				},
+				{
+					"frame": 105,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -135.0 }
+					}
+				},
+				{
+					"frame": 115,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -135.0 }
+					}
+				},
+				{
+					"frame": 125,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -135.0 }
+					}
+				},
+				{
+					"frame": 130,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -135.0 }
+					}
+				},
+				{
+					"frame": 140,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -135.0 }
+					}
+				},
+				{
+					"frame": 145,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -135.0 }
+					}
+				},
+				{
+					"frame": 150,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -135.0 }
+					}
+				},
+				{
+					"frame": 160,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -135.0 }
+					}
+				},
+				{
+					"frame": 165,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -135.0 }
+					}
+				},
+				{
+					"frame": 169,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -135.0 }
+					}
+				},
+				{
+					"frame": 170,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -135.0 }
+					}
+				},
+				{
+					"frame": 175,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -135.0 }
+					}
+				},
+				{
+					"frame": 185,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -135.0 }
+					}
+				},
+				{
+					"frame": 190,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -135.0 }
+					}
+				}
+			]
+		},
+
+		{
+			"name": "load-2",
+			"code": "load-2",
+			"quantityframes": 191,
+			"onActivityStopped": "Rewind",
+			"onAnimationEnd": "Repeat",
+			"keyframes": [
+				{
+					"frame": 0,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -180.0 }
+					}
+				},
+				{
+					"frame": 5,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -180.0 }
+					}
+				},
+				{
+					"frame": 10,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -180.0 }
+					}
+				},
+				{
+					"frame": 15,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -180.0 }
+					}
+				},
+				{
+					"frame": 25,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -180.0 }
+					}
+				},
+				{
+					"frame": 35,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -180.0 }
+					}
+				},
+				{
+					"frame": 40,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -180.0 }
+					}
+				},
+				{
+					"frame": 45,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -180.0 }
+					}
+				},
+				{
+					"frame": 50,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -180.0 }
+					}
+				},
+				{
+					"frame": 55,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -180.0 }
+					}
+				},
+				{
+					"frame": 60,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -180.0 }
+					}
+				},
+				{
+					"frame": 65,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -180.0 }
+					}
+				},
+				{
+					"frame": 70,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -180.0 }
+					}
+				},
+				{
+					"frame": 75,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -180.0 }
+					}
+				},
+				{
+					"frame": 80,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -180.0 }
+					}
+				},
+				{
+					"frame": 90,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -180.0 }
+					}
+				},
+				{
+					"frame": 95,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -180.0 }
+					}
+				},
+				{
+					"frame": 100,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -180.0 }
+					}
+				},
+				{
+					"frame": 105,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -180.0 }
+					}
+				},
+				{
+					"frame": 115,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -180.0 }
+					}
+				},
+				{
+					"frame": 125,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -180.0 }
+					}
+				},
+				{
+					"frame": 130,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -180.0 }
+					}
+				},
+				{
+					"frame": 140,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -180.0 }
+					}
+				},
+				{
+					"frame": 145,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -180.0 }
+					}
+				},
+				{
+					"frame": 150,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -180.0 }
+					}
+				},
+				{
+					"frame": 160,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -180.0 }
+					}
+				},
+				{
+					"frame": 165,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -180.0 }
+					}
+				},
+				{
+					"frame": 169,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -180.0 }
+					}
+				},
+				{
+					"frame": 170,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -180.0 }
+					}
+				},
+				{
+					"frame": 175,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -180.0 }
+					}
+				},
+				{
+					"frame": 185,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -180.0 }
+					}
+				},
+				{
+					"frame": 190,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -180.0 }
+					}
+				}
+			]
+		},
+
+		{
+			"name": "load-3",
+			"code": "load-3",
+			"quantityframes": 191,
+			"onActivityStopped": "Rewind",
+			"onAnimationEnd": "Repeat",
+			"keyframes": [
+				{
+					"frame": 0,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -225.0 }
+					}
+				},
+				{
+					"frame": 5,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -225.0 }
+					}
+				},
+				{
+					"frame": 10,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -225.0 }
+					}
+				},
+				{
+					"frame": 15,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -225.0 }
+					}
+				},
+				{
+					"frame": 25,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -225.0 }
+					}
+				},
+				{
+					"frame": 35,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -225.0 }
+					}
+				},
+				{
+					"frame": 40,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -225.0 }
+					}
+				},
+				{
+					"frame": 45,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -225.0 }
+					}
+				},
+				{
+					"frame": 50,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -225.0 }
+					}
+				},
+				{
+					"frame": 55,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -225.0 }
+					}
+				},
+				{
+					"frame": 60,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -225.0 }
+					}
+				},
+				{
+					"frame": 65,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -225.0 }
+					}
+				},
+				{
+					"frame": 70,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -225.0 }
+					}
+				},
+				{
+					"frame": 75,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -225.0 }
+					}
+				},
+				{
+					"frame": 80,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -225.0 }
+					}
+				},
+				{
+					"frame": 90,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -225.0 }
+					}
+				},
+				{
+					"frame": 95,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -225.0 }
+					}
+				},
+				{
+					"frame": 100,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -225.0 }
+					}
+				},
+				{
+					"frame": 105,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -225.0 }
+					}
+				},
+				{
+					"frame": 115,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -225.0 }
+					}
+				},
+				{
+					"frame": 125,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -225.0 }
+					}
+				},
+				{
+					"frame": 130,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -225.0 }
+					}
+				},
+				{
+					"frame": 140,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -225.0 }
+					}
+				},
+				{
+					"frame": 145,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -225.0 }
+					}
+				},
+				{
+					"frame": 150,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -225.0 }
+					}
+				},
+				{
+					"frame": 160,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -225.0 }
+					}
+				},
+				{
+					"frame": 165,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -225.0 }
+					}
+				},
+				{
+					"frame": 169,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -225.0 }
+					}
+				},
+				{
+					"frame": 170,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -225.0 }
+					}
+				},
+				{
+					"frame": 175,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -225.0 }
+					}
+				},
+				{
+					"frame": 185,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -225.0 }
+					}
+				},
+				{
+					"frame": 190,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -225.0 }
+					}
+				}
+			]
+		},
+
+		{
+			"name": "load-4",
+			"code": "load-4",
+			"quantityframes": 191,
+			"onActivityStopped": "Rewind",
+			"onAnimationEnd": "Repeat",
+			"keyframes": [
+				{
+					"frame": 0,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -270.0 }
+					}
+				},
+				{
+					"frame": 5,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -270.0 }
+					}
+				},
+				{
+					"frame": 10,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -270.0 }
+					}
+				},
+				{
+					"frame": 15,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -270.0 }
+					}
+				},
+				{
+					"frame": 25,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -270.0 }
+					}
+				},
+				{
+					"frame": 35,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -270.0 }
+					}
+				},
+				{
+					"frame": 40,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -270.0 }
+					}
+				},
+				{
+					"frame": 45,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -270.0 }
+					}
+				},
+				{
+					"frame": 50,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -270.0 }
+					}
+				},
+				{
+					"frame": 55,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -270.0 }
+					}
+				},
+				{
+					"frame": 60,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -270.0 }
+					}
+				},
+				{
+					"frame": 65,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -270.0 }
+					}
+				},
+				{
+					"frame": 70,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -270.0 }
+					}
+				},
+				{
+					"frame": 75,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -270.0 }
+					}
+				},
+				{
+					"frame": 80,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -270.0 }
+					}
+				},
+				{
+					"frame": 90,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -270.0 }
+					}
+				},
+				{
+					"frame": 95,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -270.0 }
+					}
+				},
+				{
+					"frame": 100,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -270.0 }
+					}
+				},
+				{
+					"frame": 105,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -270.0 }
+					}
+				},
+				{
+					"frame": 115,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -270.0 }
+					}
+				},
+				{
+					"frame": 125,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -270.0 }
+					}
+				},
+				{
+					"frame": 130,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -270.0 }
+					}
+				},
+				{
+					"frame": 140,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -270.0 }
+					}
+				},
+				{
+					"frame": 145,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -270.0 }
+					}
+				},
+				{
+					"frame": 150,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -270.0 }
+					}
+				},
+				{
+					"frame": 160,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -270.0 }
+					}
+				},
+				{
+					"frame": 165,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -270.0 }
+					}
+				},
+				{
+					"frame": 169,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -270.0 }
+					}
+				},
+				{
+					"frame": 170,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -270.0 }
+					}
+				},
+				{
+					"frame": 175,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -270.0 }
+					}
+				},
+				{
+					"frame": 185,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -270.0 }
+					}
+				},
+				{
+					"frame": 190,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -270.0 }
+					}
+				}
+			]
+		},
+
+		{
+			"name": "load-5",
+			"code": "load-5",
+			"quantityframes": 191,
+			"onActivityStopped": "Rewind",
+			"onAnimationEnd": "Repeat",
+			"keyframes": [
+				{
+					"frame": 0,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -315.0 }
+					}
+				},
+				{
+					"frame": 5,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -315.0 }
+					}
+				},
+				{
+					"frame": 10,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -315.0 }
+					}
+				},
+				{
+					"frame": 15,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -315.0 }
+					}
+				},
+				{
+					"frame": 25,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -315.0 }
+					}
+				},
+				{
+					"frame": 35,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -315.0 }
+					}
+				},
+				{
+					"frame": 40,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -315.0 }
+					}
+				},
+				{
+					"frame": 45,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -315.0 }
+					}
+				},
+				{
+					"frame": 50,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -315.0 }
+					}
+				},
+				{
+					"frame": 55,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -315.0 }
+					}
+				},
+				{
+					"frame": 60,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -315.0 }
+					}
+				},
+				{
+					"frame": 65,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -315.0 }
+					}
+				},
+				{
+					"frame": 70,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -315.0 }
+					}
+				},
+				{
+					"frame": 75,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -315.0 }
+					}
+				},
+				{
+					"frame": 80,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -315.0 }
+					}
+				},
+				{
+					"frame": 90,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -315.0 }
+					}
+				},
+				{
+					"frame": 95,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -315.0 }
+					}
+				},
+				{
+					"frame": 100,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -315.0 }
+					}
+				},
+				{
+					"frame": 105,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -315.0 }
+					}
+				},
+				{
+					"frame": 115,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -315.0 }
+					}
+				},
+				{
+					"frame": 125,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -315.0 }
+					}
+				},
+				{
+					"frame": 130,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -315.0 }
+					}
+				},
+				{
+					"frame": 140,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -315.0 }
+					}
+				},
+				{
+					"frame": 145,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -315.0 }
+					}
+				},
+				{
+					"frame": 150,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -315.0 }
+					}
+				},
+				{
+					"frame": 160,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -315.0 }
+					}
+				},
+				{
+					"frame": 165,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -315.0 }
+					}
+				},
+				{
+					"frame": 169,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -315.0 }
+					}
+				},
+				{
+					"frame": 170,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -315.0 }
+					}
+				},
+				{
+					"frame": 175,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -315.0 }
+					}
+				},
+				{
+					"frame": 185,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -315.0 }
+					}
+				},
+				{
+					"frame": 190,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -315.0 }
+					}
+				}
+			]
+		},
+
+		{
+			"name": "load-6",
+			"code": "load-6",
+			"quantityframes": 191,
+			"onActivityStopped": "Rewind",
+			"onAnimationEnd": "Repeat",
+			"keyframes": [
+				{
+					"frame": 0,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -360.0 }
+					}
+				},
+				{
+					"frame": 5,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -360.0 }
+					}
+				},
+				{
+					"frame": 10,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -360.0 }
+					}
+				},
+				{
+					"frame": 15,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -360.0 }
+					}
+				},
+				{
+					"frame": 25,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -360.0 }
+					}
+				},
+				{
+					"frame": 35,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -360.0 }
+					}
+				},
+				{
+					"frame": 40,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -360.0 }
+					}
+				},
+				{
+					"frame": 45,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -360.0 }
+					}
+				},
+				{
+					"frame": 50,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -360.0 }
+					}
+				},
+				{
+					"frame": 55,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -360.0 }
+					}
+				},
+				{
+					"frame": 60,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -360.0 }
+					}
+				},
+				{
+					"frame": 65,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -360.0 }
+					}
+				},
+				{
+					"frame": 70,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -360.0 }
+					}
+				},
+				{
+					"frame": 75,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -360.0 }
+					}
+				},
+				{
+					"frame": 80,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -360.0 }
+					}
+				},
+				{
+					"frame": 90,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -360.0 }
+					}
+				},
+				{
+					"frame": 95,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -360.0 }
+					}
+				},
+				{
+					"frame": 100,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -360.0 }
+					}
+				},
+				{
+					"frame": 105,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -360.0 }
+					}
+				},
+				{
+					"frame": 115,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -360.0 }
+					}
+				},
+				{
+					"frame": 125,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -360.0 }
+					}
+				},
+				{
+					"frame": 130,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -360.0 }
+					}
+				},
+				{
+					"frame": 140,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -360.0 }
+					}
+				},
+				{
+					"frame": 145,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -360.0 }
+					}
+				},
+				{
+					"frame": 150,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -360.0 }
+					}
+				},
+				{
+					"frame": 160,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -360.0 }
+					}
+				},
+				{
+					"frame": 165,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -360.0 }
+					}
+				},
+				{
+					"frame": 169,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -360.0 }
+					}
+				},
+				{
+					"frame": 170,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -360.0 }
+					}
+				},
+				{
+					"frame": 175,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -360.0 }
+					}
+				},
+				{
+					"frame": 185,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -360.0 }
+					}
+				},
+				{
+					"frame": 190,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -360.0 }
+					}
+				}
+			]
+		},
+
+		{
+			"name": "load-7",
+			"code": "load-7",
+			"quantityframes": 191,
+			"onActivityStopped": "Rewind",
+			"onAnimationEnd": "Repeat",
+			"keyframes": [
+				{
+					"frame": 0,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -405.0 }
+					}
+				},
+				{
+					"frame": 5,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -405.0 }
+					}
+				},
+				{
+					"frame": 10,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -405.0 }
+					}
+				},
+				{
+					"frame": 15,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -405.0 }
+					}
+				},
+				{
+					"frame": 25,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -405.0 }
+					}
+				},
+				{
+					"frame": 35,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -405.0 }
+					}
+				},
+				{
+					"frame": 40,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -405.0 }
+					}
+				},
+				{
+					"frame": 45,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -405.0 }
+					}
+				},
+				{
+					"frame": 50,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -405.0 }
+					}
+				},
+				{
+					"frame": 55,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -405.0 }
+					}
+				},
+				{
+					"frame": 60,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -405.0 }
+					}
+				},
+				{
+					"frame": 65,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -405.0 }
+					}
+				},
+				{
+					"frame": 70,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -405.0 }
+					}
+				},
+				{
+					"frame": 75,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -405.0 }
+					}
+				},
+				{
+					"frame": 80,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -405.0 }
+					}
+				},
+				{
+					"frame": 90,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -405.0 }
+					}
+				},
+				{
+					"frame": 95,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -405.0 }
+					}
+				},
+				{
+					"frame": 100,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -405.0 }
+					}
+				},
+				{
+					"frame": 105,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -405.0 }
+					}
+				},
+				{
+					"frame": 115,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -405.0 }
+					}
+				},
+				{
+					"frame": 125,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -405.0 }
+					}
+				},
+				{
+					"frame": 130,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -405.0 }
+					}
+				},
+				{
+					"frame": 140,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -405.0 }
+					}
+				},
+				{
+					"frame": 145,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -405.0 }
+					}
+				},
+				{
+					"frame": 150,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -405.0 }
+					}
+				},
+				{
+					"frame": 160,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -405.0 }
+					}
+				},
+				{
+					"frame": 165,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -405.0 }
+					}
+				},
+				{
+					"frame": 169,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -405.0 }
+					}
+				},
+				{
+					"frame": 170,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -405.0 }
+					}
+				},
+				{
+					"frame": 175,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -405.0 }
+					}
+				},
+				{
+					"frame": 185,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -405.0 }
+					}
+				},
+				{
+					"frame": 190,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -405.0 }
+					}
+				}
+			]
+		},
+
+		{
+			"name": "index-cylinder-1",
+			"code": "index-cylinder-1",
+			"quantityframes": 6,
+			"onActivityStopped": "Rewind",
+			"onAnimationEnd": "Repeat",
+			"keyframes": [
+				{
+					"frame": 0,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 3,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 22.5 }
+					}
+				},
+				{
+					"frame": 5,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 45.0 }
+					}
+				}
+			]
+		},
+
+		{
+			"name": "index-cylinder-forward-0",
+			"code": "index-cylinder-forward-0",
+			"quantityframes": 6,
+			"onActivityStopped": "Rewind",
+			"onAnimationEnd": "Repeat",
+			"keyframes": [
+				{
+					"frame": 0,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 3,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 22.5 }
+					}
+				},
+				{
+					"frame": 5,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 45.0 }
+					}
+				}
+			]
+		},
+
+		{
+			"name": "index-cylinder-forward-1",
+			"code": "index-cylinder-forward-1",
+			"quantityframes": 6,
+			"onActivityStopped": "Rewind",
+			"onAnimationEnd": "Repeat",
+			"keyframes": [
+				{
+					"frame": 0,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -45.0 }
+					}
+				},
+				{
+					"frame": 3,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -22.5 }
+					}
+				},
+				{
+					"frame": 5,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				}
+			]
+		},
+
+		{
+			"name": "index-cylinder-forward-2",
+			"code": "index-cylinder-forward-2",
+			"quantityframes": 6,
+			"onActivityStopped": "Rewind",
+			"onAnimationEnd": "Repeat",
+			"keyframes": [
+				{
+					"frame": 0,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -90.0 }
+					}
+				},
+				{
+					"frame": 3,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -67.5 }
+					}
+				},
+				{
+					"frame": 5,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -45.0 }
+					}
+				}
+			]
+		},
+
+		{
+			"name": "index-cylinder-forward-3",
+			"code": "index-cylinder-forward-3",
+			"quantityframes": 6,
+			"onActivityStopped": "Rewind",
+			"onAnimationEnd": "Repeat",
+			"keyframes": [
+				{
+					"frame": 0,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -135.0 }
+					}
+				},
+				{
+					"frame": 3,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -112.5 }
+					}
+				},
+				{
+					"frame": 5,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -90.0 }
+					}
+				}
+			]
+		},
+
+		{
+			"name": "index-cylinder-forward-4",
+			"code": "index-cylinder-forward-4",
+			"quantityframes": 6,
+			"onActivityStopped": "Rewind",
+			"onAnimationEnd": "Repeat",
+			"keyframes": [
+				{
+					"frame": 0,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -180.0 }
+					}
+				},
+				{
+					"frame": 3,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -157.5 }
+					}
+				},
+				{
+					"frame": 5,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -135.0 }
+					}
+				}
+			]
+		},
+
+		{
+			"name": "index-cylinder-forward-5",
+			"code": "index-cylinder-forward-5",
+			"quantityframes": 6,
+			"onActivityStopped": "Rewind",
+			"onAnimationEnd": "Repeat",
+			"keyframes": [
+				{
+					"frame": 0,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -225.0 }
+					}
+				},
+				{
+					"frame": 3,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -202.5 }
+					}
+				},
+				{
+					"frame": 5,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -180.0 }
+					}
+				}
+			]
+		},
+
+		{
+			"name": "index-cylinder-forward-6",
+			"code": "index-cylinder-forward-6",
+			"quantityframes": 6,
+			"onActivityStopped": "Rewind",
+			"onAnimationEnd": "Repeat",
+			"keyframes": [
+				{
+					"frame": 0,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -270.0 }
+					}
+				},
+				{
+					"frame": 3,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -247.5 }
+					}
+				},
+				{
+					"frame": 5,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -225.0 }
+					}
+				}
+			]
+		},
+
+		{
+			"name": "index-cylinder-forward-7",
+			"code": "index-cylinder-forward-7",
+			"quantityframes": 6,
+			"onActivityStopped": "Rewind",
+			"onAnimationEnd": "Repeat",
+			"keyframes": [
+				{
+					"frame": 0,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -315.0 }
+					}
+				},
+				{
+					"frame": 3,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -292.5 }
+					}
+				},
+				{
+					"frame": 5,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -270.0 }
+					}
+				}
+			]
+		},
+
+		{
+			"name": "index-cylinder-forward-8",
+			"code": "index-cylinder-forward-8",
+			"quantityframes": 6,
+			"onActivityStopped": "Rewind",
+			"onAnimationEnd": "Repeat",
+			"keyframes": [
+				{
+					"frame": 0,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -360.0 }
+					}
+				},
+				{
+					"frame": 3,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -337.5 }
+					}
+				},
+				{
+					"frame": 5,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -315.0 }
+					}
+				}
+			]
+		},
+
+		{
+			"name": "index-cylinder-back-0",
+			"code": "index-cylinder-back-0",
+			"quantityframes": 6,
+			"onActivityStopped": "Rewind",
+			"onAnimationEnd": "Repeat",
+			"keyframes": [
+				{
+					"frame": 0,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 45.0 }
+					}
+				},
+				{
+					"frame": 3,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 22.5 }
+					}
+				},
+				{
+					"frame": 5,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				}
+			]
+		},
+
+		{
+			"name": "index-cylinder-back-1",
+			"code": "index-cylinder-back-1",
+			"quantityframes": 6,
+			"onActivityStopped": "Rewind",
+			"onAnimationEnd": "Repeat",
+			"keyframes": [
+				{
+					"frame": 0,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 3,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -22.5 }
+					}
+				},
+				{
+					"frame": 5,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -45.0 }
+					}
+				}
+			]
+		},
+
+		{
+			"name": "index-cylinder-back-2",
+			"code": "index-cylinder-back-2",
+			"quantityframes": 6,
+			"onActivityStopped": "Rewind",
+			"onAnimationEnd": "Repeat",
+			"keyframes": [
+				{
+					"frame": 0,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -45.0 }
+					}
+				},
+				{
+					"frame": 3,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -67.5 }
+					}
+				},
+				{
+					"frame": 5,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -90.0 }
+					}
+				}
+			]
+		},
+
+		{
+			"name": "index-cylinder-back-3",
+			"code": "index-cylinder-back-3",
+			"quantityframes": 6,
+			"onActivityStopped": "Rewind",
+			"onAnimationEnd": "Repeat",
+			"keyframes": [
+				{
+					"frame": 0,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -90.0 }
+					}
+				},
+				{
+					"frame": 3,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -112.5 }
+					}
+				},
+				{
+					"frame": 5,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -135.0 }
+					}
+				}
+			]
+		},
+
+		{
+			"name": "index-cylinder-back-4",
+			"code": "index-cylinder-back-4",
+			"quantityframes": 6,
+			"onActivityStopped": "Rewind",
+			"onAnimationEnd": "Repeat",
+			"keyframes": [
+				{
+					"frame": 0,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -135.0 }
+					}
+				},
+				{
+					"frame": 3,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -157.5 }
+					}
+				},
+				{
+					"frame": 5,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -180.0 }
+					}
+				}
+			]
+		},
+
+		{
+			"name": "index-cylinder-back-5",
+			"code": "index-cylinder-back-5",
+			"quantityframes": 6,
+			"onActivityStopped": "Rewind",
+			"onAnimationEnd": "Repeat",
+			"keyframes": [
+				{
+					"frame": 0,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -180.0 }
+					}
+				},
+				{
+					"frame": 3,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -202.5 }
+					}
+				},
+				{
+					"frame": 5,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -225.0 }
+					}
+				}
+			]
+		},
+
+		{
+			"name": "index-cylinder-back-6",
+			"code": "index-cylinder-back-6",
+			"quantityframes": 6,
+			"onActivityStopped": "Rewind",
+			"onAnimationEnd": "Repeat",
+			"keyframes": [
+				{
+					"frame": 0,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -225.0 }
+					}
+				},
+				{
+					"frame": 3,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -247.5 }
+					}
+				},
+				{
+					"frame": 5,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -270.0 }
+					}
+				}
+			]
+		},
+
+		{
+			"name": "index-cylinder-back-7",
+			"code": "index-cylinder-back-7",
+			"quantityframes": 6,
+			"onActivityStopped": "Rewind",
+			"onAnimationEnd": "Repeat",
+			"keyframes": [
+				{
+					"frame": 0,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -270.0 }
+					}
+				},
+				{
+					"frame": 3,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -292.5 }
+					}
+				},
+				{
+					"frame": 5,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -315.0 }
+					}
+				}
+			]
+		},
+
+		{
+			"name": "index-cylinder-back-8",
+			"code": "index-cylinder-back-8",
+			"quantityframes": 6,
+			"onActivityStopped": "Rewind",
+			"onAnimationEnd": "Repeat",
+			"keyframes": [
+				{
+					"frame": 0,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -315.0 }
+					}
+				},
+				{
+					"frame": 3,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -337.5 }
+					}
+				},
+				{
+					"frame": 5,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -360.0 }
+					}
+				}
+			]
+		},
+
+		{
+			"name": "index-start-0",
+			"code": "index-start-0",
+			"quantityframes": 11,
+			"onActivityStopped": "Rewind",
+			"onAnimationEnd": "Repeat",
+			"keyframes": [
+				{
+					"frame": 0,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 3,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -22.5 }
+					}
+				},
+				{
+					"frame": 5,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -45.0 }
+					}
+				},
+				{
+					"frame": 8,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -67.5 }
+					}
+				},
+				{
+					"frame": 10,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -90.0 }
+					}
+				}
+			]
+		},
+
+		{
+			"name": "index-finish-2",
+			"code": "index-finish-2",
+			"quantityframes": 11,
+			"onActivityStopped": "Rewind",
+			"onAnimationEnd": "Repeat",
+			"keyframes": [
+				{
+					"frame": 0,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -135.0 }
+					}
+				},
+				{
+					"frame": 3,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -112.5 }
+					}
+				},
+				{
+					"frame": 5,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -90.0 }
+					}
+				},
+				{
+					"frame": 8,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -67.5 }
+					}
+				},
+				{
+					"frame": 10,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -45.0 }
+					}
+				}
+			]
+		},
+
+		{
+			"name": "index-continue-1",
+			"code": "index-continue-1",
+			"quantityframes": 6,
+			"onActivityStopped": "Rewind",
+			"onAnimationEnd": "Repeat",
+			"keyframes": [
+				{
+					"frame": 0,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -90.0 }
+					}
+				},
+				{
+					"frame": 3,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -112.5 }
+					}
+				},
+				{
+					"frame": 5,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -135.0 }
+					}
+				}
+			]
+		},
+
+		{
+			"name": "index-start-1",
+			"code": "index-start-1",
+			"quantityframes": 16,
+			"onActivityStopped": "Rewind",
+			"onAnimationEnd": "Repeat",
+			"keyframes": [
+				{
+					"frame": 0,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 3,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -22.5 }
+					}
+				},
+				{
+					"frame": 5,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -45.0 }
+					}
+				},
+				{
+					"frame": 8,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -67.5 }
+					}
+				},
+				{
+					"frame": 10,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -90.0 }
+					}
+				},
+				{
+					"frame": 13,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -112.5 }
+					}
+				},
+				{
+					"frame": 15,
+					"elements": {
+						"Cylinder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -135.0 }
+					}
+				}
+			]
+		}
+	]
+}

@@ -2,11 +2,11 @@
   {
     "ingredientPattern": "WLB,PWR",
     "ingredients": {
-      "B": {"type": "item", "code": "maltiezfirearms:barrel-carbine-steel", "quantity": 1},
+      "B": {"type": "item", "code": "maltiezfirearms:part-barrel-medium-large-steel", "quantity": 1},
       "P": {"type": "item", "code": "game:metalplate-brass", "quantity": 1},
-      "L": {"type": "item", "code": "maltiezfirearms:lock-flintlock-steel", "quantity": 1},
+      "L": {"type": "item", "code": "maltiezfirearms:part-lock-flintlock-steel", "quantity": 1},
       "W": {"type": "item", "code": "game:plank-*", "quantity": 1},
-      "R": {"type": "item", "code": "maltiezfirearms:ramrod-carbine-steel", "quantity": 1}
+      "R": {"type": "item", "code": "maltiezfirearms:part-ramrod-medium-steel", "quantity": 1}
     },
     "width": 3,
     "height": 2,

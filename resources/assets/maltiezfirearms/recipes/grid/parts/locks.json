@@ -10,7 +10,7 @@
     "width": 3,
     "height": 2,
     "requiresTrait": "tinkerer",
-    "output": {"type": "item", "code": "maltiezfirearms:lock-wheellock-tinbronze"}
+    "output": {"type": "item", "code": "maltiezfirearms:part-lock-wheellock-tinbronze"}
   },
   {
     "ingredientPattern": "_F_,NGP",
@@ -23,7 +23,7 @@
     "width": 3,
     "height": 2,
     "requiresTrait": "tinkerer",
-    "output": {"type": "item", "code": "maltiezfirearms:lock-wheellock-bismuthbronze"}
+    "output": {"type": "item", "code": "maltiezfirearms:part-lock-wheellock-bismuthbronze"}
   },
   {
     "ingredientPattern": "_F_,NGP",
@@ -36,7 +36,7 @@
     "width": 3,
     "height": 2,
     "requiresTrait": "tinkerer",
-    "output": {"type": "item", "code": "maltiezfirearms:lock-wheellock-blackbronze"}
+    "output": {"type": "item", "code": "maltiezfirearms:part-lock-wheellock-blackbronze"}
   },
   {
     "ingredientPattern": "INB",
@@ -47,7 +47,7 @@
     },
     "width": 3,
     "height": 1,
-    "output": {"type": "item", "code": "maltiezfirearms:lock-matchlock-iron"}
+    "output": {"type": "item", "code": "maltiezfirearms:part-lock-matchlock-iron"}
   },
   {
     "ingredientPattern": "INB",
@@ -58,7 +58,7 @@
     },
     "width": 3,
     "height": 1,
-    "output": {"type": "item", "code": "maltiezfirearms:lock-matchlock-meteoriciron"}
+    "output": {"type": "item", "code": "maltiezfirearms:part-lock-matchlock-meteoriciron"}
   },
   {
     "ingredientPattern": "ISF,CB_",
@@ -71,7 +71,7 @@
     },
     "width": 3,
     "height": 2,
-    "output": {"type": "item", "code": "maltiezfirearms:lock-flintlock-steel"}
+    "output": {"type": "item", "code": "maltiezfirearms:part-lock-flintlock-steel"}
   },
   {
     "ingredientPattern": "ISF,_B_",
@@ -84,6 +84,6 @@
     "width": 3,
     "height": 2,
     "requiresTrait": "tinkerer",
-    "output": {"type": "item", "code": "maltiezfirearms:lock-flintlock-steel"}
+    "output": {"type": "item", "code": "maltiezfirearms:part-lock-flintlock-steel"}
   }
 ]

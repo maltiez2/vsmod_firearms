@@ -1,0 +1,68 @@
+[
+  {
+    "ingredientPattern": "ACB",
+    "ingredients": {
+      "A": {"type": "item", "code": "maltiezfirearms:part-barrel-segment-small-*", "name": "metal", "allowedVariants": ["copper", "tinbronze", "bismuthbronze", "blackbronze", "iron", "meteoriciron", "steel", "brass"]},
+      "B": {"type": "item", "code": "maltiezfirearms:part-barrel-segment-small-*", "name": "metal", "allowedVariants": ["copper", "tinbronze", "bismuthbronze", "blackbronze", "iron", "meteoriciron", "steel", "brass"]},
+      "C": {"type": "item", "code": "game:powder-borax", "quantity": 2}
+    },
+    "width": 3,
+    "height": 1,
+    "output": {"type": "item", "code": "maltiezfirearms:part-barrel-short-small-{metal}"}
+  },
+  {
+    "ingredientPattern": "ACB",
+    "ingredients": {
+      "A": {"type": "item", "code": "maltiezfirearms:part-barrel-short-small-*", "name": "metal", "allowedVariants": ["copper", "tinbronze", "bismuthbronze", "blackbronze", "iron", "meteoriciron", "steel", "brass"]},
+      "B": {"type": "item", "code": "maltiezfirearms:part-barrel-segment-small-*", "name": "metal", "allowedVariants": ["copper", "tinbronze", "bismuthbronze", "blackbronze", "iron", "meteoriciron", "steel", "brass"]},
+      "C": {"type": "item", "code": "game:powder-borax", "quantity": 2}
+    },
+    "width": 3,
+    "height": 1,
+    "output": {"type": "item", "code": "maltiezfirearms:part-barrel-medium-small-{metal}"}
+  },
+  {
+    "ingredientPattern": "ACB",
+    "ingredients": {
+      "A": {"type": "item", "code": "maltiezfirearms:part-barrel-medium-small-*", "name": "metal", "allowedVariants": ["copper", "tinbronze", "bismuthbronze", "blackbronze", "iron", "meteoriciron", "steel", "brass"]},
+      "B": {"type": "item", "code": "maltiezfirearms:part-barrel-segment-small-*", "name": "metal", "allowedVariants": ["copper", "tinbronze", "bismuthbronze", "blackbronze", "iron", "meteoriciron", "steel", "brass"]},
+      "C": {"type": "item", "code": "game:powder-borax", "quantity": 2}
+    },
+    "width": 3,
+    "height": 1,
+    "output": {"type": "item", "code": "maltiezfirearms:part-barrel-long-small-{metal}"}
+  },
+  {
+    "ingredientPattern": "ACB",
+    "ingredients": {
+      "A": {"type": "item", "code": "maltiezfirearms:part-barrel-segment-large-*", "name": "metal", "allowedVariants": ["copper", "tinbronze", "bismuthbronze", "blackbronze", "iron", "meteoriciron", "steel", "brass"]},
+      "B": {"type": "item", "code": "maltiezfirearms:part-barrel-segment-large-*", "name": "metal", "allowedVariants": ["copper", "tinbronze", "bismuthbronze", "blackbronze", "iron", "meteoriciron", "steel", "brass"]},
+      "C": {"type": "item", "code": "game:powder-borax", "quantity": 2}
+    },
+    "width": 3,
+    "height": 1,
+    "output": {"type": "item", "code": "maltiezfirearms:part-barrel-short-large-{metal}"}
+  },
+  {
+    "ingredientPattern": "ACB",
+    "ingredients": {
+      "A": {"type": "item", "code": "maltiezfirearms:part-barrel-short-large-*", "name": "metal", "allowedVariants": ["copper", "tinbronze", "bismuthbronze", "blackbronze", "iron", "meteoriciron", "steel", "brass"]},
+      "B": {"type": "item", "code": "maltiezfirearms:part-barrel-segment-large-*", "name": "metal", "allowedVariants": ["copper", "tinbronze", "bismuthbronze", "blackbronze", "iron", "meteoriciron", "steel", "brass"]},
+      "C": {"type": "item", "code": "game:powder-borax", "quantity": 2}
+    },
+    "width": 3,
+    "height": 1,
+    "output": {"type": "item", "code": "maltiezfirearms:part-barrel-medium-large-{metal}"}
+  },
+  {
+    "ingredientPattern": "ACB",
+    "ingredients": {
+      "A": {"type": "item", "code": "maltiezfirearms:part-barrel-medium-large-*", "name": "metal", "allowedVariants": ["copper", "tinbronze", "bismuthbronze", "blackbronze", "iron", "meteoriciron", "steel", "brass"]},
+      "B": {"type": "item", "code": "maltiezfirearms:part-barrel-segment-large-*", "name": "metal", "allowedVariants": ["copper", "tinbronze", "bismuthbronze", "blackbronze", "iron", "meteoriciron", "steel", "brass"]},
+      "C": {"type": "item", "code": "game:powder-borax", "quantity": 2}
+    },
+    "width": 3,
+    "height": 1,
+    "output": {"type": "item", "code": "maltiezfirearms:part-barrel-long-large-{metal}"}
+  }
+]

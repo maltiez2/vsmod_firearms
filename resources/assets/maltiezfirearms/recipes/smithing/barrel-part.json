@@ -1,0 +1,67 @@
+[
+  {
+    "ingredient": {"type": "item", "code": "game:ingot-*", "name": "metal", "allowedVariants": ["copper", "tinbronze", "bismuthbronze", "blackbronze", "iron", "meteoriciron", "steel", "brass"]},
+    "pattern": [
+      [
+        "______",
+        "######",
+        "######",
+        "######",
+        "______"
+      ],
+      [
+        "______",
+        "######",
+        "______",
+        "######",
+        "______"
+      ],
+      [
+        "______",
+        "######",
+        "######",
+        "######",
+        "______"
+      ]
+    ],
+    "output": {"type": "item", "code": "maltiezfirearms:barrel-segment-small-{metal}"}
+  },
+  {
+    "ingredient": {"type": "item", "code": "game:ingot-*", "name": "metal", "allowedVariants": ["copper", "tinbronze", "bismuthbronze", "blackbronze", "iron", "meteoriciron", "steel", "brass"]},
+    "pattern": [
+      [
+        "_______",
+        "#######",
+        "#######",
+        "#######",
+        "#######",
+        "_______"
+      ],
+      [
+        "_______",
+        "#######",
+        "_______",
+        "_______",
+        "#######",
+        "_______"
+      ],
+      [
+        "_______",
+        "#######",
+        "_______",
+        "_______",
+        "#######",
+        "_______"
+      ],
+      [
+        "_______",
+        "#######",
+        "#######",
+        "#######",
+        "#######",
+        "_______"
+      ]
+    ],
+    "output": {"type": "item", "code": "maltiezfirearms:barrel-segment-large-{metal}"}
+  }
+]

@@ -10,7 +10,7 @@
       "properties": {"layout": "Quadrants", "placeRemoveSound": "sounds/player/build", "collisionBox": {"x1": 0, "y1": 0, "z1": 0, "x2": 1, "y2": 0.1, "z2": 1}}
     }
   ],
-  "creativeinventoryByType": {"*": {"general": ["*"], "maltiezfirearms": ["*"]}},
+  "creativeinventoryByType": {"*": {"general": ["*"], "maltiezfirearms-parts": ["*"]}},
   "attributes": {
     "groundStorageTransform": {"rotation": {"x": 0, "y": -28, "z": 0}, "origin": {"x": 0.5, "y": 0, "z": 0.5}, "scale": 0.5},
     "handbook": {"groupBy": ["flaskfurniture-*"]}

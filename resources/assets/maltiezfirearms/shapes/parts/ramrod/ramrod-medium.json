@@ -1,0 +1,55 @@
+{
+	"editor": {
+		"collapsedPaths": "Root/Pistol/Stock,Root/Pistol/Barrel,Root/Pistol/Wheellock/Plate,Root/Pistol/Ramrod,Root/Pistol/Trigger_assembly/Guard_plate,Root/Arquebus_origin/Stock,Root/Pistol/Wheellock/Flint_arm,Root/Arquebus_origin/Barrel,Root/Pistol/Trigger_assembly,Root/Pistol/Lever_origin/Wheel_charging_lever,Root/Pistol/Flask_origin/Flask_origin_inner,Root/Pistol/Patch,Root/Pistol/Barrel/Barrel_top4,Root/Pistol/Wheellock,Root/Pistol/Barrel/Barrel_top3,Root/Pistol/Barrel/Barrel_top2,Root/Pistol/Flask_origin/Flask/Bottom_plate,Root/Pistol/Barrel/Barrel_top,Root/Arquebus_origin/Ramrod",
+		"allAngles": true,
+		"entityTextureMode": false
+	},
+	"textureWidth": 16,
+	"textureHeight": 16,
+	"textureSizes": {
+	},
+	"textures": {
+		"brass": "block/metal/plate/brass",
+		"metal": "block/metal/plate/iron"
+	},
+	"elements": [
+		{
+			"name": "Ramrod",
+			"from": [ 0.0, 0.0, 0.0 ],
+			"to": [ 0.0, 0.0, 0.0 ],
+			"faces": {
+			},
+			"children": [
+				{
+					"name": "Ramrod_shaft",
+					"from": [ 0.0, 0.0, -4.0 ],
+					"to": [ 0.3, 0.3, 8.0 ],
+					"rotationOrigin": [ 0.0, 0.0, -4.0 ],
+					"faces": {
+						"north": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+						"east": { "texture": "#metal", "uv": [ 0.0, 0.0, 12.0, 0.5 ] },
+						"south": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+						"west": { "texture": "#metal", "uv": [ 0.0, 0.0, 12.0, 0.5 ] },
+						"up": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.5, 12.0 ] },
+						"down": { "texture": "#metal", "uv": [ 0.0, 0.0, 0.5, 12.0 ] }
+					},
+					"children": [
+						{
+							"name": "Ramrod_cap",
+							"from": [ -0.05, -0.05, -0.4 ],
+							"to": [ 0.35, 0.35, 0.0 ],
+							"rotationOrigin": [ 0.0, 0.1, -0.5 ],
+							"faces": {
+								"north": { "texture": "#brass", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+								"east": { "texture": "#brass", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+								"south": { "texture": "#brass", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+								"west": { "texture": "#brass", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+								"up": { "texture": "#brass", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+								"down": { "texture": "#brass", "uv": [ 0.0, 0.0, 0.5, 0.5 ] }
+							}
+						}
+					]
+				}
+			]
+		}
+	]}
