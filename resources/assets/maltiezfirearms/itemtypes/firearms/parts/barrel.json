@@ -22,9 +22,7 @@
       "*-carbine-*": {"translation": {"x": 0.5, "y": -0.12, "z": 0.76}, "rotation": {"x": 98, "y": 0, "z": 0}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 0.8},
       "*-musket-*": {"translation": {"x": 0.5, "y": -0.19, "z": 0.66}, "rotation": {"x": 99, "y": 0, "z": 0}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 0.8}
     },
-    "handbook": {
-      "groupBy": ["barrel-{weapon}-*"]
-    }
+    "handbook": {"groupBy": ["barrel-{weapon}-*"]}
   },
   "behaviors": [
     {
