@@ -34,7 +34,7 @@
           "AdditionalDurabilityCost": 0,
           "CollisionRadius": 0.04,
           "PenetrationDistance": 2,
-          "DamageStatsByType": {"*-lead": {"DamageType": "BluntAttack", "Damage": 38}, "*-copper": {"DamageType": "BluntAttack", "Damage": 26}},
+          "DamageStatsByType": {"*-lead": {"DamageType": "BluntAttack", "Damage": 32}, "*-copper": {"DamageType": "BluntAttack", "Damage": 24}},
           "SpeedThreshold": 0.3,
           "Knockback": 0.1,
           "EntityCode": "maltiezfirearms:slug-{material}",

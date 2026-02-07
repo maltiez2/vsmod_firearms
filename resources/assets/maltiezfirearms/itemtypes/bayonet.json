@@ -13,9 +13,7 @@
     "knifeHitBlockAnimation": "knifecut",
     "knifeHitEntityAnimation": "knifestab",
     "musketRenderVariantByType": {"*-plug-plain": 2, "*-plug-decorated": 3, "*-socket-plain": 4, "*-socket-decorated": 5},
-    "handbook": {
-      "groupBy": ["bayonet-*"]
-    }
+    "handbook": {"groupBy": ["bayonet-*"]}
   },
   "behaviors": [
     {

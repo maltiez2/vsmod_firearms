@@ -23,6 +23,7 @@ public class FirearmsModSystem : ModSystem
         api.RegisterItemClass("Firearms:PowderFlask", typeof(PowderFlask));
         api.RegisterItemClass("Firearms:Scoped", typeof(ScopedItem));
         api.RegisterItemClass("Firearms:Revolver", typeof(RevolverItem));
+        api.RegisterItemClass("Firearms:Pistol", typeof(PistolItem));
 
         api.RegisterCollectibleBehaviorClass("Firearms:Wettable", typeof(Wettable));
         api.RegisterCollectibleBehaviorClass("Firearms:Igniteable", typeof(Igniteable));

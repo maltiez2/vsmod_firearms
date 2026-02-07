@@ -32,7 +32,14 @@ public class Igniteable : CollectibleBehavior
         {
             if (byEntity is EntityPlayer player)
             {
-                ReplaceStack(slot, player);
+                try
+                {
+                    ReplaceStack(slot, player);
+                }
+                catch
+                {
+                    return;
+                }
             }
 
             handling = EnumHandling.Handled;

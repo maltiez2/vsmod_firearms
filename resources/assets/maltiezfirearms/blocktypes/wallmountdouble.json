@@ -9,9 +9,7 @@
     "inventorySize": 2,
     "inventoryTransformAttribute": "inWallmountTransform",
     "rotateByType": {"*-north": {"y": 0}, "*-east": {"y": 270}, "*-west": {"y": 90}, "*-south": {"y": 180}},
-    "handbook": {
-      "groupBy": ["wallmountdouble-*"]
-    }
+    "handbook": {"groupBy": ["wallmountdouble-*"]}
   },
   "class": "CombatOverhaul:GenericDisplayBlock",
   "entityClass": "CombatOverhaul:GenericDisplayBlockEntity",

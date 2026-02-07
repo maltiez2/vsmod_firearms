@@ -1,6 +1,7 @@
 ﻿using Cairo;
 using CombatOverhaul;
 using CombatOverhaul.Animations;
+using CombatOverhaul.Armor;
 using CombatOverhaul.Implementations;
 using CombatOverhaul.Inputs;
 using CombatOverhaul.RangedSystems;
@@ -26,7 +27,8 @@ public enum MuzzleloaderState
     Cocking,
     Cocked,
     Aim,
-    Shoot
+    Shoot,
+    Cooldown
 }
 
 public enum MuzzleloaderLoadingStage
@@ -41,6 +43,7 @@ public class MuzzleloaderStats : WeaponStats
     public string ReadyAnimationOffhand { get; set; } = "";
     public string IdleAnimationOffhand { get; set; } = "";
 
+    public string TakeOutAnimation { get; set; } = "";
     public string[] LoadAnimation { get; set; } = Array.Empty<string>();
     public string PrimeAnimation { get; set; } = "";
     public string[] CockingAnimation { get; set; } = Array.Empty<string>();
@@ -65,7 +68,7 @@ public class MuzzleloaderStats : WeaponStats
     public float BulletDamageMultiplier { get; set; } = 1;
     public float BulletDamageStrength { get; set; } = 1;
     public float BulletVelocity { get; set; } = 1;
-    public string BulletWildcard { get; set; } = "*bullet-*";
+    public string BulletWildcard { get; set; } = "*:bullet-*";
     public float Zeroing { get; set; } = 0;
 
     public int MagazineSize { get; set; } = 1;
@@ -124,13 +127,14 @@ public class MuzzleloaderClient : RangeWeaponClient
         AimingSystem.AimingState = WeaponAimingState.None;
 
         MuzzleloaderLoadingStage stage = GetLoadingStage<MuzzleloaderLoadingStage>(slot);
-        state = stage switch
+        MuzzleloaderState weaponState = stage switch
         {
-            MuzzleloaderLoadingStage.Unloaded => (int)MuzzleloaderState.Unloaded,
-            MuzzleloaderLoadingStage.Loading => (int)MuzzleloaderState.Loaded,
-            MuzzleloaderLoadingStage.Priming => (int)MuzzleloaderState.Primed,
-            _ => (int)MuzzleloaderState.Unloaded
+            MuzzleloaderLoadingStage.Unloaded => MuzzleloaderState.Unloaded,
+            MuzzleloaderLoadingStage.Loading => MuzzleloaderState.Loaded,
+            MuzzleloaderLoadingStage.Priming => MuzzleloaderState.Primed,
+            _ => MuzzleloaderState.Unloaded
         };
+        state = (int)weaponState;
 
         switch (stage)
         {
@@ -143,8 +147,29 @@ public class MuzzleloaderClient : RangeWeaponClient
                 TpAnimationBehavior?.Play(mainHand, Stats.PrimedAnimation, category: ItemAnimationCategory(mainHand), weight: 0.001f);
                 break;
         }
+        
+        if (Stats.TakeOutAnimation != "")
+        {
+            SetState(MuzzleloaderState.Cooldown);
+            AnimationBehavior?.Play(
+            mainHand,
+            Stats.TakeOutAnimation,
+            category: AnimationCategory(mainHand),
+            animationSpeed: GetAnimationSpeed(player, Stats.ProficiencyStat),
+            callback: () =>
+            {
+                AnimationBehavior?.PlayReadyAnimation(mainHand);
+                TpAnimationBehavior?.PlayReadyAnimation(mainHand);
+                SetState(weaponState);
+                return true;
+            });
+            TpAnimationBehavior?.Play(
+                mainHand,
+                Stats.TakeOutAnimation,
+                category: AnimationCategory(mainHand),
+                animationSpeed: GetAnimationSpeed(player, Stats.ProficiencyStat));
+        }
 
-        // DEBUG
 #if DEBUG
         DebugAttach(player);
 #endif
@@ -256,7 +281,7 @@ public class MuzzleloaderClient : RangeWeaponClient
                     ItemSlot? flaskSlot = null;
                     player.WalkInventory(slot =>
                     {
-                        if (slot?.Itemstack?.Item == null) return true;
+                        if (slot?.Itemstack?.Item?.Code == null) return true;
 
                         if (WildcardUtil.Match(Stats.FlaskWildcard, slot.Itemstack.Item.Code.ToString()))
                         {
@@ -271,7 +296,7 @@ public class MuzzleloaderClient : RangeWeaponClient
                     ItemSlot? loadingSlot = null;
                     player.WalkInventory(slot =>
                     {
-                        if (slot?.Itemstack?.Item == null) return true;
+                        if (slot?.Itemstack?.Item?.Code == null) return true;
 
                         if (WildcardUtil.Match(Stats.LoadingRequirementWildcard, slot.Itemstack.Item.Code.ToString()))
                         {
@@ -963,7 +988,7 @@ public class MuzzleloaderServer : RangeWeaponServer
 
             ProjectileSystem.Spawn(packet.ProjectileId[count], stats, spawnStats, ammo, slot.Itemstack, shooter);
 
-            /*for (int index = 0; index < 50; index++)
+            /*for (int index = 0; index < 1000; index++)
             {
                 ProjectileSpawnStats spawnStats2 = new()
                 {

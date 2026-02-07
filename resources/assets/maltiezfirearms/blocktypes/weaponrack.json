@@ -6,9 +6,7 @@
     "inventorySize": 1,
     "inventoryTransformAttribute": "inWeaponrackTransform",
     "rotateByType": {"*-north": {"y": 0}, "*-east": {"y": 270}, "*-west": {"y": 90}, "*-south": {"y": 180}},
-    "handbook": {
-      "groupBy": ["weaponrack-*"]
-    }
+    "handbook": {"groupBy": ["weaponrack-*"]}
   },
   "class": "CombatOverhaul:GenericDisplayBlock",
   "entityClass": "CombatOverhaul:GenericDisplayBlockEntity",
