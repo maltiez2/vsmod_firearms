@@ -10,7 +10,7 @@
   },
   "class": "CombatOverhaul:GenericDisplayBlock",
   "entityClass": "CombatOverhaul:GenericDisplayBlockEntity",
-  "creativeinventory": {"general": ["*"], "maltiezfirearms": ["*-east"], "clutter": ["*-rusty-east"]},
+  "creativeinventory": {"general": ["*-east"], "maltiezfirearms": ["*-east"], "clutter": ["*-rusty-east"]},
   "shapeByType": {
     "*-north": {"base": "blocks/weaponrack", "rotateY": 0},
     "*-east": {"base": "blocks/weaponrack", "rotateY": 270},
