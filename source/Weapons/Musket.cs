@@ -3,6 +3,7 @@ using CombatOverhaul.Implementations;
 using CombatOverhaul.Inputs;
 using CombatOverhaul.MeleeSystems;
 using CombatOverhaul.RangedSystems;
+using CombatOverhaul.Utils;
 using OpenTK.Mathematics;
 using System.Text;
 using Vintagestory.API.Client;
@@ -362,5 +363,13 @@ public class MusketItem : Item, IHasWeaponLogic, IHasRangedWeaponLogic, IHasIdle
             return maxDurability;
         }
         return durability;
+    }
+
+    public override void OnCreatedByCrafting(ItemSlot[] allInputslots, ItemSlot outputSlot, GridRecipe byRecipe)
+    {
+        base.OnCreatedByCrafting(allInputslots, outputSlot, byRecipe);
+
+        GeneralUtils.MarkItemStack(outputSlot);
+        outputSlot.MarkDirty();
     }
 }

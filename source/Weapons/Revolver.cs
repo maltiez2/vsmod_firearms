@@ -5,6 +5,7 @@ using CombatOverhaul.Implementations;
 using CombatOverhaul.Inputs;
 using CombatOverhaul.RangedSystems;
 using CombatOverhaul.RangedSystems.Aiming;
+using CombatOverhaul.Utils;
 using OpenTK.Mathematics;
 using System.Diagnostics;
 using System.Text;
@@ -1246,5 +1247,13 @@ public class RevolverItem : Item, IHasWeaponLogic, IHasRangedWeaponLogic, IHasDy
         {
             ServerLogic = new(serverAPI, this);
         }
+    }
+
+    public override void OnCreatedByCrafting(ItemSlot[] allInputslots, ItemSlot outputSlot, GridRecipe byRecipe)
+    {
+        base.OnCreatedByCrafting(allInputslots, outputSlot, byRecipe);
+
+        GeneralUtils.MarkItemStack(outputSlot);
+        outputSlot.MarkDirty();
     }
 }

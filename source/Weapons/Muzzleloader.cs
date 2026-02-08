@@ -6,6 +6,7 @@ using CombatOverhaul.Implementations;
 using CombatOverhaul.Inputs;
 using CombatOverhaul.RangedSystems;
 using CombatOverhaul.RangedSystems.Aiming;
+using CombatOverhaul.Utils;
 using OpenTK.Mathematics;
 using System.Text;
 using Vintagestory.API.Client;
@@ -1120,6 +1121,7 @@ public class MuzzleloaderItem : Item, IHasWeaponLogic, IHasRangedWeaponLogic, IH
             dsc.AppendLine(Lang.Get("combatoverhaul:iteminfo-range-weapon-damage", Stats.BulletDamageMultiplier, Stats.BulletDamageStrength));
             dsc.AppendLine("");
         }
+        
         base.GetHeldItemInfo(inSlot, dsc, world, withDebugInfo);
     }
 
@@ -1154,5 +1156,13 @@ public class MuzzleloaderItem : Item, IHasWeaponLogic, IHasRangedWeaponLogic, IH
         {
             ServerLogic = new(serverAPI, this);
         }
+    }
+
+    public override void OnCreatedByCrafting(ItemSlot[] allInputslots, ItemSlot outputSlot, GridRecipe byRecipe)
+    {
+        base.OnCreatedByCrafting(allInputslots, outputSlot, byRecipe);
+
+        GeneralUtils.MarkItemStack(outputSlot);
+        outputSlot.MarkDirty();
     }
 }

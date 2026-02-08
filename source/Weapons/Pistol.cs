@@ -2,7 +2,9 @@
 using CombatOverhaul.Armor;
 using CombatOverhaul.Inputs;
 using CombatOverhaul.RangedSystems;
+using CombatOverhaul.Utils;
 using csogg;
+using System.Text;
 using Vintagestory.API.Client;
 using Vintagestory.API.Common;
 using Vintagestory.API.Common.Entities;
@@ -181,6 +183,31 @@ public class PistolItem : Item, IHasWeaponLogic, IHasRangedWeaponLogic, IHasIdle
 
     IClientWeaponLogic? IHasWeaponLogic.ClientLogic => ClientLogic;
     IServerRangedWeaponLogic? IHasRangedWeaponLogic.ServerWeaponLogic => ServerLogic;
+
+    public override void OnCreatedByCrafting(ItemSlot[] allInputslots, ItemSlot outputSlot, GridRecipe byRecipe)
+    {
+        base.OnCreatedByCrafting(allInputslots, outputSlot, byRecipe);
+
+        GeneralUtils.MarkItemStack(outputSlot);
+        outputSlot.MarkDirty();
+    }
+
+    public override void GetHeldItemInfo(ItemSlot inSlot, StringBuilder dsc, IWorldAccessor world, bool withDebugInfo)
+    {
+        if (Stats != null && Stats.ProficiencyStat != "")
+        {
+            string description = Lang.Get("combatoverhaul:iteminfo-proficiency", Lang.Get($"combatoverhaul:proficiency-{Stats.ProficiencyStat}"));
+            dsc.AppendLine(description);
+        }
+
+        if (Stats != null)
+        {
+            dsc.AppendLine(Lang.Get("combatoverhaul:iteminfo-range-weapon-damage", Stats.BulletDamageMultiplier, Stats.BulletDamageStrength));
+            dsc.AppendLine("");
+        }
+
+        base.GetHeldItemInfo(inSlot, dsc, world, withDebugInfo);
+    }
 
     public bool GetIsLoaded(EntityPlayer player, ItemSlot slot) => ServerLogic?.GetIsLoaded(player, slot) ?? false;
 

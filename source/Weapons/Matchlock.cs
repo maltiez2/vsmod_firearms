@@ -1,6 +1,7 @@
 ﻿using CombatOverhaul.Animations;
 using CombatOverhaul.Inputs;
 using CombatOverhaul.RangedSystems;
+using CombatOverhaul.Utils;
 using System.Text;
 using Vintagestory.API.Client;
 using Vintagestory.API.Common;
@@ -82,5 +83,13 @@ public class MatchlockItem : Item, IHasWeaponLogic, IHasRangedWeaponLogic, IHasI
         {
             ServerLogic = new(serverAPI, this);
         }
+    }
+
+    public override void OnCreatedByCrafting(ItemSlot[] allInputslots, ItemSlot outputSlot, GridRecipe byRecipe)
+    {
+        base.OnCreatedByCrafting(allInputslots, outputSlot, byRecipe);
+
+        GeneralUtils.MarkItemStack(outputSlot);
+        outputSlot.MarkDirty();
     }
 }
