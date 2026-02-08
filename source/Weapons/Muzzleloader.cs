@@ -44,6 +44,7 @@ public class MuzzleloaderStats : WeaponStats
     public string IdleAnimationOffhand { get; set; } = "";
 
     public string TakeOutAnimation { get; set; } = "";
+    public string TakeOutAnimationOffhand { get; set; } = "";
     public string[] LoadAnimation { get; set; } = Array.Empty<string>();
     public string PrimeAnimation { get; set; } = "";
     public string[] CockingAnimation { get; set; } = Array.Empty<string>();
@@ -148,12 +149,13 @@ public class MuzzleloaderClient : RangeWeaponClient
                 break;
         }
         
-        if (Stats.TakeOutAnimation != "")
+        string takeOutAnimation = mainHand ? Stats.TakeOutAnimation : Stats.TakeOutAnimationOffhand;
+        if (takeOutAnimation != "")
         {
             SetState(MuzzleloaderState.Cooldown);
             AnimationBehavior?.Play(
             mainHand,
-            Stats.TakeOutAnimation,
+            takeOutAnimation,
             category: AnimationCategory(mainHand),
             animationSpeed: GetAnimationSpeed(player, Stats.ProficiencyStat),
             callback: () =>
@@ -165,7 +167,7 @@ public class MuzzleloaderClient : RangeWeaponClient
             });
             TpAnimationBehavior?.Play(
                 mainHand,
-                Stats.TakeOutAnimation,
+                takeOutAnimation,
                 category: AnimationCategory(mainHand),
                 animationSpeed: GetAnimationSpeed(player, Stats.ProficiencyStat));
         }
@@ -892,6 +894,8 @@ public class MuzzleloaderServer : RangeWeaponServer
 
     public override bool Reload(IServerPlayer player, ItemSlot slot, ItemSlot? ammoSlot, ReloadPacket packet)
     {
+        base.Reload(player, slot, ammoSlot, packet);
+        
         MuzzleloaderLoadingStage currentStage = GetLoadingStage<MuzzleloaderLoadingStage>(packet);
         //MuzzleloaderLoadingStage finishedStage = GetLoadingStage<MuzzleloaderLoadingStage>(slot);
         //if (currentStage < finishedStage) return false;
@@ -951,6 +955,8 @@ public class MuzzleloaderServer : RangeWeaponServer
 
     public override bool Shoot(IServerPlayer player, ItemSlot slot, ShotPacket packet, Entity shooter)
     {
+        base.Shoot(player, slot, packet, shooter);
+
         MuzzleloaderLoadingStage finishedStage = GetLoadingStage<MuzzleloaderLoadingStage>(slot);
         if (finishedStage != LastStage) return false;
 

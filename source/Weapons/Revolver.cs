@@ -1,5 +1,6 @@
 ﻿using CombatOverhaul;
 using CombatOverhaul.Animations;
+using CombatOverhaul.Armor;
 using CombatOverhaul.Implementations;
 using CombatOverhaul.Inputs;
 using CombatOverhaul.RangedSystems;
@@ -999,6 +1000,8 @@ public class RevolverServer : RangeWeaponServer
 
     public override bool Reload(IServerPlayer player, ItemSlot slot, ItemSlot? ammoSlot, ReloadPacket packet)
     {
+        base.Reload(player, slot, ammoSlot, packet);
+
         if (packet.Data.Length < 2) return false;
 
         int stage = packet.Data[0];
@@ -1064,6 +1067,8 @@ public class RevolverServer : RangeWeaponServer
 
     public override bool Shoot(IServerPlayer player, ItemSlot slot, ShotPacket packet, Entity shooter)
     {
+        base.Shoot(player, slot, packet, shooter);
+
         if (packet.Data.Length < 2) return false;
 
         int stage = packet.Data[0];
