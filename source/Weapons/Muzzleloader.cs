@@ -155,17 +155,17 @@ public class MuzzleloaderClient : RangeWeaponClient
         {
             SetState(MuzzleloaderState.Cooldown);
             AnimationBehavior?.Play(
-            mainHand,
-            takeOutAnimation,
-            category: AnimationCategory(mainHand),
-            animationSpeed: GetAnimationSpeed(player, Stats.ProficiencyStat),
-            callback: () =>
-            {
-                AnimationBehavior?.PlayReadyAnimation(mainHand);
-                TpAnimationBehavior?.PlayReadyAnimation(mainHand);
-                SetState(weaponState);
-                return true;
-            });
+                mainHand,
+                takeOutAnimation,
+                category: AnimationCategory(mainHand),
+                animationSpeed: GetAnimationSpeed(player, Stats.ProficiencyStat),
+                callback: () =>
+                {
+                    AnimationBehavior?.PlayReadyAnimation(mainHand);
+                    TpAnimationBehavior?.PlayReadyAnimation(mainHand);
+                    SetState(weaponState, mainHand);
+                    return true;
+                });
             TpAnimationBehavior?.Play(
                 mainHand,
                 takeOutAnimation,
@@ -867,7 +867,7 @@ public class MuzzleloaderClient : RangeWeaponClient
 
     protected bool CanUseOffhand(EntityPlayer player)
     {
-        if (player.RightHandItemSlot?.Itemstack?.Item is not MuzzleloaderItem weapon) return true;
+        if (player.RightHandItemSlot?.Itemstack?.Item is not IHasRangedWeaponLogic weapon) return true;
 
         MuzzleloaderState state = GetState<MuzzleloaderState>(mainHand: true);
         return state switch

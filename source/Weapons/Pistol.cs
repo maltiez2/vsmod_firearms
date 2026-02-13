@@ -171,13 +171,18 @@ public class PistolServer : MuzzleloaderServer, IRangedWeaponIsLoaded
     }
 }
 
-public class PistolItem : Item, IHasWeaponLogic, IHasRangedWeaponLogic, IHasIdleAnimations, IRangedWeaponIsLoaded
+public class PistolItem : Item, IHasWeaponLogic, IHasRangedWeaponLogic, IHasDynamicIdleAnimations, IRangedWeaponIsLoaded
 {
     public PistolClient? ClientLogic { get; private set; }
     public PistolServer? ServerLogic { get; private set; }
 
     public AnimationRequestByCode IdleAnimation { get; private set; }
     public AnimationRequestByCode ReadyAnimation { get; private set; }
+    public AnimationRequestByCode IdleAnimationOffhand { get; private set; }
+    public AnimationRequestByCode ReadyAnimationOffhand { get; private set; }
+
+    public AnimationRequestByCode? GetIdleAnimation(EntityPlayer player, ItemSlot slot, bool mainHand) => mainHand ? IdleAnimation : IdleAnimationOffhand;
+    public AnimationRequestByCode? GetReadyAnimation(EntityPlayer player, ItemSlot slot, bool mainHand) => mainHand ? ReadyAnimation : ReadyAnimationOffhand;
 
     public MuzzleloaderStats? Stats { get; private set; }
 
@@ -222,6 +227,8 @@ public class PistolItem : Item, IHasWeaponLogic, IHasRangedWeaponLogic, IHasIdle
             Stats = Attributes.AsObject<MuzzleloaderStats>();
             IdleAnimation = new(Stats.IdleAnimation, 1, 1, "main", TimeSpan.FromSeconds(0.2), TimeSpan.FromSeconds(0.2), false);
             ReadyAnimation = new(Stats.ReadyAnimation, 1, 1, "main", TimeSpan.FromSeconds(0.2), TimeSpan.FromSeconds(0.2), false);
+            IdleAnimationOffhand = new(Stats.IdleAnimationOffhand, 1, 1, "mainOffhand", TimeSpan.FromSeconds(0.2), TimeSpan.FromSeconds(0.2), false);
+            ReadyAnimationOffhand = new(Stats.ReadyAnimationOffhand, 1, 1, "mainOffhand", TimeSpan.FromSeconds(0.2), TimeSpan.FromSeconds(0.2), false);
         }
 
         if (api is ICoreServerAPI serverAPI)
