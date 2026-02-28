@@ -90,6 +90,7 @@ public class RevolverStats : WeaponStats
 
     public bool CancelReloadOnInAir { get; set; } = true;
     public float ReloadAnimationSpeed { get; set; } = 1;
+    public bool TwoHanded { get; set; } = true;
 
     public void ApplyLoadStagesTemplate()
     {
@@ -134,6 +135,7 @@ public class RevolverClient : RangeWeaponClient
         LoadingEquipmentTransform = new(item.Attributes["LoadingEquipmentTransform"].AsObject<ModelTransformNoDefaults>() ?? new ModelTransformNoDefaults(), ModelTransform.BlockDefaultTp());
         Stats = item.Attributes.AsObject<RevolverStats>();
         AimingStats = Stats.Aiming.ToStats();
+        TwoHanded = Stats.TwoHanded;
 
         Stats.ApplyLoadStagesTemplate();
 
@@ -184,6 +186,20 @@ public class RevolverClient : RangeWeaponClient
     }
     public override void OnDeselected(EntityPlayer player, bool mainHand, ref int state)
     {
+        switch ((RevolverState)state)
+        {
+            case RevolverState.StartLoading:
+            case RevolverState.Loading:
+            case RevolverState.FinishLoading:
+            case RevolverState.Cocking:
+                RangedWeaponSystem.SendStatusChange(player, RangedWeaponStatus.EndLoading, mainHand);
+                break;
+            case RevolverState.Aim:
+            case RevolverState.Shoot:
+                RangedWeaponSystem.SendStatusChange(player, RangedWeaponStatus.EndAiming, mainHand);
+                break;
+        }
+
         Attachable.ClearAttachments(player.EntityId);
         AimingAnimationController?.Stop(mainHand);
         AimingSystem.AimingState = WeaponAimingState.None;
@@ -249,8 +265,6 @@ public class RevolverClient : RangeWeaponClient
         if (readyStage == RevolverReadyState.Fired) return false;
         if (readyStage == RevolverReadyState.Ready && CurrentLoadStage == maxLoadStage) return false;
 
-        Debug.WriteLine($"StartLoad ({CurrentLoadStage}|{CurrentReadyState})");
-
         RevolverLoadStageStats currentStage = Stats.LoadStages[CurrentLoadStage];
 
         if (!currentStage.CanLoad) return false;
@@ -272,6 +286,8 @@ public class RevolverClient : RangeWeaponClient
             callback: () => StartLoadCallback(slot, player, mainHand, CurrentLoadStage));
 
         SetState(RevolverState.StartLoading, mainHand);
+
+        RangedWeaponSystem.SendStatusChange(player, RangedWeaponStatus.StartLoading, mainHand);
 
         PlayerBehavior?.SetStat("walkspeed", mainHand ? PlayerStatsMainHandCategory : PlayerStatsOffHandCategory, currentStage.LoadSpeedPenalty);
 
@@ -463,6 +479,8 @@ public class RevolverClient : RangeWeaponClient
 
         SetState(RevolverState.Idle, mainHand);
 
+        RangedWeaponSystem.SendStatusChange(player, RangedWeaponStatus.EndLoading, mainHand);
+
         RevolverLoadStageStats currentStage = Stats.LoadStages[stage];
         AnimationBehavior?.PlayFpAndTp(mainHand, currentStage.CylinderPositionAnimation, category: CylinderPositionAnimationCategory, weight: 1.1f);
         AnimationBehavior?.PlayReadyAnimationFpAndTp(mainHand);
@@ -497,6 +515,8 @@ public class RevolverClient : RangeWeaponClient
         AimingSystem.AimingState = WeaponAimingState.FullCharge;
         AimingAnimationController?.Play(mainHand);
 
+        RangedWeaponSystem.SendStatusChange(player, RangedWeaponStatus.StartAiming, mainHand);
+
         return true;
     }
     protected virtual bool AimCallback(ItemSlot slot, EntityPlayer player, bool mainHand, int stage)
@@ -529,6 +549,8 @@ public class RevolverClient : RangeWeaponClient
 
         SetState(RevolverState.FinishLoading, mainHand);
 
+        RangedWeaponSystem.SendStatusChange(player, RangedWeaponStatus.EndLoading, mainHand);
+
         PlayerBehavior?.SetStat("walkspeed", mainHand ? PlayerStatsMainHandCategory : PlayerStatsOffHandCategory);
 
         Attachable.ClearAttachments(player.EntityId);
@@ -549,6 +571,8 @@ public class RevolverClient : RangeWeaponClient
         AimingAnimationController?.Stop(mainHand);
 
         SetState(RevolverState.Idle, mainHand);
+
+        RangedWeaponSystem.SendStatusChange(player, RangedWeaponStatus.EndAiming, mainHand);
 
         return true;
     }
@@ -572,6 +596,8 @@ public class RevolverClient : RangeWeaponClient
         SendWeaponState(CurrentLoadStage, RevolverReadyState.Fired, slot, player, mainHand);
 
         Debug.WriteLine($"Shoot ({CurrentLoadStage}|{CurrentReadyState})");
+
+        RangedWeaponSystem.SendStatusChange(player, RangedWeaponStatus.TriggeredShot, mainHand);
 
         AnimationBehavior?.PlayFpAndTp(
                 mainHand,
@@ -605,6 +631,8 @@ public class RevolverClient : RangeWeaponClient
 
             SetState(RevolverState.Idle, mainHand);
 
+            RangedWeaponSystem.SendStatusChange(player, RangedWeaponStatus.EndAiming, mainHand);
+
             return true;
         }
 
@@ -626,6 +654,7 @@ public class RevolverClient : RangeWeaponClient
         switch (callback)
         {
             case "shoot":
+                RangedWeaponSystem.SendStatusChange(player, RangedWeaponStatus.SpawnedProjectile, mainHand);
                 SendShootPacket(slot, player, mainHand, stage);
                 break;
         }
