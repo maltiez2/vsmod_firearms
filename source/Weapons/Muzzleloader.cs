@@ -753,6 +753,8 @@ public class MuzzleloaderClient : RangeWeaponClient
     }
     protected bool CheckWadding(EntityPlayer player)
     {
+        if (Stats.WaddingUsedPerReload <= 0) return true;
+        
         ItemSlot? waddingSlot = null;
         player.WalkInventory(slot =>
         {
@@ -778,6 +780,8 @@ public class MuzzleloaderClient : RangeWeaponClient
     }
     protected bool CheckFlask(EntityPlayer player, int powderNeeded)
     {
+        if (powderNeeded <= 0) return true;
+        
         ItemSlot? flaskSlot = null;
         player.WalkInventory(slot =>
         {
@@ -933,8 +937,6 @@ public class MuzzleloaderServer : RangeWeaponServer
         base.Reload(player, slot, ammoSlot, packet);
 
         MuzzleloaderLoadingStage currentStage = GetLoadingStage<MuzzleloaderLoadingStage>(packet);
-        //MuzzleloaderLoadingStage finishedStage = GetLoadingStage<MuzzleloaderLoadingStage>(slot);
-        //if (currentStage < finishedStage) return false;
 
         int powderNeeded = currentStage switch
         {
@@ -946,7 +948,11 @@ public class MuzzleloaderServer : RangeWeaponServer
         ItemSlot? flask = GetFlask(player, powderNeeded);
         ItemSlot? wadding = GetWadding(player);
 
-        if (flask?.Itemstack?.Item == null || (wadding?.Itemstack?.Item == null && currentStage == MuzzleloaderLoadingStage.Loading)) return false;
+        if ((powderNeeded > 0 && flask?.Itemstack?.Item == null) ||
+            (Stats.WaddingUsedPerReload > 0 && wadding?.Itemstack?.Item == null && currentStage == MuzzleloaderLoadingStage.Loading))
+        {
+            return false;
+        }
 
         if (ammoSlot != null)
         {
@@ -975,10 +981,13 @@ public class MuzzleloaderServer : RangeWeaponServer
             }
         }
 
-        flask.Itemstack.Attributes.SetInt("durability", flask.Itemstack.Collectible.GetRemainingDurability(flask.Itemstack) - powderNeeded);
-        flask.MarkDirty();
+        if (flask != null && powderNeeded > 0)
+        {
+            flask.Itemstack.Attributes.SetInt("durability", flask.Itemstack.Collectible.GetRemainingDurability(flask.Itemstack) - powderNeeded);
+            flask.MarkDirty();
+        }
 
-        if (currentStage == MuzzleloaderLoadingStage.Loading)
+        if (wadding != null && Stats.WaddingUsedPerReload > 0 && currentStage == MuzzleloaderLoadingStage.Loading)
         {
             wadding.TakeOut(Stats.WaddingUsedPerReload);
             wadding.MarkDirty();
