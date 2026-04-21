@@ -1,5 +1,5 @@
 {
-	"ingredient": { "type": "item", "code": "game:clay-*" },
+	"ingredient": { "type": "item", "code": "game:clay-*", "name": "color", "allowedVariants": ["blue", "fire", "red"]  },
 	"pattern": [[
 		"#############",
 		"#############",
@@ -46,5 +46,5 @@
 		"#############"
 	]],
 	"name": "Firearms slugs mold",
-	"output": { "type": "block", "code": "ammomold-slug-raw"  }
+	"output": { "type": "block", "code": "ammomold-slug-{color}-raw"  }
 }
