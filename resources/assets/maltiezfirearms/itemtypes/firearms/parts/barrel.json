@@ -22,6 +22,38 @@
       "*-carbine-*": {"translation": {"x": 0.5, "y": -0.12, "z": 0.76}, "rotation": {"x": 98, "y": 0, "z": 0}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 0.8},
       "*-musket-*": {"translation": {"x": 0.5, "y": -0.19, "z": 0.66}, "rotation": {"x": 99, "y": 0, "z": 0}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 0.8}
     },
+    "onTongTransformByType": {
+      "*-pistol-*": {
+        "translation": { "x": -1.6, "y": -0.32, "z": -1.5 },
+        "rotation": {"x": 0, "y": 0, "z": 0},
+        "origin": {"x": 0.5, "y": 0.5, "z": 0.5},
+        "scale": 1
+      },
+      "*-arquebus-*": {
+        "translation": { "x": -1.58, "y": -0.38, "z": -1.5 },
+        "rotation": {"x": 0, "y": 0, "z": 0},
+        "origin": {"x": 0.5, "y": 0.5, "z": 0.5},
+        "scale": 1
+      },
+      "*-blunderbuss-*": {
+        "translation": { "x": -1.57, "y": -0.295, "z": -1.6 },
+        "rotation": {"x": 0, "y": 0, "z": 0},
+        "origin": {"x": 0.5, "y": 0.5, "z": 0.5},
+        "scale": 1
+      },
+      "*-carbine-*": {
+        "translation": { "x": -1.6, "y": -0.315, "z": -1.9 },
+        "rotation": {"x": 0, "y": 0, "z": 0},
+        "origin": {"x": 0.5, "y": 0.5, "z": 0.5},
+        "scale": 1
+      },
+      "*-musket-*": {
+        "translation": { "x": -1.6, "y": -0.315, "z": -2.5 },
+        "rotation": {"x": 0, "y": 0, "z": 0},
+        "origin": {"x": 0.5, "y": 0.5, "z": 0.5},
+        "scale": 1
+      }
+    },
     "handbook": {"groupBy": ["barrel-{weapon}-*"]}
   },
   "behaviors": [

@@ -13,6 +13,10 @@
   "creativeinventoryByType": {"*": {"general": ["*"], "maltiezfirearms": ["*"]}},
   "attributes": {
     "groundStorageTransform": {"rotation": {"x": 0, "y": -28, "z": 0}, "origin": {"x": 0.5, "y": 0, "z": 0.5}, "scale": 0.5},
+    "onTongTransform": {
+      "translation": { "x": -1, "y": -0.75, "z": -1 },
+      "rotation": { "x": -90, "y": 0, "z": 0 }
+    },
     "handbook": {"groupBy": ["flaskfurniture-*"]}
   },
   "guiTransform": {"translation": {"x": 0, "y": 0, "z": 0}, "rotation": {"x": 163, "y": -13, "z": 0}, "origin": {"x": 0.72, "y": -0.17, "z": 1.4}, "scale": 4.24},
