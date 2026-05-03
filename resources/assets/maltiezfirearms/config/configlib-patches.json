@@ -203,7 +203,8 @@
         "None",
         "Vanilla",
         "Fixed",
-        "Moving"
+        "Moving",
+        "MovingNone"
       ]
     },
     {

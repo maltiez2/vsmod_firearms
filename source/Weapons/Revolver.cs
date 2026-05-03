@@ -1,6 +1,5 @@
 ﻿using CombatOverhaul;
 using CombatOverhaul.Animations;
-using CombatOverhaul.Armor;
 using CombatOverhaul.Implementations;
 using CombatOverhaul.Inputs;
 using CombatOverhaul.RangedSystems;
@@ -120,7 +119,7 @@ public class RevolverStats : WeaponStats
     {
         if (template == "") return animation;
 
-       return template.Replace("{index}", index.ToString());
+        return template.Replace("{index}", index.ToString());
     }
 }
 
@@ -234,12 +233,11 @@ public class RevolverClient : RangeWeaponClient
     protected const string CylinderLoadGatesAnimationCategory = "cylinder-load-gates";
 
     protected ItemSlot? BulletSlot;
-    protected int CurrentLoadStage 
-    { 
+    protected int CurrentLoadStage
+    {
         get => _currentLoadStage;
         set
         {
-            Debug.WriteLine($"Change stage: {_currentLoadStage} --> {value}");
             _currentLoadStage = value;
         }
     }
@@ -411,8 +409,6 @@ public class RevolverClient : RangeWeaponClient
     }
     protected virtual bool ContinueLoadCallback(ItemSlot slot, EntityPlayer player, bool mainHand, int stage)
     {
-        Debug.WriteLine($"ContinueLoad ({CurrentLoadStage}|{CurrentReadyState})");
-
         RevolverLoadStageStats currentStage = Stats.LoadStages[stage];
 
         AnimationBehavior?.PlayFpAndTp(
@@ -431,7 +427,10 @@ public class RevolverClient : RangeWeaponClient
         {
             case "attach":
                 {
-                    if (BulletSlot != null) Attachable.SetAttachment(player.EntityId, "bullet", BulletSlot.Itemstack, BulletTransform);
+                    if (BulletSlot != null)
+                    {
+                        Attachable.SetAttachment(player.EntityId, "bullet", BulletSlot.Itemstack, BulletTransform);
+                    }
 
                     ItemSlot? flaskSlot = null;
                     player.WalkInventory(slot =>
@@ -446,9 +445,12 @@ public class RevolverClient : RangeWeaponClient
 
                         return true;
                     });
-                    if (flaskSlot != null) Attachable.SetAttachment(player.EntityId, "flask", flaskSlot.Itemstack, FlaskTransform);
+                    if (flaskSlot != null)
+                    {
+                        Attachable.SetAttachment(player.EntityId, "flask", flaskSlot.Itemstack, FlaskTransform);
+                    }
 
-                    /*ItemSlot? loadingSlot = null;
+                    ItemSlot? loadingSlot = null;
                     player.WalkInventory(slot =>
                     {
                         if (slot?.Itemstack?.Item == null) return true;
@@ -461,7 +463,10 @@ public class RevolverClient : RangeWeaponClient
 
                         return true;
                     });
-                    if (loadingSlot != null) Attachable.SetAttachment(player.EntityId, "loading", loadingSlot.Itemstack, LoadingEquipmentTransform);*/
+                    if (loadingSlot != null)
+                    {
+                        Attachable.SetAttachment(player.EntityId, "loading", loadingSlot.Itemstack, LoadingEquipmentTransform);
+                    }
                 }
                 break;
             case "detach":
@@ -474,8 +479,6 @@ public class RevolverClient : RangeWeaponClient
     protected virtual bool FinishLoadCallback(ItemSlot slot, EntityPlayer player, bool mainHand, int stage)
     {
         if (!CheckState(mainHand, RevolverState.FinishLoading)) return true;
-
-        Debug.WriteLine($"FinishLoad ({CurrentLoadStage}|{CurrentReadyState})");
 
         SetState(RevolverState.Idle, mainHand);
 
@@ -498,8 +501,6 @@ public class RevolverClient : RangeWeaponClient
         if (!CheckState(state, RevolverState.Idle) || !mainHand) return false;
         if (InteractionsTester.PlayerTriesToInteract(player, mainHand, eventData)) return false;
         if (eventData.AltPressed || !CheckForOtherHandEmpty(mainHand, player)) return false;
-
-        Debug.WriteLine($"Aim ({CurrentLoadStage}|{CurrentReadyState})");
 
         RevolverLoadStageStats currentStage = Stats.LoadStages[CurrentLoadStage];
 
@@ -529,8 +530,6 @@ public class RevolverClient : RangeWeaponClient
     {
         if (!CheckState(state, RevolverState.Loading) || !mainHand) return false;
         if (eventData.AltPressed) return false;
-
-        Debug.WriteLine($"CancelLoading ({CurrentLoadStage}|{CurrentReadyState})");
 
         RevolverLoadStageStats currentStage = Stats.LoadStages[CurrentLoadStage];
 
@@ -564,8 +563,6 @@ public class RevolverClient : RangeWeaponClient
         if (!CheckState(state, RevolverState.Aim) || !mainHand) return false;
         if (eventData.AltPressed) return false;
 
-        Debug.WriteLine($"Ease");
-
         AnimationBehavior?.PlayReadyAnimationFpAndTp(mainHand);
         AimingSystem.StopAiming();
         AimingAnimationController?.Stop(mainHand);
@@ -594,8 +591,6 @@ public class RevolverClient : RangeWeaponClient
         CurrentReadyState = RevolverReadyState.Fired;
 
         SendWeaponState(CurrentLoadStage, RevolverReadyState.Fired, slot, player, mainHand);
-
-        Debug.WriteLine($"Shoot ({CurrentLoadStage}|{CurrentReadyState})");
 
         RangedWeaponSystem.SendStatusChange(player, RangedWeaponStatus.TriggeredShot, mainHand);
 
@@ -667,8 +662,6 @@ public class RevolverClient : RangeWeaponClient
         if (!CheckState(state, RevolverState.Aim) || !mainHand) return false;
         if (InteractionsTester.PlayerTriesToInteract(player, mainHand, eventData)) return false;
         if (eventData.AltPressed || !CheckForOtherHandEmpty(mainHand, player)) return false;
-
-        Debug.WriteLine($"Cock ({CurrentLoadStage}|{CurrentReadyState})");
 
         RevolverLoadStageStats currentStage = Stats.LoadStages[CurrentLoadStage];
 
@@ -844,6 +837,11 @@ public class RevolverClient : RangeWeaponClient
     }
     protected bool CheckWadding(EntityPlayer player, int amount)
     {
+        if (amount <= 0)
+        {
+            return true;
+        }
+        
         ItemSlot? waddingSlot = null;
         player.WalkInventory(slot =>
         {
@@ -869,6 +867,11 @@ public class RevolverClient : RangeWeaponClient
     }
     protected bool CheckFlask(EntityPlayer player, int powderNeeded)
     {
+        if (powderNeeded <= 0)
+        {
+            return true;
+        }
+
         ItemSlot? flaskSlot = null;
         player.WalkInventory(slot =>
         {
@@ -894,6 +897,11 @@ public class RevolverClient : RangeWeaponClient
     }
     protected bool CheckAmmo(EntityPlayer player, int amount)
     {
+        if (amount <= 0)
+        {
+            return true;
+        }
+
         ItemSlot? ammoSlot = null;
         player.WalkInventory(slot =>
         {
@@ -1051,7 +1059,12 @@ public class RevolverServer : RangeWeaponServer
         ItemSlot? flask = GetFlask(player, powderNeeded);
         ItemSlot? wadding = GetWadding(player, currentStage.WaddingUsed);
 
-        if (flask?.Itemstack?.Item == null || (wadding?.Itemstack?.Item == null && currentStage.WaddingUsed > 0)) return false;
+        if (
+            (powderNeeded > 0 && flask?.Itemstack?.Item == null) ||
+            (wadding?.Itemstack?.Item == null && currentStage.WaddingUsed > 0))
+        {
+            return false;
+        }
 
         if (ammoSlot != null)
         {
@@ -1079,10 +1092,14 @@ public class RevolverServer : RangeWeaponServer
             }
         }
 
-        flask.Itemstack.Attributes.SetInt("durability", flask.Itemstack.Collectible.GetRemainingDurability(flask.Itemstack) - powderNeeded);
-        flask.MarkDirty();
+        if (flask != null && powderNeeded > 0)
+        {
+            flask.Itemstack.Attributes.SetInt("durability", flask.Itemstack.Collectible.GetRemainingDurability(flask.Itemstack) - powderNeeded);
+            flask.MarkDirty();
+        }
+        
 
-        if (wadding != null)
+        if (wadding != null && currentStage.WaddingUsed > 0)
         {
             wadding.TakeOut(currentStage.WaddingUsed);
             wadding.MarkDirty();
