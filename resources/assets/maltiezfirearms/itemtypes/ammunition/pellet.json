@@ -24,7 +24,12 @@
       }
     }
   ],
-  "attributes": {"attachableShape": "maltiezfirearms:shapes/ammo/pellets-shot"},
+  "attributes": {
+    "attachableShape": "maltiezfirearms:shapes/ammo/pellets-shot",
+    "onTongTransform": {
+      "translation": { "x": -1.11, "y": -0.27, "z": -0.5 }
+    }
+  },
   "creativeinventory": {"general": ["*"], "maltiezfirearms": ["*"]},
   "guiTransform": {"translation": {"x": 0, "y": 0, "z": 0}, "rotation": {"x": 66, "y": 0, "z": 44}, "origin": {"x": 0, "y": -0.5, "z": 0.2}, "scale": 4},
   "tpHandTransform": {"translation": {"x": -1.7, "y": -1.15, "z": -1.4}},

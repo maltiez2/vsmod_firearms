@@ -9,6 +9,9 @@
     "inventorySize": 1,
     "inventoryTransformAttribute": "inWallmountTransform",
     "rotateByType": {"*-north": {"y": 0}, "*-east": {"y": 270}, "*-west": {"y": 90}, "*-south": {"y": 180}},
+    "onTongTransform": {
+      "translation": { "x": -0.99, "y": -0.29, "z": -0.5 }
+    },
     "handbook": {"groupBy": ["wallmount-*"]}
   },
   "class": "CombatOverhaul:GenericDisplayBlock",

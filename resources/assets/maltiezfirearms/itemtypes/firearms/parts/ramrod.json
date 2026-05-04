@@ -15,6 +15,32 @@
       "*-carbine-*": {"translation": {"x": 0.5, "y": -0.1, "z": 0.82}, "rotation": {"x": 98, "y": 0, "z": 0}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 0.8},
       "*-musket-*": {"translation": {"x": 0.5, "y": -0.2, "z": 0.72}, "rotation": {"x": 99, "y": 0, "z": 0}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 0.8}
     },
+    "onTongTransformByType": {
+      "*-pistol-*": {
+        "translation": { "x": -1.6, "y": -0.32, "z": -1.5 },
+        "rotation": {"x": 0, "y": 0, "z": 0},
+        "origin": {"x": 0.5, "y": 0.5, "z": 0.5},
+        "scale": 1
+      },
+      "*-arquebus-*": {
+        "translation": { "x": -1.62, "y": -0.34, "z": -1.5 },
+        "rotation": {"x": 0, "y": 0, "z": 0},
+        "origin": {"x": 0.5, "y": 0.5, "z": 0.5},
+        "scale": 1
+      },
+      "*-carbine-*": {
+        "translation": { "x": -1.62, "y": -0.27, "z": -1.8 },
+        "rotation": {"x": 0, "y": 0, "z": 0},
+        "origin": {"x": 0.5, "y": 0.5, "z": 0.5},
+        "scale": 1
+      },
+      "*-musket-*": {
+        "translation": { "x": -1.62, "y": -0.27, "z": -2.5 },
+        "rotation": {"x": 0, "y": 0, "z": 0},
+        "origin": {"x": 0.5, "y": 0.5, "z": 0.5},
+        "scale": 1
+      }
+    },
     "handbook": {"groupBy": ["ramrod-{weapon}-*"]}
   },
   "behaviors": [

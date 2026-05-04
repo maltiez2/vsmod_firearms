@@ -5,7 +5,13 @@
   "allowedVariants": ["*-bullets-steel"],
   "shape": {"base": "maltiezfirearms:parts/cylinder-{type}"},
   "textures": {"metal": {"base": "game:block/metal/plate/{metal}"}},
-  "attributes": {"groundStorageTransform": {"translation": {"x": 0.4, "y": 0.04, "z": 0.4}, "rotation": {"x": 1, "y": -110, "z": 89}, "origin": {"x": 0, "y": 0, "z": 0}}},
+  "attributes": {
+    "groundStorageTransform": {"translation": {"x": 0.4, "y": 0.04, "z": 0.4}, "rotation": {"x": 1, "y": -110, "z": 89}, "origin": {"x": 0, "y": 0, "z": 0}},
+    "onTongTransform": {
+      "translation": { "x": -1.48, "y": -1.22, "z": -0.93 },
+      "rotation": { "x": -90, "y": 0, "z": 0 }
+    }
+  },
   "behaviors": [
     {
       "name": "GroundStorable",

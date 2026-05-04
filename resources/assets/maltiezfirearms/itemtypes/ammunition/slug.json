@@ -43,5 +43,10 @@
         }
       }
     }
-  ]
+  ],
+  "attributes": {
+    "onTongTransform": {
+      "translation": { "x": -1.05, "y": -0.25, "z": -0.5 }
+    }
+  }
 }
