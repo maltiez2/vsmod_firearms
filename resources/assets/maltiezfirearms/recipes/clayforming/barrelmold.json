@@ -1,5 +1,5 @@
 {
-	"ingredient": { "type": "item", "code": "game:clay-*" },
+	"ingredient": { "type": "item", "code": "game:clay-*", "name": "color", "allowedVariants": ["blue", "fire", "red"] },
 	"pattern": [[
 		"##########",
 		"##########",
@@ -194,5 +194,5 @@
 	]
 	],
 	"name": "Barrel mold",
-	"output": { "type": "block", "code": "barrelmold-raw"  }
+	"output": { "type": "block", "code": "barrelmold-{color}-raw"  }
 }
